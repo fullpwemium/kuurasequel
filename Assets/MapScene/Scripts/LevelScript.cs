@@ -1,0 +1,187 @@
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class LevelScript : MonoBehaviour
+{
+    Button levelButton;
+
+    public int levelButtonNumber;
+    public int levelButtonNumber2;
+
+
+    public int gameNumber;
+
+    BobLevelScript Bob;
+
+    static GameObject BobLevelPlayer;
+
+    // Use this for initialization
+    void Start ()
+    {
+        Bob = GameObject.Find("BobPlayer").GetComponent<BobLevelScript>();
+        levelButton = gameObject.GetComponent<Button>();
+
+        levelButton.onClick.AddListener(() => MoveHere());
+
+        BobLevelPlayer = GameObject.Find("BobPlayer");
+    }
+	
+	// Update is called once per frame
+	void Update ()
+    {
+	
+	}
+
+    public void OnMouseDown()
+    {
+        MoveHere();
+    }
+
+    void MoveHere()
+    {
+
+
+        if (BobLevelScript.Moving == false)
+        {
+
+
+            GameLoader();
+            BobLevelScript.DestinationLevelNumberX = levelButtonNumber;
+            BobLevelScript.DestinationLevelNumberY = levelButtonNumber2;
+            StartCoroutine(Bob.CountRoute());
+        }
+
+        //Verrataan kohdeobjektin arvoa lähtöobjektin arvoon
+        //BobLevelScript.destination = gameObject.transform.position;    //Liikutetaan pelaajaobjekti klikattuun objektiin
+    }
+
+    void GameLoader()
+    {
+        CheckGame();
+        Debug.Log("nearMemoryGame" + BobLevelScript.MemoryGameLevel1);
+
+        if (BobLevelScript.MemoryGameLevel1 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
+        {
+            SceneManager.LoadScene("Level1");    //Ladataan Scene
+
+            Debug.Log("Load Memory Game");
+        }
+        else if (BobLevelScript.MemoryGameLevel2 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
+        {
+            SceneManager.LoadScene("Level2");    //Ladataan Scene
+
+            Debug.Log("Load Memory Game");
+        }
+        else if (BobLevelScript.MemoryGameLevel3 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
+        {
+            SceneManager.LoadScene("Level3");    //Ladataan Scene
+
+            Debug.Log("Load Memory Game");
+        }
+        else if (BobLevelScript.MemoryGameLevel4 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
+        {
+            SceneManager.LoadScene("Level4");    //Ladataan Scene
+
+            Debug.Log("Load Memory Game");
+        }
+        else if (BobLevelScript.MemoryGameLevel5 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
+        {
+            SceneManager.LoadScene("Level5");    //Ladataan Scene
+
+            Debug.Log("Load Memory Game");
+        }
+        else if (BobLevelScript.MemoryGameLevel6 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
+        {
+            SceneManager.LoadScene("Level6");    //Ladataan Scene
+
+            Debug.Log("Load Memory Game");
+        }
+        else if (BobLevelScript.MemoryGameLevel7 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
+        {
+            SceneManager.LoadScene("Level7");    //Ladataan Scene
+
+            Debug.Log("Load Memory Game");
+        }
+        else if (BobLevelScript.MemoryGameLevel8 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
+        {
+            SceneManager.LoadScene("Level8");    //Ladataan Scene
+
+            Debug.Log("Load Memory Game");
+        }
+        else if (BobLevelScript.MemoryGameLevel9 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
+        {
+            SceneManager.LoadScene("Level9");    //Ladataan Scene
+
+            Debug.Log("Load Memory Game");
+        }
+        else if (BobLevelScript.MemoryGameLevel10 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
+        {
+            SceneManager.LoadScene("Level10");    //Ladataan Scene
+
+            Debug.Log("Load Memory Game");
+        }
+    }
+
+    void CheckGame()
+    {
+        if (BobLevelScript.StandingLevelNumberX == levelButtonNumber && BobLevelScript.StandingLevelNumberY == levelButtonNumber2)
+        {
+            if (gameNumber == 1)    //Katsotaan onko Bobin seisomalla buttonilla annettu arvo
+            {
+                BobLevelScript.MemoryGameLevel1 = true;
+            }
+            else if (gameNumber == 2)
+            {
+                BobLevelScript.MemoryGameLevel2 = true;
+            }
+            else if (gameNumber == 3)
+            {
+                BobLevelScript.MemoryGameLevel3 = true;
+            }
+            else if (gameNumber == 4)
+            {
+                BobLevelScript.MemoryGameLevel4 = true;
+            }
+            else if (gameNumber == 5)
+            {
+                BobLevelScript.MemoryGameLevel5 = true;
+            }
+            else if (gameNumber == 6)
+            {
+                BobLevelScript.MemoryGameLevel6 = true;
+            }
+            else if (gameNumber == 7)
+            {
+                BobLevelScript.MemoryGameLevel7 = true;
+            }
+            else if (gameNumber == 8)
+            {
+                BobLevelScript.MemoryGameLevel8 = true;
+            }
+            else if (gameNumber == 9)
+            {
+                BobLevelScript.MemoryGameLevel9 = true;
+            }
+            else if (gameNumber == 10)
+            {
+                BobLevelScript.MemoryGameLevel10 = true;
+            }
+
+            else
+            {
+                BobLevelScript.MemoryGameLevel1 = false;
+                BobLevelScript.MemoryGameLevel2 = true;
+                BobLevelScript.MemoryGameLevel3 = true;
+                BobLevelScript.MemoryGameLevel4 = true;
+                BobLevelScript.MemoryGameLevel5 = true;
+                BobLevelScript.MemoryGameLevel6 = true;
+                BobLevelScript.MemoryGameLevel7 = true;
+                BobLevelScript.MemoryGameLevel8 = true;
+                BobLevelScript.MemoryGameLevel9 = true;
+                BobLevelScript.MemoryGameLevel10 = true;
+            }
+        }
+    }
+}
