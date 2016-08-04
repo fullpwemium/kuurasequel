@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Bob_apartment/Bob_apartment.unity
+- path: Assets/MapScene/Map2.unity
   isLoaded: 1
   isActive: 1
