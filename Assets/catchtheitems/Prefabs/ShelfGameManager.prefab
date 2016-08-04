@@ -44,7 +44,6 @@ MonoBehaviour:
   completedLevels: 
   currentLevel: 0
   levelSelectScene: 2
-  canvas: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

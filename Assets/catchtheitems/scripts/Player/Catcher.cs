@@ -20,7 +20,6 @@ public class Catcher : MonoBehaviour {
         {
             PSS.emiParticles();
             Destroy(col.gameObject);
-
         }
     }
 
@@ -28,25 +27,21 @@ public class Catcher : MonoBehaviour {
     {
         if (GameManager.aikamuutettu == false)
         {
-            GameManager.aika = 0.5f;
-            Time.timeScale = GameManager.aika;
+            //GameManager.aika = 0.5f;
+            //Time.timeScale = GameManager.aika;
             GameManager.aikamuutettu = true;
             Debug.Log("hidastuu" + GameManager.aikamuutettu);
-            Invoke("speedUp", 0.5f);
+            Invoke("speedUp", 1.0f);
         }
-            
-
     }
 
     void speedUp()
     {
-        GameManager.aika = 1f;
-        Time.timeScale = GameManager.aika;
+        //GameManager.aika = 1f;
+        //Time.timeScale = GameManager.aika;
         GameManager.aikamuutettu = false;
         Debug.Log("palautuu" + Time.timeScale);
     }
-
-
 
     public void LargeBucket()
 	{
@@ -67,6 +62,4 @@ public class Catcher : MonoBehaviour {
 		transform.localScale = new Vector2 (normalscaleX, normalscaleY);
 		largesize = false;
 	}
-
-
 }

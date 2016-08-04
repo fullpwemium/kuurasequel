@@ -80,7 +80,7 @@ public class UI : MonoBehaviour
             float percentageComplete = timeSinceStarted / 1f;
             Debug.Log(percentageComplete);
             gameOverPanel.transform.position = Vector3.Lerp(startPosition, destination, percentageComplete);
-            //Debug.Log(tausta.transform.position);
+            Debug.Log(percentageComplete);
             if (percentageComplete >= 1.0f)
             {
                 moving = false;
@@ -132,7 +132,7 @@ public class UI : MonoBehaviour
     {
         if (won == false)
         {
-            StartCoroutine("slowDown");
+            //StartCoroutine("slowDown");
             endText.text = "YOU SUCK!";
             StartLerping();
             destination = new Vector3(0, 9, 0);
@@ -147,7 +147,7 @@ public class UI : MonoBehaviour
             {
                 lista[i].SetActive(false);
             }*/
-            StartCoroutine("slowDown");
+            //StartCoroutine("slowDown");
             GOPanel = false;
             Score();
             StartLerping();
@@ -293,7 +293,7 @@ public class UI : MonoBehaviour
 
         }
         //GameManager.levelStars[GameManager.manager.currentLevel] = stars;
-        GlobalGameManager.GGM.bubbleWarehouseSave();
+        //GlobalGameManager.GGM.bubbleWarehouseSave();
         //Debug.Log(GameManager.levelStars[GameManager.manager.currentLevel] + "tahtienmaara");
 
         /*for (int i = 0; i<5; i++ )

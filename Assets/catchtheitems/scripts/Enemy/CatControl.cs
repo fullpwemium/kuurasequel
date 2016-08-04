@@ -137,35 +137,6 @@ public class CatControl : MonoBehaviour {
 
 	}
 
-    /*void OnTriggerEnter2D(Collider2D collider)
-    {
-
-        Debug.Log(collider.tag);
-        
-        if (collider.tag == "Untagged")
-        {
-            Debug.Log("Laalaa");
-            catSpeed *= -1f;
-            SpriteFlipper();
-            if (facingLeft == false)
-            {
-                facingLeft = true;
-            }
-            else
-            {
-                facingLeft = false;
-            }
-
-            if (catAir == true)
-            {
-                rgb2D.velocity = new Vector2(catSpeed, rgb2D.velocity.y);
-            }
-
-        }
-
-    }*/
-
-
     void CatLay()
 	{
 		action = true;

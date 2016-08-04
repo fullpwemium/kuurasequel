@@ -14,7 +14,7 @@ public class ShelfGameManager : GameManager
 	//int gyroValue = 0;
 	Transform desPoint;
     static public Toggle gyroButton;
-    public Canvas canvas;
+    //public Canvas canvas;
     
     //Toggle gyroToggle;
 
