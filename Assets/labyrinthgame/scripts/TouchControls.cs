@@ -102,10 +102,10 @@ public class TouchControls : MonoBehaviour
         {
             timer = 0.3f;
             thePlayer.MovePlayerRight();
-           /* anim.SetBool("GoUp", false);
-            anim.SetBool("GoDown", false);
+           //anim.SetBool("GoUp", false);
+           //anim.SetBool("GoDown", false);
             anim.SetBool("GoRight", true);
-            anim.SetBool("GoLeft", false); */
+           //anim.SetBool("GoLeft", false); 
         }
 
     }
@@ -116,10 +116,10 @@ public class TouchControls : MonoBehaviour
         {
             timer = 0.3f;
             thePlayer.MovePlayerLeft();
-           /* anim.SetBool("GoUp", false);
-            anim.SetBool("GoDown", false);
-            anim.SetBool("GoRight", false);
-            anim.SetBool("GoLeft", true);*/
+            //anim.SetBool("GoUp", false);
+            //anim.SetBool("GoDown", false);
+            //anim.SetBool("GoRight", false);
+			anim.SetBool("GoLeft", true);
         }
 
     }
@@ -130,10 +130,10 @@ public class TouchControls : MonoBehaviour
         {
             timer = 0.3f;
             thePlayer.MovePlayerUp();
-           /* anim.SetBool("GoUp", true);
-            anim.SetBool("GoDown", false);
-            anim.SetBool("GoRight", false);
-            anim.SetBool("GoLeft", false);*/
+            anim.SetBool("GoUp", true);
+           //anim.SetBool("GoDown", false);
+           //anim.SetBool("GoRight", false);
+           //anim.SetBool("GoLeft", false);
         }
 
 
@@ -145,20 +145,20 @@ public class TouchControls : MonoBehaviour
         {
             timer = 0.3f;
             thePlayer.MovePlayerDown();
-            /*anim.SetBool("GoUp", false);
+            //anim.SetBool("GoUp", false);
             anim.SetBool("GoDown", true);
-            anim.SetBool("GoRight", false);
-            anim.SetBool("GoLeft", false);*/
+			//anim.SetBool("GoRight", false);
+            //anim.SetBool("GoLeft", false);
             //Invoke(PlayerStay(), 1f);
         }
     }
 
     public void PlayerStay()
     {
-           /* anim.SetBool("GoUp", false);
+            anim.SetBool("GoUp", false);
             anim.SetBool("GoDown", false);
             anim.SetBool("GoRight", false);
-            anim.SetBool("GoLeft", false);*/
+            anim.SetBool("GoLeft", false);
     }
 
     public IEnumerator WaitIdleAnimation()

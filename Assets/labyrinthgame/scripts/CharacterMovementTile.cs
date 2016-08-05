@@ -180,51 +180,52 @@ class CharacterMovementTile : MonoBehaviour
     {
         if (MoveUp == true)
         {
-            anim.SetBool("GoUp", true);
+     /*       anim.SetBool("GoUp", true);
             anim.SetBool("GoDown", false);
             anim.SetBool("GoRight", false);
             anim.SetBool("GoLeft", false);
             MoveUp = false;
-
+*/
         }
 
         else if (MoveLeft == true)
         {
-            anim.SetBool("GoUp", false);
+         /*   anim.SetBool("GoUp", false);
             anim.SetBool("GoDown", false);
             anim.SetBool("GoRight", false);
             anim.SetBool("GoLeft", true);
             MoveLeft = false;
-
+*/
         }
 
         else if (MoveRight == true)
         {
-            anim.SetBool("GoUp", false);
+         /*   anim.SetBool("GoUp", false);
             anim.SetBool("GoDown", false);
             anim.SetBool("GoRight", true);
             anim.SetBool("GoLeft", false);
             MoveRight = false;
-
+*/
         }
 
         else if (MoveDown == true)
         {
-            anim.SetBool("GoUp", false);
+			/*   anim.SetBool("GoUp", false);
             anim.SetBool("GoDown", true);
             anim.SetBool("GoRight", false);
             anim.SetBool("GoLeft", false);
             MoveDown = false;
-
+*/
         }
     } 
 
     void PlayerAnimStop()
     {
-        anim.SetBool("GoUp", false);
+     /*   anim.SetBool("GoUp", false);
         anim.SetBool("GoDown", false);
         anim.SetBool("GoRight", false);
         anim.SetBool("GoLeft", false);
+        */
     }
 
 }
