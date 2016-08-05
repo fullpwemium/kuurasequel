@@ -85,29 +85,29 @@ public class VälisivuScripti : MonoBehaviour
         if (BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 3)
         {
             peliNumero = 1;
-            title.text = "BAAANAANAAA";
-            dialogi.text = "nananananananananananananananaanananan BATMAN!";
+            title.text = "Mister Mysterious Mystic Cards";
+            dialogi.text = "Hope you have a good memory!";
             peliKuva.sprite = pelikuva1;
         }
-        else if(BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 1)
+        else if(BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 2)
         {
             peliNumero = 2;
-            title.text = "BAAANAANAAA2222";
-            dialogi.text = "nananananananananananananananaanananan BATMAN!WTF";
+            title.text = "Winter Hedge Maze";
+            dialogi.text = "-	Don't let Swipper get you!\n- Watch the floor...";
             peliKuva.sprite = pelikuva2;
         }
-        else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 1)
+        else if (BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 1)
         {
             peliNumero = 3;
-            title.text = "BAAANAANAAA3333";
-            dialogi.text = "nananananananananananananananaanananan BATMAN!WTF madafaka!";
+            title.text = "Bubble Warehouse";
+            dialogi.text = "-	What a nasty snowflake!\n- Get cake to grow your bowl!";
             peliKuva.sprite = pelikuva3;
         }
         else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 3)
         {
             peliNumero = 4;
-            title.text = "BAAANAANAAA4444";
-            dialogi.text = "nananananananananananananananaanananan BATMAN!WTF BBQ";
+            title.text = "Winter Forest Marathon";
+            dialogi.text = "- Make all the coins come to you with magnet!\n-Don't forget you can JUMP again while midair!";
             peliKuva.sprite = pelikuva4;
         }
         else if (BobPlayerScript.StandingButtonNumberX == 1 && BobPlayerScript.StandingButtonNumberY == 3)

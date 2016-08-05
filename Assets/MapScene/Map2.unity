@@ -2892,8 +2892,8 @@ MonoBehaviour:
   kylttiKissa: {fileID: 383308609}
   kyltti1: {fileID: 435873604}
   kyltti2: {fileID: 1617423966}
-  pelikuva1: {fileID: 21300000, guid: 20d4881c6298d2c48846745089b71d93, type: 3}
-  pelikuva2: {fileID: 21300000, guid: de991be5605a9474ab78e2cc5611673b, type: 3}
+  pelikuva1: {fileID: 21300000, guid: be705761a33e4414e97c83fd63f60633, type: 3}
+  pelikuva2: {fileID: 21300000, guid: 553ad03382b5b3042bc8e63ac3ca4c4c, type: 3}
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
   pelikuva4: {fileID: 21300000, guid: c9a9fbcc99d83e4468728a36124b846c, type: 3}
   pelikuva5: {fileID: 0}

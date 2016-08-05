@@ -5,7 +5,7 @@ public class PuskaScript : MonoBehaviour {
 
     HiddenScript HS;
     bool puskaHeilui;
-    int i;
+    int i,a;
 
 	// Use this for initialization
 	void Start () {
@@ -28,19 +28,41 @@ public class PuskaScript : MonoBehaviour {
 
     void PuskaHeiluu()
     {
-        i++;
+       
+        a++;
+        
+        Debug.Log("a" + a);
+        if(a<20)
+        {
+            i++;
+            Debug.Log("i" + i);
 
-        if(puskaHeilui&&i>=20)
-        {
-            gameObject.transform.localScale += new Vector3(0.05f, 0.05f, 0);
-            i = 0;
-            puskaHeilui = false;
+            if (puskaHeilui && i >= 10)
+            {
+                gameObject.transform.localScale += new Vector3(0.05f, 0.05f, 0);
+                i = 0;
+                puskaHeilui = false;
+            }
+            else if (puskaHeilui == false && i >= 10)
+            {
+                gameObject.transform.localScale += new Vector3(-0.05f, -0.05f, 0);
+                i = 0;
+                puskaHeilui = true;
+            }
         }
-        else if(puskaHeilui == false && i>=20)
+        else if(a==80)
         {
-            gameObject.transform.localScale += new Vector3(-0.05f, -0.05f, 0);
-            i = 0;
-            puskaHeilui = true;
+            a = 0;
         }
+        else
+        {
+
+        }
+        
+
+
+        
+
+
     }
 }
