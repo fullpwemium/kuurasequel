@@ -108,7 +108,7 @@ public class BobPlayerScript : MonoBehaviour
 //        BobPlayer.transform.position = new Vector3(BobPlayer.transform.position.x, BobPlayer.transform.position.y, BobPlayer.transform.position.z);
 
         destination = gameObject.transform.position;
-
+        //aboveButtonScale();
         BobOnButton();
 
         Rakennus1 = GameObject.Find("memoryGame").GetComponent<Collider2D>();   //Viitataan luotuun tagiin
@@ -294,8 +294,10 @@ public class BobPlayerScript : MonoBehaviour
                     routeY++;
                 }
             }
-        
+
+
             runRoute(reittiX, reittiY);
+            aboveButtonScale();
             BobOnButton();
 
             yield return new WaitForSeconds(0.5f);
@@ -349,7 +351,7 @@ public class BobPlayerScript : MonoBehaviour
         Debug.Log(tileName);
         GameObject midWayButton = GameObject.Find("Tile" + midWayDestinationX + midWayDestinationY);
         destination.x = midWayButton.transform.position.x;
-        aboveButtonScale();
+        
         destination.y = midWayButton.transform.position.y;
         
         Debug.Log("lähdetään liikkeelle");
@@ -402,7 +404,7 @@ public class BobPlayerScript : MonoBehaviour
 
     public void aboveButtonScale()
     {
-        aboveButton = gameObject.transform.position.y * -0.2F;
+        aboveButton = gameObject.transform.position.y * -0.16F;
         Debug.Log("aboveButton = " + aboveButton);
     }
 
