@@ -478,7 +478,7 @@ PlayerSettings:
   WebGL::emscriptenArgs: 
   WebGL::template: APPLICATION:Default
   additionalIl2CppArgs::additionalIl2CppArgs: 
-  cloudProjectId: 0630832b-d7de-448a-844a-07862c38de4a
-  projectName: KuuraInTheGlobe
-  organizationId: jan-julin
+  cloudProjectId: 47585186-1dfb-4cce-8597-7fd1090c68a0
+  projectName: Kuura_in_the_globe 2016-07-12T09:03:04.683Z
+  organizationId: bellegamesltd
   cloudEnabled: 0
