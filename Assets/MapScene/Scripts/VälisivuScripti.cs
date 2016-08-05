@@ -20,7 +20,10 @@ public class VälisivuScripti : MonoBehaviour
 
     public GameObject kylttiKissa;
 
-    Vector3 kylttiKissaDestination, kylttiKissaStartPosition;
+    public GameObject kyltti1;
+    public GameObject kyltti2;
+
+    Vector3 kylttiKissaDestination, kylttiKissaStartPosition, kyltti1Destination, kyltti1StartPosition, kyltti2Destination, kyltti2StartPosition;
 
     int peliNumero;
     Text dialogi;
@@ -52,8 +55,15 @@ public class VälisivuScripti : MonoBehaviour
         Debug.Log(Screen.width);
         destination = tausta.transform.position;
 
-        kylttiKissa.transform.position = new Vector3(kylttiKissa.transform.position.x,kylttiKissa.transform.position.y-Screen.height/30,kylttiKissa.transform.position.z);
+        kylttiKissa.transform.position = new Vector3(kylttiKissa.transform.position.x, kylttiKissa.transform.position.y - Screen.height / 30, kylttiKissa.transform.position.z);
         kylttiKissaDestination = kylttiKissa.transform.position;
+
+        kyltti1.transform.position = new Vector3(kyltti1.transform.position.x, kyltti1.transform.position.y - Screen.height / 30, kyltti1.transform.position.z);
+        kyltti1Destination = kyltti1.transform.position;
+
+        kyltti2.transform.position = new Vector3(kyltti2.transform.position.x, kyltti2.transform.position.y - Screen.height / 30, kyltti2.transform.position.z);
+        kyltti2Destination = kyltti2.transform.position;
+
         //button = GetComponent<Button>();
         //button.onClick.AddListener(buttonpressed);
         peliKuva = GameObject.Find("PeliKuva").GetComponent<Image>();
@@ -108,7 +118,11 @@ public class VälisivuScripti : MonoBehaviour
             peliKuva.sprite = pelikuva5;
         }
 
-        kylttiKissaDestination = new Vector3(kylttiKissa.transform.position.x, kylttiKissa.transform.position.y+Screen.height/30, kylttiKissa.transform.position.z);
+        kylttiKissaDestination = new Vector3(kylttiKissa.transform.position.x, kylttiKissa.transform.position.y + Screen.height / 30, kylttiKissa.transform.position.z);
+
+        kyltti1Destination = new Vector3(kyltti1.transform.position.x, kyltti1.transform.position.y + Screen.height / 30, kyltti1.transform.position.z);
+
+        kyltti2Destination = new Vector3(kyltti2.transform.position.x, kyltti2.transform.position.y + Screen.height / 30, kyltti2.transform.position.z);
 
         BobPlayer.SetActive(false);
 
@@ -144,7 +158,10 @@ public class VälisivuScripti : MonoBehaviour
         moving = true;
         lerpStartTime = Time.time;
         startPosition = tausta.transform.position;
+
         kylttiKissaStartPosition = kylttiKissa.transform.position;
+        kyltti1StartPosition = kyltti1.transform.position;
+        kyltti2StartPosition = kyltti2.transform.position;
     }
 
     void Update()
@@ -162,6 +179,9 @@ public class VälisivuScripti : MonoBehaviour
             Debug.Log(percentageComplete);
 
             kylttiKissa.transform.position = Vector3.Lerp(kylttiKissaStartPosition, kylttiKissaDestination, percentageComplete);
+            kyltti1.transform.position = Vector3.Lerp(kyltti1StartPosition, kyltti1Destination, percentageComplete);
+            kyltti2.transform.position = Vector3.Lerp(kyltti2StartPosition, kyltti2Destination, percentageComplete);
+
             tausta.transform.position = Vector3.Lerp(startPosition, destination, percentageComplete);
             //Debug.Log(tausta.transform.position);
             if (percentageComplete >= 1.0f)

@@ -563,6 +563,8 @@ MonoBehaviour:
   button5: {fileID: 0}
   tausta: {fileID: 1516277806}
   kylttiKissa: {fileID: 383308609}
+  kyltti1: {fileID: 0}
+  kyltti2: {fileID: 0}
   pelikuva1: {fileID: 21300000, guid: 20d4881c6298d2c48846745089b71d93, type: 3}
   pelikuva2: {fileID: 21300000, guid: de991be5605a9474ab78e2cc5611673b, type: 3}
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
@@ -795,14 +797,14 @@ RectTransform:
   m_GameObject: {fileID: 333955145}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 25.376047}
-  m_LocalScale: {x: 0.076203965, y: 0.076203965, z: 0.076203965}
+  m_LocalScale: {x: 0.15978868, y: 0.15978871, z: 0.15978871}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 409989510}
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.246063, y: 9.131363}
+  m_AnchoredPosition: {x: 86.2, y: 37.5}
   m_SizeDelta: {x: 148, y: 219}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333955147
@@ -865,7 +867,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 78aa9a1e91d752142aa02a33e2e48160, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7459cd7f92227de4f87ef247d2704bad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1178,11 +1180,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 321.84137}
   m_LocalScale: {x: 2.1811655, y: 2.1839523, z: 10.919684}
   m_LocalEulerAnglesHint: {x: 7.358, y: 2.812, z: 0.5604}
-  m_Children:
-  - {fileID: 435873605}
-  - {fileID: 1617423967}
+  m_Children: []
   m_Father: {fileID: 1393252768}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -598.75134, y: -411.44897}
@@ -1240,6 +1240,8 @@ MonoBehaviour:
   button5: {fileID: 0}
   tausta: {fileID: 383308609}
   kylttiKissa: {fileID: 0}
+  kyltti1: {fileID: 0}
+  kyltti2: {fileID: 0}
   pelikuva1: {fileID: 21300000, guid: 20d4881c6298d2c48846745089b71d93, type: 3}
   pelikuva2: {fileID: 21300000, guid: de991be5605a9474ab78e2cc5611673b, type: 3}
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
@@ -1397,17 +1399,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 435873604}
-  m_LocalRotation: {x: -0.009048834, y: 0.024301838, z: 0.18749891, w: 0.98192245}
-  m_LocalPosition: {x: 0, y: 0, z: -6.5}
-  m_LocalScale: {x: 1.4968643, y: 1.49991, z: 0.22300215}
-  m_LocalEulerAnglesHint: {x: -1.5406, y: 2.5418, z: 21.586899}
+  m_LocalRotation: {x: 0.058529183, y: 0.035899915, z: 0.19208048, w: 0.97897434}
+  m_LocalPosition: {x: 0, y: 0, z: 265.2527}
+  m_LocalScale: {x: 3.299653, y: 3.276146, z: 2.4298759}
+  m_LocalEulerAnglesHint: {x: 5.7855997, y: 5.3506, z: 22.4721}
   m_Children:
   - {fileID: 1433446948}
-  m_Father: {fileID: 383308610}
-  m_RootOrder: 0
+  m_Father: {fileID: 1393252768}
+  m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -102, y: 11}
+  m_AnchoredPosition: {x: -824.50256, y: -380.69244}
   m_SizeDelta: {x: 99.8, y: 81.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435873606
@@ -2888,6 +2890,8 @@ MonoBehaviour:
   button5: {fileID: 0}
   tausta: {fileID: 1516277806}
   kylttiKissa: {fileID: 383308609}
+  kyltti1: {fileID: 435873604}
+  kyltti2: {fileID: 1617423966}
   pelikuva1: {fileID: 21300000, guid: 20d4881c6298d2c48846745089b71d93, type: 3}
   pelikuva2: {fileID: 21300000, guid: de991be5605a9474ab78e2cc5611673b, type: 3}
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
@@ -3448,6 +3452,8 @@ MonoBehaviour:
   button5: {fileID: 0}
   tausta: {fileID: 1516277806}
   kylttiKissa: {fileID: 383308609}
+  kyltti1: {fileID: 0}
+  kyltti2: {fileID: 0}
   pelikuva1: {fileID: 21300000, guid: 20d4881c6298d2c48846745089b71d93, type: 3}
   pelikuva2: {fileID: 21300000, guid: de991be5605a9474ab78e2cc5611673b, type: 3}
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
@@ -3744,6 +3750,8 @@ RectTransform:
   - {fileID: 593276351}
   - {fileID: 337640421}
   - {fileID: 1516277807}
+  - {fileID: 435873605}
+  - {fileID: 1617423967}
   - {fileID: 383308610}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -4544,17 +4552,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617423966}
-  m_LocalRotation: {x: 0.01262637, y: -0.033909895, z: -0.26162905, w: 0.96449}
-  m_LocalPosition: {x: 0, y: 0, z: -6.8}
-  m_LocalScale: {x: 1.4958506, y: 1.4978731, z: 0.22524582}
-  m_LocalEulerAnglesHint: {x: 0.3789, y: -4.13, z: -30.367498}
+  m_LocalRotation: {x: 0.06836867, y: 0.006339956, z: -0.26030767, w: 0.96308124}
+  m_LocalPosition: {x: 0, y: 0, z: 238.46762}
+  m_LocalScale: {x: 3.3089643, y: 3.2934155, z: 2.4493182}
+  m_LocalEulerAnglesHint: {x: 7.758, y: -1.3521999, z: -30.3414}
   m_Children:
   - {fileID: 1127999254}
-  m_Father: {fileID: 383308610}
-  m_RootOrder: 1
+  m_Father: {fileID: 1393252768}
+  m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 113, y: 7}
+  m_AnchoredPosition: {x: -356.2392, y: -384.38754}
   m_SizeDelta: {x: 104, y: 96.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617423968
@@ -4938,6 +4946,8 @@ MonoBehaviour:
   button5: {fileID: 0}
   tausta: {fileID: 1516277806}
   kylttiKissa: {fileID: 383308609}
+  kyltti1: {fileID: 0}
+  kyltti2: {fileID: 0}
   pelikuva1: {fileID: 21300000, guid: 20d4881c6298d2c48846745089b71d93, type: 3}
   pelikuva2: {fileID: 21300000, guid: de991be5605a9474ab78e2cc5611673b, type: 3}
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
@@ -5074,6 +5084,8 @@ MonoBehaviour:
   button5: {fileID: 0}
   tausta: {fileID: 1516277806}
   kylttiKissa: {fileID: 383308609}
+  kyltti1: {fileID: 0}
+  kyltti2: {fileID: 0}
   pelikuva1: {fileID: 21300000, guid: 20d4881c6298d2c48846745089b71d93, type: 3}
   pelikuva2: {fileID: 21300000, guid: de991be5605a9474ab78e2cc5611673b, type: 3}
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}

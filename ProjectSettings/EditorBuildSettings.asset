@@ -10,6 +10,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MapScene/Map2.unity
   - enabled: 1
+    path: Assets/Theater/Theater.unity
+  - enabled: 1
     path: Assets/Puzzle Scenes/GameScene.unity
   - enabled: 1
     path: Assets/Bob_apartment/Bob_apartment.unity
