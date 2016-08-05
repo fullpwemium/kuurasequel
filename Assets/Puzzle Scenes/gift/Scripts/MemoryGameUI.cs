@@ -84,7 +84,7 @@ public class MemoryGameUI : MonoBehaviour
             if (percentageComplete >= 1.0f)
             {
                 moving = false;
-                Time.timeScale = 0f;
+//                Time.timeScale = 0f;
             }
         }
 
