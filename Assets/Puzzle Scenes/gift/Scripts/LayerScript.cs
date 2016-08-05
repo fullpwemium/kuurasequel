@@ -65,10 +65,13 @@ public class LayerScript : MonoBehaviour
     bool lmbDisabled = false; //määritetään klikkausten laskuri
     int counter = 0;
 
+    private MemoryGameUI sceneUI;
+
     SpriteRenderer sr;
 
     void Start()
     {
+        sceneUI = GameObject.Find("Canvas").GetComponent<MemoryGameUI>();
         GlobalManager.MemoryGameLoad(); //Ladataan aiempi aika
         Layers(); //käynnistää sovelluksen välittömästi ilman buttonin painamista
         CountUpTimer.StartGame(); //Määritellään aloittamaan laskuri alusta.
@@ -1214,6 +1217,8 @@ public class LayerScript : MonoBehaviour
         Destroy(GameObject.Find("Pakastinallaskansi"));
         Debug.Log("LayerScript: You won");
         youWon.SetActive (true);
+
+        sceneUI.TextSwitcher(true);
 //        Yeti.SetActive(false);
 
         yield return new WaitForSeconds (2f);
