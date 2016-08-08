@@ -27,7 +27,6 @@ public class WMKyltitScript : MonoBehaviour {
             {
                 SceneManager.LoadScene("LevelMap");    //Ladataan Scene
                 BobPlayerScript.nearMemoryGame = false;
-
             }
             else if (BobPlayerScript.nearCatchTheCat)
             {
@@ -36,6 +35,7 @@ public class WMKyltitScript : MonoBehaviour {
             }
             else if (BobPlayerScript.nearLabyrinth)
             {
+                Debug.Log("bananaaa");
                 SceneManager.LoadScene("LabyLevelSelect");
                 BobPlayerScript.nearLabyrinth = false;
             }

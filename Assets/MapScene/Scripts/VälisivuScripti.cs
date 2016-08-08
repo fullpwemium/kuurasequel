@@ -85,6 +85,7 @@ public class VälisivuScripti : MonoBehaviour
         if (BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 3)
         {
             peliNumero = 1;
+            BobPlayerScript.nearMemoryGame = true;
             title.text = "Mister Mysterious Mystic Cards";
             dialogi.text = "Hope you have a good memory!";
             peliKuva.sprite = pelikuva1;
@@ -92,6 +93,7 @@ public class VälisivuScripti : MonoBehaviour
         else if(BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 2)
         {
             peliNumero = 2;
+            BobPlayerScript.nearLabyrinth = true;
             title.text = "Winter Hedge Maze";
             dialogi.text = "-	Don't let Swipper get you!\n- Watch the floor...";
             peliKuva.sprite = pelikuva2;
@@ -99,6 +101,7 @@ public class VälisivuScripti : MonoBehaviour
         else if (BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 1)
         {
             peliNumero = 3;
+            BobPlayerScript.nearCatchTheCat = true;
             title.text = "Bubble Warehouse";
             dialogi.text = "-	What a nasty snowflake!\n- Get cake to grow your bowl!";
             peliKuva.sprite = pelikuva3;
@@ -106,6 +109,7 @@ public class VälisivuScripti : MonoBehaviour
         else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 3)
         {
             peliNumero = 4;
+            BobPlayerScript.Runner = true;
             title.text = "Winter Forest Marathon";
             dialogi.text = "- Make all the coins come to you with magnet!\n-Don't forget you can JUMP again while midair!";
             peliKuva.sprite = pelikuva4;
