@@ -126,62 +126,83 @@ public class LevelScript : MonoBehaviour
 
     void CheckGame()
     {
+        if(BobLevelScript.StandingLevelNumberX == levelButtonNumber && BobLevelScript.StandingLevelNumberY == levelButtonNumber2)
+        {
+            if (gameNumber == 1)
+            {
+                if (levelButtonNumber == 1)    //Katsotaan onko Bobin seisomalla buttonilla annettu arvo
+                {
+                    BobLevelScript.MemoryGameLevel1 = true;
+                }
+                else if (levelButtonNumber == 2)
+                {
+                    BobLevelScript.MemoryGameLevel2 = true;
+                }
+                else if (levelButtonNumber == 3)
+                {
+                    BobLevelScript.MemoryGameLevel3 = true;
+                }
+                else if (levelButtonNumber == 4)
+                {
+                    BobLevelScript.MemoryGameLevel4 = true;
+                }
+                else if (levelButtonNumber == 5)
+                {
+                    BobLevelScript.MemoryGameLevel5 = true;
+                }
+                else if (levelButtonNumber == 6)
+                {
+                    BobLevelScript.MemoryGameLevel6 = true;
+                }
+                else if (levelButtonNumber == 7)
+                {
+                    BobLevelScript.MemoryGameLevel7 = true;
+                }
+                else if (levelButtonNumber == 8)
+                {
+                    BobLevelScript.MemoryGameLevel8 = true;
+                }
+                else if (levelButtonNumber == 9)
+                {
+                    BobLevelScript.MemoryGameLevel9 = true;
+                }
+                else if (levelButtonNumber == 10)
+                {
+                    BobLevelScript.MemoryGameLevel10 = true;
+                }
+
+                else
+                {
+                    BobLevelScript.MemoryGameLevel1 = false;
+                    BobLevelScript.MemoryGameLevel2 = true;
+                    BobLevelScript.MemoryGameLevel3 = true;
+                    BobLevelScript.MemoryGameLevel4 = true;
+                    BobLevelScript.MemoryGameLevel5 = true;
+                    BobLevelScript.MemoryGameLevel6 = true;
+                    BobLevelScript.MemoryGameLevel7 = true;
+                    BobLevelScript.MemoryGameLevel8 = true;
+                    BobLevelScript.MemoryGameLevel9 = true;
+                    BobLevelScript.MemoryGameLevel10 = true;
+                }
+            }
+            else if(gameNumber == 2)
+            {
+                
+                GameManager.manager.LoadLevel(levelButtonNumber);
+            }
+            else if(gameNumber == 3)
+            {
+
+            }
+            else if(gameNumber == 4)
+            {
+
+            }
+        }
+
         if (BobLevelScript.StandingLevelNumberX == levelButtonNumber && BobLevelScript.StandingLevelNumberY == levelButtonNumber2)
         {
-            if (gameNumber == 1)    //Katsotaan onko Bobin seisomalla buttonilla annettu arvo
-            {
-                BobLevelScript.MemoryGameLevel1 = true;
-            }
-            else if (gameNumber == 2)
-            {
-                BobLevelScript.MemoryGameLevel2 = true;
-            }
-            else if (gameNumber == 3)
-            {
-                BobLevelScript.MemoryGameLevel3 = true;
-            }
-            else if (gameNumber == 4)
-            {
-                BobLevelScript.MemoryGameLevel4 = true;
-            }
-            else if (gameNumber == 5)
-            {
-                BobLevelScript.MemoryGameLevel5 = true;
-            }
-            else if (gameNumber == 6)
-            {
-                BobLevelScript.MemoryGameLevel6 = true;
-            }
-            else if (gameNumber == 7)
-            {
-                BobLevelScript.MemoryGameLevel7 = true;
-            }
-            else if (gameNumber == 8)
-            {
-                BobLevelScript.MemoryGameLevel8 = true;
-            }
-            else if (gameNumber == 9)
-            {
-                BobLevelScript.MemoryGameLevel9 = true;
-            }
-            else if (gameNumber == 10)
-            {
-                BobLevelScript.MemoryGameLevel10 = true;
-            }
-
-            else
-            {
-                BobLevelScript.MemoryGameLevel1 = false;
-                BobLevelScript.MemoryGameLevel2 = true;
-                BobLevelScript.MemoryGameLevel3 = true;
-                BobLevelScript.MemoryGameLevel4 = true;
-                BobLevelScript.MemoryGameLevel5 = true;
-                BobLevelScript.MemoryGameLevel6 = true;
-                BobLevelScript.MemoryGameLevel7 = true;
-                BobLevelScript.MemoryGameLevel8 = true;
-                BobLevelScript.MemoryGameLevel9 = true;
-                BobLevelScript.MemoryGameLevel10 = true;
-            }
+            
         }
     }
 }

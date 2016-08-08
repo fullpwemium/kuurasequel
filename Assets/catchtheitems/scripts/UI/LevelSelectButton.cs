@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelSelectButton : MonoBehaviour {
 
@@ -19,6 +20,6 @@ public class LevelSelectButton : MonoBehaviour {
 
 	void LevelSelect()
 	{
-		ShelfGameManager.manager.GoToMenu ();
+        SceneManager.LoadScene("CatchTheCatLevelSelect");
 	}
 }

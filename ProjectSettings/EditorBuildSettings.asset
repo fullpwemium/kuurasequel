@@ -75,3 +75,5 @@ EditorBuildSettings:
     path: Assets/Puzzle Scenes/Level10.unity
   - enabled: 1
     path: Assets/Theater/Theater.unity
+  - enabled: 1
+    path: Assets/MapScene/CatchTheCatLevelSelect.unity

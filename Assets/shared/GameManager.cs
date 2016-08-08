@@ -97,9 +97,10 @@ public class GameManager : MonoBehaviour
             aikamuutettu = false;
             currentLevel = levelToLoad;
             Debug.Log(currentLevel);
-            SceneManager.LoadScene(levelIndex[0]);
+
+            SceneManager.LoadScene("ShelfLevel1");
         //}
-            if (currentLevel == 0)
+        if (currentLevel == 0)
             {
                 catSpeedMultiplier = 1;
                 spawnSpeedMultiplier = 1.5f;

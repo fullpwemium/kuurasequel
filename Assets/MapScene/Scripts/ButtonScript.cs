@@ -82,7 +82,7 @@ public class ButtonScript : MonoBehaviour
         }
         else if (BobPlayerScript.nearCatchTheCat)
         {
-            SceneManager.LoadScene("ShelfLevelSelect");
+            SceneManager.LoadScene("CatchTheCatLevelSelect");
             BobPlayerScript.nearCatchTheCat = false;
         }
         else if(BobPlayerScript.nearLabyrinth)
