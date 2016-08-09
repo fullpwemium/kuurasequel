@@ -66,18 +66,20 @@ public class RunnerManager : MonoBehaviour
          {
              manager = this;
              DontDestroyOnLoad(manager);
+            Physics2D.gravity = new Vector2(0, -30);
 
              currentState = GameState.Pause;
          }
          else if(manager != this && manager.gameObject.name != "GameManager")
          {
              Destroy(manager);
-            
-         }
-           /*
-      manager = this;
-      InitialPanel();
-       */ 
+
+
+        }
+        /*
+   manager = this;
+   InitialPanel();
+    */
     }
     void Update()
     {
