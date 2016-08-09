@@ -5978,6 +5978,30 @@ Prefab:
       propertyPath: m_Color.a
       value: 0.472
       objectReference: {fileID: 0}
+    - target: {fileID: 6811666, guid: 4ba090023f3ce4b9a854258182ec68cf, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6833222, guid: 4ba090023f3ce4b9a854258182ec68cf, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100672, guid: 4ba090023f3ce4b9a854258182ec68cf, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 106138, guid: 4ba090023f3ce4b9a854258182ec68cf, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 193370, guid: 4ba090023f3ce4b9a854258182ec68cf, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 101090, guid: 4ba090023f3ce4b9a854258182ec68cf, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ba090023f3ce4b9a854258182ec68cf, type: 2}
   m_IsPrefabParent: 0

@@ -245,4 +245,5 @@ public class CatControl : MonoBehaviour {
 			sprite.flipX = enabled;
 		}
 	}
+    
 }
