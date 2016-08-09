@@ -47,12 +47,17 @@ public class WMKyltitScript : MonoBehaviour {
             }
             else if (BobPlayerScript.nearBobApartment)
             {
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene("Bob_apartment");
                 BobPlayerScript.nearBobApartment = false;
             }
         }
         else if (nappi == 2)
         {
+            BobPlayerScript.nearMemoryGame = false;
+            BobPlayerScript.nearBobApartment = false;
+            BobPlayerScript.Runner = false;
+            BobPlayerScript.nearLabyrinth = false;
+            BobPlayerScript.nearCatchTheCat = false;
             SceneManager.LoadScene("Map2");    //Ladataan Scene
 
         }
