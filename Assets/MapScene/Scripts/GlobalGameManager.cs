@@ -199,4 +199,14 @@ public class GlobalGameManager : MonoBehaviour
             }
         }
     }
+
+    public void RunnerLoad()
+    {
+
+    }
+
+    public void RunnerSave()
+    {
+
+    }
 }
