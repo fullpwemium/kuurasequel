@@ -138,6 +138,7 @@
     <Compile Include="Assets\Puzzle Scenes\gift\Scripts\GlobalManager.cs" />
     <Compile Include="Assets\Puzzle Scenes\gift\Scripts\LayerScript.cs" />
     <Compile Include="Assets\Puzzle Scenes\gift\Scripts\Letter.cs" />
+    <Compile Include="Assets\Puzzle Scenes\gift\Scripts\MemoryGameUI.cs" />
     <Compile Include="Assets\Puzzle Scenes\gift\Scripts\Rotator.cs" />
     <Compile Include="Assets\Puzzle Scenes\gift\Scripts\startscript.cs" />
     <Compile Include="Assets\UnityAdsButton.cs" />
