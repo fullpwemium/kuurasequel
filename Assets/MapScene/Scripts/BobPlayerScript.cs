@@ -75,7 +75,6 @@ public class BobPlayerScript : MonoBehaviour
 
         startDestinationX = PlayerPrefs.GetInt("Bobin paikka X");
         startDestinationY = PlayerPrefs.GetInt("Bobin paikka Y");
-        Debug.Log(startDestinationX + " " + startDestinationY);
 
         StandingButtonNumberX = PlayerPrefs.GetInt("Bobin paikka X");
         StandingButtonNumberY = PlayerPrefs.GetInt("Bobin paikka Y");
@@ -97,7 +96,6 @@ public class BobPlayerScript : MonoBehaviour
 
         gameObject.transform.position = kierto;
 
-        Debug.Log("gameObject" + gameObject.transform.position + "startButton" + startButton.transform.position);
 
         memoryGame = GameObject.Find("memoryGame");     //Kohde johon kävellään
 
@@ -114,9 +112,7 @@ public class BobPlayerScript : MonoBehaviour
         Rakennus1 = GameObject.Find("memoryGame").GetComponent<Collider2D>();   //Viitataan luotuun tagiin
 
         //StandingButtonNumber = 0;
-
-        Debug.Log("StandingButtonNumber = " + StandingButtonNumberX);
-        Debug.Log("StandingButtonNumber2 = " + StandingButtonNumberY);
+        
 
 
         //Button1 = GameObject.Find("Tile").GetComponent<Button>();
@@ -145,7 +141,6 @@ public class BobPlayerScript : MonoBehaviour
     }
     else
     {
-        Debug.Log("Could not Open the file: " + file + " for reading.");
         return 5;
     }
     }
@@ -405,7 +400,6 @@ public class BobPlayerScript : MonoBehaviour
     public void aboveButtonScale()
     {
         aboveButton = gameObject.transform.position.y * -0.16F;
-        Debug.Log("aboveButton = " + aboveButton);
     }
 
     //void OnTriggerEnter2D(Collider2D Col)
