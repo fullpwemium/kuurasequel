@@ -126,6 +126,7 @@
     <Compile Include="Assets\MapScene\Scripts\MemoryGameLevelSelecterLimitter.cs" />
     <Compile Include="Assets\MapScene\Scripts\PuhekuplaScript.cs" />
     <Compile Include="Assets\MapScene\Scripts\PuskaScript.cs" />
+    <Compile Include="Assets\MapScene\Scripts\RunnerLevelSelectLimitter.cs" />
     <Compile Include="Assets\MapScene\Scripts\VälisivuScripti.cs" />
     <Compile Include="Assets\MapScene\Scripts\WMKyltitScript.cs" />
     <Compile Include="Assets\MapScene\Scripts\WMLevelSelectLimiter.cs" />
