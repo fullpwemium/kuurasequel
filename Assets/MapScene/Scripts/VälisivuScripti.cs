@@ -48,11 +48,22 @@ public class VälisivuScripti : MonoBehaviour
         button2.onClick.AddListener(buttonpressed);
         button3.onClick.AddListener(buttonpressed);
         button4.onClick.AddListener(buttonpressed);
-       // button5.onClick.AddListener(buttonpressed);
+        // button5.onClick.AddListener(buttonpressed);
 
         //tausta = GameObject.Find("Image");
-        tausta.transform.position = new Vector3(tausta.transform.position.x + Screen.width/30, tausta.transform.position.y, tausta.transform.position.z);
-        Debug.Log(Screen.width);
+
+        Debug.Log("Screen width: "+Screen.width);
+        Debug.Log("Image position: " + tausta.transform.localPosition);
+
+
+        tausta.transform.localPosition = new Vector3(tausta.transform.position.x + 2300, tausta.transform.localPosition.y, tausta.transform.position.z);
+            
+
+
+        Debug.Log("Image position: " + tausta.transform.localPosition);
+
+
+
         destination = tausta.transform.position;
 
         kylttiKissa.transform.position = new Vector3(kylttiKissa.transform.position.x, kylttiKissa.transform.position.y - Screen.height / 30, kylttiKissa.transform.position.z);
@@ -138,7 +149,7 @@ public class VälisivuScripti : MonoBehaviour
             }
             else if (suunta == 1)
             {
-                destination = new Vector3(tausta.transform.position.x - Screen.width/30, tausta.transform.position.y, tausta.transform.position.z);   
+                destination = new Vector3(.7f, tausta.transform.position.y, tausta.transform.position.z);
             }
             else if (suunta == 2)
             {
