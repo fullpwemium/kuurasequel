@@ -22,11 +22,13 @@ public class LabManager : GameManager
     }
     public override void PlayerWin()
     {
-		if (manager.completedLevels.Contains(currentLevel) == false)
+
+
+		/*if (manager.completedLevels.Contains(currentLevel) == false)
 		{
 			completedLevels.Add(currentLevel);
 		}
-
+*/
         base.PlayerWin();
     }
     public override void PlayerLose()

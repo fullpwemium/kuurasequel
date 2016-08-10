@@ -31,9 +31,11 @@ public class PuskaScript : MonoBehaviour {
        
         a++;
         
+        Debug.Log("a" + a);
         if(a<20)
         {
             i++;
+            Debug.Log("i" + i);
 
             if (puskaHeilui && i >= 10)
             {
