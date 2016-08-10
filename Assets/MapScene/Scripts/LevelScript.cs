@@ -192,7 +192,7 @@ public class LevelScript : MonoBehaviour
             }
             else if(gameNumber == 3)
             {
-
+                RunnerManager.manager.LoadLevel(levelButtonNumber);
             }
             else if(gameNumber == 4)
             {
