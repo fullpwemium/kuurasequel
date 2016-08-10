@@ -673,6 +673,7 @@ GameObject:
   - 114: {fileID: 282237850}
   - 114: {fileID: 282237849}
   - 114: {fileID: 282237848}
+  - 114: {fileID: 282237853}
   m_Layer: 5
   m_Name: Level21
   m_TagString: Untagged
@@ -686,7 +687,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282237847}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e295d71fa68743c582a3c5f5a58e667, type: 3}
   m_Name: 
@@ -784,6 +785,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282237847}
+--- !u!114 &282237853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282237847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonLevel: 2
 --- !u!1 &284670966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1295,7 @@ GameObject:
   - 114: {fileID: 465714608}
   - 114: {fileID: 465714607}
   - 114: {fileID: 465714606}
+  - 114: {fileID: 465714611}
   m_Layer: 5
   m_Name: Level11
   m_TagString: Untagged
@@ -1295,7 +1309,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 465714605}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e295d71fa68743c582a3c5f5a58e667, type: 3}
   m_Name: 
@@ -1393,6 +1407,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 465714605}
+--- !u!114 &465714611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 465714605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonLevel: 1
 --- !u!1 &497791669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,6 +2708,7 @@ GameObject:
   - 114: {fileID: 895449004}
   - 114: {fileID: 895449003}
   - 114: {fileID: 895449007}
+  - 114: {fileID: 895449008}
   m_Layer: 5
   m_Name: Level01
   m_TagString: Untagged
@@ -2787,9 +2814,21 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 895449002}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e295d71fa68743c582a3c5f5a58e667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonLevel: 0
+--- !u!114 &895449008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 895449002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonLevel: 0
