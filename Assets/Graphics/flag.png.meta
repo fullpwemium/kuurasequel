@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: b4cadd18301f5e14f900f98b00c84ff8
+timeCreated: 1470816766
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: flag_0
+    21300002: flag_1
+    21300004: flag_2
+    21300006: flag_3
+    21300008: flag_4
+    21300010: flag_5
+    21300012: flag_6
+    21300014: flag_7
+    21300016: flag_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: flag_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 453
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -98, y: 93.333336}
+        - {x: -101, y: 92.333336}
+        - {x: -101, y: -92.666664}
+        - {x: -35, y: -92.666664}
+        - {x: 101, y: 50.333336}
+        - {x: 101, y: 93.333336}
+    - name: flag_1
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 4
+        width: 454
+        height: 413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87.16667, y: 89.27778}
+        - {x: 30.166672, y: 93.27778}
+        - {x: -100.83333, y: 93.27778}
+        - {x: -100.83333, y: -91.72222}
+        - {x: -53.83333, y: -91.72222}
+        - {x: 102.16667, y: 55.27778}
+        - {x: 102.16667, y: 75.27778}
+    - name: flag_2
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 3
+        width: 463
+        height: 414
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -102.83334, y: 92.833336}
+        - {x: -102.83334, y: -88.166664}
+        - {x: -101.83334, y: -91.166664}
+        - {x: -96.83334, y: -92.166664}
+        - {x: 103.16666, y: -92.166664}
+        - {x: 104.16666, y: -85.166664}
+        - {x: 104.16666, y: 92.833336}
+    - name: flag_3
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 4
+        width: 471
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 92.22223, y: 92.27778}
+        - {x: -104.77777, y: 92.27778}
+        - {x: -104.77777, y: -90.72222}
+        - {x: -54.77777, y: -90.72222}
+        - {x: 101.22223, y: 43.27778}
+        - {x: 105.22223, y: 49.27778}
+        - {x: 105.22223, y: 77.27778}
+    - name: flag_4
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 4
+        width: 489
+        height: 417
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.333313, y: -92.72222}
+        - {x: 104.66669, y: 13.277779}
+        - {x: 104.66669, y: 84.27778}
+        - {x: 95.66669, y: 94.27778}
+        - {x: -108.33331, y: 94.27778}
+        - {x: -108.33331, y: -92.72222}
+    - name: flag_5
+      rect:
+        serializedVersion: 2
+        x: 2559
+        y: 6
+        width: 477
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 106.833374, y: 82.666664}
+        - {x: 81.833374, y: 95.666664}
+        - {x: -106.166626, y: 95.666664}
+        - {x: -106.166626, y: -94.333336}
+        - {x: -86.166626, y: -94.333336}
+        - {x: -80.166626, y: -87.333336}
+        - {x: 101.833374, y: 39.666664}
+        - {x: 106.833374, y: 43.666664}
+    - name: flag_6
+      rect:
+        serializedVersion: 2
+        x: 3067
+        y: 6
+        width: 472
+        height: 409
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -104.888916, y: 92.166664}
+        - {x: -104.888916, y: -90.833336}
+        - {x: -27.888916, y: -90.833336}
+        - {x: 105.111084, y: 37.166664}
+        - {x: 105.111084, y: 92.166664}
+    - name: flag_7
+      rect:
+        serializedVersion: 2
+        x: 3583
+        y: 6
+        width: 465
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.444458, y: 93.666664}
+        - {x: -103.55554, y: 93.666664}
+        - {x: -103.55554, y: -92.333336}
+        - {x: -44.555542, y: -92.333336}
+        - {x: 104.44446, y: 33.666664}
+        - {x: 104.44446, y: 77.666664}
+        - {x: 46.444458, y: 87.666664}
+    - name: flag_8
+      rect:
+        serializedVersion: 2
+        x: 4094
+        y: 3
+        width: 461
+        height: 422
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -59.444458, y: -93.666664}
+        - {x: 103.55554, y: -14.666664}
+        - {x: 103.55554, y: 82.333336}
+        - {x: 44.555542, y: 94.333336}
+        - {x: -102.44446, y: 94.333336}
+        - {x: -102.44446, y: -93.666664}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
