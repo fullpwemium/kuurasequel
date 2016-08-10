@@ -70,7 +70,7 @@ public class Collector : MonoBehaviour
 */
         if (tag == "Kisse")
         {
-			//Destroy(GameObject.FindWithTag("Ending Door"));
+			Destroy(GameObject.FindWithTag("Ending Door"));
 			Destroy(col.gameObject);
             hasKisse = true;
             UIhandler.handler.showCat();
