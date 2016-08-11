@@ -121,7 +121,7 @@ public class BobLevelScript : MonoBehaviour
 
         BobOnButton();
 
-        Kenttä = GameObject.Find("memoryGame").GetComponent<Collider2D>();   //Viitataan luotuun tagiin
+        //Kenttä = GameObject.Find("memoryGame").GetComponent<Collider2D>();   //Viitataan luotuun tagiin
 
         //StandingButtonNumber = 0;
 
