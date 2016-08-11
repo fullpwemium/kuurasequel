@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelSelectButton : MonoBehaviour {
 
 	Button lvlSelect;
+    public string levelName;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,6 @@ public class LevelSelectButton : MonoBehaviour {
 
 	void LevelSelect()
 	{
-        SceneManager.LoadScene("CatchTheCatLevelSelect");
+        SceneManager.LoadScene(levelName);
 	}
 }
