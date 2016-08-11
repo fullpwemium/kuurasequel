@@ -5574,7 +5574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelIndex: 070000000800000009000000
-  completedLevels: 000000000100000002000000
+  completedLevels: 
   levelSelectScene: 35
   thunderButton: {fileID: 0}
   snowButton: {fileID: 0}

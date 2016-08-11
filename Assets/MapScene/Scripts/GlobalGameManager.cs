@@ -14,9 +14,13 @@ public class GlobalGameManager : MonoBehaviour
 
     int[] MemoryGameStars;
 
+    int[] RunnerStars;
+
     List<int> memoryGamecompletedLevels;
 
     List<int> MemoryGamecompletedLevels = new List<int>();
+
+    List<int> RunnercompletedLevels = new List<int>();
 
     //Pelienomat
 
@@ -161,13 +165,10 @@ public class GlobalGameManager : MonoBehaviour
     {
         MemoryGameStars = GameManager.levelStars;
         MemoryGamecompletedLevels = MemoryGameLevelSelecterLimitter.completedLevels;
-        MemoryGamecompletedLevels.Add(1);
-        MemoryGamecompletedLevels.Add(2);
-
 
         for (int i = 0; i <= 100; i++)
         {
-            PlayerPrefs.SetInt("stars" + i, MemoryGameStars[i]);
+            PlayerPrefs.SetInt("memorystars" + i, MemoryGameStars[i]);
         }
         for (int i = 0; i <= 20; i++)
         {
@@ -183,15 +184,15 @@ public class GlobalGameManager : MonoBehaviour
     {
         for (int i = 0; i <= 100; i++)
         {
-            GameManager.levelStars[i] = PlayerPrefs.GetInt("stars" + i);
+            GameManager.levelStars[i] = PlayerPrefs.GetInt("memorystars" + i);
         }
         for (int i = 0; i <= 5; i++)
         {
 
-            MemoryGamecompletedLevels.Add(PlayerPrefs.GetInt("levels" + i));
+            MemoryGamecompletedLevels.Add(PlayerPrefs.GetInt("memorylevels" + i));
 
-            MemoryGameLevelSelecterLimitter.completedLevels.Add(i);
-            Debug.Log((MemoryGameLevelSelecterLimitter.completedLevels));
+            //MemoryGameLevelSelecterLimitter.completedLevels.Add(i);
+            //Debug.Log((MemoryGameLevelSelecterLimitter.completedLevels));
 
             if (MemoryGamecompletedLevels.Contains(i))
             {
@@ -202,11 +203,41 @@ public class GlobalGameManager : MonoBehaviour
 
     public void RunnerLoad()
     {
+        for (int i = 0; i <= 100; i++)
+        {
+            GameManager.levelStars[i] = PlayerPrefs.GetInt("runnerstars" + i);
+        }
+        for (int i = 0; i <= 5; i++)
+        {
 
+            RunnercompletedLevels.Add(PlayerPrefs.GetInt("runnerlevels" + i));
+
+            //RunnerManager.manager.completedLevels.Add(i);
+            //Debug.Log((MemoryGameLevelSelecterLimitter.completedLevels));
+
+            if (MemoryGamecompletedLevels.Contains(i))
+            {
+                RunnerManager.manager.completedLevels.Add(i);
+            }
+        }
     }
 
     public void RunnerSave()
     {
+        RunnerStars = GameManager.levelStars;
+        RunnercompletedLevels = RunnerManager.manager.completedLevels;
 
+        for (int i = 0; i <= 100; i++)
+        {
+            PlayerPrefs.SetInt("runnerstars" + i, RunnerStars[i]);
+        }
+        for (int i = 0; i <= 20; i++)
+        {
+            if (RunnerManager.manager.completedLevels.Contains(i))
+            {
+                PlayerPrefs.SetInt("runnerlevels" + i, i);
+                Debug.Log(RunnercompletedLevels[i]);
+            }
+        }
     }
 }

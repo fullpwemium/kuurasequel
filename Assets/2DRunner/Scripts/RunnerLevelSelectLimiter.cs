@@ -35,7 +35,7 @@ public class RunnerLevelSelectLimiter : MonoBehaviour
          * the reference is lost upon scene load
          * So it's done through code */
         button = GetComponent<Button>();
-        button.onClick.AddListener(loadFrigginLevel); //Adds OnClick to button
+        //button.onClick.AddListener(loadFrigginLevel); //Adds OnClick to button
         gameObject.SetActive(false);
        // Debug.Log(RunnerManager.manager.completedLevels.Any());       
         //The first level is always shown regardless of its completetion
