@@ -294,7 +294,7 @@ public class RunnerManager : MonoBehaviour
     }
     
     void OnGUI()
-    {
+    {/*
         if(isInitialPanelLoaded)
         {
             if (showThunder)
@@ -306,7 +306,7 @@ public class RunnerManager : MonoBehaviour
             snowButton.gameObject.SetActive(true);
         else if (!showSnow)
             snowButton.gameObject.SetActive(false);
-        }
+        }*/
         
     }
     public void useThunder()
