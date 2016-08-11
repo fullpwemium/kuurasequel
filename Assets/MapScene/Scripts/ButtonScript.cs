@@ -80,7 +80,7 @@ public class ButtonScript : MonoBehaviour
         }
         else if(BobPlayerScript.nearLabyrinth)
         {
-            SceneManager.LoadScene("LabyLevelSelect");
+            SceneManager.LoadScene("LabyrinthLevelSelect");
             BobPlayerScript.nearLabyrinth = false;
         }
         else if (BobPlayerScript.Runner)

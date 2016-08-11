@@ -36,7 +36,7 @@ public class WMKyltitScript : MonoBehaviour {
             else if (BobPlayerScript.nearLabyrinth)
             {
                 Debug.Log("bananaaa");
-                SceneManager.LoadScene("LabyLevelSelect");
+                SceneManager.LoadScene("LabyrinthLevelSelect");
                 BobPlayerScript.nearLabyrinth = false;
             }
             else if (BobPlayerScript.Runner)

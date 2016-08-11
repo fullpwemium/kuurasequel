@@ -80,4 +80,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MapScene/RunnerLevelMap.unity
   - enabled: 1
-    path: Assets/MapScene/LabyLevelSelect.unity
+    path: Assets/MapScene/LabyrinthLevelSelect.unity
