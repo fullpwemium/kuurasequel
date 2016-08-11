@@ -3326,6 +3326,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11496596, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: levelName
+      value: CatchTheCatLevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438902, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: levelName
+      value: CatchTheCatLevelSelect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
   m_IsPrefabParent: 0
@@ -4184,9 +4192,6 @@ GameObject:
   - 223: {fileID: 1905736128}
   - 114: {fileID: 1905736127}
   - 114: {fileID: 1905736126}
-  - 114: {fileID: 1905736125}
-  - 114: {fileID: 1905736124}
-  - 114: {fileID: 1905736123}
   - 222: {fileID: 1905736122}
   m_Layer: 5
   m_Name: GameUI (1)
@@ -4202,54 +4207,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1905736121}
---- !u!114 &1905736123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11441216, guid: a76c5a31e4a524b498d6cd3fcfcd1556,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1905736121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84b9a33f4ecd946599c387e14a5677b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: {fileID: 0}
-  time: 5
---- !u!114 &1905736124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11422270, guid: a76c5a31e4a524b498d6cd3fcfcd1556,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1905736121}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fd62b93873aa49a58a260759d42751d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1905736125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11455398, guid: a76c5a31e4a524b498d6cd3fcfcd1556,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1905736121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 629b3f24bc8784175a793ae6de93607a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverPanel: {fileID: 0}
-  pausePanel: {fileID: 0}
-  tutorialPanel: {fileID: 0}
-  hiutale1: {fileID: 0}
-  hiutale2: {fileID: 0}
-  hiutale3: {fileID: 0}
-  hiutale4: {fileID: 0}
-  hiutale5: {fileID: 0}
-  hiutale6: {fileID: 0}
-  endText: {fileID: 0}
 --- !u!114 &1905736126
 MonoBehaviour:
   m_ObjectHideFlags: 0
