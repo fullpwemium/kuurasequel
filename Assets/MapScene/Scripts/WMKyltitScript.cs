@@ -41,7 +41,7 @@ public class WMKyltitScript : MonoBehaviour {
             }
             else if (BobPlayerScript.Runner)
             {
-                SceneManager.LoadScene("LevelSelect");
+                SceneManager.LoadScene("RunnerLevelMap");
                 BobPlayerScript.Runner = false;
 
             }
