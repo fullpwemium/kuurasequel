@@ -3468,9 +3468,9 @@ MonoBehaviour:
   kyltti1: {fileID: 435873604}
   kyltti2: {fileID: 1617423966}
   pelikuva1: {fileID: 21300000, guid: be705761a33e4414e97c83fd63f60633, type: 3}
-  pelikuva2: {fileID: 21300000, guid: 553ad03382b5b3042bc8e63ac3ca4c4c, type: 3}
-  pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
-  pelikuva4: {fileID: 21300000, guid: c9a9fbcc99d83e4468728a36124b846c, type: 3}
+  pelikuva2: {fileID: 21300000, guid: a8521655b039603419f084775f3e26b4, type: 3}
+  pelikuva3: {fileID: 21300000, guid: 1f191abc1c142ae4ba478d88af41b4c4, type: 3}
+  pelikuva4: {fileID: 21300000, guid: d6ba7e4384763c04da624421ffcf25f8, type: 3}
   pelikuva5: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
 --- !u!1 &1038018594
@@ -3873,7 +3873,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!1 &1144795908
 GameObject:
   m_ObjectHideFlags: 0
@@ -5283,7 +5283,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -45, y: -56}
-  m_SizeDelta: {x: 589, y: 475}
+  m_SizeDelta: {x: 700, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581761444
 MonoBehaviour:

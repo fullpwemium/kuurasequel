@@ -116,6 +116,7 @@ public class VälisivuScripti : MonoBehaviour
             title.text = "Bubble Warehouse";
             dialogi.text = "-	What a nasty snowflake!\n- Get cake to grow your bowl!";
             peliKuva.sprite = pelikuva3;
+            
         }
         else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 3)
         {
