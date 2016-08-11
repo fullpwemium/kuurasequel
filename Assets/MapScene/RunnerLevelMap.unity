@@ -5599,6 +5599,7 @@ MonoBehaviour:
   isCatMoving: 0
   blink: 0
   count: 0
+  levelselect: RunnerLevelMap
   Coins: []
 --- !u!4 &1708543669
 Transform:
