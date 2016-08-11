@@ -8,7 +8,6 @@ using System.Collections.Generic;
 
 public class RunnerLevelSelectLimitter : MonoBehaviour
 {
-
     public static List<int> completedLevels = new List<int>();
 
     public int buttonLevel;
@@ -23,22 +22,25 @@ public class RunnerLevelSelectLimitter : MonoBehaviour
     //Checks levels if OnLevelWasLoaded was not called
     void Start()
     {
-
         //GlobalGameManager.GGM.MemoryGameSave();
 
-        GlobalGameManager.GGM.RunnerLoad();
+        //GlobalGameManager.GGM.RunnerLoad();
+
+
 
         completedLevels = new List<int>();
+
+        completedLevels.Add(0);
+        completedLevels.Add(1);
+        completedLevels.Add(2);
+        completedLevels.Add(3);
 
         //canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
         //canvas.enabled = true;
         button = GetComponent<Button>();
 
-
         //button.onClick.AddListener(loadFrigginLevel);
-
-
 
         //toggle = GameObject.Find("GyroToggle").GetComponent<Toggle>();
         //toggle.onValueChanged.AddListener((delegate { ShelfGameManager.GyroToggle(); }));
@@ -81,9 +83,8 @@ public class RunnerLevelSelectLimitter : MonoBehaviour
         //Debug.Log("nappula listenerit laitettu");
         gameObject.SetActive(false);
 
-
         //Debug.Log(LabManager.manager);
-        Debug.Log(completedLevels.Last());
+        //Debug.Log(completedLevels.Last());
         //The first level is always shown regardless of its completetion
         if (completedLevels.Any() == false && buttonLevel == 0)
         {

@@ -672,8 +672,8 @@ GameObject:
   - 114: {fileID: 282237851}
   - 114: {fileID: 282237850}
   - 114: {fileID: 282237849}
-  - 114: {fileID: 282237848}
   - 114: {fileID: 282237853}
+  - 114: {fileID: 282237848}
   m_Layer: 5
   m_Name: Level21
   m_TagString: Untagged
@@ -689,7 +689,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 282237847}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e295d71fa68743c582a3c5f5a58e667, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonLevel: 2
@@ -793,7 +793,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 282237847}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
+  m_Script: {fileID: 11500000, guid: d14d3312776b52e48b9e41131ca6250e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonLevel: 2
@@ -1096,7 +1096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &435191751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1294,8 +1294,8 @@ GameObject:
   - 114: {fileID: 465714609}
   - 114: {fileID: 465714608}
   - 114: {fileID: 465714607}
-  - 114: {fileID: 465714606}
   - 114: {fileID: 465714611}
+  - 114: {fileID: 465714606}
   m_Layer: 5
   m_Name: Level11
   m_TagString: Untagged
@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 465714605}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e295d71fa68743c582a3c5f5a58e667, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonLevel: 1
@@ -1415,7 +1415,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 465714605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
+  m_Script: {fileID: 11500000, guid: d14d3312776b52e48b9e41131ca6250e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonLevel: 1
@@ -1934,6 +1934,7 @@ GameObject:
   - 114: {fileID: 592191790}
   - 114: {fileID: 592191789}
   - 114: {fileID: 592191788}
+  - 114: {fileID: 592191793}
   m_Layer: 5
   m_Name: Level31
   m_TagString: Untagged
@@ -1949,7 +1950,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 592191787}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e295d71fa68743c582a3c5f5a58e667, type: 3}
+  m_Script: {fileID: 11500000, guid: d14d3312776b52e48b9e41131ca6250e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonLevel: 3
@@ -2045,6 +2046,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 592191787}
+--- !u!114 &592191793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 592191787}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonLevel: 3
 --- !u!1 &697165374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,7 +2363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &775140313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2590,7 +2603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &883423118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2707,8 +2720,8 @@ GameObject:
   - 114: {fileID: 895449005}
   - 114: {fileID: 895449004}
   - 114: {fileID: 895449003}
-  - 114: {fileID: 895449007}
   - 114: {fileID: 895449008}
+  - 114: {fileID: 895449007}
   m_Layer: 5
   m_Name: Level01
   m_TagString: Untagged
@@ -2816,7 +2829,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 895449002}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e295d71fa68743c582a3c5f5a58e667, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonLevel: 0
@@ -2828,7 +2841,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 895449002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
+  m_Script: {fileID: 11500000, guid: d14d3312776b52e48b9e41131ca6250e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonLevel: 0
@@ -3581,7 +3594,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 156558, guid: b84d3e0f86240490fb3250e8296e9b2e, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b84d3e0f86240490fb3250e8296e9b2e, type: 2}
@@ -3858,7 +3871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1308916097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4616,7 +4629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1490309555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5604,8 +5617,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelIndex: 070000000800000009000000
-  completedLevels: 
-  levelSelectScene: 5
+  completedLevels: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  levelSelectScene: 35
   thunderButton: {fileID: 0}
   snowButton: {fileID: 0}
   catmovement: {fileID: 0}
@@ -5999,7 +6012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2059599094
 MonoBehaviour:
   m_ObjectHideFlags: 0
