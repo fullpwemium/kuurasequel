@@ -196,7 +196,7 @@ public class LevelScript : MonoBehaviour
             }
             else if(gameNumber == 4)
             {
-
+                LabyGameManager.manager.LoadLevel(levelButtonNumber);
             }
         }
 
