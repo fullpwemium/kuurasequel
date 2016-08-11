@@ -10,10 +10,10 @@ public class BackArrow : MonoBehaviour {
 	public GameObject kissakasa1;
 	public GameObject backarrow;
 	public GameObject feidi;
+    public GameObject dusti;
 
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -29,5 +29,6 @@ public class BackArrow : MonoBehaviour {
 		feidi.SetActive (false);
 		pet.SetActive (false);
 		pet2.SetActive (false);
-	}
+        dusti.SetActive(false);
+    }
 }
