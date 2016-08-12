@@ -1206,7 +1206,7 @@ public class LayerScript : MonoBehaviour
         CountUpTimer.EndGame(); //Viitataan toiseen skriptiin kun peli päättyy. Muutetaan EndGamen sisältämä Cleared trueksi.
         Rotator.Stop();
         GlobalManager.MemoryGameSave();
-        MemoryGameLevelSelecterLimitter.MemoryGamelevelilapi(level);
+        MemoryGameLevelSelecterLimitter.MemoryGamelevelilapi(level);    //Avataan seuraava kenttä
 
         lmbDisabled = true;
 //        yield return new WaitForSeconds(0.1f);
