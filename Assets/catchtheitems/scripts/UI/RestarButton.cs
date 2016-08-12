@@ -15,7 +15,7 @@ public class RestarButton : MonoBehaviour {
 	
 	void Restart()
 	{
-		ShelfGameManager.manager.RestartLevel ();
+		ShelfGameManager.manager.RestartLevel();
 	}
 
 }

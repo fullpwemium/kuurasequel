@@ -130,43 +130,43 @@ public class LevelScript : MonoBehaviour
         {
             if (gameNumber == 1)
             {
-                if (levelButtonNumber == 1)    //Katsotaan onko Bobin seisomalla buttonilla annettu arvo
+                if (levelButtonNumber == 0)    //Katsotaan onko Bobin seisomalla buttonilla annettu arvo
                 {
                     BobLevelScript.MemoryGameLevel1 = true;
                 }
-                else if (levelButtonNumber == 2)
+                else if (levelButtonNumber == 1)
                 {
                     BobLevelScript.MemoryGameLevel2 = true;
                 }
-                else if (levelButtonNumber == 3)
+                else if (levelButtonNumber == 2)
                 {
                     BobLevelScript.MemoryGameLevel3 = true;
                 }
-                else if (levelButtonNumber == 4)
+                else if (levelButtonNumber == 3)
                 {
                     BobLevelScript.MemoryGameLevel4 = true;
                 }
-                else if (levelButtonNumber == 5)
+                else if (levelButtonNumber == 4)
                 {
                     BobLevelScript.MemoryGameLevel5 = true;
                 }
-                else if (levelButtonNumber == 6)
+                else if (levelButtonNumber == 5)
                 {
                     BobLevelScript.MemoryGameLevel6 = true;
                 }
-                else if (levelButtonNumber == 7)
+                else if (levelButtonNumber == 6)
                 {
                     BobLevelScript.MemoryGameLevel7 = true;
                 }
-                else if (levelButtonNumber == 8)
+                else if (levelButtonNumber == 7)
                 {
                     BobLevelScript.MemoryGameLevel8 = true;
                 }
-                else if (levelButtonNumber == 9)
+                else if (levelButtonNumber == 8)
                 {
                     BobLevelScript.MemoryGameLevel9 = true;
                 }
-                else if (levelButtonNumber == 10)
+                else if (levelButtonNumber == 9)
                 {
                     BobLevelScript.MemoryGameLevel10 = true;
                 }
@@ -174,15 +174,15 @@ public class LevelScript : MonoBehaviour
                 else
                 {
                     BobLevelScript.MemoryGameLevel1 = false;
-                    BobLevelScript.MemoryGameLevel2 = true;
-                    BobLevelScript.MemoryGameLevel3 = true;
-                    BobLevelScript.MemoryGameLevel4 = true;
-                    BobLevelScript.MemoryGameLevel5 = true;
-                    BobLevelScript.MemoryGameLevel6 = true;
-                    BobLevelScript.MemoryGameLevel7 = true;
-                    BobLevelScript.MemoryGameLevel8 = true;
-                    BobLevelScript.MemoryGameLevel9 = true;
-                    BobLevelScript.MemoryGameLevel10 = true;
+                    BobLevelScript.MemoryGameLevel2 = false;
+                    BobLevelScript.MemoryGameLevel3 = false;
+                    BobLevelScript.MemoryGameLevel4 = false;
+                    BobLevelScript.MemoryGameLevel5 = false;
+                    BobLevelScript.MemoryGameLevel6 = false;
+                    BobLevelScript.MemoryGameLevel7 = false;
+                    BobLevelScript.MemoryGameLevel8 = false;
+                    BobLevelScript.MemoryGameLevel9 = false;
+                    BobLevelScript.MemoryGameLevel10 = false;
                 }
             }
             else if(gameNumber == 2)

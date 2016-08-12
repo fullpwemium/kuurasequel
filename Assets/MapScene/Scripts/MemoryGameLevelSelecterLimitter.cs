@@ -10,7 +10,7 @@ using System.Collections.Generic;
 public class MemoryGameLevelSelecterLimitter : MonoBehaviour
 {
 
-    public static List<int> completedLevels = new List<int>();
+    public static List<int> completedLevels = new List<int>(100);
 
     public int buttonLevel;
     Button button;
@@ -28,8 +28,6 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
         //GlobalGameManager.GGM.MemoryGameSave();
 
         GlobalGameManager.GGM.MemoryGameLoad();
-
-        completedLevels = new List<int>();
 
         //canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
@@ -68,7 +66,12 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
 
     public static void MemoryGamelevelilapi(int levelnumber)
     {
-        completedLevels.Add(levelnumber);
+        completedLevels.Add(levelnumber-1);
+
+        for (int i = 0; i< completedLevels.Count(); i++)
+        {
+            Debug.Log(completedLevels[i]);
+        }
     }
 
     //Creates buttons and checks if this level is playable

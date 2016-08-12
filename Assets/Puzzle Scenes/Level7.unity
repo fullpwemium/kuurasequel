@@ -3106,7 +3106,7 @@ RectTransform:
   m_GameObject: {fileID: 764666380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7288664, y: 0.3071168, z: 0.3496795}
+  m_LocalScale: {x: 0.4008755, y: 0.3071168, z: 0.3496795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 385125255}
@@ -3126,7 +3126,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 6.0002537, y: -799.9993}
-  m_SizeDelta: {x: 800.18, y: 1328.251}
+  m_SizeDelta: {x: 800, y: 1328.251}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764666382
 MonoBehaviour:
@@ -3433,18 +3433,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnMouseDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 892305557}
         m_MethodName: ChangeToScene
         m_Mode: 5
         m_Arguments:
@@ -3452,7 +3441,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GameScene
+          m_StringArgument: Puzzle Scenes/Level7
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
