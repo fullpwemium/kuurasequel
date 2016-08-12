@@ -12,7 +12,7 @@ public class GlobalGameManager : MonoBehaviour
     int currentGame;
     public List<int> completedGames;
 
-    int[] MemoryGameStars;
+    int[] MemoryGameStars = new int[200];
 
     int[] RunnerStars;
 
@@ -49,6 +49,8 @@ public class GlobalGameManager : MonoBehaviour
 
     void Start()
     {
+        //PlayerPrefs.DeleteAll();
+
         //InsertScore(5,bwhStars, "banana", 10);
         haeData();
     }
@@ -163,7 +165,8 @@ public class GlobalGameManager : MonoBehaviour
 
     public void MemoryGameSave()
     {
-        MemoryGameStars = GameManager.levelStars;
+        Debug.Log("aloitetaan tallennus memorygame"); 
+        //laitetaan tähän vielä memorystars sijoitus.
         MemoryGamecompletedLevels = MemoryGameLevelSelecterLimitter.completedLevels;
 
         for (int i = 0; i <= 100; i++)
@@ -175,18 +178,19 @@ public class GlobalGameManager : MonoBehaviour
             if (MemoryGameLevelSelecterLimitter.completedLevels.Contains(i))
             {
                 PlayerPrefs.SetInt("memorylevels" + i, i);
-                Debug.Log(bwhcompletedLevels[i]);
+                //Debug.Log(bwhcompletedLevels[i]);
             }
         }
     }
 
     public void MemoryGameLoad()
     {
+        Debug.Log("ladataan MemoryGame");
         for (int i = 0; i <= 100; i++)
         {
             GameManager.levelStars[i] = PlayerPrefs.GetInt("memorystars" + i);
         }
-        for (int i = 0; i <= 5; i++)
+        for (int i = 0; i <= 10; i++)
         {
 
             MemoryGamecompletedLevels.Add(PlayerPrefs.GetInt("memorylevels" + i));
@@ -197,6 +201,7 @@ public class GlobalGameManager : MonoBehaviour
             if (MemoryGamecompletedLevels.Contains(i))
             {
                 MemoryGameLevelSelecterLimitter.completedLevels.Add(i);
+                Debug.Log("leveli ladattu " + i);
             }
         }
     }

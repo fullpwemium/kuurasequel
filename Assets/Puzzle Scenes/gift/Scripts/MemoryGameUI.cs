@@ -78,9 +78,9 @@ public class MemoryGameUI : MonoBehaviour
             gameOverPanel.SetActive(true);
             float timeSinceStarted = Time.time - lerpStartTime;
             float percentageComplete = timeSinceStarted / 1f;
-            Debug.Log(percentageComplete);
+            //Debug.Log(percentageComplete);
             gameOverPanel.transform.position = Vector3.Lerp(startPosition, destination, percentageComplete);
-            Debug.Log(percentageComplete);
+            //Debug.Log(percentageComplete);
             if (percentageComplete >= 1.0f)
             {
                 moving = false;
@@ -130,8 +130,11 @@ public class MemoryGameUI : MonoBehaviour
     //Switches text in gameoverpanel
     public void TextSwitcher(bool won)
     {
+
+        GlobalGameManager.GGM.MemoryGameSave();
         if (won == false)
         {
+            Debug.Log("ninjat on täällä");
             //StartCoroutine("slowDown");
             endText.text = "YOU SUCK!";
             StartLerping();
@@ -141,7 +144,7 @@ public class MemoryGameUI : MonoBehaviour
         }
         else if (won == true)
         {
-
+            Debug.Log("ninjat on täällä");
             /*lista = FindObjectsOfType<GameObject>();
             for (int i = 0; i > lista.Length; i++)
             {
