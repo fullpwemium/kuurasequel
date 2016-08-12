@@ -4153,6 +4153,7 @@ MonoBehaviour:
   kissakasa1: {fileID: 1436097518}
   backarrow: {fileID: 1195925537}
   feidi: {fileID: 566924667}
+  dusti: {fileID: 230735031}
 --- !u!212 &1195925539
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4463,7 +4464,6 @@ MonoBehaviour:
   pet2: {fileID: 1825655664}
   pet1: {fileID: 1432718020}
   "s\xE4de": {fileID: 233104294}
-  dusti: {fileID: 0}
 --- !u!61 &1432718024
 BoxCollider2D:
   m_ObjectHideFlags: 0
