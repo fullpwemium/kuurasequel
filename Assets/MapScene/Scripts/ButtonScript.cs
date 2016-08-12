@@ -23,7 +23,6 @@ public class ButtonScript : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-
         Bob = GameObject.Find("BobPlayer").GetComponent<BobPlayerScript>();
         Button = gameObject.GetComponent<Button>();
 
@@ -52,25 +51,19 @@ public class ButtonScript : MonoBehaviour
 
     void MoveHere ()
     {
-       
-
         if (BobPlayerScript.Moving == false)
-        {
-
-            
+        {       
             GameLoader();
             BobPlayerScript.DestinationButtonNumberX = ButtonNumber;
             BobPlayerScript.DestinationButtonNumberY = ButtonNumber2;
             StartCoroutine(Bob.CountRoute());
         }
-        
          //Verrataan kohdeobjektin arvoa lähtöobjektin arvoon
         //BobPlayerScript.destination = gameObject.transform.position;    //Liikutetaan pelaajaobjekti klikattuun objektiin
     }
 
     public void GameLoader()
     {
-        
         CheckGame();
         //Debug.Log("nearMemoryGame" + BobPlayerScript.nearMemoryGame);
 
@@ -82,17 +75,17 @@ public class ButtonScript : MonoBehaviour
         }
         else if (BobPlayerScript.nearCatchTheCat)
         {
-            SceneManager.LoadScene("ShelfLevelSelect");
+            SceneManager.LoadScene("CatchTheCatLevelSelect");
             BobPlayerScript.nearCatchTheCat = false;
         }
         else if(BobPlayerScript.nearLabyrinth)
         {
-            SceneManager.LoadScene("LabyLevelSelect");
+            SceneManager.LoadScene("LabyrinthLevelSelect");
             BobPlayerScript.nearLabyrinth = false;
         }
         else if (BobPlayerScript.Runner)
         {
-            SceneManager.LoadScene("LevelSelect");
+            SceneManager.LoadScene("RunnerLevelMap");
             BobPlayerScript.Runner = false;
 
         }

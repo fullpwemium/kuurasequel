@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelSelectButton : MonoBehaviour {
 
 	Button lvlSelect;
+    public string levelName;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +21,6 @@ public class LevelSelectButton : MonoBehaviour {
 
 	void LevelSelect()
 	{
-		ShelfGameManager.manager.GoToMenu ();
+        SceneManager.LoadScene(levelName);
 	}
 }

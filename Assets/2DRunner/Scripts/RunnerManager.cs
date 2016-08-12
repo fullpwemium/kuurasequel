@@ -46,6 +46,7 @@ public class RunnerManager : MonoBehaviour
     public bool isCatMoving;
     public bool blink;
     public int count;
+    public string levelselect;
 
     private Animator anim;
     private bool showSnow;
@@ -64,20 +65,23 @@ public class RunnerManager : MonoBehaviour
      
          if (manager == null)
          {
+            GlobalGameManager.GGM.RunnerLoad();
              manager = this;
              DontDestroyOnLoad(manager);
+            Physics2D.gravity = new Vector2(0, -30);
 
              currentState = GameState.Pause;
          }
          else if(manager != this && manager.gameObject.name != "GameManager")
          {
              Destroy(manager);
-            
-         }
-           /*
-      manager = this;
-      InitialPanel();
-       */ 
+
+
+        }
+        /*
+   manager = this;
+   InitialPanel();
+    */
     }
     void Update()
     {
@@ -236,6 +240,7 @@ public class RunnerManager : MonoBehaviour
         if (level != 0 )
         {
             InitialPanel();
+            GlobalGameManager.GGM.RunnerSave();
         }
     }
 
@@ -285,11 +290,11 @@ public class RunnerManager : MonoBehaviour
     }
     public void BackToMenu()
     {
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene(levelselect);
     }
     
     void OnGUI()
-    {
+    {/*
         if(isInitialPanelLoaded)
         {
             if (showThunder)
@@ -301,7 +306,7 @@ public class RunnerManager : MonoBehaviour
             snowButton.gameObject.SetActive(true);
         else if (!showSnow)
             snowButton.gameObject.SetActive(false);
-        }
+        }*/
         
     }
     public void useThunder()

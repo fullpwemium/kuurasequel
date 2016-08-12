@@ -75,10 +75,12 @@ public class ShelfGameManager : GameManager
 
 	public override void RestartLevel()
 	{
+
+        Scene scene = SceneManager.GetActiveScene();
         //Application.LoadLevel (Application.loadedLevel);
         //base.RestartLevel();
         //Time.timeScale = 1f;
-        LoadLevel(currentLevel);
+        SceneManager.LoadScene(scene.name);
 
     }
 
@@ -92,6 +94,8 @@ public class ShelfGameManager : GameManager
         if (GameManager.manager.completedLevels.Contains(GameManager.manager.currentLevel) == true)
         {
             LoadLevel(currentLevel + 1);
+
+
         }
         else
         {

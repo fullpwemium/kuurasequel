@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CatControl : MonoBehaviour {
 
-	public float actionInterval;
+    private float actionInterval = Random.Range(3, 6);
 	public float catSpeed = -5f;
 	public float catJumpHigh = 9f;
 	public float catGroundTime = 1f;
@@ -245,4 +245,5 @@ public class CatControl : MonoBehaviour {
 			sprite.flipX = enabled;
 		}
 	}
+    
 }

@@ -30,29 +30,34 @@ public class WMKyltitScript : MonoBehaviour {
             }
             else if (BobPlayerScript.nearCatchTheCat)
             {
-                SceneManager.LoadScene("ShelfLevelSelect");
+                SceneManager.LoadScene("CatchTheCatLevelSelect");
                 BobPlayerScript.nearCatchTheCat = false;
             }
             else if (BobPlayerScript.nearLabyrinth)
             {
                 Debug.Log("bananaaa");
-                SceneManager.LoadScene("LabyLevelSelect");
+                SceneManager.LoadScene("LabyrinthLevelSelect");
                 BobPlayerScript.nearLabyrinth = false;
             }
             else if (BobPlayerScript.Runner)
             {
-                SceneManager.LoadScene("LevelSelect");
+                SceneManager.LoadScene("RunnerLevelMap");
                 BobPlayerScript.Runner = false;
 
             }
             else if (BobPlayerScript.nearBobApartment)
             {
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene("Bob_apartment");
                 BobPlayerScript.nearBobApartment = false;
             }
         }
         else if (nappi == 2)
         {
+            BobPlayerScript.nearMemoryGame = false;
+            BobPlayerScript.nearBobApartment = false;
+            BobPlayerScript.Runner = false;
+            BobPlayerScript.nearLabyrinth = false;
+            BobPlayerScript.nearCatchTheCat = false;
             SceneManager.LoadScene("Map2");    //Ladataan Scene
 
         }

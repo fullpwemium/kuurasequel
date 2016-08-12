@@ -20,5 +20,7 @@ public class RunnerBackToMainMap : MonoBehaviour {
     {
         Destroy(GameObject.Find("GameManager"));
         SceneManager.LoadScene(scene);
+
+        Physics2D.gravity = new Vector2(0, -9.81f);
     }
 }

@@ -7,7 +7,7 @@ public class KissaClick : MonoBehaviour {
 	public GameObject kissa1;
 	public GameObject kissakasa1;
 	public GameObject backarrow;
-
+	public GameObject dusti;
 	// Use this for initialization
 	void Start () {
 	
@@ -21,6 +21,7 @@ public class KissaClick : MonoBehaviour {
 		kissekuva.SetActive (true);
 		kissa1.SetActive (false);
 		kissakasa1.SetActive (false);
-		//backarrow.SetActive (true);
+		backarrow.SetActive (true);
+		dusti.SetActive (true);
 	}
 }
