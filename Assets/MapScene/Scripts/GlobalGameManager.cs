@@ -54,9 +54,9 @@ public class GlobalGameManager : MonoBehaviour
         //InsertScore(5,bwhStars, "banana", 10);
         haeData();
 
-        MemoryGameLoad();
-        RunnerLoad();
-        bubbleWarehouseLoad();
+        //MemoryGameLoad();
+        //RunnerLoad();
+        //bubbleWarehouseLoad();
         
         
     }
