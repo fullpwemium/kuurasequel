@@ -335,14 +335,17 @@ public class MemoryGameUI : MonoBehaviour
             }
 
             //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
-            if (stars > GameManager.levelStars[GameManager.manager.currentLevel])
+
+            if (stars > GlobalManager.memoryGameStars[LayerScript.saveLevel])
             {
-                GameManager.levelStars[GameManager.manager.currentLevel] = stars;
-            }
+                GlobalManager.memoryGameStars[LayerScript.saveLevel] = stars;
+            }            
             else
             {
 
             }
+
+            Storage.Save();
         }
 
  //       PlayerPrefs.SetInt("Magic Dust ", MagicDust); //Tallennetaan pisteet

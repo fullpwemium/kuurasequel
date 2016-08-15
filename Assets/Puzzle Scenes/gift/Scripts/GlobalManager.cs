@@ -14,6 +14,8 @@ public class GlobalManager : MonoBehaviour
 
     public static Text AllMagicDust;
 
+    public static int[] memoryGameStars = new int[200];
+
     public static void Start ()
     {
         

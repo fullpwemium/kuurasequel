@@ -30,6 +30,8 @@ public class LayerScript : MonoBehaviour
 	public List<GameObject> clickedObjects;
 
 	public int level;
+    public static int saveLevel;
+
 	public int itemlimit = 0;
 
 	public GameObject card;
@@ -83,7 +85,9 @@ public class LayerScript : MonoBehaviour
         Life1 = GameObject.Find("Life1"); //Viitataan sulkeissa määriteltyyn pelinäkymän objektiin
         Life2 = GameObject.Find("Life2");
         Life3 = GameObject.Find("Life3");
-        Yeti = GameObject.Find("yeti");        
+        Yeti = GameObject.Find("yeti");
+
+        saveLevel = level;
 
         if (level == 1)
         {
