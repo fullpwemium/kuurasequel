@@ -286,16 +286,77 @@ public class MemoryGameUI : MonoBehaviour
 
         }
 
+        if (GlobalManager.winTime < GlobalManager.ScoreArray[2]) //Saatavat pisteet, mikäli määritelty aikaraja ei ylity
+        {
+            if (LayerScript.triesLeft == 2) //Kaikki kolme yritystä jäljellä
+            {
+//                MagicDust += 20 * 10; //Maksimipisteet
+                stars = 3;
+            }
+
+            else if (LayerScript.triesLeft == 1) //Kaksi yritystä jäljellä
+            {
+//                MagicDust += 20 * 5;
+                stars = 3;
+            }
+
+            else if (LayerScript.triesLeft == 0) //Yksi yritys jäljellä
+            {
+//                MagicDust += 20 * 2;
+                stars = 2;
+            }
+
+
+//            AllMagicDust = GameObject.Find("MagicDust").GetComponent<Text>();
+//            AllMagicDust.text = MagicDust.ToString("f0");
+
+//            Debug.Log("Global Manager: Magic Dust = " + MagicDust);
+        }
+
+        if (GlobalManager.winTime > GlobalManager.ScoreArray[2]) //Saatavat pisteet, mikäli määritelty aikaraja ylittyy
+        {
+
+            if (LayerScript.triesLeft == 2) //Kaikki kolme yritystä jäljellä
+            {
+//                MagicDust += 10 * 10;
+                stars = 2;
+            }
+
+            else if (LayerScript.triesLeft == 1) //Kaksi yritystä jäljellä
+            {
+//                MagicDust += 10 * 5;
+                stars = 2;
+            }
+
+            else if (LayerScript.triesLeft == 0) //Yksi yritys jäljellä
+            {
+//                MagicDust += 10 * 2; //Minimipisteet
+                stars = 1;
+            }
+
+            //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
+            if (stars > GameManager.levelStars[GameManager.manager.currentLevel])
+            {
+                GameManager.levelStars[GameManager.manager.currentLevel] = stars;
+            }
+            else
+            {
+
+            }
+        }
+
+ //       PlayerPrefs.SetInt("Magic Dust ", MagicDust); //Tallennetaan pisteet
+
         //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
 
-/*        if (stars > GameManager.levelStars[GameManager.manager.currentLevel])
-        {
-            GameManager.levelStars[GameManager.manager.currentLevel] = stars;
-        }
-        else
-        {
+        /*        if (stars > GameManager.levelStars[GameManager.manager.currentLevel])
+                {
+                    GameManager.levelStars[GameManager.manager.currentLevel] = stars;
+                }
+                else
+                {
 
-        } */
+                } */
 
         //GameManager.levelStars[GameManager.manager.currentLevel] = stars;
         //GlobalGameManager.GGM.bubbleWarehouseSave();
