@@ -3,13 +3,16 @@ using System.Collections;
 
 public class MoviePlayer : MonoBehaviour
 {
-    private string movPath = "Teh GAME animation with SNOW.mp4";
+    private string movPath = "Video/Kuura in the snowglobe.mp4";
     private static bool moviePlayed = false;
-
+    //public MovieTexture movTexture;
     // Use this for initialization
     void Start()
     {
-		if (moviePlayed == false) {
+        //GetComponent<Renderer>().material.mainTexture = movTexture;
+        //movTexture.Play();
+
+        if (moviePlayed == false) {
 			Movieplayer (movPath);
 			Debug.Log ("Vilmi pyörinyt");
 		}
@@ -17,7 +20,8 @@ public class MoviePlayer : MonoBehaviour
 
     public void Movieplayer(string path)
     {
-		//Handheld.PlayFullScreenMovie(path, Color.white, FullScreenMovieControlMode.CancelOnInput);
+
+		Handheld.PlayFullScreenMovie(path, Color.white, FullScreenMovieControlMode.CancelOnInput);
         moviePlayed = true;
 		GlobalGameManager.GGM.StartMapScene ();
     }
