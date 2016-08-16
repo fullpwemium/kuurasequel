@@ -26,7 +26,7 @@ public class MemoryGameStarScript : MonoBehaviour
         if (Storage.MemoryGameStars[buttonNumber] >= starNumber)
         {
             Star.color = Color.white;
-            Debug.Log("varjattu");
+            Debug.Log("MemoryGameStarScript: varjattu");
         }
         else
         {
