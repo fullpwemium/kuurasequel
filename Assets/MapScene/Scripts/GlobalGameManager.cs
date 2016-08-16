@@ -116,7 +116,7 @@ public class GlobalGameManager : MonoBehaviour
 
     public void StartMapScene()
     {
-        SceneManager.LoadScene("map_scene");
+        SceneManager.LoadScene("Map2");
     }
 
     public void mappiLoad()
