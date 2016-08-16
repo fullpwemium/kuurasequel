@@ -993,7 +993,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11468298, guid: b84d3e0f86240490fb3250e8296e9b2e, type: 2}
       propertyPath: levelIndex.Array.data[0]
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11468298, guid: b84d3e0f86240490fb3250e8296e9b2e, type: 2}
       propertyPath: levelSelectScene
@@ -1009,7 +1009,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b84d3e0f86240490fb3250e8296e9b2e, type: 2}
-  m_RootGameObject: {fileID: 801439409}
   m_IsPrefabParent: 0
 --- !u!1 &336211865
 GameObject:
@@ -3319,23 +3318,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 796152643}
---- !u!1 &801439409
+--- !u!1 &801439409 stripped
 GameObject:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 156558, guid: b84d3e0f86240490fb3250e8296e9b2e, type: 2}
   m_PrefabInternal: {fileID: 322811053}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 801439412}
-  - 114: {fileID: 801439411}
-  - 114: {fileID: 801439410}
-  m_Layer: 0
-  m_Name: ShelfGameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!114 &801439410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3347,35 +3333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd62b93873aa49a58a260759d42751d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &801439411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11468298, guid: b84d3e0f86240490fb3250e8296e9b2e,
-    type: 2}
-  m_PrefabInternal: {fileID: 322811053}
-  m_GameObject: {fileID: 801439409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6ff2e214bcae4d1baa468e6c100e033, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelIndex: 040000000400000005000000060000000700000008000000090000000a0000000b0000000c000000
-  completedLevels: 
-  currentLevel: 0
-  levelSelectScene: 3
---- !u!4 &801439412
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 488836, guid: b84d3e0f86240490fb3250e8296e9b2e, type: 2}
-  m_PrefabInternal: {fileID: 322811053}
-  m_GameObject: {fileID: 801439409}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
 --- !u!1 &810407815
 GameObject:
   m_ObjectHideFlags: 0
@@ -5533,48 +5490,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1355532370}
---- !u!1 &1376806864
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 109492, guid: f68a3ce28356f1247b56ace870a8e277, type: 2}
-  m_PrefabInternal: {fileID: 2033878675}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1376806866}
-  - 114: {fileID: 1376806865}
-  m_Layer: 0
-  m_Name: ScreenLocker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1376806865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11485270, guid: f68a3ce28356f1247b56ace870a8e277,
-    type: 2}
-  m_PrefabInternal: {fileID: 2033878675}
-  m_GameObject: {fileID: 1376806864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 922ad39879333764aa265b46bceb5542, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orientation: 1
---- !u!4 &1376806866
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 401242, guid: f68a3ce28356f1247b56ace870a8e277, type: 2}
-  m_PrefabInternal: {fileID: 2033878675}
-  m_GameObject: {fileID: 1376806864}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.279298, y: -2.8851645, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
 --- !u!1 &1408577998
 GameObject:
   m_ObjectHideFlags: 0
@@ -7048,7 +6963,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f68a3ce28356f1247b56ace870a8e277, type: 2}
-  m_RootGameObject: {fileID: 1376806864}
   m_IsPrefabParent: 0
 --- !u!1 &2087110455
 GameObject:
