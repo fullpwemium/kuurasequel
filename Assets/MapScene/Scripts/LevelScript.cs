@@ -148,25 +148,21 @@ public class LevelScript : MonoBehaviour
                 }
                 else if (levelButtonNumber == 4)
                 {
-//                    BobLevelScript.MemoryGameLevel5 = true;
+                    BobLevelScript.MemoryGameLevel5 = true;
                 }
                 else if (levelButtonNumber == 5)
                 {
-                    BobLevelScript.MemoryGameLevel5 = true;
+                    BobLevelScript.MemoryGameLevel6 = true;
                 }
                 else if (levelButtonNumber == 6)
                 {
-                    BobLevelScript.MemoryGameLevel6 = true;
+                    BobLevelScript.MemoryGameLevel7 = true;
                 }
                 else if (levelButtonNumber == 7)
                 {
-                    BobLevelScript.MemoryGameLevel7 = true;
-                }
-                else if (levelButtonNumber == 8)
-                {
                     BobLevelScript.MemoryGameLevel8 = true;
                 }
-                else if (levelButtonNumber == 9)
+                else if (levelButtonNumber == 8)
                 {
                     BobLevelScript.MemoryGameLevel9 = true;
                 }
