@@ -4906,6 +4906,10 @@ Prefab:
       propertyPath: xLocations.Array.data[3]
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 11454798, guid: db469d70855c6da43ac118285e34fca7, type: 2}
+      propertyPath: card
+      value: 
+      objectReference: {fileID: 101738, guid: 36609f6f029898048829fcd357822904, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db469d70855c6da43ac118285e34fca7, type: 2}
   m_IsPrefabParent: 0
