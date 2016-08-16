@@ -22,7 +22,7 @@ public class MemoryGameStarScript : MonoBehaviour
         Star = GetComponent<Image>();
 
         //Star.color = Color.white;
-
+        Debug.Log("HUUUUAAAARRRRGHGHGHG!" + Storage.MemoryGameStars[buttonNumber]);
         if (Storage.MemoryGameStars[buttonNumber] >= starNumber)
         {
             Star.color = Color.white;

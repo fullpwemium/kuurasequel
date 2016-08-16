@@ -270,24 +270,24 @@ public class MemoryGameUI : MonoBehaviour
 
     void Score()
     {
-        if (Points.breakingPoints + Points.breakingLimit - (Points.breakingLimit / 10) <= Points.breakingLimit)
-        {
-            stars = 3;
+        //if (Points.breakingPoints + Points.breakingLimit - (Points.breakingLimit / 10) <= Points.breakingLimit)
+        //{
+        //    stars = 3;
 
-        }
-        else if ((Points.breakingPoints * 2) <= Points.breakingLimit)
-        {
-            stars = 2;
+        //}
+        //else if ((Points.breakingPoints * 2) <= Points.breakingLimit)
+        //{
+        //    stars = 2;
 
-        }
-        else if (Points.breakingPoints <= Points.breakingLimit)
-        {
-            stars = 1;
+        //}
+        //else if (Points.breakingPoints <= Points.breakingLimit)
+        //{
+        //    stars = 1;
 
-        }
+        //}
 
-        if (GlobalManager.winTime < GlobalManager.ScoreArray[2]) //Saatavat pisteet, mikäli määritelty aikaraja ei ylity
-        {
+        //if (GlobalManager.winTime < GlobalManager.ScoreArray[2]) //Saatavat pisteet, mikäli määritelty aikaraja ei ylity
+        //{
             if (LayerScript.triesLeft == 2) //Kaikki kolme yritystä jäljellä
             {
 //                MagicDust += 20 * 10; //Maksimipisteet
@@ -311,41 +311,43 @@ public class MemoryGameUI : MonoBehaviour
 //            AllMagicDust.text = MagicDust.ToString("f0");
 
 //            Debug.Log("Global Manager: Magic Dust = " + MagicDust);
-        }
+        
 
-        if (GlobalManager.winTime > GlobalManager.ScoreArray[2]) //Saatavat pisteet, mikäli määritelty aikaraja ylittyy
-        {
+//        if (GlobalManager.winTime > GlobalManager.ScoreArray[2]) //Saatavat pisteet, mikäli määritelty aikaraja ylittyy
+//        {
 
-            if (LayerScript.triesLeft == 2) //Kaikki kolme yritystä jäljellä
-            {
-//                MagicDust += 10 * 10;
-                stars = 2;
-            }
+//            if (LayerScript.triesLeft == 2) //Kaikki kolme yritystä jäljellä
+//            {
+////                MagicDust += 10 * 10;
+//                stars = 2;
+//            }
 
-            else if (LayerScript.triesLeft == 1) //Kaksi yritystä jäljellä
-            {
-//                MagicDust += 10 * 5;
-                stars = 2;
-            }
+//            else if (LayerScript.triesLeft == 1) //Kaksi yritystä jäljellä
+//            {
+////                MagicDust += 10 * 5;
+//                stars = 2;
+//            }
 
-            else if (LayerScript.triesLeft == 0) //Yksi yritys jäljellä
-            {
-//                MagicDust += 10 * 2; //Minimipisteet
-                stars = 1;
-            }
+//            else if (LayerScript.triesLeft == 0) //Yksi yritys jäljellä
+//            {
+////                MagicDust += 10 * 2; //Minimipisteet
+//                stars = 1;
+//            }
 
+            
             //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
-
-            if (stars > GlobalManager.memoryGameStars[LayerScript.saveLevel])
+            Debug.Log("whoppiduuu  " + LayerScript.saveLevel);
+            if (stars > GlobalManager.memoryGameStars[LayerScript.saveLevel-1])
             {
-                GlobalManager.memoryGameStars[LayerScript.saveLevel] = stars;
+                GlobalManager.memoryGameStars[LayerScript.saveLevel-1] = stars;
+                Storage.Save();
             }            
             else
             {
 
             }
 
-            Storage.Save();
+            
         }
 
  //       PlayerPrefs.SetInt("Magic Dust ", MagicDust); //Tallennetaan pisteet
@@ -405,7 +407,7 @@ public class MemoryGameUI : MonoBehaviour
         return null;
 
     }*/
-}
+
 
 
 

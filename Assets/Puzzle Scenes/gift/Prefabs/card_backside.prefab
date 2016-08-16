@@ -12,7 +12,11 @@ GameObject:
   - 114: {fileID: 11485696}
   - 58: {fileID: 5810488}
   m_Layer: 0
+<<<<<<< HEAD
+  m_Name: card_backside
+=======
   m_Name: card 2 4
+>>>>>>> 3e961d774ceb95accc6cb7c44cf7739f8dd43b4d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
