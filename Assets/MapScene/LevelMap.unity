@@ -372,6 +372,14 @@ Prefab:
       propertyPath: gameNumber
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11442106, guid: 1523b6cc03e4ee346ba3a536f446e18f, type: 2}
+      propertyPath: levelButtonNumber
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11442106, guid: 1523b6cc03e4ee346ba3a536f446e18f, type: 2}
+      propertyPath: levelButtonNumber2
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1523b6cc03e4ee346ba3a536f446e18f, type: 2}
   m_IsPrefabParent: 0
@@ -664,6 +672,10 @@ Prefab:
     - target: {fileID: 11459500, guid: d5fcaeaf83cdd48469018634f6d7233e, type: 2}
       propertyPath: gameNumber
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11459500, guid: d5fcaeaf83cdd48469018634f6d7233e, type: 2}
+      propertyPath: levelButtonNumber
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5fcaeaf83cdd48469018634f6d7233e, type: 2}
@@ -1251,6 +1263,10 @@ Prefab:
       propertyPath: gameNumber
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11486370, guid: abf886a13094e40449919f73451caa83, type: 2}
+      propertyPath: levelButtonNumber
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abf886a13094e40449919f73451caa83, type: 2}
   m_IsPrefabParent: 0
@@ -1816,9 +1832,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 1067503493}
-  - 114: {fileID: 1067503496}
   - 222: {fileID: 1067503495}
   - 114: {fileID: 1067503494}
+  - 114: {fileID: 1067503496}
   m_Layer: 0
   m_Name: "P\xE4\xE41"
   m_TagString: Untagged
@@ -1883,8 +1899,7 @@ CanvasRenderer:
 --- !u!114 &1067503496
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11469726, guid: 7384daccf2086904bbb7a2c747e28e8f,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1067503492}
   m_Enabled: 1
@@ -2175,6 +2190,10 @@ Prefab:
     - target: {fileID: 11463082, guid: 391e0370eb678104d9539bae72fcf8fa, type: 2}
       propertyPath: gameNumber
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463082, guid: 391e0370eb678104d9539bae72fcf8fa, type: 2}
+      propertyPath: levelButtonNumber
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 391e0370eb678104d9539bae72fcf8fa, type: 2}
@@ -2893,6 +2912,10 @@ Prefab:
     - target: {fileID: 11408042, guid: c79cbd8ba9b0e9843b3c8ffe6ae44c01, type: 2}
       propertyPath: gameNumber
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408042, guid: c79cbd8ba9b0e9843b3c8ffe6ae44c01, type: 2}
+      propertyPath: levelButtonNumber
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c79cbd8ba9b0e9843b3c8ffe6ae44c01, type: 2}
