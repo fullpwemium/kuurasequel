@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class LabManager : GameManager
 {
@@ -22,14 +23,10 @@ public class LabManager : GameManager
     }
     public override void PlayerWin()
     {
+		
+		SceneManager.LoadScene("LabyrinthLevelSelect");
 
-
-		/*if (manager.completedLevels.Contains(currentLevel) == false)
-		{
-			completedLevels.Add(currentLevel);
-		}
-*/
-        base.PlayerWin();
+       
     }
     public override void PlayerLose()
     {
