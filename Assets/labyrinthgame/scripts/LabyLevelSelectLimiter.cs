@@ -30,7 +30,7 @@ public class LabyLevelSelectLimiter : MonoBehaviour {
     }
 
     //Creates buttons and checks if this level is playable
-    void CheckLevels()
+    public void CheckLevels()
     {
         /* If OnClick is assigned through the inspector,
          * the reference is lost upon scene load

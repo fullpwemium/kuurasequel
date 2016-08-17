@@ -100,7 +100,7 @@ public class Collector : MonoBehaviour
 				LockdoorMove ();
 
 			}
-          // LabManager.manager.CheckForWin(hasKisse);
+           LabManager.manager.CheckForWin(hasKisse);
         }
         if (tag == "Coin")
         {

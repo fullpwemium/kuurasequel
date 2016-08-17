@@ -53,7 +53,10 @@ public class LabyGameManager : MonoBehaviour {
 
     public virtual void CheckForWin(bool hasKisse)
     {
-        //check win conditions
+		if (hasKisse)
+		{
+			PlayerWin();
+		}
     }
 
     public virtual void RestartLevel()
