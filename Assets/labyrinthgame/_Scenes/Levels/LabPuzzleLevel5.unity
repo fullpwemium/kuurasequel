@@ -1952,7 +1952,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 407868, guid: ee539840680fc6946a19e9e9052f4a0d, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 11493218, guid: ee539840680fc6946a19e9e9052f4a0d, type: 2}
       propertyPath: wayPointList.Array.data[0]
@@ -8578,11 +8578,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 439358, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.02
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 439358, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.96
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 439358, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8626,6 +8626,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11471276, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
+    - {fileID: 11476714, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1847322647 stripped
@@ -8649,6 +8650,18 @@ MonoBehaviour:
   MoveUp: 0
   MoveLeft: 0
   MoveRight: 0
+--- !u!114 &1847322649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1847322647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4256126b0cb38d40a6a9d033c6a4cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask: 16384
 --- !u!1001 &1849635686
 Prefab:
   m_ObjectHideFlags: 0
