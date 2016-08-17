@@ -6,25 +6,16 @@ using UnityEngine.UI;
 
 public class ShelfGameManager : GameManager
 {
-	//public static new ShelfManager manager;
 	bool levelComplete;
 	public static Transform destroyPoint;
 	public static float xMinPoint, xMaxPoint;
 	public static bool gyroOn = false;
-	//int gyroValue = 0;
+
 	Transform desPoint;
     static public Toggle gyroButton;
-    //public Canvas canvas;
-    
-    //Toggle gyroToggle;
 
-    //Singleton check
     protected override void Awake()
     {
-        //canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-
-        //gyroButton.onValueChanged.AddListener((delegate { this.GyroToggle(); }));
-        //DontDestroyOnLoad(canvas);
         //Debug.Log("listener lisätty");
 
         gyroButton = GameObject.Find("GyroToggle").GetComponent<Toggle>();

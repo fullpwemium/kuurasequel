@@ -30,6 +30,8 @@ public class LayerScript : MonoBehaviour
 	public List<GameObject> clickedObjects;
 
 	public int level;
+    public static int saveLevel;
+
 	public int itemlimit = 0;
 
 	public GameObject card;
@@ -83,7 +85,9 @@ public class LayerScript : MonoBehaviour
         Life1 = GameObject.Find("Life1"); //Viitataan sulkeissa määriteltyyn pelinäkymän objektiin
         Life2 = GameObject.Find("Life2");
         Life3 = GameObject.Find("Life3");
-        Yeti = GameObject.Find("yeti");        
+        Yeti = GameObject.Find("yeti");
+
+        saveLevel = level;
 
         if (level == 1)
         {
@@ -772,7 +776,7 @@ public class LayerScript : MonoBehaviour
 
 			else if(correctcards == 2)
 			{
-//				correctcards = 0;
+                //				correctcards = 0;
 
                 /*
                 triesLeft += 1;
@@ -788,7 +792,7 @@ public class LayerScript : MonoBehaviour
                       Life3.SetActive(true);
                 }
                 */
-
+                Debug.Log("ninjat on täällä");
                 StartCoroutine(gameWon());
                 NextLevel = GameObject.Find("NextLevel").GetComponent<Button>(); //Asetetaan button aktiiviseksi
                 NextLevel.interactable = true;
@@ -1150,7 +1154,7 @@ public class LayerScript : MonoBehaviour
                     Life3.SetActive(true);
                 }
                 */
-
+                
                 StartCoroutine(gameWon());
                 NextLevel = GameObject.Find("NextLevel").GetComponent<Button>(); //asetetaan button aktiiviseksi
                 NextLevel.interactable = true;
@@ -1203,10 +1207,15 @@ public class LayerScript : MonoBehaviour
 
     public IEnumerator gameWon() //show "you won" text for 4 seconds and restart the game
     {
+        
         CountUpTimer.EndGame(); //Viitataan toiseen skriptiin kun peli päättyy. Muutetaan EndGamen sisältämä Cleared trueksi.
         Rotator.Stop();
         GlobalManager.MemoryGameSave();
-        MemoryGameLevelSelecterLimitter.MemoryGamelevelilapi(level);
+
+        
+        MemoryGameLevelSelecterLimitter.MemoryGamelevelilapi(level);    //Avataan seuraava kenttä
+        //GlobalGameManager.GGM.MemoryGameSave();
+
 
         lmbDisabled = true;
 //        yield return new WaitForSeconds(0.1f);

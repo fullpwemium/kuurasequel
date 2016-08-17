@@ -78,9 +78,9 @@ public class MemoryGameUI : MonoBehaviour
             gameOverPanel.SetActive(true);
             float timeSinceStarted = Time.time - lerpStartTime;
             float percentageComplete = timeSinceStarted / 1f;
-            Debug.Log(percentageComplete);
+            //Debug.Log(percentageComplete);
             gameOverPanel.transform.position = Vector3.Lerp(startPosition, destination, percentageComplete);
-            Debug.Log(percentageComplete);
+            //Debug.Log(percentageComplete);
             if (percentageComplete >= 1.0f)
             {
                 moving = false;
@@ -130,8 +130,11 @@ public class MemoryGameUI : MonoBehaviour
     //Switches text in gameoverpanel
     public void TextSwitcher(bool won)
     {
+
+        GlobalGameManager.GGM.MemoryGameSave();
         if (won == false)
         {
+            Debug.Log("ninjat on täällä");
             //StartCoroutine("slowDown");
             endText.text = "YOU SUCK!";
             StartLerping();
@@ -141,7 +144,7 @@ public class MemoryGameUI : MonoBehaviour
         }
         else if (won == true)
         {
-
+            Debug.Log("ninjat on täällä");
             /*lista = FindObjectsOfType<GameObject>();
             for (int i = 0; i > lista.Length; i++)
             {
@@ -267,32 +270,98 @@ public class MemoryGameUI : MonoBehaviour
 
     void Score()
     {
-        if (Points.breakingPoints + Points.breakingLimit - (Points.breakingLimit / 10) <= Points.breakingLimit)
-        {
-            stars = 3;
+        //if (Points.breakingPoints + Points.breakingLimit - (Points.breakingLimit / 10) <= Points.breakingLimit)
+        //{
+        //    stars = 3;
 
-        }
-        else if ((Points.breakingPoints * 2) <= Points.breakingLimit)
-        {
-            stars = 2;
+        //}
+        //else if ((Points.breakingPoints * 2) <= Points.breakingLimit)
+        //{
+        //    stars = 2;
 
-        }
-        else if (Points.breakingPoints <= Points.breakingLimit)
-        {
-            stars = 1;
+        //}
+        //else if (Points.breakingPoints <= Points.breakingLimit)
+        //{
+        //    stars = 1;
 
+        //}
+
+        //if (GlobalManager.winTime < GlobalManager.ScoreArray[2]) //Saatavat pisteet, mikäli määritelty aikaraja ei ylity
+        //{
+            if (LayerScript.triesLeft == 2) //Kaikki kolme yritystä jäljellä
+            {
+//                MagicDust += 20 * 10; //Maksimipisteet
+                stars = 3;
+            }
+
+            else if (LayerScript.triesLeft == 1) //Kaksi yritystä jäljellä
+            {
+//                MagicDust += 20 * 5;
+                stars = 3;
+            }
+
+            else if (LayerScript.triesLeft == 0) //Yksi yritys jäljellä
+            {
+//                MagicDust += 20 * 2;
+                stars = 2;
+            }
+
+
+//            AllMagicDust = GameObject.Find("MagicDust").GetComponent<Text>();
+//            AllMagicDust.text = MagicDust.ToString("f0");
+
+//            Debug.Log("Global Manager: Magic Dust = " + MagicDust);
+        
+
+//        if (GlobalManager.winTime > GlobalManager.ScoreArray[2]) //Saatavat pisteet, mikäli määritelty aikaraja ylittyy
+//        {
+
+//            if (LayerScript.triesLeft == 2) //Kaikki kolme yritystä jäljellä
+//            {
+////                MagicDust += 10 * 10;
+//                stars = 2;
+//            }
+
+//            else if (LayerScript.triesLeft == 1) //Kaksi yritystä jäljellä
+//            {
+////                MagicDust += 10 * 5;
+//                stars = 2;
+//            }
+
+//            else if (LayerScript.triesLeft == 0) //Yksi yritys jäljellä
+//            {
+////                MagicDust += 10 * 2; //Minimipisteet
+//                stars = 1;
+//            }
+
+            
+            //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
+            Debug.Log("whoppiduuu  " + LayerScript.saveLevel);
+            if (stars > GlobalManager.memoryGameStars[LayerScript.saveLevel-1])
+            {
+                GlobalManager.memoryGameStars[LayerScript.saveLevel-1] = stars;
+                Storage.Save();
+            }            
+            else
+            {
+
+            }
+
+            
         }
+
+ //       PlayerPrefs.SetInt("Magic Dust ", MagicDust); //Tallennetaan pisteet
 
         //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
 
-/*        if (stars > GameManager.levelStars[GameManager.manager.currentLevel])
-        {
-            GameManager.levelStars[GameManager.manager.currentLevel] = stars;
-        }
-        else
-        {
+        /*        if (stars > GameManager.levelStars[GameManager.manager.currentLevel])
+                {
+                    GameManager.levelStars[GameManager.manager.currentLevel] = stars;
+                }
+                else
+                {
 
-        } */
+                } */
 
         //GameManager.levelStars[GameManager.manager.currentLevel] = stars;
         //GlobalGameManager.GGM.bubbleWarehouseSave();
@@ -338,7 +407,7 @@ public class MemoryGameUI : MonoBehaviour
         return null;
 
     }*/
-}
+
 
 
 

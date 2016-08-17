@@ -6,7 +6,7 @@ public class KissaPetClick : MonoBehaviour {
 	public GameObject pet2;
 	public GameObject pet1;
 	public GameObject säde;
-	public GameObject dusti;
+
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +21,7 @@ public class KissaPetClick : MonoBehaviour {
 		pet1.SetActive (false);
 		pet2.SetActive (true);
 		säde.SetActive (true);
-		dusti.SetActive (true);
+
 	}
 
 }

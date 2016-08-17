@@ -133,7 +133,7 @@ public class UI : MonoBehaviour
         if (won == false)
         {
             //StartCoroutine("slowDown");
-            endText.text = "YOU SUCK!";
+            endText.text = "You Lost";
             StartLerping();
             destination = new Vector3(0, 9, 0);
             Debug.Log(destination);
