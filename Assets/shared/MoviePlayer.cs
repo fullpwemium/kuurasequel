@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoviePlayer : MonoBehaviour
 {
-    private string movPath = "Video/Kuura in the snowglobe.mp4";
+    private string movPath = "Kuura in the snowglobe 1.mp4";
     private static bool moviePlayed = false;
     //public MovieTexture movTexture;
     // Use this for initialization
