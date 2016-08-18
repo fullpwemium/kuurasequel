@@ -103,7 +103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &4140981
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1755,6 +1755,7 @@ GameObject:
   - 114: {fileID: 557414292}
   - 222: {fileID: 557414291}
   - 114: {fileID: 557414290}
+  - 114: {fileID: 557414293}
   m_Layer: 0
   m_Name: "P\xE4\xE41"
   m_TagString: Untagged
@@ -1823,9 +1824,22 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 557414288}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a73208d23a84e44973fda16240cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starNumber: 1
+  buttonNumber: 0
+--- !u!114 &557414293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 557414288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e48aab3422af87499f3f842af9fa89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   starNumber: 1
@@ -5580,7 +5594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1744852143
 AudioListener:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LabManager : GameManager
 {
     bool levelComplete;
-	public static int stars;
+	public static int cats;
 	public int Coins;
 	public static int score;
 
@@ -53,24 +53,26 @@ public class LabManager : GameManager
 
 	public void Pisteet()
 	{
+        Debug.Log("bananaaa");
+
 		if (score > 8) 
 		{
-			stars = 3;
+			cats = 3;
 			Debug.Log ("3 tähtee");
 		}
 		else if (score > 6) 
 		{
-			stars = 2;
+			cats = 2;
 			Debug.Log ("2 tähtee");
 		}
 		else if (score > 4) 
 		{
-			stars = 1;
+			cats = 1;
 			Debug.Log ("1 tähtee");
 		}
-		if (stars > LabManager.levelStars[LabManager.manager.currentLevel])
+		if (cats > LabManager.levelStars[LabManager.manager.currentLevel])
 		{
-			LabManager.levelStars[LabManager.manager.currentLevel] = stars;
+			LabManager.levelStars[LabManager.manager.currentLevel] = cats;
 		}
 		else
 		{
