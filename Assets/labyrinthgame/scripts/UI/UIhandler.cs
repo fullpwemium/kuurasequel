@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class UIhandler : MonoBehaviour
@@ -67,8 +68,7 @@ public class UIhandler : MonoBehaviour
     }
     public void GoToMenu()
     {
-        LabyGameManager.manager.GoToMenu();
-        //LabManager.manager.GoToMenu();
+		SceneManager.LoadScene("Map2");
         Time.timeScale = 1f;
     }
 }
