@@ -400,6 +400,7 @@ public class BobPlayerScript : MonoBehaviour
     public void aboveButtonScale()
     {
         aboveButton = gameObject.transform.position.y * -0.16F;
+        Debug.Log("Above Button = " + aboveButton);
     }
 
     //void OnTriggerEnter2D(Collider2D Col)
