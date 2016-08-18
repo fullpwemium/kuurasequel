@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
             currentLevel = levelToLoad;
             Debug.Log(currentLevel);
 
-            SceneManager.LoadScene("ShelfLevel1");
+            SceneManager.LoadScene("LoadScene");
         //}
         if (currentLevel == 0)
             {
