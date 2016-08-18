@@ -16,6 +16,7 @@ public class LabyGameManager : MonoBehaviour {
      */
     public int[] levelIndex;
     public List<int> completedLevels = new List<int>();
+
     //The current index in the 'levelIndex' array.
     public int currentLevel;
     //Level select scene index

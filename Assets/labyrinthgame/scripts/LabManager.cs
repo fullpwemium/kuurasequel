@@ -23,8 +23,14 @@ public class LabManager : GameManager
     }
     public override void PlayerWin()
     {
-		
-		SceneManager.LoadScene("LabyrinthLevelSelect");
+
+        if (LabyGameManager.manager.completedLevels.Contains(currentLevel) == false)
+        {
+            LabyGameManager.manager.completedLevels.Add(currentLevel);
+        }
+
+
+        SceneManager.LoadScene("LabyrinthLevelSelect");
 
        
     }
