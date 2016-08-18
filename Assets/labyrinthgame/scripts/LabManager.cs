@@ -39,6 +39,7 @@ public class LabManager : GameManager
         if (hasKisse)
         {
             PlayerWin();
+			Pisteet ();
         }
     }
 
