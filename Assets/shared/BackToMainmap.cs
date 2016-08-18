@@ -16,6 +16,6 @@ public class BackToMainmap : MonoBehaviour {
 
     public void LoadScene(int scene)
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene("Map2");
     }
 }
