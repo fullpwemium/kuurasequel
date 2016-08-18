@@ -27,6 +27,7 @@ public class Collector : MonoBehaviour
 	Light torchLight = null;
 	bool addLight = false;
 	Vector2 allowedDir;
+	public static int score = 0;
 
 
     void Start()
@@ -104,6 +105,7 @@ public class Collector : MonoBehaviour
         }
         if (tag == "Coin")
         {
+			score += 1;
             Destroy(col.gameObject);
             Coins++;
             UIhandler.handler.UpdateCoins(Coins);
