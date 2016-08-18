@@ -9469,6 +9469,90 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &883619897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 883619900}
+  - 114: {fileID: 883619899}
+  - 114: {fileID: 883619898}
+  m_Layer: 0
+  m_Name: GameManager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &883619898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 883619897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454f4d0bcb4e2f140acc9a5973103c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doublePoints: 1
+  safeMode: 0
+  magnet: 0
+  powerLengthCounter: 8
+--- !u!114 &883619899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 883619897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49aa61ba778dfa4abbc7fd41d06673a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelIndex: 070000000800000009000000
+  completedLevels: 
+  levelSelectScene: 35
+  thunderButton: {fileID: 0}
+  snowButton: {fileID: 0}
+  catmovement: {fileID: 0}
+  Length: 0
+  score: 0
+  PointsPerCoin: 1
+  lengthText: {fileID: 0}
+  scoreText: {fileID: 0}
+  timerText: {fileID: 0}
+  Timer: 60
+  gameOverPanel: {fileID: 0}
+  play: {fileID: 0}
+  nextLevel: {fileID: 0}
+  levelSelect: {fileID: 0}
+  currentScore: {fileID: 0}
+  isDaed: 0
+  currentState: 0
+  timer: 5
+  snowTimer: 0
+  thunderTimer: 0
+  isCatMoving: 0
+  blink: 0
+  count: 0
+  levelselect: RunnerLevelMap
+  Coins: []
+--- !u!4 &883619900
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 883619897}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.4279659, y: -4.234769, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &908705745
 GameObject:
   m_ObjectHideFlags: 0
