@@ -180,8 +180,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1238445642}
-  - 114: {fileID: 1238445641}
   - 114: {fileID: 1238445643}
+  - 114: {fileID: 1238445641}
   m_Layer: 0
   m_Name: Loader
   m_TagString: Untagged
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1238445640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b10b3cf1e3bc91c4bbad6ddfffd190bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f7002e734bcba24fa2c0f24899a0eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1238445642
