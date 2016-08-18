@@ -2966,27 +2966,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6165300, guid: c1fb0443166ac4e218f97384593d9646, type: 2}
       propertyPath: m_Offset.x
-      value: 0.011768103
+      value: -0.002319336
       objectReference: {fileID: 0}
     - target: {fileID: 6165300, guid: c1fb0443166ac4e218f97384593d9646, type: 2}
       propertyPath: m_Size.x
-      value: 1.1365881
+      value: 0.18931833
       objectReference: {fileID: 0}
     - target: {fileID: 6165300, guid: c1fb0443166ac4e218f97384593d9646, type: 2}
       propertyPath: m_Offset.y
-      value: -0.06269407
+      value: -0.10367489
       objectReference: {fileID: 0}
     - target: {fileID: 6165300, guid: c1fb0443166ac4e218f97384593d9646, type: 2}
       propertyPath: m_Size.y
-      value: 1.1253881
+      value: 1.2073466
       objectReference: {fileID: 0}
     - target: {fileID: 6110610, guid: c1fb0443166ac4e218f97384593d9646, type: 2}
       propertyPath: m_Offset.y
-      value: -0.026411057
+      value: -0.048455715
       objectReference: {fileID: 0}
     - target: {fileID: 6110610, guid: c1fb0443166ac4e218f97384593d9646, type: 2}
       propertyPath: m_Size.y
-      value: 1.0732305
+      value: 1.1173198
       objectReference: {fileID: 0}
     - target: {fileID: 410698, guid: c1fb0443166ac4e218f97384593d9646, type: 2}
       propertyPath: m_LocalScale.x
@@ -3004,6 +3004,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ab3041a8e7dfd14caf04335f7aa6060, type: 2}
+    - target: {fileID: 6110610, guid: c1fb0443166ac4e218f97384593d9646, type: 2}
+      propertyPath: m_Offset.x
+      value: -0.00015830994
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110610, guid: c1fb0443166ac4e218f97384593d9646, type: 2}
+      propertyPath: m_Size.x
+      value: 0.25378114
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1fb0443166ac4e218f97384593d9646, type: 2}
   m_IsPrefabParent: 0
@@ -4073,7 +4081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &916381369
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6570,6 +6578,7 @@ MonoBehaviour:
   completedLevels: 
   currentLevel: 0
   levelSelectScene: 13
+  Coins: 0
 --- !u!114 &1623804698
 MonoBehaviour:
   m_ObjectHideFlags: 0
