@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class LabManager : GameManager
 {
     bool levelComplete;
+	public static int stars;
+	public int Coins;
+	public static int score;
 
     //Singleton check
     protected override void Awake()
@@ -26,7 +29,6 @@ public class LabManager : GameManager
 		
 		SceneManager.LoadScene("LabyrinthLevelSelect");
 
-       
     }
     public override void PlayerLose()
     {
@@ -39,4 +41,33 @@ public class LabManager : GameManager
             PlayerWin();
         }
     }
+
+	//Tähän alapuolelle sitte se tähtisysdemi
+
+	public void Pisteet()
+	{
+		if (score > 8) 
+		{
+			stars = 3;
+			Debug.Log ("3 tähtee");
+		}
+		else if (score > 6) 
+		{
+			stars = 2;
+			Debug.Log ("2 tähtee");
+		}
+		else if (score > 4) 
+		{
+			stars = 1;
+			Debug.Log ("1 tähtee");
+		}
+		if (stars > LabManager.levelStars[LabManager.manager.currentLevel])
+		{
+			LabManager.levelStars[LabManager.manager.currentLevel] = stars;
+		}
+		else
+		{
+
+		}
+	}
 }
