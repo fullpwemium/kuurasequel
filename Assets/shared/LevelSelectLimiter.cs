@@ -47,8 +47,9 @@ public class LevelSelectLimiter : MonoBehaviour {
 		}
         //Checks if this or the previous level is completed, if previous is completed check if next level exists
 		if (GameManager.manager.completedLevels.Contains (buttonLevel) ||
-			GameManager.manager.completedLevels.Contains (buttonLevel - 1) && buttonLevel < GameManager.manager.levelIndex.Length) 
+			GameManager.manager.completedLevels.Contains (buttonLevel - 1) && buttonLevel < 10)//GameManager.manager.levelIndex.Length) 
 		{
+            Debug.Log(gameObject + " löytyi");
 			gameObject.SetActive (true);
 		}
         initialized = true;
