@@ -8,7 +8,7 @@ public class Collector : MonoBehaviour
 	bool hasDoorKey;
     //public string NextLevel;
     int Keys = 0;
-    public int Coins = 0;
+    public static int Coins = 0;
     bool Finished;
 	float torchValue = 1f; 
 	float torchAmt = 0f;

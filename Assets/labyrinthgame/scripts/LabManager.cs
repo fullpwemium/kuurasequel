@@ -9,6 +9,7 @@ public class LabManager : GameManager
 	public static int cats;
 	public int Coins;
 	public static int score;
+    public static int[] levelCats = new int[200];
 
     //Singleton check
     protected override void Awake()
@@ -54,25 +55,27 @@ public class LabManager : GameManager
 	public void Pisteet()
 	{
         Debug.Log("bananaaa");
-
-		if (score > 8) 
+        
+		if (Collector.Coins > 8) 
 		{
 			cats = 3;
 			Debug.Log ("3 tähtee");
 		}
-		else if (score > 6) 
+		else if (Collector.Coins > 6) 
 		{
 			cats = 2;
 			Debug.Log ("2 tähtee");
 		}
-		else if (score > 4) 
+		else if (Collector.Coins > 4) 
 		{
 			cats = 1;
 			Debug.Log ("1 tähtee");
 		}
-		if (cats > LabManager.levelStars[LabManager.manager.currentLevel])
+        Debug.Log("kissat: " + cats);
+		if (cats > LabManager.levelCats[LabManager.manager.currentLevel])
 		{
-			LabManager.levelStars[LabManager.manager.currentLevel] = cats;
+			LabManager.levelCats[LabManager.manager.currentLevel] = cats;
+            Debug.Log("levelikissat: " + LabManager.levelCats[0]);
 		}
 		else
 		{

@@ -22,8 +22,8 @@ public class LabyrinthStarScript : MonoBehaviour {
         Star = GetComponent<Image>();
 
         //Star.color = Color.white;
-
-        if (LabManager.levelStars[buttonNumber] >= starNumber)
+        Debug.Log("tähtibananas: "+ buttonNumber + LabManager.levelCats[buttonNumber]);
+        if (LabManager.levelCats[buttonNumber] >= starNumber)
         {
             Star.color = Color.white;
             Debug.Log("varjattu");
