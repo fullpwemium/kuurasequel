@@ -3181,6 +3181,7 @@ GameObject:
   - 114: {fileID: 1143397067}
   - 222: {fileID: 1143397066}
   - 114: {fileID: 1143397065}
+  - 114: {fileID: 1143397068}
   m_Layer: 0
   m_Name: "P\xE4\xE42"
   m_TagString: Untagged
@@ -3249,9 +3250,22 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1143397063}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a73208d23a84e44973fda16240cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starNumber: 3
+  buttonNumber: 0
+--- !u!114 &1143397068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1143397063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e48aab3422af87499f3f842af9fa89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   starNumber: 3
@@ -4947,6 +4961,7 @@ GameObject:
   - 114: {fileID: 1590662334}
   - 222: {fileID: 1590662333}
   - 114: {fileID: 1590662332}
+  - 114: {fileID: 1590662335}
   m_Layer: 0
   m_Name: "P\xE4\xE43"
   m_TagString: Untagged
@@ -5015,9 +5030,22 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1590662330}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a73208d23a84e44973fda16240cc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starNumber: 2
+  buttonNumber: 0
+--- !u!114 &1590662335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1590662330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e48aab3422af87499f3f842af9fa89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   starNumber: 2
@@ -5901,6 +5929,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2024531391}
   - 114: {fileID: 2024531390}
+  - 114: {fileID: 2024531392}
   m_Layer: 0
   m_Name: LabyGamemanager
   m_TagString: Untagged
@@ -5936,6 +5965,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
+--- !u!114 &2024531392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2024531389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5209f432bf243419d9ce58f6bef0af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelIndex: 
+  completedLevels: 
+  currentLevel: 0
+  levelSelectScene: 0
+  Coins: 0
 --- !u!1 &2057968590
 GameObject:
   m_ObjectHideFlags: 0
