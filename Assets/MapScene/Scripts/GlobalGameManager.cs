@@ -49,7 +49,8 @@ public class GlobalGameManager : MonoBehaviour
 
     void Start()
     {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
+        Debug.Log("kaikki tuhottu");
 
         //InsertScore(5,bwhStars, "banana", 10);
         haeData();
