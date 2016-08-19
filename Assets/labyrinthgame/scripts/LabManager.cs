@@ -28,9 +28,10 @@ public class LabManager : GameManager
     public override void PlayerWin()
     {
 
-        if (LabyGameManager.manager.completedLevels.Contains(currentLevel) == false)
+        if (LabyGameManager.manager.completedLevels.Contains(LabyGameManager.manager.currentLevel) == false)
         {
-            LabyGameManager.manager.completedLevels.Add(currentLevel);
+            
+            LabyGameManager.manager.completedLevels.Add(LabyGameManager.manager.currentLevel);
         }
 
 
