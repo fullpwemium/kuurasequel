@@ -72,9 +72,9 @@ public class LabManager : GameManager
 			Debug.Log ("1 tähtee");
 		}
         Debug.Log("kissat: " + cats);
-		if (cats > LabManager.levelCats[LabManager.manager.currentLevel])
+		if (cats > LabManager.levelCats[LabyGameManager.manager.currentLevel])
 		{
-			LabManager.levelCats[LabManager.manager.currentLevel] = cats;
+			LabManager.levelCats[LabyGameManager.manager.currentLevel] = cats;
             Debug.Log("levelikissat: " + LabManager.levelCats[0]);
 		}
 		else
