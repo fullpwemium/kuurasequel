@@ -1,0 +1,49 @@
+Catch the Cat:
+
+-Pelinlatauksessa joku bugi? vanha kuva jää ruutuun pyörimään, vain jollain laitteilla?
+
+-Level Designia voisi uusia, kissat juoksee turhan kovaa.
+
+
+Memory Game:
+
+-Memory Gamen Level Selectissä näkyy aina ensin vain 2 kaksi kenttää vaikka enemmän olisi unlockattu.
+
+-Memory Gamen viimeisen clickkauksen optimointi.
+
+-Kentän läpipääsyscreenin päivitys.
+
+
+Runner:
+
+-Runnerin Level Selectissä tulee pari erroria mutta eivät ole letaaleja, voisi kuitenkin korjata niin homma toimii aina.
+
+-Runneriin pitää vaihtaa nappien grafiikat.
+
+-Vain 3 leveliä, niitä lisää?
+
+-piste ja tähtijärjestelmä.
+
+-Kentän läpipääsyscreeni.
+
+Labyrinth:
+
+-Labyrinttiin tähtijärjestelmä(löytyy  nyt)
+	-Myös kentänläpipääsy screeni.
+
+-Labyrintin level selectiin tähtienvärjäys ja Level Selecti kuntoon.
+
+
+Puuttuu:
+
+-Kauppa +inapit + magic dust(katso kuva peli ekonomiasta, löytyy flappitaulusta.)(graffat löytyy)
+-LeaderBoard(graffat löytyy)
+-Pilivi.
+-Analytiks
+-Global Managerin viimeistelyä(osia puuttuu)
+
+Extra:
+
+-LoadScreen/LoadBar(screen sweep, sitten musta ruutu, ja sitten avataan uusi skene) (graffat löytyy)
+
+- Kääntyminen myös levelmappeihin.

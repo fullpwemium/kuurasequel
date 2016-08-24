@@ -205,6 +205,8 @@ public class RunnerManager : MonoBehaviour
             currentScore.text = score.ToString();
             PlatformerCharacter2D.previousVelocity = PlatformerCharacter2D.m_Rigidbody2D.velocity.y;
 
+            Debug.Log("Paussi");
+
         }
         else if (pausePressed && currentState != GameState.Died)
         {
@@ -213,6 +215,7 @@ public class RunnerManager : MonoBehaviour
             pausePressed = false;
             PlatformerCharacter2D.m_Rigidbody2D.velocity = new Vector2(0,PlatformerCharacter2D.previousVelocity);
 
+            Debug.Log("Jatkuu");
         }
 
     }
