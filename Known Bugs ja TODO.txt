@@ -37,6 +37,8 @@ Labyrinth:
 
 -Labyrintin level selectiin t‰htienv‰rj‰ys ja Level Selecti kuntoon. (V‰rj‰ys tehty)
 
+-Ker‰ttyjen kolikkojen m‰‰r‰ ei nollaudu siirrytt‰ess‰ kent‰st‰ toiseen eik‰ aloittaessa uudelleen kuoleman j‰lkeen.
+
 
 Puuttuu:
 
