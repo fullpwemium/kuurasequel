@@ -16,6 +16,8 @@ Memory Game:
 
 Runner:
 
+-Runnerin Pause-valikko ei aina aktivoidu näkyviin vaikka peli pysähtyykin.
+
 -Runnerin Level Selectissä tulee pari erroria mutta eivät ole letaaleja, voisi kuitenkin korjata niin homma toimii aina.
 
 -Runneriin pitää vaihtaa nappien grafiikat.
@@ -26,12 +28,14 @@ Runner:
 
 -Kentän läpipääsyscreeni.
 
+-(Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eivät hakeudu loppuun vaan jäävät leijumaan eri suuntiin.)
+
 Labyrinth:
 
 -Labyrinttiin tähtijärjestelmä(löytyy  nyt)
 	-Myös kentänläpipääsy screeni.
 
--Labyrintin level selectiin tähtienvärjäys ja Level Selecti kuntoon.
+-Labyrintin level selectiin tähtienvärjäys ja Level Selecti kuntoon. (Värjäys tehty)
 
 
 Puuttuu:
@@ -46,4 +50,4 @@ Extra:
 
 -LoadScreen/LoadBar(screen sweep, sitten musta ruutu, ja sitten avataan uusi skene) (graffat löytyy)
 
-- Kääntyminen myös levelmappeihin.
+- Pelihahmon kääntyminen paikasta toiseen kävellessä myös levelmappeihin.
