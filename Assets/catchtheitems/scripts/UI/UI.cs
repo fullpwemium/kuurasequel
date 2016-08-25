@@ -46,7 +46,7 @@ public class UI : MonoBehaviour
 
 
 
-        if (ShelfGameManager.manager.currentLevel == 0)
+		if (ShelfGameManager.manager != null && ShelfGameManager.manager.currentLevel == 0)
         {
             tutorialPanel.SetActive(true);
             Time.timeScale = 0f;

@@ -345,7 +345,9 @@ public class BobPlayerScript : MonoBehaviour
         string tileName = "Tile" + midWayDestinationX + midWayDestinationY;
         Debug.Log(tileName);
         GameObject midWayButton = GameObject.Find("Tile" + midWayDestinationX + midWayDestinationY);
-        destination.x = midWayButton.transform.position.x;
+		if(midWayButton == null)
+			return;
+		destination.x = midWayButton.transform.position.x;
         
         destination.y = midWayButton.transform.position.y;
         

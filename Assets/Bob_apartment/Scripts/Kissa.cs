@@ -89,8 +89,8 @@ public class Kissa : MonoBehaviour {
         kasa4SR = kasa4GO.GetComponent<SpriteRenderer>();
 
 
-        lattiaKissaSR.sprite = kissat[kissaRandom()];
-        lattiaKissa2SR.sprite = kissat[kissaRandom()];
+        //lattiaKissaSR.sprite = kissat[kissaRandom()];
+        //lattiaKissa2SR.sprite = kissat[kissaRandom()];
 
 
     }

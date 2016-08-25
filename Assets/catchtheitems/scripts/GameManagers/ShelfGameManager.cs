@@ -18,7 +18,11 @@ public class ShelfGameManager : GameManager
     {
         //Debug.Log("listener lisätty");
 
-        gyroButton = GameObject.Find("GyroToggle").GetComponent<Toggle>();
+		GameObject gyro = GameObject.Find("GyroToggle");
+		if(gyro == null)
+			return;
+
+		gyroButton = gyro.GetComponent<Toggle>();
         gyroButton.onValueChanged.AddListener((delegate { ShelfGameManager.GyroToggle(); }));
 
         if (ShelfGameManager.gyroOn == true)
