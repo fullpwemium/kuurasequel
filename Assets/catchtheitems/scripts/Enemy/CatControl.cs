@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CatControl : MonoBehaviour {
 
-    private float actionInterval = Random.Range(3, 6);
+	private float actionInterval;// = Random.Range(3, 6);
 	public float catSpeed = -5f;
 	public float catJumpHigh = 9f;
 	public float catGroundTime = 1f;
@@ -32,6 +32,7 @@ public class CatControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		actionInterval = Random.Range(3, 6);
 		rgb2D = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		sprite = GetComponent<SpriteRenderer> ();

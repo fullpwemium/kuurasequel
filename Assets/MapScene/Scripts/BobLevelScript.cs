@@ -102,10 +102,12 @@ public class BobLevelScript : MonoBehaviour
 
         Vector2 kierto;
 
-        kierto.x = startLevelButton.transform.position.x;
-        kierto.y = startLevelButton.transform.position.y;
-
-        gameObject.transform.position = kierto;
+		if(startLevelButton != null)
+		{
+	        kierto.x = startLevelButton.transform.position.x;
+    	    kierto.y = startLevelButton.transform.position.y;
+			gameObject.transform.position = kierto;
+		}
 
         //Debug.Log("gameObject" + gameObject.transform.position + "startButton" + startButton.transform.position);
 

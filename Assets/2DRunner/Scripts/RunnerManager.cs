@@ -109,8 +109,11 @@ public class RunnerManager : MonoBehaviour
         {
             foreach(GameObject coin in Coins)
             {
-                Rigidbody2D coinRb = coin.transform.GetComponent<Rigidbody2D>();
-                coinRb.constraints = RigidbodyConstraints2D.FreezeAll;
+				if(coin != null)
+				{
+                	Rigidbody2D coinRb = coin.transform.GetComponent<Rigidbody2D>();
+                	coinRb.constraints = RigidbodyConstraints2D.FreezeAll;
+				}
             }
         }
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -174,7 +177,8 @@ public class RunnerManager : MonoBehaviour
     }
     void GetLength()
     {
-        lengthText.text = GameObject.Find("CharacterRobotBoy").transform.position.x.ToString("F1");
+		if(lengthText != null)
+        	lengthText.text = GameObject.Find("CharacterRobotBoy").transform.position.x.ToString("F1");
     }
     //Loads next level and stores completed level
     public void PlayerWin()
@@ -242,9 +246,11 @@ public class RunnerManager : MonoBehaviour
     {
         if (level != 0 )
         {
-            InitialPanel();
+            //InitialPanel();
             GlobalGameManager.GGM.RunnerSave();
         }
+		if(level == 7)
+			InitialPanel();
     }
 
     void InitialPanel()
@@ -256,7 +262,7 @@ public class RunnerManager : MonoBehaviour
             catMovement = GameObject.Find("CatIcon").GetComponent<CatMovement>();
             anim = GameObject.Find("Effector").GetComponent<Animator>();
             gameOverPanel = GameObject.Find("GameOverPanel");
-            play = GameObject.Find("Play").GetComponent<Button>();
+			play = GameObject.Find("Play").GetComponent<Button>();
             nextLevel = GameObject.Find("NextLevel").GetComponent<Button>();
             levelSelect = GameObject.Find("LevelSelect").GetComponent<Button>();
             currentScore = GameObject.Find("CurrentScore").GetComponent<Text>();
@@ -268,7 +274,7 @@ public class RunnerManager : MonoBehaviour
             snowButton.gameObject.SetActive(false);
             gameOverPanel.SetActive(false);
 
-            play.onClick.AddListener(() => Play());
+			play.onClick.AddListener(() => Play());
             nextLevel.onClick.AddListener(() => NextLevel());
             levelSelect.onClick.AddListener(() => BackToMenu());
             thunderButton.onClick.AddListener(() => useThunder());
