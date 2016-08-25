@@ -28,6 +28,8 @@ Runner:
 
 -Kent‰n l‰pip‰‰syscreeni.
 
+-Kakkoskent‰ss‰ Pausevalikko on koko ajan p‰‰ll‰ ja Pause-nappia painaessa peli kaatuu. Kolmoskent‰n toimivuudesta ei tietoa.
+
 -(Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eiv‰t hakeudu loppuun vaan j‰‰v‰t leijumaan eri suuntiin.)
 
 Labyrinth:
