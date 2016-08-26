@@ -98,7 +98,7 @@ public class VälisivuScripti : MonoBehaviour
             peliNumero = 1;
             BobPlayerScript.nearMemoryGame = true;
             title.text = "Mister Mysterious Mystic Cards";
-            dialogi.text = "Hope you have a good memory!";
+            dialogi.text = "- Hope you have a good memory!\n- Try to find images above Bob.";
             peliKuva.sprite = pelikuva1;
         }
         else if(BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 2)
