@@ -811,7 +811,7 @@ Prefab:
     - target: {fileID: 11417916, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6ecd90b86bb944a40bc1a48a5b74e9e8,
+      objectReference: {fileID: 21300000, guid: cb94b30f1a29db948a4cb22c5456d118,
         type: 3}
     - target: {fileID: 22436384, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
       propertyPath: m_LocalScale.y
@@ -833,6 +833,41 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11432938, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dca509d69578e7e42a9d8be7c5d3fbd3,
+        type: 3}
+    - target: {fileID: 11454242, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 543589dad74470d4b8045ae2fb82987a,
+        type: 3}
+    - target: {fileID: 11429668, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 676bd5a8e98a4a44fbb1d0b7285e1c6f,
+        type: 3}
+    - target: {fileID: 11442518, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dca509d69578e7e42a9d8be7c5d3fbd3,
+        type: 3}
+    - target: {fileID: 11454954, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1f288e8744088c4588f75198c850694,
+        type: 3}
+    - target: {fileID: 11457856, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 676bd5a8e98a4a44fbb1d0b7285e1c6f,
+        type: 3}
+    - target: {fileID: 11440676, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: db2101cf5a5213f4f947122a9da0d84e,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
   m_IsPrefabParent: 0
