@@ -471,7 +471,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 439358, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 11472180, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
       propertyPath: Torchshow
@@ -7185,7 +7185,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22418380, guid: 6975587b72ad446419282d92c97272cb, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 22418380, guid: 6975587b72ad446419282d92c97272cb, type: 2}
       propertyPath: m_AnchoredPosition.x

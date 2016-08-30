@@ -49,7 +49,9 @@ public class UIhandler : MonoBehaviour
     }
 	public void showDoorKey ()
 	{
-		DoorKeyImage.gameObject.SetActive(true);
+        Debug.Log("Ovi auki");
+
+        DoorKeyImage.gameObject.SetActive(true);        
 	}
     public void UpdateCoins (int CoinAmt)
     {

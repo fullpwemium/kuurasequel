@@ -1187,6 +1187,10 @@ Prefab:
       propertyPath: m_Size.x
       value: 1.8366258
       objectReference: {fileID: 0}
+    - target: {fileID: 11482652, guid: d932adf44d9c7174ca5942dc7acca4ab, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d932adf44d9c7174ca5942dc7acca4ab, type: 2}
   m_IsPrefabParent: 0
@@ -1204,7 +1208,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 290942708}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d41702d5ee90b64398ef986bcf14ea2, type: 3}
   m_Name: 
@@ -1891,7 +1895,7 @@ Transform:
   - {fileID: 1743149822}
   - {fileID: 519316073}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!1001 &519316072
 Prefab:
   m_ObjectHideFlags: 0
@@ -4851,7 +4855,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 439358, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
       propertyPath: m_RootOrder
-      value: 26
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 11472180, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
       propertyPath: Torchshow
@@ -8410,7 +8414,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 488986, guid: 60f3aca4495ceb140ad4c7be0d4a9b29, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11493520, guid: 60f3aca4495ceb140ad4c7be0d4a9b29, type: 2}
       propertyPath: currentLevel
@@ -8575,7 +8579,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401242, guid: f68a3ce28356f1247b56ace870a8e277, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11485270, guid: f68a3ce28356f1247b56ace870a8e277, type: 2}
       propertyPath: orientation
@@ -8777,7 +8781,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22418380, guid: 6975587b72ad446419282d92c97272cb, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 22418380, guid: 6975587b72ad446419282d92c97272cb, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -9893,7 +9897,7 @@ RectTransform:
   - {fileID: 668410381}
   - {fileID: 991571755}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

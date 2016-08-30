@@ -23,5 +23,7 @@ public class CatSpawn : MonoBehaviour {
 		spawn = Random.Range(1,spawnpoints.Length);
 
 		transform.position = new Vector3 (spawnpoints [spawn].transform.position.x, spawnpoints [spawn].transform.position.y);
+
+        Debug.Log("Cat Spawn = " + spawn);
 	}
 }

@@ -724,6 +724,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11482652, guid: d932adf44d9c7174ca5942dc7acca4ab, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d932adf44d9c7174ca5942dc7acca4ab, type: 2}
   m_IsPrefabParent: 0
@@ -3974,7 +3978,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401242, guid: f68a3ce28356f1247b56ace870a8e277, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11485270, guid: f68a3ce28356f1247b56ace870a8e277, type: 2}
       propertyPath: orientation
@@ -7231,7 +7235,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22418380, guid: 6975587b72ad446419282d92c97272cb, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 22418380, guid: 6975587b72ad446419282d92c97272cb, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -11264,7 +11268,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499568, guid: 352aa545dd182c2408f403d5b2422ddb, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 21251046, guid: 352aa545dd182c2408f403d5b2422ddb, type: 2}
       propertyPath: m_Materials.Array.data[0]
