@@ -1,10 +1,24 @@
 fileFormatVersion: 2
 guid: c62d54d49f504724782429566fdf8990
-timeCreated: 1469528505
+timeCreated: 1472638383
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - button1: {instanceID: 0}
+  - button2: {instanceID: 0}
+  - button3: {instanceID: 0}
+  - button4: {instanceID: 0}
+  - button5: {instanceID: 0}
+  - tausta: {instanceID: 0}
+  - kylttiKissa: {instanceID: 0}
+  - kyltti1: {instanceID: 0}
+  - kyltti2: {instanceID: 0}
+  - pelikuva1: {instanceID: 0}
+  - pelikuva2: {instanceID: 0}
+  - pelikuva3: {instanceID: 0}
+  - pelikuva4: {instanceID: 0}
+  - pelikuva5: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

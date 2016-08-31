@@ -3473,10 +3473,10 @@ MonoBehaviour:
   kylttiKissa: {fileID: 383308609}
   kyltti1: {fileID: 435873604}
   kyltti2: {fileID: 1617423966}
-  pelikuva1: {fileID: 21300000, guid: be705761a33e4414e97c83fd63f60633, type: 3}
+  pelikuva1: {fileID: 21300000, guid: 36f57121b2bec064baffbbb081e0cff9, type: 3}
   pelikuva2: {fileID: 21300000, guid: 553ad03382b5b3042bc8e63ac3ca4c4c, type: 3}
-  pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
-  pelikuva4: {fileID: 21300000, guid: c9a9fbcc99d83e4468728a36124b846c, type: 3}
+  pelikuva3: {fileID: 21300000, guid: df2af8bd76c9b2b41a9504b20881e264, type: 3}
+  pelikuva4: {fileID: 21300000, guid: 5d1e3f5c18db73a4c936777236e082d9, type: 3}
   pelikuva5: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
 --- !u!1 &1038018594
