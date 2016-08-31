@@ -3748,6 +3748,28 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: dca509d69578e7e42a9d8be7c5d3fbd3,
         type: 3}
+    - target: {fileID: 11441416, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dca509d69578e7e42a9d8be7c5d3fbd3,
+        type: 3}
+    - target: {fileID: 146478, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 147886, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420358, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d5b892b505a924f4fbba46ca869da79b,
+        type: 3}
+    - target: {fileID: 11459652, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: m_Text
+      value: Try to save as many items as you can from falling on the ground.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
   m_IsPrefabParent: 0

@@ -8689,7 +8689,7 @@ Prefab:
     - target: {fileID: 21229558, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0ab3041a8e7dfd14caf04335f7aa6060, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5814640, guid: 21f5f9179cb6b1045a33ba91479cc7a3, type: 2}
       propertyPath: m_Radius
       value: 1.1775117
