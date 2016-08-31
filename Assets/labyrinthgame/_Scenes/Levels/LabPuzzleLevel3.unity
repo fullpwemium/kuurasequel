@@ -5492,7 +5492,7 @@ Prefab:
         type: 3}
     - target: {fileID: 127512, guid: d932adf44d9c7174ca5942dc7acca4ab, type: 2}
       propertyPath: m_TagString
-      value: DoorKey
+      value: Kisse
       objectReference: {fileID: 0}
     - target: {fileID: 481380, guid: d932adf44d9c7174ca5942dc7acca4ab, type: 2}
       propertyPath: m_LocalScale.x
@@ -5512,7 +5512,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6186650, guid: d932adf44d9c7174ca5942dc7acca4ab, type: 2}
       propertyPath: m_Size.y
-      value: 1.4
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 6186650, guid: d932adf44d9c7174ca5942dc7acca4ab, type: 2}
       propertyPath: m_Offset.y
