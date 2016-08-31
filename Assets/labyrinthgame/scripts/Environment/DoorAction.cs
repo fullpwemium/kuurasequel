@@ -22,10 +22,12 @@ public class DoorAction : SwitchTarget
             case false:
                 doorOpen = true;
                 anim.SetBool("doorOpen", true);
+                Debug.Log("Door open");
                 break;
             case true:
                 doorOpen = false;
                 anim.SetBool("doorOpen", false);
+                Debug.Log("Door close");
                 break;
         }
     }
