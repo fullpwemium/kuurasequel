@@ -48,7 +48,7 @@ public class VälisivuScripti : MonoBehaviour
         button2.onClick.AddListener(buttonpressed);
         button3.onClick.AddListener(buttonpressed);
         button4.onClick.AddListener(buttonpressed);
-        // button5.onClick.AddListener(buttonpressed);
+        button5.onClick.AddListener(buttonpressed);
 
         //tausta = GameObject.Find("Image");
 
@@ -91,7 +91,7 @@ public class VälisivuScripti : MonoBehaviour
         button3.interactable = false;
         button4.interactable = false;
 
-        //button5.interactable = false;
+        button5.interactable = false;
 
 
         if (BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 3)
@@ -130,7 +130,8 @@ public class VälisivuScripti : MonoBehaviour
         else if (BobPlayerScript.StandingButtonNumberX == 1 && BobPlayerScript.StandingButtonNumberY == 3)
         {
             peliNumero = 5;
-            title.text = "BAAANAANAAA5555";
+            BobPlayerScript.nearBobApartment = true;
+            title.text = "Bob's apartment";
             dialogi.text = "nananananananananananananananaanananan BATMAN!WTF BBQ 5555";
             peliKuva.sprite = pelikuva5;
         }

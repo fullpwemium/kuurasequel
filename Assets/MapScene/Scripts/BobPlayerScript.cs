@@ -54,7 +54,7 @@ public class BobPlayerScript : MonoBehaviour
     Collider2D Rakennus1; //Objektiin luotu tag
     Collider2D Rakennus2;
 
-    Button Button1, Button2, Button3, Button4;
+    Button Button1, Button2, Button3, Button4, Button5;
 
     public Button puhekupla1, puhekupla2, puhekupla3, puhekupla4, puhekupla5;
 
@@ -67,7 +67,7 @@ public class BobPlayerScript : MonoBehaviour
         puhekupla2.interactable = false;
         puhekupla3.interactable = false;
         puhekupla4.interactable = false;
-       // puhekupla5.interactable = false;
+        puhekupla5.interactable = false;
 
         nearMemoryGame = false;
         Frame = 0;
@@ -162,7 +162,7 @@ public class BobPlayerScript : MonoBehaviour
             puhekupla2.interactable = false;
             puhekupla3.interactable = false;
             puhekupla4.interactable = false;
-           // puhekupla5.interactable = false;
+            puhekupla5.interactable = false;
 
         }
         else if (StandingButtonNumberX == 0 && StandingButtonNumberY == 1)
@@ -171,7 +171,7 @@ public class BobPlayerScript : MonoBehaviour
             puhekupla2.interactable = false;
             puhekupla3.interactable = true;
             puhekupla4.interactable = false;
-            //puhekupla5.interactable = false;
+            puhekupla5.interactable = false;
         }
         else if (StandingButtonNumberX == 2 && StandingButtonNumberY == 1)
         {
@@ -179,7 +179,7 @@ public class BobPlayerScript : MonoBehaviour
             puhekupla2.interactable = false;
             puhekupla3.interactable = false;
             puhekupla4.interactable = false;
-            //puhekupla5.interactable = true;
+            puhekupla5.interactable = true;
         }
         else if (StandingButtonNumberX == 0 && StandingButtonNumberY == 2)
         {
@@ -187,7 +187,7 @@ public class BobPlayerScript : MonoBehaviour
             puhekupla2.interactable = true;
             puhekupla3.interactable = false;
             puhekupla4.interactable = false;
-            //puhekupla5.interactable = false;
+            puhekupla5.interactable = false;
         }
         else if (StandingButtonNumberX == 0 && StandingButtonNumberY == 3)
         {
@@ -195,7 +195,7 @@ public class BobPlayerScript : MonoBehaviour
             puhekupla2.interactable = false;
             puhekupla3.interactable = false;
             puhekupla4.interactable = true;
-            //puhekupla5.interactable = false;
+            puhekupla5.interactable = false;
         }
         else
         {
@@ -203,7 +203,7 @@ public class BobPlayerScript : MonoBehaviour
             puhekupla2.interactable = false;
             puhekupla3.interactable = false;
             puhekupla4.interactable = false;
-            //puhekupla5.interactable = false;
+            puhekupla5.interactable = false;
 
         }
 
