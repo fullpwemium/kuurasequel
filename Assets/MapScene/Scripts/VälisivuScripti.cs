@@ -124,15 +124,15 @@ public class VälisivuScripti : MonoBehaviour
             peliNumero = 4;
             BobPlayerScript.Runner = true;
             title.text = "Winter Forest Marathon";
-            dialogi.text = "- Make all the coins come to you with magnet!\n-Don't forget you can JUMP again while midair!";
+            dialogi.text = "- Make all the coins come to you with magnet!\n- Don't forget you can JUMP again while midair!";
             peliKuva.sprite = pelikuva4;
         }
-        else if (BobPlayerScript.StandingButtonNumberX == 1 && BobPlayerScript.StandingButtonNumberY == 3)
+        else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 1)
         {
             peliNumero = 5;
             BobPlayerScript.nearBobApartment = true;
             title.text = "Bob's apartment";
-            dialogi.text = "nananananananananananananananaanananan BATMAN!WTF BBQ 5555";
+            dialogi.text = "- Smooth Kuura to get Magic Dust.\n- Watch ad to get even more Magic Dust.";
             peliKuva.sprite = pelikuva5;
         }
 
