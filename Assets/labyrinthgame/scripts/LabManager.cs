@@ -57,17 +57,17 @@ public class LabManager : GameManager
 	{
         Debug.Log("bananaaa");
         
-		if (Collector.Coins > 8) 
+		if (Collector.Coins >= 8) 
 		{
 			cats = 3;
 			Debug.Log ("3 tähtee");
 		}
-		else if (Collector.Coins > 6) 
+		else if (Collector.Coins >= 6) 
 		{
 			cats = 2;
 			Debug.Log ("2 tähtee");
 		}
-		else if (Collector.Coins > 4) 
+		else if (Collector.Coins >= 4) 
 		{
 			cats = 1;
 			Debug.Log ("1 tähtee");
