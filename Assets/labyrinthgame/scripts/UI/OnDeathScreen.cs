@@ -15,6 +15,7 @@ public class OnDeathScreen : MonoBehaviour {
 			BlackScreen.SetActive (true);
 			confuseimg.SetActive(true);
 			Time.timeScale = 0;
+            Collector.Coins = 0;
 		}
 	}
 	public void OnButtonClick ()
