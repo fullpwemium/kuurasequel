@@ -136,7 +136,7 @@ public class MemoryGameUI : MonoBehaviour
         {
             Debug.Log("ninjat on täällä");
             //StartCoroutine("slowDown");
-            endText.text = "YOU SUCK!";
+            endText.text = "YOU LOSE!";
             StartLerping();
             destination = new Vector3(0, 9, 0);
             Debug.Log(destination);

@@ -35,7 +35,7 @@ public class LabManager : GameManager
         }
 
 
-        SceneManager.LoadScene("LabyrinthLevelSelect");
+        SceneManager.LoadScene("LabyrinthLevelSelect"); //Ladataan kenttävalikko
 
     }
     public override void PlayerLose()

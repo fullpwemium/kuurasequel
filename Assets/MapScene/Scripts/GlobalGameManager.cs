@@ -16,6 +16,8 @@ public class GlobalGameManager : MonoBehaviour
 
     int[] RunnerStars;
 
+    int LabyrinthStars;
+
     List<int> memoryGamecompletedLevels;
 
     List<int> MemoryGamecompletedLevels = new List<int>();
@@ -251,5 +253,15 @@ public class GlobalGameManager : MonoBehaviour
                 Debug.Log(RunnercompletedLevels[i]);
             }
         }
+    }
+
+    public void LabyrinthSave()
+    {
+        LabyrinthStars = LabManager.cats;
+    }
+
+    public void LabyrinthLoad()
+    {
+
     }
 }
