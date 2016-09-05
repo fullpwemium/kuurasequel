@@ -96,8 +96,16 @@ public class RunnerManager : MonoBehaviour
 
             foreach (GameObject coin in Coins)
             {
-                Rigidbody2D coinRb = coin.transform.GetComponent<Rigidbody2D>();
-                coinRb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                if (coin)
+                {
+                    Rigidbody2D coinRb = coin.transform.GetComponent<Rigidbody2D>();
+                    coinRb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                }
+                else
+                {
+
+                }
+                
             }
 
         }
@@ -188,7 +196,9 @@ public class RunnerManager : MonoBehaviour
             completedLevels.Add(currentLevel);
         }
         //currentLevel++;
-        LoadLevel(currentLevel + 1);
+
+//        LoadLevel(currentLevel + 1);
+        Application.LoadLevel("RunnerLevelMap");
     }
 
     public void PlayerLose()
