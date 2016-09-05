@@ -36,7 +36,10 @@ public class RunnerLevelSelectLimiter : MonoBehaviour
          * So it's done through code */
         button = GetComponent<Button>();
         //button.onClick.AddListener(loadFrigginLevel); //Adds OnClick to button
-        gameObject.SetActive(false);
+
+//        gameObject.SetActive(false);
+        gameObject.SetActive(true);
+
        // Debug.Log(RunnerManager.manager.completedLevels.Any());
 		if(RunnerManager.manager == null)
 			return;
