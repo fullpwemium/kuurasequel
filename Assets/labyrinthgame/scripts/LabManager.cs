@@ -61,17 +61,24 @@ public class LabManager : GameManager
 		{
 			cats = 3;
 			Debug.Log ("3 tähtee");
+            Collector.Coins = 0;
 		}
 		else if (Collector.Coins >= 6) 
 		{
 			cats = 2;
 			Debug.Log ("2 tähtee");
-		}
-		else if (Collector.Coins >= 4) 
+            Collector.Coins = 0;
+        }
+        else if (Collector.Coins >= 4) 
 		{
 			cats = 1;
 			Debug.Log ("1 tähtee");
-		}
+            Collector.Coins = 0;
+        }
+        else
+        {
+            Collector.Coins = 0;
+        }
         Debug.Log("kissat: " + cats);
 		if (cats > LabManager.levelCats[LabyGameManager.manager.currentLevel])
 		{

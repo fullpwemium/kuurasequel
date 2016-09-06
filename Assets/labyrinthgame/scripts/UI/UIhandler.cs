@@ -70,7 +70,15 @@ public class UIhandler : MonoBehaviour
     }
     public void GoToMenu()
     {
+        Collector.Coins = 0;
 		SceneManager.LoadScene("Map2");
+        Time.timeScale = 1f;
+    }
+
+    public void GoToLabyrinthLevelSelect()
+    {
+        Collector.Coins = 0;
+        SceneManager.LoadScene("LabyrinthLevelSelect");
         Time.timeScale = 1f;
     }
 }

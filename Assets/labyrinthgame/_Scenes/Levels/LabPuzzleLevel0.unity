@@ -3626,6 +3626,7 @@ GameObject:
   - 222: {fileID: 617090244}
   - 114: {fileID: 617090243}
   - 114: {fileID: 617090242}
+  - 114: {fileID: 617090245}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -3693,7 +3694,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2007932524}
-        m_MethodName: GoToMenu
+        m_MethodName: GoToLabyrinthLevelSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3740,6 +3741,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 617090240}
+--- !u!114 &617090245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617090240}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ab643ab2ea2406e99fea9b01105afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: MapScene/LabyrinthLevelSelect
 --- !u!1 &630641685
 GameObject:
   m_ObjectHideFlags: 0
