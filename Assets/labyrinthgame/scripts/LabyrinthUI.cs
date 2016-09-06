@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MemoryGameUI : MonoBehaviour
+public class LabyrinthUI : MonoBehaviour
 {
 
     public GameObject gameOverPanel;
@@ -46,11 +46,11 @@ public class MemoryGameUI : MonoBehaviour
 
 
 
-/*        if (ShelfGameManager.manager.currentLevel == 0)
-        {
-            tutorialPanel.SetActive(true);
-            Time.timeScale = 0f;
-        }*/
+        //if (ShelfGameManager.manager != null && ShelfGameManager.manager.currentLevel == 0)
+        //{
+        //    tutorialPanel.SetActive(true);
+        //    Time.timeScale = 0f;
+        //}
     }
 
     public void GameOverPanelToggle()
@@ -84,7 +84,7 @@ public class MemoryGameUI : MonoBehaviour
             if (percentageComplete >= 1.0f)
             {
                 moving = false;
-//                Time.timeScale = 0f;
+                //Time.timeScale = 0f;
             }
         }
 
@@ -124,19 +124,19 @@ public class MemoryGameUI : MonoBehaviour
 
     public void Levelselect()
     {
-//        ShelfGameManager.manager.GoToMenu();
+        ShelfGameManager.manager.GoToMenu();
     }
 
     //Switches text in gameoverpanel
     public void TextSwitcher(bool won)
     {
 
-        GlobalGameManager.GGM.MemoryGameSave();
+        GlobalGameManager.GGM.LabyrinthSave();
         if (won == false)
         {
             Debug.Log("ninjat on täällä");
             //StartCoroutine("slowDown");
-            endText.text = "YOU LOSE!";
+            endText.text = "You Lost";
             StartLerping();
             destination = new Vector3(0, 9, 0);
             Debug.Log(destination);
@@ -154,7 +154,7 @@ public class MemoryGameUI : MonoBehaviour
             GOPanel = false;
             Score();
             StartLerping();
-            destination = new Vector3(-1, 4, 0);    //Siirretään paneeli määritellylle paikalle
+            destination = new Vector3(0, 9, 0);
             Debug.Log(destination);
             moving = true;
 
@@ -270,99 +270,34 @@ public class MemoryGameUI : MonoBehaviour
 
     void Score()
     {
-        //if (Points.breakingPoints + Points.breakingLimit - (Points.breakingLimit / 10) <= Points.breakingLimit)
-        //{
-        //    stars = 3;
-
-        //}
-        //else if ((Points.breakingPoints * 2) <= Points.breakingLimit)
-        //{
-        //    stars = 2;
-
-        //}
-        //else if (Points.breakingPoints <= Points.breakingLimit)
-        //{
-        //    stars = 1;
-
-        //}
-
-        //if (GlobalManager.winTime < GlobalManager.ScoreArray[2]) //Saatavat pisteet, mikäli määritelty aikaraja ei ylity
-        //{
-            if (LayerScript.triesLeft == 2) //Kaikki kolme yritystä jäljellä
-            {
-//                MagicDust += 20 * 10; //Maksimipisteet
-                stars = 3;
-            }
-
-            else if (LayerScript.triesLeft == 1) //Kaksi yritystä jäljellä
-            {
-//                MagicDust += 20 * 5;
-                stars = 3;
-            }
-
-            else if (LayerScript.triesLeft == 0) //Yksi yritys jäljellä
-            {
-//                MagicDust += 20 * 2;
-                stars = 2;
-            }
-
-
-//            AllMagicDust = GameObject.Find("MagicDust").GetComponent<Text>();
-//            AllMagicDust.text = MagicDust.ToString("f0");
-
-//            Debug.Log("Global Manager: Magic Dust = " + MagicDust);
-        
-
-//        if (GlobalManager.winTime > GlobalManager.ScoreArray[2]) //Saatavat pisteet, mikäli määritelty aikaraja ylittyy
-//        {
-
-//            if (LayerScript.triesLeft == 2) //Kaikki kolme yritystä jäljellä
-//            {
-////                MagicDust += 10 * 10;
-//                stars = 2;
-//            }
-
-//            else if (LayerScript.triesLeft == 1) //Kaksi yritystä jäljellä
-//            {
-////                MagicDust += 10 * 5;
-//                stars = 2;
-//            }
-
-//            else if (LayerScript.triesLeft == 0) //Yksi yritys jäljellä
-//            {
-////                MagicDust += 10 * 2; //Minimipisteet
-//                stars = 1;
-//            }
-
-            
-            //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
-            Debug.Log("whoppiduuu  " + LayerScript.saveLevel);
-            if (stars > GlobalManager.memoryGameStars[LayerScript.saveLevel-1])
-            {
-                GlobalManager.memoryGameStars[LayerScript.saveLevel-1] = stars;
-                Storage.Save();
-            }            
-            else
-            {
-
-            }
-
-            
+        if (Collector.Coins >= 8)
+        {
+            stars = 3;
         }
+        else if (Collector.Coins >= 6)
+        {
+            stars = 2;
 
- //       PlayerPrefs.SetInt("Magic Dust ", MagicDust); //Tallennetaan pisteet
+        }
+        else if (Collector.Coins >= 4)
+        {
+            stars = 1;
+
+        }
 
         //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
 
-        /*        if (stars > GameManager.levelStars[GameManager.manager.currentLevel])
-                {
-                    GameManager.levelStars[GameManager.manager.currentLevel] = stars;
-                }
-                else
-                {
 
-                } */
+        if (stars > LabManager.levelCats[LabyGameManager.manager.currentLevel])
+        {
+            LabManager.levelCats[LabyGameManager.manager.currentLevel] = stars;
+            Debug.Log("levelikissat: " + LabManager.levelCats[0]);
+        }
 
+        else
+        {
+
+        }
         //GameManager.levelStars[GameManager.manager.currentLevel] = stars;
         //GlobalGameManager.GGM.bubbleWarehouseSave();
         //Debug.Log(GameManager.levelStars[GameManager.manager.currentLevel] + "tahtienmaara");
@@ -407,7 +342,5 @@ public class MemoryGameUI : MonoBehaviour
         return null;
 
     }*/
-
-
-
+}
 

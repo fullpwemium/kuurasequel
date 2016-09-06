@@ -10098,6 +10098,7 @@ GameObject:
   - 114: {fileID: 2007932526}
   - 114: {fileID: 2007932525}
   - 114: {fileID: 2007932524}
+  - 114: {fileID: 2007932528}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -10183,6 +10184,27 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2007932528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2007932523}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d5b79e7ac1ab74489683451edab842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 1761599247}
+  pausePanel: {fileID: 1918328368}
+  tutorialPanel: {fileID: 0}
+  hiutale1: {fileID: 1187497142}
+  hiutale2: {fileID: 657591833}
+  hiutale3: {fileID: 296431775}
+  hiutale4: {fileID: 99923052}
+  hiutale5: {fileID: 1722830806}
+  hiutale6: {fileID: 1559475735}
+  endText: {fileID: 0}
 --- !u!1001 &2009129975
 Prefab:
   m_ObjectHideFlags: 0
