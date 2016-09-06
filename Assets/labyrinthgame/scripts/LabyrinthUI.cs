@@ -288,11 +288,11 @@ public class LabyrinthUI : MonoBehaviour
         //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
 
 
-        if (stars > LabManager.levelCats[LabyGameManager.manager.currentLevel])
-        {
-            LabManager.levelCats[LabyGameManager.manager.currentLevel] = stars;
-            Debug.Log("levelikissat: " + LabManager.levelCats[0]);
-        }
+        //if (stars > LabManager.levelCats[LabyGameManager.manager.currentLevel])
+        //{
+        //    LabManager.levelCats[LabyGameManager.manager.currentLevel] = stars;
+        //    Debug.Log("levelikissat: " + LabManager.levelCats[0]);
+        //}
 
         else
         {

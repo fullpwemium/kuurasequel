@@ -73,6 +73,8 @@ public class LabyGameManager : MonoBehaviour {
         {
             SceneManager.LoadScene(levelIndex[levelToLoad]);
             currentLevel = levelToLoad;
+            Debug.Log("Level index = " + levelIndex);
+            Debug.Log("Level to load = " + levelToLoad);
         }
         else
         {

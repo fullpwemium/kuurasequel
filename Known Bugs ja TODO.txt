@@ -16,11 +16,11 @@ Memory Game:
 
 Runner:
 
--Runnerin Pause-valikko ei aina aktivoidu n‰kyviin vaikka peli pys‰htyykin.
+-Runnerin Pause-valikko ei aina aktivoidu n‰kyviin vaikka peli pys‰htyykin. Johtuu kaatumisista.
 
 -Runnerin Level Selectiss‰ tulee pari erroria mutta eiv‰t ole letaaleja, voisi kuitenkin korjata niin homma toimii aina.
 
--Runneriin pit‰‰ vaihtaa nappien grafiikat.
+-Runneriin pit‰‰ vaihtaa nappien grafiikat. (Tehty)
 
 -Vain 3 leveli‰, niit‰ lis‰‰?
 
@@ -29,6 +29,9 @@ Runner:
 -Kent‰n l‰pip‰‰syscreeni.
 
 -Kakkoskent‰ss‰ Pausevalikko on koko ajan p‰‰ll‰ ja Pause-nappia painaessa peli kaatuu. Kolmoskent‰n toimivuudesta ei tietoa.
+
+-Jostain syyst‰ Runnerin toinen kentt‰ ei lataa Game Manageriin kent‰n objekteja. Ensimm‰inen kentt‰ kuitenkin toimii, joten
+miss‰ vika?
 
 -(Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eiv‰t hakeudu loppuun vaan j‰‰v‰t leijumaan eri suuntiin.)
 
@@ -40,6 +43,8 @@ Labyrinth:
 -Labyrintin level selectiin t‰htienv‰rj‰ys ja Level Selecti kuntoon. (V‰rj‰ys tehty)
 
 -Ker‰ttyjen kolikkojen m‰‰r‰ ei nollaudu siirrytt‰ess‰ kent‰st‰ toiseen eik‰ aloittaessa uudelleen kuoleman j‰lkeen.
+
+-Jostain syyst‰ labyrinttikenttien napit viev‰t seuraavaan kentt‰‰n kuin olisi tarkoitus.
 
 
 Puuttuu:
@@ -55,3 +60,5 @@ Extra:
 -LoadScreen/LoadBar(screen sweep, sitten musta ruutu, ja sitten avataan uusi skene) (graffat lˆytyy)
 
 - Pelihahmon k‰‰ntyminen paikasta toiseen k‰velless‰ myˆs levelmappeihin.
+
+- Palaaminen aiempaan n‰kym‰‰n puhelimen omalla Back-nappulalla.

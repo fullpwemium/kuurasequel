@@ -26,7 +26,7 @@ public class NewPlayerPushBlock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         caster(thePlayer.pos, 1f);
-        Debug.Log("Player position: " + thePlayer.transform.position);
+//        Debug.Log("Player position: " + thePlayer.transform.position);
         
 	}
 

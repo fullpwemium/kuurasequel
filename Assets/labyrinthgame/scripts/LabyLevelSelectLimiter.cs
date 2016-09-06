@@ -37,7 +37,10 @@ public class LabyLevelSelectLimiter : MonoBehaviour {
          * So it's done through code */
         button = GetComponent<Button>();
         //button.onClick.AddListener(loadFrigginLevel); //Adds OnClick to button
+
         gameObject.SetActive(false);
+//        gameObject.SetActive(true);
+
         //Debug.Log(LabManager.manager);
 
         //The first level is always shown regardless of its completetion

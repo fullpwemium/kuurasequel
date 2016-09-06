@@ -11,9 +11,12 @@ public class LabManager : GameManager
 	public static int score;
     public static int[] levelCats = new int[200];
 
+//    private LabyrinthUI winningUI;
+
     //Singleton check
     protected override void Awake()
     {
+//        winningUI = GameObject.Find("UI").GetComponent<LabyrinthUI>();
         if (manager == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -34,6 +37,7 @@ public class LabManager : GameManager
             LabyGameManager.manager.completedLevels.Add(LabyGameManager.manager.currentLevel);
         }
 
+//        winningUI.TextSwitcher(true);
 
         SceneManager.LoadScene("LabyrinthLevelSelect"); //Ladataan kenttävalikko
 
