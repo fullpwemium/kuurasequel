@@ -13,7 +13,6 @@ public class LabyrinthStarScript : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
         ChecKStars();
     }
 
@@ -27,6 +26,7 @@ public class LabyrinthStarScript : MonoBehaviour {
         {
             Star.color = Color.white;
             Debug.Log("varjattu");
+            Debug.Log("Button number in Star Script = " + buttonNumber);
         }
         else
         {

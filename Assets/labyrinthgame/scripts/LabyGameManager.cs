@@ -69,18 +69,33 @@ public class LabyGameManager : MonoBehaviour {
     public void LoadLevel(int levelToLoad)
     {
         //Add check to not go over array bounds
+
         if (levelToLoad < levelIndex.Length)
         {
             SceneManager.LoadScene(levelIndex[levelToLoad]);
             currentLevel = levelToLoad;
             Debug.Log("Level index = " + levelIndex);
             Debug.Log("Level to load = " + levelToLoad);
+            Debug.Log("Current level = " + currentLevel);
         }
         else
         {
             Debug.Log("Index out of range in level list!");
             GoToMenu();
         }
+
+        //if (BobLevelScript.StandingLevelNumberX == 0)     //Ladataan kenttä StandingLevelNumberin perusteella.
+        //{
+        //    SceneManager.LoadScene("LabPuzzleLevel0");
+        //}
+        //else if (BobLevelScript.StandingLevelNumberX == 1)
+        //{
+        //    SceneManager.LoadScene("LabPuzzleLevel0");
+        //}
+        //else if (BobLevelScript.StandingLevelNumberX == 2)
+        //{
+        //    SceneManager.LoadScene("LabPuzzleLevel2");
+        //}
     }
 
     /*public virtual void LoadNextLevel()
