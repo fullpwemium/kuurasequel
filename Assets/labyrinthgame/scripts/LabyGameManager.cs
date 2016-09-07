@@ -84,7 +84,8 @@ public class LabyGameManager : MonoBehaviour {
             GoToMenu();
         }
 
-        //if (BobLevelScript.StandingLevelNumberX == 0)     //Ladataan kenttä StandingLevelNumberin perusteella.
+        //if (BobLevelScript.StandingLevelNumberX == 0)     //Ladataan kenttä StandingLevelNumberin perusteella. Ongelmana tähtien värittäminen ensimmäiseen Level Buttoniin vaikka olisi
+                                                            //jokin muu kenttä läpäisty.
         //{
         //    SceneManager.LoadScene("LabPuzzleLevel0");
         //}
