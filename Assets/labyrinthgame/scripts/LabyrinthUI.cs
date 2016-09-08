@@ -131,7 +131,7 @@ public class LabyrinthUI : MonoBehaviour
     public void TextSwitcher(bool won)
     {
 
-//        GlobalGameManager.GGM.LabyrinthSave();
+        GlobalGameManager.GGM.LabyrinthSave();
         if (won == false)
         {
             Debug.Log("ninjat on täällä");

@@ -37,7 +37,8 @@ public class LabManager : GameManager
             LabyGameManager.manager.completedLevels.Add(LabyGameManager.manager.currentLevel);
         }
 
-//        winningUI.TextSwitcher(true);
+        //        winningUI.TextSwitcher(true);     Aktivoidaan labyrinttikentän voittamispaneeli, tällä hetkellä vasta LabPuzzleLevel0:ssa. Samanlainen systeemi kuin muistipelissä, mutta
+                                                    //jostain syystä ei toimi.
 
         SceneManager.LoadScene("LabyrinthLevelSelect"); //Ladataan kenttävalikko
 
