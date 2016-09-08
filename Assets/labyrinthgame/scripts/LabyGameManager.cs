@@ -77,6 +77,51 @@ public class LabyGameManager : MonoBehaviour {
             Debug.Log("Level index = " + levelIndex);
             Debug.Log("Level to load = " + levelToLoad);
             Debug.Log("Current level = " + currentLevel);
+
+            if (currentLevel == 0)      //Loading level on the basis of currentLevel
+            {
+                SceneManager.LoadScene("LabPuzzleLevel0");
+            }
+            else if (currentLevel == 1)
+            {
+                SceneManager.LoadScene("LabPuzzleLevel1");
+            }
+            else if (currentLevel == 2)
+            {
+                SceneManager.LoadScene("LabPuzzleLevel2");
+            }
+            else if (currentLevel == 3)
+            {
+                SceneManager.LoadScene("LabPuzzleLevel3");
+            }
+            else if (currentLevel == 4)
+            {
+                SceneManager.LoadScene("LabPuzzleLevel4");
+            }
+            else if (currentLevel == 5)
+            {
+                SceneManager.LoadScene("LabPuzzleLevel5");
+            }
+            else if (currentLevel == 6)
+            {
+                SceneManager.LoadScene("LabPuzzleLevel6");
+            }
+            else if (currentLevel == 7)
+            {
+                SceneManager.LoadScene("LabPuzzleLevel7");
+            }
+            else if (currentLevel == 8)
+            {
+                SceneManager.LoadScene("LabPuzzleLevel8");
+            }
+            else if (currentLevel == 9)
+            {
+                SceneManager.LoadScene("LabPuzzleLevel9");
+            }
+            else if (currentLevel == 10)    //Not set to Labyrinth level select
+            {
+                SceneManager.LoadScene("LabPuzzleLevel11");
+            }
         }
         else
         {
