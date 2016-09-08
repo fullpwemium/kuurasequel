@@ -11,12 +11,12 @@ public class LabManager : GameManager
 	public static int score;
     public static int[] levelCats = new int[200];
 
-//    private LabyrinthUI winningUI;
+    private LabyrinthUI winningUI;
 
     //Singleton check
     protected override void Awake()
     {
-//        winningUI = GameObject.Find("UI").GetComponent<LabyrinthUI>();
+        winningUI = GameObject.Find("UI").GetComponent<LabyrinthUI>();
         if (manager == null)
         {
             DontDestroyOnLoad(gameObject);
