@@ -35,7 +35,7 @@ Labyrinth
 
 (- Myˆs kent‰nl‰pip‰‰sy screeni) Aleksi
 
-(- Jostain syyst‰ labyrinttikenttien napit viev‰t seuraavaan kentt‰‰n kuin olisi tarkoitus.) Aleksi
+(- Jostain syyst‰ labyrinttikenttien napit viev‰t seuraavaan kentt‰‰n kuin olisi tarkoitus.) Aleksi KORJATTU
 
 - Kun LabPuzzleLevel11:ssa painaa nappia, niin oven animaatio bugaa teleporttaamalla oven v‰‰r‰‰n paikkaan.
 

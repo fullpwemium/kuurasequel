@@ -1,64 +1,57 @@
-Catch the Cat:
+Bubble Ware House
+Catch the Cat
 
--Pelinlatauksessa joku bugi? vanha kuva jää ruutuun pyörimään, vain jollain laitteilla?
+-Pelinlatauksessa joku bugi? vanha kuva jää ruutuun pyörimään, vain jollain laitteilla?, mahdollisesti ratkaistu, johtuu versio 4 Androidista mutta saa tutkia, löytyykö ratkaisu myös vanhemmalle laitteelle.
 
 -Level Designia voisi uusia, kissat juoksee turhan kovaa.
 
+Mister Mysterious Mystic Cards
+Memory Game
 
-Memory Game:
+- Memory Gamen Level Selectissä näkyy aina ensin vain 2 kaksi kenttää vaikka enemmän olisi unlockattu.
 
--Memory Gamen Level Selectissä näkyy aina ensin vain 2 kaksi kenttää vaikka enemmän olisi unlockattu.
+(- Kentän läpipääsyscreenin päivitys.) Aleksi
 
--Memory Gamen viimeisen clickkauksen optimointi.
+Winter Forest Marathon
+Runner
 
--Kentän läpipääsyscreenin päivitys.
+- Pause-valikko ei aina aktivoidu näkyviin vaikka peli pysähtyykin. Johtuu kaatumisista.
 
+- Runnerin Level Selectissä tulee pari erroria mutta eivät ole letaaleja, voisi kuitenkin korjata, niin homma toimii aina. Tietenkin kaikki bugit pitää korjata, peli ei kaatua missään olosuhteissa.
 
-Runner:
+- Vain 3 leveliä, niitä lisää?
 
--Runnerin Pause-valikko ei aina aktivoidu näkyviin vaikka peli pysähtyykin. Johtuu kaatumisista.
+- piste ja "tähti"/kissanpääjärjestelmä. Tarkoittaa, että yleensä pitää saada pistejärjestelmä toimimaan joka pelissä.
 
--Runnerin Level Selectissä tulee pari erroria mutta eivät ole letaaleja, voisi kuitenkin korjata niin homma toimii aina.
+- Kentän läpipääsyscreeni puuttuu.
 
--Runneriin pitää vaihtaa nappien grafiikat. (Tehty)
+- Kakkoskentässä Pausevalikko on koko ajan päällä ja Pause-nappia painaessa peli kaatuu. Kolmoskentän toimivuudesta ei tietoa.
+-Jostain syystä Runnerin toinen kenttä ei lataa DontDestroyOnLoadin Game Manageriin kentän objekteja. Ensimmäinen kenttä kuitenkin toimii, joten missä vika?
 
--Vain 3 leveliä, niitä lisää?
+-(Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eivät hakeudu loppuun vaan jäävät leijumaan eri suuntiin.) Onko tämä bugi vai feature?
 
--piste ja tähtijärjestelmä.
+Winter Hedge Maze
+Labyrinth
 
--Kentän läpipääsyscreeni.
+(- Myös kentänläpipääsy screeni) Aleksi
 
--Kakkoskentässä Pausevalikko on koko ajan päällä ja Pause-nappia painaessa peli kaatuu. Kolmoskentän toimivuudesta ei tietoa.
+(- Jostain syystä labyrinttikenttien napit vievät seuraavaan kenttään kuin olisi tarkoitus.) Aleksi
 
--Jostain syystä Runnerin toinen kenttä ei lataa DontDestroyOnLoadin Game Manageriin kentän objekteja. Ensimmäinen kenttä
-kuitenkin toimii, joten missä vika?
-
--(Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eivät hakeudu loppuun vaan jäävät leijumaan eri suuntiin.)
-
-Labyrinth:
-
--Labyrinttiin tähtijärjestelmä(löytyy  nyt)
-	-Myös kentänläpipääsy screeni.
-
--Labyrintin level selectiin tähtienvärjäys ja Level Selecti kuntoon. (Värjäys tehty)
-
--Kerättyjen kolikkojen määrä ei nollaudu siirryttäessä kentästä toiseen eikä aloittaessa uudelleen kuoleman jälkeen.
-
--Jostain syystä labyrinttikenttien napit vievät seuraavaan kenttään kuin olisi tarkoitus.
+- Kun LabPuzzleLevel11:ssa painaa nappia, niin oven animaatio bugaa teleporttaamalla oven väärään paikkaan.
 
 
 Puuttuu:
 
--Kauppa +inapit + magic dust(katso kuva peli ekonomiasta, löytyy flappitaulusta.)(graffat löytyy)
+-Kauppa +inapit + magic dust(katso kuva peli ekonomiasta, löytyy flappitaulusta.)(graffat löytyy), valokuva.
 -LeaderBoard(graffat löytyy)
--Pilivi.
--Analytiks
--Global Managerin viimeistelyä(osia puuttuu)
+-Pilivi, tietokanta, valokuva.
+-Analytiks: Game analytics
+-Global Game Managerin viimeistelyä (osia puuttuu)
 
 Extra:
 
 -LoadScreen/LoadBar(screen sweep, sitten musta ruutu, ja sitten avataan uusi skene) (graffat löytyy)
 
-- Pelihahmon kääntyminen paikasta toiseen kävellessä myös levelmappeihin.
+- Pelihahmon kääntyminen paikasta toiseen kävellessä myös levelmappeihin. Bobin liikkuminen paremmaksi.
 
 - Palaaminen aiempaan näkymään puhelimen omalla Back-nappulalla.

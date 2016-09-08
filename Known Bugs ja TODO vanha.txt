@@ -1,0 +1,64 @@
+Catch the Cat:
+
+-Pelinlatauksessa joku bugi? vanha kuva jää ruutuun pyörimään, vain jollain laitteilla?
+
+-Level Designia voisi uusia, kissat juoksee turhan kovaa.
+
+
+Memory Game:
+
+-Memory Gamen Level Selectissä näkyy aina ensin vain 2 kaksi kenttää vaikka enemmän olisi unlockattu.
+
+-Memory Gamen viimeisen clickkauksen optimointi.
+
+-Kentän läpipääsyscreenin päivitys.
+
+
+Runner:
+
+-Runnerin Pause-valikko ei aina aktivoidu näkyviin vaikka peli pysähtyykin. Johtuu kaatumisista.
+
+-Runnerin Level Selectissä tulee pari erroria mutta eivät ole letaaleja, voisi kuitenkin korjata niin homma toimii aina.
+
+-Runneriin pitää vaihtaa nappien grafiikat. (Tehty)
+
+-Vain 3 leveliä, niitä lisää?
+
+-piste ja tähtijärjestelmä.
+
+-Kentän läpipääsyscreeni.
+
+-Kakkoskentässä Pausevalikko on koko ajan päällä ja Pause-nappia painaessa peli kaatuu. Kolmoskentän toimivuudesta ei tietoa.
+
+-Jostain syystä Runnerin toinen kenttä ei lataa DontDestroyOnLoadin Game Manageriin kentän objekteja. Ensimmäinen kenttä
+kuitenkin toimii, joten missä vika?
+
+-(Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eivät hakeudu loppuun vaan jäävät leijumaan eri suuntiin.)
+
+Labyrinth:
+
+-Labyrinttiin tähtijärjestelmä(löytyy  nyt)
+	-Myös kentänläpipääsy screeni.
+
+-Labyrintin level selectiin tähtienvärjäys ja Level Selecti kuntoon. (Värjäys tehty)
+
+-Kerättyjen kolikkojen määrä ei nollaudu siirryttäessä kentästä toiseen eikä aloittaessa uudelleen kuoleman jälkeen.
+
+-Jostain syystä labyrinttikenttien napit vievät seuraavaan kenttään kuin olisi tarkoitus.
+
+
+Puuttuu:
+
+-Kauppa +inapit + magic dust(katso kuva peli ekonomiasta, löytyy flappitaulusta.)(graffat löytyy)
+-LeaderBoard(graffat löytyy)
+-Pilivi.
+-Analytiks
+-Global Managerin viimeistelyä(osia puuttuu)
+
+Extra:
+
+-LoadScreen/LoadBar(screen sweep, sitten musta ruutu, ja sitten avataan uusi skene) (graffat löytyy)
+
+- Pelihahmon kääntyminen paikasta toiseen kävellessä myös levelmappeihin.
+
+- Palaaminen aiempaan näkymään puhelimen omalla Back-nappulalla.
