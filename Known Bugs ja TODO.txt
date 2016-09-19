@@ -5,12 +5,14 @@ Catch the Cat
 
 -Level Designia voisi uusia, kissat juoksee turhan kovaa.
 
+
 Mister Mysterious Mystic Cards
 Memory Game
 
 - Memory Gamen Level Selectissä näkyy aina ensin vain 2 kaksi kenttää vaikka enemmän olisi unlockattu.
 
 (- Kentän läpipääsyscreenin päivitys.) Aleksi
+
 
 Winter Forest Marathon
 Runner
@@ -30,6 +32,7 @@ Runner
 
 -(Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eivät hakeudu loppuun vaan jäävät leijumaan eri suuntiin.) Onko tämä bugi vai feature?
 
+
 Winter Hedge Maze
 Labyrinth
 
@@ -37,7 +40,7 @@ Labyrinth
 
 (- Jostain syystä labyrinttikenttien napit vievät seuraavaan kenttään kuin olisi tarkoitus.) Aleksi
 
-- Kun LabPuzzleLevel11:ssa painaa nappia, niin oven animaatio bugaa teleporttaamalla oven väärään paikkaan.
+- Kun LabPuzzleLevel11:ssa kävelee napin päälle, niin oven animaatio bugaa teleporttaamalla oven väärään paikkaan.
 
 
 Puuttuu:
@@ -50,7 +53,7 @@ Puuttuu:
 
 Extra:
 
--LoadScreen/LoadBar(screen sweep, sitten musta ruutu, ja sitten avataan uusi skene) (graffat löytyy)
+- LoadScreen/LoadBar(screen sweep, sitten musta ruutu, ja sitten avataan uusi skene) (graffat löytyy)
 
 - Pelihahmon kääntyminen paikasta toiseen kävellessä myös levelmappeihin. Bobin liikkuminen paremmaksi.
 
