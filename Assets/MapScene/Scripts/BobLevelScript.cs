@@ -83,6 +83,9 @@ public class BobLevelScript : MonoBehaviour
         StandingLevelNumberX = PlayerPrefs.GetInt("Bobin kenttä X");
         StandingLevelNumberY = PlayerPrefs.GetInt("Bobin kenttä Y");
 
+        Debug.Log("Bobin kenttä X ladattu");
+        Debug.Log("Bobin kenttä Y ladattu");
+
         GameObject startLevelButton = GameObject.Find("Level" + startDestinationX + startDestinationY);
         if (startLevelButton == null)
         {
@@ -312,6 +315,9 @@ public class BobLevelScript : MonoBehaviour
 
         PlayerPrefs.SetInt("Bobin kenttä X", StandingLevelNumberX);
         PlayerPrefs.SetInt("Bobin kenttä Y", StandingLevelNumberY);
+
+        Debug.Log("Bobin kenttä X tallennettu");
+        Debug.Log("Bobin kenttä Y tallennettu");
 
         //yield return new WaitForSeconds(1);
 

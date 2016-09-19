@@ -242,7 +242,10 @@ public class RunnerManager : MonoBehaviour
         {
             SceneManager.LoadScene(levelIndex[levelToLoad]);
             currentLevel = levelToLoad;
+
             Debug.Log("Runner Current Level = " + currentLevel);
+            Debug.Log("Runner Level Index = " + levelIndex);
+            Debug.Log("Runner Level to Load = " + levelToLoad);
 
             //if (currentLevel == 0)
             //{
