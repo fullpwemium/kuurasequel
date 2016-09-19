@@ -28,7 +28,11 @@ Runner
 - Kentän läpipääsyscreeni puuttuu.
 
 - Kakkoskentässä Pausevalikko on koko ajan päällä ja Pause-nappia painaessa peli kaatuu. Kolmoskentän toimivuudesta ei tietoa.
--Jostain syystä Runnerin toinen kenttä ei lataa DontDestroyOnLoadin Game Manageriin kentän objekteja. Ensimmäinen kenttä kuitenkin toimii, joten missä vika?
+
+- Jostain syystä Runnerin toinen kenttä ei lataa DontDestroyOnLoadin Game Manageriin kentän objekteja. Ensimmäinen kenttä kuitenkin toimii, joten missä vika?
+
+- Labyrinttikentässä ollut bugi, joka avaa seuraavan kentän kuin olisi tarkoitus, on mukana myös Runnerissa. Pitäisi saada
+lataamaan ykkösbuttonista scenen Level1.1.
 
 -(Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eivät hakeudu loppuun vaan jäävät leijumaan eri suuntiin.) Onko tämä bugi vai feature?
 
@@ -38,7 +42,7 @@ Labyrinth
 
 (- Myös kentänläpipääsy screeni) Aleksi
 
-(- Jostain syystä labyrinttikenttien napit vievät seuraavaan kenttään kuin olisi tarkoitus.) Aleksi
+(- Jostain syystä labyrinttikenttien napit vievät seuraavaan kenttään kuin olisi tarkoitus.) Aleksi KORJATTU
 
 - Kun LabPuzzleLevel11:ssa kävelee napin päälle, niin oven animaatio bugaa teleporttaamalla oven väärään paikkaan.
 
