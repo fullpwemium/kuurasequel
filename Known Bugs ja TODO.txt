@@ -29,7 +29,8 @@ Runner
 
 - Kakkoskentässä Pausevalikko on koko ajan päällä ja Pause-nappia painaessa peli kaatuu. Kolmoskentän toimivuudesta ei tietoa.
 
-- Jostain syystä Runnerin toinen kenttä ei lataa DontDestroyOnLoadin Game Manageriin kentän objekteja. Ensimmäinen kenttä kuitenkin toimii, joten missä vika?
+- Jostain syystä Runnerin toinen kenttä ei lataa DontDestroyOnLoadin Game Manageriin kentän objekteja. Ensimmäinen kenttä kuitenkin toimii, joten
+  vika luultavasti siinä ettei projekti saa toiseen kenttään mentäessä jostain syystä ladattua Game Managerin objekteja enää toista kertaa.
 
 - Labyrinttikentässä ollut bugi, joka avaa seuraavan kentän kuin olisi tarkoitus, on mukana myös Runnerissa. Pitäisi saada
 lataamaan ykkösbuttonista scenen Level1.1.
