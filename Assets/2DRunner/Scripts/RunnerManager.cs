@@ -198,7 +198,7 @@ public class RunnerManager : MonoBehaviour
         //currentLevel++;
 
 //        LoadLevel(currentLevel + 1);
-        Application.LoadLevel("RunnerLevelMap");        //Ladataan kenttävalikko maaliin pääsyn jälkeen
+        SceneManager.LoadScene("RunnerLevelMap");        //Ladataan kenttävalikko maaliin pääsyn jälkeen
     }
 
     public void PlayerLose()

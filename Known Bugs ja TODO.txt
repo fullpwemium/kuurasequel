@@ -35,13 +35,20 @@ Runner
 - Labyrinttikentässä ollut bugi, joka avaa seuraavan kentän kuin olisi tarkoitus, on mukana myös Runnerissa. Pitäisi saada
 lataamaan ykkösbuttonista scenen Level1.1.
 
--(Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eivät hakeudu loppuun vaan jäävät leijumaan eri suuntiin.) Onko tämä bugi vai feature?
+- (Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eivät hakeudu loppuun vaan jäävät leijumaan eri suuntiin.) Onko tämä bugi vai feature?
+
+- (Kun Unityssä käynnistää projektin ensimmäistä kertaa, niin Runneriin mentäessä tulee kaatumisilmoitus "Controller 'bounce': Transition '' in state '
+  BounceAnimation' uses parameter 'Bounce' which is not compatible with condition type.
+" Toisen kerran käynnistettäessä
+  kenttä kuitenkin toimii eikä puhelimella pelattaessa myöskään tule ongelmia)
 
 
 Winter Hedge Maze
 Labyrinth
 
-(- Myös kentänläpipääsy screeni) Aleksi
+- Labyrinttiin lisätty samanlainen voittamispaneelisysteemi kuin muistipelissä, mutta jostain syystä ei toimi. Tulee
+  ilmoitus ettei objektiviittausta ole asetettu objektin instanssiin, muttei ole tietoa mistä objektista ja instanssista
+  tarkalleen on kyse. Aleksi
 
 (- Jostain syystä labyrinttikenttien napit vievät seuraavaan kenttään kuin olisi tarkoitus.) Aleksi KORJATTU
 
