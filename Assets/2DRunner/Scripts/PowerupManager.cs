@@ -21,7 +21,7 @@ public class PowerupManager : MonoBehaviour
     void Start()
     {
         normalPoints = RunnerManager.manager.PointsPerCoin;
-//        GameObject.Find("/Canvas/DoublePoints").GetComponent<Text>().enabled = false;
+        GameObject.Find("/Canvas/DoublePoints").GetComponent<Text>().enabled = false;
     }
     //Starts powerup from PowerUp script.
     public void ActivatePowerup(bool points, bool safemode, bool Magnet, float time)
@@ -97,6 +97,7 @@ public class PowerupManager : MonoBehaviour
             yield return PowerupTime;
         }
         magnet = false;
+
         GameObject.FindGameObjectWithTag("Magnet").GetComponent<PointEffector2D>().enabled = false;
         yield return null;
 

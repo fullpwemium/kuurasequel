@@ -102,16 +102,16 @@ public class GameManager : MonoBehaviour
         //}
         if (currentLevel == 0)
             {
-                catSpeedMultiplier = 1;
+                catSpeedMultiplier = 1;     //Määritellään kissojen nopeus
                 spawnSpeedMultiplier = 1.5f;
                 extraTime = 15;
                 kissaMultiplier = 0;
-                brokenItemMultiplier = 1;
+                brokenItemMultiplier = 1;       //Määritellään rikkoutuvien esineiden maksimi
                 snowFlakeSpeedMultiplier = 2;
             }
             else if (currentLevel == 1)
             {
-                catSpeedMultiplier = 2;
+                catSpeedMultiplier = 1.5f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 20;
                 kissaMultiplier = 0;
@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 2)
             {
-                catSpeedMultiplier = 2.5f;
+                catSpeedMultiplier = 1;
                 spawnSpeedMultiplier = 3;
                 extraTime = 25;
                 kissaMultiplier = 1;
@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 3)
             {
-                catSpeedMultiplier = 2.5f;
+                catSpeedMultiplier = 1.5f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 30;
                 kissaMultiplier = 1;
@@ -138,19 +138,19 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 4)
             {
-                catSpeedMultiplier = 2.5f;
+                catSpeedMultiplier = 1;
                 spawnSpeedMultiplier = 9;
                 extraTime = 35;
-                kissaMultiplier = 1;
+                kissaMultiplier = 2;
                 brokenItemMultiplier = 1;
 
             }
             else if (currentLevel == 5)
             {
-                catSpeedMultiplier = 3;
+                catSpeedMultiplier = 1.5f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 30;
-                kissaMultiplier = 0;
+                kissaMultiplier = 2;
                 brokenItemMultiplier = 1;
                 snowFlakeSpeedMultiplier = 2;
 

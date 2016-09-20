@@ -27,6 +27,8 @@ Runner
 
 - Kent‰n l‰pip‰‰syscreeni puuttuu.
 
+- Peli kaatuu mik‰li palaa kentt‰valikkoon magneetin ollessa p‰‰ll‰.
+
 - Kakkoskent‰ss‰ Pausevalikko on koko ajan p‰‰ll‰ ja Pause-nappia painaessa peli kaatuu. Kolmoskent‰n toimivuudesta ei tietoa.
 
 - Jostain syyst‰ Runnerin toinen kentt‰ ei lataa DontDestroyOnLoadin Game Manageriin kent‰n objekteja. Ensimm‰inen kentt‰ kuitenkin toimii, joten
