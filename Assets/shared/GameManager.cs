@@ -102,18 +102,18 @@ public class GameManager : MonoBehaviour
         //}
         if (currentLevel == 0)
             {
-                catSpeedMultiplier = 1;     //Määritellään kissojen nopeus
-                spawnSpeedMultiplier = 1.5f;
-                extraTime = 15;
-                kissaMultiplier = 0;
-                brokenItemMultiplier = 1;       //Määritellään rikkoutuvien esineiden maksimi
-                snowFlakeSpeedMultiplier = 2;
+                catSpeedMultiplier = 1;     //Määritellään kissojen nopeus.
+                spawnSpeedMultiplier = 1.5f;        //Määritellään esineiden ilmestymisnopeus.
+                extraTime = 21;     //Määritellään aikaraja. Kun 0, niin neljä sekuntia.
+                kissaMultiplier = 0;        //Määritellään kissojen määrä. Kun 0, niin kaksi kissaa.
+                brokenItemMultiplier = 1;       //Määritellään rikkoutuvien esineiden maksimi. Kun 1, niin kolmen rikotun jälkeen Game Over.
+                snowFlakeSpeedMultiplier = 8;
             }
             else if (currentLevel == 1)
             {
                 catSpeedMultiplier = 1.5f;
                 spawnSpeedMultiplier = 4;
-                extraTime = 20;
+                extraTime = 21;
                 kissaMultiplier = 0;
                 brokenItemMultiplier = 1;
 
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
             {
                 catSpeedMultiplier = 1;
                 spawnSpeedMultiplier = 3;
-                extraTime = 25;
+                extraTime = 21;
                 kissaMultiplier = 1;
                 brokenItemMultiplier = 1;
 
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
             {
                 catSpeedMultiplier = 1.5f;
                 spawnSpeedMultiplier = 4;
-                extraTime = 30;
+                extraTime = 21;
                 kissaMultiplier = 1;
                 brokenItemMultiplier = 1;
 
@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
             {
                 catSpeedMultiplier = 1;
                 spawnSpeedMultiplier = 9;
-                extraTime = 35;
+                extraTime = 21;
                 kissaMultiplier = 2;
                 brokenItemMultiplier = 1;
 
@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
             {
                 catSpeedMultiplier = 1.5f;
                 spawnSpeedMultiplier = 4;
-                extraTime = 30;
+                extraTime = 21;
                 kissaMultiplier = 2;
                 brokenItemMultiplier = 1;
                 snowFlakeSpeedMultiplier = 2;
@@ -157,18 +157,18 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 6)
             {
-                catSpeedMultiplier = 3;
+                catSpeedMultiplier = 2;
                 spawnSpeedMultiplier = 9;
-                extraTime = 35;
-                kissaMultiplier = 1;
-                brokenItemMultiplier = 1;
+                extraTime = 21;
+                kissaMultiplier = 0;
+                brokenItemMultiplier = 2;
 
             }
             else if (currentLevel == 7)
             {
-                catSpeedMultiplier = 3;
+                catSpeedMultiplier = 2;
                 spawnSpeedMultiplier = 6;
-                extraTime = 35;
+                extraTime = 21;
                 kissaMultiplier = 1;
                 brokenItemMultiplier = 1;
                 snowFlakeSpeedMultiplier = 2;
@@ -176,28 +176,28 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 8)
             {
-                catSpeedMultiplier = 3;
+                catSpeedMultiplier = 2;
                 spawnSpeedMultiplier = 9;
-                extraTime = 20;
-                kissaMultiplier = 1;
-                brokenItemMultiplier = 1;
+                extraTime = 21;
+                kissaMultiplier = 2;
+                brokenItemMultiplier = 3;
 
             }
             else if (currentLevel == 9)
             {
                 catSpeedMultiplier = 2.5f;
                 spawnSpeedMultiplier = 9;
-                extraTime = 50;
-                kissaMultiplier = 0;
-                brokenItemMultiplier = 1;
+                extraTime = 21;
+                kissaMultiplier = 1;
+                brokenItemMultiplier = 3;
 
             }
             else if (currentLevel == 10)
             {
-                catSpeedMultiplier = 3;
+                catSpeedMultiplier = 2.5f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 35;
-                kissaMultiplier = 0;
+                kissaMultiplier = 1;
                 brokenItemMultiplier = 1;
 
             }

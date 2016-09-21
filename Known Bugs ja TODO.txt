@@ -1,9 +1,10 @@
 Bubble Ware House
 Catch the Cat
 
--Pelinlatauksessa joku bugi? vanha kuva jää ruutuun pyörimään, vain jollain laitteilla?, mahdollisesti ratkaistu, johtuu versio 4 Androidista mutta saa tutkia, löytyykö ratkaisu myös vanhemmalle laitteelle.
+- Pelinlatauksessa joku bugi? Vanha kuva jää ruutuun pyörimään, vain jollain laitteilla? Mahdollisesti ratkaistu, johtuu
+  versio 4 Androidista mutta saa tutkia, löytyykö ratkaisu myös vanhemmalle laitteelle.
 
--Level Designia voisi uusia, kissat juoksee turhan kovaa.
+- Level Designia voisi uusia, kissat juoksee turhan kovaa. Määritellään GameManager-skriptin LoadLevelissä.
 
 
 Mister Mysterious Mystic Cards
@@ -19,30 +20,33 @@ Runner
 
 - Pause-valikko ei aina aktivoidu näkyviin vaikka peli pysähtyykin. Johtuu kaatumisista.
 
-- Runnerin Level Selectissä tulee pari erroria mutta eivät ole letaaleja, voisi kuitenkin korjata, niin homma toimii aina. Tietenkin kaikki bugit pitää korjata, peli ei kaatua missään olosuhteissa.
+- (Runnerin Level Selectissä tulee pari erroria mutta eivät ole letaaleja, voisi kuitenkin korjata, niin homma toimii aina.) Tietenkin kaikki bugit pitää korjata, peli ei kaatua missään olosuhteissa.
 
 - Vain 3 leveliä, niitä lisää?
 
 - piste ja "tähti"/kissanpääjärjestelmä. Tarkoittaa, että yleensä pitää saada pistejärjestelmä toimimaan joka pelissä.
+  Pitäisi tehdä kerättyjen kolikkojen määrän perusteella.
 
 - Kentän läpipääsyscreeni puuttuu.
 
-- Peli kaatuu mikäli palaa kenttävalikkoon magneetin ollessa päällä.
+- Peli kaatuu Unityssä mikäli palaa kenttävalikkoon magneetin ollessa päällä.
 
-- Kakkoskentässä Pausevalikko on koko ajan päällä ja Pause-nappia painaessa peli kaatuu. Kolmoskentän toimivuudesta ei tietoa.
+- Ykkösbuttonin kenttää pelatessa toimii oikein, mutta kakkosbuttonin kenttää pelatessa pausevalikko on koko ajan päällä ja
+  Pause-nappia painaessa peli kaatuu. Kolmosbuttonin kentän toimivuudesta ei tietoa.
+	- Jostain syystä Runnerin toisen buttonin kenttä ei lataa DontDestroyOnLoadin Game Manageriin kentän objekteja.
+	Ensimmäisen buttonin kenttä kuitenkin toimii, joten vika luultavasti siinä ettei projekti saa toiseen kenttään
+	mentäessä jostain syystä ladattua Game Managerin objekteja enää toista kertaa.
 
-- Jostain syystä Runnerin toinen kenttä ei lataa DontDestroyOnLoadin Game Manageriin kentän objekteja. Ensimmäinen kenttä kuitenkin toimii, joten
-  vika luultavasti siinä ettei projekti saa toiseen kenttään mentäessä jostain syystä ladattua Game Managerin objekteja enää toista kertaa.
+- Labyrinttikentässä ollut bugi, joka avaa seuraavan kentän kuin olisi tarkoitus, on mukana myös Runnerissa. Lataa
+  nyt scenen Level2.1, pitäisi saada lataamaan ykkösbuttonista scenen Level1.1.
 
-- Labyrinttikentässä ollut bugi, joka avaa seuraavan kentän kuin olisi tarkoitus, on mukana myös Runnerissa. Pitäisi saada
-lataamaan ykkösbuttonista scenen Level1.1.
+- (Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eivät hakeudu loppuun vaan jäävät leijumaan eri suuntiin.) Onko
+  tämä bugi vai feature?
 
-- (Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eivät hakeudu loppuun vaan jäävät leijumaan eri suuntiin.) Onko tämä bugi vai feature?
-
-- (Kun Unityssä käynnistää projektin ensimmäistä kertaa, niin Runneriin mentäessä tulee kaatumisilmoitus "Controller 'bounce': Transition '' in state '
-  BounceAnimation' uses parameter 'Bounce' which is not compatible with condition type.
-" Toisen kerran käynnistettäessä
-  kenttä kuitenkin toimii eikä puhelimella pelattaessa myöskään tule ongelmia)	KORJATTU
+- (Kun Unityssä käynnistää projektin ensimmäistä kertaa, niin Runneriin mentäessä tulee kaatumisilmoitus
+  "Controller 'bounce': Transition '' in state ' BounceAnimation' uses parameter 'Bounce' which is not compatible with
+  condition type.
+" Toisen kerran käynnistettäessä kenttä kuitenkin toimii eikä puhelimella pelattaessa myöskään tule ongelmia)	KORJATTU
 
 
 Winter Hedge Maze
@@ -69,6 +73,7 @@ Extra:
 
 - LoadScreen/LoadBar(screen sweep, sitten musta ruutu, ja sitten avataan uusi skene) (graffat löytyy)
 
-- Pelihahmon kääntyminen paikasta toiseen kävellessä myös levelmappeihin. Bobin liikkuminen paremmaksi.
+- Pelihahmon kääntyminen paikasta toiseen kävellessä myös levelmappeihin. Bobin liikkuminen paremmaksi. Määritellään
+  BobLevelScriptin kautta (esim. "BobPlayerAnimator.SetTrigger("BobDown");")
 
 - Palaaminen aiempaan näkymään puhelimen omalla Back-nappulalla.
