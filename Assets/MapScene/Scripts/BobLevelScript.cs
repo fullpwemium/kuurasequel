@@ -232,13 +232,13 @@ public class BobLevelScript : MonoBehaviour
             {
                 reittiX = 1;
                 routeX--;
-                BobPlayerAnimator.SetTrigger("BobDown");
+//                BobPlayerAnimator.SetTrigger("BobDown");
             }
             else if (routeX < 0)
             {
                 reittiX = -1;
                 routeX++;
-                BobPlayerAnimator.SetTrigger("BobUp");
+//                BobPlayerAnimator.SetTrigger("BobUp");
             }
             else if (routeX == 0)
             {
@@ -247,13 +247,13 @@ public class BobLevelScript : MonoBehaviour
                 {
                     reittiY = 1;
                     routeY--;
-                    BobPlayerAnimator.SetTrigger("BobRight");
+//                    BobPlayerAnimator.SetTrigger("BobRight");
                 }
                 else if (routeY < 0)
                 {
                     reittiY = -1;
                     routeY++;
-                    BobPlayerAnimator.SetTrigger("BobLeft");
+//                    BobPlayerAnimator.SetTrigger("BobLeft");
                 }
             }
 

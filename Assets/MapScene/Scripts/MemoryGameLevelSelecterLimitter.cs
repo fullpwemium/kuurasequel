@@ -42,7 +42,7 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
         //toggle = GameObject.Find("GyroToggle").GetComponent<Toggle>();
         //toggle.onValueChanged.AddListener((delegate { ShelfGameManager.GyroToggle(); }));
 
-        CheckLevels();
+//        CheckLevels();      //Rajoitetaan muistipelissä näkyviä kenttiä
 
         /*if (ShelfGameManager.gyroOn == true)
         {
@@ -61,7 +61,7 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
 
     void OnLevelWasLoaded(int level)
     {
-        CheckLevels();
+//        CheckLevels();
     }
 
     public static void MemoryGamelevelilapi(int levelnumber)

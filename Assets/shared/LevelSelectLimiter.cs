@@ -13,7 +13,7 @@ public class LevelSelectLimiter : MonoBehaviour {
     //Checks levels if OnLevelWasLoaded was not called
     void Start ()
     {
-		CheckLevels ();
+		CheckLevels ();     //Rajoitetaan Catchissa näkyviä kenttiä
 
         if (initialized == false)
         {

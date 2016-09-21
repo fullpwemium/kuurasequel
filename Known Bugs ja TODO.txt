@@ -42,7 +42,7 @@ lataamaan ykkösbuttonista scenen Level1.1.
 - (Kun Unityssä käynnistää projektin ensimmäistä kertaa, niin Runneriin mentäessä tulee kaatumisilmoitus "Controller 'bounce': Transition '' in state '
   BounceAnimation' uses parameter 'Bounce' which is not compatible with condition type.
 " Toisen kerran käynnistettäessä
-  kenttä kuitenkin toimii eikä puhelimella pelattaessa myöskään tule ongelmia)
+  kenttä kuitenkin toimii eikä puhelimella pelattaessa myöskään tule ongelmia)	KORJATTU
 
 
 Winter Hedge Maze
