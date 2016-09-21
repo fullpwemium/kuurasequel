@@ -193,6 +193,7 @@ public class BobLevelScript : MonoBehaviour
                 StandingLevelNumberY = midWayDestinationY;//Muutetaan seisomisobjektin arvo kohdeobjektin arvoksi
                 Debug.Log("StandingLevelNumber = " + StandingLevelNumberX);
                 Debug.Log("StandingLevelNumber2 = " + StandingLevelNumberY);
+                BobPlayerAnimator.SetTrigger("BobDown");
             }
         }
     }
@@ -231,11 +232,13 @@ public class BobLevelScript : MonoBehaviour
             {
                 reittiX = 1;
                 routeX--;
+                BobPlayerAnimator.SetTrigger("BobDown");
             }
             else if (routeX < 0)
             {
                 reittiX = -1;
                 routeX++;
+                BobPlayerAnimator.SetTrigger("BobUp");
             }
             else if (routeX == 0)
             {
@@ -244,11 +247,13 @@ public class BobLevelScript : MonoBehaviour
                 {
                     reittiY = 1;
                     routeY--;
+                    BobPlayerAnimator.SetTrigger("BobRight");
                 }
                 else if (routeY < 0)
                 {
                     reittiY = -1;
                     routeY++;
+                    BobPlayerAnimator.SetTrigger("BobLeft");
                 }
             }
 
