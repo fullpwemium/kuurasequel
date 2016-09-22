@@ -32,7 +32,7 @@ Runner
 - Peli kaatuu Unityss‰ mik‰li palaa kentt‰valikkoon magneetin ollessa p‰‰ll‰.
 
 - Ykkˆsbuttonin kentt‰‰ pelatessa toimii oikein, mutta kakkosbuttonin kentt‰‰ pelatessa pausevalikko on koko ajan p‰‰ll‰ ja
-  Pause-nappia painaessa peli kaatuu. Kolmosbuttonin kent‰n toimivuudesta ei tietoa.
+  Pause-nappia painaessa sek‰ ensimm‰iseen kolikkoon osuttaessa peli kaatuu. Kolmosbuttonin kent‰n toimivuudesta ei tietoa.
 	- Jostain syyst‰ Runnerin toisen buttonin kentt‰ ei lataa DontDestroyOnLoadin Game Manageriin kent‰n objekteja.
 	Ensimm‰isen buttonin kentt‰ kuitenkin toimii, joten vika luultavasti siin‰ ettei projekti saa toiseen kentt‰‰n
 	ment‰ess‰ jostain syyst‰ ladattua Game Managerin objekteja en‰‰ toista kertaa.

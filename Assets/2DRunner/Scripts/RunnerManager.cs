@@ -290,7 +290,7 @@ public class RunnerManager : MonoBehaviour
             anim = GameObject.Find("Effector").GetComponent<Animator>();
             gameOverPanel = GameObject.Find("GameOverPanel");
 			play = GameObject.Find("Play").GetComponent<Button>();
-            nextLevel = GameObject.Find("NextLevel").GetComponent<Button>();
+//            nextLevel = GameObject.Find("NextLevel").GetComponent<Button>();
             levelSelect = GameObject.Find("LevelSelect").GetComponent<Button>();
             currentScore = GameObject.Find("CurrentScore").GetComponent<Text>();
             thunderButton = GameObject.Find("ThunderButton").GetComponent<Button>();
@@ -302,7 +302,7 @@ public class RunnerManager : MonoBehaviour
             gameOverPanel.SetActive(false);
 
 			play.onClick.AddListener(() => Play());
-            nextLevel.onClick.AddListener(() => NextLevel());
+//            nextLevel.onClick.AddListener(() => NextLevel());
             levelSelect.onClick.AddListener(() => BackToMenu());
             thunderButton.onClick.AddListener(() => useThunder());
             snowButton.onClick.AddListener(() => useSnow());
@@ -319,11 +319,11 @@ public class RunnerManager : MonoBehaviour
         currentState = GameState.Died;
         //Application.LoadLevel (Application.loadedLevelName);
     }
-    public void NextLevel()
-    {
-        Debug.Log("Ei löydyy");
-        //SceneManager.LoadScene("level2");
-    }
+    //public void NextLevel()
+    //{
+    //    Debug.Log("Ei löydyy");
+    //    //SceneManager.LoadScene("level2");
+    //}
     public void BackToMenu()
     {
         SceneManager.LoadScene(levelselect);
