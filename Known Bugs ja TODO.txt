@@ -12,7 +12,11 @@ Memory Game
 
 - Memory Gamen Level Selectiss‰ n‰kyy aina ensin vain 2 kaksi kentt‰‰ vaikka enemm‰n olisi unlockattu.
 
-(- Kent‰n l‰pip‰‰syscreenin p‰ivitys.) Aleksi
+- Pit‰isi kai muutenkin n‰ky‰ ensin vain ensimm‰inen kentt‰ ja sen j‰lkeen avata muita kentti‰ etenemisen mukaan.
+
+(- Kent‰n l‰pip‰‰syscreenin p‰ivitys.) Aleksi (Onko tarpeen kun ajastimella ei ole en‰‰ merkityst‰ eik‰ peli‰ t‰m‰n vuoksi
+  tarvitsisi laittaa paussille k‰yt‰nnˆss‰ ollenkaan. Kaikki tarvittavat buttonitkin ovat k‰ytett‰viss‰ vaikkeiv‰t
+  paneelissa olekaan)
 
 
 Winter Forest Marathon

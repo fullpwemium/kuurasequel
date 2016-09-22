@@ -98,7 +98,9 @@ public class GameManager : MonoBehaviour
             currentLevel = levelToLoad;
             Debug.Log(currentLevel);
 
-            SceneManager.LoadScene("LoadScene");
+//            SceneManager.LoadScene("LoadScene");      //Ladataan tyhjä scene ennen varsinaisen kentän avaamista
+
+            SceneManager.LoadScene("ShelfLevel1");
         //}
         if (currentLevel == 0)
             {

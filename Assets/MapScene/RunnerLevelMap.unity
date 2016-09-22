@@ -890,7 +890,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 140900, guid: 61d890671d0d43b489c912d5f01c97e3, type: 2}
       propertyPath: m_Name
-      value: GameManager (Prefab)
+      value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 11408894, guid: 61d890671d0d43b489c912d5f01c97e3, type: 2}
       propertyPath: levelIndex.Array.data[0]
@@ -932,9 +932,28 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11410346, guid: 61d890671d0d43b489c912d5f01c97e3, type: 2}
+      propertyPath: powerLengthCounter
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61d890671d0d43b489c912d5f01c97e3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &360313979 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 140900, guid: 61d890671d0d43b489c912d5f01c97e3, type: 2}
+  m_PrefabInternal: {fileID: 360313978}
+--- !u!114 &360313980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360313979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd62b93873aa49a58a260759d42751d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &376253722
 GameObject:
   m_ObjectHideFlags: 0
