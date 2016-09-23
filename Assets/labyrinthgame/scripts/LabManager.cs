@@ -13,6 +13,8 @@ public class LabManager : GameManager
 
     private LabyrinthUI winningUI;
 
+    public GameObject Player;
+
     //Singleton check
     protected override void Awake()
     {
@@ -37,11 +39,20 @@ public class LabManager : GameManager
             LabyGameManager.manager.completedLevels.Add(LabyGameManager.manager.currentLevel);
         }
 
-//        winningUI.TextSwitcher(true);     //Aktivoidaan labyrinttikentän voittamispaneeli, tällä hetkellä vasta
-                                          //LabPuzzleLevel0:ssa. Samanlainen systeemi kuin muistipelissä, mutta
-                                          //jostain syystä ei toimi.
+        //        winningUI.TextSwitcher(true);     //Aktivoidaan labyrinttikentän voittamispaneeli, tällä hetkellä vasta
+        //LabPuzzleLevel0:ssa. Samanlainen systeemi kuin muistipelissä, mutta
+        //jostain syystä ei toimi.
 
-        GameObject.Find("UI").GetComponent<LabyrinthUI>().TextSwitcher(true);
+        //if (Player == null)
+        //{
+
+        //}
+        //else
+        //{
+        //    Player.SetActive(false);    //Yritetty saada Bob katoamaan saapuessaan ovelle, muttei onnistu
+        //}
+
+        GameObject.Find("UI").GetComponent<LabyrinthUI>().TextSwitcher(true);       //Voittamispaneeli toimii tällä koodilla
 
 //        Time.timeScale = 0;       //Kun 0, niin aika pysähtyy. Kun 2, niin nopeus tuplaantuu
 
