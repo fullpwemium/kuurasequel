@@ -154,7 +154,7 @@ public class LabyrinthUI : MonoBehaviour
             GOPanel = false;
             Score();
             StartLerping();
-            destination = new Vector3(0, 9, 0);
+            destination = new Vector3(500, 300, 0);
             Debug.Log(destination);
             moving = true;
 

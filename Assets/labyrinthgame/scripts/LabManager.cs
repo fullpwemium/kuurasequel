@@ -43,6 +43,8 @@ public class LabManager : GameManager
 
         GameObject.Find("UI").GetComponent<LabyrinthUI>().TextSwitcher(true);
 
+//        Time.timeScale = 0;       //Kun 0, niin aika pysähtyy. Kun 2, niin nopeus tuplaantuu
+
         //        SceneManager.LoadScene("LabyrinthLevelSelect"); //Ladataan kenttävalikko
 
 
