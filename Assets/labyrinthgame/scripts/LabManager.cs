@@ -49,14 +49,14 @@ public class LabManager : GameManager
         //}
         //else
         //{
-        //    Player.SetActive(false);    //Yritetty saada Bob katoamaan saapuessaan ovelle, muttei onnistu
+        //    Player.SetActive(false);
         //}
 
-        GameObject.Find("UI").GetComponent<LabyrinthUI>().TextSwitcher(true);       //Voittamispaneeli toimii tällä koodilla
+//        GameObject.Find("UI").GetComponent<LabyrinthUI>().TextSwitcher(true);       //Voittamispaneeli toimii tällä koodilla
 
 //        Time.timeScale = 0;       //Kun 0, niin aika pysähtyy. Kun 2, niin nopeus tuplaantuu
 
-        //        SceneManager.LoadScene("LabyrinthLevelSelect"); //Ladataan kenttävalikko
+                SceneManager.LoadScene("LabyrinthLevelSelect"); //Ladataan kenttävalikko
 
 
 

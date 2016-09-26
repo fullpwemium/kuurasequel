@@ -163,7 +163,7 @@ public class LabyrinthUI : MonoBehaviour
 
             if (Player == null)
             {
-
+//                SceneManager.LoadScene("LabyrinthLevelSelect"); //Ladataan kenttävalikko
             }
             else
             {

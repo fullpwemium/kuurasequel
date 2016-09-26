@@ -61,7 +61,7 @@ Labyrinth
   tarkalleen on kyse. Aleksi KORJATTU
 
 - Voittamispaneelisysteemi toimii muuten, paitsi ett‰ peli j‰‰ yh‰ pyˆrim‰‰n p‰‰lle, jolloin Bobia voi yh‰ liikuttaa ja
-  Swipper voi yh‰ saada Bobin kiinni.
+  Swipper voi yh‰ saada Bobin kiinni.	KORJATTU
 
 (- Jostain syyst‰ labyrinttikenttien napit viev‰t seuraavaan kentt‰‰n kuin olisi tarkoitus.) Aleksi KORJATTU
 
