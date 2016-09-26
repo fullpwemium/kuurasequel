@@ -10274,6 +10274,7 @@ MonoBehaviour:
   hiutale5: {fileID: 1722830806}
   hiutale6: {fileID: 1559475735}
   endText: {fileID: 1150345205}
+  Player: {fileID: 1770575458}
 --- !u!1001 &2009129975
 Prefab:
   m_ObjectHideFlags: 0

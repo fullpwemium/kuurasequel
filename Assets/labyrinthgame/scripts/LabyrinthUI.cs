@@ -27,7 +27,7 @@ public class LabyrinthUI : MonoBehaviour
 
     bool isPaused;
 
-
+    public GameObject Player;
 
 
     // Use this for initialization
@@ -160,6 +160,15 @@ public class LabyrinthUI : MonoBehaviour
 
             StartCoroutine("hiutalerotatedelay");
             endText.text = "You WON!";
+
+            if (Player == null)
+            {
+
+            }
+            else
+            {
+                Player.SetActive(false);
+            }
         }
     }
 
