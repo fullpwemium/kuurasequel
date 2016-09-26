@@ -58,7 +58,7 @@ Labyrinth
 
 - Labyrinttiin lis‰tty samanlainen voittamispaneelisysteemi kuin muistipeliss‰, mutta jostain syyst‰ ei toimi. Tulee
   ilmoitus ettei objektiviittausta ole asetettu objektin instanssiin, muttei ole tietoa mist‰ objektista ja instanssista
-  tarkalleen on kyse. Aleksi KORJATTU (paitsi ett‰ paneelin ilmestymist‰ pit‰‰ viel‰ hioa.)
+  tarkalleen on kyse. Aleksi KORJATTU
 
 - Voittamispaneelisysteemi toimii muuten, paitsi ett‰ peli j‰‰ yh‰ pyˆrim‰‰n p‰‰lle, jolloin Bobia voi yh‰ liikuttaa ja
   Swipper voi yh‰ saada Bobin kiinni.	KORJATTU

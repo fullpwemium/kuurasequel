@@ -103,7 +103,11 @@ public class LabyrinthUI : MonoBehaviour
             {
                 Time.timeScale = GameManager.aika;
                 pausePanel.SetActive(false);
-                if (tutorialPanel != null)
+                if (tutorialPanel == null)
+                {
+                    Debug.Log(" LabyrinthUI: Ei tutoriaalia");
+                }
+                else
                 {
                     tutorialPanel.SetActive(false);
                 }
@@ -123,7 +127,11 @@ public class LabyrinthUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
-        if (tutorialPanel != null)
+        if (tutorialPanel == null)
+        {
+            Debug.Log(" LabyrinthUI: Ei tutoriaalia");
+        }
+        else
         {
             tutorialPanel.SetActive(false);
         }
