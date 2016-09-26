@@ -103,7 +103,10 @@ public class LabyrinthUI : MonoBehaviour
             {
                 Time.timeScale = GameManager.aika;
                 pausePanel.SetActive(false);
-                tutorialPanel.SetActive(false);
+                if (tutorialPanel != null)
+                {
+                    tutorialPanel.SetActive(false);
+                }
                 isPaused = false;
 
             }
@@ -120,7 +123,10 @@ public class LabyrinthUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
-        tutorialPanel.SetActive(false);
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(false);
+        }
     }
 
     public void Levelselect()
