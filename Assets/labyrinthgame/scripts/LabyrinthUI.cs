@@ -8,6 +8,7 @@ public class LabyrinthUI : MonoBehaviour
 
     public GameObject gameOverPanel;
     public GameObject pausePanel;
+    public GameObject pauseButton;
     public GameObject tutorialPanel;
     public GameObject hiutale1, hiutale2, hiutale3, hiutale4, hiutale5, hiutale6;
     GameObject hiutaleX, hiutaleY;
@@ -144,6 +145,8 @@ public class LabyrinthUI : MonoBehaviour
         }
         else if (won == true)
         {
+            gameOverPanel.SetActive(true);
+            pauseButton.SetActive(false);
             Debug.Log("ninjat on täällä");
             /*lista = FindObjectsOfType<GameObject>();
             for (int i = 0; i > lista.Length; i++)
@@ -153,10 +156,10 @@ public class LabyrinthUI : MonoBehaviour
             //StartCoroutine("slowDown");
             GOPanel = false;
             Score();
-            StartLerping();
-            destination = new Vector3(500, 300, 0);
+//            StartLerping();       //Animoidaan objekti liikkumaan määränpäähän.
+//            destination = new Vector3(500, 300, 0);
             Debug.Log(destination);
-            moving = true;
+//            moving = true;        //Siirretään kohde määränpäähän.
 
             StartCoroutine("hiutalerotatedelay");
             endText.text = "You WON!";
