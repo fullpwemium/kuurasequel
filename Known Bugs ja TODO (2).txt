@@ -1,0 +1,97 @@
+Bubble Ware House
+Catch the Cat
+
+- Pelinlatauksessa joku bugi? Vanha kuva jää ruutuun pyörimään, vain jollain laitteilla? Mahdollisesti ratkaistu, johtuu
+  versio 4 Androidista mutta saa tutkia, löytyykö ratkaisu myös vanhemmalle laitteelle. Ilmenee Bellen tabletissa.
+
+- Level Designia voisi uusia, kissat juoksee turhan kovaa. Määritellään GameManager-skriptin LoadLevelissä.
+- Taso 1: Kissojen määrä aluksi 2, vauhti 2,5 s hyllyn päästä päähän, pysyvät enimäkseen alahyllyllä
+- Taso 2: Kissojen määrä 2, vauhti 2 s hyllyn päästä päähän, hyppivät jo toisille hyllyille
+- Taso 3: Kissojen määrä 3, vauhti 2,5 x hyllyn päästä päähän, hyppivät toisille hyllyille
+- Taso 4:
+
+
+Mister Mysterious Mystic Cards
+Memory Game
+
+- Memory Gamen Level Selectissä näkyy aina ensin vain 2 kaksi kenttää vaikka enemmän olisi unlockattu.
+
+- Pitäisi kai muutenkin näkyä ensin vain ensimmäinen kenttä ja sen jälkeen avata muita kenttiä etenemivausen mukaan.
+
+(- Kentän läpipääsyscreenin päivitys.) Aleksi (Onko tarpeen kun ajastimella ei ole enää merkitystä eikä peliä tämän vuoksi
+  tarvitsisi laittaa paussille käytännössä ollenkaan. Kaikki tarvittavat buttonitkin ovat käytettävissä vaikkeivät
+  paneelissa olekaan)
+
+
+Winter Forest Marathon
+Runner
+
+- Pause-valikko ei aina aktivoidu näkyviin vaikka peli pysähtyykin. Johtuu kaatumisista.
+
+- (Runnerin Level Selectissä tulee pari erroria mutta eivät ole letaaleja, voisi kuitenkin korjata, niin homma toimii aina.) Tietenkin kaikki bugit pitää korjata, peli ei kaatua missään olosuhteissa.
+
+- Vain 3 leveliä, niitä lisää?
+
+- piste ja "tähti"/kissanpääjärjestelmä. Tarkoittaa, että yleensä pitää saada pistejärjestelmä toimimaan joka pelissä.
+  Pitäisi tehdä kerättyjen kolikkojen määrän perusteella.
+
+- Kentän läpipääsyscreeni puuttuu.
+
+- Peli kaatuu Unityssä mikäli palaa kenttävalikkoon magneetin ollessa päällä.
+
+- Ykkösbuttonin kenttää pelatessa toimii oikein, mutta kakkosbuttonin kenttää pelatessa pausevalikko on koko ajan päällä ja
+  Pause-nappia painaessa sekä ensimmäiseen kolikkoon osuttaessa peli kaatuu. Kolmosbuttonin kentän toimivuudesta ei tietoa.
+	- Jostain syystä Runnerin toisen buttonin kenttä ei lataa DontDestroyOnLoadin Game Manageriin kentän objekteja.
+	Ensimmäisen buttonin kenttä kuitenkin toimii, joten vika luultavasti siinä ettei projekti saa toiseen kenttään
+	mentäessä jostain syystä ladattua Game Managerin objekteja enää toista kertaa.
+
+- Labyrinttikentässä ollut bugi, joka avaa seuraavan kentän kuin olisi tarkoitus, on mukana myös Runnerissa. Lataa
+  nyt scenen Level2.1, pitäisi saada lataamaan ykkösbuttonista scenen Level1.1.
+
+- (Kun magneetin vaikutus loppuu, niin hakeutuvat kolikot eivät hakeudu loppuun vaan jäävät leijumaan eri suuntiin.) Onko
+  tämä bugi vai feature?
+
+- (Kun Unityssä käynnistää projektin ensimmäistä kertaa, niin Runneriin mentäessä tulee kaatumisilmoitus
+  "Controller 'bounce': Transition '' in state ' BounceAnimation' uses parameter 'Bounce' which is not compatible with
+  condition type.
+" Toisen kerran käynnistettäessä kenttä kuitenkin toimii eikä puhelimella pelattaessa myöskään tule ongelmia)	KORJATTU
+
+
+Winter Hedge Maze
+Labyrinth
+
+- Labyrinttiin lisätty samanlainen voittamispaneelisysteemi kuin muistipelissä, mutta jostain syystä ei toimi. Tulee
+  ilmoitus ettei objektiviittausta ole asetettu objektin instanssiin, muttei ole tietoa mistä objektista ja instanssista
+  tarkalleen on kyse. Aleksi KORJATTU
+
+- Voittamispaneelisysteemi toimii muuten, paitsi että peli jää yhä pyörimään päälle, jolloin Bobia voi yhä liikuttaa ja
+  Swipper voi yhä saada Bobin kiinni.	KORJATTU
+
+(- Jostain syystä labyrinttikenttien napit vievät seuraavaan kenttään kuin olisi tarkoitus.) Aleksi KORJATTU
+
+- Kun LabPuzzleLevel11:ssa kävelee napin päälle, niin oven animaatio bugaa teleporttaamalla oven väärään paikkaan.
+
+
+Puuttuu: OSAO projekti
+-Kauppa +inapit + magic dust(katso kuva peli ekonomiasta, löytyy flappitaulusta.)(graffat löytyy), valokuva.
+-LeaderBoard(graffat löytyy), place holder
+
+
+Puuttuu: Yliopisto projekti
+-Pilivi, tietokanta, valokuva.
+-Analytiks: Game analytics
+-Global Game Managerin viimeistelyä (osia puuttuu)
+
+Extra:
+
+- Siirryttäessä skenestä toiseen: LoadScreen/LoadBar(screen sweep, sitten musta ruutu, ja sitten avataan uusi skene) (graffat löytyy)
+
+- Pelihahmon kääntyminen paikasta toiseen kävellessä myös levelmappeihin. Bobin liikkuminen paremmaksi. Määritellään
+  BobLevelScriptin kautta (esim. "BobPlayerAnimator.SetTrigger("BobDown");")
+
+- Palaaminen aiempaan näkymään puhelimen omalla Back-nappulalla.
+
+- Taivaalle ilmalaiva, jonkinlainen grafiikka olemassa, taidetaan sijoittaa kauppa tähän elementtiin.
+
+- Pystyykö kartalla liikkumiseen vaikuttamaan niin, että siihen voisi upottaa uusia elementteja, joiden luokse voi mennä ja niistä avautua uusia pelejä.
+
