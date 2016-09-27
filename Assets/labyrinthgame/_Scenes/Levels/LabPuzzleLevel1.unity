@@ -972,8 +972,8 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191, y: 115}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -190.99994, y: 120}
+  m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &197995362
 AudioSource:
@@ -1175,8 +1175,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000048161, y: 219}
-  m_SizeDelta: {x: 450, y: 450}
+  m_AnchoredPosition: {x: 0.000048161, y: 260}
+  m_SizeDelta: {x: 450, y: 560}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &215982593
 AudioSource:
@@ -1318,8 +1318,8 @@ RectTransform:
   m_RootOrder: 10
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -190.99995, y: 115}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -190.99994, y: 120}
+  m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &224758654
 AudioSource:
@@ -3983,8 +3983,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00005340576, y: 219}
-  m_SizeDelta: {x: 450, y: 450}
+  m_AnchoredPosition: {x: 0.00005340576, y: 260}
+  m_SizeDelta: {x: 450, y: 560}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &710049552
 AudioSource:
@@ -7182,8 +7182,8 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 194, y: 115}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: 194, y: 120}
+  m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1321311637
 AudioSource:
@@ -11401,8 +11401,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.17181745, y: 0.582}
   m_AnchorMax: {x: 0.84200007, y: 0.82673264}
-  m_AnchoredPosition: {x: -5.5271, y: 78}
-  m_SizeDelta: {x: -2, y: -0.9529991}
+  m_AnchoredPosition: {x: -5.5271, y: 109.238266}
+  m_SizeDelta: {x: -2, y: 61.523468}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1685456876
 MonoBehaviour:
@@ -12609,8 +12609,8 @@ RectTransform:
   m_RootOrder: 9
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 194, y: 115}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: 194, y: 120}
+  m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1877555293
 AudioSource:

@@ -138,7 +138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 160, y: -40}
@@ -675,8 +675,8 @@ RectTransform:
   m_RootOrder: 10
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -190.99995, y: 115}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -191, y: 120}
+  m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &99923054
 AudioSource:
@@ -815,7 +815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 148, y: -112}
@@ -1575,8 +1575,8 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 194, y: 115}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: 194, y: 120}
+  m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &296431777
 AudioSource:
@@ -2669,7 +2669,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 40, y: -40}
@@ -3152,7 +3152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 148, y: -188}
@@ -3859,8 +3859,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000048161, y: 219}
-  m_SizeDelta: {x: 450, y: 450}
+  m_AnchoredPosition: {x: 0.000048161, y: 260}
+  m_SizeDelta: {x: 450, y: 560}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &657591835
 AudioSource:
@@ -4001,7 +4001,7 @@ Transform:
   - {fileID: 447636284}
   - {fileID: 1244626197}
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!114 &660401699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4695,7 +4695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -42.4, y: -118}
@@ -5196,8 +5196,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.17181745, y: 0.582}
   m_AnchorMax: {x: 0.84200007, y: 0.82673264}
-  m_AnchoredPosition: {x: -5.5271, y: 78}
-  m_SizeDelta: {x: -2, y: -0.9529991}
+  m_AnchoredPosition: {x: -5.5272, y: 108.483246}
+  m_SizeDelta: {x: -2, y: 3.0335083}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150345205
 MonoBehaviour:
@@ -5422,8 +5422,8 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191, y: 115}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -191, y: 120}
+  m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1187497144
 AudioSource:
@@ -5883,7 +5883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 263, y: -40}
@@ -5921,7 +5921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -50, y: -50}
@@ -6299,7 +6299,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1761599248}
   - {fileID: 1612890223}
   - {fileID: 545894874}
   - {fileID: 137977230}
@@ -6311,6 +6310,7 @@ RectTransform:
   - {fileID: 1245215720}
   - {fileID: 1247486996}
   - {fileID: 2021303057}
+  - {fileID: 1761599248}
   - {fileID: 2091799112}
   - {fileID: 333538672}
   - {fileID: 1271353713}
@@ -7219,8 +7219,8 @@ RectTransform:
   m_RootOrder: 9
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 194, y: 115}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: 194, y: 120}
+  m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1559475737
 AudioSource:
@@ -7505,7 +7505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 148, y: -245}
@@ -8366,8 +8366,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00005340576, y: 219}
-  m_SizeDelta: {x: 450, y: 450}
+  m_AnchoredPosition: {x: 0.00005340576, y: 260}
+  m_SizeDelta: {x: 450, y: 560}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1722830808
 AudioSource:
@@ -8554,7 +8554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 160, y: -10.000046}
@@ -8656,10 +8656,10 @@ RectTransform:
   - {fileID: 99923053}
   - {fileID: 2098546130}
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: -0.0000019073486}
+  m_AnchoredPosition: {x: -0.00008201599, y: -0.0000019073486}
   m_SizeDelta: {x: 800, y: 1328.251}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1761599249
@@ -10390,7 +10390,7 @@ RectTransform:
   m_Children:
   - {fileID: 2075784397}
   m_Father: {fileID: 1279383869}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 100, y: 100}
