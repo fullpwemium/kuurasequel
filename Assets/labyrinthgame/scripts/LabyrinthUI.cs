@@ -119,6 +119,7 @@ public class LabyrinthUI : MonoBehaviour
                 Time.timeScale = 0f;
                 pausePanel.SetActive(true);
                 isPaused = true;
+                Debug.Log("Paussi UI");
             }
         }
     }

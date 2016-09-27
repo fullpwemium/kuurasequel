@@ -5911,6 +5911,46 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 798885330}
+--- !u!1 &804681358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 804681360}
+  - 114: {fileID: 804681359}
+  m_Layer: 0
+  m_Name: Levels
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &804681359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 804681358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768a51263899c104a823974adbcacfca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &804681360
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 804681358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
 --- !u!1 &816823589
 GameObject:
   m_ObjectHideFlags: 0
@@ -9785,7 +9825,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015258789, y: -18}
+  m_AnchoredPosition: {x: 0.00004047993, y: -0.0000019073486}
   m_SizeDelta: {x: 800, y: 1328.251}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1598443737
@@ -10969,6 +11009,7 @@ GameObject:
   - 114: {fileID: 1968499062}
   - 114: {fileID: 1968499061}
   - 114: {fileID: 1968499060}
+  - 114: {fileID: 1968499064}
   m_Layer: 5
   m_Name: NextLevelButton
   m_TagString: Untagged
@@ -11095,6 +11136,18 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1968499058}
+--- !u!114 &1968499064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1968499058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ab643ab2ea2406e99fea9b01105afc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: LabPuzzleLevel3
 --- !u!1 &1991207104
 GameObject:
   m_ObjectHideFlags: 0
@@ -11279,7 +11332,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015258789, y: -18.00003}
+  m_AnchoredPosition: {x: 0.00004047993, y: -0.0000076293945}
   m_SizeDelta: {x: 308.7, y: 412}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2021075225

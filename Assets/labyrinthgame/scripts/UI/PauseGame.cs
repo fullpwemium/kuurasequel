@@ -10,5 +10,6 @@ public class PauseGame : MonoBehaviour {
     {
         Pauseimg.SetActive(true);
         Time.timeScale = 0;
+        Debug.Log("Paussi IMG");
     }
 }
