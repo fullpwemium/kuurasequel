@@ -654,6 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonLevel: 2
 --- !u!114 &282237849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1387,6 +1388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonLevel: 1
 --- !u!114 &465714607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2136,6 +2138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonLevel: 3
 --- !u!1 &697165374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2990,6 +2993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonLevel: 0
 --- !u!114 &895449008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5669,7 +5673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49aa61ba778dfa4abbc7fd41d06673a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 06000000070000000800000009000000
+  levelIndex: 06000000070000000800000021000000
   completedLevels: 
   levelSelectScene: 35
   thunderButton: {fileID: 0}

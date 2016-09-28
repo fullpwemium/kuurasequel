@@ -3474,7 +3474,7 @@ MonoBehaviour:
   kyltti1: {fileID: 435873604}
   kyltti2: {fileID: 1617423966}
   pelikuva1: {fileID: 21300000, guid: 36f57121b2bec064baffbbb081e0cff9, type: 3}
-  pelikuva2: {fileID: 21300000, guid: 553ad03382b5b3042bc8e63ac3ca4c4c, type: 3}
+  pelikuva2: {fileID: 21300000, guid: d7f09a5b41fb3b9488437603c9167718, type: 3}
   pelikuva3: {fileID: 21300000, guid: df2af8bd76c9b2b41a9504b20881e264, type: 3}
   pelikuva4: {fileID: 21300000, guid: 5d1e3f5c18db73a4c936777236e082d9, type: 3}
   pelikuva5: {fileID: 21300000, guid: d9032a6350b2f0547a3fa280e6d49344, type: 3}
