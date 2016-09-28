@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class RunnerLevelSelectLimiter : MonoBehaviour
 {
 
-    public int buttonLevel;      //Kun static, niin kaikki Level Buttonit näkyvät.
+    public static int buttonLevel;      //Kun static, niin kaikki Level Buttonit näkyvät.
     Button button;
     bool initialized;
 

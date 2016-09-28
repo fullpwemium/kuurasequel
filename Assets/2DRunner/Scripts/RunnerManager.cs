@@ -271,13 +271,17 @@ public class RunnerManager : MonoBehaviour
     }
     void OnLevelWasLoaded(int level)
     {
+        Debug.Log("Runner Level = " + level);
         if (level != 0 )
         {
             //InitialPanel();
             GlobalGameManager.GGM.RunnerSave();
         }
-		if(level == 7)
-			InitialPanel();
+
+        if (level != 33)     //Level 33 on Runnerin kenttävalikko, jossa InitialPanelin objekteja ei ole.
+        {
+            InitialPanel();
+        }
     }
 
     void InitialPanel()
