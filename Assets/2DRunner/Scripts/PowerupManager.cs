@@ -58,7 +58,7 @@ public class PowerupManager : MonoBehaviour
         GameObject.Find("/Canvas/DoublePoints").GetComponent<Text>().enabled = false;
         
         doublePoints = false;
-        RunnerManager.manager.PointsPerCoin = normalPoints ;
+        RunnerManager.manager.PointsPerCoin = normalPoints;
         yield return null;
 
     }
@@ -92,7 +92,7 @@ public class PowerupManager : MonoBehaviour
                 PowerupTime -= Time.deltaTime;
             else if (RunnerManager.manager.currentState == GameState.Died)      //Asetetaan mangeettivoima tauolle
                 PowerupTime = 0;
-            GameObject.FindGameObjectWithTag("Magnet").GetComponent<PointEffector2D>().enabled = true;
+            GameObject.FindGameObjectWithTag("Magnet").GetComponent<PointEffector2D>().enabled = true;      //Ongelmia kenttävalikossa
             // Debug.Log("MagnetPowerUp" + PowerupTime);
             yield return PowerupTime;
         }

@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 public enum GameState
 {
-    Begin,
-    Pause,
-    Died
+    Begin,      //Aloitetaan kenttä
+    Pause,      //Keskeytetään kenttä
+    Died        //Nollataan kenttä
 }
 public class RunnerManager : MonoBehaviour
 {
@@ -320,7 +320,7 @@ public class RunnerManager : MonoBehaviour
         //  currentState = GameState.Begin;
        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         LoadLevel(currentLevel);
-        currentState = GameState.Died;      //Nollataan pelitilanne
+        currentState = GameState.Died;
         //Application.LoadLevel (Application.loadedLevelName);
     }
     //public void NextLevel()
