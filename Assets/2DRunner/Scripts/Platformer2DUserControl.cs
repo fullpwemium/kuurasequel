@@ -15,6 +15,9 @@ public class Platformer2DUserControl : MonoBehaviour
     private bool doublejump;
     public bool m_Crouch;
 
+    public static bool doubleCancel;
+    public static bool magnetCancel;
+
     
 
     private void Awake()
@@ -76,6 +79,9 @@ public class Platformer2DUserControl : MonoBehaviour
     public void Pause()
     {
         RunnerManager.manager.PlayerPause();
+
+        //doubleCancel = true;
+        //magnetCancel = true;
     }
 }
 

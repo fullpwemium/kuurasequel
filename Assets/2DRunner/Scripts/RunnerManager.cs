@@ -320,7 +320,7 @@ public class RunnerManager : MonoBehaviour
         //  currentState = GameState.Begin;
        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         LoadLevel(currentLevel);
-        currentState = GameState.Died;
+        currentState = GameState.Died;      //Nollataan pelitilanne
         //Application.LoadLevel (Application.loadedLevelName);
     }
     //public void NextLevel()
@@ -331,6 +331,7 @@ public class RunnerManager : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene(levelselect);
+        currentState = GameState.Died;
     }
     
     void OnGUI()

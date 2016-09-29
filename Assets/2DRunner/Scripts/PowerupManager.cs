@@ -49,9 +49,9 @@ public class PowerupManager : MonoBehaviour
             GameObject.Find("/Canvas/DoublePoints").GetComponent<Text>().enabled = true;
             if(RunnerManager.manager.currentState == GameState.Begin)
                 PowerupTime -= Time.deltaTime;
-            else if (RunnerManager.manager.currentState == GameState.Died)
+            else if (RunnerManager.manager.currentState == GameState.Died)      //Asetetaan tuplausvoima tauolle
                 PowerupTime = 0;
-            RunnerManager.manager.PointsPerCoin = normalPoints * 2;
+            RunnerManager.manager.PointsPerCoin = normalPoints * 2;     //Tuplataan kerätyt kolikot.
            // Debug.Log("PointsPowerUp: " + PowerupTime + " PPC" +RunnerManager.manager.PointsPerCoin + "Normalpoints  " + normalPoints);
             yield return PowerupTime;
         }
@@ -90,7 +90,7 @@ public class PowerupManager : MonoBehaviour
         {
             if (RunnerManager.manager.currentState != GameState.Pause)
                 PowerupTime -= Time.deltaTime;
-            else if (RunnerManager.manager.currentState == GameState.Died)
+            else if (RunnerManager.manager.currentState == GameState.Died)      //Asetetaan mangeettivoima tauolle
                 PowerupTime = 0;
             GameObject.FindGameObjectWithTag("Magnet").GetComponent<PointEffector2D>().enabled = true;
             // Debug.Log("MagnetPowerUp" + PowerupTime);
