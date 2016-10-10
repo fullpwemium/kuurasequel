@@ -81,3 +81,5 @@ EditorBuildSettings:
     path: Assets/MapScene/LabyrinthLevelSelect.unity
   - enabled: 1
     path: Assets/catchtheitems/_Scenes/LoadScene.unity
+  - enabled: 1
+    path: Assets/Shop_scene/Shop.unity

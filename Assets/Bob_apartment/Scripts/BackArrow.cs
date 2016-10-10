@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BackArrow : MonoBehaviour {
 
+    ItemControl ic1;
 	public GameObject pet;
 	public GameObject pet2;
 	public GameObject kissekuva;
@@ -11,17 +12,24 @@ public class BackArrow : MonoBehaviour {
 	public GameObject backarrow;
 	public GameObject feidi;
     public GameObject dusti;
-
+    public GameObject exitButton;
+    public GameObject food;
+    public GameObject happiness;
+    int foodamount = ItemControl.amountofFood;
     // Use this for initialization
-    void Start () {
-	
-	}
+    void Start ()
+    {
+       
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 
 	}
-	void OnMouseDown() {
+	void OnMouseDown()
+    {
+       
 		kissekuva.SetActive (false);
 		kissa1.SetActive (true);
 		kissakasa1.SetActive (true);
@@ -30,5 +38,15 @@ public class BackArrow : MonoBehaviour {
 		pet.SetActive (false);
 		pet2.SetActive (false);
         dusti.SetActive(false);
+        exitButton.SetActive(true);
+        if (foodamount > 0)
+        {
+            food.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("You are out of food");
+        }
+        happiness.SetActive(true);
     }
 }

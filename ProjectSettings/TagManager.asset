@@ -40,6 +40,8 @@ TagManager:
   - Melt
   - TorchCol
   - OneWayPass
+  - DustAmount
+  - HappinessMeter
   layers:
   - Default
   - TransparentFX

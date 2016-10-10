@@ -6,7 +6,7 @@ public class GlobalManager : MonoBehaviour
 {
     public static float winTime = CountUpTimer.timeCountUp;
     public static float[] ScoreArray = new float[10]; //Tuloslista
-    public static float MagicDust; //Pistemäärä
+    public static int MagicDust; //Pistemäärä
 
     public static Text Score1Text;
     public static Text Score2Text;
@@ -129,7 +129,7 @@ public class GlobalManager : MonoBehaviour
             Debug.Log("Global Manager: Magic Dust = " + MagicDust);
         }
 
-        PlayerPrefs.SetFloat("Magic Dust ", MagicDust); //Tallennetaan pisteet
+        PlayerPrefs.SetInt("Magic Dust ", MagicDust); //Tallennetaan pisteet
 
 
 

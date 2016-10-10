@@ -8,10 +8,9 @@ public class BackToMainmap : MonoBehaviour {
     public int sceneToLoad;
 
 	// Use this for initialization
-	void Start () {
-
+	void Start ()
+    {
         BackButton.onClick.AddListener(() => LoadScene(sceneToLoad));
-
     }
 
     public void LoadScene(int scene)
