@@ -2717,7 +2717,6 @@ MonoBehaviour:
   feidi: {fileID: 566924667}
   dusti: {fileID: 1410169910}
   exitButton: {fileID: 1524845963}
-  food: {fileID: 1254982241}
   happiness: {fileID: 1190259765}
 --- !u!212 &1195925539
 SpriteRenderer:
@@ -2841,11 +2840,6 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &1254982241 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010113019326, guid: 101cd41bae8b0cb4ca566826141f1647,
-    type: 2}
-  m_PrefabInternal: {fileID: 587965831}
 --- !u!1 &1349922925
 GameObject:
   m_ObjectHideFlags: 0

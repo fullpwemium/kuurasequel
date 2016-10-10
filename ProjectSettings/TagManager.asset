@@ -42,6 +42,7 @@ TagManager:
   - OneWayPass
   - DustAmount
   - HappinessMeter
+  - Food
   layers:
   - Default
   - TransparentFX

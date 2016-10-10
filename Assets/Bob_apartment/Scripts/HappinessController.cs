@@ -9,8 +9,8 @@ public class HappinessController : MonoBehaviour {
     public Sprite hap2;
     public Sprite hap3;
     TimeSpan hungry;
-    System.DateTime startTime;
-
+    System.DateTime startTime;     
+    Sprite lastsprite;   
     public static int happinessMultiplier;
     public Sprite[] sprites = new Sprite[4];
     System.DateTime datevalue2;
@@ -19,13 +19,14 @@ public class HappinessController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        currentSprite = hap1;
-        GetComponent<SpriteRenderer>().sprite = currentSprite;
+        //DontDestroyOnLoad(this);
         //adding sprites which swap whenever the cats mood changes
         sprites[0] = hap0;
         sprites[1] = hap1;
         sprites[2] = hap2;
         sprites[3] = hap3;
+        currentSprite = hap1;
+        GetComponent<SpriteRenderer>().sprite = currentSprite;   
         startTime = System.DateTime.Now;
     }
 	// Update is called once per frame
@@ -36,21 +37,21 @@ public class HappinessController : MonoBehaviour {
         hungry = datevalue2 - fedTime;
         TimeSpan escalate = startTime - datevalue2;     
         //checks the current mood and compares it to a specific sprite then changes the mood if the other conditions are also met
-        if (currentSprite== sprites[3] && fedTime.AddMinutes(1) <= datevalue2)
+        if (currentSprite == sprites[3] && fedTime.AddMinutes(1) <= datevalue2)
         {
-            currentSprite = sprites[2];
+            ChangeMood(2);
             LastFed(datevalue2);
             print("it has been " + hungry.ToString() + " since you last fed the cat, cat is happy");
         }
         else if (currentSprite == sprites[2] && fedTime.AddMinutes(1) <= datevalue2 && startTime.AddMinutes(1) < datevalue2)
         {
-            currentSprite = sprites[1];
+            ChangeMood(1);
             LastFed(datevalue2);
             print("it has been " + hungry.ToString() + " since you last fed the cat, cat is ok");         
         }
        else if(currentSprite == sprites[1] && fedTime.AddMinutes(1) <= datevalue2 && startTime.AddMinutes(2) < datevalue2)
         {
-            currentSprite = sprites[0];
+            ChangeMood(0);
             LastFed(datevalue2);
             print("it has been " + hungry.ToString() + " since you last fed the cat, cat is sad");
         }
@@ -88,6 +89,13 @@ public class HappinessController : MonoBehaviour {
     public void ChangeMood(int number)
     {
         currentSprite = sprites[number];
+        lastsprite = sprites[number];
+        lastsprite = GetComponent<SpriteRenderer>().sprite;
+    }
+    public void OnApplicationQuit()
+    {
+        currentSprite = lastsprite;
+        Debug.Log("Cats mood has been saved now");
     }
   
 }
