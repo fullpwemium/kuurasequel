@@ -185,8 +185,10 @@ public class RunnerManager : MonoBehaviour
     }
     void GetLength()
     {
-		if(lengthText != null)
-        	lengthText.text = GameObject.Find("CharacterRobotBoy").transform.position.x.ToString("F1");
+        if (lengthText != null)
+        {
+            lengthText.text = GameObject.Find("CharacterRobotBoy").transform.position.x.ToString("F1");
+        }
     }
     //Loads next level and stores completed level
     public void PlayerWin()
