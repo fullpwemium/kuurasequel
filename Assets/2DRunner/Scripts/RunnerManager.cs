@@ -278,7 +278,7 @@ public class RunnerManager : MonoBehaviour
             GlobalGameManager.GGM.RunnerSave();
         }
 
-        if (level != 33)     //Level 33 on Runnerin kenttävalikko, jossa InitialPanelin objekteja ei ole.
+        if (level == 6 || level == 7 || level == 8)     //Ladataan InitialPanel kun siirrytään kenttään, jossa Panelin objektit ovat.
         {
             InitialPanel();
         }
