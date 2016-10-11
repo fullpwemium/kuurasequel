@@ -9079,7 +9079,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 444058, guid: 03f5a1f3eacc443efa354ceda4446a49, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.92
+      value: -4.3
       objectReference: {fileID: 0}
     - target: {fileID: 444058, guid: 03f5a1f3eacc443efa354ceda4446a49, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9115,7 +9115,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 444058, guid: 03f5a1f3eacc443efa354ceda4446a49, type: 2}
       propertyPath: m_LocalScale.y
-      value: 27.31273
+      value: 30.047289
       objectReference: {fileID: 0}
     - target: {fileID: 21288892, guid: 03f5a1f3eacc443efa354ceda4446a49, type: 2}
       propertyPath: m_Sprite
