@@ -199,7 +199,9 @@ public class RunnerManager : MonoBehaviour
         }
         //currentLevel++;
 
-//        LoadLevel(currentLevel + 1);
+        //        LoadLevel(currentLevel + 1);
+        RunnerTimer.EndGame();      //Pysäytetään ajastin ja asetetaan kenttä suoritetuksi kun päästään maaliin.
+
         SceneManager.LoadScene("RunnerLevelMap");        //Ladataan kenttävalikko maaliin pääsyn jälkeen
     }
 
@@ -209,6 +211,7 @@ public class RunnerManager : MonoBehaviour
         currentState = GameState.Died;
         gameOverPanel.SetActive(true);
         currentScore.text = score.ToString();
+        RunnerTimer.PauseGame();    //Pysäytetään ajastin kun kuolo koittaa.
 
     }
     public void PlayerPause()
@@ -221,6 +224,7 @@ public class RunnerManager : MonoBehaviour
             currentScore.text = score.ToString();
             PlatformerCharacter2D.previousVelocity = PlatformerCharacter2D.m_Rigidbody2D.velocity.y;
 
+            RunnerTimer.PauseGame();    //Keskeytetään ajastin paussin ajaksi.
             Debug.Log("Paussi");
 
         }
@@ -231,6 +235,7 @@ public class RunnerManager : MonoBehaviour
             pausePressed = false;
             PlatformerCharacter2D.m_Rigidbody2D.velocity = new Vector2(0,PlatformerCharacter2D.previousVelocity);
 
+            RunnerTimer.Continue();     //Jatketaan ajastusta kun paussi suljetaan.
             Debug.Log("Jatkuu");
         }
 
@@ -239,6 +244,7 @@ public class RunnerManager : MonoBehaviour
     public void LoadLevel(int levelToLoad)
     {
         score = 0;
+        RunnerTimer.StartGame();    //Käynnistetään laskuri alusta avattaessa kenttä.
         //Add check to not go over array bounds
         if (levelToLoad < levelIndex.Length)
         {
@@ -317,12 +323,13 @@ public class RunnerManager : MonoBehaviour
             
 
     }
-    public void Play()
+    public void Play()      //Replay-toiminto
     {
         //  currentState = GameState.Begin;
        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         LoadLevel(currentLevel);
         currentState = GameState.Died;
+        RunnerTimer.StartGame();    //Nollataan ajastin ja muut funktiot kun aloitetaan kenttä alusta.
         //Application.LoadLevel (Application.loadedLevelName);
     }
     //public void NextLevel()
@@ -333,6 +340,8 @@ public class RunnerManager : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene(levelselect);
+        RunnerTimer.StartGame();    //Nollataan ajastin ja muut funktiot kun palataan kenttävalikkoon.
+        
         currentState = GameState.Died;
     }
     
