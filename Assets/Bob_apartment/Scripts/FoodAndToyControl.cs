@@ -34,6 +34,7 @@ public class FoodAndToyControl : MonoBehaviour {
         Feedable2 = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap3;
         x = Input.mousePosition.x;
         y = Input.mousePosition.y;
+        //Checks if the player has more than 0 foo and then also checks if the cat is hungry
         if (ItemControl.amountofFood > 0 && GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
         {
             reset = false;
@@ -41,6 +42,7 @@ public class FoodAndToyControl : MonoBehaviour {
         }
         else if (ItemControl.amountofFood < 1 || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite == Feedable2)
         {
+            //the cats food sprite disappears if the amount of food is 0 or the cat isn't hungry
             GetComponent<SpriteRenderer>().enabled = false;
             reset = true;
             AmountofFood.GetComponent<Text>().enabled = false;
@@ -57,6 +59,7 @@ public class FoodAndToyControl : MonoBehaviour {
         AmountofFood.GetComponent<Text>().enabled = true;
     }
 
+    //Enables the dragging of the food
     void OnMouseDrag()
     {
         if (reset == false)
@@ -67,6 +70,8 @@ public class FoodAndToyControl : MonoBehaviour {
         }
        
     }
+
+    //Checks if the Happiness meter is triggered and if it is then the cat will be fed
     void OnTriggerStay2D(Collider2D other)
     {
       

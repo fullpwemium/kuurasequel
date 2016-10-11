@@ -12,6 +12,7 @@ public class HungerControl : MonoBehaviour {
     // Use this for initialization
     void Awake()
     {
+        //We make sure that this doesn't get destroyed when it's loaded
         DontDestroyOnLoad(this);
         currenttime = System.DateTime.Now;
     }

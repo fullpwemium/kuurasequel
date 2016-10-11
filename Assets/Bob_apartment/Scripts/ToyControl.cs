@@ -37,11 +37,13 @@ public class ToyControl : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        //Shows when the cat is feedable
         if (GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite == Feedable || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite == Feedable2)
         {
             GetComponent<SpriteRenderer>().enabled = true;
             AmountofToys.GetComponent<Text>().enabled = true;
         }
+        //Shows when the cat is not feedable
         else if (GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
         {
             GetComponent<SpriteRenderer>().enabled = false;
@@ -72,6 +74,7 @@ public class ToyControl : MonoBehaviour {
             AmountofToys.GetComponent<Text>().enabled = true;        
     }
 
+    //Enables the dragging of the toy
     void OnMouseDrag()
     {
         if (reset == false)
@@ -83,6 +86,7 @@ public class ToyControl : MonoBehaviour {
 
     }
 
+    //Checks if the Happiness meter is triggered and if it is then the cat will be happier
     void OnTriggerStay2D(Collider2D other)
     {
 
