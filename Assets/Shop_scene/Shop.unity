@@ -574,7 +574,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -200, y: -41.7}
-  m_SizeDelta: {x: 75, y: 75}
+  m_SizeDelta: {x: 140, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &888589373
 MonoBehaviour:
@@ -636,7 +636,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2ac02401670d0424890ecf6bd73a9d7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14ebc5707b933364fa1f0f24c409ec1e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -971,9 +971,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Bob
-
-    button'
+  m_Text: 
 --- !u!222 &1178223468
 CanvasRenderer:
   m_ObjectHideFlags: 0
