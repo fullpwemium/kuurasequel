@@ -28,14 +28,14 @@ public class RunnerLevelSelectLimitter : MonoBehaviour
 
         completedLevels = new List<int>();
 
-        completedLevels.Add(0);
-        completedLevels.Add(1);
-        completedLevels.Add(2);
-        completedLevels.Add(3);
-        Debug.Log(completedLevels[0] + "completed levels");
-        Debug.Log(completedLevels[1] + "completed levels");
-        Debug.Log(completedLevels[2] + "completed levels");
-        Debug.Log(completedLevels[3] + "completed levels");
+        //completedLevels.Add(0);
+        //completedLevels.Add(1);
+        //completedLevels.Add(2);
+        //completedLevels.Add(3);
+        //Debug.Log(completedLevels[0] + " completed levels");
+        //Debug.Log(completedLevels[1] + " completed levels");
+        //Debug.Log(completedLevels[2] + " completed levels");
+        //Debug.Log(completedLevels[3] + " completed levels");
 
         //canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
@@ -85,13 +85,12 @@ public class RunnerLevelSelectLimitter : MonoBehaviour
         //Debug.Log("nappula listenerit laitettu");
         gameObject.SetActive(false);
 
-        //Debug.Log(LabManager.manager);
         //Debug.Log(completedLevels.Last());
         //The first level is always shown regardless of its completetion
         if (completedLevels.Any() == false && buttonLevel == 0)
         {
             gameObject.SetActive(true);
-            Debug.Log(gameObject + "näkyy");
+            Debug.Log(gameObject + " näkyy");
         }
         //Checks if this or the previous level is completed, if previous is completed check if next level exists
         if (completedLevels.Contains(buttonLevel) ||
@@ -99,7 +98,7 @@ public class RunnerLevelSelectLimitter : MonoBehaviour
             buttonLevel < 10)
         {
             gameObject.SetActive(true);
-            Debug.Log(gameObject + "näkyy");
+            Debug.Log(gameObject + " näkyy");
         }
         initialized = true;
     }

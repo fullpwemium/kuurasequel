@@ -6,10 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
-
 public class MemoryGameLevelSelecterLimitter : MonoBehaviour
 {
-
     public static List<int> completedLevels = new List<int>(100);
 
     public int buttonLevel;

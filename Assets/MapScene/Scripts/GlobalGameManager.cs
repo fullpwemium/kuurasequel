@@ -52,7 +52,7 @@ public class GlobalGameManager : MonoBehaviour
     void Start()
     {
 //        PlayerPrefs.DeleteAll();
-//        Debug.Log("kaikki tuhottu");
+//        Debug.Log("Kaikki tuhottu");
 
         //InsertScore(5,bwhStars, "banana", 10);
         haeData();
@@ -229,9 +229,12 @@ public class GlobalGameManager : MonoBehaviour
             //RunnerManager.manager.completedLevels.Add(i);
             //Debug.Log((MemoryGameLevelSelecterLimitter.completedLevels));
 
-            if (MemoryGamecompletedLevels.Contains(i))
+            //if (MemoryGamecompletedLevels.Contains(i))
+            if (RunnercompletedLevels.Contains(i))
             {
-                RunnerManager.manager.completedLevels.Add(i);
+//                RunnerManager.manager.completedLevels.Add(i);
+                RunnerLevelSelectLimiter.completedLevels.Add(i);
+//                RunnerLevelSelectLimitter.completedLevels.Add(i);
             }
         }
     }

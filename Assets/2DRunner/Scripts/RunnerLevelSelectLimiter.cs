@@ -3,9 +3,12 @@ using UnityEngine.Events;
 using System.Collections;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class RunnerLevelSelectLimiter : MonoBehaviour
 {
+    public static List<int> completedLevels = new List<int>(100);
 
     public int buttonLevel;
     Button button;

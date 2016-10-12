@@ -195,7 +195,7 @@ public class RunnerManager : MonoBehaviour
     {
         if (completedLevels.Contains(currentLevel) == false)
         {
-            completedLevels.Add(currentLevel);
+            completedLevels.Add(currentLevel);        //Lisätään läpäisty kenttä suoritettuihin ja avataan seuraava kenttä
         }
         //currentLevel++;
 
