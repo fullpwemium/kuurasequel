@@ -7,7 +7,6 @@ public class DustController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-
         //Updates amount of dust
         DustAmount = GlobalManager.MagicDust;
         if(GameObject.FindGameObjectWithTag("DustAmount"))

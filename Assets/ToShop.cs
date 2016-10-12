@@ -5,16 +5,24 @@ using UnityEngine.SceneManagement;
 public class ToShop : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene(36);
         }
 	}
+    void OnMouseOver()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            SceneManager.LoadScene(36);
+        }
+    }
 }
