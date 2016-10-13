@@ -202,10 +202,10 @@ public class RunnerManager : MonoBehaviour
         //        LoadLevel(currentLevel + 1);
         RunnerTimer.EndGame();      //Pysäytetään ajastin ja asetetaan kenttä suoritetuksi kun päästään maaliin.
 
-        currentState = GameState.Pause;
-        GameObject.Find("Canvas").GetComponent<RunnerWinningPanel>().YouWon(true);    //Avataan voittamispaneeli.
+        //currentState = GameState.Pause;
+        //GameObject.Find("Canvas").GetComponent<RunnerWinningPanel>().YouWon(true);    //Avataan voittamispaneeli.
 
-//        SceneManager.LoadScene("RunnerLevelMap");        //Ladataan kenttävalikko maaliin pääsyn jälkeen
+        SceneManager.LoadScene("RunnerLevelMap");        //Ladataan kenttävalikko maaliin pääsyn jälkeen
     }
 
     public void PlayerLose()
