@@ -11,6 +11,7 @@ public class RunnerWinningPanel : MonoBehaviour
 //    public GameObject tutorialPanel;
     public GameObject hiutale1, hiutale2, hiutale3, hiutale4, hiutale5, hiutale6;
     GameObject hiutaleX, hiutaleY;
+//    public Button play, nextLevel, levelSelect;
     public Text endText;
     public static bool GOPanel = false;
     public static int stars;
@@ -27,7 +28,7 @@ public class RunnerWinningPanel : MonoBehaviour
 
     bool isPaused;
 
-    public GameObject Player;
+//    public GameObject Player;
 
 
     // Use this for initialization
@@ -52,6 +53,12 @@ public class RunnerWinningPanel : MonoBehaviour
         //    Time.timeScale = 0f;
         //}
     }
+
+    void YouWonPanel()
+    {
+
+    }
+
 
     public void GameOverPanelToggle()
     {
@@ -178,14 +185,14 @@ public class RunnerWinningPanel : MonoBehaviour
             StartCoroutine("hiutalerotatedelay");
             endText.text = "You WON!";
 
-            if (Player == null)
-            {
-                //                SceneManager.LoadScene("LabyrinthLevelSelect"); //Ladataan kenttävalikko
-            }
-            else
-            {
-                Player.SetActive(false);
-            }
+            //if (Player == null)
+            //{
+            //    //                SceneManager.LoadScene("LabyrinthLevelSelect"); //Ladataan kenttävalikko
+            //}
+            //else
+            //{
+            //    Player.SetActive(false);
+            //}
         }
     }
 
@@ -296,6 +303,7 @@ public class RunnerWinningPanel : MonoBehaviour
 
     void Score()        //Tähän määritellään tähtienansaitsemismetodi.
     {
+        stars = 3;
         //if (Collector.Coins >= 8)
         //{
         //    stars = 3;
