@@ -75,15 +75,21 @@ public class ShopButtons : MonoBehaviour {
         //CartButton opens the cartpage
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = cartpage;
         Debug.Log("CartPage");
+        GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = cartpage*2;
+        GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = cartpage*2+1;
     }
     void Bobpage()
     {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = bobspage;
         Debug.Log("Bob page");
+        GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = bobspage*2;
+        GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = bobspage*2+1;
     }
     void Menupage()
     {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = menupage;
         Debug.Log("Menu page");
+        GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = menupage;
+        GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = menupage + 1;
     }
 }

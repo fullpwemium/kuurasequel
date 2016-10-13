@@ -48,6 +48,8 @@ public class NextPageControl : MonoBehaviour {
     {
         //changes the page
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage++;
+        GameObject.Find("BookLastPage").GetComponent<LastPageControl>().Rightpageup(2);
+        GameObject.Find("BookLastPage").GetComponent<LastPageControl>().Leftpageup(2);
         Debug.Log("Next page");
     }
 }
