@@ -70,7 +70,15 @@ public class HatPageControl : MonoBehaviour {
 	}
     void BuyHat()
     {
-        GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(hatprice);
-        GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+        if (dustAmount >= hatprice)
+        {
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(hatprice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+        }
+        else if (dustAmount < hatprice)
+        {
+            Debug.Log("You don't have enough magic dust");
+            GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
+        }
     }
 }

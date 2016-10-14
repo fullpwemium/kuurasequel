@@ -276,7 +276,7 @@ public class BookButtonControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = jacketpage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = jacketpage / 2;
     }
-    void DustPage()
+   public void DustPage()
     {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = dustpage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = dustpage + 1;
