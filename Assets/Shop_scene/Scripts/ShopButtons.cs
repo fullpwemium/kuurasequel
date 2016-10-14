@@ -37,8 +37,8 @@ public class ShopButtons : MonoBehaviour {
             MenuButton.GetComponent<Image>().enabled = true;
         }
         menupage = 0;
-        cartpage = 9;
-        bobspage = 10;
+        cartpage = 10;
+        bobspage = 11;
         //Programming buttons to call specific methods
         BackButton.onClick.AddListener(() => LoadScene(sceneToLoad));
         CartButton.onClick.AddListener(CartPage);

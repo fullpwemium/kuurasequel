@@ -21,6 +21,12 @@ public class DustController : MonoBehaviour {
         Debug.Log(value + " dust has been added");
     }
 
+    public void LoseDust(int value)
+    {
+        DustAmount -= value;
+        GlobalManager.MagicDust = DustAmount;
+        Debug.Log(value + " dust has been lost");
+    }
     //updates the amount of dust text
     public void UpdateDust()
     {

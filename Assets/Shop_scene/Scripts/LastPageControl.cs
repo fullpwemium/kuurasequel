@@ -7,7 +7,7 @@ public class LastPageControl : MonoBehaviour
 
     public Button LastPage;
     public int currentpage;
-    public int lastpage = 10;
+    public int lastpage;
     public Text leftpagecounter;
    public int leftcounter;
    public int rightcounter = 1;
@@ -18,6 +18,7 @@ public class LastPageControl : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        lastpage = 12;
         leftpagemax = lastpage * 2;
         rightpagemax = lastpage * 2 + 1;
     }
