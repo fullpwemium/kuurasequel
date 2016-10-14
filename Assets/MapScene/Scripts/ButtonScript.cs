@@ -68,7 +68,7 @@ public class ButtonScript : MonoBehaviour
         //Debug.Log("nearMemoryGame" + BobPlayerScript.nearMemoryGame);
 
         if (BobPlayerScript.nearMemoryGame)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
-        { 
+        {
             SceneManager.LoadScene("LevelMap");    //Ladataan Scene
             BobPlayerScript.nearMemoryGame = false;
 
@@ -78,7 +78,7 @@ public class ButtonScript : MonoBehaviour
             SceneManager.LoadScene("CatchTheCatLevelSelect");
             BobPlayerScript.nearCatchTheCat = false;
         }
-        else if(BobPlayerScript.nearLabyrinth)
+        else if (BobPlayerScript.nearLabyrinth)
         {
             SceneManager.LoadScene("LabyrinthLevelSelect");
             BobPlayerScript.nearLabyrinth = false;
@@ -94,6 +94,11 @@ public class ButtonScript : MonoBehaviour
             SceneManager.LoadScene("Bob_apartment");
             BobPlayerScript.nearBobApartment = false;
 
+        }
+        else if (BobPlayerScript.nearShop)
+        {
+            SceneManager.LoadScene(36);
+            BobPlayerScript.nearBobApartment = false;
         }
 
     }
@@ -127,6 +132,8 @@ public class ButtonScript : MonoBehaviour
             }
             else if (gameNumber == 5)
                 BobPlayerScript.nearBobApartment = true;
+            else if (gameNumber == 6)
+                BobPlayerScript.nearShop = true;
             else
             {/*
                 BobPlayerScript.nearMemoryGame = false;
