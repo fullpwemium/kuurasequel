@@ -12,7 +12,8 @@ public class LevelSelectButton : MonoBehaviour {
 	void Start () {
 		lvlSelect = GetComponent<Button> ();
 		lvlSelect.onClick.AddListener (LevelSelect);
-	}
+        RunnerManager.score = 0;
+    }
 	
 	// Update is called once per frame
 	void Update () {

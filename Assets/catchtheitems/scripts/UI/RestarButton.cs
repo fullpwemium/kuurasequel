@@ -19,6 +19,7 @@ public class RestarButton : MonoBehaviour {
         //ShelfGameManager.manager.RestartLevel();
 
         RunnerTimer.StartGame();        //Aloitetaan Runnerin ajastin alusta.
+        RunnerManager.score = 0;
 
         Scene scene = SceneManager.GetActiveScene();
         //Application.LoadLevel (Application.loadedLevel);

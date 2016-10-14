@@ -27,7 +27,7 @@ public class RunnerManager : MonoBehaviour
     public Button snowButton;
     public CatMovement catmovement;
     public float Length = 0;
-    public float score = 0;
+    public static float score = 0;
     public float PointsPerCoin;
     public Text lengthText;
     public Text scoreText;
