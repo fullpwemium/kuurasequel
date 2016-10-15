@@ -66,7 +66,7 @@ public class PowerupManager : MonoBehaviour
     {
         while (PowerupTime >0 )
         {
-            if (RunnerManager.manager.currentState != GameState.Pause)
+            if (RunnerManager.manager.currentState == GameState.Begin)
                 PowerupTime -= Time.deltaTime;
             else if (RunnerManager.manager.currentState == GameState.Died)
                 PowerupTime = 0;
@@ -88,7 +88,7 @@ public class PowerupManager : MonoBehaviour
     {
         while (PowerupTime > 0)
         {
-            if (RunnerManager.manager.currentState != GameState.Pause)
+            if (RunnerManager.manager.currentState == GameState.Begin)
                 PowerupTime -= Time.deltaTime;
             else if (RunnerManager.manager.currentState == GameState.Died)      //Asetetaan mangeettivoima tauolle
                 PowerupTime = 0;
@@ -96,9 +96,9 @@ public class PowerupManager : MonoBehaviour
             // Debug.Log("MagnetPowerUp" + PowerupTime);
             yield return PowerupTime;
         }
-        magnet = false;
-
         GameObject.FindGameObjectWithTag("Magnet").GetComponent<PointEffector2D>().enabled = false;
+
+        magnet = false;
         yield return null;
 
     }
