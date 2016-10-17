@@ -98,6 +98,9 @@ public class BobLevelScript : MonoBehaviour
 
                 Debug.Log("Ei löytynyt");
                 Debug.Log("startLevel = " + startLevelButton);
+
+                PlayerPrefs.SetInt("Bobin kenttä X", StandingLevelNumberX);
+                PlayerPrefs.SetInt("Bobin kenttä Y", StandingLevelNumberY);
             }
         }
 
