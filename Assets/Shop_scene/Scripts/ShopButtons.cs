@@ -17,10 +17,13 @@ public class ShopButtons : MonoBehaviour {
     int bobspage;
     int cartpage;
     int menupage;
+    int hatpage;
     public GameObject Bobbutton;
     public GameObject shopbook;
     public GameObject Cartbutton;
     public GameObject Menubutton;
+    public GameObject HatButtonControl;
+    public GameObject NotEnoughDust, WantToBuy, BuyConfirm, WhiteBackground;
     // Use this for initialization
     void Start()
     {
@@ -44,10 +47,22 @@ public class ShopButtons : MonoBehaviour {
         CartButton.onClick.AddListener(CartPage);
         BobButton.onClick.AddListener(Bobpage);
         MenuButton.onClick.AddListener(Menupage);
+        HatButtonControl.SetActive(false);
     }
 
     void Update()
     {
+        hatpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().hatpage - 1;
+        if (currentpage == hatpage)
+        {
+            HatButtonControl.SetActive(true);
+            NotEnoughDust.SetActive(true);
+            WhiteBackground.SetActive(true);
+            WantToBuy.SetActive(true);
+            BuyConfirm.SetActive(true);
+        }
+
+
         if (shopbook.GetComponent<Image>().enabled == false)
         {
             Bobbutton.GetComponent<Image>().enabled = false;

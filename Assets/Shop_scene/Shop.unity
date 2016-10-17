@@ -526,7 +526,6 @@ MonoBehaviour:
   yesText: {fileID: 36259496}
   noText: {fileID: 923540626}
   background: {fileID: 793598955}
-  buy: 0
   dustAmount: 0
 --- !u!114 &72661575
 MonoBehaviour:
@@ -4086,6 +4085,7 @@ GameObject:
   - 222: {fileID: 1090809109}
   - 114: {fileID: 1090809108}
   - 114: {fileID: 1090809110}
+  - 114: {fileID: 1090809111}
   m_Layer: 5
   m_Name: ShopBook
   m_TagString: Untagged
@@ -4156,6 +4156,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DustAmount: 0
+--- !u!114 &1090809111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090809106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdea9052670d3c49a1bf1b914eba099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlackHat: {fileID: 868239946}
+  WhiteHat: {fileID: 1333309608}
+  GreenHat: {fileID: 1279451224}
+  RedHat: {fileID: 1867512690}
+  OrangeHat: {fileID: 57594181}
+  HatControlButton: {fileID: 72661575}
+  yesBuyButton: {fileID: 483260716}
+  noBuyButton: {fileID: 1319914856}
+  ConfirmText: {fileID: 265434398}
+  yesText: {fileID: 36259496}
+  noText: {fileID: 923540626}
+  background: {fileID: 793598955}
+  dustAmount: 0
 --- !u!1 &1100879506
 GameObject:
   m_ObjectHideFlags: 0
@@ -7660,6 +7684,11 @@ MonoBehaviour:
   shopbook: {fileID: 1090809106}
   Cartbutton: {fileID: 499815226}
   Menubutton: {fileID: 82471329}
+  HatButtonControl: {fileID: 72661572}
+  NotEnoughDust: {fileID: 1881941363}
+  WantToBuy: {fileID: 793598953}
+  BuyConfirm: {fileID: 1738096074}
+  WhiteBackground: {fileID: 989462703}
 --- !u!1 &1957152622
 GameObject:
   m_ObjectHideFlags: 0

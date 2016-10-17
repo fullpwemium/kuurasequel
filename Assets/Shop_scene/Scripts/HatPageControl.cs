@@ -17,14 +17,22 @@ public class HatPageControl : MonoBehaviour {
     public Text noText;
 
     public Image background;
-    public bool buy;
+    public static bool buy;
     int currentpage;
     int hatpage;
     int hatprice;
     public int dustAmount;
     // Use this for initialization
     void Start()
-    {
+    {   
+        BlackHat.onClick.AddListener(BuyHat);
+        WhiteHat.onClick.AddListener(BuyHat);
+        GreenHat.onClick.AddListener(BuyHat);
+        RedHat.onClick.AddListener(BuyHat);
+        OrangeHat.onClick.AddListener(BuyHat);
+        yesBuyButton.onClick.AddListener(BuyTrue);
+        noBuyButton.onClick.AddListener(BuyFalse);
+
         ConfirmText.enabled = false;
         yesText.enabled = false;
         noText.enabled = false;
@@ -41,13 +49,23 @@ public class HatPageControl : MonoBehaviour {
         hatprice = 500;
         HatControlButton.enabled = false;
         HatControlButton.GetComponent<Image>().enabled = false;
-        BlackHat.onClick.AddListener(BuyHat);
-        WhiteHat.onClick.AddListener(BuyHat);
-        GreenHat.onClick.AddListener(BuyHat);
-        RedHat.onClick.AddListener(BuyHat);
-        OrangeHat.onClick.AddListener(BuyHat);
-        yesBuyButton.onClick.AddListener(BuyTrue);
-        noBuyButton.onClick.AddListener(BuyFalse);
+
+        BlackHat.enabled = false;
+        BlackHat.GetComponent<Image>().enabled = false;
+
+        WhiteHat.enabled = false;
+        WhiteHat.GetComponent<Image>().enabled = false;
+
+        GreenHat.enabled = false;
+        GreenHat.GetComponent<Image>().enabled = false;
+
+        RedHat.enabled = false;
+        RedHat.GetComponent<Image>().enabled = false;
+
+        OrangeHat.enabled = false;
+        OrangeHat.GetComponent<Image>().enabled = false;
+
+        
     }
 	// Update is called once per frame
 	void Update ()
