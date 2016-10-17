@@ -15,14 +15,22 @@ public class HatPageControl : MonoBehaviour {
     public Text ConfirmText;
     public Text yesText;
     public Text noText;
-
+    public Button randomButton;
+    public Image randomImage;
     public Image background;
-    public static bool buy;
+
+    public bool buy;
     int currentpage;
     int hatpage;
     int hatprice;
+    int counter;
     public int dustAmount;
     // Use this for initialization
+    void Awake()
+    {
+        hatprice = 500;
+    }
+
     void Start()
     {   
         BlackHat.onClick.AddListener(BuyHat);
@@ -36,6 +44,8 @@ public class HatPageControl : MonoBehaviour {
         ConfirmText.enabled = false;
         yesText.enabled = false;
         noText.enabled = false;
+        randomButton.enabled = false;
+        randomImage.enabled = false;
 
         yesBuyButton.enabled = false;
         yesBuyButton.GetComponent<Image>().enabled = false;
@@ -46,7 +56,7 @@ public class HatPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         buy = false;
-        hatprice = 500;
+       
         HatControlButton.enabled = false;
         HatControlButton.GetComponent<Image>().enabled = false;
 
@@ -107,9 +117,23 @@ public class HatPageControl : MonoBehaviour {
             OrangeHat.enabled = false;
             OrangeHat.GetComponent<Image>().enabled = false;
         }
-	}
+
+        GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+
+    }
     void BuyHat()
     {
+        ConfirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
         if (dustAmount >= hatprice)
         {
             ConfirmText.enabled = true;
@@ -121,27 +145,90 @@ public class HatPageControl : MonoBehaviour {
 
             background.GetComponent<Image>().enabled = true;
 
-            noBuyButton.enabled = false;
-            noBuyButton.GetComponent<Image>().enabled = true;
-
-            if (buy == true)
-            {
-                GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(hatprice);
-                GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
-            }
+            noBuyButton.enabled = true;
+            noBuyButton.GetComponent<Image>().enabled = true;         
         }
         else if (dustAmount < hatprice)
         {
             Debug.Log("You don't have enough magic dust");
             GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
+            ConfirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
         }
     }
     void BuyTrue()
     {
-        buy = true;
+        buy = true;   
+           
+            if (buy == true)
+            {
+                BuyFalse();
+                ConfirmText.enabled = false;
+                yesText.enabled = false;
+                noText.enabled = false;
+
+                yesBuyButton.enabled = false;
+                yesBuyButton.GetComponent<Image>().enabled = false;
+
+                background.GetComponent<Image>().enabled = false;
+
+                noBuyButton.enabled = false;
+                noBuyButton.GetComponent<Image>().enabled = false;
+
+                Debug.Log("You have bought an item");
+                GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(hatprice / 2);
+                GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+
+                if (dustAmount < 1)
+                {
+                    dustAmount = 0;
+                    GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+                }
+
+        }
+            else if (buy == false)
+            {
+                Debug.Log("Your purchase failed");
+                ConfirmText.enabled = false;
+                yesText.enabled = false;
+                noText.enabled = false;
+
+                yesBuyButton.enabled = false;
+                yesBuyButton.GetComponent<Image>().enabled = false;
+
+                background.GetComponent<Image>().enabled = false;
+
+                noBuyButton.enabled = false;
+                noBuyButton.GetComponent<Image>().enabled = false;
+                BuyFalse();
+            }
+        
+        BuyFalse();
     }
     void BuyFalse()
     {
         buy = false;
+        ConfirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
     }
+
+    
 }
