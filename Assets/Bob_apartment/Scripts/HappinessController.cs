@@ -1,39 +1,63 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class HappinessController : MonoBehaviour {
 
+    FoodAndToyControl fatc1;
+    HungerControl hc1;    
     public Sprite hap0;
     public Sprite hap1;
     public Sprite hap2;
     public Sprite hap3;
-    TimeSpan hungry;
-    System.DateTime startTime;     
-    Sprite lastsprite;   
+    public static int counter;
+   static TimeSpan hungry;
+   static System.DateTime startTime;     
+    static Sprite lastsprite;   
     public static int happinessMultiplier;
     public Sprite[] sprites = new Sprite[4];
-    System.DateTime datevalue2;
-    System.DateTime fedTime;
-    Sprite currentSprite;
+   static System.DateTime datevalue2;
+   static System.DateTime fedTime;
+   static Sprite currentSprite;
+    Scene activeScene;
+    Scene currentScene;
     // Use this for initialization
+
     void Start()
     {
-        //DontDestroyOnLoad(this);
+        startTime = HungerControl.currenttime;
+        hc1 = GetComponent<HungerControl>();
+        activeScene = SceneManager.GetActiveScene();
         //adding sprites which swap whenever the cats mood changes
         sprites[0] = hap0;
         sprites[1] = hap1;
         sprites[2] = hap2;
         sprites[3] = hap3;
-        currentSprite = hap1;
-        GetComponent<SpriteRenderer>().sprite = currentSprite;   
-        startTime = System.DateTime.Now;
+        if (counter == 0)
+        {
+            currentSprite = hap1;
+            counter++;
+        }
+        PlayerPrefs.GetInt("counter", counter);
+        Debug.Log("counter" + counter);
+        GetComponent<SpriteRenderer>().sprite = currentSprite;           
     }
 	// Update is called once per frame
 	void Update ()
-    {
+    {     
+        currentScene = SceneManager.GetActiveScene();
+        if (activeScene == currentScene)
+        {
+            gameObject.SetActive(true);
+        }
+        else if (activeScene != currentScene)
+        {
+            gameObject.SetActive(false);
+        }
         GetComponent<SpriteRenderer>().sprite = currentSprite;
-        datevalue2 = System.DateTime.Now;
+        datevalue2 = HungerControl.newtime;
         hungry = datevalue2 - fedTime;
         TimeSpan escalate = startTime - datevalue2;     
         //checks the current mood and compares it to a specific sprite then changes the mood if the other conditions are also met
@@ -73,6 +97,13 @@ public class HappinessController : MonoBehaviour {
         {
             happinessMultiplier = 0;
         }
+
+        if (lastsprite!=currentSprite)
+        {
+            lastsprite = currentSprite;
+             
+        }
+
     }
     void LastFed(System.DateTime _hours)
     {
@@ -86,16 +117,39 @@ public class HappinessController : MonoBehaviour {
         currentSprite = sprites[2];
     }
 
+   
+    public void OnApplicationQuit()
+    {
+        currentSprite = lastsprite;   
+        Debug.Log("Cats mood has been saved now");
+    }
+     
+    void OnDisable()
+    {
+      
+        GetComponent<SpriteRenderer>().sprite = currentSprite;
+        Debug.Log("Saved");
+       
+    }
+    void OnEnable()
+    {
+        GetComponent<SpriteRenderer>().sprite = currentSprite;
+        Debug.Log("loaded");
+    }
     public void ChangeMood(int number)
     {
         currentSprite = sprites[number];
         lastsprite = sprites[number];
         lastsprite = GetComponent<SpriteRenderer>().sprite;
+        Debug.Log("Cats mood has been changed");
     }
-    public void OnApplicationQuit()
+    public void CatPlayed()
     {
-        currentSprite = lastsprite;
-        Debug.Log("Cats mood has been saved now");
+        if (currentSprite == hap2)
+        {
+            Debug.Log("cat has been played with");
+            fedTime = System.DateTime.Now;
+            currentSprite = sprites[3];
+        }
     }
-  
 }

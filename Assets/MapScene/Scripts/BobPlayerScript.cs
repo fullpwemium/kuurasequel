@@ -18,7 +18,7 @@ public class BobPlayerScript : MonoBehaviour
     public static bool nearLabyrinth = false;
     public static bool Runner = false;
     public static bool nearBobApartment = false;
-
+    public static bool nearShop = false;
 
     public static float aboveButton;
 
@@ -61,7 +61,7 @@ public class BobPlayerScript : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-
+        nearShop = false;
         ReadFile("tiedosto");
         puhekupla1.interactable = false;
         puhekupla2.interactable = false;
