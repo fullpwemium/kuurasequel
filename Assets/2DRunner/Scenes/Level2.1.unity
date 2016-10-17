@@ -28260,6 +28260,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11479826, guid: e12a5a349a5415448a4b89a5ea8f8956, type: 2}
+      propertyPath: speed
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e12a5a349a5415448a4b89a5ea8f8956, type: 2}
   m_IsPrefabParent: 0

@@ -16,6 +16,8 @@ public class RunnerWinningPanel : MonoBehaviour
     public static bool GOPanel = false;
     public static int stars;
 
+    public static int[] runnerCats = new int[200];
+
     GameObject[] lista;
 
     GameObject bling;
