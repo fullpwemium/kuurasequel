@@ -525,7 +525,10 @@ MonoBehaviour:
   ConfirmText: {fileID: 265434398}
   yesText: {fileID: 36259496}
   noText: {fileID: 923540626}
+  randomButton: {fileID: 1738096076}
+  randomImage: {fileID: 1738096077}
   background: {fileID: 793598955}
+  buy: 0
   dustAmount: 0
 --- !u!114 &72661575
 MonoBehaviour:
@@ -574,13 +577,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 72661572}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7725491, g: 0.74509805, b: 0.64705884, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -588,7 +591,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4178,7 +4181,10 @@ MonoBehaviour:
   ConfirmText: {fileID: 265434398}
   yesText: {fileID: 36259496}
   noText: {fileID: 923540626}
+  randomButton: {fileID: 0}
+  randomImage: {fileID: 0}
   background: {fileID: 793598955}
+  buy: 0
   dustAmount: 0
 --- !u!1 &1100879506
 GameObject:
