@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -306,6 +307,21 @@ public class RunnerWinningPanel : MonoBehaviour
     void Score()        //Tähän määritellään tähtienansaitsemismetodi.
     {
         stars = 3;
+
+        //if (RunnerManager.score >= 90 && RunnerTimer.timeCountUp <= 50)   //Saadaan pisteitä kerättyjen kolikoiden sekä suoritusajan perusteella.
+        //{
+        //    stars = 3;
+        //}
+        //else if()
+        //{
+        //    stars = 2;
+        //}
+        //else if()
+        //{
+        //    stars = 1;
+        //}
+
+        //LabManagerista kopsattuja
         //if (Collector.Coins >= 8)
         //{
         //    stars = 3;
@@ -318,11 +334,16 @@ public class RunnerWinningPanel : MonoBehaviour
         //else if (Collector.Coins >= 4)
         //{
         //    stars = 1;
+        //}
 
+        if (stars > runnerCats[RunnerManager.manager.currentLevel])
+        {
+            runnerCats[RunnerManager.manager.currentLevel] = stars;
+            Debug.Log("Runner kissat: " + runnerCats[0]);
+        }
      }
 
         //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
-
 
         //if (stars > LabManager.levelCats[LabyGameManager.manager.currentLevel])
         //{
