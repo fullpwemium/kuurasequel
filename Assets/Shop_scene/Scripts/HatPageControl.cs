@@ -112,7 +112,6 @@ public class HatPageControl : MonoBehaviour {
     {
         if (dustAmount >= hatprice)
         {
-
             ConfirmText.enabled = true;
             yesText.enabled = true;
             noText.enabled = true;
