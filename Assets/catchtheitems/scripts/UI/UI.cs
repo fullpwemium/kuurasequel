@@ -10,10 +10,12 @@ public class UI : MonoBehaviour
     public GameObject pausePanel;
     public GameObject tutorialPanel;
     public GameObject hiutale1, hiutale2, hiutale3, hiutale4, hiutale5, hiutale6;
+    public GameObject nextLevel;
     GameObject hiutaleX, hiutaleY;
     public Text endText;
     public static bool GOPanel = false;
     public static int stars;
+
 
     GameObject[] lista;
 
@@ -38,6 +40,7 @@ public class UI : MonoBehaviour
         hiutale1.SetActive(false);
         hiutale2.SetActive(false);
         hiutale3.SetActive(false);
+
 
 
         //moving = false;
@@ -138,6 +141,8 @@ public class UI : MonoBehaviour
             destination = new Vector3(0, 9, 0);
             Debug.Log(destination);
             moving = true;
+
+            nextLevel.SetActive(false);
         }
         else if (won == true)
         {
@@ -157,6 +162,7 @@ public class UI : MonoBehaviour
 
             StartCoroutine("hiutalerotatedelay");
             endText.text = "You WON!";
+            nextLevel.SetActive(true);
         }
     }
 

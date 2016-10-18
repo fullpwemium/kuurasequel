@@ -14,7 +14,8 @@ public class ParticleSystemScript : MonoBehaviour {
     void Start () {
         
         
-        Player = GameObject.Find("Bucket");
+        //Player = GameObject.Find("Bucket");
+        Player = GameObject.Find("Plate");
 
         GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "Default";
         GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingOrder = 1;
