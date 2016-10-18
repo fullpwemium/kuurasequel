@@ -10,7 +10,7 @@ public class UI : MonoBehaviour
     public GameObject pausePanel;
     public GameObject tutorialPanel;
     public GameObject hiutale1, hiutale2, hiutale3, hiutale4, hiutale5, hiutale6;
-    public GameObject nextLevel;
+    public GameObject nextLevel, pauseButton;
     GameObject hiutaleX, hiutaleY;
     public Text endText;
     public static bool GOPanel = false;
@@ -143,6 +143,7 @@ public class UI : MonoBehaviour
             moving = true;
 
             nextLevel.SetActive(false);
+            pauseButton.SetActive(false);
         }
         else if (won == true)
         {
@@ -163,6 +164,7 @@ public class UI : MonoBehaviour
             StartCoroutine("hiutalerotatedelay");
             endText.text = "You WON!";
             nextLevel.SetActive(true);
+            pauseButton.SetActive(false);
         }
     }
 

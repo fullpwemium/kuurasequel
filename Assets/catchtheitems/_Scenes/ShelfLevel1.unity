@@ -4060,6 +4060,10 @@ Prefab:
       propertyPath: nextLevel
       value: 
       objectReference: {fileID: 1206948202}
+    - target: {fileID: 11455398, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+      propertyPath: pauseButton
+      value: 
+      objectReference: {fileID: 1206948203}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
   m_IsPrefabParent: 0
@@ -4071,6 +4075,10 @@ RectTransform:
 --- !u!1 &1206948202 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 167900, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
+  m_PrefabInternal: {fileID: 1206948200}
+--- !u!1 &1206948203 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 156942, guid: a76c5a31e4a524b498d6cd3fcfcd1556, type: 2}
   m_PrefabInternal: {fileID: 1206948200}
 --- !u!1 &1223658960
 GameObject:
