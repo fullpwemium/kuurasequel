@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class DustController : MonoBehaviour {
     public int DustAmount;
+
     // Use this for initialization
     void Start ()
     {
@@ -19,6 +20,13 @@ public class DustController : MonoBehaviour {
         GameObject.Find("BuyConfirm").SetActive(false);
     }
 
+    void Update()
+    {
+        if (DustAmount < 1)
+            DustAmount = 0;
+        UpdateDust();
+    }
+
     //adds dust
     public void GetDust(int value)
     {
@@ -27,12 +35,14 @@ public class DustController : MonoBehaviour {
         Debug.Log(value + " dust has been added");
     }
 
+    //Loses dust
     public void LoseDust(int value)
     {
         DustAmount -= value;
         GlobalManager.MagicDust = DustAmount;
         Debug.Log(value + " dust has been lost");
     }
+
     //updates the amount of dust text
     public void UpdateDust()
     {

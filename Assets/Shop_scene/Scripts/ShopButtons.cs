@@ -18,6 +18,7 @@ public class ShopButtons : MonoBehaviour {
     int cartpage;
     int menupage;
     int hatpage;
+    int jacketpage;
     public GameObject Bobbutton;
     public GameObject shopbook;
     public GameObject Cartbutton;
@@ -52,7 +53,10 @@ public class ShopButtons : MonoBehaviour {
 
     void Update()
     {
+        jacketpage=GameObject.Find("BookButton").GetComponent<BookButtonControl>().jacketpage-1;
         hatpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().hatpage - 1;
+
+        //Compares the current page to hat page
         if (currentpage == hatpage)
         {
             HatButtonControl.SetActive(true);
@@ -61,8 +65,15 @@ public class ShopButtons : MonoBehaviour {
             WantToBuy.SetActive(true);
             BuyConfirm.SetActive(true);
         }
-
-
+        else
+        {
+            HatButtonControl.SetActive(false);
+            NotEnoughDust.SetActive(false);
+            WhiteBackground.SetActive(false);
+            WantToBuy.SetActive(false);
+            BuyConfirm.SetActive(false);
+        }
+       
         if (shopbook.GetComponent<Image>().enabled == false)
         {
             Bobbutton.GetComponent<Image>().enabled = false;
@@ -95,6 +106,7 @@ public class ShopButtons : MonoBehaviour {
     }
     void Bobpage()
     {
+        //BobButton opens the inventory
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = bobspage;
         Debug.Log("Bob page");
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = bobspage*2;
@@ -102,6 +114,7 @@ public class ShopButtons : MonoBehaviour {
     }
     void Menupage()
     {
+        //Opens the menu page, you will also start on this page
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = menupage;
         Debug.Log("Menu page");
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = menupage;

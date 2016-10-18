@@ -53,7 +53,6 @@ public class BookButtonControl : MonoBehaviour {
     
     void Awake()
     {
-
         //Makes the text of the button to be nothing
         GetComponentInChildren<Text>().text = "";
         hatpage = 2;
@@ -107,6 +106,7 @@ public class BookButtonControl : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        
         leftpage = GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter;
         rightpage = GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter;
 
@@ -226,6 +226,9 @@ public class BookButtonControl : MonoBehaviour {
             limitedTextButton.enabled = false;
         }
 
+       
+        GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+
     }
     void OpenBook()
     {
@@ -233,6 +236,7 @@ public class BookButtonControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = 0;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = 0;
+
         //enables the image of shopbook and changes the image of the button to be a picture of a book closed
         if (currentSprite == bookopen)
         {
@@ -260,48 +264,56 @@ public class BookButtonControl : MonoBehaviour {
     }
     void CatItemsPage()
     {
+        //Changes the page
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = catItemsPage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = catItemsPage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = catItemsPage / 2;
     }
     void PowerUpsPage()
     {
+        //Changes the page
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = powerUpsPage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = powerUpsPage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = powerUpsPage / 2;
     }
     void JacketPage()
     {
+        //Changes the page
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = jacketpage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = jacketpage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = jacketpage / 2;
     }
    public void DustPage()
     {
+        //Changes the page
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = dustpage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = dustpage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = dustpage / 2;
     }
     void BootsPage()
     {
+        //Changes the page
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = bootspage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = bootspage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = bootspage / 2;
     }
     void GlassesPage()
     {
+        //Changes the page
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = glasspage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = glasspage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = glasspage / 2;
     }
     void WeeklySalesPage()
     {
+        //Changes the page
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = weeklypage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = weeklypage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = weeklypage / 2;
     }
     void LimitedTimePage()
     {
+        //Changes the page
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = limitedpage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = limitedpage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = limitedpage / 2;

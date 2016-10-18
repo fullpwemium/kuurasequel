@@ -43,10 +43,12 @@ public class NotEnoughDust : MonoBehaviour {
             OkButton.GetComponent<Image>().enabled = false;
         }
 	}
+
     void RemoveBackGround()
     {
         Background.enabled = false;
     }
+
     void BuyMagicDust()
     {
         Background.enabled = false;

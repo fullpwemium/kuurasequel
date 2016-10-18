@@ -55,21 +55,25 @@ public class LastPageControl : MonoBehaviour
         {
             leftcounter = leftpagemax;
         }
+
         //sets the right counter to be the maximum right page if it goes over the last page
         if (rightpagemax <= rightcounter)
         {
             rightcounter = rightpagemax;
         }
+
         //makes sure that the right counter can't go to negative numbers
         if (rightcounter < 2)
         {
             rightcounter = 1;
         }
+
         // makes sure that the left counter can't go to negative numbers
         if (leftcounter < 1)
         {
             leftcounter = 0;
         }
+
         //Checks if the book is visible and if it isn't it makes the page numbers disappear
         if (book.GetComponent<Image>().enabled == false)
         {
