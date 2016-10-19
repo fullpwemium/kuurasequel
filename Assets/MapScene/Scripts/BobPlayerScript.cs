@@ -234,7 +234,7 @@ public class BobPlayerScript : MonoBehaviour
 
             if(bobstill == false)
             {
-                BobPlayerAnimator.SetTrigger("BobDown");
+                BobPlayerAnimator.SetTrigger("BobStanding");
                 bobstill = true;
             }
             else
