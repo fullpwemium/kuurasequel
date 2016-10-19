@@ -2317,8 +2317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3206c72ad627c44bcc5cae671e569a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Standing: {fileID: 21300000, guid: 1727e743587e8d84d8674aa337d1446c, type: 3}
-  SR: {fileID: 0}
   target: {fileID: 0}
   puhekupla1: {fileID: 1773708624}
   puhekupla2: {fileID: 1696977739}
