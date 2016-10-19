@@ -304,8 +304,8 @@ public class BobPlayerScript : MonoBehaviour
     void runRoute(int routeX, int routeY)
     {
         Moving = true;
-        Debug.Log("routeX" + routeX);
-        Debug.Log("routeY" + routeY);
+        Debug.Log("routeX = " + routeX);
+        Debug.Log("routeY = " + routeY);
         midWayDestinationX = StandingButtonNumberX;
         //Debug.Log(midWayDestinationX);
         midWayDestinationY = StandingButtonNumberY;

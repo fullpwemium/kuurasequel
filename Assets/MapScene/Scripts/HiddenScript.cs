@@ -58,7 +58,7 @@ public class HiddenScript : MonoBehaviour {
 
     public bool checkBobPosition()
     {
-        if (BobPlayerScript.StandingButtonNumberX==0&&BobPlayerScript.StandingButtonNumberY==1|| BobPlayerScript.StandingButtonNumberX == -1 && BobPlayerScript.StandingButtonNumberY == 1)
+        if (BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 1 || BobPlayerScript.StandingButtonNumberX == -1 && BobPlayerScript.StandingButtonNumberY == 1)
         {
             return true;
         }
