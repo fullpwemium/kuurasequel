@@ -93,7 +93,7 @@ public class ShopButtons : MonoBehaviour {
     public void LoadScene(int scene)
     {
         //BackButton loads the worldmap
-        SceneManager.LoadScene("Map2");
+        SceneManager.LoadScene("MapScene/Map2");
     }
 
     void CartPage()

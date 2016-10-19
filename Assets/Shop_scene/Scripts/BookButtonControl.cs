@@ -54,7 +54,6 @@ public class BookButtonControl : MonoBehaviour {
     void Awake()
     {
         //Makes the text of the button to be nothing
-        GetComponentInChildren<Text>().text = "";
         hatpage = 2;
         jacketpage = 4;
         bootspage = 6;
