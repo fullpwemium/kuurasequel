@@ -70,6 +70,11 @@ public class HiddenScript : MonoBehaviour {
 
     void HiddenMethod()
     {
+        if (BobPlayerScript.StandingButtonNumberX == -1 && BobPlayerScript.StandingButtonNumberY == 1)
+        {
+            hidden = false;
+        }
+
         if(hidden)
         {
             piiloNappi.SetActive(false);

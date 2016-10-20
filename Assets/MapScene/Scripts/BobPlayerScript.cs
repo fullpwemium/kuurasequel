@@ -79,7 +79,11 @@ public class BobPlayerScript : MonoBehaviour
         StandingButtonNumberX = PlayerPrefs.GetInt("Bobin paikka X");
         StandingButtonNumberY = PlayerPrefs.GetInt("Bobin paikka Y");
 
+        Debug.Log("StandingButtonNumberX = " + StandingButtonNumberX);
+        Debug.Log("StandingButtonNumberY = " + StandingButtonNumberY);
+
         GameObject startButton = GameObject.Find("Tile" + startDestinationX + startDestinationY);
+        Debug.Log("Start button = " + startButton);
         if (startButton == null)
         {
             startButton = GameObject.Find("Tile" + 0 + 1);
