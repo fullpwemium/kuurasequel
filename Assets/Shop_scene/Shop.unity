@@ -1857,7 +1857,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -254, y: 67.9}
+  m_AnchoredPosition: {x: -256, y: 67.9}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &483260716
@@ -2705,8 +2705,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -43.4, y: 23.6}
-  m_SizeDelta: {x: 383.7, y: 50}
+  m_AnchoredPosition: {x: -38, y: 25}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &769600498
 MonoBehaviour:
@@ -2728,7 +2728,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.7137255, g: 0.58431375, b: 0.8078432, a: 0}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2761,7 +2761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5529412, g: 0.5529412, b: 0.5529412, a: 0}
+  m_Color: {r: 0.7058824, g: 0.5647059, b: 0.8000001, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2798,7 +2798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &793598954
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4018,6 +4018,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DustAmount: 0
+  WantToBuy: {fileID: 793598953}
+  NotEnoughDust: {fileID: 1881941363}
+  WhiteBackground: {fileID: 989462703}
+  BuyConfirm: {fileID: 1738096074}
 --- !u!114 &1090809111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6132,7 +6136,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -6162,7 +6166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1738096075
 RectTransform:
   m_ObjectHideFlags: 0

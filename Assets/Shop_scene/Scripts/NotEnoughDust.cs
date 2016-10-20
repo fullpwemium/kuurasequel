@@ -16,6 +16,7 @@ public class NotEnoughDust : MonoBehaviour {
         Background.enabled = false;
         OkButton.onClick.AddListener(RemoveBackGround);
         BuyMacigDustButton.onClick.AddListener(BuyMagicDust);
+        BuyMagicDustTextButton.onClick.AddListener(BuyMagicDust);
 	}
 	
 	// Update is called once per frame
