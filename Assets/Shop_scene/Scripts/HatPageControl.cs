@@ -103,6 +103,12 @@ public class HatPageControl : MonoBehaviour
         WhiteHat.enabled = false;
         WhiteHat.GetComponent<Image>().enabled = false;
 
+        ownsGreyHat.enabled = false;
+        ownsOrangeHat.enabled = false;
+        ownsRedHat.enabled = false;
+        ownsGreenHat.enabled = false;
+        ownsWhiteHat.enabled = false;
+
         ownsGreyHatBool = GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsGreyHat;
         ownsOrangeHatBool = GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsOrangeHat;
         ownsRedHatBool = GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsRedHat;
@@ -156,10 +162,6 @@ public class HatPageControl : MonoBehaviour
         if (ownsGreyHatBool == true)
         {
             ownsGreyHat.enabled = true;
-        }
-        else if (ownsGreyHatBool == false)
-        {
-            ownsGreyHat.enabled = false;
         }
     }
 
@@ -405,9 +407,9 @@ public class HatPageControl : MonoBehaviour
 
     void BuyGreyHatTrue()
     {
-        buyGreyHat = true;
+        ownsGreyHatBool = true;
         //Checks if you want to buy the item
-        if (buyGreyHat == true)
+        if (ownsGreyHatBool == true)
         {
             ConfirmText.enabled = false;
             yesText.enabled = false;
@@ -442,6 +444,7 @@ public class HatPageControl : MonoBehaviour
     //makes buying grey hat false if you don't want to buy that hat
     void BuyGreyHatFalse()
     {
+        ownsGreyHatBool = false;
         buyGreyHat = false;
         ConfirmText.enabled = false;
         yesText.enabled = false;
@@ -458,11 +461,10 @@ public class HatPageControl : MonoBehaviour
 
     void BuyOrangeHatTrue()
     {
-        buyOrangeHat = true;
+        ownsOrangeHatBool = true;
         //Checks if you want to buy the item
-        if (buyOrangeHat == true)
+        if (ownsOrangeHatBool == true)
         {
-            BuyOrangeHatFalse();
             ConfirmText.enabled = false;
             yesText.enabled = false;
             noText.enabled = false;
@@ -494,7 +496,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyOrangeHatFalse()
     {
-        buyOrangeHat = false;
+        ownsOrangeHatBool = false;
         ConfirmText.enabled = false;
         yesText.enabled = false;
         noText.enabled = false;
@@ -510,7 +512,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyRedHatTrue()
     {
-        buyRedHat = true;
+        ownsRedHatBool = true;
         //Checks if you want to buy the item
         if (buyRedHat == true)
         {
