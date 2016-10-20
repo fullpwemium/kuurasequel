@@ -57,7 +57,7 @@ public class HatPageControl : MonoBehaviour
         GreyHat.onClick.AddListener(BuyGreyHat);
         OrangeHat.onClick.AddListener(BuyOrangeHat);
         RedHat.onClick.AddListener(BuyRedHat);
-        RedHat.onClick.AddListener(BuyGreenHat);
+        GreenHat.onClick.AddListener(BuyGreenHat);
         OrangeHat.onClick.AddListener(BuyWhiteHat);
 
         yesBuyButton.onClick.AddListener(BuyGreyHatTrue);
@@ -97,8 +97,8 @@ public class HatPageControl : MonoBehaviour
         RedHat.enabled = false;
         RedHat.GetComponent<Image>().enabled = false;
 
-        RedHat.enabled = false;
-        RedHat.GetComponent<Image>().enabled = false;
+        GreenHat.enabled = false;
+        GreenHat.GetComponent<Image>().enabled = false;
 
         OrangeHat.enabled = false;
         OrangeHat.GetComponent<Image>().enabled = false;
@@ -129,8 +129,8 @@ public class HatPageControl : MonoBehaviour
             RedHat.enabled = true;
             RedHat.GetComponent<Image>().enabled = true;
 
-            RedHat.enabled = true;
-            RedHat.GetComponent<Image>().enabled = true;
+            GreenHat.enabled = true;
+            GreenHat.GetComponent<Image>().enabled = true;
 
             OrangeHat.enabled = true;
             OrangeHat.GetComponent<Image>().enabled = true;
@@ -146,8 +146,8 @@ public class HatPageControl : MonoBehaviour
             RedHat.enabled = false;
             RedHat.GetComponent<Image>().enabled = false;
 
-            RedHat.enabled = false;
-            RedHat.GetComponent<Image>().enabled = false;
+            GreenHat.enabled = false;
+            GreenHat.GetComponent<Image>().enabled = false;
 
             OrangeHat.enabled = false;
             OrangeHat.GetComponent<Image>().enabled = false;
@@ -566,6 +566,7 @@ public class HatPageControl : MonoBehaviour
         }
         BuyRedHatFalse();
     }
+
     void BuyRedHatFalse()
     {
         buyRedHat = false;
@@ -581,6 +582,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.enabled = false;
         noBuyButton.GetComponent<Image>().enabled = false;
     }
+
     void BuyGreenHatTrue()
     {
         buyGreenHat = true;
