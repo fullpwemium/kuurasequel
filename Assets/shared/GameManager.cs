@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
         //}
         if (currentLevel == 0)
             {
-                catSpeedMultiplier = 1;     //Määritellään kissojen nopeus.
+                catSpeedMultiplier = 0.5f;     //Määritellään kissojen nopeus.
                 spawnSpeedMultiplier = 1.5f;        //Määritellään esineiden ilmestymisnopeus.
                 extraTime = 21;     //Määritellään aikaraja. Kun 0, niin neljä sekuntia.
                 kissaMultiplier = 0;        //Määritellään kissojen määrä. Kun 0, niin kaksi kissaa.
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 1)
             {
-                catSpeedMultiplier = 1.5f;
+                catSpeedMultiplier = 0.75f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 21;
                 kissaMultiplier = 0;
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 2)
             {
-                catSpeedMultiplier = 1;
+                catSpeedMultiplier = 0.5f;
                 spawnSpeedMultiplier = 3;
                 extraTime = 21;
                 kissaMultiplier = 1;
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 3)
             {
-                catSpeedMultiplier = 1.5f;
+                catSpeedMultiplier = 0.75f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 21;
                 kissaMultiplier = 1;
@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 4)
             {
-                catSpeedMultiplier = 1;
+                catSpeedMultiplier = 0.5f;
                 spawnSpeedMultiplier = 9;
                 extraTime = 21;
                 kissaMultiplier = 2;
@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 5)
             {
-                catSpeedMultiplier = 1.5f;
+                catSpeedMultiplier = 0.75f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 21;
                 kissaMultiplier = 2;
@@ -159,7 +159,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 6)
             {
-                catSpeedMultiplier = 2;
+                catSpeedMultiplier = 1F;
                 spawnSpeedMultiplier = 9;
                 extraTime = 21;
                 kissaMultiplier = 0;
@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 7)
             {
-                catSpeedMultiplier = 2;
+                catSpeedMultiplier = 1F;
                 spawnSpeedMultiplier = 6;
                 extraTime = 21;
                 kissaMultiplier = 1;
@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 8)
             {
-                catSpeedMultiplier = 2;
+                catSpeedMultiplier = 1F;
                 spawnSpeedMultiplier = 9;
                 extraTime = 21;
                 kissaMultiplier = 2;
@@ -187,7 +187,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 9)
             {
-                catSpeedMultiplier = 2.5f;
+                catSpeedMultiplier = 1.25f;
                 spawnSpeedMultiplier = 9;
                 extraTime = 21;
                 kissaMultiplier = 1;
@@ -196,7 +196,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 10)
             {
-                catSpeedMultiplier = 2.5f;
+                catSpeedMultiplier = 1.25f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 35;
                 kissaMultiplier = 1;
@@ -205,7 +205,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 11)
             {
-                catSpeedMultiplier = 3;
+                catSpeedMultiplier = 1.5f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 45;
                 kissaMultiplier = 1;
@@ -214,7 +214,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 12)
             {
-                catSpeedMultiplier = 3;
+                catSpeedMultiplier = 1.5f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 50;
                 kissaMultiplier = 1;
@@ -223,7 +223,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 13)
             {
-                catSpeedMultiplier = 3;
+                catSpeedMultiplier = 1.5f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 30;
                 kissaMultiplier = 1;
@@ -232,7 +232,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 14)
             {
-                catSpeedMultiplier = 3;
+                catSpeedMultiplier = 1.5f;
                 spawnSpeedMultiplier = 6;
                 extraTime = 35;
                 kissaMultiplier = 1;
@@ -241,7 +241,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 15)
             {
-                catSpeedMultiplier = 3.5f;
+                catSpeedMultiplier = 1.625f;
                 spawnSpeedMultiplier = 10;
                 extraTime = 30;
                 kissaMultiplier = 0;
@@ -250,7 +250,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 16)
             {
-                catSpeedMultiplier = 3.5f;
+                catSpeedMultiplier = 1.625f;
                 spawnSpeedMultiplier = 8;
                 extraTime = 35;
                 kissaMultiplier = 0;
@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 17)
             {
-                catSpeedMultiplier = 3.5f;
+                catSpeedMultiplier = 1.625f;
                 spawnSpeedMultiplier = 6;
                 extraTime = 40;
                 kissaMultiplier = 1;
@@ -268,7 +268,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 18)
             {
-                catSpeedMultiplier = 3.5f;
+                catSpeedMultiplier = 1.625f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 45;
                 kissaMultiplier = 1;
@@ -277,7 +277,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 19)
             {
-                catSpeedMultiplier = 3.5f;
+                catSpeedMultiplier = 1.625f;
                 spawnSpeedMultiplier = 4;
                 extraTime = 60;
                 kissaMultiplier = 1;
@@ -286,7 +286,7 @@ public class GameManager : MonoBehaviour
             }
             else if (currentLevel == 20)
             {
-                catSpeedMultiplier = 6;
+                catSpeedMultiplier = 1.625f;
                 spawnSpeedMultiplier = 6;
                 extraTime = 20;
                 kissaMultiplier = 7;

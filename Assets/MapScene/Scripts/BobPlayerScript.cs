@@ -339,10 +339,6 @@ public class BobPlayerScript : MonoBehaviour
                 midWayDestinationY--;
                 BobPlayerAnimator.SetTrigger("BobLeft");
             }
-            else if (routeY == 0)
-            {
-
-            }
         }
 
 
