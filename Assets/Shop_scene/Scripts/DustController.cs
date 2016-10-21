@@ -4,25 +4,15 @@ using UnityEngine.UI;
 
 public class DustController : MonoBehaviour {
     public int DustAmount;
-    public GameObject WantToBuy;
-    public GameObject NotEnoughDust;
-    public GameObject WhiteBackground;
-    public GameObject BuyConfirm;
 
     // Use this for initialization
     void Start ()
-    {
+    {       
         //Updates amount of dust
         DustAmount = GlobalManager.MagicDust;
-        if(GameObject.FindGameObjectWithTag("DustAmount"))
-        GameObject.FindGameObjectWithTag("DustAmount").GetComponent<Text>().text = DustAmount.ToString();
-
-        //Checks if you have enough dust and if you want to buy the item
-        NotEnoughDust.SetActive(false);
-        WhiteBackground.SetActive(false);
-        WantToBuy.SetActive(false);
-        BuyConfirm.SetActive(false);
-    }
+        if (GameObject.FindGameObjectWithTag("DustAmount"))
+            GameObject.FindGameObjectWithTag("DustAmount").GetComponent<Text>().text = DustAmount.ToString();
+    }   
 
     void Update()
     {

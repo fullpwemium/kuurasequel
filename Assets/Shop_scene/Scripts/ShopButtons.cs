@@ -13,21 +13,28 @@ public class ShopButtons : MonoBehaviour {
     public Button MenuButton;
     public int sceneToLoad;
     int lastpage;
-    int currentpage;
+    public int currentpage;
     int bobspage;
     int cartpage;
     int menupage;
-    int hatpage;
+    public int hatpage;
     int jacketpage;
     public GameObject Bobbutton;
     public GameObject shopbook;
     public GameObject Cartbutton;
     public GameObject Menubutton;
-    public GameObject HatButtonControl;
     public GameObject NotEnoughDust, WantToBuy, BuyConfirm, WhiteBackground;
+
+    public Button GreyHat, OrangeHat, RedHat, GreenHat, WhiteHat;
+    public Image GreyHatImage, OrangeHatImage, RedHatImage, GreenHatImage, WhiteHatImage;
+    public Image GreyHatOwned, OrangeHatOwned, RedHatOwned, GreenHatOwned, WhiteHatOwned;
+    public Image GreyHatPriceImage, OrangeHatPriceImage, RedHatPriceImage, GreenHatPriceImage, WhiteHatPriceImage;
+    public Text GreyHatPriceText, OrangeHatPriceText, RedHatPriceText, GreenHatPriceText, WhiteHatPriceText;
+
     // Use this for initialization
     void Start()
     {
+
         if (shopbook.GetComponent<Image>().enabled == false)
         {
             Bobbutton.GetComponent<Image>().enabled = false;
@@ -43,12 +50,14 @@ public class ShopButtons : MonoBehaviour {
         menupage = 0;
         cartpage = 10;
         bobspage = 11;
+
         //Programming buttons to call specific methods
         BackButton.onClick.AddListener(() => LoadScene(sceneToLoad));
         CartButton.onClick.AddListener(CartPage);
         BobButton.onClick.AddListener(Bobpage);
         MenuButton.onClick.AddListener(Menupage);
-        HatButtonControl.SetActive(false);
+
+
     }
 
     void Update()
@@ -59,15 +68,66 @@ public class ShopButtons : MonoBehaviour {
         //Compares the current page to hat page
         if (currentpage == hatpage)
         {
-            HatButtonControl.SetActive(true);
+            //Making everything in HatButtonController Gameobject true if you are on the hat page
+
+            GreyHatImage.enabled = true;
+            OrangeHatImage.enabled = true;
+            RedHatImage.enabled = true;
+            GreenHatImage.enabled = true;
+            WhiteHatImage.enabled = true;
+
+            GreyHatPriceImage.enabled = true;
+            OrangeHatPriceImage.enabled = true;
+            RedHatPriceImage.enabled = true;
+            GreenHatPriceImage.enabled = true;
+            WhiteHatPriceImage.enabled = true;
+
+            GreyHatPriceText.enabled = true;
+            OrangeHatPriceText.enabled = true;
+            RedHatPriceText.enabled = true;
+            GreenHatPriceText.enabled = true;
+            WhiteHatPriceText.enabled = true;
+
+            //Making if it's possible to buy a hat true
             NotEnoughDust.SetActive(true);
             WhiteBackground.SetActive(true);
             WantToBuy.SetActive(true);
             BuyConfirm.SetActive(true);
         }
-        else
+        else if (currentpage != hatpage)
         {
-            HatButtonControl.SetActive(false);
+            //Making everything in HatButtonController Gameobject false if you aren't on the hat page
+            GreyHat.enabled = false;
+            OrangeHat.enabled = false;
+            RedHat.enabled = false;
+            GreenHat.enabled = false;
+            WhiteHat.enabled = false;
+
+            GreyHatImage.enabled = false;
+            OrangeHatImage.enabled = false;
+            RedHatImage.enabled = false;
+            GreenHatImage.enabled = false;
+            WhiteHatImage.enabled = false;
+
+            GreyHatOwned.enabled = false;
+            OrangeHatOwned.enabled = false;
+            RedHatOwned.enabled = false;
+            GreenHatOwned.enabled = false;
+            WhiteHatOwned.enabled = false;
+
+            GreyHatPriceImage.enabled = false;
+            OrangeHatPriceImage.enabled = false;
+            RedHatPriceImage.enabled = false;
+            GreenHatPriceImage.enabled = false;
+            WhiteHatPriceImage.enabled = false;
+
+            GreyHatPriceText.enabled = false;
+            OrangeHatPriceText.enabled = false;
+            RedHatPriceText.enabled = false;
+            GreenHatPriceText.enabled = false;
+            WhiteHatPriceText.enabled = false;
+
+            //Making if it's possible to buy a hat false
             NotEnoughDust.SetActive(false);
             WhiteBackground.SetActive(false);
             WantToBuy.SetActive(false);

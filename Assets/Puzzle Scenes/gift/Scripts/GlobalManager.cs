@@ -76,10 +76,8 @@ public class GlobalManager : MonoBehaviour
             }
 
             PlayerPrefs.SetFloat("Score " + 1, ScoreArray[1]); //Tallennetaan tulokset tuloslistaan hakusanalla
-//            PlayerPrefs.SetFloat("Score " + 2, ScoreArray[2]); //Tallennetaan tulokset tuloslistaan hakusanalla
+            //PlayerPrefs.SetFloat("Score " + 2, ScoreArray[2]); //Tallennetaan tulokset tuloslistaan hakusanalla
         }
-
-
 
         if (winTime < ScoreArray[2]) //Saatavat pisteet, mikäli määritelty aikaraja ei ylity
         {

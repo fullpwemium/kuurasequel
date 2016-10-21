@@ -11,13 +11,7 @@ public class ToShop : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene(36);
-        }
-	}
+	
     void OnMouseOver()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))

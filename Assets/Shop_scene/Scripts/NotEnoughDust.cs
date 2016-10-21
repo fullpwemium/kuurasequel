@@ -22,7 +22,7 @@ public class NotEnoughDust : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-
+        //If the background of not enough dust is true then all of the buy more dust elements are shown
         if (Background.enabled == true)
         {
             notEnoughDustText.enabled = true;
@@ -33,7 +33,7 @@ public class NotEnoughDust : MonoBehaviour {
             BuyMacigDustButton.GetComponent<Image>().enabled = true;
             OkButton.GetComponent<Image>().enabled = true;
         }
-        else
+        else  //If the background of not enough dust isn't true then all of the buy more dust elements aren't shown
         {
             notEnoughDustText.enabled = false;
             OkButton.enabled = false;
@@ -45,14 +45,16 @@ public class NotEnoughDust : MonoBehaviour {
         }
 	}
 
+    //Removes the background of buying magic dust
     void RemoveBackGround()
     {
         Background.enabled = false;
     }
 
+    //Throws the player to the dust page;
     void BuyMagicDust()
     {
-        Background.enabled = false;
+        RemoveBackGround();
         GameObject.Find("BookButton").GetComponent<BookButtonControl>().DustPage();
     }
 }
