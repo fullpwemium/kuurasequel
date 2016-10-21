@@ -9,6 +9,13 @@ public class GlobalGameManager : MonoBehaviour
     public static GlobalGameManager GGM;
     public int gameSelectScene;
     public int[] gameScenes;
+
+    public bool GreyHatOwned;
+    public bool OrangeHatOwned;
+    public bool RedHatOwned;
+    public bool GreenHatOwned;
+    public bool WhiteHatOwned;
+
     int currentGame;
     public List<int> completedGames;
 
@@ -266,5 +273,31 @@ public class GlobalGameManager : MonoBehaviour
     public void LabyrinthLoad()
     {
 
+    }
+
+    //Makes owning a specific hat true or false
+    public void ShopSaveGreyHatOwned(bool value)
+    {
+        GreyHatOwned = value;
+    }
+
+    public void ShopSaveOrangeHatOwned(bool value)
+    {
+        OrangeHatOwned = value;
+    }
+
+    public void ShopSaveRedHatOwned(bool value)
+    {
+        RedHatOwned = value;
+    }
+
+    public void ShopSaveGreenHatOwned(bool value)
+    {
+        GreenHatOwned = value;
+    }
+
+    public void ShopSaveWhiteHatOwned(bool value)
+    {
+        WhiteHatOwned = value;
     }
 }

@@ -8,6 +8,7 @@ public class BookButtonControl : MonoBehaviour {
     public Sprite bookclosed;
     Sprite currentSprite;
     GameObject shopbook;
+
     public Sprite openbook;
     public Button BookButton;
     public Button hatpageButton;
