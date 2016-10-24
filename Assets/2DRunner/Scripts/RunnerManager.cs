@@ -293,6 +293,18 @@ public class RunnerManager : MonoBehaviour
         {
             InitialPanel();
         }
+        if (level == 6)
+        {
+            currentLevel = 0;
+        }
+        if (level == 7)
+        {
+            currentLevel = 1;
+        }
+        if (level == 8)
+        {
+            currentLevel = 2;
+        }
     }
 
     void InitialPanel()

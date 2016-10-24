@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour {
             //spriteRenderer.sprite = spriteRight;
             animator.SetTrigger("BobOikee");
         }
-        else
+        else if (wanhaPosition.x == rgb2D.transform.position.x)
         {
             //spriteRenderer.sprite = spriteCenter;
             animator.SetTrigger("BobEteen");
@@ -161,13 +161,17 @@ public class PlayerMovement : MonoBehaviour {
 		freezeTimer = freezeTime;
 
 		spriteRenderer.color = new Color (0, 200, 255);
-	}
+
+        animator.speed = 0;
+    }
 
 	private void Unfreeze()
 	{
 		isFrozen = false;
 		spriteRenderer.color = new Color (255, 255, 255);
-	}
+
+        animator.speed = 1;
+    }
 
     //Toggles gyro movement
     

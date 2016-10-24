@@ -127,7 +127,7 @@ public class VälisivuScripti : MonoBehaviour
             dialogi.text = "- Make all the coins come to you with magnet!\n- Don't forget you can JUMP again while midair!";
             peliKuva.sprite = pelikuva4;
         }
-        else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 1)
+        else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 0)
         {
             peliNumero = 5;
             BobPlayerScript.nearBobApartment = true;

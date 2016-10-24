@@ -177,7 +177,7 @@ public class BobPlayerScript : MonoBehaviour
             puhekupla4.interactable = false;
             puhekupla5.interactable = false;
         }
-        else if (StandingButtonNumberX == 2 && StandingButtonNumberY == 1)
+        else if (StandingButtonNumberX == 2 && StandingButtonNumberY == 0)
         {
             puhekupla1.interactable = false;
             puhekupla2.interactable = false;
