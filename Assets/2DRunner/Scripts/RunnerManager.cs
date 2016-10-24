@@ -34,6 +34,7 @@ public class RunnerManager : MonoBehaviour
     public Text timerText;
     public float Timer = 60f;
     public GameObject gameOverPanel;
+    public GameObject playButton;
     public GameObject pauseButton;
     public Button play, nextLevel,levelSelect;
     public Text currentScore;
@@ -220,6 +221,7 @@ public class RunnerManager : MonoBehaviour
         //SceneManager.LoadScene("LevelSelect");
         currentState = GameState.Died;
         gameOverPanel.SetActive(true);
+        playButton.SetActive(false);
         pauseButton.SetActive(false);
         currentScore.text = score.ToString();
         RunnerTimer.PauseGame();    //Pysäytetään ajastin kun kuolo koittaa.
@@ -326,7 +328,8 @@ public class RunnerManager : MonoBehaviour
         catMovement = GameObject.Find("CatIcon").GetComponent<CatMovement>();
         anim = GameObject.Find("Effector").GetComponent<Animator>();
         gameOverPanel = GameObject.Find("GameOverPanel");
-        pauseButton = GameObject.Find("Restart");
+        playButton = GameObject.Find("Continue");
+        pauseButton = GameObject.Find("Pause");
         play = GameObject.Find("Play").GetComponent<Button>();
 //        nextLevel = GameObject.Find("NextLevel").GetComponent<Button>();
         levelSelect = GameObject.Find("LevelSelect").GetComponent<Button>();
