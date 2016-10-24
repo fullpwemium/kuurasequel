@@ -19,11 +19,6 @@ public class LevelSelectButton : MonoBehaviour
         {
             RunnerManager.score = 0;
         }
-
-        if (RunnerTimer.Cleared == true)
-        {
-            RunnerTimer.StartGame();
-        }
     }
 	
 	// Update is called once per frame

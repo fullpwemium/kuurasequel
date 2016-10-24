@@ -9324,6 +9324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winningPanel: {fileID: 0}
+  pauseButton: {fileID: 0}
   hiutale1: {fileID: 0}
   hiutale2: {fileID: 0}
   hiutale3: {fileID: 0}
@@ -14221,6 +14222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winningPanel: {fileID: 33163775}
+  pauseButton: {fileID: 518193527}
   hiutale1: {fileID: 1057166362}
   hiutale2: {fileID: 545161728}
   hiutale3: {fileID: 776327591}

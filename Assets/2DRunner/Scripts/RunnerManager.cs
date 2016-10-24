@@ -34,6 +34,7 @@ public class RunnerManager : MonoBehaviour
     public Text timerText;
     public float Timer = 60f;
     public GameObject gameOverPanel;
+    public GameObject pauseButton;
     public Button play, nextLevel,levelSelect;
     public Text currentScore;
     public bool isDaed = false;
@@ -87,6 +88,9 @@ public class RunnerManager : MonoBehaviour
     {
         if (currentState == GameState.Begin)
         {
+            
+            
+
             GetLength();
             UseCoin();
             if (isCatMoving)
@@ -205,6 +209,9 @@ public class RunnerManager : MonoBehaviour
         currentState = GameState.Pause;
         GameObject.Find("Canvas").GetComponent<RunnerWinningPanel>().YouWon(true);    //Avataan voittamispaneeli.
 
+        pauseButton.SetActive(false);
+
+
         //SceneManager.LoadScene("RunnerLevelMap");        //Ladataan kenttävalikko maaliin pääsyn jälkeen
     }
 
@@ -213,6 +220,7 @@ public class RunnerManager : MonoBehaviour
         //SceneManager.LoadScene("LevelSelect");
         currentState = GameState.Died;
         gameOverPanel.SetActive(true);
+        pauseButton.SetActive(false);
         currentScore.text = score.ToString();
         RunnerTimer.PauseGame();    //Pysäytetään ajastin kun kuolo koittaa.
 
@@ -309,32 +317,35 @@ public class RunnerManager : MonoBehaviour
 
     void InitialPanel()
     {
-            currentState = GameState.Begin;
-            lengthText = GameObject.Find("Length").GetComponent<Text>();
-            scoreText = GameObject.Find("Score").GetComponent<Text>();
-            timerText = GameObject.Find("Time").GetComponent<Text>();
-            catMovement = GameObject.Find("CatIcon").GetComponent<CatMovement>();
-            anim = GameObject.Find("Effector").GetComponent<Animator>();
-            gameOverPanel = GameObject.Find("GameOverPanel");
-			play = GameObject.Find("Play").GetComponent<Button>();
-//            nextLevel = GameObject.Find("NextLevel").GetComponent<Button>();
-            levelSelect = GameObject.Find("LevelSelect").GetComponent<Button>();
-            currentScore = GameObject.Find("CurrentScore").GetComponent<Text>();
-            thunderButton = GameObject.Find("ThunderButton").GetComponent<Button>();
-            snowButton = GameObject.Find("SnowButton").GetComponent<Button>();
-            Coins = GameObject.FindGameObjectsWithTag("Coin");
+        currentState = GameState.Begin;
+        //pauseButton.SetActive(true);
+        RunnerTimer.StartGame();
+        lengthText = GameObject.Find("Length").GetComponent<Text>();
+        scoreText = GameObject.Find("Score").GetComponent<Text>();
+        timerText = GameObject.Find("Time").GetComponent<Text>();
+        catMovement = GameObject.Find("CatIcon").GetComponent<CatMovement>();
+        anim = GameObject.Find("Effector").GetComponent<Animator>();
+        gameOverPanel = GameObject.Find("GameOverPanel");
+        pauseButton = GameObject.Find("Restart");
+        play = GameObject.Find("Play").GetComponent<Button>();
+//        nextLevel = GameObject.Find("NextLevel").GetComponent<Button>();
+        levelSelect = GameObject.Find("LevelSelect").GetComponent<Button>();
+        currentScore = GameObject.Find("CurrentScore").GetComponent<Text>();
+        thunderButton = GameObject.Find("ThunderButton").GetComponent<Button>();
+        snowButton = GameObject.Find("SnowButton").GetComponent<Button>();
+        Coins = GameObject.FindGameObjectsWithTag("Coin");
 
-            thunderButton.gameObject.SetActive(false);
-            snowButton.gameObject.SetActive(false);
-            gameOverPanel.SetActive(false);
+        thunderButton.gameObject.SetActive(false);
+        snowButton.gameObject.SetActive(false);
+        gameOverPanel.SetActive(false);
 
-			play.onClick.AddListener(() => Play());
-//            nextLevel.onClick.AddListener(() => NextLevel());
-            levelSelect.onClick.AddListener(() => BackToMenu());
-            thunderButton.onClick.AddListener(() => useThunder());
-            snowButton.onClick.AddListener(() => useSnow());
-            isInitialPanelLoaded = true;
-            pausePressed = false;
+		play.onClick.AddListener(() => Play());
+//        nextLevel.onClick.AddListener(() => NextLevel());
+        levelSelect.onClick.AddListener(() => BackToMenu());
+        thunderButton.onClick.AddListener(() => useThunder());
+        snowButton.onClick.AddListener(() => useSnow());
+        isInitialPanelLoaded = true;
+        pausePressed = false;
             
 
     }
