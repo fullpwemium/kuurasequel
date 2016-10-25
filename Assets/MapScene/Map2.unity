@@ -1531,7 +1531,7 @@ RectTransform:
   m_RootOrder: 10
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -598.75134, y: -411.44897}
+  m_AnchoredPosition: {x: -598.75134, y: -335.65}
   m_SizeDelta: {x: 222, y: 246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &383308611
@@ -1752,7 +1752,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 435873604}
   m_LocalRotation: {x: 0.058529183, y: 0.035899915, z: 0.19208048, w: 0.97897434}
-  m_LocalPosition: {x: 0, y: 0, z: 265.2527}
+  m_LocalPosition: {x: 0, y: 0, z: 262}
   m_LocalScale: {x: 3.299653, y: 3.276146, z: 2.4298759}
   m_LocalEulerAnglesHint: {x: 5.7855997, y: 5.3506, z: 22.4721}
   m_Children:
@@ -1761,7 +1761,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -824.50256, y: -380.69244}
+  m_AnchoredPosition: {x: -827, y: -310}
   m_SizeDelta: {x: 99.8, y: 81.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435873606
@@ -2818,15 +2818,15 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 747911114}
   m_LocalRotation: {x: 0.064266406, y: 0.024172317, z: 0.0033043036, w: 0.99763453}
-  m_LocalPosition: {x: 0, y: 0, z: 75.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 62}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_LocalEulerAnglesHint: {x: 7.358, y: 2.812, z: 0.5604}
   m_Children: []
   m_Father: {fileID: 1516277807}
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 565, y: -212}
+  m_AnchoredPosition: {x: 536, y: -304}
   m_SizeDelta: {x: 700, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &747911116
@@ -3525,7 +3525,7 @@ MonoBehaviour:
   kyltti2: {fileID: 1617423966}
   pelikuva1: {fileID: 21300000, guid: 36f57121b2bec064baffbbb081e0cff9, type: 3}
   pelikuva2: {fileID: 21300000, guid: d7f09a5b41fb3b9488437603c9167718, type: 3}
-  pelikuva3: {fileID: 21300000, guid: df2af8bd76c9b2b41a9504b20881e264, type: 3}
+  pelikuva3: {fileID: 21300000, guid: 36f99571b9724f44183c6045858a79e7, type: 3}
   pelikuva4: {fileID: 21300000, guid: 5d1e3f5c18db73a4c936777236e082d9, type: 3}
   pelikuva5: {fileID: 21300000, guid: d9032a6350b2f0547a3fa280e6d49344, type: 3}
   hahmo1: {fileID: 0}
@@ -5230,7 +5230,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2300, y: 560}
+  m_AnchoredPosition: {x: 2300, y: 559}
   m_SizeDelta: {x: 2343, y: 1502}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1516277810
@@ -5690,7 +5690,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617423966}
   m_LocalRotation: {x: 0.06836867, y: 0.006339956, z: -0.26030767, w: 0.96308124}
-  m_LocalPosition: {x: 0, y: 0, z: 238.46762}
+  m_LocalPosition: {x: 0, y: 0, z: 242}
   m_LocalScale: {x: 3.3089643, y: 3.2934155, z: 2.4493182}
   m_LocalEulerAnglesHint: {x: 7.758, y: -1.3521999, z: -30.3414}
   m_Children:
@@ -5699,7 +5699,7 @@ RectTransform:
   m_RootOrder: 9
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -356.2392, y: -384.38754}
+  m_AnchoredPosition: {x: -362, y: -302}
   m_SizeDelta: {x: 104, y: 96.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617423968
