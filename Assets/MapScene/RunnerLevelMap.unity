@@ -5891,6 +5891,8 @@ MonoBehaviour:
   timerText: {fileID: 0}
   Timer: 60
   gameOverPanel: {fileID: 0}
+  playButton: {fileID: 0}
+  pauseButton: {fileID: 0}
   play: {fileID: 0}
   nextLevel: {fileID: 0}
   levelSelect: {fileID: 0}
