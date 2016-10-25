@@ -18,7 +18,9 @@ public class Platformer2DUserControl : MonoBehaviour
     public static bool doubleCancel;
     public static bool magnetCancel;
 
-    
+    AudioSource[] audioSources;
+    AudioSource crouchSound;
+    AudioSource jumpSound;
 
     private void Awake()
     {
@@ -26,21 +28,32 @@ public class Platformer2DUserControl : MonoBehaviour
         collector = gameObject.GetComponentInChildren<RunnerCollector>();
         m_Character = GetComponent<PlatformerCharacter2D>();
 
+        audioSources = GetComponents<AudioSource>();
+        crouchSound = audioSources[0];
+        jumpSound = audioSources[1];
+
     }
     private void Update()
     {
         if (!collector.flyMode)
         {
             if (!m_Jump)
+            {
                 m_Jump = Input.GetKeyDown(KeyCode.Space);
+            }
             else if (Input.GetKeyUp(KeyCode.Space))
                 m_Jump = false;
         }
         //  m_Crouch = Input.GetKey(KeyCode.LeftControl);
         if (!m_Crouch)
+        {
             m_Crouch = Input.GetKeyDown(KeyCode.LeftControl);
+            crouchSound.Play();
+        }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
             m_Crouch = false;
+        }
         //m_Crouch = CrossPlatformInputManager.GetButtonDown("Fire1");
         
     }
