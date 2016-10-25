@@ -16,6 +16,7 @@ public class VälisivuScripti : MonoBehaviour
     Vector2 startPos;
     public Button button1, button2, button3, button4, button5;
     public GameObject tausta;
+    Image Hahmo;
     bool moving;
 
     public GameObject kylttiKissa;
@@ -30,6 +31,7 @@ public class VälisivuScripti : MonoBehaviour
     Text title;
 
     public Sprite pelikuva1, pelikuva2, pelikuva3, pelikuva4, pelikuva5;
+    public Sprite hahmo1, hahmo2, hahmo3, hahmo4, hahmo5;
 
     public Vector3 destination;
     float lerpStartTime;
@@ -56,8 +58,7 @@ public class VälisivuScripti : MonoBehaviour
         Debug.Log("Image position: " + tausta.transform.localPosition);
 
 
-        tausta.transform.localPosition = new Vector3(tausta.transform.position.x + 2300, tausta.transform.localPosition.y, tausta.transform.position.z);
-            
+        //tausta.transform.localPosition = new Vector3(tausta.transform.position.x + 2300, tausta.transform.localPosition.y, tausta.transform.position.z);
 
 
         Debug.Log("Image position: " + tausta.transform.localPosition);
@@ -80,6 +81,7 @@ public class VälisivuScripti : MonoBehaviour
         peliKuva = GameObject.Find("PeliKuva").GetComponent<Image>();
         title = GameObject.Find("Title").GetComponent<Text>();
         dialogi = GameObject.Find("Dialogia").GetComponent<Text>();
+        Hahmo = GameObject.Find("Kissa").GetComponent<Image>();
 
     }
 
@@ -109,6 +111,7 @@ public class VälisivuScripti : MonoBehaviour
             title.text = "Winter Hedge Maze";
             dialogi.text = "-	Don't let Swipper get you!\n- Watch the floor...";
             peliKuva.sprite = pelikuva2;
+            Hahmo.sprite = hahmo2;
         }
         else if (BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 1)
         {

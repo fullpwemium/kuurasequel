@@ -814,6 +814,11 @@ MonoBehaviour:
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
   pelikuva4: {fileID: 21300000, guid: c9a9fbcc99d83e4468728a36124b846c, type: 3}
   pelikuva5: {fileID: 0}
+  hahmo1: {fileID: 0}
+  hahmo2: {fileID: 0}
+  hahmo3: {fileID: 0}
+  hahmo4: {fileID: 0}
+  hahmo5: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
 --- !u!114 &206537231
 MonoBehaviour:
@@ -1588,6 +1593,11 @@ MonoBehaviour:
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
   pelikuva4: {fileID: 21300000, guid: c9a9fbcc99d83e4468728a36124b846c, type: 3}
   pelikuva5: {fileID: 0}
+  hahmo1: {fileID: 0}
+  hahmo2: {fileID: 0}
+  hahmo3: {fileID: 0}
+  hahmo4: {fileID: 0}
+  hahmo5: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
 --- !u!1 &409989509
 GameObject:
@@ -3518,6 +3528,11 @@ MonoBehaviour:
   pelikuva3: {fileID: 21300000, guid: df2af8bd76c9b2b41a9504b20881e264, type: 3}
   pelikuva4: {fileID: 21300000, guid: 5d1e3f5c18db73a4c936777236e082d9, type: 3}
   pelikuva5: {fileID: 21300000, guid: d9032a6350b2f0547a3fa280e6d49344, type: 3}
+  hahmo1: {fileID: 0}
+  hahmo2: {fileID: 21300000, guid: 14359bc097db12941a207338a01a6a25, type: 3}
+  hahmo3: {fileID: 0}
+  hahmo4: {fileID: 0}
+  hahmo5: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
 --- !u!1 &998584044
 GameObject:
@@ -4286,6 +4301,11 @@ MonoBehaviour:
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
   pelikuva4: {fileID: 21300000, guid: c9a9fbcc99d83e4468728a36124b846c, type: 3}
   pelikuva5: {fileID: 0}
+  hahmo1: {fileID: 0}
+  hahmo2: {fileID: 0}
+  hahmo3: {fileID: 0}
+  hahmo4: {fileID: 0}
+  hahmo5: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
 --- !u!114 &1298574805
 MonoBehaviour:
@@ -5210,7 +5230,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 559}
+  m_AnchoredPosition: {x: 2300, y: 560}
   m_SizeDelta: {x: 2343, y: 1502}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1516277810
@@ -5496,6 +5516,11 @@ MonoBehaviour:
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
   pelikuva4: {fileID: 21300000, guid: c9a9fbcc99d83e4468728a36124b846c, type: 3}
   pelikuva5: {fileID: 0}
+  hahmo1: {fileID: 0}
+  hahmo2: {fileID: 0}
+  hahmo3: {fileID: 0}
+  hahmo4: {fileID: 0}
+  hahmo5: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
 --- !u!114 &1581385076
 MonoBehaviour:
@@ -6099,6 +6124,11 @@ MonoBehaviour:
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
   pelikuva4: {fileID: 21300000, guid: c9a9fbcc99d83e4468728a36124b846c, type: 3}
   pelikuva5: {fileID: 0}
+  hahmo1: {fileID: 0}
+  hahmo2: {fileID: 0}
+  hahmo3: {fileID: 0}
+  hahmo4: {fileID: 0}
+  hahmo5: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
 --- !u!114 &1696977739
 MonoBehaviour:
@@ -6237,6 +6267,11 @@ MonoBehaviour:
   pelikuva3: {fileID: 21300000, guid: 87fca152f5018104dbebefa0d55c5acb, type: 3}
   pelikuva4: {fileID: 21300000, guid: c9a9fbcc99d83e4468728a36124b846c, type: 3}
   pelikuva5: {fileID: 0}
+  hahmo1: {fileID: 0}
+  hahmo2: {fileID: 0}
+  hahmo3: {fileID: 0}
+  hahmo4: {fileID: 0}
+  hahmo5: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
 --- !u!114 &1773708624
 MonoBehaviour:
