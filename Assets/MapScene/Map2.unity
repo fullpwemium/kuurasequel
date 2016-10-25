@@ -5787,8 +5787,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1633222265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.397013, y: 8.25125, z: 30.882301}
-  m_LocalScale: {x: 1.4120544, y: 1.4120544, z: 1.4120544}
+  m_LocalPosition: {x: 11.5, y: 10.1, z: 30.882301}
+  m_LocalScale: {x: 1.9639373, y: 1.9639369, z: 1.9639369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 115680354}
@@ -5822,8 +5822,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e8c36ad83be2b9246954f3936c511f5a, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 794adbcadc5845a4ea83f817ec4ba3f0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
 --- !u!114 &1633222268
@@ -5832,7 +5832,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1633222265}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36cd3fba16961f94986a818d4fc2d00a, type: 3}
   m_Name: 
@@ -6070,7 +6070,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.327639, y: 15.735145}
+  m_AnchoredPosition: {x: 21.7, y: 22.7}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1696977738

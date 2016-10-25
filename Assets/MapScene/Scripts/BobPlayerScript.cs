@@ -388,7 +388,7 @@ public class BobPlayerScript : MonoBehaviour
 
     void BobScale()     //Skaalataan Bobia perspektiivin mukaan
     {
-        gameObject.transform.localScale = new Vector2(Mathf.Abs(gameObject.transform.position.y * 0.08F), Mathf.Abs(gameObject.transform.position.y * 0.08F));
+        gameObject.transform.localScale = new Vector2(Mathf.Abs(gameObject.transform.position.y * 0.05F), Mathf.Abs(gameObject.transform.position.y * 0.05F));
     }
 
     void BobOnButton()
@@ -401,7 +401,8 @@ public class BobPlayerScript : MonoBehaviour
 
     public void aboveButtonScale()
     {
-        aboveButton = gameObject.transform.position.y * -0.16F;
+        aboveButton = gameObject.transform.position.y * -0.1F;
+
         Debug.Log("Above Button = " + aboveButton);
     }
 
