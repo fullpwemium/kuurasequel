@@ -197,7 +197,7 @@ public class VälisivuScripti : MonoBehaviour
         {
             float timeSinceStarted = Time.time - lerpStartTime;
             float percentageComplete = timeSinceStarted / 1.5f;
-            Debug.Log(percentageComplete);
+            //Debug.Log(percentageComplete);
 
             kylttiKissa.transform.position = Vector3.Lerp(kylttiKissaStartPosition, kylttiKissaDestination, percentageComplete);
             kyltti1.transform.position = Vector3.Lerp(kyltti1StartPosition, kyltti1Destination, percentageComplete);

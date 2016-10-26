@@ -107,7 +107,11 @@ public class BobPlayerScript : MonoBehaviour
 
         BobPlayer = GameObject.Find("BobPlayer");
 
-//        BobPlayer.transform.position = new Vector3(BobPlayer.transform.position.x, BobPlayer.transform.position.y, BobPlayer.transform.position.z);
+        BobPlayer.transform.position = new Vector3(BobPlayer.transform.position.x, 
+            BobPlayer.transform.position.y + (aboveButton * 3.5F), 
+                BobPlayer.transform.position.z); //Nostetaan Bob seisomaan buttonin päällä
+
+        Debug.Log("Above button on start = " + BobPlayer.transform.position.y + (aboveButton * 3F));
 
         destination = gameObject.transform.position;
         //aboveButtonScale();
@@ -401,7 +405,7 @@ public class BobPlayerScript : MonoBehaviour
 
     public void aboveButtonScale()
     {
-        aboveButton = gameObject.transform.position.y * -0.1F;
+        aboveButton = gameObject.transform.position.y * -0.075F;
 
         Debug.Log("Above Button = " + aboveButton);
     }
