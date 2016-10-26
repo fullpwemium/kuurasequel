@@ -43,7 +43,11 @@ public class PlatformerCharacter2D : MonoBehaviour
     private float rotateSpeed = 1f;
     public static float previousVelocity;
     Vector3 birdRotation = Vector3.zero;
-    
+
+    //This is an array of all the audio source components that are added to this GameObject.
+    AudioSource[] audioSources;
+    AudioSource crouchSound;
+    AudioSource jumpSound;
 
     private void Awake()
     {
@@ -51,6 +55,10 @@ public class PlatformerCharacter2D : MonoBehaviour
         m_GroundCheck = transform.Find("GroundCheck");
         m_Anim = GetComponent<Animator>();
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
+
+        audioSources = GetComponents<AudioSource>();
+        crouchSound = audioSources[0];
+        jumpSound = audioSources[1];
     }
     private void FixedUpdate()
     {
@@ -115,6 +123,7 @@ public class PlatformerCharacter2D : MonoBehaviour
             gameObject.GetComponentInChildren<BoxCollider2D>().enabled = false;
         }
         else if(m_Grounded) {
+            //crouchSound.Play();
             gameObject.GetComponentInChildren<CircleCollider2D>().enabled = false;
             gameObject.GetComponentInChildren<BoxCollider2D>().enabled = true;
 
@@ -130,6 +139,7 @@ public class PlatformerCharacter2D : MonoBehaviour
         {
             if (m_Grounded && m_Anim.GetBool("Ground"))
             {
+                jumpSound.Play();
                 doublejump = true;
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
@@ -140,6 +150,7 @@ public class PlatformerCharacter2D : MonoBehaviour
             {
                 if (doublejump)
                 {
+                    jumpSound.Play();
                     m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0);
                     doublejump = false;
                     m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));

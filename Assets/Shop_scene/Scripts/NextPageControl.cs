@@ -7,10 +7,15 @@ public class NextPageControl : MonoBehaviour {
     public GameObject Shopbook;
     int lastpage;
     int currentpage;
+
+    AudioSource turnPageSound;
+
 	// Use this for initialization
 	void Start ()
     {
         NextPage.onClick.AddListener(Nextpage);
+
+        turnPageSound = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -51,5 +56,8 @@ public class NextPageControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().Rightpageup(2);
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().Leftpageup(2);
         Debug.Log("Next page");
+
+        turnPageSound.Play();
+
     }
 }

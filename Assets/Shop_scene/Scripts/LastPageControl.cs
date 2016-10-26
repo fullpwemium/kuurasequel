@@ -9,18 +9,23 @@ public class LastPageControl : MonoBehaviour
     public int currentpage;
     public int lastpage;
     public Text leftpagecounter;
-   public int leftcounter;
-   public int rightcounter = 1;
+    public int leftcounter;
+    public int rightcounter = 1;
     public Text rightpagecounter;
     GameObject book;
     int leftpagemax;
     int rightpagemax;
+
+    private AudioSource turnPageSound;
+
     // Use this for initialization
     void Awake()
     {
         lastpage = 12;
         leftpagemax = lastpage * 2;
         rightpagemax = lastpage * 2 + 1;
+
+        turnPageSound = GetComponent<AudioSource>();
     }
 
 	void Start ()
@@ -100,6 +105,8 @@ public class LastPageControl : MonoBehaviour
         Leftpagedown(2);
         Rightpagedown(2);
         Debug.Log("Previous page");
+
+        turnPageSound.Play();
     }
 
     public void Leftpageup(int pagenumber)
