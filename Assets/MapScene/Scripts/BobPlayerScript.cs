@@ -111,7 +111,7 @@ public class BobPlayerScript : MonoBehaviour
             BobPlayer.transform.position.y + (aboveButton * 3.5F), 
                 BobPlayer.transform.position.z); //Nostetaan Bob seisomaan buttonin päällä
 
-        Debug.Log("Above button on start = " + BobPlayer.transform.position.y + (aboveButton * 3F));
+        Debug.Log("Above button on start = " + BobPlayer.transform.position.y + (aboveButton * 3.5F));
 
         destination = gameObject.transform.position;
         //aboveButtonScale();

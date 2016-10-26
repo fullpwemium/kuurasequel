@@ -103,6 +103,7 @@ public class VälisivuScripti : MonoBehaviour
             title.text = "Mister Mysterious Mystic Cards";
             dialogi.text = "- Hope you have a good memory!\n- Try to find images above Bob.";
             peliKuva.sprite = pelikuva1;
+            Hahmo.sprite = hahmo1;
         }
         else if(BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 2)
         {
@@ -120,7 +121,8 @@ public class VälisivuScripti : MonoBehaviour
             title.text = "Bubble Warehouse";
             dialogi.text = "-	What a nasty snowflake!\n- Get cake to grow your bowl!";
             peliKuva.sprite = pelikuva3;
-            
+            Hahmo.sprite = hahmo3;
+
         }
         else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 3)
         {
@@ -129,6 +131,7 @@ public class VälisivuScripti : MonoBehaviour
             title.text = "Winter Forest Marathon";
             dialogi.text = "- Make all the coins come to you with magnet!\n- Don't forget you can JUMP again while midair!";
             peliKuva.sprite = pelikuva4;
+            Hahmo.sprite = hahmo4;
         }
         else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 0)
         {
@@ -137,6 +140,7 @@ public class VälisivuScripti : MonoBehaviour
             title.text = "Bob's apartment";
             dialogi.text = "- Smooth Kuura to get Magic Dust.\n- Watch ad to get even more Magic Dust.";
             peliKuva.sprite = pelikuva5;
+            //Hahmo.sprite = hahmo5;
         }
 
         kylttiKissaDestination = new Vector3(kylttiKissa.transform.position.x, kylttiKissa.transform.position.y + Screen.height / 30, kylttiKissa.transform.position.z);

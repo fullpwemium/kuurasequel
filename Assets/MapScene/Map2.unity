@@ -785,7 +785,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.11033, y: 10.611277}
+  m_AnchoredPosition: {x: 19.85, y: 22.67}
   m_SizeDelta: {x: 22, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206537230
@@ -1147,7 +1147,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 673, y: 160}
+  m_AnchoredPosition: {x: 729, y: 260}
   m_SizeDelta: {x: 148, y: 219}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333955147
@@ -2742,7 +2742,7 @@ Transform:
   m_GameObject: {fileID: 656595753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.1929417, y: 4.3517356, z: 24.679596}
-  m_LocalScale: {x: 0.75229573, y: 0.75229573, z: 0.75229573}
+  m_LocalScale: {x: 0.98102766, y: 0.9810275, z: 0.9810275}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1278346697}
@@ -2776,8 +2776,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 3719f53303ed3b44588900d99eb9bc30, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 65a5f865a5795cc48928c9ea2033c2ff, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!114 &656595756
@@ -2786,7 +2786,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 656595753}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36cd3fba16961f94986a818d4fc2d00a, type: 3}
   m_Name: 
@@ -3528,10 +3528,10 @@ MonoBehaviour:
   pelikuva3: {fileID: 21300000, guid: 36f99571b9724f44183c6045858a79e7, type: 3}
   pelikuva4: {fileID: 21300000, guid: 5d1e3f5c18db73a4c936777236e082d9, type: 3}
   pelikuva5: {fileID: 21300000, guid: d9032a6350b2f0547a3fa280e6d49344, type: 3}
-  hahmo1: {fileID: 0}
+  hahmo1: {fileID: 21300000, guid: 617acaea355fb0f499d93541b9c270bd, type: 3}
   hahmo2: {fileID: 21300000, guid: 14359bc097db12941a207338a01a6a25, type: 3}
-  hahmo3: {fileID: 0}
-  hahmo4: {fileID: 0}
+  hahmo3: {fileID: 21300000, guid: 65a5f865a5795cc48928c9ea2033c2ff, type: 3}
+  hahmo4: {fileID: 21300000, guid: 24b12a58986393b4b86d7f76cb0b781a, type: 3}
   hahmo5: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
 --- !u!1 &998584044
@@ -4272,7 +4272,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.932407, y: 8.865508}
+  m_AnchoredPosition: {x: 11.84, y: 11.01}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1298574804
@@ -5911,9 +5911,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e0214469e1f9eca47bee1834110fc772, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 21300000, guid: 523725b8a46f28d42a357d1fd16adfa8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
 --- !u!4 &1649294815
 Transform:
@@ -5922,8 +5922,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1649294813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.499037, y: 3.553444, z: 20.859198}
-  m_LocalScale: {x: 1.5896009, y: 1.589601, z: 1.589601}
+  m_LocalPosition: {x: 13.02, y: 9.82, z: 20.859198}
+  m_LocalScale: {x: 2.0074377, y: 2.0074377, z: 2.0074377}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 481989023}
@@ -5934,7 +5934,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1649294813}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36cd3fba16961f94986a818d4fc2d00a, type: 3}
   m_Name: 
@@ -6238,7 +6238,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.855268, y: 19.262447}
+  m_AnchoredPosition: {x: 46.7, y: 43}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1773708623
@@ -6333,7 +6333,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4f7741401e46d6e4aa06fffc02545eaf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb3cf48109cf0fe4fbd9f2c0c5c117f3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6983,8 +6983,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2032300438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.757872, y: 7.3788424, z: 45.009045}
-  m_LocalScale: {x: 3.1190555, y: 3.1190538, z: 3.1190538}
+  m_LocalPosition: {x: 29.757872, y: 19.3, z: 45.009045}
+  m_LocalScale: {x: 4.38094, y: 4.3809366, z: 4.3809366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 931535046}
@@ -7018,9 +7018,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 3719f53303ed3b44588900d99eb9bc30, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 21300000, guid: 3da376b6b7b7d664d8c5a1fc53b35e5c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
 --- !u!114 &2032300441
 MonoBehaviour:
@@ -7028,7 +7028,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2032300438}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36cd3fba16961f94986a818d4fc2d00a, type: 3}
   m_Name: 
