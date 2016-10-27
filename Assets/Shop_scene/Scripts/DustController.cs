@@ -46,5 +46,6 @@ public class DustController : MonoBehaviour {
         //DustAmount = GlobalManager.MagicDust;
         DustAmount = GlobalGameManager.MagicDust;
         GameObject.FindGameObjectWithTag("DustAmount").GetComponent<Text>().text = DustAmount.ToString();
+        PlayerPrefs.SetInt("Magic Dust ", DustAmount);
     }
 }
