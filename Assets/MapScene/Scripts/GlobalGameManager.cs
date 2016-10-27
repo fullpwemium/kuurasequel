@@ -58,15 +58,7 @@ public class GlobalGameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
-    void Start()
-    {
-//        PlayerPrefs.DeleteAll();
-//        Debug.Log("Kaikki tuhottu");
-
-        //InsertScore(5,bwhStars, "banana", 10);
-        haeData();
         MagicDust = PlayerPrefs.GetInt("Magic Dust "); //Ladataan kerätyt dustit
         //GameObject.FindGameObjectWithTag("MagicDust").GetComponent<Text>().text = MagicDust.ToString();
 
@@ -75,13 +67,19 @@ public class GlobalGameManager : MonoBehaviour
             AllMagicDust = GameObject.Find("MagicDust").GetComponent<Text>();
             AllMagicDust.text = MagicDust.ToString("f0");
         }
-            
+    }
+
+    void Start()
+    {
+//        PlayerPrefs.DeleteAll();
+//        Debug.Log("Kaikki tuhottu");
+
+        //InsertScore(5,bwhStars, "banana", 10);
+        haeData();            
 
         //MemoryGameLoad();
         //RunnerLoad();
         //bubbleWarehouseLoad();
-
-
     }
 
     private static string url = "http://www.bellegames.net/tietokantakokeilu/db.php";
