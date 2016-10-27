@@ -97,8 +97,10 @@ public class ButtonScript : MonoBehaviour
         }
         else if (BobPlayerScript.nearShop)
         {
-            SceneManager.LoadScene(36);
+            //SceneManager.LoadScene(36);
+            SceneManager.LoadScene("Shop");
             BobPlayerScript.nearBobApartment = false;
+            Debug.Log("Kauppaan");
         }
 
     }
