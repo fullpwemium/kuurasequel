@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GlobalGameManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class GlobalGameManager : MonoBehaviour
     public List<int> completedGames;
 
     int[] MemoryGameStars = new int[200];
+
+    public static int MagicDust;
+    public static Text AllMagicDust;
 
     int[] RunnerStars;
 
@@ -48,7 +52,7 @@ public class GlobalGameManager : MonoBehaviour
         if (GGM == null)
         {
             DontDestroyOnLoad(gameObject);
-            GGM = this;
+            GGM = this;            
         }
         else if (GGM != this)
         {
@@ -63,12 +67,21 @@ public class GlobalGameManager : MonoBehaviour
 
         //InsertScore(5,bwhStars, "banana", 10);
         haeData();
+        MagicDust = PlayerPrefs.GetInt("Magic Dust "); //Ladataan kerätyt dustit
+        //GameObject.FindGameObjectWithTag("MagicDust").GetComponent<Text>().text = MagicDust.ToString();
+
+        if (GameObject.Find("MagicDust"))
+        {
+            AllMagicDust = GameObject.Find("MagicDust").GetComponent<Text>();
+            AllMagicDust.text = MagicDust.ToString("f0");
+        }
+            
 
         //MemoryGameLoad();
         //RunnerLoad();
         //bubbleWarehouseLoad();
-        
-        
+
+
     }
 
     private static string url = "http://www.bellegames.net/tietokantakokeilu/db.php";
