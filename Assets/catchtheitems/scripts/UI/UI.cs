@@ -41,7 +41,7 @@ public class UI : MonoBehaviour
         hiutale2.SetActive(false);
         hiutale3.SetActive(false);
 
-
+        TimerScript.Lose = false;
 
         //moving = false;
         //bling.transform.position = new Vector3(bling.transform.position.x, bling.transform.position.y, bling.transform.position.z);
@@ -135,6 +135,8 @@ public class UI : MonoBehaviour
     {
         if (won == false)
         {
+            //TimerScript.Win = false;
+            TimerScript.Lose = true;
             //StartCoroutine("slowDown");
             endText.text = "You Lost";
             StartLerping();
@@ -145,7 +147,7 @@ public class UI : MonoBehaviour
             nextLevel.SetActive(false);
             pauseButton.SetActive(false);
         }
-        else if (won == true)
+        else if (won == true && TimerScript.Lose == false && TimerScript.Win == true)
         {
 
             /*lista = FindObjectsOfType<GameObject>();

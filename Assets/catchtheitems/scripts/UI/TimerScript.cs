@@ -13,8 +13,12 @@ public class TimerScript : MonoBehaviour {
 	bool GOPOn = false;
 	public float time = 30f;
 
-	// Use this for initialization
-	void Start () {
+    public static bool Lose = false;
+    public static bool Win = false;
+
+    // Use this for initialization
+    void Start ()
+    {
 		sceneUi = FindObjectOfType<UI> ();
 		//Debug.Log (ShelfGameManager.manager.currentLevel);
 		addTimeValue = GameManager.extraTime;
@@ -24,21 +28,37 @@ public class TimerScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
-		if (timeLeft > 0) {
+		if (timeLeft > 0)
+        {
 			timeLeft -= Time.deltaTime;
 			seconds = (int)timeLeft;
-			timer.text = "Time: " + seconds;
-		} 
-		else if (timeLeft <= 0) {
-			if (GOPOn == false) {
+			//timer.text = "Time: " + seconds;
+            timer.text = "Time: " + timeLeft.ToString("f2");
+
+            if (Lose == true)
+            {
+                timer.text = "Time: " + timeLeft.ToString("f2");
+            }
+        } 
+		else if (timeLeft <= 0)
+        {
+            timeLeft = 0;
+
+			if (GOPOn == false)
+            {
+                Win = true;
+                //Lose = false;
 				sceneUi.GameOverPanelToggle ();
 				sceneUi.TextSwitcher (true);
 				ShelfGameManager.manager.PlayerWin ();
 				GOPOn = true;
 			}
 		}
+
+        
 	}
 
 }
