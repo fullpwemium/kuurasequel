@@ -11282,11 +11282,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 401448, guid: 89cc0826dc0c3f34e8ace1c8f9ba4431, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -15
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 401448, guid: 89cc0826dc0c3f34e8ace1c8f9ba4431, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.25
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 401448, guid: 89cc0826dc0c3f34e8ace1c8f9ba4431, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11318,11 +11318,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421354, guid: 89cc0826dc0c3f34e8ace1c8f9ba4431, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.988
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 421354, guid: 89cc0826dc0c3f34e8ace1c8f9ba4431, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.33
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11459868, guid: 89cc0826dc0c3f34e8ace1c8f9ba4431, type: 2}
       propertyPath: doorClosedOnStart

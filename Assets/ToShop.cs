@@ -16,7 +16,9 @@ public class ToShop : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            SceneManager.LoadScene(36);
+            //SceneManager.LoadScene(36);
+            SceneManager.LoadScene("Shop");
+            Debug.Log("Kauppias");
         }
     }
 }
