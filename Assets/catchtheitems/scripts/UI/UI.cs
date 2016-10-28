@@ -42,6 +42,7 @@ public class UI : MonoBehaviour
         hiutale3.SetActive(false);
 
         TimerScript.Lose = false;
+        TimerScript.Win = false;
 
         //moving = false;
         //bling.transform.position = new Vector3(bling.transform.position.x, bling.transform.position.y, bling.transform.position.z);
@@ -49,7 +50,7 @@ public class UI : MonoBehaviour
 
 
 
-		if (ShelfGameManager.manager != null && ShelfGameManager.manager.currentLevel == 0)
+        if (ShelfGameManager.manager != null && ShelfGameManager.manager.currentLevel == 0)
         {
             tutorialPanel.SetActive(true);
             Time.timeScale = 0f;
