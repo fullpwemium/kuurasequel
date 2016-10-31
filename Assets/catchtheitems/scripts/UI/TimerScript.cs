@@ -25,8 +25,9 @@ public class TimerScript : MonoBehaviour {
 		addTimeValue = GameManager.extraTime;
 		time = time + addTimeValue;
 		timeLeft = time;
-		//timeLeft = (time * (ShelfGameManager.manager.currentLevel + 1))/2f;
-	}
+        timeRunOut = false;
+        //timeLeft = (time * (ShelfGameManager.manager.currentLevel + 1))/2f;
+    }
 	
 	// Update is called once per frame
 	void Update ()
