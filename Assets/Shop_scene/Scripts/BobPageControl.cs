@@ -16,6 +16,11 @@ public class BobPageControl : MonoBehaviour {
     public Image greenHat;
     public Image whiteHat;
 
+    int greyHatBought;
+    int orangeHatBought;
+    int redHatBought;
+    int greenHatBought;
+    int whiteHatBought;
 
     void Awake()
     {
@@ -35,8 +40,13 @@ public class BobPageControl : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-	
-	}
+        //Gets the value of the hat bought from the hard drive
+        greyHatBought = PlayerPrefs.GetInt("greyHatOwned");
+        orangeHatBought = PlayerPrefs.GetInt("orangeHatOwned");
+        redHatBought = PlayerPrefs.GetInt("redHatOwned");
+        greenHatBought = PlayerPrefs.GetInt("greenHatOwned");
+        whiteHatBought = PlayerPrefs.GetInt("whiteHatOwned");
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -50,33 +60,53 @@ public class BobPageControl : MonoBehaviour {
 
 
         //Checks if the Grey hat is owned
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == true)
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == true || greyHatBought == 1)
         {
-            greyHat.enabled = true;           
+            greyHat.enabled = true;
+        }
+        else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == false || greyHatBought == 0)
+        {
+            greyHat.enabled = false;
         }
 
         //Checks if the Orange hat is owned
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned == true)
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned == true || orangeHatBought == 1)
         {
             orangeHat.enabled = true;
         }
+        else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned == false || orangeHatBought == 0)
+        {
+            orangeHat.enabled = false;
+        }
 
         //Checks if the Red hat is owned
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned == true)
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned == true || redHatBought == 1)
         {
             redHat.enabled = true;
         }
+        else if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned == false || redHatBought == 0)
+        {
+            redHat.enabled = false;
+        }
 
         //Checks if the Green hat is owned
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned == true)
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned == true || greenHatBought == 1)
         {
             greenHat.enabled = true;
         }
+        else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned == false || greenHatBought == 0)
+        {
+            greenHat.enabled = false;
+        }
 
-        //Checks if the White hat is owned
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned == true)
+         //Checks if the White hat is owned
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned == true || whiteHatBought == 1)
         {
             whiteHat.enabled = true;
         }
-	}
+        else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned == false || whiteHatBought == 0)
+        {
+            whiteHat.enabled = false;
+        }
+    }
 }

@@ -5,6 +5,11 @@ using UnityEngine.UI;
 public class HatPageControl : MonoBehaviour
 {
     int greyHatCounter, orangeHatCounter, redHatCounter, greenHatCounter, whiteHatCounter;
+    int greyHatBought;
+    int orangeHatBought;
+    int redHatBought;
+    int greenHatBought;
+    int whiteHatBought;
 
     public Button GreyHat;
     public Button OrangeHat;
@@ -116,21 +121,28 @@ public class HatPageControl : MonoBehaviour
         ownsRedHatBool = GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsRedHat;
         ownsGreenHatBool = GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsGreenHat;
         ownsWhiteHatBool = GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsWhiteHat;
+
+        //Gets the value of the hat bought from the hard drive
+        greyHatBought = PlayerPrefs.GetInt("greyHatOwned");
+        orangeHatBought = PlayerPrefs.GetInt("orangeHatOwned");
+        redHatBought = PlayerPrefs.GetInt("redHatOwned");
+        greenHatBought = PlayerPrefs.GetInt("greenHatOwned");
+        whiteHatBought = PlayerPrefs.GetInt("whiteHatOwned");
     }
 
     // Update is called once per frame
     void Update()
     {
         dustAmount = GameObject.Find("ShopBook").GetComponent<DustController>().DustAmount;
-
+               
         //checks if you own the grey hat and then you cannot buy it anymore
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == true)
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == true || greyHatBought == 1 )
         {
             ownsGreyHat.enabled = true;
             GreyHat.enabled = false;
             GreyHatPrice.SetActive(false);           
         }
-        else if (ownsGreyHatBool == false)
+        else if (ownsGreyHatBool == false || greyHatBought == 0)
         {
             ownsGreyHat.enabled = false;
             GreyHat.enabled = true;
@@ -139,14 +151,14 @@ public class HatPageControl : MonoBehaviour
         }
 
         //checks if you own the orange hat and then you cannot buy it anymore
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned == true)
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned == true || orangeHatBought == 1)
         {
             ownsOrangeHat.enabled = true;
             OrangeHat.enabled = false;
             OrangeHatPrice.SetActive(false);
             GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsOrangeHat = true;
         }
-        else if (ownsOrangeHatBool==false)
+        else if (ownsOrangeHatBool==false || orangeHatBought == 0)
         {
             ownsOrangeHat.enabled = false;
             OrangeHat.enabled = true;
@@ -155,14 +167,14 @@ public class HatPageControl : MonoBehaviour
         }
 
         //checks if you own the red hat and then you cannot buy it anymore
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned == true)
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned == true || redHatBought == 1)
         {
             ownsRedHat.enabled = true;
             RedHat.enabled = false;
             RedHatPrice.SetActive(false);
             GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsRedHat = true;
         }
-        else if (ownsRedHatBool==false)
+        else if (ownsRedHatBool==false || redHatBought == 0)
         {
             ownsRedHat.enabled = false;
             RedHat.enabled = true;
@@ -171,14 +183,14 @@ public class HatPageControl : MonoBehaviour
         }
 
         //checks if you own the green hat and then you cannot buy it anymore
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned == true)
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned == true || greenHatBought == 1)
         {
             ownsGreenHat.enabled = true;
             GreenHat.enabled = false;
             GreenHatPrice.SetActive(false);
             GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsGreenHat = true;
         }
-        else if(ownsGreenHatBool==false)
+        else if(ownsGreenHatBool==false || greenHatBought == 0)
         {
             ownsGreenHat.enabled = false;
             GreenHat.enabled = true;
@@ -187,14 +199,14 @@ public class HatPageControl : MonoBehaviour
         }
 
         //checks if you own the white hat and then you cannot buy it anymore
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned == true)
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned == true || whiteHatBought == 1)
         {
             ownsWhiteHat.enabled = true;
             WhiteHat.enabled = false;
             WhiteHatPrice.SetActive(false);
             GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsWhiteHat = true;
         }
-        else if(ownsWhiteHatBool==false)
+        else if(ownsWhiteHatBool==false || whiteHatBought == 0)
         {
             ownsWhiteHat.enabled = false;
             WhiteHat.enabled = true;
