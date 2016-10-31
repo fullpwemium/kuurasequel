@@ -82,6 +82,8 @@ public class LayerScript : MonoBehaviour
 //        GlobalManager.Start();
         sr = GetComponent<SpriteRenderer>();
 
+        //StartCoroutine(showCards());
+
         Life1 = GameObject.Find("Life1"); //Viitataan sulkeissa määriteltyyn pelinäkymän objektiin
         Life2 = GameObject.Find("Life2");
         Life3 = GameObject.Find("Life3");
@@ -1203,6 +1205,15 @@ public class LayerScript : MonoBehaviour
             clickedObjects[i].GetComponent<SpriteRenderer>().sprite = cardSprite;
         }
         clickedObjects.Clear();
+    }
+
+    public IEnumerator showCards()
+    {
+
+
+        yield return new WaitForSeconds(3f);
+
+        //Destroy(GameObject.Find("Tassut"));
     }
 
     public IEnumerator gameWon() //show "you won" text for 4 seconds and restart the game
