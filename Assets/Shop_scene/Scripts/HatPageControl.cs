@@ -117,10 +117,10 @@ public class HatPageControl : MonoBehaviour
         ownsWhiteHat.enabled = false;
 
         ownsGreyHatBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned;
-        ownsOrangeHatBool = GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsOrangeHat;
-        ownsRedHatBool = GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsRedHat;
-        ownsGreenHatBool = GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsGreenHat;
-        ownsWhiteHatBool = GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsWhiteHat;
+        ownsOrangeHatBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned;
+        ownsRedHatBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned;
+        ownsGreenHatBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned;
+        ownsWhiteHatBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned;
 
         //Gets the value of the hat bought from the hard drive
         greyHatBought = PlayerPrefs.GetInt("greyHatOwned");
@@ -254,6 +254,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
+        //tells to you if you dont have enough dust
         else if (dustAmount < hatprice)
         {
             Debug.Log("You don't have enough magic dust");
