@@ -134,7 +134,7 @@ public class UI : MonoBehaviour
     //Switches text in gameoverpanel
     public void TextSwitcher(bool won)
     {
-        if (won == false)
+        if (won == false && TimerScript.timeRunOut == false)
         {
             //TimerScript.Win = false;
             TimerScript.Lose = true;

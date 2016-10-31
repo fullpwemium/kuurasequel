@@ -15,6 +15,7 @@ public class TimerScript : MonoBehaviour {
 
     public static bool Lose = false;
     public static bool Win = false;
+    public static bool timeRunOut = false;
 
     // Use this for initialization
     void Start ()
@@ -33,12 +34,16 @@ public class TimerScript : MonoBehaviour {
 		
 		if (timeLeft > 0)
         {
-			timeLeft -= Time.deltaTime;
-			seconds = (int)timeLeft;
-			//timer.text = "Time: " + seconds;
-            timer.text = "Time: " + timeLeft.ToString("f2");
+            if (Lose == false)
+            {
+                timeLeft -= Time.deltaTime;
+                seconds = (int)timeLeft;
+                //timer.text = "Time: " + seconds;
+                timer.text = "Time: " + timeLeft.ToString("f2");
+            }
+			
 
-            if (Lose == true)
+            else if (Lose == true)      //Pysäytetään ajastin kun missataan liikaa esineitä.
             {
                 timer.text = "Time: " + timeLeft.ToString("f2");
             }
@@ -46,6 +51,7 @@ public class TimerScript : MonoBehaviour {
 		else if (timeLeft <= 0)
         {
             timeLeft = 0;
+            timeRunOut = true;
 
 			if (GOPOn == false)
             {
