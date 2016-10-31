@@ -290,25 +290,30 @@ public class GlobalGameManager : MonoBehaviour
     public void ShopSaveGreyHatOwned(bool value)
     {
         GreyHatOwned = value;
+        PlayerPrefs.SetInt("greyHatOwned", value ? 1 : 0);
     }
 
     public void ShopSaveOrangeHatOwned(bool value)
     {
         OrangeHatOwned = value;
+        PlayerPrefs.SetInt("orangeHatOwned", value ? 1 : 0);
     }
 
     public void ShopSaveRedHatOwned(bool value)
     {
         RedHatOwned = value;
+        PlayerPrefs.SetInt("redHatOwned", value ? 1 : 0);
     }
 
     public void ShopSaveGreenHatOwned(bool value)
     {
         GreenHatOwned = value;
+        PlayerPrefs.SetInt("greenHatOwned", value ? 1 : 0);
     }
 
     public void ShopSaveWhiteHatOwned(bool value)
     {
         WhiteHatOwned = value;
+        PlayerPrefs.SetInt("whiteHatOwned", value ? 1 : 0);
     }
 }

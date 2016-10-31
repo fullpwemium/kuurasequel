@@ -11,14 +11,24 @@ public class ShopButtons : MonoBehaviour {
     public Button BookButton;
     public Button BackButton;
     public Button MenuButton;
+
+    int greyHatBought;
+    int orangeHatBought;
+    int redHatBought;
+    int greenHatBought;
+    int whiteHatBought;
+
     public int sceneToLoad;
+
     int lastpage;
+
     public int currentpage;
-    int bobspage;
-    int cartpage;
-    int menupage;
+    public int bobspage;
+    public int cartpage;
+    public int menupage;
     public int hatpage;
-    int jacketpage;
+    public int jacketpage;
+
     public GameObject Bobbutton;
     public GameObject shopbook;
     public GameObject Cartbutton;
@@ -34,7 +44,6 @@ public class ShopButtons : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
         if (shopbook.GetComponent<Image>().enabled == false)
         {
             Bobbutton.GetComponent<Image>().enabled = false;
@@ -57,7 +66,12 @@ public class ShopButtons : MonoBehaviour {
         BobButton.onClick.AddListener(Bobpage);
         MenuButton.onClick.AddListener(Menupage);
 
-
+        //Gets the value of the hat bought from the hard drive
+        greyHatBought = PlayerPrefs.GetInt("greyHatOwned");
+        orangeHatBought = PlayerPrefs.GetInt("orangeHatOwned");
+        redHatBought = PlayerPrefs.GetInt("redHatOwned");
+        greenHatBought = PlayerPrefs.GetInt("greenHatOwned");
+        whiteHatBought = PlayerPrefs.GetInt("whiteHatOwned");
     }
 
     void Update()
@@ -69,7 +83,6 @@ public class ShopButtons : MonoBehaviour {
         if (currentpage == hatpage)
         {
             //Making everything in HatButtonController Gameobject true if you are on the hat page
-
             GreyHatImage.enabled = true;
             OrangeHatImage.enabled = true;
             RedHatImage.enabled = true;
@@ -133,7 +146,63 @@ public class ShopButtons : MonoBehaviour {
             WantToBuy.SetActive(false);
             BuyConfirm.SetActive(false);
         }
-       
+
+        //Checks if current page is bobs page
+       if (currentpage == bobspage)
+        {
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == true || greyHatBought == 1)
+            {
+                //Shows the image of grey hat on bobspage if you have bought it
+                GreyHatImage.enabled = true;
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == false || greyHatBought == 0)
+            {
+                //Doesn't show the image of grey hat on bobspage if you haven't bought it
+                GreyHatImage.enabled = false;
+            }
+
+            if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned == true || orangeHatBought == 1)
+            {
+                OrangeHatImage.enabled = true;
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned == false || orangeHatBought == 0)
+            {
+                OrangeHatImage.enabled = false;
+            }
+
+            if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned == true || redHatBought == 1)
+            {
+                RedHatImage.enabled = true;
+            }
+
+            else if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned == false || redHatBought == 0)
+            {
+                RedHatImage.enabled = false;
+            }
+
+            if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned == true || greenHatBought == 1)
+            {
+                GreenHatImage.enabled = true;
+            }
+
+            else if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned == false || greenHatBought == 0)
+            {
+                GreenHatImage.enabled = false;
+            }
+
+            if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned == true || whiteHatBought == 1)
+            {
+                WhiteHatImage.enabled = true;
+            }
+
+            else if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned == false || whiteHatBought == 0)
+            {
+                WhiteHatImage.enabled = false;
+            }
+        }
+
         if (shopbook.GetComponent<Image>().enabled == false)
         {
             Bobbutton.GetComponent<Image>().enabled = false;
@@ -146,6 +215,7 @@ public class ShopButtons : MonoBehaviour {
             Cartbutton.GetComponent<Image>().enabled = true;
             MenuButton.GetComponent<Image>().enabled = true;
         }
+
         currentpage = GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage;
         lastpage = GameObject.Find("BookLastPage").GetComponent<LastPageControl>().lastpage;
     }
