@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DropItem : MonoBehaviour {
+public class DropItem : MonoBehaviour
+{
 
 	protected Rigidbody2D rgb2D;
 	protected BoxCollider2D itemColl;
@@ -29,12 +30,19 @@ public class DropItem : MonoBehaviour {
         }
         
 
-        if (transform.position.y <= 8f) {
+        if (transform.position.y <= 8f)
+        {
 			itemColl.isTrigger = false;
 		}
-		if (transform.position.y <= destPointY) {
-			Points.breakingPoints++;
-			Destroy (gameObject);
+		if (transform.position.y <= destPointY)
+        {
+            //if (TimerScript.timeRunOut != true || TimerScript.Lose != true)
+            //{
+                Points.breakingPoints++;
+            //}		//Yritys estää rikkinäisten esineiden lisääminen pelin päättyessä voittoon tai häviöön, mutta jostain syystä ei toimi.
+
+            Destroy(gameObject);
+            Debug.Log("Tuusannuuska");
 		}
 	}
 

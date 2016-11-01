@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Points : MonoBehaviour {
-
+public class Points : MonoBehaviour
+{
 	static public int breakingPoints = 0;
 	static public int breakingLimit;
 	public UI uiScript;
@@ -24,8 +24,10 @@ public class Points : MonoBehaviour {
 	{
 		ScoreCalculator ();
 
-		if (breakingPoints == breakingLimit) {
-			if (GOPOn == false) {
+		if (breakingPoints == breakingLimit)
+        {
+			if (GOPOn == false)
+            {
 				uiScript.TextSwitcher (false);
 				uiScript.GameOverPanelToggle ();
 				GOPOn = true;
