@@ -47,11 +47,12 @@ public class Catcher : MonoBehaviour {
 	{
 		if (largesize == false)
         {
+            Debug.Log("Isonnettu");
             normalscaleX = transform.localScale.x;
 			normalscaleY = transform.localScale.y;
-			transform.localScale = new Vector2 (normalscaleX + 0.3f, normalscaleY + 0.2f);
+			transform.localScale = new Vector2 (normalscaleX + 0.6f, normalscaleY + 0.4f);
 			largesize = true;
-			Invoke ("Normalsize", 5f);
+			Invoke ("Normalsize", 3f);
 		}
         
         

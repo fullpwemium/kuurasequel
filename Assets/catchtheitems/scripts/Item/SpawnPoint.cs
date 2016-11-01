@@ -9,11 +9,12 @@ public class SpawnPoint : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		col = gameObject.GetComponent<CircleCollider2D> ();	
+		col = gameObject.GetComponent<CircleCollider2D> ();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 	
 	}
 
