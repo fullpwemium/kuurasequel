@@ -72,6 +72,7 @@ public class ShopButtons : MonoBehaviour {
         jacketpage=GameObject.Find("BookButton").GetComponent<BookButtonControl>().jacketpage-1;
         hatpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().hatpage - 1;
 
+        //---------------------------------------------------------------------------------------------------------------------------------------
         //Compares the current page to hat page
         if (currentpage == hatpage)
         {
@@ -139,6 +140,7 @@ public class ShopButtons : MonoBehaviour {
             WantToBuy.SetActive(false);
             BuyConfirm.SetActive(false);
         }
+        //---------------------------------------------------------------------------------------------------------------------------------------
 
         //Checks if current page is bobs page
        if (currentpage == bobspage)
@@ -203,6 +205,7 @@ public class ShopButtons : MonoBehaviour {
                 WhiteHatImage.enabled = false;
             }
         }
+        //---------------------------------------------------------------------------------------------------------------------------------------
 
         if (shopbook.GetComponent<Image>().enabled == false)
         {
@@ -214,6 +217,7 @@ public class ShopButtons : MonoBehaviour {
             Bobbutton.GetComponent<Image>().enabled = true;
             MenuButton.GetComponent<Image>().enabled = true;
         }
+        //---------------------------------------------------------------------------------------------------------------------------------------
 
         currentpage = GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage;
         lastpage = GameObject.Find("BookLastPage").GetComponent<LastPageControl>().lastpage;
