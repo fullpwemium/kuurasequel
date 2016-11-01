@@ -140,6 +140,7 @@ public class UI : MonoBehaviour
             TimerScript.Lose = true;
             //StartCoroutine("slowDown");
             endText.text = "You Lost";
+            Debug.Log("Hävisit");
             StartLerping();
             destination = new Vector3(0, 9, 0);
             Debug.Log(destination);

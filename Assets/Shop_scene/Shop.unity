@@ -2065,7 +2065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &499815227
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7816,20 +7816,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BobButton: {fileID: 888589373}
-  CartButton: {fileID: 499815228}
   BookButton: {fileID: 1739996784}
   BackButton: {fileID: 1897301431}
   MenuButton: {fileID: 82471331}
   sceneToLoad: 0
   currentpage: 0
   bobspage: 0
-  cartpage: 0
   menupage: 0
   hatpage: 0
   jacketpage: 0
   Bobbutton: {fileID: 888589371}
   shopbook: {fileID: 1090809106}
-  Cartbutton: {fileID: 499815226}
   Menubutton: {fileID: 82471329}
   NotEnoughDust: {fileID: 1881941363}
   WantToBuy: {fileID: 793598953}

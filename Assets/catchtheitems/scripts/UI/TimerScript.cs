@@ -25,7 +25,7 @@ public class TimerScript : MonoBehaviour {
 		addTimeValue = GameManager.extraTime;
 		time = time + addTimeValue;
 		timeLeft = time;
-        timeRunOut = false;
+        
         //timeLeft = (time * (ShelfGameManager.manager.currentLevel + 1))/2f;
     }
 	
@@ -35,6 +35,7 @@ public class TimerScript : MonoBehaviour {
 		
 		if (timeLeft > 0)
         {
+            timeRunOut = false;
             if (Lose == false)
             {
                 timeLeft -= Time.deltaTime;
@@ -57,6 +58,7 @@ public class TimerScript : MonoBehaviour {
 			if (GOPOn == false)
             {
                 Win = true;
+                Debug.Log("Voitit");
                 //Lose = false;
 				sceneUi.GameOverPanelToggle ();
 				sceneUi.TextSwitcher (true);

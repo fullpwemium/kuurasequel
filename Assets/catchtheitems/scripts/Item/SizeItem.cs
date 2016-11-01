@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SizeItem : DropItem {
+public class SizeItem : DropItem
+{
 
 	private Catcher bucketScript;
 
@@ -16,7 +17,7 @@ public class SizeItem : DropItem {
         //if (transform.position.y <= ShelfGameManager.destroyPoint.position.y) {
         if (transform.position.y <= 0.0F)
         {
-            Points.breakingPoints++;
+            //Points.breakingPoints++;
             Destroy (gameObject);
 		}
 	}
