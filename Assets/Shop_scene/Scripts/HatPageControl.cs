@@ -134,6 +134,7 @@ public class HatPageControl : MonoBehaviour
     void Update()
     {
         dustAmount = GameObject.Find("ShopBook").GetComponent<DustController>().DustAmount;
+        //--------------------------------------------------------------------------------------------------------------------------
                
         //checks if you own the grey hat and then you cannot buy it anymore
         if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == true || greyHatBought == 1 )
@@ -213,9 +214,10 @@ public class HatPageControl : MonoBehaviour
             WhiteHatPrice.SetActive(true);
             GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsWhiteHat = false;
         }
-
+        //--------------------------------------------------------------------------------------------------------------------------
     }
 
+//--------------------------------------------------------------------------------------------------------------------------
     void BuyGreyHat()
     {
         //Removes the listeners that aren't needed
@@ -272,6 +274,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.GetComponent<Image>().enabled = false;
         }
     }
+ //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyOrangeHat()
     {
@@ -328,6 +331,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.GetComponent<Image>().enabled = false;
         }
     }
+//--------------------------------------------------------------------------------------------------------------------------
 
     void BuyRedHat()
     {
@@ -384,6 +388,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.GetComponent<Image>().enabled = false;
         }
     }
+//--------------------------------------------------------------------------------------------------------------------------
 
     void BuyGreenHat()
     {
@@ -440,6 +445,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.GetComponent<Image>().enabled = false;
         }
     }
+//--------------------------------------------------------------------------------------------------------------------------
 
     void BuyWhiteHat()
     {
@@ -496,6 +502,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.GetComponent<Image>().enabled = false;
         }
     }
+ //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyGreyHatTrue()
     {
@@ -550,6 +557,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.enabled = false;
         noBuyButton.GetComponent<Image>().enabled = false;
     }
+//--------------------------------------------------------------------------------------------------------------------------
 
     void BuyOrangeHatTrue()
     {
@@ -603,6 +611,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.enabled = false;
         noBuyButton.GetComponent<Image>().enabled = false;
     }
+//--------------------------------------------------------------------------------------------------------------------------
 
     void BuyRedHatTrue()
     {
@@ -655,6 +664,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.enabled = false;
         noBuyButton.GetComponent<Image>().enabled = false;
     }
+//--------------------------------------------------------------------------------------------------------------------------
 
     void BuyGreenHatTrue()
     {
@@ -707,6 +717,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.enabled = false;
         noBuyButton.GetComponent<Image>().enabled = false;
     }
+//--------------------------------------------------------------------------------------------------------------------------
 
     void BuyWhiteHatTrue()
     {
@@ -759,6 +770,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.enabled = false;
         noBuyButton.GetComponent<Image>().enabled = false;
     }
+ //--------------------------------------------------------------------------------------------------------------------------
 }
 
 

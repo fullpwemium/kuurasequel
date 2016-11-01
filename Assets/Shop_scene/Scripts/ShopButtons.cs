@@ -38,6 +38,12 @@ public class ShopButtons : MonoBehaviour {
     public Image GreyHatPriceImage, OrangeHatPriceImage, RedHatPriceImage, GreenHatPriceImage, WhiteHatPriceImage;
     public Text GreyHatPriceText, OrangeHatPriceText, RedHatPriceText, GreenHatPriceText, WhiteHatPriceText;
 
+    public Button GreyJacket, OrangeJacket, RedJacket, GreenJacket, WhiteJacket;
+    public Image GreyJacketImage, OrangeJacketImage, RedJacketImage, GreenJacketImage, WhiteJacketImage;
+    public Image GreyJacketOwned, OrangeJacketOwned, RedJacketOwned, GreenJacketOwned, WhiteJacketOwned;
+    public Image GreyJacketPriceImage, OrangeJacketPriceImage, RedJacketPriceImage, GreenJacketPriceImage, WhiteJacketPriceImage;
+    public Text GreyJacketPriceText, OrangeJacketPriceText, RedJacketPriceText, GreenJacketPriceText, WhiteJacketPriceText;
+
     // Use this for initialization
     void Start()
     {
@@ -142,8 +148,76 @@ public class ShopButtons : MonoBehaviour {
         }
         //---------------------------------------------------------------------------------------------------------------------------------------
 
+        if (currentpage == jacketpage)
+        {
+            //Making everything in jacketpage control true if you are on it's page
+            GreyJacketImage.enabled = true;
+            OrangeJacketImage.enabled = true;
+            RedJacketImage.enabled = true;
+            GreenJacketImage.enabled = true;
+            WhiteJacketImage.enabled = true;
+
+            GreyJacketPriceImage.enabled = true;
+            OrangeJacketPriceImage.enabled = true;
+            RedJacketPriceImage.enabled = true;
+            GreenJacketPriceImage.enabled = true;
+            WhiteJacketPriceImage.enabled = true;
+
+            GreyJacketPriceText.enabled = true;
+            OrangeJacketPriceText.enabled = true;
+            RedJacketPriceText.enabled = true;
+            GreenJacketPriceText.enabled = true;
+            WhiteJacketPriceText.enabled = true;
+
+            //Making if it's possible to buy a jacket true
+            NotEnoughDust.SetActive(true);
+            WhiteBackground.SetActive(true);
+            WantToBuy.SetActive(true);
+            BuyConfirm.SetActive(true);
+        }
+        else if (currentpage != jacketpage)
+        {
+            //Making everything false if you aren't on the jacket page
+            GreyJacket.enabled = false;
+            OrangeJacket.enabled = false;
+            RedJacket.enabled = false;
+            GreenJacket.enabled = false;
+            WhiteJacket.enabled = false;
+
+            GreyJacketImage.enabled = false;
+            OrangeJacketImage.enabled = false;
+            RedJacketImage.enabled = false;
+            GreenJacketImage.enabled = false;
+            WhiteJacketImage.enabled = false;
+
+            GreyJacketOwned.enabled = false;
+            OrangeJacketOwned.enabled = false;
+            RedJacketOwned.enabled = false;
+            GreenJacketOwned.enabled = false;
+            WhiteJacketOwned.enabled = false;
+
+            GreyJacketPriceImage.enabled = false;
+            OrangeJacketPriceImage.enabled = false;
+            RedJacketPriceImage.enabled = false;
+            GreenJacketPriceImage.enabled = false;
+            WhiteJacketPriceImage.enabled = false;
+
+            GreyJacketPriceText.enabled = false;
+            OrangeJacketPriceText.enabled = false;
+            RedJacketPriceText.enabled = false;
+            GreenJacketPriceText.enabled = false;
+            WhiteJacketPriceText.enabled = false;
+
+            //Making if it's possible to buy a jacket false
+            NotEnoughDust.SetActive(false);
+            WhiteBackground.SetActive(false);
+            WantToBuy.SetActive(false);
+            BuyConfirm.SetActive(false);
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------
+
         //Checks if current page is bobs page
-       if (currentpage == bobspage)
+        if (currentpage == bobspage)
         {
             if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == true || greyHatBought == 1)
             {
