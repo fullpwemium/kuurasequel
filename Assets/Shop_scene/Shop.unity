@@ -3568,8 +3568,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -68.311005, y: 189.35}
-  m_SizeDelta: {x: 7.9, y: 11.586}
+  m_AnchoredPosition: {x: -53.8, y: 189.35}
+  m_SizeDelta: {x: 32.8, y: 11.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &833232106
 MonoBehaviour:
@@ -5167,6 +5167,7 @@ GameObject:
   - 222: {fileID: 1105460734}
   - 114: {fileID: 1105460733}
   - 114: {fileID: 1105460732}
+  - 114: {fileID: 1105460735}
   m_Layer: 5
   m_Name: JacketPageControl
   m_TagString: Untagged
@@ -5281,6 +5282,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1105460730}
+--- !u!114 &1105460735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1105460730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d057463492b03a48a6ecfe5db447da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1116391298
 GameObject:
   m_ObjectHideFlags: 0
@@ -8754,8 +8766,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 337.81, y: 189.84}
-  m_SizeDelta: {x: 8, y: 10.746}
+  m_AnchoredPosition: {x: 346.6, y: 189.84}
+  m_SizeDelta: {x: 23, y: 10.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1876846318
 MonoBehaviour:
@@ -9523,6 +9535,31 @@ MonoBehaviour:
   RedHatPriceText: {fileID: 1501187153}
   GreenHatPriceText: {fileID: 1456128170}
   WhiteHatPriceText: {fileID: 1084516217}
+  GreyJacket: {fileID: 499786437}
+  OrangeJacket: {fileID: 998039851}
+  RedJacket: {fileID: 1475924107}
+  GreenJacket: {fileID: 1275885225}
+  WhiteJacket: {fileID: 1458161562}
+  GreyJacketImage: {fileID: 499786438}
+  OrangeJacketImage: {fileID: 998039852}
+  RedJacketImage: {fileID: 1475924108}
+  GreenJacketImage: {fileID: 1275885226}
+  WhiteJacketImage: {fileID: 1458161563}
+  GreyJacketOwned: {fileID: 973903931}
+  OrangeJacketOwned: {fileID: 1687648912}
+  RedJacketOwned: {fileID: 1015412554}
+  GreenJacketOwned: {fileID: 617647637}
+  WhiteJacketOwned: {fileID: 337202080}
+  GreyJacketPriceImage: {fileID: 2116450230}
+  OrangeJacketPriceImage: {fileID: 1672658929}
+  RedJacketPriceImage: {fileID: 451552091}
+  GreenJacketPriceImage: {fileID: 599338859}
+  WhiteJacketPriceImage: {fileID: 1129855277}
+  GreyJacketPriceText: {fileID: 899508919}
+  OrangeJacketPriceText: {fileID: 152701892}
+  RedJacketPriceText: {fileID: 410636318}
+  GreenJacketPriceText: {fileID: 715602064}
+  WhiteJacketPriceText: {fileID: 1132396692}
 --- !u!1 &1957152622
 GameObject:
   m_ObjectHideFlags: 0
