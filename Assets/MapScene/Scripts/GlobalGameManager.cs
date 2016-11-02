@@ -17,6 +17,12 @@ public class GlobalGameManager : MonoBehaviour
     public bool GreenHatOwned;
     public bool WhiteHatOwned;
 
+    public bool GreyJacketOwned;
+    public bool OrangeJacketOwned;
+    public bool RedJacketOwned;
+    public bool GreenJacketOwned;
+    public bool WhiteJacketOwned;
+
     int currentGame;
     public List<int> completedGames;
 
@@ -285,6 +291,7 @@ public class GlobalGameManager : MonoBehaviour
     {
 
     }
+//---------------------------------------------------------------------------------------------
 
     //Makes owning a specific hat true or false
     public void ShopSaveGreyHatOwned(bool value)
@@ -315,5 +322,12 @@ public class GlobalGameManager : MonoBehaviour
     {
         WhiteHatOwned = value;
         PlayerPrefs.SetInt("whiteHatOwned", value ? 1 : 0);
+    }
+    //--------------------------------------------------------------------------------------------------------------------------------------------
+
+    public void ShopSaveGreyJacketOwned(bool value)
+    {
+        GreyJacketOwned = value;
+        PlayerPrefs.SetInt("greyJacketOwned", value ? 1 : 0);
     }
 }

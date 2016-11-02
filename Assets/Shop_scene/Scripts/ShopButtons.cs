@@ -75,7 +75,7 @@ public class ShopButtons : MonoBehaviour {
 
     void Update()
     {
-        jacketpage=GameObject.Find("BookButton").GetComponent<BookButtonControl>().jacketpage-1;
+        jacketpage=GameObject.Find("BookButton").GetComponent<BookButtonControl>().jacketpage - 2;
         hatpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().hatpage - 1;
 
         //---------------------------------------------------------------------------------------------------------------------------------------

@@ -5293,6 +5293,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d057463492b03a48a6ecfe5db447da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GreyJacket: {fileID: 499786437}
+  OrangeJacket: {fileID: 998039851}
+  RedJacket: {fileID: 1475924107}
+  GreenJacket: {fileID: 1275885225}
+  WhiteJacket: {fileID: 1458161562}
+  JacketControlButton: {fileID: 1105460732}
+  yesBuyButton: {fileID: 483260716}
+  noBuyButton: {fileID: 1319914856}
+  confirmText: {fileID: 265434398}
+  yesText: {fileID: 36259496}
+  noText: {fileID: 923540626}
+  buyConfirmButton: {fileID: 1738096076}
+  buyConfirm: {fileID: 1738096077}
+  background: {fileID: 793598955}
+  ownsGreyJacket: {fileID: 973903931}
+  ownsOrangeJacket: {fileID: 1687648912}
+  ownsRedJacket: {fileID: 1015412554}
+  ownsGreenJacket: {fileID: 617647637}
+  ownsWhiteJacket: {fileID: 337202080}
+  GreyJacketPrice: {fileID: 2116450228}
+  OrangeJacketPrice: {fileID: 1672658927}
+  RedJacketPrice: {fileID: 451552089}
+  GreenJacketPrice: {fileID: 599338857}
+  WhiteJacketPrice: {fileID: 1129855275}
+  ownsGreyJacketBool: 0
+  ownsOrangeJacketBool: 0
+  ownsRedJacketBool: 0
+  ownsGreenJacketBool: 0
+  ownsWhiteJacketBool: 0
+  buyGreyJacket: 0
+  buyOrangeJacket: 0
+  buyRedJacket: 0
+  buyGreenJacket: 0
+  buyWhiteJacket: 0
+  dustAmount: 0
 --- !u!1 &1116391298
 GameObject:
   m_ObjectHideFlags: 0
