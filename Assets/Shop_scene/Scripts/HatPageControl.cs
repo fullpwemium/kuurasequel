@@ -94,7 +94,7 @@ public class HatPageControl : MonoBehaviour
         HatControlButton.enabled = false;
         HatControlButton.GetComponent<Image>().enabled = false;
 
-        //Makes the buttons disappear
+        //Makes the buttons appear
         GreyHat.enabled = true;
         GreyHat.GetComponent<Image>().enabled = true;
 
@@ -129,7 +129,7 @@ public class HatPageControl : MonoBehaviour
         greenHatBought = PlayerPrefs.GetInt("greenHatOwned");
         whiteHatBought = PlayerPrefs.GetInt("whiteHatOwned");
     }
-
+//--------------------------------------------------------------------------------------------------------------------------
     // Update is called once per frame
     void Update()
     {
