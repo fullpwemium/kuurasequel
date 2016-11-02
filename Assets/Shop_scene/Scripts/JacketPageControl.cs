@@ -91,18 +91,16 @@ public class JacketPageControl : MonoBehaviour {
 
         if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned == true || greyJacketBought == 1)
         {
+            ownsGreyJacket.enabled = true;
             GreyJacket.enabled = false;
             GreyJacketPrice.SetActive(false);
-
-            ownsGreyJacket.enabled = true;
-            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned = true;
+            // GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned = true;
         }
-        else if (ownsGreyJacketBool == false || greyJacketBought != 1)
+        else if (ownsGreyJacketBool == false || greyJacketBought == 0)
         {
-            GreyJacket.enabled = true;
-            GreyJacketPrice.SetActive(true);
-
             ownsGreyJacket.enabled = false;
+            GreyJacket.enabled = true;
+            GreyJacketPrice.SetActive(true);            
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned = false;
         }
 
@@ -111,7 +109,7 @@ public class JacketPageControl : MonoBehaviour {
             OrangeJacket.enabled = false;
             OrangeJacketPrice.SetActive(false);
 
-            ownsGreyJacket.enabled = true;
+            ownsOrangeJacket.enabled = true;
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeJacketOwned = true;
         }
         else if (ownsOrangeJacketBool == false || orangeJacketBought != 1)
@@ -119,7 +117,7 @@ public class JacketPageControl : MonoBehaviour {
             OrangeJacket.enabled = true;
             OrangeJacketPrice.SetActive(true);
 
-            ownsGreyJacket.enabled = false;
+            ownsOrangeJacket.enabled = false;
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeJacketOwned = false;
         }
 
@@ -237,80 +235,512 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyOrangeJacket()
     {
+        //Removes the listeners that aren't needed
+        yesBuyButton.onClick.RemoveAllListeners();
+        noBuyButton.onClick.RemoveAllListeners();
+
+        //adding the right listeners for yes and no buttons
+        yesBuyButton.onClick.AddListener(BuyOrangeJacketTrue);
+        noBuyButton.onClick.AddListener(BuyOrangeJacketFalse);
+
+        //disables the confirmation text from buying jackets
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+
+        //Checks how much dust the player has and then if it has enough dust, the item will become buyable
+        if (dustAmount >= jacketPrice)
+        {
+            confirmText.enabled = true;
+            yesText.enabled = true;
+            noText.enabled = true;
+
+            yesBuyButton.enabled = true;
+            yesBuyButton.GetComponent<Image>().enabled = true;
+
+            background.GetComponent<Image>().enabled = true;
+
+            noBuyButton.enabled = true;
+            noBuyButton.GetComponent<Image>().enabled = true;
+        }
+        //tells to you if you dont have enough dust
+        else if (dustAmount < jacketPrice)
+        {
+            Debug.Log("You don't have enough magic dust");
+            GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+        }
         Debug.Log("OrangeJacket");
     }
 //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyRedJacket()
     {
+        //Removes the listeners that aren't needed
+        yesBuyButton.onClick.RemoveAllListeners();
+        noBuyButton.onClick.RemoveAllListeners();
+
+        //adding the right listeners for yes and no buttons
+        yesBuyButton.onClick.AddListener(BuyRedJacketTrue);
+        noBuyButton.onClick.AddListener(BuyRedJacketFalse);
+
+        //disables the confirmation text from buying jackets
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+
+        //Checks how much dust the player has and then if it has enough dust, the item will become buyable
+        if (dustAmount >= jacketPrice)
+        {
+            confirmText.enabled = true;
+            yesText.enabled = true;
+            noText.enabled = true;
+
+            yesBuyButton.enabled = true;
+            yesBuyButton.GetComponent<Image>().enabled = true;
+
+            background.GetComponent<Image>().enabled = true;
+
+            noBuyButton.enabled = true;
+            noBuyButton.GetComponent<Image>().enabled = true;
+        }
+        //tells to you if you dont have enough dust
+        else if (dustAmount < jacketPrice)
+        {
+            Debug.Log("You don't have enough magic dust");
+            GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+        }
         Debug.Log("RedJacket");
     }
 //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyGreenJacket()
     {
+        //Removes the listeners that aren't needed
+        yesBuyButton.onClick.RemoveAllListeners();
+        noBuyButton.onClick.RemoveAllListeners();
+
+        //adding the right listeners for yes and no buttons
+        yesBuyButton.onClick.AddListener(BuyGreenJacketTrue);
+        noBuyButton.onClick.AddListener(BuyGreenJacketFalse);
+
+        //disables the confirmation text from buying jackets
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+
+        //Checks how much dust the player has and then if it has enough dust, the item will become buyable
+        if (dustAmount >= jacketPrice)
+        {
+            confirmText.enabled = true;
+            yesText.enabled = true;
+            noText.enabled = true;
+
+            yesBuyButton.enabled = true;
+            yesBuyButton.GetComponent<Image>().enabled = true;
+
+            background.GetComponent<Image>().enabled = true;
+
+            noBuyButton.enabled = true;
+            noBuyButton.GetComponent<Image>().enabled = true;
+        }
+        //tells to you if you dont have enough dust
+        else if (dustAmount < jacketPrice)
+        {
+            Debug.Log("You don't have enough magic dust");
+            GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+        }
         Debug.Log("GreenJacket");
     }
  //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyWhiteJacket()
     {
+        //Removes the listeners that aren't needed
+        yesBuyButton.onClick.RemoveAllListeners();
+        noBuyButton.onClick.RemoveAllListeners();
+
+        //adding the right listeners for yes and no buttons
+        yesBuyButton.onClick.AddListener(BuyWhiteJacketTrue);
+        noBuyButton.onClick.AddListener(BuyWhiteJacketFalse);
+
+        //disables the confirmation text from buying jackets
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+
+        //Checks how much dust the player has and then if it has enough dust, the item will become buyable
+        if (dustAmount >= jacketPrice)
+        {
+            confirmText.enabled = true;
+            yesText.enabled = true;
+            noText.enabled = true;
+
+            yesBuyButton.enabled = true;
+            yesBuyButton.GetComponent<Image>().enabled = true;
+
+            background.GetComponent<Image>().enabled = true;
+
+            noBuyButton.enabled = true;
+            noBuyButton.GetComponent<Image>().enabled = true;
+        }
+        //tells to you if you dont have enough dust
+        else if (dustAmount < jacketPrice)
+        {
+            Debug.Log("You don't have enough magic dust");
+            GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+        }
         Debug.Log("WhiteJacket");
     }
 //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyGreyJacketTrue()
     {
+        Debug.Log("BuyGreyJacketTrue");
+        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreyJacketOwned(true);
 
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned == true && greyJacketCounter == 0)
+        {
+            greyJacketCounter++;
+
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+
+            GreyJacket.enabled = false;
+            Debug.Log("You have bought a Greyjacket");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+
+            GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+
+            if (dustAmount < 1)
+            {
+                dustAmount = 0;
+                GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+            }
+        }
     }
 
     void BuyGreyJacketFalse()
     {
+        Debug.Log("BuyGreyJacketFalse");
+        ownsGreyJacketBool = false;
+        buyGreyJacket = false;
 
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
     }
 //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyOrangeJacketTrue()
     {
+        Debug.Log("BuyOrangeJacketTrue");
+        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveOrangeJacketOwned(true);
 
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeJacketOwned == true && orangeJacketCounter == 0)
+        {
+            orangeJacketCounter++;
+
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+
+            OrangeJacket.enabled = false;
+            Debug.Log("You have bought a Orangejacket");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+
+            GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+
+            if (dustAmount < 1)
+            {
+                dustAmount = 0;
+                GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+            }
+        }
     }
 
     void BuyOrangeJacketFalse()
     {
+        Debug.Log("BuyOrangeJacketFalse");
+        ownsOrangeJacketBool = false;
+        buyOrangeJacket = false;
 
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
     }
 //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyRedJacketTrue()
     {
+        Debug.Log("BuyRedJacketTrue");
+        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveRedJacketOwned(true);
 
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedJacketOwned == true && redJacketCounter == 0)
+        {
+            redJacketCounter++;
+
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+
+            RedJacket.enabled = false;
+            Debug.Log("You have bought a Redjacket");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+
+            GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+
+            if (dustAmount < 1)
+            {
+                dustAmount = 0;
+                GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+            }
+        }
     }
 
     void BuyRedJacketFalse()
     {
+        Debug.Log("BuyRedJacketFalse");
+        ownsRedJacketBool = false;
+        buyRedJacket = false;
 
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
     }
 //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyGreenJacketTrue()
     {
+        Debug.Log("BuyGreenJacketTrue");
+        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreenJacketOwned(true);
 
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenJacketOwned == true && greenJacketCounter == 0)
+        {
+            greenJacketCounter++;
+
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+
+            GreenJacket.enabled = false;
+            Debug.Log("You have bought a Greenjacket");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+
+            GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+
+            if (dustAmount < 1)
+            {
+                dustAmount = 0;
+                GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+            }
+        }
     }
 
     void BuyGreenJacketFalse()
     {
+        Debug.Log("BuyGreenJacketFalse");
+        ownsGreenJacketBool = false;
+        buyGreenJacket = false;
 
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
     }
 //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyWhiteJacketTrue()
     {
+        Debug.Log("BuyWhiteJacketTrue");
+        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveWhiteJacketOwned(true);
 
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned == true && whiteJacketCounter == 0)
+        {
+            whiteJacketCounter++;
+
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+
+            WhiteJacket.enabled = false;
+            Debug.Log("You have bought a Whitejacket");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+
+            GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+
+            if (dustAmount < 1)
+            {
+                dustAmount = 0;
+                GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+            }
+        }
     }
 
     void BuyWhiteJacketFalse()
     {
+        Debug.Log("BuyWhiteJacketFalse");
+        ownsWhiteJacketBool = false;
+        buyWhiteJacket = false;
 
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
     }
 //--------------------------------------------------------------------------------------------------------------------------
 }

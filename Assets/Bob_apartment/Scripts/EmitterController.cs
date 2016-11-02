@@ -14,11 +14,9 @@ public class EmitterController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        DustAmount = PlayerPrefs.GetInt("Magic Dust ");
         sc1 = dustAmount.GetComponent<DustController>();
         sc1.UpdateDust();
-
-        
-
     }
     void OnEnable()
     {
@@ -35,7 +33,7 @@ public class EmitterController : MonoBehaviour {
             ParticleSystem em = GetComponent<ParticleSystem>();
             em.Stop();
             em.Play();
-            DustAmount = GlobalManager.MagicDust;
+            DustAmount = PlayerPrefs.GetInt("Magic Dust ");
             sc1.UpdateDust();          
         }
         else

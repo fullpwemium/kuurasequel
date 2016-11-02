@@ -535,7 +535,6 @@ public class HatPageControl : MonoBehaviour
                 dustAmount = 0;
                 GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
             }
-
         }
     }
 

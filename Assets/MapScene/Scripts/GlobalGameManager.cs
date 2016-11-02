@@ -330,4 +330,28 @@ public class GlobalGameManager : MonoBehaviour
         GreyJacketOwned = value;
         PlayerPrefs.SetInt("greyJacketOwned", value ? 1 : 0);
     }
+
+    public void ShopSaveOrangeJacketOwned(bool value)
+    {
+        OrangeJacketOwned = value;
+        PlayerPrefs.SetInt("orangeJacketOwned", value ? 1 : 0);
+    }
+
+    public void ShopSaveRedJacketOwned(bool value)
+    {
+        RedJacketOwned = value;
+        PlayerPrefs.SetInt("redJacketOwned", value ? 1 : 0);
+    }
+
+    public void ShopSaveGreenJacketOwned(bool value)
+    {
+        GreenJacketOwned = value;
+        PlayerPrefs.SetInt("GreenJacketOwned", value ? 1 : 0);
+    }
+
+    public void ShopSaveWhiteJacketOwned(bool value)
+    {
+        WhiteJacketOwned = value;
+        PlayerPrefs.SetInt("whiteJacketOwned", value ? 1 : 0);
+    }
 }
