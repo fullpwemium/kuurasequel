@@ -17,6 +17,12 @@ public class ShopButtons : MonoBehaviour {
     int greenHatBought;
     int whiteHatBought;
 
+    int greyJacketBought;
+    int orangeJacketBought;
+    int redJacketBought;
+    int greenJacketBought;
+    int whiteJacketBought;
+
     public int sceneToLoad;
 
     int lastpage;
@@ -71,6 +77,13 @@ public class ShopButtons : MonoBehaviour {
         redHatBought = PlayerPrefs.GetInt("redHatOwned");
         greenHatBought = PlayerPrefs.GetInt("greenHatOwned");
         whiteHatBought = PlayerPrefs.GetInt("whiteHatOwned");
+
+        //Gets the value of the jacket bought from the hard drive
+        greyJacketBought = PlayerPrefs.GetInt("greyJacketOwned");
+        orangeJacketBought = PlayerPrefs.GetInt("orangeJacketOwned");
+        redJacketBought = PlayerPrefs.GetInt("redJacketOwned");
+        greenJacketBought = PlayerPrefs.GetInt("greenJacketOwned");
+        whiteJacketBought = PlayerPrefs.GetInt("whiteJacketOwned");
     }
 
     void Update()
@@ -156,6 +169,13 @@ public class ShopButtons : MonoBehaviour {
             RedJacketImage.enabled = true;
             GreenJacketImage.enabled = true;
             WhiteJacketImage.enabled = true;
+
+            GreyJacketImage.transform.position = new Vector2(-90f, 325f);
+            OrangeJacketImage.transform.position = new Vector2(-80f, 240f);
+            RedJacketImage.transform.position = new Vector2(-75f, 145f);
+            GreenJacketImage.transform.position = new Vector2(-65f, 35f);
+            WhiteJacketImage.transform.position = new Vector2(400f, 365f);
+
 
             GreyJacketPriceImage.enabled = true;
             OrangeJacketPriceImage.enabled = true;
@@ -279,6 +299,78 @@ public class ShopButtons : MonoBehaviour {
                 WhiteHatImage.enabled = false;
             }
         }
+
+        //---------------------------------------------------------------------------------------------------------------------------------------
+
+
+        if (currentpage == bobspage)
+        {
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned == true || greyJacketBought == 1)
+            {
+                //Shows the image of grey jacket on bobspage if you have bought it
+                GreyJacketImage.enabled = true;
+                GreyJacketImage.transform.position = new Vector2(10f, 330f);
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned == false || greyJacketBought == 0)
+            {
+                //Doesn't show the image of grey jacket on bobspage if you haven't bought it
+                GreyJacketImage.enabled = false;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeJacketOwned == true || orangeJacketBought == 1)
+            {
+                //Shows the image of orange jacket on bobspage if you have bought it
+                OrangeJacketImage.enabled = true;
+                OrangeJacketImage.transform.position = new Vector2(10f, 245f);
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeJacketOwned == false || orangeJacketBought == 0)
+            {
+                //Doesn't show the image of orange jacket on bobspage if you haven't bought it
+                OrangeJacketImage.enabled = false;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedJacketOwned == true || redJacketBought == 1)
+            {
+                //Shows the image of red jacket on bobspage if you have bought it
+                RedJacketImage.enabled = true;
+                RedJacketImage.transform.position = new Vector2(10f, 150f);
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedJacketOwned == false || redJacketBought == 0)
+            {
+                //Doesn't show the image of red jacket on bobspage if you haven't bought it
+                RedJacketImage.enabled = false;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenJacketOwned == true || greenJacketBought == 1)
+            {
+                //Shows the image of green jacket on bobspage if you have bought itä
+                GreenJacketImage.enabled = true;
+                GreenJacketImage.transform.position = new Vector2(10f, 50f);
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenJacketOwned == false || greenJacketBought == 0)
+            {
+                //Doesn't show the image of green jacket on bobspage if you haven't bought it
+                GreenJacketImage.enabled = false;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned == true || whiteJacketBought == 1)
+            {
+                //Shows the image of white jacket on bobspage if you have bought it
+                WhiteJacketImage.enabled = true;
+                WhiteJacketImage.transform.position = new Vector2(490f, 375f);
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned == false || whiteJacketBought == 0)
+            {
+                //Doesn't show the image of white jacket on bobspage if you haven't bought it
+                WhiteJacketImage.enabled = false;
+            }
+        }
+
         //---------------------------------------------------------------------------------------------------------------------------------------
 
         if (shopbook.GetComponent<Image>().enabled == false)

@@ -346,7 +346,7 @@ public class GlobalGameManager : MonoBehaviour
     public void ShopSaveGreenJacketOwned(bool value)
     {
         GreenJacketOwned = value;
-        PlayerPrefs.SetInt("GreenJacketOwned", value ? 1 : 0);
+        PlayerPrefs.SetInt("greenJacketOwned", value ? 1 : 0);
     }
 
     public void ShopSaveWhiteJacketOwned(bool value)
