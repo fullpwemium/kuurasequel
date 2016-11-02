@@ -6,9 +6,10 @@ public class EmitterController : MonoBehaviour {
 
     
     DustController sc1;
-   // public int scratchCounter;
+    // public int scratchCounter;
     // public int happinessCounter;
-    public int DustAmount = GlobalManager.MagicDust;
+    //public int DustAmount = GlobalManager.MagicDust;
+    public int DustAmount = GlobalGameManager.MagicDust;
     public Text dustAmount;
     public int timer;
     // Use this for initialization

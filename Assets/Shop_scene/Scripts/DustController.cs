@@ -10,7 +10,8 @@ public class DustController : MonoBehaviour {
     {
         //Updates amount of dust
         //DustAmount = GlobalManager.MagicDust;
-        DustAmount = GlobalGameManager.MagicDust;
+        //DustAmount = GlobalGameManager.MagicDust;
+        DustAmount = PlayerPrefs.GetInt("Magic Dust ");
         if (GameObject.FindGameObjectWithTag("DustAmount"))
             GameObject.FindGameObjectWithTag("DustAmount").GetComponent<Text>().text = DustAmount.ToString();
     }   
@@ -28,6 +29,7 @@ public class DustController : MonoBehaviour {
         DustAmount += value;
         //GlobalManager.MagicDust = DustAmount;
         GlobalGameManager.MagicDust = DustAmount;
+        PlayerPrefs.SetInt("Magic Dust ", DustAmount);
         Debug.Log(value + " dust has been added");
     }
 
@@ -37,6 +39,7 @@ public class DustController : MonoBehaviour {
         DustAmount -= value;
         //GlobalManager.MagicDust = DustAmount;
         GlobalGameManager.MagicDust = DustAmount;
+        //PlayerPrefs.SetInt("Magic Dust ", DustAmount);
         Debug.Log(value + " dust has been lost");
     }
 
@@ -44,7 +47,8 @@ public class DustController : MonoBehaviour {
     public void UpdateDust()
     {
         //DustAmount = GlobalManager.MagicDust;
-        DustAmount = GlobalGameManager.MagicDust;
+        //DustAmount = GlobalGameManager.MagicDust;
+        DustAmount = PlayerPrefs.GetInt("Magic Dust ");
         GameObject.FindGameObjectWithTag("DustAmount").GetComponent<Text>().text = DustAmount.ToString();
         PlayerPrefs.SetInt("Magic Dust ", DustAmount);
     }
