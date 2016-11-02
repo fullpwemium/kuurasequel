@@ -12,7 +12,8 @@ public class MoviePlayer : MonoBehaviour
         //GetComponent<Renderer>().material.mainTexture = movTexture;
         //movTexture.Play();
 
-        if (moviePlayed == false) {
+        if (moviePlayed == false)
+        {
 			Movieplayer (movPath);
 			Debug.Log ("Vilmi pyörinyt");
             Debug.Log("movPath = " + movPath);

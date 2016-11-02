@@ -37,7 +37,15 @@ public class Points : MonoBehaviour
 
 	void ScoreCalculator()
 	{
-        int leveli = GameManager.manager.currentLevel + 1;
-		itemText.text = "Level " + leveli + "\nBroken Items: " + breakingPoints + "/" + breakingLimit;
+        //if (GameObject.Find("GameManager"))   //Kun if-else-rivejä ei ole kommentoitu, niin Catchia voi pelata suoraan scenestä ilman että tarvii kulkea Map2:n kautta.
+        //{
+            int leveli = GameManager.manager.currentLevel + 1;
+            itemText.text = "Level " + leveli + "\nBroken Items: " + breakingPoints + "/" + breakingLimit;
+        //}
+        //else
+        //{
+        //    itemText.text = "Level " + "\nBroken Items: " + breakingPoints + "/" + breakingLimit;
+        //}
+        
 	}
 }

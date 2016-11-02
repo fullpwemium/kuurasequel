@@ -12,7 +12,10 @@ public class PowerUp : MonoBehaviour
     private PowerupManager manager;
     void Awake()
     {
-        manager = GameObject.Find("GameManager").GetComponent<PowerupManager>();
+        //if (GameObject.Find("GameManager"))
+        //{
+            manager = GameObject.Find("GameManager").GetComponent<PowerupManager>();
+        //}
     }
     void OnTriggerEnter2D(Collider2D other)
     {
