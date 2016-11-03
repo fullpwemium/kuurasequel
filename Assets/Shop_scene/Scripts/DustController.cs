@@ -41,6 +41,7 @@ public class DustController : MonoBehaviour {
         GlobalGameManager.MagicDust = DustAmount;
         //PlayerPrefs.SetInt("Magic Dust ", DustAmount);
         Debug.Log(value + " dust has been lost");
+        Debug.Log("Dust remain = " + DustAmount);
     }
 
     //updates the amount of dust text
