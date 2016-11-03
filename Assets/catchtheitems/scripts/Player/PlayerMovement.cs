@@ -23,12 +23,12 @@ public class PlayerMovement : MonoBehaviour {
     private Animator animator;
     bool moving;
     Vector2 wanhaPosition;
-
+    private AudioSource itemCatchSound;
 
 	// Use this for initialization
 	void Start () 
 	{
-
+        itemCatchSound = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 		rgb2D = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
@@ -184,6 +184,21 @@ public class PlayerMovement : MonoBehaviour {
 			gyroToggle = false;
 		}
 	}
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Dropped")
+        {
+            if (!itemCatchSound.isPlaying)
+            {
+                itemCatchSound.Play();
+            }
+
+        }
+
+
+    }
 
 
 }

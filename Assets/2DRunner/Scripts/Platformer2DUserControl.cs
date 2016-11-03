@@ -48,7 +48,7 @@ public class Platformer2DUserControl : MonoBehaviour
         if (!m_Crouch)
         {
             m_Crouch = Input.GetKeyDown(KeyCode.LeftControl);
-            crouchSound.Play();
+            //crouchSound.Play();
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
@@ -83,6 +83,7 @@ public class Platformer2DUserControl : MonoBehaviour
     }
     public void BeginCrouch()
     {
+        crouchSound.Play();
         m_Crouch = true;   
     }
     public void StopCrouch()
