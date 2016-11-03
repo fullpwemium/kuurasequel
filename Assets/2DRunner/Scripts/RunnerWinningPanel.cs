@@ -307,6 +307,8 @@ public class RunnerWinningPanel : MonoBehaviour
     void Score()        //Tähän määritellään tähtienansaitsemismetodi.
     {
         stars = 3;
+        Debug.Log("Runnerin tulos toistaiseksi aina kolme kissanpäätä.");
+        Debug.Log("Pitää keksiä jokin järkevä pistesysteemi.");
 
         //if (RunnerManager.score >= 90 && RunnerTimer.timeCountUp <= 50)   //Saadaan pisteitä kerättyjen kolikoiden sekä suoritusajan perusteella.
         //{

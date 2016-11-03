@@ -58,7 +58,8 @@ public class PlayerMovement : MonoBehaviour {
         else if (wanhaPosition.x == rgb2D.transform.position.x)
         {
             //spriteRenderer.sprite = spriteCenter;
-            animator.SetTrigger("BobEteen");
+            //animator.SetTrigger("BobEteen");
+            animator.SetTrigger("BobSeisoo");
         }
 
         wanhaPosition = rgb2D.transform.position;
