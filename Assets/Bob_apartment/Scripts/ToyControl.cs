@@ -83,13 +83,11 @@ public class ToyControl : MonoBehaviour {
                 Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
                 transform.position = curPosition;
         }
-
     }
 
     //Checks if the Happiness meter is triggered and if it is then the cat will be happier
     void OnTriggerStay2D(Collider2D other)
     {
-
         if (other.gameObject.tag == "HappinessMeter")
         {
             thetoy = GameObject.Find("CatHappiness");
@@ -103,6 +101,7 @@ public class ToyControl : MonoBehaviour {
             Destroy(gameObject);
             ItemControl.amountofToys--;
             GameObject.Find("CatHappiness").GetComponent<HappinessController>().CatPlayed();
+            PlayerPrefs.SetInt("LastMood", 3);
         }
     }
 }

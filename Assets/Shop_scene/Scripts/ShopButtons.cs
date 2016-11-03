@@ -170,6 +170,7 @@ public class ShopButtons : MonoBehaviour {
             GreenJacketImage.enabled = true;
             WhiteJacketImage.enabled = true;
 
+            //changes the positions of the jackets on the jacketpage 
             GreyJacketImage.transform.position = new Vector2(-90f, 325f);
             OrangeJacketImage.transform.position = new Vector2(-80f, 240f);
             RedJacketImage.transform.position = new Vector2(-75f, 145f);
@@ -309,6 +310,8 @@ public class ShopButtons : MonoBehaviour {
             {
                 //Shows the image of grey jacket on bobspage if you have bought it
                 GreyJacketImage.enabled = true;
+
+                //changes the positions of the grey jacket on bobspage
                 GreyJacketImage.transform.position = new Vector2(10f, 330f);
             }
 
@@ -322,6 +325,8 @@ public class ShopButtons : MonoBehaviour {
             {
                 //Shows the image of orange jacket on bobspage if you have bought it
                 OrangeJacketImage.enabled = true;
+
+                //changes the positions of the orange jacket on bobspage
                 OrangeJacketImage.transform.position = new Vector2(10f, 245f);
             }
 
@@ -335,6 +340,8 @@ public class ShopButtons : MonoBehaviour {
             {
                 //Shows the image of red jacket on bobspage if you have bought it
                 RedJacketImage.enabled = true;
+
+                //changes the positions of the red jacket on bobspage
                 RedJacketImage.transform.position = new Vector2(10f, 150f);
             }
 
@@ -348,6 +355,8 @@ public class ShopButtons : MonoBehaviour {
             {
                 //Shows the image of green jacket on bobspage if you have bought itä
                 GreenJacketImage.enabled = true;
+                
+                //changes the positions of the green jacket on bobspage
                 GreenJacketImage.transform.position = new Vector2(10f, 50f);
             }
 
@@ -361,6 +370,8 @@ public class ShopButtons : MonoBehaviour {
             {
                 //Shows the image of white jacket on bobspage if you have bought it
                 WhiteJacketImage.enabled = true;
+
+                //changes the positions of the white jacket on bobspage
                 WhiteJacketImage.transform.position = new Vector2(490f, 375f);
             }
 
