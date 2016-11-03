@@ -86,6 +86,7 @@ public class JacketPageControl : MonoBehaviour {
         ownsGreenJacketBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenJacketOwned;
         ownsWhiteJacketBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned;
 
+        //Gets the value of the jacket bought from the hard drive
         greyJacketBought = PlayerPrefs.GetInt("greyJacketOwned");
         orangeJacketBought = PlayerPrefs.GetInt("orangeJacketOwned");
         redJacketBought = PlayerPrefs.GetInt("redJacketOwned");
@@ -97,23 +98,27 @@ public class JacketPageControl : MonoBehaviour {
     {
         dustAmount = GameObject.Find("ShopBook").GetComponent<DustController>().DustAmount;
 
+        //cheks if you own the grey jacket
         if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned == true || greyJacketBought == 1)
         {
+            //disables the buttons and the price of the jacket
             ownsGreyJacket.enabled = true;
             GreyJacket.enabled = false;
             GreyJacketPrice.SetActive(false);
-            // GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned = true;
         }
         else if (ownsGreyJacketBool == false || greyJacketBought == 0)
         {
+            //activates the button and the price of the jacket
             ownsGreyJacket.enabled = false;
             GreyJacket.enabled = true;
             GreyJacketPrice.SetActive(true);            
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned = false;
         }
 
+        //cheks if you own the orange jacket
         if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeJacketOwned == true || orangeJacketBought == 1)
         {
+            //disables the buttons and the price of the jacket
             OrangeJacket.enabled = false;
             OrangeJacketPrice.SetActive(false);
 
@@ -122,6 +127,7 @@ public class JacketPageControl : MonoBehaviour {
         }
         else if (ownsOrangeJacketBool == false || orangeJacketBought == 0)
         {
+            //activates the button and the price of the jacket
             OrangeJacket.enabled = true;
             OrangeJacketPrice.SetActive(true);
 
@@ -129,8 +135,10 @@ public class JacketPageControl : MonoBehaviour {
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeJacketOwned = false;
         }
 
+        //cheks if you own the red jacket
         if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedJacketOwned == true || redJacketBought == 1)
         {
+            //disables the buttons and the price of the jacket
             RedJacket.enabled = false;
             RedJacketPrice.SetActive(false);
 
@@ -139,6 +147,7 @@ public class JacketPageControl : MonoBehaviour {
         }
         else if (ownsRedJacketBool == false || redJacketBought == 0)
         {
+            //activates the button and the price of the jacket
             RedJacket.enabled = true;
             RedJacketPrice.SetActive(true);
 
@@ -146,8 +155,10 @@ public class JacketPageControl : MonoBehaviour {
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedJacketOwned = false;
         }
 
+        //cheks if you own the green jacket
         if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenJacketOwned == true || greenJacketBought == 1)
         {
+            //disables the buttons and the price of the jacket
             GreenJacket.enabled = false;
             GreenJacketPrice.SetActive(false);
 
@@ -156,6 +167,7 @@ public class JacketPageControl : MonoBehaviour {
         }
         else if (ownsGreenJacketBool == false || greenJacketBought == 0)
         {
+            //activates the button and the price of the jacket
             GreenJacket.enabled = true;
             GreenJacketPrice.SetActive(true);
 
@@ -163,8 +175,10 @@ public class JacketPageControl : MonoBehaviour {
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenJacketOwned = false;
         }
 
+        //cheks if you own the white jacket
         if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned == true || whiteJacketBought == 1)
         {
+            //disables the buttons and the price of the jacket
             WhiteJacket.enabled = false;
             WhiteJacketPrice.SetActive(false);
 
@@ -173,6 +187,7 @@ public class JacketPageControl : MonoBehaviour {
         }
         else if (ownsWhiteJacketBool == false || whiteJacketBought == 0)
         {
+            //activates the button and the price of the jacket
             WhiteJacket.enabled = true;
             WhiteJacketPrice.SetActive(true);
 

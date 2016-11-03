@@ -3766,7 +3766,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000014022443808, guid: 1612edb8101797d4c900dab028d3070d, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1612edb8101797d4c900dab028d3070d, type: 2}
@@ -4092,7 +4092,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &1744568153
 MonoBehaviour:
