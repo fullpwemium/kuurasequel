@@ -32,6 +32,7 @@ public class ShopButtons : MonoBehaviour {
     public int menupage;
     public int hatpage;
     public int jacketpage;
+    public int catpage;
 
     public GameObject Bobbutton;
     public GameObject shopbook;
@@ -49,6 +50,12 @@ public class ShopButtons : MonoBehaviour {
     public Image GreyJacketOwned, OrangeJacketOwned, RedJacketOwned, GreenJacketOwned, WhiteJacketOwned;
     public Image GreyJacketPriceImage, OrangeJacketPriceImage, RedJacketPriceImage, GreenJacketPriceImage, WhiteJacketPriceImage;
     public Text GreyJacketPriceText, OrangeJacketPriceText, RedJacketPriceText, GreenJacketPriceText, WhiteJacketPriceText;
+
+    public Button CatFood, BallOYarn;
+    public Image CatFoodImage, BallOYarnImage;
+    public Image CatFoodPriceImage, BallOYarnPriceImage;
+    public Text CatFoodAmountText, BallOYarnAmountText, CatFoodPriceText, BallOYarnPriceText;
+
 
     // Use this for initialization
     void Start()
@@ -90,6 +97,7 @@ public class ShopButtons : MonoBehaviour {
     {
         jacketpage=GameObject.Find("BookButton").GetComponent<BookButtonControl>().jacketpage - 2;
         hatpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().hatpage - 1;
+        catpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().catItemsPage - 5;
 
         //---------------------------------------------------------------------------------------------------------------------------------------
         //Compares the current page to hat page
@@ -237,6 +245,56 @@ public class ShopButtons : MonoBehaviour {
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------
 
+        if (currentpage == catpage)
+        {
+            //Making everything in catpagecontrol true if you are on cat page
+            CatFood.enabled = true;
+            BallOYarn.enabled = true;
+
+            CatFoodImage.enabled = true;
+            BallOYarnImage.enabled = true;
+
+            CatFoodPriceImage.enabled = true;
+            BallOYarnPriceImage.enabled = true;
+
+            CatFoodPriceText.enabled = true;
+            BallOYarnPriceText.enabled = true;
+
+            CatFoodAmountText.enabled = true;
+            BallOYarnAmountText.enabled = true;
+
+            //Making if it's possible to buy cat items true
+            NotEnoughDust.SetActive(true);
+            WhiteBackground.SetActive(true);
+            WantToBuy.SetActive(true);
+            BuyConfirm.SetActive(true);
+        }
+        else if (currentpage != catpage)
+        {
+            //Making everything in catpagecontrol false if you aren't on cat page
+            CatFood.enabled = false;
+            BallOYarn.enabled = false;
+
+            CatFoodImage.enabled = false;
+            BallOYarnImage.enabled = false;
+
+            CatFoodPriceImage.enabled = false;
+            BallOYarnPriceImage.enabled = false;
+
+            CatFoodPriceText.enabled = false;
+            BallOYarnPriceText.enabled = false;
+
+            CatFoodAmountText.enabled = false;
+            BallOYarnAmountText.enabled = false;
+
+            //Making if it's possible to buy cat items false
+            NotEnoughDust.SetActive(false);
+            WhiteBackground.SetActive(false);
+            WantToBuy.SetActive(false);
+            BuyConfirm.SetActive(false);
+        }
+//------------------------------------------------------------------------------------------------------------------------------------
+
         //Checks if current page is bobs page
         if (currentpage == bobspage)
         {
@@ -302,8 +360,6 @@ public class ShopButtons : MonoBehaviour {
         }
 
         //---------------------------------------------------------------------------------------------------------------------------------------
-
-
         if (currentpage == bobspage)
         {
             if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned == true || greyJacketBought == 1)
