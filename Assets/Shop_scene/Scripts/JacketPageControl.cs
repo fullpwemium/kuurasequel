@@ -235,9 +235,9 @@ public class JacketPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        //tells to you if you dont have enough dust
         else if (dustAmount < jacketPrice)
         {
+            //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
             GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
             confirmText.enabled = false;
@@ -294,9 +294,9 @@ public class JacketPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        //tells to you if you dont have enough dust
         else if (dustAmount < jacketPrice)
         {
+            //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
             GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
             confirmText.enabled = false;
@@ -353,9 +353,9 @@ public class JacketPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        //tells to you if you dont have enough dust
         else if (dustAmount < jacketPrice)
         {
+            //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
             GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
             confirmText.enabled = false;
@@ -412,9 +412,9 @@ public class JacketPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        //tells to you if you dont have enough dust
         else if (dustAmount < jacketPrice)
         {
+            //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
             GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
             confirmText.enabled = false;
@@ -471,9 +471,9 @@ public class JacketPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        //tells to you if you dont have enough dust
         else if (dustAmount < jacketPrice)
         {
+            //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
             GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
             confirmText.enabled = false;
