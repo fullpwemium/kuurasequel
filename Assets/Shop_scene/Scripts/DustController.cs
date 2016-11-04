@@ -8,7 +8,6 @@ public class DustController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        //Updates amount of dust
         //DustAmount = GlobalManager.MagicDust;
         //DustAmount = GlobalGameManager.MagicDust;
         DustAmount = PlayerPrefs.GetInt("Magic Dust ");
@@ -20,7 +19,6 @@ public class DustController : MonoBehaviour {
     {
         if (DustAmount < 1)
             DustAmount = 0;
-        UpdateDust();
     }
 
     //adds dust
@@ -37,11 +35,12 @@ public class DustController : MonoBehaviour {
     public void LoseDust(int value)
     {
         DustAmount -= value;
-        //GlobalManager.MagicDust = DustAmount;
-        GlobalGameManager.MagicDust = DustAmount;
+        //GlobalManager.MagicDust = DustAmount;     
         //PlayerPrefs.SetInt("Magic Dust ", DustAmount);
         Debug.Log(value + " dust has been lost");
         Debug.Log("Dust remain = " + DustAmount);
+        GlobalGameManager.MagicDust = DustAmount;
+        PlayerPrefs.SetInt("Magic Dust ", DustAmount);
     }
 
     //updates the amount of dust text

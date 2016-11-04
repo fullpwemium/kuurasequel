@@ -43,7 +43,8 @@ public class FoodAndToyControl : MonoBehaviour {
         if (ItemControl.amountofFood > 0 && GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
         {
             reset = false;
-            GetComponent<SpriteRenderer>().enabled = true;           
+            GetComponent<SpriteRenderer>().enabled = true;
+            AmountofFood.GetComponent<Text>().enabled = true;
         }
         else if (ItemControl.amountofFood < 1 || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite == Feedable2)
         {
@@ -52,6 +53,13 @@ public class FoodAndToyControl : MonoBehaviour {
             reset = true;
             AmountofFood.GetComponent<Text>().enabled = false;
         }
+
+        if(ItemControl.amountofFood > 0 && GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
+        {
+            GetComponent<SpriteRenderer>().enabled = true;
+            AmountofFood.GetComponent<Text>().enabled = true;
+        }
+
         AmountofFood.GetComponent<Text>().text = ItemControl.amountofFood.ToString();
     }
 
@@ -90,7 +98,7 @@ public class FoodAndToyControl : MonoBehaviour {
             AmountofFood.GetComponent<Text>().text = ItemControl.amountofFood.ToString();
             Instantiate(food, new Vector2 (-3,3.15f),Quaternion.identity);
             Destroy(gameObject);
-            ItemControl.amountofFood--;
+            GameObject.Find("ItemController").GetComponent<ItemControl>().LoseFood(1);
             GameObject.Find("CatHappiness").GetComponent<HappinessController>().CatFed();
             other.gameObject.GetComponent<HappinessController>().ChangeMood(2);
             PlayerPrefs.SetInt("LastMood", 2);
