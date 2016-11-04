@@ -14,6 +14,7 @@ public class ItemControl : MonoBehaviour {
         amountofFood = PlayerPrefs.GetInt("AmountofFood");
         amountofToys = PlayerPrefs.GetInt("AmountofBalls");
 
+        //gives the player five cans of food and five balls, when he enters the game for the first time
         if (counter == 0)
         {
             PlayerPrefs.SetInt("AmountofFood", 5);
@@ -22,6 +23,7 @@ public class ItemControl : MonoBehaviour {
             PlayerPrefs.SetInt("GivePlayerFoodAndToysCounter", counter);
         }
 
+        //if the amount of food or toys is below zero those will be set to zero
         if (amountofFood < 1)
         {
             PlayerPrefs.SetInt("AmountofFood", 0);
@@ -44,6 +46,7 @@ public class ItemControl : MonoBehaviour {
 
     }
 
+    //adds food
     public void AddFood(int value)
     {
         amountofFood = PlayerPrefs.GetInt("AmountofFood");
@@ -51,6 +54,7 @@ public class ItemControl : MonoBehaviour {
         PlayerPrefs.SetInt("AmountofFood", amountofFood);
     }
 
+    //adds balls
     public void AddBall(int value)
     {
         amountofToys = PlayerPrefs.GetInt("AmountofBalls");
@@ -58,6 +62,7 @@ public class ItemControl : MonoBehaviour {
         PlayerPrefs.SetInt("AmountofBalls", amountofToys);
     }
 
+    //looses balls
     public void LoseBall(int value)
     {
         amountofToys = PlayerPrefs.GetInt("AmountofBalls");
@@ -65,6 +70,7 @@ public class ItemControl : MonoBehaviour {
         PlayerPrefs.SetInt("AmountofBalls", amountofToys);
     }
 
+    //looses food
     public void LoseFood(int value)
     {
         amountofFood = PlayerPrefs.GetInt("AmountofFood");

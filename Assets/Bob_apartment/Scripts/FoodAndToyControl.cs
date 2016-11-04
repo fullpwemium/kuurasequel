@@ -43,7 +43,8 @@ public class FoodAndToyControl : MonoBehaviour {
         if (ItemControl.amountofFood > 0 && GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
         {
             reset = false;
-            GetComponent<SpriteRenderer>().enabled = true;           
+            GetComponent<SpriteRenderer>().enabled = true;
+            AmountofFood.GetComponent<Text>().enabled = true;
         }
         else if (ItemControl.amountofFood < 1 || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite == Feedable2)
         {
@@ -53,7 +54,7 @@ public class FoodAndToyControl : MonoBehaviour {
             AmountofFood.GetComponent<Text>().enabled = false;
         }
 
-        if(ItemControl.amountofFood>0)
+        if(ItemControl.amountofFood > 0 && GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
         {
             GetComponent<SpriteRenderer>().enabled = true;
             AmountofFood.GetComponent<Text>().enabled = true;

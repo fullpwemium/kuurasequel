@@ -27,6 +27,7 @@ public class HappinessController : MonoBehaviour {
 
     void Start()
     {
+        //makes currentsprite equal to the last sprite of the cat
         currentSprite = sprites[PlayerPrefs.GetInt("LastMood")];       
         startTime = HungerControl.currenttime;
         hc1 = GetComponent<HungerControl>();
@@ -55,6 +56,8 @@ public class HappinessController : MonoBehaviour {
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
+
+        //checks if active scene is bobsapartment scene.
         if (activeScene == currentScene)
         {
             gameObject.SetActive(true);
@@ -68,6 +71,7 @@ public class HappinessController : MonoBehaviour {
         hungry = datevalue2 - fedTime;
         TimeSpan escalate = startTime - datevalue2;
 
+        //checks if there is no sprite loaded, then uses the last sprite
         if (GetComponent<SpriteRenderer>().sprite == null)
         {
             GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];
@@ -113,13 +117,14 @@ public class HappinessController : MonoBehaviour {
             happinessMultiplier = 0;
         }
 
-        if (lastsprite!=currentSprite)
+        if (lastsprite != currentSprite)
         {
             lastsprite = currentSprite;            
         }
 
     }
 
+    //saves the time from when the cat was last fed
     void LastFed(System.DateTime _hours)
     {
         System.DateTime currentTime = System.DateTime.Now; 
@@ -128,6 +133,7 @@ public class HappinessController : MonoBehaviour {
 
     public void CatFed()
     {
+        //feeds the cat
         Debug.Log("cat has been fed "+ System.DateTime.Now);
         fedTime = System.DateTime.Now;
         int whenfed = fedTime.Second;
@@ -139,6 +145,7 @@ public class HappinessController : MonoBehaviour {
    
     public void OnApplicationQuit()
     {
+        //When the application goes off, the last mood will be saved to the hard drive
         currentSprite = lastsprite;         
         int number = PlayerPrefs.GetInt("LastMood");
         PlayerPrefs.SetInt("LastMood", number);
@@ -147,6 +154,7 @@ public class HappinessController : MonoBehaviour {
      
     void OnDisable()
     {       
+        //When the cats mood face is disabled, the last mood will be saved to the hard drive
         GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];      
         int number = PlayerPrefs.GetInt("LastMood");
         PlayerPrefs.SetInt("LastMood", number);
@@ -154,7 +162,8 @@ public class HappinessController : MonoBehaviour {
     }
 
     void OnEnable()
-    {        
+    {
+        //When the cats mood face is enabled, the last mood will be loaded from the hard drive
         GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];
         int number = PlayerPrefs.GetInt("LastMood");
         Debug.Log("loaded" + number + " " + System.DateTime.Now);
@@ -162,6 +171,7 @@ public class HappinessController : MonoBehaviour {
 
     public void ChangeMood(int number)
     {
+        //changes the mood of the cat and saves it to the hard drive
         currentSprite = sprites[number];
         lastsprite = sprites[number];
         lastsprite = GetComponent<SpriteRenderer>().sprite;
