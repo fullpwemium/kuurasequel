@@ -56,7 +56,7 @@ public class ToyControl : MonoBehaviour {
             reset = false;
             GetComponent<SpriteRenderer>().enabled = true;
         }
-        else
+        else if (ItemControl.amountofToys < 1 && GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
         {
             GetComponent<SpriteRenderer>().enabled = false;
             reset = true;
@@ -99,7 +99,7 @@ public class ToyControl : MonoBehaviour {
             AmountofToys.GetComponent<Text>().text = ItemControl.amountofToys.ToString();
             Instantiate(cattoy, new Vector2(-1.4f, 3.15f), Quaternion.identity);
             Destroy(gameObject);
-            ItemControl.amountofToys--;
+            GameObject.Find("ItemController").GetComponent<ItemControl>().LoseBall(1);
             GameObject.Find("CatHappiness").GetComponent<HappinessController>().CatPlayed();
             PlayerPrefs.SetInt("LastMood", 3);
         }

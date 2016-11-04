@@ -29,6 +29,7 @@ public class BackArrow : MonoBehaviour {
 	}
 	void OnMouseDown()
     {
+        foodamount = ItemControl.amountofFood;
         GameObject.FindWithTag("Food");  
 		kissekuva.SetActive (false);
 		kissa1.SetActive (true);

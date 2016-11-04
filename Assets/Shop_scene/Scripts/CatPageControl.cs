@@ -18,8 +18,8 @@ public class CatPageControl : MonoBehaviour {
     void Awake()
     {
         //Setting the food and ballofyarn prices
-        foodPrice = 200;
-        ballofyarnPrice = 150;
+        foodPrice = 500;
+        ballofyarnPrice = 750;
     }
 	// Use this for initialization
 	void Start ()
@@ -46,12 +46,12 @@ public class CatPageControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        dustAmount = GameObject.Find("ShopBook").GetComponent<DustController>().DustAmount;
-
+       
     }
 
     void BuyFood()
     {
+        dustAmount = GameObject.Find("ShopBook").GetComponent<DustController>().DustAmount;
         yesBuyButton.onClick.RemoveAllListeners();
         noBuyButton.onClick.RemoveAllListeners();
 
@@ -112,7 +112,65 @@ public class CatPageControl : MonoBehaviour {
 
     void BuyBall()
     {
+        dustAmount = GameObject.Find("ShopBook").GetComponent<DustController>().DustAmount;
+        yesBuyButton.onClick.RemoveAllListeners();
+        noBuyButton.onClick.RemoveAllListeners();
+
+        yesBuyButton.onClick.AddListener(BuyBallTrue);
+        noBuyButton.onClick.AddListener(BuyBallFalse);
+
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+        buyConfirmButton.enabled = false;
+        buyConfirmImage.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        backgroundImage.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+
         Debug.Log("BuyBall");
+
+        if (dustAmount >= ballofyarnPrice)
+        {
+            confirmText.enabled = true;
+            yesText.enabled = true;
+            noText.enabled = true;
+            buyConfirmButton.enabled = true;
+            buyConfirmImage.enabled = true;
+
+            yesBuyButton.enabled = true;
+            yesBuyButton.GetComponent<Image>().enabled = true;
+
+            backgroundImage.GetComponent<Image>().enabled = true;
+
+            noBuyButton.enabled = true;
+            noBuyButton.GetComponent<Image>().enabled = true;
+        }
+
+        else if (dustAmount < ballofyarnPrice)
+        {
+            GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+            buyConfirmButton.enabled = false;
+            buyConfirmImage.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            backgroundImage.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+
+            Debug.Log("You don't have enough magic dust");
+        }
     }
 
     void BuyFoodTrue()
@@ -134,6 +192,8 @@ public class CatPageControl : MonoBehaviour {
         Debug.Log("You have bought 5 cans of cat food");
         GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(foodPrice);
         GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+        GameObject.Find("DummyPlayer").GetComponent<ItemControl>().AddFood(5);
+        dustAmount = dustAmount - foodPrice;
 
         if (dustAmount < 1)
         {
@@ -145,6 +205,53 @@ public class CatPageControl : MonoBehaviour {
     void BuyFoodFalse()
     {
         Debug.Log("You didn't buy food");
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+        buyConfirmButton.enabled = false;
+        buyConfirmImage.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        backgroundImage.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+    }
+
+    void BuyBallTrue()
+    {
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+        buyConfirmButton.enabled = false;
+        buyConfirmImage.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        backgroundImage.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+
+        Debug.Log("You have bought 5 ballsOfYarn");
+        GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(ballofyarnPrice);
+        GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+        GameObject.Find("DummyPlayer").GetComponent<ItemControl>().AddBall(5);
+        dustAmount = dustAmount - ballofyarnPrice;
+
+        if (dustAmount < 1)
+        {
+            dustAmount = 0;
+            GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+        }
+    }
+
+    void BuyBallFalse()
+    {
+        Debug.Log("You didn't buy ball");
         confirmText.enabled = false;
         yesText.enabled = false;
         noText.enabled = false;

@@ -27,7 +27,7 @@ public class HappinessController : MonoBehaviour {
 
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = currentSprite;
+        currentSprite = sprites[PlayerPrefs.GetInt("LastMood")];       
         startTime = HungerControl.currenttime;
         hc1 = GetComponent<HungerControl>();
         activeScene = SceneManager.GetActiveScene();
@@ -45,7 +45,8 @@ public class HappinessController : MonoBehaviour {
             CatFed();
             currentSprite = sprites[PlayerPrefs.GetInt("LastMood")];         
             counter++;
-            PlayerPrefs.SetInt("counter", counter);         
+            PlayerPrefs.SetInt("counter", counter);
+            GetComponent<SpriteRenderer>().sprite = currentSprite;
         }
         fedTime.AddSeconds(PlayerPrefs.GetInt("WhenFed"));
     }
@@ -62,11 +63,18 @@ public class HappinessController : MonoBehaviour {
         {
             gameObject.SetActive(false);
         }
-        GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];
+        GetComponent<SpriteRenderer>().sprite = currentSprite;
         datevalue2 = HungerControl.newtime;
         hungry = datevalue2 - fedTime;
         TimeSpan escalate = startTime - datevalue2;
-       
+
+        if (GetComponent<SpriteRenderer>().sprite == null)
+        {
+            GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];
+            currentSprite = sprites[PlayerPrefs.GetInt("LastMood")];
+            GetComponent<SpriteRenderer>().sprite = currentSprite;
+        }
+
         //checks the current mood and compares it to a specific sprite then changes the mood if the other conditions are also met
         if (currentSprite == sprites[3] && fedTime.AddMinutes(5) <= datevalue2)
         {
@@ -131,24 +139,25 @@ public class HappinessController : MonoBehaviour {
    
     public void OnApplicationQuit()
     {
-        currentSprite = lastsprite;   
-        Debug.Log("Cats mood has been saved now");
+        currentSprite = lastsprite;         
         int number = PlayerPrefs.GetInt("LastMood");
         PlayerPrefs.SetInt("LastMood", number);
+        Debug.Log("Cats mood has been saved now " + number);
     }
      
     void OnDisable()
     {       
-        GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];
-        Debug.Log("Saved");
+        GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];      
         int number = PlayerPrefs.GetInt("LastMood");
         PlayerPrefs.SetInt("LastMood", number);
+        Debug.Log("Saved " + number + " " + System.DateTime.Now);
     }
 
     void OnEnable()
-    {
+    {        
         GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];
-        Debug.Log("loaded");
+        int number = PlayerPrefs.GetInt("LastMood");
+        Debug.Log("loaded" + number + " " + System.DateTime.Now);
     }
 
     public void ChangeMood(int number)
@@ -157,7 +166,9 @@ public class HappinessController : MonoBehaviour {
         lastsprite = sprites[number];
         lastsprite = GetComponent<SpriteRenderer>().sprite;
         Debug.Log("Cats mood has been changed "+ number + " " + System.DateTime.Now);
+        GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];
         PlayerPrefs.SetInt("LastMood", number);
+        GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];
     }
 
     public void CatPlayed()
