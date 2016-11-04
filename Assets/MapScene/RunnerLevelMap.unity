@@ -5877,7 +5877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49aa61ba778dfa4abbc7fd41d06673a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 0700000008000000090000002100000025000000
+  levelIndex: 0600000007000000080000002400000024000000
   completedLevels: 
   currentLevel: 0
   levelSelectScene: 35

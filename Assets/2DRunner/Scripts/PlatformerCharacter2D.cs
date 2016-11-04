@@ -69,7 +69,10 @@ public class PlatformerCharacter2D : MonoBehaviour
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject != gameObject)
+            {
                 m_Grounded = true;
+                Debug.Log("Maa kutsuu");
+            }
         }
         m_Anim.SetBool("Ground", m_Grounded);
         m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.x);
