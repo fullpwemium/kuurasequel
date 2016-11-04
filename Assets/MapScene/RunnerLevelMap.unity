@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonLevel: 2
+  buttonLevel: 0
 --- !u!114 &282237849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,7 +1402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonLevel: 1
+  buttonLevel: 0
 --- !u!114 &465714607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2166,7 +2166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonLevel: 3
+  buttonLevel: 0
 --- !u!1 &697165374
 GameObject:
   m_ObjectHideFlags: 0
@@ -5877,7 +5877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49aa61ba778dfa4abbc7fd41d06673a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 0700000008000000090000002100000025000000
+  levelIndex: 0600000007000000080000002400000024000000
   completedLevels: 
   currentLevel: 0
   levelSelectScene: 35
