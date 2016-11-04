@@ -317,8 +317,9 @@ public class RunnerManager : MonoBehaviour
         }
         if (level == 36)
         {
-            currentLevel = 0;
+            currentLevel = 3;
         }
+        Debug.Log("Runner current level = " + currentLevel);
     }
 
     void InitialPanel()
