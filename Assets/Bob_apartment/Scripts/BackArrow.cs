@@ -15,7 +15,7 @@ public class BackArrow : MonoBehaviour {
     public GameObject exitButton;
     public GameObject happiness;
 
-    int foodamount = ItemControl.amountofFood;
+    int foodamount;
     // Use this for initialization
     void Start ()
     {
@@ -29,8 +29,9 @@ public class BackArrow : MonoBehaviour {
 	}
 	void OnMouseDown()
     {
-        foodamount = ItemControl.amountofFood;
-        GameObject.FindWithTag("Food");  
+        //foodamount = ItemControl.amountofFood;
+        //GameObject.FindWithTag("Food");  
+
 		kissekuva.SetActive (false);
 		kissa1.SetActive (true);
 		kissakasa1.SetActive (true);
@@ -40,14 +41,16 @@ public class BackArrow : MonoBehaviour {
 		pet2.SetActive (false);
         dusti.SetActive(false);
         exitButton.SetActive(true);
-        if (foodamount > 0)
-        {
-            GameObject.FindWithTag("Food").SetActive(false);
-        }
-        else
-        {
-            Debug.Log("You are out of food");
-        }
+
+        //if (foodamount > 0)
+        //{
+        //    GameObject.FindWithTag("Food").SetActive(true);
+        //}
+        //else
+        //{
+        //    Debug.Log("You are out of food");
+        //}
+
         happiness.SetActive(true);
     }
 }
