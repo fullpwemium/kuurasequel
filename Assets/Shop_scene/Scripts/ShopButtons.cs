@@ -23,6 +23,12 @@ public class ShopButtons : MonoBehaviour {
     int greenJacketBought;
     int whiteJacketBought;
 
+    int greyBootsBought;
+    int orangeBootsBought;
+    int redBootsBought;
+    int greenBootsBought;
+    int whiteBootsBought;
+
     public int sceneToLoad;
 
     int lastpage;
@@ -32,6 +38,7 @@ public class ShopButtons : MonoBehaviour {
     public int menupage;
     public int hatpage;
     public int jacketpage;
+    public int bootspage;
     public int catpage;
 
     public GameObject Bobbutton;
@@ -50,6 +57,12 @@ public class ShopButtons : MonoBehaviour {
     public Image GreyJacketOwned, OrangeJacketOwned, RedJacketOwned, GreenJacketOwned, WhiteJacketOwned;
     public Image GreyJacketPriceImage, OrangeJacketPriceImage, RedJacketPriceImage, GreenJacketPriceImage, WhiteJacketPriceImage;
     public Text GreyJacketPriceText, OrangeJacketPriceText, RedJacketPriceText, GreenJacketPriceText, WhiteJacketPriceText;
+
+    public Button GreyBoots, OrangeBoots, RedBoots, GreenBoots, WhiteBoots;
+    public Image GreyBootsImage, OrangeBootsImage, RedBootsImage, GreenBootsImage, WhiteBootsImage;
+    public Image GreyBootsOwned, OrangeBootsOwned, RedBootsOwned, GreenBootsOwned, WhiteBootsOwned;
+    public Image GreyBootsPriceImage, OrangeBootsPriceImage, RedBootsPriceImage, GreenBootsPriceImage, WhiteBootsPriceImage;
+    public Text GreyBootsPriceText, OrangeBootsPriceText, RedBootsPriceText, GreenBootsPriceText, WhiteBootsPriceText;
 
     public Button CatFood, BallOYarn;
     public Image CatFoodImage, BallOYarnImage;
@@ -91,30 +104,40 @@ public class ShopButtons : MonoBehaviour {
         redJacketBought = PlayerPrefs.GetInt("redJacketOwned");
         greenJacketBought = PlayerPrefs.GetInt("greenJacketOwned");
         whiteJacketBought = PlayerPrefs.GetInt("whiteJacketOwned");
+
+        //Gets the value of the boots bought from the hard drive
+        greyBootsBought = PlayerPrefs.GetInt("greyBootsOwned");
+        orangeBootsBought = PlayerPrefs.GetInt("orangeBootsOwned");
+        redBootsBought = PlayerPrefs.GetInt("redBootsOwned");
+        greenBootsBought = PlayerPrefs.GetInt("greenBootsOwned");
+        whiteBootsBought = PlayerPrefs.GetInt("whiteBootsOwned");
     }
 
     void Update()
     {
-        jacketpage=GameObject.Find("BookButton").GetComponent<BookButtonControl>().jacketpage - 2;
+        bootspage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().bootspage - 3;
+        jacketpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().jacketpage - 2;
         hatpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().hatpage - 1;
         catpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().catItemsPage - 5;
 
-        if (currentpage == hatpage || currentpage == catpage || currentpage == jacketpage)
+            //Making if it's possible to buy items true
+        if (currentpage == hatpage || currentpage == jacketpage || currentpage == bootspage || currentpage == catpage)
         {
-            //Making if it's possible to buy cat items true
+            //Making if it's possible to buy items true
             NotEnoughDust.SetActive(true);
             WhiteBackground.SetActive(true);
             WantToBuy.SetActive(true);
             BuyConfirm.SetActive(true);
         }
-        else if (currentpage != hatpage || currentpage != catpage || currentpage != jacketpage)
+        else if (currentpage != hatpage || currentpage != jacketpage || currentpage != catpage || currentpage != bootspage)
         {
-            //Making if it's possible to buy a hat false
+        //Making if it's possible to buy items false
             NotEnoughDust.SetActive(false);
             WhiteBackground.SetActive(false);
             WantToBuy.SetActive(false);
             BuyConfirm.SetActive(false);
         }
+
         //---------------------------------------------------------------------------------------------------------------------------------------
         //Compares the current page to hat page
         if (currentpage == hatpage)
@@ -237,7 +260,71 @@ public class ShopButtons : MonoBehaviour {
             RedJacketPriceText.enabled = false;
             GreenJacketPriceText.enabled = false;
             WhiteJacketPriceText.enabled = false;
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------
 
+        if (currentpage == bootspage)
+        {
+            //Making everything in bootspagecontrol true if you are on it's page
+            GreyBootsImage.enabled = true;
+            OrangeBootsImage.enabled = true;
+            RedBootsImage.enabled = true;
+            GreenBootsImage.enabled = true;
+            WhiteBootsImage.enabled = true;
+
+            //changes the positions of the jackets on the jacketpage 
+            /*GreyJacketImage.transform.position = new Vector2(-90f, 325f);
+            OrangeJacketImage.transform.position = new Vector2(-80f, 240f);
+            RedJacketImage.transform.position = new Vector2(-75f, 145f);
+            GreenJacketImage.transform.position = new Vector2(-65f, 35f);
+            WhiteJacketImage.transform.position = new Vector2(400f, 365f);*/
+
+
+            GreyBootsPriceImage.enabled = true;
+            OrangeBootsPriceImage.enabled = true;
+            RedBootsPriceImage.enabled = true;
+            GreenBootsPriceImage.enabled = true;
+            WhiteBootsPriceImage.enabled = true;
+
+            GreyBootsPriceText.enabled = true;
+            OrangeBootsPriceText.enabled = true;
+            RedBootsPriceText.enabled = true;
+            GreenBootsPriceText.enabled = true;
+            WhiteBootsPriceText.enabled = true;
+
+        }
+        else if (currentpage != bootspage)
+        {
+            //Making everything false if you aren't on the boots page
+            GreyBoots.enabled = false;
+            OrangeBoots.enabled = false;
+            RedBoots.enabled = false;
+            GreenBoots.enabled = false;
+            WhiteBoots.enabled = false;
+
+            GreyBootsImage.enabled = false;
+            OrangeBootsImage.enabled = false;
+            RedBootsImage.enabled = false;
+            GreenBootsImage.enabled = false;
+            WhiteBootsImage.enabled = false;
+
+            GreyBootsOwned.enabled = false;
+            OrangeBootsOwned.enabled = false;
+            RedBootsOwned.enabled = false;
+            GreenBootsOwned.enabled = false;
+            WhiteBootsOwned.enabled = false;
+
+            GreyBootsPriceImage.enabled = false;
+            OrangeBootsPriceImage.enabled = false;
+            RedBootsPriceImage.enabled = false;
+            GreenBootsPriceImage.enabled = false;
+            WhiteBootsPriceImage.enabled = false;
+
+            GreyBootsPriceText.enabled = false;
+            OrangeBootsPriceText.enabled = false;
+            RedBootsPriceText.enabled = false;
+            GreenBootsPriceText.enabled = false;
+            WhiteBootsPriceText.enabled = false;
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -258,8 +345,6 @@ public class ShopButtons : MonoBehaviour {
 
             CatFoodAmountText.enabled = true;
             BallOYarnAmountText.enabled = true;
-
-           
         }
         else if (currentpage != catpage)
         {
@@ -422,6 +507,84 @@ public class ShopButtons : MonoBehaviour {
             {
                 //Doesn't show the image of white jacket on bobspage if you haven't bought it
                 WhiteJacketImage.enabled = false;
+            }
+        }
+
+        if (currentpage == bobspage)
+        {
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyBootsOwned == true || greyBootsBought == 1)
+            {
+                //Shows the image of grey boots on bobspage if you have bought it
+                GreyBootsImage.enabled = true;
+
+                //changes the positions of the grey boots on bobspage
+                GreyBootsImage.transform.position = new Vector2(10f, 330f);
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyBootsOwned == false || greyBootsBought == 0)
+            {
+                //Doesn't show the image of grey boots on bobspage if you haven't bought it
+                GreyBootsImage.enabled = false;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeBootsOwned == true || orangeBootsBought == 1)
+            {
+                //Shows the image of orange boots on bobspage if you have bought it
+                OrangeBootsImage.enabled = true;
+
+                //changes the positions of the orange boots on bobspage
+                OrangeBootsImage.transform.position = new Vector2(10f, 245f);
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeBootsOwned == false || orangeBootsBought == 0)
+            {
+                //Doesn't show the image of orange boots on bobspage if you haven't bought it
+                OrangeBootsImage.enabled = false;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedBootsOwned == true || redBootsBought == 1)
+            {
+                //Shows the image of red boots on bobspage if you have bought it
+                RedBootsImage.enabled = true;
+
+                //changes the positions of the red boots on bobspage
+                RedBootsImage.transform.position = new Vector2(10f, 150f);
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedBootsOwned == false || redBootsBought == 0)
+            {
+                //Doesn't show the image of red Boots on bobspage if you haven't bought it
+                RedBootsImage.enabled = false;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenBootsOwned == true || greenBootsBought == 1)
+            {
+                //Shows the image of green boots on bobspage if you have bought it
+                GreenBootsImage.enabled = true;
+
+                //changes the positions of the green boots on bobspage
+                GreenBootsImage.transform.position = new Vector2(10f, 50f);
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenBootsOwned == false || greenBootsBought == 0)
+            {
+                //Doesn't show the image of green Boots on bobspage if you haven't bought it
+                GreenBootsImage.enabled = false;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteBootsOwned == true || whiteBootsBought == 1)
+            {
+                //Shows the image of white boots on bobspage if you have bought it
+                WhiteBootsImage.enabled = true;
+
+                //changes the positions of the white boots on bobspage
+                WhiteBootsImage.transform.position = new Vector2(490f, 375f);
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteBootsOwned == false || whiteBootsBought == 0)
+            {
+                //Doesn't show the image of white boots on bobspage if you haven't bought it
+                WhiteBootsImage.enabled = false;
             }
         }
 
