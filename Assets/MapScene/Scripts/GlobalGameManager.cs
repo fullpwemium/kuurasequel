@@ -66,6 +66,10 @@ public class GlobalGameManager : MonoBehaviour
         }
 
         MagicDust = PlayerPrefs.GetInt("Magic Dust "); //Ladataan kerätyt dustit
+
+        MagicDust = 50000;
+        PlayerPrefs.SetInt("Magic Dust ", MagicDust);
+
         //GameObject.FindGameObjectWithTag("MagicDust").GetComponent<Text>().text = MagicDust.ToString();
 
         if (GameObject.Find("MagicDust"))

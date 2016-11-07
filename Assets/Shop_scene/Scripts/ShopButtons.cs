@@ -99,6 +99,22 @@ public class ShopButtons : MonoBehaviour {
         hatpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().hatpage - 1;
         catpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().catItemsPage - 5;
 
+        if (currentpage == hatpage || currentpage == catpage || currentpage == jacketpage)
+        {
+            //Making if it's possible to buy cat items true
+            NotEnoughDust.SetActive(true);
+            WhiteBackground.SetActive(true);
+            WantToBuy.SetActive(true);
+            BuyConfirm.SetActive(true);
+        }
+        else if (currentpage != hatpage || currentpage != catpage || currentpage != jacketpage)
+        {
+            //Making if it's possible to buy a hat false
+            NotEnoughDust.SetActive(false);
+            WhiteBackground.SetActive(false);
+            WantToBuy.SetActive(false);
+            BuyConfirm.SetActive(false);
+        }
         //---------------------------------------------------------------------------------------------------------------------------------------
         //Compares the current page to hat page
         if (currentpage == hatpage)
@@ -122,11 +138,6 @@ public class ShopButtons : MonoBehaviour {
             GreenHatPriceText.enabled = true;
             WhiteHatPriceText.enabled = true;
 
-            //Making if it's possible to buy a hat true
-            NotEnoughDust.SetActive(true);
-            WhiteBackground.SetActive(true);
-            WantToBuy.SetActive(true);
-            BuyConfirm.SetActive(true);
         }
         else if (currentpage != hatpage)
         {
@@ -161,11 +172,6 @@ public class ShopButtons : MonoBehaviour {
             GreenHatPriceText.enabled = false;
             WhiteHatPriceText.enabled = false;
 
-            //Making if it's possible to buy a hat false
-            NotEnoughDust.SetActive(false);
-            WhiteBackground.SetActive(false);
-            WantToBuy.SetActive(false);
-            BuyConfirm.SetActive(false);
         }
         //---------------------------------------------------------------------------------------------------------------------------------------
 
@@ -198,11 +204,6 @@ public class ShopButtons : MonoBehaviour {
             GreenJacketPriceText.enabled = true;
             WhiteJacketPriceText.enabled = true;
 
-            //Making if it's possible to buy a jacket true
-            NotEnoughDust.SetActive(true);
-            WhiteBackground.SetActive(true);
-            WantToBuy.SetActive(true);
-            BuyConfirm.SetActive(true);
         }
         else if (currentpage != jacketpage)
         {
@@ -237,11 +238,6 @@ public class ShopButtons : MonoBehaviour {
             GreenJacketPriceText.enabled = false;
             WhiteJacketPriceText.enabled = false;
 
-            //Making if it's possible to buy a jacket false
-            NotEnoughDust.SetActive(false);
-            WhiteBackground.SetActive(false);
-            WantToBuy.SetActive(false);
-            BuyConfirm.SetActive(false);
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -263,11 +259,7 @@ public class ShopButtons : MonoBehaviour {
             CatFoodAmountText.enabled = true;
             BallOYarnAmountText.enabled = true;
 
-            //Making if it's possible to buy cat items true
-            NotEnoughDust.SetActive(true);
-            WhiteBackground.SetActive(true);
-            WantToBuy.SetActive(true);
-            BuyConfirm.SetActive(true);
+           
         }
         else if (currentpage != catpage)
         {
@@ -287,11 +279,6 @@ public class ShopButtons : MonoBehaviour {
             CatFoodAmountText.enabled = false;
             BallOYarnAmountText.enabled = false;
 
-            //Making if it's possible to buy cat items false
-            NotEnoughDust.SetActive(false);
-            WhiteBackground.SetActive(false);
-            WantToBuy.SetActive(false);
-            BuyConfirm.SetActive(false);
         }
 //------------------------------------------------------------------------------------------------------------------------------------
 
