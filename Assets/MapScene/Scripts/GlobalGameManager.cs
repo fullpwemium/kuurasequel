@@ -90,7 +90,7 @@ public class GlobalGameManager : MonoBehaviour
     void Start()
     {
         //PlayerPrefs.DeleteAll();
-//        Debug.Log("Kaikki tuhottu");
+        //Debug.Log("Kaikki tuhottu");
 
         //InsertScore(5,bwhStars, "banana", 10);
         haeData();            
