@@ -7,7 +7,9 @@ public class BootsPageControl : MonoBehaviour {
     int greyBootsBought, orangeBootsBought, redBootsBought, greenBootsBought, whiteBootsBought;
 
     public Button GreyBoots, OrangeBoots, RedBoots, GreenBoots, WhiteBoots;
+
     public Button BootsControlButton;
+
     public Button yesBuyButton, noBuyButton;
     public Text confirmText;
     public Text yesText, noText;
@@ -513,7 +515,7 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.GetComponent<Image>().enabled = false;
 
             GreyBoots.enabled = false;
-            Debug.Log("You have bought a Greyboots");
+            Debug.Log("You have bought Greyboots");
             GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(bootsPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
