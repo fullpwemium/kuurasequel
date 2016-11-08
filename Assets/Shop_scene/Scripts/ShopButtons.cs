@@ -272,12 +272,12 @@ public class ShopButtons : MonoBehaviour {
             GreenBootsImage.enabled = true;
             WhiteBootsImage.enabled = true;
 
-            //changes the positions of the jackets on the jacketpage 
-            /*GreyJacketImage.transform.position = new Vector2(-90f, 325f);
-            OrangeJacketImage.transform.position = new Vector2(-80f, 240f);
-            RedJacketImage.transform.position = new Vector2(-75f, 145f);
-            GreenJacketImage.transform.position = new Vector2(-65f, 35f);
-            WhiteJacketImage.transform.position = new Vector2(400f, 365f);*/
+            //changes the positions of the boots on the bootspage 
+            GreyBootsImage.transform.position = new Vector2(-90f, 325f);
+            OrangeBootsImage.transform.position = new Vector2(-80f, 240f);
+            RedBootsImage.transform.position = new Vector2(-75f, 145f);
+            GreenBootsImage.transform.position = new Vector2(-65f, 35f);
+            WhiteBootsImage.transform.position = new Vector2(400f, 365f);
 
 
             GreyBootsPriceImage.enabled = true;
@@ -510,6 +510,7 @@ public class ShopButtons : MonoBehaviour {
             }
         }
 
+        //Checking if the player owns the boots and then shows them on bobspage in the correct position
         if (currentpage == bobspage)
         {
             if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyBootsOwned == true || greyBootsBought == 1)
@@ -518,9 +519,8 @@ public class ShopButtons : MonoBehaviour {
                 GreyBootsImage.enabled = true;
 
                 //changes the positions of the grey boots on bobspage
-                GreyBootsImage.transform.position = new Vector2(10f, 330f);
+                GreyBootsImage.transform.position = new Vector2(100f, 340f);
             }
-
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyBootsOwned == false || greyBootsBought == 0)
             {
                 //Doesn't show the image of grey boots on bobspage if you haven't bought it
@@ -533,9 +533,8 @@ public class ShopButtons : MonoBehaviour {
                 OrangeBootsImage.enabled = true;
 
                 //changes the positions of the orange boots on bobspage
-                OrangeBootsImage.transform.position = new Vector2(10f, 245f);
+                OrangeBootsImage.transform.position = new Vector2(100f, 245f);
             }
-
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeBootsOwned == false || orangeBootsBought == 0)
             {
                 //Doesn't show the image of orange boots on bobspage if you haven't bought it
@@ -548,9 +547,8 @@ public class ShopButtons : MonoBehaviour {
                 RedBootsImage.enabled = true;
 
                 //changes the positions of the red boots on bobspage
-                RedBootsImage.transform.position = new Vector2(10f, 150f);
+                RedBootsImage.transform.position = new Vector2(100f, 150f);
             }
-
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedBootsOwned == false || redBootsBought == 0)
             {
                 //Doesn't show the image of red Boots on bobspage if you haven't bought it
@@ -563,9 +561,8 @@ public class ShopButtons : MonoBehaviour {
                 GreenBootsImage.enabled = true;
 
                 //changes the positions of the green boots on bobspage
-                GreenBootsImage.transform.position = new Vector2(10f, 50f);
+                GreenBootsImage.transform.position = new Vector2(100f, 50f);
             }
-
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenBootsOwned == false || greenBootsBought == 0)
             {
                 //Doesn't show the image of green Boots on bobspage if you haven't bought it
@@ -578,9 +575,8 @@ public class ShopButtons : MonoBehaviour {
                 WhiteBootsImage.enabled = true;
 
                 //changes the positions of the white boots on bobspage
-                WhiteBootsImage.transform.position = new Vector2(490f, 375f);
+                WhiteBootsImage.transform.position = new Vector2(575f, 375f);
             }
-
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteBootsOwned == false || whiteBootsBought == 0)
             {
                 //Doesn't show the image of white boots on bobspage if you haven't bought it
