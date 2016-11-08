@@ -24,7 +24,7 @@ public class ToyControl : MonoBehaviour {
         Feedable = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap2;
         Feedable2 = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap3;
         cattoy = gameObject;
-        startPos = new Vector2(-1.4f, -3.15f);
+        startPos = new Vector2(-1.4f, 3.15f);
         AmountofToys = GameObject.Find("AmountofToys");
         AmountofToys.GetComponent<Text>().text = ItemControl.amountofToys.ToString();
         if (GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
@@ -111,5 +111,11 @@ public class ToyControl : MonoBehaviour {
             GameObject.Find("CatHappiness").GetComponent<HappinessController>().CatPlayed();
             PlayerPrefs.SetInt("LastMood", 3);
         }
+    }
+
+    //On mouse up moves the toy to it's starting position
+    void OnMouseUp()
+    {
+        transform.position = startPos;
     }
 }
