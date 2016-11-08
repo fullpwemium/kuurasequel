@@ -150,7 +150,7 @@ public class BootsPageControl : MonoBehaviour {
         }
 
         //cheks if you own the green boots
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedBootsOwned == true || greenBootsBought == 1)
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenBootsOwned == true || greenBootsBought == 1)
         {
             //disables the buttons and the price of the boots
             ownsGreenBoots.enabled = true;
@@ -167,7 +167,7 @@ public class BootsPageControl : MonoBehaviour {
         }
 
         //cheks if you own the white boots
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedBootsOwned == true || whiteBootsBought == 1)
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteBootsOwned == true || whiteBootsBought == 1)
         {
             //disables the buttons and the price of the boots
             ownsWhiteBoots.enabled = true;

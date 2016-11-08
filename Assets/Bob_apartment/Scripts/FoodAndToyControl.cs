@@ -103,5 +103,11 @@ public class FoodAndToyControl : MonoBehaviour {
             other.gameObject.GetComponent<HappinessController>().ChangeMood(2);
             PlayerPrefs.SetInt("LastMood", 2);
         }
-    }    
+    }
+
+    //on mouse up moves the food to it's starting position
+    void OnMouseUp()
+    {
+        transform.position = startPos;
+    }  
 }

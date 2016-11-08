@@ -61,8 +61,6 @@ public class CatPageControl : MonoBehaviour {
         confirmText.enabled = false;
         yesText.enabled = false;
         noText.enabled = false;
-        buyConfirmButton.enabled = false;
-        buyConfirmImage.enabled = false;
 
         yesBuyButton.enabled = false;
         yesBuyButton.GetComponent<Image>().enabled = false;
@@ -79,8 +77,6 @@ public class CatPageControl : MonoBehaviour {
             confirmText.enabled = true;
             yesText.enabled = true;
             noText.enabled = true;
-            buyConfirmButton.enabled = true;
-            buyConfirmImage.enabled = true;
 
             yesBuyButton.enabled = true;
             yesBuyButton.GetComponent<Image>().enabled = true;
@@ -96,8 +92,8 @@ public class CatPageControl : MonoBehaviour {
             confirmText.enabled = false;
             yesText.enabled = false;
             noText.enabled = false;
-            buyConfirmButton.enabled = false;
-            buyConfirmImage.enabled = false;
+            //buyConfirmButton.enabled = false;
+            //buyConfirmImage.enabled = false;
 
             yesBuyButton.enabled = false;
             yesBuyButton.GetComponent<Image>().enabled = false;
@@ -122,8 +118,6 @@ public class CatPageControl : MonoBehaviour {
         confirmText.enabled = false;
         yesText.enabled = false;
         noText.enabled = false;
-        buyConfirmButton.enabled = false;
-        buyConfirmImage.enabled = false;
 
         yesBuyButton.enabled = false;
         yesBuyButton.GetComponent<Image>().enabled = false;
@@ -140,8 +134,6 @@ public class CatPageControl : MonoBehaviour {
             confirmText.enabled = true;
             yesText.enabled = true;
             noText.enabled = true;
-            buyConfirmButton.enabled = true;
-            buyConfirmImage.enabled = true;
 
             yesBuyButton.enabled = true;
             yesBuyButton.GetComponent<Image>().enabled = true;
@@ -150,6 +142,8 @@ public class CatPageControl : MonoBehaviour {
 
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
+
+
         }
 
         else if (dustAmount < ballofyarnPrice)
@@ -158,8 +152,6 @@ public class CatPageControl : MonoBehaviour {
             confirmText.enabled = false;
             yesText.enabled = false;
             noText.enabled = false;
-            buyConfirmButton.enabled = false;
-            buyConfirmImage.enabled = false;
 
             yesBuyButton.enabled = false;
             yesBuyButton.GetComponent<Image>().enabled = false;
@@ -178,8 +170,6 @@ public class CatPageControl : MonoBehaviour {
         confirmText.enabled = false;
         yesText.enabled = false;
         noText.enabled = false;
-        buyConfirmButton.enabled = false;
-        buyConfirmImage.enabled = false;
 
         yesBuyButton.enabled = false;
         yesBuyButton.GetComponent<Image>().enabled = false;
@@ -208,8 +198,6 @@ public class CatPageControl : MonoBehaviour {
         confirmText.enabled = false;
         yesText.enabled = false;
         noText.enabled = false;
-        buyConfirmButton.enabled = false;
-        buyConfirmImage.enabled = false;
 
         yesBuyButton.enabled = false;
         yesBuyButton.GetComponent<Image>().enabled = false;
@@ -225,8 +213,6 @@ public class CatPageControl : MonoBehaviour {
         confirmText.enabled = false;
         yesText.enabled = false;
         noText.enabled = false;
-        buyConfirmButton.enabled = false;
-        buyConfirmImage.enabled = false;
 
         yesBuyButton.enabled = false;
         yesBuyButton.GetComponent<Image>().enabled = false;
@@ -255,8 +241,6 @@ public class CatPageControl : MonoBehaviour {
         confirmText.enabled = false;
         yesText.enabled = false;
         noText.enabled = false;
-        buyConfirmButton.enabled = false;
-        buyConfirmImage.enabled = false;
 
         yesBuyButton.enabled = false;
         yesBuyButton.GetComponent<Image>().enabled = false;

@@ -90,7 +90,7 @@ public class GlobalGameManager : MonoBehaviour
     void Start()
     {
         //PlayerPrefs.DeleteAll();
-//        Debug.Log("Kaikki tuhottu");
+        //Debug.Log("Kaikki tuhottu");
 
         //InsertScore(5,bwhStars, "banana", 10);
         haeData();            
@@ -390,7 +390,7 @@ public class GlobalGameManager : MonoBehaviour
     public void ShopSaveGreenBootsOwned(bool value)
     {
         GreenBootsOwned = value;
-        PlayerPrefs.SetInt("greebBootsOwned", value ? 1 : 0);
+        PlayerPrefs.SetInt("greenBootsOwned", value ? 1 : 0);
     }
 
     public void ShopSaveWhiteBootsOwned(bool value)
