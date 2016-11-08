@@ -1828,7 +1828,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011438229824, guid: 57105d9b978c6664fb88e9ea34773b61, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -176.5
+      value: -173.9
       objectReference: {fileID: 0}
     - target: {fileID: 4000011438229824, guid: 57105d9b978c6664fb88e9ea34773b61, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1858,6 +1858,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4000013595141018, guid: 57105d9b978c6664fb88e9ea34773b61, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61000011324433710, guid: 57105d9b978c6664fb88e9ea34773b61,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011438229824, guid: 57105d9b978c6664fb88e9ea34773b61, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 6.72896
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57105d9b978c6664fb88e9ea34773b61, type: 2}
   m_IsPrefabParent: 0
@@ -1866,6 +1879,28 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011438229824, guid: 57105d9b978c6664fb88e9ea34773b61,
     type: 2}
   m_PrefabInternal: {fileID: 1162142871}
+--- !u!1 &1162142873 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010789107926, guid: 57105d9b978c6664fb88e9ea34773b61,
+    type: 2}
+  m_PrefabInternal: {fileID: 1162142871}
+--- !u!95 &1162142874
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162142873}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c26da9aa8118e91499aa931362ba323f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1197925066
 Prefab:
   m_ObjectHideFlags: 0
@@ -4632,15 +4667,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 432562, guid: c34feb2719a23ff4a9cda19a7984e690, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 432562, guid: c34feb2719a23ff4a9cda19a7984e690, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 432562, guid: c34feb2719a23ff4a9cda19a7984e690, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 432562, guid: c34feb2719a23ff4a9cda19a7984e690, type: 2}
       propertyPath: m_LocalRotation.w
@@ -4650,6 +4685,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 432562, guid: c34feb2719a23ff4a9cda19a7984e690, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 17.303041
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c34feb2719a23ff4a9cda19a7984e690, type: 2}
   m_IsPrefabParent: 0
@@ -4657,6 +4696,27 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 432562, guid: c34feb2719a23ff4a9cda19a7984e690, type: 2}
   m_PrefabInternal: {fileID: 1679266539}
+--- !u!1 &1679266541 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 119496, guid: c34feb2719a23ff4a9cda19a7984e690, type: 2}
+  m_PrefabInternal: {fileID: 1679266539}
+--- !u!95 &1679266542
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1679266541}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c26da9aa8118e91499aa931362ba323f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1715725633
 Prefab:
   m_ObjectHideFlags: 0
