@@ -256,7 +256,7 @@ public class BookButtonControl : MonoBehaviour {
         if (currentSprite == bookopen)
         {
             GetComponent<Image>().sprite = bookclosed;
-            Debug.Log("Book is closed now");
+            Debug.Log("Book is opened now");
             shopbook.GetComponent<Image>().enabled = true;
             shopbook.GetComponent<Image>().sprite = openbook;
 
@@ -267,7 +267,7 @@ public class BookButtonControl : MonoBehaviour {
             //checks if the currentsprite of the button isn't equal to bookopen, 
             //and if this is true then it swaps the picture to be an open book
             GetComponent<Image>().sprite = bookopen;
-            Debug.Log("Book is opened now");
+            Debug.Log("Book is closed now");
             shopbook.GetComponent<Image>().enabled = false;
 
             bookOpenSound.Play();
