@@ -299,7 +299,7 @@ public class RunnerManager : MonoBehaviour
             GlobalGameManager.GGM.RunnerSave();
         }
 
-        if (level == 6 || level == 7 || level == 8 || /*level == 33 ||*/ level == 36 || level == 37)     //Ladataan InitialPanel kun siirrytään kenttään, jossa Panelin objektit ovat.
+        if (level == 6 || level == 7 || level == 8 || /*level == 33 ||*/ level == 36 || level == 37 || level == 38)     //Ladataan InitialPanel kun siirrytään kenttään, jossa Panelin objektit ovat.
         {
             InitialPanel();
         }
@@ -320,6 +320,10 @@ public class RunnerManager : MonoBehaviour
             currentLevel = 0;
         }
         if (level == 37)
+        {
+            currentLevel = 3;
+        }
+        if (level == 38)
         {
             currentLevel = 0;
         }
