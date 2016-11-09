@@ -43,6 +43,10 @@ TagManager:
   - DustAmount
   - HappinessMeter
   - Food
+  - BackArrow
+  - Floor
+  - ResetAR
+  - ARButton
   layers:
   - Default
   - TransparentFX
@@ -60,7 +64,7 @@ TagManager:
   - Floor
   - Wall
   - ItemHolders
-  - 
+  - Kuura3D
   - 
   - 
   - 

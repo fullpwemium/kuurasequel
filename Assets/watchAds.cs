@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class watchAds : MonoBehaviour {
 
@@ -37,6 +38,7 @@ public class watchAds : MonoBehaviour {
         buttonNo.SetActive(false);
         text.SetActive(false);
         BackButton.SetActive(true);
+		SceneManager.LoadScene ("ARCat"); 
     }
 
     public void ButtonYesClick()
@@ -47,5 +49,6 @@ public class watchAds : MonoBehaviour {
         buttonYes.SetActive(false);
         buttonNo.SetActive(false);
         text.SetActive(false);
+		SceneManager.LoadScene ("ARCat"); 
     }
 }
