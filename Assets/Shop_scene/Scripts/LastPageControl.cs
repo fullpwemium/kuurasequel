@@ -21,7 +21,7 @@ public class LastPageControl : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        lastpage = 12;
+        lastpage = 9;
         leftpagemax = lastpage * 2;
         rightpagemax = lastpage * 2 + 1;
 
@@ -31,8 +31,7 @@ public class LastPageControl : MonoBehaviour
 	void Start ()
     {
         LastPage.onClick.AddListener(Lastpage);
-        book = GameObject.Find("ShopBook");
-        
+        book = GameObject.Find("ShopBook");      
 	}
 	
 	// Update is called once per frame
@@ -98,6 +97,7 @@ public class LastPageControl : MonoBehaviour
         leftpagecounter.text = leftcounter.ToString();
         rightpagecounter.text = rightcounter.ToString();
 	}
+
     void Lastpage()
     {
         //changes the page

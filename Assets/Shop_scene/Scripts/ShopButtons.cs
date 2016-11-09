@@ -37,7 +37,7 @@ public class ShopButtons : MonoBehaviour {
 
     public int sceneToLoad;
 
-    int lastpage;
+    public int lastpage;
 
     public int currentpage;
     public int bobspage;
@@ -56,16 +56,19 @@ public class ShopButtons : MonoBehaviour {
     public Button GreyHat, OrangeHat, RedHat, GreenHat, WhiteHat;
     public Image GreyHatImage, OrangeHatImage, RedHatImage, GreenHatImage, WhiteHatImage;
     public Image GreyHatOwned, OrangeHatOwned, RedHatOwned, GreenHatOwned, WhiteHatOwned;
+    public Image GreyHatSlot, OrangeHatSlot, RedHatSlot, GreenHatSlot, WhiteHatSlot;
     public Image GreyHatPriceImage, OrangeHatPriceImage, RedHatPriceImage, GreenHatPriceImage, WhiteHatPriceImage;
     public Text GreyHatPriceText, OrangeHatPriceText, RedHatPriceText, GreenHatPriceText, WhiteHatPriceText;
 
     public Button GreyJacket, OrangeJacket, RedJacket, GreenJacket, WhiteJacket;
+    public Image GreyJacketSlot, OrangeJacketSlot, RedJacketSlot, GreenJacketSlot, WhiteJacketSlot;
     public Image GreyJacketImage, OrangeJacketImage, RedJacketImage, GreenJacketImage, WhiteJacketImage;
     public Image GreyJacketOwned, OrangeJacketOwned, RedJacketOwned, GreenJacketOwned, WhiteJacketOwned;
     public Image GreyJacketPriceImage, OrangeJacketPriceImage, RedJacketPriceImage, GreenJacketPriceImage, WhiteJacketPriceImage;
     public Text GreyJacketPriceText, OrangeJacketPriceText, RedJacketPriceText, GreenJacketPriceText, WhiteJacketPriceText;
 
     public Button GreyBoots, OrangeBoots, RedBoots, GreenBoots, WhiteBoots;
+    public Image GreyBootsSlot, OrangeBootsSlot, RedBootsSlot, GreenBootsSlot, WhiteBootsSlot;
     public Image GreyBootsImage, OrangeBootsImage, RedBootsImage, GreenBootsImage, WhiteBootsImage;
     public Image GreyBootsOwned, OrangeBootsOwned, RedBootsOwned, GreenBootsOwned, WhiteBootsOwned;
     public Image GreyBootsPriceImage, OrangeBootsPriceImage, RedBootsPriceImage, GreenBootsPriceImage, WhiteBootsPriceImage;
@@ -73,6 +76,7 @@ public class ShopButtons : MonoBehaviour {
 
     public Button GreyGlasses, OrangeGlasses, RedGlasses, GreenGlasses, WhiteGlasses;
     public Image GreyGlassesImage, OrangeGlassesImage, RedGlassesImage, GreenGlassesImage, WhiteGlassesImage;
+    public Image GreyGlassesSlot, OrangeGlassesSlot, RedGlassesSlot, GreenGlassesSlot, WhiteGlassesSlot;
     public Image GreyGlassesOwned, OrangeGlassesOwned, RedGlassesOwned, GreenGlassesOwned, WhiteGlassesOwned;
     public Image GreyGlassesPriceImage, OrangeGlassesPriceImage, RedGlassesPriceImage, GreenGlassesPriceImage, WhiteGlassesPriceImage;
     public Text GreyGlassesPriceText, OrangeGlassesPriceText, RedGlassesPriceText, GreenGlassesPriceText, WhiteGlassesPriceText;
@@ -97,7 +101,7 @@ public class ShopButtons : MonoBehaviour {
             MenuButton.GetComponent<Image>().enabled = true;
         }
         menupage = 0;
-        bobspage = 11;
+        bobspage = 9;
 
         //Programming buttons to call specific methods
         BackButton.onClick.AddListener(() => LoadScene(sceneToLoad));
@@ -135,11 +139,11 @@ public class ShopButtons : MonoBehaviour {
 
     void Update()
     {
+        catpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().catItemsPage - 5;
         glassespage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().glasspage - 4;
         bootspage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().bootspage - 3;
         jacketpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().jacketpage - 2;
         hatpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().hatpage - 1;
-        catpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().catItemsPage - 5;
 
             //Making if it's possible to buy items true
         if (currentpage == hatpage || currentpage == jacketpage || currentpage == bootspage || currentpage == glassespage || currentpage == catpage)
@@ -215,9 +219,72 @@ public class ShopButtons : MonoBehaviour {
             RedHatPriceText.enabled = false;
             GreenHatPriceText.enabled = false;
             WhiteHatPriceText.enabled = false;
-
         }
         //---------------------------------------------------------------------------------------------------------------------------------------
+
+        if (currentpage == glassespage)
+        {
+            //Making everything in glassespagecontrol true if you are on it's page
+            GreyGlassesImage.enabled = true;
+            OrangeGlassesImage.enabled = true;
+            RedGlassesImage.enabled = true;
+            GreenGlassesImage.enabled = true;
+            WhiteGlassesImage.enabled = true;
+
+            //changes the positions of the glasses on the glassespage 
+            GreyGlassesImage.transform.position = new Vector2(-90f, 325f);
+            OrangeGlassesImage.transform.position = new Vector2(-80f, 240f);
+            RedGlassesImage.transform.position = new Vector2(-75f, 145f);
+            GreenGlassesImage.transform.position = new Vector2(-65f, 35f);
+            WhiteGlassesImage.transform.position = new Vector2(400f, 365f);
+
+
+            GreyGlassesPriceImage.enabled = true;
+            OrangeGlassesPriceImage.enabled = true;
+            RedGlassesPriceImage.enabled = true;
+            GreenGlassesPriceImage.enabled = true;
+            WhiteGlassesPriceImage.enabled = true;
+
+            GreyGlassesPriceText.enabled = true;
+            OrangeGlassesPriceText.enabled = true;
+            RedGlassesPriceText.enabled = true;
+            GreenGlassesPriceText.enabled = true;
+            WhiteGlassesPriceText.enabled = true;
+        }
+        else if (currentpage != glassespage)
+        {
+            //Making everything false if you aren't on the glasses page
+            GreyGlasses.enabled = false;
+            OrangeGlasses.enabled = false;
+            RedGlasses.enabled = false;
+            GreenGlasses.enabled = false;
+            WhiteGlasses.enabled = false;
+
+            GreyGlassesImage.enabled = false;
+            OrangeGlassesImage.enabled = false;
+            RedGlassesImage.enabled = false;
+            GreenGlassesImage.enabled = false;
+            WhiteGlassesImage.enabled = false;
+
+            GreyGlassesOwned.enabled = false;
+            OrangeGlassesOwned.enabled = false;
+            RedGlassesOwned.enabled = false;
+            GreenGlassesOwned.enabled = false;
+            WhiteGlassesOwned.enabled = false;
+
+            GreyGlassesPriceImage.enabled = false;
+            OrangeGlassesPriceImage.enabled = false;
+            RedGlassesPriceImage.enabled = false;
+            GreenGlassesPriceImage.enabled = false;
+            WhiteGlassesPriceImage.enabled = false;
+
+            GreyGlassesPriceText.enabled = false;
+            OrangeGlassesPriceText.enabled = false;
+            RedGlassesPriceText.enabled = false;
+            GreenGlassesPriceText.enabled = false;
+            WhiteGlassesPriceText.enabled = false;
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------
 
         if (currentpage == jacketpage)
         {
@@ -234,7 +301,6 @@ public class ShopButtons : MonoBehaviour {
             RedJacketImage.transform.position = new Vector2(-75f, 145f);
             GreenJacketImage.transform.position = new Vector2(-65f, 35f);
             WhiteJacketImage.transform.position = new Vector2(400f, 365f);
-
 
             GreyJacketPriceImage.enabled = true;
             OrangeJacketPriceImage.enabled = true;
@@ -300,7 +366,6 @@ public class ShopButtons : MonoBehaviour {
             GreenBootsImage.transform.position = new Vector2(-65f, 35f);
             WhiteBootsImage.transform.position = new Vector2(400f, 365f);
 
-
             GreyBootsPriceImage.enabled = true;
             OrangeBootsPriceImage.enabled = true;
             RedBootsPriceImage.enabled = true;
@@ -312,7 +377,6 @@ public class ShopButtons : MonoBehaviour {
             RedBootsPriceText.enabled = true;
             GreenBootsPriceText.enabled = true;
             WhiteBootsPriceText.enabled = true;
-
         }
         else if (currentpage != bootspage)
         {
@@ -348,72 +412,7 @@ public class ShopButtons : MonoBehaviour {
             WhiteBootsPriceText.enabled = false;
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------
-
-        if (currentpage == glassespage)
-        {
-            //Making everything in glassespagecontrol true if you are on it's page
-            GreyGlassesImage.enabled = true;
-            OrangeGlassesImage.enabled = true;
-            RedGlassesImage.enabled = true;
-            GreenGlassesImage.enabled = true;
-            WhiteGlassesImage.enabled = true;
-
-            //changes the positions of the glasses on the glassespage 
-            /*GreyBootsImage.transform.position = new Vector2(-90f, 325f);
-            OrangeBootsImage.transform.position = new Vector2(-80f, 240f);
-            RedBootsImage.transform.position = new Vector2(-75f, 145f);
-            GreenBootsImage.transform.position = new Vector2(-65f, 35f);
-            WhiteBootsImage.transform.position = new Vector2(400f, 365f);*/
-
-
-            GreyGlassesPriceImage.enabled = true;
-            OrangeGlassesPriceImage.enabled = true;
-            RedGlassesPriceImage.enabled = true;
-            GreenGlassesPriceImage.enabled = true;
-            WhiteGlassesPriceImage.enabled = true;
-
-            GreyGlassesPriceText.enabled = true;
-            OrangeGlassesPriceText.enabled = true;
-            RedGlassesPriceText.enabled = true;
-            GreenGlassesPriceText.enabled = true;
-            WhiteGlassesPriceText.enabled = true;
-
-        }
-        else if (currentpage != glassespage)
-        {
-            //Making everything false if you aren't on the glasses page
-            GreyGlasses.enabled = false;
-            OrangeGlasses.enabled = false;
-            RedGlasses.enabled = false;
-            GreenGlasses.enabled = false;
-            WhiteGlasses.enabled = false;
-
-            GreyGlassesImage.enabled = false;
-            OrangeGlassesImage.enabled = false;
-            RedGlassesImage.enabled = false;
-            GreenGlassesImage.enabled = false;
-            WhiteGlassesImage.enabled = false;
-
-            GreyGlassesOwned.enabled = false;
-            OrangeGlassesOwned.enabled = false;
-            RedGlassesOwned.enabled = false;
-            GreenGlassesOwned.enabled = false;
-            WhiteGlassesOwned.enabled = false;
-
-            GreyGlassesPriceImage.enabled = false;
-            OrangeGlassesPriceImage.enabled = false;
-            RedGlassesPriceImage.enabled = false;
-            GreenGlassesPriceImage.enabled = false;
-            WhiteGlassesPriceImage.enabled = false;
-
-            GreyGlassesPriceText.enabled = false;
-            OrangeGlassesPriceText.enabled = false;
-            RedGlassesPriceText.enabled = false;
-            GreenGlassesPriceText.enabled = false;
-            WhiteGlassesPriceText.enabled = false;
-        }
-        //-------------------------------------------------------------------------------------------------------------------------------------------------
-
+      
         if (currentpage == catpage)
         {
             //Making everything in catpagecontrol true if you are on cat page
@@ -449,7 +448,6 @@ public class ShopButtons : MonoBehaviour {
 
             CatFoodAmountText.enabled = false;
             BallOYarnAmountText.enabled = false;
-
         }
 //------------------------------------------------------------------------------------------------------------------------------------
 
@@ -460,61 +458,172 @@ public class ShopButtons : MonoBehaviour {
             {
                 //Shows the image of grey hat on bobspage if you have bought it
                 GreyHatImage.enabled = true;
+                GreyHatSlot.enabled = false;
             }
 
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == false || greyHatBought == 0)
             {
                 //Doesn't show the image of grey hat on bobspage if you haven't bought it
                 GreyHatImage.enabled = false;
+                GreyHatSlot.enabled = true;
             }
 
             if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned == true || orangeHatBought == 1)
             {
                 //Shows the image of orange hat on bobspage if you have bought it
                 OrangeHatImage.enabled = true;
+                OrangeHatSlot.enabled = false;
             }
 
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned == false || orangeHatBought == 0)
             {
                 //Doesn't show the image of orange hat on bobspage if you haven't bought it
                 OrangeHatImage.enabled = false;
+                OrangeHatSlot.enabled = true;
             }
 
             if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned == true || redHatBought == 1)
             {
                 //Shows the image of red hat on bobspage if you have bought it
                 RedHatImage.enabled = true;
+                RedHatSlot.enabled = false;
             }
 
             else if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned == false || redHatBought == 0)
             {
                 //Doesn't show the image of red hat on bobspage if you haven't bought it
                 RedHatImage.enabled = false;
+                RedHatSlot.enabled = true;
             }
 
             if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned == true || greenHatBought == 1)
             {
                 //Shows the image of green hat on bobspage if you have bought itä
                 GreenHatImage.enabled = true;
+                GreenHatSlot.enabled = false;
             }
 
             else if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned == false || greenHatBought == 0)
             {
                 //Doesn't show the image of green hat on bobspage if you haven't bought it
                 GreenHatImage.enabled = false;
+                GreenHatSlot.enabled = true;
             }
 
             if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned == true || whiteHatBought == 1)
             {
                 //Shows the image of white hat on bobspage if you have bought it
                 WhiteHatImage.enabled = true;
+                WhiteHatSlot.enabled = false;
             }
 
             else if(GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned == false || whiteHatBought == 0)
             {
                 //Doesn't show the image of white hat on bobspage if you haven't bought it
                 WhiteHatImage.enabled = false;
+                WhiteHatSlot.enabled = true;
             }
+        }
+        else if (currentpage != bobspage)
+        {
+            GreyHatSlot.enabled = false;
+            OrangeHatSlot.enabled = false;
+            RedHatSlot.enabled = false;
+            GreenHatSlot.enabled = false;
+            WhiteHatSlot.enabled = false;
+        }
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+        //Checking if the player owns the glasses and then shows them on bobspage in the correct position
+        if (currentpage == bobspage)
+        {
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyGlassesOwned == true || greyGlassesBought == 1)
+            {
+                //Shows the image of grey glasses on bobspage if you have bought it
+                GreyGlassesImage.enabled = true;
+                GreyGlassesSlot.enabled = false;
+
+                //changes the positions of the grey glasses on bobspage
+                GreyGlassesImage.transform.position = new Vector2(20f, 340f);
+            }
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyGlassesOwned == false || greyGlassesBought == 0)
+            {
+                //Doesn't show the image of grey glasses on bobspage if you haven't bought it
+                GreyGlassesImage.enabled = false;
+                GreyGlassesSlot.enabled = true;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeGlassesOwned == true || orangeGlassesBought == 1)
+            {
+                //Shows the image of orange glasses on bobspage if you have bought it
+                OrangeGlassesImage.enabled = true;
+                OrangeGlassesSlot.enabled = false;
+
+                //changes the positions of the orange glasses on bobspage
+                OrangeGlassesImage.transform.position = new Vector2(20f, 245f);
+            }
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeGlassesOwned == false || orangeGlassesBought == 0)
+            {
+                //Doesn't show the image of orange glasses on bobspage if you haven't bought it
+                OrangeGlassesImage.enabled = false;
+                OrangeGlassesSlot.enabled = true;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedGlassesOwned == true || redGlassesBought == 1)
+            {
+                //Shows the image of red glasses on bobspage if you have bought it
+                RedGlassesImage.enabled = true;
+                RedGlassesSlot.enabled = false;
+
+                //changes the positions of the red glasses on bobspage
+                RedGlassesImage.transform.position = new Vector2(20f, 150f);
+            }
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedGlassesOwned == false || redGlassesBought == 0)
+            {
+                //Doesn't show the image of red glasses on bobspage if you haven't bought it
+                RedGlassesImage.enabled = false;
+                RedGlassesSlot.enabled = true;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenGlassesOwned == true || greenGlassesBought == 1)
+            {
+                //Shows the image of green glasses on bobspage if you have bought it
+                GreenGlassesImage.enabled = true;
+                GreenGlassesSlot.enabled = false;
+
+                //changes the positions of the green glasses on bobspage
+                GreenGlassesImage.transform.position = new Vector2(20f, 50f);
+            }
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenGlassesOwned == false || greenGlassesBought == 0)
+            {
+                //Doesn't show the image of green glasses on bobspage if you haven't bought it
+                GreenGlassesImage.enabled = false;
+                GreenGlassesSlot.enabled = true;
+            }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteGlassesOwned == true || whiteGlassesBought == 1)
+            {
+                //Shows the image of white glasses on bobspage if you have bought it
+                WhiteGlassesImage.enabled = true;
+                WhiteGlassesSlot.enabled = false;
+
+                //changes the positions of the white glasses on bobspage
+                WhiteGlassesImage.transform.position = new Vector2(490f, 390f);
+            }
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteGlassesOwned == false || whiteGlassesBought == 0)
+            {
+                //Doesn't show the image of white glasses on bobspage if you haven't bought it
+                WhiteGlassesImage.enabled = false;
+                WhiteGlassesSlot.enabled = true;
+            }
+        }
+        else if (currentpage!=bobspage)
+        {
+            GreyGlassesSlot.enabled = false;
+            OrangeGlassesSlot.enabled = false;
+            RedGlassesSlot.enabled = false;
+            GreenGlassesSlot.enabled = false;
+            WhiteGlassesSlot.enabled = false;
         }
 
         //---------------------------------------------------------------------------------------------------------------------------------------
@@ -524,77 +633,97 @@ public class ShopButtons : MonoBehaviour {
             {
                 //Shows the image of grey jacket on bobspage if you have bought it
                 GreyJacketImage.enabled = true;
+                GreyJacketSlot.enabled = false;
 
                 //changes the positions of the grey jacket on bobspage
-                GreyJacketImage.transform.position = new Vector2(10f, 330f);
+                GreyJacketImage.transform.position = new Vector2(110f, 340f);
             }
 
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned == false || greyJacketBought == 0)
             {
                 //Doesn't show the image of grey jacket on bobspage if you haven't bought it
                 GreyJacketImage.enabled = false;
+                GreyJacketSlot.enabled = true;
             }
 
             if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeJacketOwned == true || orangeJacketBought == 1)
             {
                 //Shows the image of orange jacket on bobspage if you have bought it
                 OrangeJacketImage.enabled = true;
+                OrangeJacketSlot.enabled = false;
 
                 //changes the positions of the orange jacket on bobspage
-                OrangeJacketImage.transform.position = new Vector2(10f, 245f);
+                OrangeJacketImage.transform.position = new Vector2(110f, 245f);
             }
 
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeJacketOwned == false || orangeJacketBought == 0)
             {
                 //Doesn't show the image of orange jacket on bobspage if you haven't bought it
                 OrangeJacketImage.enabled = false;
+                OrangeJacketSlot.enabled = true;
             }
 
             if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedJacketOwned == true || redJacketBought == 1)
             {
                 //Shows the image of red jacket on bobspage if you have bought it
                 RedJacketImage.enabled = true;
+                RedJacketSlot.enabled = false;
 
                 //changes the positions of the red jacket on bobspage
-                RedJacketImage.transform.position = new Vector2(10f, 150f);
+                RedJacketImage.transform.position = new Vector2(110f, 150f);
             }
 
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedJacketOwned == false || redJacketBought == 0)
             {
                 //Doesn't show the image of red jacket on bobspage if you haven't bought it
                 RedJacketImage.enabled = false;
+                RedJacketSlot.enabled = true;
             }
 
             if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenJacketOwned == true || greenJacketBought == 1)
             {
                 //Shows the image of green jacket on bobspage if you have bought itä
                 GreenJacketImage.enabled = true;
+                GreenJacketSlot.enabled = false;
                 
                 //changes the positions of the green jacket on bobspage
-                GreenJacketImage.transform.position = new Vector2(10f, 50f);
+                GreenJacketImage.transform.position = new Vector2(110f, 50f);
             }
 
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenJacketOwned == false || greenJacketBought == 0)
             {
                 //Doesn't show the image of green jacket on bobspage if you haven't bought it
                 GreenJacketImage.enabled = false;
+                GreenJacketSlot.enabled = true;
             }
 
             if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned == true || whiteJacketBought == 1)
             {
                 //Shows the image of white jacket on bobspage if you have bought it
                 WhiteJacketImage.enabled = true;
+                WhiteJacketSlot.enabled = false;
 
                 //changes the positions of the white jacket on bobspage
-                WhiteJacketImage.transform.position = new Vector2(490f, 375f);
+                WhiteJacketImage.transform.position = new Vector2(575f, 375f);
             }
 
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned == false || whiteJacketBought == 0)
             {
                 //Doesn't show the image of white jacket on bobspage if you haven't bought it
                 WhiteJacketImage.enabled = false;
+                WhiteJacketSlot.enabled = true;
             }
         }
+        else if (currentpage!=bobspage)
+        {
+            GreyJacketSlot.enabled = false;
+            OrangeJacketSlot.enabled = false;
+            RedJacketSlot.enabled = false;
+            GreenJacketSlot.enabled = false;
+            WhiteJacketSlot.enabled = false;
+        }
+        //---------------------------------------------------------------------------------------------------------------------------------------
+
 
         //Checking if the player owns the boots and then shows them on bobspage in the correct position
         if (currentpage == bobspage)
@@ -603,149 +732,90 @@ public class ShopButtons : MonoBehaviour {
             {
                 //Shows the image of grey boots on bobspage if you have bought it
                 GreyBootsImage.enabled = true;
+                GreyBootsSlot.enabled = false;
 
                 //changes the positions of the grey boots on bobspage
-                GreyBootsImage.transform.position = new Vector2(100f, 340f);
+                GreyBootsImage.transform.position = new Vector2(200f, 350f);
             }
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyBootsOwned == false || greyBootsBought == 0)
             {
                 //Doesn't show the image of grey boots on bobspage if you haven't bought it
                 GreyBootsImage.enabled = false;
+                GreyBootsSlot.enabled = true;
             }
 
             if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeBootsOwned == true || orangeBootsBought == 1)
             {
                 //Shows the image of orange boots on bobspage if you have bought it
                 OrangeBootsImage.enabled = true;
+                OrangeBootsSlot.enabled = false;
 
                 //changes the positions of the orange boots on bobspage
-                OrangeBootsImage.transform.position = new Vector2(100f, 245f);
+                OrangeBootsImage.transform.position = new Vector2(200f, 250f);
             }
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeBootsOwned == false || orangeBootsBought == 0)
             {
                 //Doesn't show the image of orange boots on bobspage if you haven't bought it
                 OrangeBootsImage.enabled = false;
+                OrangeBootsSlot.enabled = true;
             }
 
             if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedBootsOwned == true || redBootsBought == 1)
             {
                 //Shows the image of red boots on bobspage if you have bought it
                 RedBootsImage.enabled = true;
+                RedBootsSlot.enabled = false;
 
                 //changes the positions of the red boots on bobspage
-                RedBootsImage.transform.position = new Vector2(100f, 150f);
+                RedBootsImage.transform.position = new Vector2(200f, 150f);
             }
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedBootsOwned == false || redBootsBought == 0)
             {
                 //Doesn't show the image of red Boots on bobspage if you haven't bought it
                 RedBootsImage.enabled = false;
+                RedBootsSlot.enabled = true;
             }
 
             if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenBootsOwned == true || greenBootsBought == 1)
             {
                 //Shows the image of green boots on bobspage if you have bought it
                 GreenBootsImage.enabled = true;
+                GreenBootsSlot.enabled = false;
 
                 //changes the positions of the green boots on bobspage
-                GreenBootsImage.transform.position = new Vector2(100f, 50f);
+                GreenBootsImage.transform.position = new Vector2(200f, 50f);
             }
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenBootsOwned == false || greenBootsBought == 0)
             {
                 //Doesn't show the image of green Boots on bobspage if you haven't bought it
                 GreenBootsImage.enabled = false;
+                GreenBootsSlot.enabled = true;
             }
 
             if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteBootsOwned == true || whiteBootsBought == 1)
             {
                 //Shows the image of white boots on bobspage if you have bought it
                 WhiteBootsImage.enabled = true;
+                WhiteBootsSlot.enabled = false;
 
                 //changes the positions of the white boots on bobspage
-                WhiteBootsImage.transform.position = new Vector2(575f, 375f);
+                WhiteBootsImage.transform.position = new Vector2(660f, 375f);
             }
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteBootsOwned == false || whiteBootsBought == 0)
             {
                 //Doesn't show the image of white boots on bobspage if you haven't bought it
                 WhiteBootsImage.enabled = false;
+                WhiteBootsSlot.enabled = true;
             }
         }
-
-        //---------------------------------------------------------------------------------------------------------------------------------------
-
-        //Checking if the player owns the glasses and then shows them on bobspage in the correct position
-        if (currentpage == bobspage)
+        else if (currentpage != bobspage)
         {
-            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyGlassesOwned == true || greyGlassesBought == 1)
-            {
-                //Shows the image of grey glasses on bobspage if you have bought it
-                GreyGlassesImage.enabled = true;
-
-                //changes the positions of the grey glasses on bobspage
-                GreyGlassesImage.transform.position = new Vector2(100f, 340f);
-            }
-            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyGlassesOwned == false || greyGlassesBought == 0)
-            {
-                //Doesn't show the image of grey glasses on bobspage if you haven't bought it
-                GreyGlassesImage.enabled = false;
-            }
-
-            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeGlassesOwned == true || orangeGlassesBought == 1)
-            {
-                //Shows the image of orange glasses on bobspage if you have bought it
-                OrangeGlassesImage.enabled = true;
-
-                //changes the positions of the orange glasses on bobspage
-                OrangeGlassesImage.transform.position = new Vector2(100f, 245f);
-            }
-            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeGlassesOwned == false || orangeGlassesBought == 0)
-            {
-                //Doesn't show the image of orange glasses on bobspage if you haven't bought it
-                OrangeGlassesImage.enabled = false;
-            }
-
-            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedGlassesOwned == true || redGlassesBought == 1)
-            {
-                //Shows the image of red glasses on bobspage if you have bought it
-                RedGlassesImage.enabled = true;
-
-                //changes the positions of the red glasses on bobspage
-                RedGlassesImage.transform.position = new Vector2(100f, 150f);
-            }
-            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedGlassesOwned == false || redGlassesBought == 0)
-            {
-                //Doesn't show the image of red glasses on bobspage if you haven't bought it
-                RedGlassesImage.enabled = false;
-            }
-
-            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenGlassesOwned == true || greenGlassesBought == 1)
-            {
-                //Shows the image of green glasses on bobspage if you have bought it
-                GreenGlassesImage.enabled = true;
-
-                //changes the positions of the green glasses on bobspage
-                GreenGlassesImage.transform.position = new Vector2(100f, 50f);
-            }
-            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenGlassesOwned == false || greenGlassesBought == 0)
-            {
-                //Doesn't show the image of green glasses on bobspage if you haven't bought it
-                GreenGlassesImage.enabled = false;
-            }
-
-            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteGlassesOwned == true || whiteGlassesBought == 1)
-            {
-                //Shows the image of white glasses on bobspage if you have bought it
-                WhiteGlassesImage.enabled = true;
-
-                //changes the positions of the white glasses on bobspage
-                WhiteGlassesImage.transform.position = new Vector2(575f, 375f);
-            }
-            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteGlassesOwned == false || whiteGlassesBought == 0)
-            {
-                //Doesn't show the image of white glasses on bobspage if you haven't bought it
-                WhiteGlassesImage.enabled = false;
-            }
+            GreyBootsSlot.enabled = false;
+            RedBootsSlot.enabled = false;
+            OrangeBootsSlot.enabled = false;
+            GreenBootsSlot.enabled = false;
+            WhiteBootsSlot.enabled = false;
         }
-
         //---------------------------------------------------------------------------------------------------------------------------------------
 
         if (shopbook.GetComponent<Image>().enabled == false)

@@ -25,8 +25,6 @@ public class BookButtonControl : MonoBehaviour {
     public Button bootsTextButton;
     public Button glassesPageButton;
     public Button glassesTextButton;
-    public Button weeklyPageButton;
-    public Button weeklyTextButton;
     public Button limitedTimeButton;
     public Button limitedTextButton;
 
@@ -36,10 +34,9 @@ public class BookButtonControl : MonoBehaviour {
     public int jacketpage;
     public int dustpage;
     public int bootspage;
-    int leftpage;
-    int rightpage;
+    public int leftpage;
+    public int rightpage;
     public int glasspage;
-    public int weeklypage;
     public int limitedpage;
 
     public Text hatpagetext;
@@ -49,7 +46,6 @@ public class BookButtonControl : MonoBehaviour {
     public Text dusttext;
     public Text bootstext;
     public Text glasstext;
-    public Text weeklytext;
     public Text limitedText;
 
     private AudioSource[] audioSources;
@@ -68,9 +64,8 @@ public class BookButtonControl : MonoBehaviour {
         glasspage = 8;
         catItemsPage = 10;
         powerUpsPage = 12;
-        weeklypage = 14;
-        limitedpage = 16;
-        dustpage = 18;
+        limitedpage = 14;
+        dustpage = 16;
 
         audioSources = GetComponents<AudioSource>();
         bookCloseSound = audioSources[0];
@@ -104,15 +99,11 @@ public class BookButtonControl : MonoBehaviour {
         dustPageButton.onClick.AddListener(DustPage);
         dustTextButton.onClick.AddListener(DustPage);
 
-
         bootsPageButton.onClick.AddListener(BootsPage);
         bootsTextButton.onClick.AddListener(BootsPage);
 
         glassesPageButton.onClick.AddListener(GlassesPage);
         glassesTextButton.onClick.AddListener(GlassesPage);
-
-        weeklyPageButton.onClick.AddListener(WeeklySalesPage);
-        weeklyTextButton.onClick.AddListener(WeeklySalesPage);
 
         limitedTimeButton.onClick.AddListener(LimitedTimePage);
         limitedTextButton.onClick.AddListener(LimitedTimePage);
@@ -170,18 +161,11 @@ public class BookButtonControl : MonoBehaviour {
             glassesPageButton.enabled = true;
             glassesTextButton.enabled = true;
 
-            weeklyPageButton.GetComponent<Image>().enabled = true;
-            weeklyTextButton.GetComponent<Image>().enabled = true;
-            weeklytext.GetComponent<Text>().enabled = true;
-            weeklyPageButton.enabled = true;
-            weeklyTextButton.enabled = true;
-
             limitedTimeButton.GetComponent<Image>().enabled = true;
             limitedTextButton.GetComponent<Image>().enabled = true;
             limitedText.GetComponent<Text>().enabled = true;
             limitedTimeButton.enabled = true;
             limitedTextButton.enabled = true;
-
         }
         else
         {
@@ -228,22 +212,14 @@ public class BookButtonControl : MonoBehaviour {
             glassesPageButton.enabled = false;
             glassesTextButton.enabled = false;
 
-            weeklyPageButton.GetComponent<Image>().enabled = false;
-            weeklyTextButton.GetComponent<Image>().enabled = false;
-            weeklytext.GetComponent<Text>().enabled = false;
-            weeklyPageButton.enabled = false;
-            weeklyTextButton.enabled = false;
-
             limitedTimeButton.GetComponent<Image>().enabled = false;
             limitedTextButton.GetComponent<Image>().enabled = false;
             limitedText.GetComponent<Text>().enabled = false;
             limitedTimeButton.enabled = false;
             limitedTextButton.enabled = false;
         }
-
-       
+      
         GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
-
     }
     void OpenBook()
     {
@@ -330,14 +306,7 @@ public class BookButtonControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = glasspage / 2;
         pageTurnSound.Play();
     }
-    void WeeklySalesPage()
-    {
-        //Changes the page
-        GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = weeklypage;
-        GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = weeklypage + 1;
-        GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = weeklypage / 2;
-        pageTurnSound.Play();
-    }
+
     void LimitedTimePage()
     {
         //Changes the page

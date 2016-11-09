@@ -4403,9 +4403,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.5959127, y: -0.34942532}
+  m_Offset: {x: 0.18298054, y: -0.28479433}
   serializedVersion: 2
-  m_Size: {x: 9.7676525, y: 4.4114027}
+  m_Size: {x: 11.268511, y: 3.463478}
 --- !u!114 &1825655669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4600,7 +4600,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 943297537
+  randomSeed: -995848706
   InitialModule:
     serializedVersion: 2
     enabled: 1
