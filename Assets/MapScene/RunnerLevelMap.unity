@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonLevel: 2
+  buttonLevel: 0
 --- !u!114 &282237849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,7 +1402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonLevel: 1
+  buttonLevel: 0
 --- !u!114 &465714607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2166,7 +2166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonLevel: 3
+  buttonLevel: 0
 --- !u!1 &697165374
 GameObject:
   m_ObjectHideFlags: 0
@@ -3034,48 +3034,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonLevel: 0
---- !u!1001 &898787090
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.3339407
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.13836975
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 58.132812
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &986201425
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,7 +4068,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 209, y: -82}
+  m_AnchoredPosition: {x: 302.4, y: -146.8}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1308916096
@@ -4133,7 +4091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1308916097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4145,7 +4103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f828b52023f5d54386ea2951b445abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonLevel: 4
+  buttonLevel: 0
 --- !u!114 &1308916098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5919,14 +5877,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49aa61ba778dfa4abbc7fd41d06673a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  levelIndex: 0600000007000000080000002500000024000000
-=======
-  levelIndex: 0600000007000000080000002500000026000000
->>>>>>> origin/master
+  levelIndex: 0600000007000000080000002400000025000000
   completedLevels: 
   currentLevel: 0
-  levelSelectScene: 33
+  levelSelectScene: 35
   thunderButton: {fileID: 0}
   snowButton: {fileID: 0}
   catmovement: {fileID: 0}

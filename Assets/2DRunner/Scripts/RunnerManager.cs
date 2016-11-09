@@ -317,11 +317,11 @@ public class RunnerManager : MonoBehaviour
         }
         if (level == 36)
         {
-            currentLevel = 0;
+            currentLevel = 3;
         }
         if (level == 37)
         {
-            currentLevel = 3;
+            currentLevel = 4;
         }
         if (level == 38)
         {
