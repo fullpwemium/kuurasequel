@@ -17,9 +17,9 @@ public class KissaClick : MonoBehaviour {
 	
 	}
 	void OnMouseDown() {
-		kissekuva.SetActive (true);
-		kissa1.SetActive (false);
-		kissakasa1.SetActive (false);
-		backarrow.SetActive (true);
+		//kissekuva.SetActive (true);
+		//kissa1.SetActive (false);
+		//kissakasa1.SetActive (false);
+		//backarrow.SetActive (true);
 	}
 }
