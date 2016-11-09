@@ -58,6 +58,5 @@ public class NextPageControl : MonoBehaviour {
         Debug.Log("Next page");
 
         turnPageSound.Play();
-
     }
 }
