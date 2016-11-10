@@ -59,9 +59,9 @@ public class BookButtonControl : MonoBehaviour {
     {
         //Makes the text of the button to be nothing
         hatpage = 2;
-        jacketpage = 4;
-        bootspage = 6;
-        glasspage = 8;
+        glasspage = 4;
+        jacketpage = 6;
+        bootspage = 8;   
         catItemsPage = 10;
         powerUpsPage = 12;
         limitedpage = 14;

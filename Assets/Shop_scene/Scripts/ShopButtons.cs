@@ -16,24 +16,28 @@ public class ShopButtons : MonoBehaviour {
     int redHatBought;
     int greenHatBought;
     int whiteHatBought;
+    int blueHatBought;
 
     int greyJacketBought;
     int orangeJacketBought;
     int redJacketBought;
     int greenJacketBought;
     int whiteJacketBought;
+    int blueJacketBought;
 
     int greyBootsBought;
     int orangeBootsBought;
     int redBootsBought;
     int greenBootsBought;
     int whiteBootsBought;
+    int blueBootsBought;
 
     int greyGlassesBought;
     int orangeGlassesBought;
     int redGlassesBought;
     int greenGlassesBought;
     int whiteGlassesBought;
+    int blueGlassesBought;
 
     public int sceneToLoad;
 
@@ -53,33 +57,33 @@ public class ShopButtons : MonoBehaviour {
     public GameObject Menubutton;
     public GameObject NotEnoughDust, WantToBuy, BuyConfirm, WhiteBackground;
 
-    public Button GreyHat, OrangeHat, RedHat, GreenHat, WhiteHat;
-    public Image GreyHatImage, OrangeHatImage, RedHatImage, GreenHatImage, WhiteHatImage;
-    public Image GreyHatOwned, OrangeHatOwned, RedHatOwned, GreenHatOwned, WhiteHatOwned;
-    public Image GreyHatSlot, OrangeHatSlot, RedHatSlot, GreenHatSlot, WhiteHatSlot;
-    public Image GreyHatPriceImage, OrangeHatPriceImage, RedHatPriceImage, GreenHatPriceImage, WhiteHatPriceImage;
-    public Text GreyHatPriceText, OrangeHatPriceText, RedHatPriceText, GreenHatPriceText, WhiteHatPriceText;
+    public Button GreyHat, OrangeHat, RedHat, GreenHat, WhiteHat, BlueHat;
+    public Image GreyHatImage, OrangeHatImage, RedHatImage, GreenHatImage, WhiteHatImage, BlueHatImage;
+    public Image GreyHatOwned, OrangeHatOwned, RedHatOwned, GreenHatOwned, WhiteHatOwned, BlueHatOwned;
+    public Image GreyHatSlot, OrangeHatSlot, RedHatSlot, GreenHatSlot, WhiteHatSlot, BlueHatSlot;
+    public Image GreyHatPriceImage, OrangeHatPriceImage, RedHatPriceImage, GreenHatPriceImage, WhiteHatPriceImage, BlueHatPriceImage;
+    public Text GreyHatPriceText, OrangeHatPriceText, RedHatPriceText, GreenHatPriceText, WhiteHatPriceText, BlueHatPriceText;
 
-    public Button GreyJacket, OrangeJacket, RedJacket, GreenJacket, WhiteJacket;
-    public Image GreyJacketSlot, OrangeJacketSlot, RedJacketSlot, GreenJacketSlot, WhiteJacketSlot;
-    public Image GreyJacketImage, OrangeJacketImage, RedJacketImage, GreenJacketImage, WhiteJacketImage;
-    public Image GreyJacketOwned, OrangeJacketOwned, RedJacketOwned, GreenJacketOwned, WhiteJacketOwned;
-    public Image GreyJacketPriceImage, OrangeJacketPriceImage, RedJacketPriceImage, GreenJacketPriceImage, WhiteJacketPriceImage;
-    public Text GreyJacketPriceText, OrangeJacketPriceText, RedJacketPriceText, GreenJacketPriceText, WhiteJacketPriceText;
+    public Button GreyJacket, OrangeJacket, RedJacket, GreenJacket, WhiteJacket, BlueJacket;
+    public Image GreyJacketSlot, OrangeJacketSlot, RedJacketSlot, GreenJacketSlot, WhiteJacketSlot, BlueJacketSlot;
+    public Image GreyJacketImage, OrangeJacketImage, RedJacketImage, GreenJacketImage, WhiteJacketImage, BlueJacketImage;
+    public Image GreyJacketOwned, OrangeJacketOwned, RedJacketOwned, GreenJacketOwned, WhiteJacketOwned, BlueJacketOwned;
+    public Image GreyJacketPriceImage, OrangeJacketPriceImage, RedJacketPriceImage, GreenJacketPriceImage, WhiteJacketPriceImage, BlueJacketPriceImage;
+    public Text GreyJacketPriceText, OrangeJacketPriceText, RedJacketPriceText, GreenJacketPriceText, WhiteJacketPriceText, BlueJacketPriceText;
 
-    public Button GreyBoots, OrangeBoots, RedBoots, GreenBoots, WhiteBoots;
-    public Image GreyBootsSlot, OrangeBootsSlot, RedBootsSlot, GreenBootsSlot, WhiteBootsSlot;
-    public Image GreyBootsImage, OrangeBootsImage, RedBootsImage, GreenBootsImage, WhiteBootsImage;
-    public Image GreyBootsOwned, OrangeBootsOwned, RedBootsOwned, GreenBootsOwned, WhiteBootsOwned;
-    public Image GreyBootsPriceImage, OrangeBootsPriceImage, RedBootsPriceImage, GreenBootsPriceImage, WhiteBootsPriceImage;
-    public Text GreyBootsPriceText, OrangeBootsPriceText, RedBootsPriceText, GreenBootsPriceText, WhiteBootsPriceText;
+    public Button GreyBoots, OrangeBoots, RedBoots, GreenBoots, WhiteBoots, BlueBoots;
+    public Image GreyBootsSlot, OrangeBootsSlot, RedBootsSlot, GreenBootsSlot, WhiteBootsSlot, BlueBootsSlot;
+    public Image GreyBootsImage, OrangeBootsImage, RedBootsImage, GreenBootsImage, WhiteBootsImage, BlueBootsImage;
+    public Image GreyBootsOwned, OrangeBootsOwned, RedBootsOwned, GreenBootsOwned, WhiteBootsOwned, BlueBootsOwned;
+    public Image GreyBootsPriceImage, OrangeBootsPriceImage, RedBootsPriceImage, GreenBootsPriceImage, WhiteBootsPriceImage, BlueBootsPriceImage;
+    public Text GreyBootsPriceText, OrangeBootsPriceText, RedBootsPriceText, GreenBootsPriceText, WhiteBootsPriceText, BlueBootsPriceText;
 
-    public Button GreyGlasses, OrangeGlasses, RedGlasses, GreenGlasses, WhiteGlasses;
-    public Image GreyGlassesImage, OrangeGlassesImage, RedGlassesImage, GreenGlassesImage, WhiteGlassesImage;
-    public Image GreyGlassesSlot, OrangeGlassesSlot, RedGlassesSlot, GreenGlassesSlot, WhiteGlassesSlot;
-    public Image GreyGlassesOwned, OrangeGlassesOwned, RedGlassesOwned, GreenGlassesOwned, WhiteGlassesOwned;
-    public Image GreyGlassesPriceImage, OrangeGlassesPriceImage, RedGlassesPriceImage, GreenGlassesPriceImage, WhiteGlassesPriceImage;
-    public Text GreyGlassesPriceText, OrangeGlassesPriceText, RedGlassesPriceText, GreenGlassesPriceText, WhiteGlassesPriceText;
+    public Button GreyGlasses, OrangeGlasses, RedGlasses, GreenGlasses, WhiteGlasses, BlueGlasses;
+    public Image GreyGlassesImage, OrangeGlassesImage, RedGlassesImage, GreenGlassesImage, WhiteGlassesImage, BlueGlassesImage;
+    public Image GreyGlassesSlot, OrangeGlassesSlot, RedGlassesSlot, GreenGlassesSlot, WhiteGlassesSlot, BlueGlassesSlot;
+    public Image GreyGlassesOwned, OrangeGlassesOwned, RedGlassesOwned, GreenGlassesOwned, WhiteGlassesOwned, BlueGlassesOwned;
+    public Image GreyGlassesPriceImage, OrangeGlassesPriceImage, RedGlassesPriceImage, GreenGlassesPriceImage, WhiteGlassesPriceImage, BlueGlassesPriceImage;
+    public Text GreyGlassesPriceText, OrangeGlassesPriceText, RedGlassesPriceText, GreenGlassesPriceText, WhiteGlassesPriceText, blueGlassesPriceText;
     
     public Button CatFood, BallOYarn;
     public Image CatFoodImage, BallOYarnImage;
@@ -114,6 +118,7 @@ public class ShopButtons : MonoBehaviour {
         redHatBought = PlayerPrefs.GetInt("redHatOwned");
         greenHatBought = PlayerPrefs.GetInt("greenHatOwned");
         whiteHatBought = PlayerPrefs.GetInt("whiteHatOwned");
+        blueHatBought = PlayerPrefs.GetInt("blueHatOwned");
 
         //Gets the value of the jacket bought from the hard drive
         greyJacketBought = PlayerPrefs.GetInt("greyJacketOwned");
@@ -121,6 +126,7 @@ public class ShopButtons : MonoBehaviour {
         redJacketBought = PlayerPrefs.GetInt("redJacketOwned");
         greenJacketBought = PlayerPrefs.GetInt("greenJacketOwned");
         whiteJacketBought = PlayerPrefs.GetInt("whiteJacketOwned");
+        blueJacketBought = PlayerPrefs.GetInt("blueJacketOwned");
 
         //Gets the value of the boots bought from the hard drive
         greyBootsBought = PlayerPrefs.GetInt("greyBootsOwned");
@@ -128,6 +134,7 @@ public class ShopButtons : MonoBehaviour {
         redBootsBought = PlayerPrefs.GetInt("redBootsOwned");
         greenBootsBought = PlayerPrefs.GetInt("greenBootsOwned");
         whiteBootsBought = PlayerPrefs.GetInt("whiteBootsOwned");
+        blueBootsBought = PlayerPrefs.GetInt("blueBootsOwned");
 
         //Gets the value of the glasses bought from the hard drive
         greyGlassesBought = PlayerPrefs.GetInt("greyGlassesOwned");
@@ -135,17 +142,18 @@ public class ShopButtons : MonoBehaviour {
         redGlassesBought = PlayerPrefs.GetInt("redGlassesOwned");
         greenGlassesBought = PlayerPrefs.GetInt("greenGlassesOwned");
         whiteGlassesBought = PlayerPrefs.GetInt("whiteGlassesOwned");
+        blueGlassesBought = PlayerPrefs.GetInt("blueGlassesOwned");
     }
 
     void Update()
-    {
-        catpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().catItemsPage - 5;
-        glassespage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().glasspage - 4;
-        bootspage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().bootspage - 3;
-        jacketpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().jacketpage - 2;
+    {          
         hatpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().hatpage - 1;
+        glassespage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().glasspage - 2;
+        jacketpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().jacketpage - 3;
+        bootspage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().bootspage - 4;
+        catpage = GameObject.Find("BookButton").GetComponent<BookButtonControl>().catItemsPage - 5;
 
-            //Making if it's possible to buy items true
+        //Making if it's possible to buy items true
         if (currentpage == hatpage || currentpage == jacketpage || currentpage == bootspage || currentpage == glassespage || currentpage == catpage)
         {
             //Making if it's possible to buy items true
@@ -173,19 +181,21 @@ public class ShopButtons : MonoBehaviour {
             RedHatImage.enabled = true;
             GreenHatImage.enabled = true;
             WhiteHatImage.enabled = true;
+            BlueHatImage.enabled = true;
 
             GreyHatPriceImage.enabled = true;
             OrangeHatPriceImage.enabled = true;
             RedHatPriceImage.enabled = true;
             GreenHatPriceImage.enabled = true;
             WhiteHatPriceImage.enabled = true;
+            BlueHatPriceImage.enabled = true;
 
             GreyHatPriceText.enabled = true;
             OrangeHatPriceText.enabled = true;
             RedHatPriceText.enabled = true;
             GreenHatPriceText.enabled = true;
             WhiteHatPriceText.enabled = true;
-
+            BlueHatPriceText.enabled = true;
         }
         else if (currentpage != hatpage)
         {
@@ -195,30 +205,35 @@ public class ShopButtons : MonoBehaviour {
             RedHat.enabled = false;
             GreenHat.enabled = false;
             WhiteHat.enabled = false;
+            BlueHat.enabled = false;
 
             GreyHatImage.enabled = false;
             OrangeHatImage.enabled = false;
             RedHatImage.enabled = false;
             GreenHatImage.enabled = false;
             WhiteHatImage.enabled = false;
+            BlueHatImage.enabled = false;
 
             GreyHatOwned.enabled = false;
             OrangeHatOwned.enabled = false;
             RedHatOwned.enabled = false;
             GreenHatOwned.enabled = false;
             WhiteHatOwned.enabled = false;
+            BlueHatOwned.enabled = false;
 
             GreyHatPriceImage.enabled = false;
             OrangeHatPriceImage.enabled = false;
             RedHatPriceImage.enabled = false;
             GreenHatPriceImage.enabled = false;
             WhiteHatPriceImage.enabled = false;
+            BlueHatPriceImage.enabled = false;
 
             GreyHatPriceText.enabled = false;
             OrangeHatPriceText.enabled = false;
             RedHatPriceText.enabled = false;
             GreenHatPriceText.enabled = false;
             WhiteHatPriceText.enabled = false;
+            BlueHatPriceText.enabled = false;
         }
         //---------------------------------------------------------------------------------------------------------------------------------------
 
@@ -230,26 +245,29 @@ public class ShopButtons : MonoBehaviour {
             RedGlassesImage.enabled = true;
             GreenGlassesImage.enabled = true;
             WhiteGlassesImage.enabled = true;
+            BlueGlassesImage.enabled = true;
 
             //changes the positions of the glasses on the glassespage 
             GreyGlassesImage.transform.position = new Vector2(-90f, 325f);
             OrangeGlassesImage.transform.position = new Vector2(-80f, 240f);
             RedGlassesImage.transform.position = new Vector2(-75f, 145f);
             GreenGlassesImage.transform.position = new Vector2(-65f, 35f);
-            WhiteGlassesImage.transform.position = new Vector2(400f, 365f);
-
+            WhiteGlassesImage.transform.position = new Vector2(410f, 365f);
+            BlueGlassesImage.transform.position = new Vector2(420f, 280f);
 
             GreyGlassesPriceImage.enabled = true;
             OrangeGlassesPriceImage.enabled = true;
             RedGlassesPriceImage.enabled = true;
             GreenGlassesPriceImage.enabled = true;
             WhiteGlassesPriceImage.enabled = true;
+            BlueGlassesPriceImage.enabled = true;
 
             GreyGlassesPriceText.enabled = true;
             OrangeGlassesPriceText.enabled = true;
             RedGlassesPriceText.enabled = true;
             GreenGlassesPriceText.enabled = true;
             WhiteGlassesPriceText.enabled = true;
+            blueGlassesPriceText.enabled = true;
         }
         else if (currentpage != glassespage)
         {
@@ -259,30 +277,35 @@ public class ShopButtons : MonoBehaviour {
             RedGlasses.enabled = false;
             GreenGlasses.enabled = false;
             WhiteGlasses.enabled = false;
+            BlueGlasses.enabled = false;
 
             GreyGlassesImage.enabled = false;
             OrangeGlassesImage.enabled = false;
             RedGlassesImage.enabled = false;
             GreenGlassesImage.enabled = false;
             WhiteGlassesImage.enabled = false;
+            BlueGlassesImage.enabled = false;
 
             GreyGlassesOwned.enabled = false;
             OrangeGlassesOwned.enabled = false;
             RedGlassesOwned.enabled = false;
             GreenGlassesOwned.enabled = false;
             WhiteGlassesOwned.enabled = false;
+            BlueGlassesOwned.enabled = false;
 
             GreyGlassesPriceImage.enabled = false;
             OrangeGlassesPriceImage.enabled = false;
             RedGlassesPriceImage.enabled = false;
             GreenGlassesPriceImage.enabled = false;
             WhiteGlassesPriceImage.enabled = false;
+            BlueGlassesPriceImage.enabled = false;
 
             GreyGlassesPriceText.enabled = false;
             OrangeGlassesPriceText.enabled = false;
             RedGlassesPriceText.enabled = false;
             GreenGlassesPriceText.enabled = false;
             WhiteGlassesPriceText.enabled = false;
+            blueGlassesPriceText.enabled = false;
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -294,6 +317,7 @@ public class ShopButtons : MonoBehaviour {
             RedJacketImage.enabled = true;
             GreenJacketImage.enabled = true;
             WhiteJacketImage.enabled = true;
+            BlueJacketImage.enabled = true;
 
             //changes the positions of the jackets on the jacketpage 
             GreyJacketImage.transform.position = new Vector2(-90f, 325f);
@@ -301,18 +325,21 @@ public class ShopButtons : MonoBehaviour {
             RedJacketImage.transform.position = new Vector2(-75f, 145f);
             GreenJacketImage.transform.position = new Vector2(-65f, 35f);
             WhiteJacketImage.transform.position = new Vector2(400f, 365f);
+            BlueJacketImage.transform.position = new Vector2(400f, 265f);
 
             GreyJacketPriceImage.enabled = true;
             OrangeJacketPriceImage.enabled = true;
             RedJacketPriceImage.enabled = true;
             GreenJacketPriceImage.enabled = true;
             WhiteJacketPriceImage.enabled = true;
+            BlueJacketPriceImage.enabled = true;
 
             GreyJacketPriceText.enabled = true;
             OrangeJacketPriceText.enabled = true;
             RedJacketPriceText.enabled = true;
             GreenJacketPriceText.enabled = true;
             WhiteJacketPriceText.enabled = true;
+            BlueJacketPriceText.enabled = true;
 
         }
         else if (currentpage != jacketpage)
@@ -323,30 +350,35 @@ public class ShopButtons : MonoBehaviour {
             RedJacket.enabled = false;
             GreenJacket.enabled = false;
             WhiteJacket.enabled = false;
+            BlueJacket.enabled = false;
 
             GreyJacketImage.enabled = false;
             OrangeJacketImage.enabled = false;
             RedJacketImage.enabled = false;
             GreenJacketImage.enabled = false;
             WhiteJacketImage.enabled = false;
+            BlueJacketImage.enabled = false;
 
             GreyJacketOwned.enabled = false;
             OrangeJacketOwned.enabled = false;
             RedJacketOwned.enabled = false;
             GreenJacketOwned.enabled = false;
             WhiteJacketOwned.enabled = false;
+            BlueJacketOwned.enabled = false;
 
             GreyJacketPriceImage.enabled = false;
             OrangeJacketPriceImage.enabled = false;
             RedJacketPriceImage.enabled = false;
             GreenJacketPriceImage.enabled = false;
             WhiteJacketPriceImage.enabled = false;
+            BlueJacketPriceImage.enabled = false;
 
             GreyJacketPriceText.enabled = false;
             OrangeJacketPriceText.enabled = false;
             RedJacketPriceText.enabled = false;
             GreenJacketPriceText.enabled = false;
             WhiteJacketPriceText.enabled = false;
+            BlueJacketPriceText.enabled = false;
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -358,6 +390,7 @@ public class ShopButtons : MonoBehaviour {
             RedBootsImage.enabled = true;
             GreenBootsImage.enabled = true;
             WhiteBootsImage.enabled = true;
+            BlueBootsImage.enabled = true;
 
             //changes the positions of the boots on the bootspage 
             GreyBootsImage.transform.position = new Vector2(-90f, 325f);
@@ -365,18 +398,21 @@ public class ShopButtons : MonoBehaviour {
             RedBootsImage.transform.position = new Vector2(-75f, 145f);
             GreenBootsImage.transform.position = new Vector2(-65f, 35f);
             WhiteBootsImage.transform.position = new Vector2(400f, 365f);
+            BlueBootsImage.transform.position = new Vector2(420f, 265f);
 
             GreyBootsPriceImage.enabled = true;
             OrangeBootsPriceImage.enabled = true;
             RedBootsPriceImage.enabled = true;
             GreenBootsPriceImage.enabled = true;
             WhiteBootsPriceImage.enabled = true;
+            BlueBootsPriceImage.enabled = true;
 
             GreyBootsPriceText.enabled = true;
             OrangeBootsPriceText.enabled = true;
             RedBootsPriceText.enabled = true;
             GreenBootsPriceText.enabled = true;
             WhiteBootsPriceText.enabled = true;
+            BlueBootsPriceText.enabled = true;
         }
         else if (currentpage != bootspage)
         {
@@ -386,30 +422,35 @@ public class ShopButtons : MonoBehaviour {
             RedBoots.enabled = false;
             GreenBoots.enabled = false;
             WhiteBoots.enabled = false;
+            BlueBoots.enabled = false;
 
             GreyBootsImage.enabled = false;
             OrangeBootsImage.enabled = false;
             RedBootsImage.enabled = false;
             GreenBootsImage.enabled = false;
             WhiteBootsImage.enabled = false;
+            BlueBootsImage.enabled = false;
 
             GreyBootsOwned.enabled = false;
             OrangeBootsOwned.enabled = false;
             RedBootsOwned.enabled = false;
             GreenBootsOwned.enabled = false;
             WhiteBootsOwned.enabled = false;
+            BlueBootsOwned.enabled = false;
 
             GreyBootsPriceImage.enabled = false;
             OrangeBootsPriceImage.enabled = false;
             RedBootsPriceImage.enabled = false;
             GreenBootsPriceImage.enabled = false;
             WhiteBootsPriceImage.enabled = false;
+            BlueBootsPriceImage.enabled = false;
 
             GreyBootsPriceText.enabled = false;
             OrangeBootsPriceText.enabled = false;
             RedBootsPriceText.enabled = false;
             GreenBootsPriceText.enabled = false;
             WhiteBootsPriceText.enabled = false;
+            BlueBootsPriceText.enabled = false;
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------
       
@@ -523,6 +564,20 @@ public class ShopButtons : MonoBehaviour {
                 WhiteHatImage.enabled = false;
                 WhiteHatSlot.enabled = true;
             }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueHatOwned == true || blueHatBought == 1)
+            {
+                //Shows the image of blue hat on bobspage if you have bought it
+                BlueHatImage.enabled = true;
+                BlueHatSlot.enabled = false;
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueHatOwned == false || blueHatBought == 0)
+            {
+                //Doesn't show the image of blue hat on bobspage if you haven't bought it
+                BlueHatImage.enabled = false;
+                BlueHatSlot.enabled = true;
+            }
         }
         else if (currentpage != bobspage)
         {
@@ -531,6 +586,7 @@ public class ShopButtons : MonoBehaviour {
             RedHatSlot.enabled = false;
             GreenHatSlot.enabled = false;
             WhiteHatSlot.enabled = false;
+            BlueHatSlot.enabled = false;
         }
 //-----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -616,6 +672,22 @@ public class ShopButtons : MonoBehaviour {
                 WhiteGlassesImage.enabled = false;
                 WhiteGlassesSlot.enabled = true;
             }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueGlassesOwned == true || blueGlassesBought == 1)
+            {
+                //Shows the image of blue glasses on bobspage if you have bought it
+                BlueGlassesImage.enabled = true;
+                BlueGlassesSlot.enabled = false;
+
+                //changes the positions of the blue glasses on bobspage
+                BlueGlassesImage.transform.position = new Vector2(500f, 275f);
+            }
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteGlassesOwned == false || whiteGlassesBought == 0)
+            {
+                //Doesn't show the image of blue glasses on bobspage if you haven't bought it
+                BlueGlassesImage.enabled = false;
+                BlueGlassesSlot.enabled = true;
+            }
         }
         else if (currentpage!=bobspage)
         {
@@ -624,6 +696,7 @@ public class ShopButtons : MonoBehaviour {
             RedGlassesSlot.enabled = false;
             GreenGlassesSlot.enabled = false;
             WhiteGlassesSlot.enabled = false;
+            BlueGlassesSlot.enabled = false;
         }
 
         //---------------------------------------------------------------------------------------------------------------------------------------
@@ -713,6 +786,23 @@ public class ShopButtons : MonoBehaviour {
                 WhiteJacketImage.enabled = false;
                 WhiteJacketSlot.enabled = true;
             }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueJacketOwned == true || blueJacketBought == 1)
+            {
+                //Shows the image of blue jacket on bobspage if you have bought it
+                BlueJacketImage.enabled = true;
+                BlueJacketSlot.enabled = false;
+
+                //changes the positions of the blue jacket on bobspage
+                BlueJacketImage.transform.position = new Vector2(590f, 275f);
+            }
+
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueJacketOwned == false || blueJacketBought == 0)
+            {
+                //Doesn't show the image of blue jacket on bobspage if you haven't bought it
+                BlueJacketImage.enabled = false;
+                BlueJacketSlot.enabled = true;
+            }
         }
         else if (currentpage!=bobspage)
         {
@@ -721,6 +811,7 @@ public class ShopButtons : MonoBehaviour {
             RedJacketSlot.enabled = false;
             GreenJacketSlot.enabled = false;
             WhiteJacketSlot.enabled = false;
+            BlueJacketSlot.enabled = false;
         }
         //---------------------------------------------------------------------------------------------------------------------------------------
 
@@ -807,6 +898,22 @@ public class ShopButtons : MonoBehaviour {
                 WhiteBootsImage.enabled = false;
                 WhiteBootsSlot.enabled = true;
             }
+
+            if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueBootsOwned == true || blueBootsBought == 1)
+            {
+                //Shows the image of blue boots on bobspage if you have bought it
+                BlueBootsImage.enabled = true;
+                BlueBootsSlot.enabled = false;
+
+                //changes the positions of the blue boots on bobspage
+                BlueBootsImage.transform.position = new Vector2(670f, 275f);
+            }
+            else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueBootsOwned == false || blueBootsBought == 0)
+            {
+                //Doesn't show the image of white boots on bobspage if you haven't bought it
+                BlueBootsImage.enabled = false;
+                BlueBootsSlot.enabled = true;
+            }
         }
         else if (currentpage != bobspage)
         {
@@ -815,6 +922,7 @@ public class ShopButtons : MonoBehaviour {
             OrangeBootsSlot.enabled = false;
             GreenBootsSlot.enabled = false;
             WhiteBootsSlot.enabled = false;
+            BlueBootsSlot.enabled = false;
         }
         //---------------------------------------------------------------------------------------------------------------------------------------
 

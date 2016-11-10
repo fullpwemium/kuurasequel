@@ -4,18 +4,18 @@ using UnityEngine.UI;
 
 public class GlassesPageControl : MonoBehaviour {
 
-    int greyGlassesCounter, orangeGlassesCounter, redGlassesCounter, greenGlassesCounter, whiteGlassesCounter;
-    int greyGlassesBought, orangeGlassesBought, redGlassesBought, greenGlassesBought, whiteGlassesBought;
+    int greyGlassesCounter, orangeGlassesCounter, redGlassesCounter, greenGlassesCounter, whiteGlassesCounter, blueGlassesCounter;
+    int greyGlassesBought, orangeGlassesBought, redGlassesBought, greenGlassesBought, whiteGlassesBought, blueGlassesBought;
 
-    public Button GreyGlasses, OrangeGlasses, RedGlasses, GreenGlasses, WhiteGlasses;
+    public Button GreyGlasses, OrangeGlasses, RedGlasses, GreenGlasses, WhiteGlasses, BlueGlasses;
 
     public Button GlassesControlButton;
 
-    public Image ownsGreyGlasses, ownsOrangeGlasses, ownsRedGlasses, ownsGreenGlasses, ownsWhiteGlasses;
-    public GameObject GreyGlassesPrice, OrangeGlassesPrice, RedGlassesPrice, GreenGlassesPrice, WhiteGlassesPrice;
+    public Image ownsGreyGlasses, ownsOrangeGlasses, ownsRedGlasses, ownsGreenGlasses, ownsWhiteGlasses, ownsBlueGlasses;
+    public GameObject GreyGlassesPrice, OrangeGlassesPrice, RedGlassesPrice, GreenGlassesPrice, WhiteGlassesPrice, BlueGlassesPrice;
 
-    public bool ownsGreyGlassesBool, ownsOrangeGlassesBool, ownsRedGlassesBool, ownsGreenGlassesBool, ownsWhiteGlassesBool;
-    public bool buyGreyGlasses, buyOrangeGlasses, buyRedGlasses, buyGreenGlasses, buyWhiteGlasses;
+    public bool ownsGreyGlassesBool, ownsOrangeGlassesBool, ownsRedGlassesBool, ownsGreenGlassesBool, ownsWhiteGlassesBool, ownsBlueGlassesBool;
+    public bool buyGreyGlasses, buyOrangeGlasses, buyRedGlasses, buyGreenGlasses, buyWhiteGlasses, buyBlueGlasses;
 
     public Button yesBuyButton, noBuyButton;
     public Text confirmText;
@@ -42,6 +42,7 @@ public class GlassesPageControl : MonoBehaviour {
         RedGlasses.onClick.AddListener(BuyRedGlasses);
         GreenGlasses.onClick.AddListener(BuyGreenGlasses);
         WhiteGlasses.onClick.AddListener(BuyWhiteGlasses);
+        BlueGlasses.onClick.AddListener(BuyBlueGlasses);
 
         //Makes the confirmation text for the buttons to be false
         confirmText.enabled = false;
@@ -76,23 +77,29 @@ public class GlassesPageControl : MonoBehaviour {
         WhiteGlasses.enabled = true;
         WhiteGlasses.GetComponent<Image>().enabled = true;
 
+        BlueGlasses.enabled = true;
+        BlueGlasses.GetComponent<Image>().enabled = true;
+
         buyGreyGlasses = false;
         buyOrangeGlasses = false;
         buyRedGlasses = false;
         buyGreenGlasses = false;
         buyWhiteGlasses = false;
+        buyBlueGlasses = false;
 
         ownsGreyGlassesBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyGlassesOwned;
         ownsOrangeGlassesBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeGlassesOwned;
         ownsRedGlassesBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedGlassesOwned;
         ownsGreenGlassesBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenGlassesOwned;
         ownsWhiteGlassesBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteGlassesOwned;
+        ownsBlueGlassesBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueGlassesOwned;
 
         greyGlassesBought = PlayerPrefs.GetInt("greyGlassesOwned");
         orangeGlassesBought = PlayerPrefs.GetInt("orangeGlassesOwned");
         redGlassesBought = PlayerPrefs.GetInt("redGlassesOwned");
         greenGlassesBought = PlayerPrefs.GetInt("greenGlassesOwned");
         whiteGlassesBought = PlayerPrefs.GetInt("whiteGlassesOwned");
+        blueGlassesBought = PlayerPrefs.GetInt("blueGlassesOwned");
     }
 	
 	// Update is called once per frame
@@ -183,6 +190,23 @@ public class GlassesPageControl : MonoBehaviour {
             WhiteGlasses.enabled = true;
             WhiteGlassesPrice.SetActive(true);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteGlassesOwned = false;
+        }
+
+        //Checks if you own blue glasses
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueGlassesOwned == true || blueGlassesBought == 1)
+        {
+            //disables the button and the price of blue glasses
+            ownsBlueGlasses.enabled = true;
+            BlueGlasses.enabled = false;
+            BlueGlassesPrice.SetActive(false);
+        }
+        else if (ownsBlueGlassesBool == false || blueGlassesBought == 0)
+        {
+            //activates the button and the price of blue glasses
+            ownsBlueGlasses.enabled = false;
+            BlueGlasses.enabled = true;
+            BlueGlassesPrice.SetActive(true);
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueGlassesOwned = false;
         }
 
     }
@@ -493,6 +517,68 @@ public class GlassesPageControl : MonoBehaviour {
     }
     //--------------------------------------------------------------------------------------------------------------------------
 
+    void BuyBlueGlasses()
+    {
+        //Removes the listeners that aren't needed
+        yesBuyButton.onClick.RemoveAllListeners();
+        noBuyButton.onClick.RemoveAllListeners();
+
+        //Adding the correct listeners for the yes and no buttons
+        yesBuyButton.onClick.AddListener(BuyBlueGlassesTrue);
+        noBuyButton.onClick.AddListener(BuyBlueGlassesFalse);
+
+        //disables the confirmation text from buying glasses
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+
+        //Checks how much dust the player has and then if it has enough dust, the item will become buyable
+        if (dustAmount >= glassesPrice)
+        {
+            confirmText.enabled = true;
+            yesText.enabled = true;
+            noText.enabled = true;
+
+            yesBuyButton.enabled = true;
+            yesBuyButton.GetComponent<Image>().enabled = true;
+
+            background.GetComponent<Image>().enabled = true;
+
+            noBuyButton.enabled = true;
+            noBuyButton.GetComponent<Image>().enabled = true;
+        }
+        else if (dustAmount < glassesPrice)
+        {
+            //tells to you if you dont have enough dust
+            Debug.Log("You don't have enough magic dust");
+
+            GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
+
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+        }
+        Debug.Log("BuyBlueGlasses");
+    }
+    //--------------------------------------------------------------------------------------------------------------------------
+
+
     void BuyGreyGlassesTrue()
     {
         Debug.Log("BuyGreyGlassesTrue");
@@ -753,6 +839,60 @@ public class GlassesPageControl : MonoBehaviour {
         Debug.Log("BuyWhiteGlassesFalse");
         ownsWhiteGlassesBool = false;
         buyWhiteGlasses = false;
+
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+    }
+
+    //--------------------------------------------------------------------------------------------------------------------------
+
+    void BuyBlueGlassesTrue()
+    {
+        Debug.Log("BuyBlueGlassesTrue");
+        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveBlueGlassesOwned(true);
+
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueGlassesOwned == true && blueGlassesCounter == 0)
+        {
+            blueGlassesCounter++;
+
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+
+            BlueGlasses.enabled = false;
+            Debug.Log("You have bought blue glasses");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(glassesPrice);
+
+            if (dustAmount < 1)
+            {
+                dustAmount = 0;
+                GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+            }
+        }
+    }
+
+    void BuyBlueGlassesFalse()
+    {
+        Debug.Log("BuyBlueGlassesFalse");
+        ownsBlueGlassesBool = false;
+        buyBlueGlasses = false;
 
         confirmText.enabled = false;
         yesText.enabled = false;

@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class JacketPageControl : MonoBehaviour {
 
-    int greyJacketCounter, orangeJacketCounter, redJacketCounter, greenJacketCounter, whiteJacketCounter;
-    int greyJacketBought, orangeJacketBought, redJacketBought, greenJacketBought, whiteJacketBought;
+    int greyJacketCounter, orangeJacketCounter, redJacketCounter, greenJacketCounter, whiteJacketCounter, blueJacketCounter;
+    int greyJacketBought, orangeJacketBought, redJacketBought, greenJacketBought, whiteJacketBought, blueJacketBought;
 
-    public Button GreyJacket, OrangeJacket, RedJacket, GreenJacket, WhiteJacket;
+    public Button GreyJacket, OrangeJacket, RedJacket, GreenJacket, WhiteJacket, BlueJacket;
     public Button JacketControlButton;
     public Button yesBuyButton, noBuyButton;
     public Text confirmText;
@@ -16,11 +16,11 @@ public class JacketPageControl : MonoBehaviour {
     public Image buyConfirm;
     public Image background;
 
-    public Image ownsGreyJacket, ownsOrangeJacket, ownsRedJacket, ownsGreenJacket, ownsWhiteJacket;
-    public GameObject GreyJacketPrice, OrangeJacketPrice, RedJacketPrice, GreenJacketPrice, WhiteJacketPrice;
+    public Image ownsGreyJacket, ownsOrangeJacket, ownsRedJacket, ownsGreenJacket, ownsWhiteJacket, ownsBlueJacket;
+    public GameObject GreyJacketPrice, OrangeJacketPrice, RedJacketPrice, GreenJacketPrice, WhiteJacketPrice, BlueJacketPrice;
 
-    public bool ownsGreyJacketBool, ownsOrangeJacketBool, ownsRedJacketBool, ownsGreenJacketBool, ownsWhiteJacketBool;
-    public bool buyGreyJacket, buyOrangeJacket, buyRedJacket, buyGreenJacket, buyWhiteJacket;
+    public bool ownsGreyJacketBool, ownsOrangeJacketBool, ownsRedJacketBool, ownsGreenJacketBool, ownsWhiteJacketBool, ownsBlueJacketBool;
+    public bool buyGreyJacket, buyOrangeJacket, buyRedJacket, buyGreenJacket, buyWhiteJacket, buyBlueJacket;
     public int dustAmount;
 
     int jacketPrice;
@@ -39,6 +39,7 @@ public class JacketPageControl : MonoBehaviour {
         RedJacket.onClick.AddListener(BuyRedJacket);
         GreenJacket.onClick.AddListener(BuyGreenJacket);
         WhiteJacket.onClick.AddListener(BuyWhiteJacket);
+        BlueJacket.onClick.AddListener(BuyBlueJacket);
 
         //Makes the confirmation text for the buttons to be false
         confirmText.enabled = false;
@@ -73,18 +74,23 @@ public class JacketPageControl : MonoBehaviour {
         WhiteJacket.enabled = true;
         WhiteJacket.GetComponent<Image>().enabled = true;
 
+        BlueJacket.enabled = true;
+        BlueJacket.GetComponent<Image>().enabled = true;
+
 
         buyGreyJacket = false;
         buyOrangeJacket = false;
         buyRedJacket = false;
         buyGreenJacket = false;
         buyWhiteJacket = false;
+        buyBlueJacket = false;
 
         ownsGreyJacketBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned;
         ownsOrangeJacketBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeJacketOwned;
         ownsRedJacketBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedJacketOwned;
         ownsGreenJacketBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenJacketOwned;
         ownsWhiteJacketBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned;
+        ownsBlueJacketBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned;
 
         //Gets the value of the jacket bought from the hard drive
         greyJacketBought = PlayerPrefs.GetInt("greyJacketOwned");
@@ -92,6 +98,7 @@ public class JacketPageControl : MonoBehaviour {
         redJacketBought = PlayerPrefs.GetInt("redJacketOwned");
         greenJacketBought = PlayerPrefs.GetInt("greenJacketOwned");
         whiteJacketBought = PlayerPrefs.GetInt("whiteJacketOwned");
+        blueJacketBought = PlayerPrefs.GetInt("blueJacketOwned");
     }
 
     void Update()
@@ -193,6 +200,26 @@ public class JacketPageControl : MonoBehaviour {
 
             ownsWhiteJacket.enabled = false;
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned = false;
+        }
+
+        //cheks if you own the blue jacket
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueJacketOwned == true || blueJacketBought == 1)
+        {
+            //disables the buttons and the price of the jacket
+            BlueJacket.enabled = false;
+            BlueJacketPrice.SetActive(false);
+
+            ownsBlueJacket.enabled = true;
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueJacketOwned = true;
+        }
+        else if (ownsBlueJacketBool == false || blueJacketBought == 0)
+        {
+            //activates the button and the price of the jacket
+            BlueJacket.enabled = true;
+            BlueJacketPrice.SetActive(true);
+
+            ownsBlueJacket.enabled = false;
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueJacketOwned = false;
         }
     }
 //--------------------------------------------------------------------------------------------------------------------------
@@ -490,7 +517,66 @@ public class JacketPageControl : MonoBehaviour {
         }
         Debug.Log("WhiteJacket");
     }
-//--------------------------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------------------------
+
+    void BuyBlueJacket()
+    {
+        //Removes the listeners that aren't needed
+        yesBuyButton.onClick.RemoveAllListeners();
+        noBuyButton.onClick.RemoveAllListeners();
+
+        //adding the right listeners for yes and no buttons
+        yesBuyButton.onClick.AddListener(BuyBlueJacketTrue);
+        noBuyButton.onClick.AddListener(BuyBlueJacketFalse);
+
+        //disables the confirmation text from buying jackets
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+
+        //Checks how much dust the player has and then if it has enough dust, the item will become buyable
+        if (dustAmount >= jacketPrice)
+        {
+            confirmText.enabled = true;
+            yesText.enabled = true;
+            noText.enabled = true;
+
+            yesBuyButton.enabled = true;
+            yesBuyButton.GetComponent<Image>().enabled = true;
+
+            background.GetComponent<Image>().enabled = true;
+
+            noBuyButton.enabled = true;
+            noBuyButton.GetComponent<Image>().enabled = true;
+        }
+        else if (dustAmount < jacketPrice)
+        {
+            //tells to you if you dont have enough dust
+            Debug.Log("You don't have enough magic dust");
+            GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+        }
+        Debug.Log("BlueJacket");
+    }
+    //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyGreyJacketTrue()
     {
@@ -765,6 +851,61 @@ public class JacketPageControl : MonoBehaviour {
         noBuyButton.enabled = false;
         noBuyButton.GetComponent<Image>().enabled = false;
     }
-//--------------------------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------------------------
+
+    void BuyBlueJacketTrue()
+    {
+        Debug.Log("BuyBlueJacketTrue");
+        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveBlueJacketOwned(true);
+
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueJacketOwned == true && blueJacketCounter == 0)
+        {
+            blueJacketCounter++;
+
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+
+            BlueJacket.enabled = false;
+            Debug.Log("You have bought a bluejacket");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+
+            GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+
+            if (dustAmount < 1)
+            {
+                dustAmount = 0;
+                GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+            }
+        }
+    }
+
+    void BuyBlueJacketFalse()
+    {
+        Debug.Log("BuyBlueJacketFalse");
+        ownsBlueJacketBool = false;
+        buyBlueJacket = false;
+
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+    }
+    //--------------------------------------------------------------------------------------------------------------------------
 }
 

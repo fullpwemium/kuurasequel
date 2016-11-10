@@ -16,24 +16,28 @@ public class GlobalGameManager : MonoBehaviour
     public bool RedHatOwned;
     public bool GreenHatOwned;
     public bool WhiteHatOwned;
+    public bool BlueHatOwned;
 
     public bool GreyJacketOwned;
     public bool OrangeJacketOwned;
     public bool RedJacketOwned;
     public bool GreenJacketOwned;
     public bool WhiteJacketOwned;
+    public bool BlueJacketOwned;
 
     public bool GreyBootsOwned;
     public bool OrangeBootsOwned;
     public bool RedBootsOwned;
     public bool GreenBootsOwned;
     public bool WhiteBootsOwned;
+    public bool BlueBootsOwned;
 
     public bool GreyGlassesOwned;
     public bool OrangeGlassesOwned;
     public bool RedGlassesOwned;
     public bool GreenGlassesOwned;
     public bool WhiteGlassesOwned;
+    public bool BlueGlassesOwned;
 
     int currentGame;
     public List<int> completedGames;
@@ -341,6 +345,12 @@ public class GlobalGameManager : MonoBehaviour
         WhiteHatOwned = value;
         PlayerPrefs.SetInt("whiteHatOwned", value ? 1 : 0);
     }
+
+    public void ShopSaveBlueHatOwned(bool value)
+    {
+        BlueHatOwned = value;
+        PlayerPrefs.SetInt("blueHatOwned", value ? 1 : 0);
+    }
     //--------------------------------------------------------------------------------------------------------------------------------------------
 
     public void ShopSaveGreyJacketOwned(bool value)
@@ -371,6 +381,12 @@ public class GlobalGameManager : MonoBehaviour
     {
         WhiteJacketOwned = value;
         PlayerPrefs.SetInt("whiteJacketOwned", value ? 1 : 0);
+    }
+
+    public void ShopSaveBlueJacketOwned(bool value)
+    {
+        BlueJacketOwned = value;
+        PlayerPrefs.SetInt("blueJacketOwned", value ? 1 : 0);
     }
 
     //--------------------------------------------------------------------------------------------------------------------------------------------
@@ -405,6 +421,12 @@ public class GlobalGameManager : MonoBehaviour
         PlayerPrefs.SetInt("whiteBootsOwned", value ? 1 : 0);
     }
 
+    public void ShopSaveBlueBootsOwned(bool value)
+    {
+        BlueBootsOwned = value;
+        PlayerPrefs.SetInt("blueBootsOwned", value ? 1 : 0);
+    }
+
     //--------------------------------------------------------------------------------------------------------------------------------------------
 
     public void ShopSaveGreyGlassesOwned(bool value)
@@ -435,6 +457,12 @@ public class GlobalGameManager : MonoBehaviour
     {
         WhiteGlassesOwned = value;
         PlayerPrefs.SetInt("whiteGlassesOwned", value ? 1 : 0);
+    }
+
+    public void ShopSaveBlueGlassesOwned(bool value)
+    {
+        BlueGlassesOwned = value;
+        PlayerPrefs.SetInt("blueGlassesOwned", value ? 1 : 0);
     }
 
     //--------------------------------------------------------------------------------------------------------------------------------------------

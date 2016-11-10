@@ -4,18 +4,20 @@ using UnityEngine.UI;
 
 public class HatPageControl : MonoBehaviour
 {
-    int greyHatCounter, orangeHatCounter, redHatCounter, greenHatCounter, whiteHatCounter;
+    int greyHatCounter, orangeHatCounter, redHatCounter, greenHatCounter, whiteHatCounter, blueHatCounter;
     int greyHatBought;
     int orangeHatBought;
     int redHatBought;
     int greenHatBought;
     int whiteHatBought;
+    int blueHatBought;
 
     public Button GreyHat;
     public Button OrangeHat;
     public Button RedHat;
     public Button GreenHat;
     public Button WhiteHat;
+    public Button BlueHat;
 
     public Button HatControlButton;
     public Button yesBuyButton;
@@ -32,24 +34,28 @@ public class HatPageControl : MonoBehaviour
     public Image ownsRedHat;
     public Image ownsGreenHat;
     public Image ownsWhiteHat;
+    public Image ownsBlueHat;
 
     public GameObject GreyHatPrice;
     public GameObject OrangeHatPrice;
     public GameObject RedHatPrice;
     public GameObject GreenHatPrice;
     public GameObject WhiteHatPrice;
+    public GameObject BlueHatPrice;
 
     public bool ownsGreyHatBool;
     public bool ownsOrangeHatBool;
     public bool ownsRedHatBool;
     public bool ownsGreenHatBool;
     public bool ownsWhiteHatBool;
+    public bool ownsBlueHatBool;
 
     public bool buyGreyHat;
     public bool buyOrangeHat;
     public bool buyRedHat;
     public bool buyGreenHat;
     public bool buyWhiteHat;
+    public bool buyBlueHat;
 
     int hatprice;
     public int dustAmount;
@@ -69,6 +75,7 @@ public class HatPageControl : MonoBehaviour
         RedHat.onClick.AddListener(BuyRedHat);
         GreenHat.onClick.AddListener(BuyGreenHat);
         WhiteHat.onClick.AddListener(BuyWhiteHat);
+        BlueHat.onClick.AddListener(BuyBlueHat);
 
         //Makes the confirmation text for the buttons to be false
         ConfirmText.enabled = false;
@@ -90,6 +97,7 @@ public class HatPageControl : MonoBehaviour
         buyRedHat = false;
         buyGreenHat = false;
         buyWhiteHat = false;
+        buyBlueHat = false;
 
         HatControlButton.enabled = false;
         HatControlButton.GetComponent<Image>().enabled = false;
@@ -110,17 +118,22 @@ public class HatPageControl : MonoBehaviour
         WhiteHat.enabled = true;
         WhiteHat.GetComponent<Image>().enabled = true;
 
+        BlueHat.enabled = true;
+        BlueHat.GetComponent<Image>().enabled = true;
+
         ownsGreyHat.enabled = false;
         ownsOrangeHat.enabled = false;
         ownsRedHat.enabled = false;
         ownsGreenHat.enabled = false;
         ownsWhiteHat.enabled = false;
+        ownsBlueHat.enabled = false;
 
         ownsGreyHatBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned;
         ownsOrangeHatBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned;
         ownsRedHatBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned;
         ownsGreenHatBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned;
         ownsWhiteHatBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned;
+        ownsBlueHatBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueHatOwned;
 
         //Gets the value of the hat bought from the hard drive
         greyHatBought = PlayerPrefs.GetInt("greyHatOwned");
@@ -128,6 +141,7 @@ public class HatPageControl : MonoBehaviour
         redHatBought = PlayerPrefs.GetInt("redHatOwned");
         greenHatBought = PlayerPrefs.GetInt("greenHatOwned");
         whiteHatBought = PlayerPrefs.GetInt("whiteHatOwned");
+        blueHatBought = PlayerPrefs.GetInt("blueHatOwned");
     }
 //--------------------------------------------------------------------------------------------------------------------------
     // Update is called once per frame
@@ -157,14 +171,13 @@ public class HatPageControl : MonoBehaviour
             ownsOrangeHat.enabled = true;
             OrangeHat.enabled = false;
             OrangeHatPrice.SetActive(false);
-            GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsOrangeHat = true;
         }
         else if (ownsOrangeHatBool==false || orangeHatBought == 0)
         {
             ownsOrangeHat.enabled = false;
             OrangeHat.enabled = true;
             OrangeHatPrice.SetActive(true);
-            GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsOrangeHat = false;
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned = false;
         }
 
         //checks if you own the red hat and then you cannot buy it anymore
@@ -173,14 +186,13 @@ public class HatPageControl : MonoBehaviour
             ownsRedHat.enabled = true;
             RedHat.enabled = false;
             RedHatPrice.SetActive(false);
-            GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsRedHat = true;
         }
-        else if (ownsRedHatBool==false || redHatBought == 0)
+        else if (ownsRedHatBool == false || redHatBought == 0)
         {
             ownsRedHat.enabled = false;
             RedHat.enabled = true;
             RedHatPrice.SetActive(true);
-            GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsRedHat = false;
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned = false;
         }
 
         //checks if you own the green hat and then you cannot buy it anymore
@@ -189,14 +201,13 @@ public class HatPageControl : MonoBehaviour
             ownsGreenHat.enabled = true;
             GreenHat.enabled = false;
             GreenHatPrice.SetActive(false);
-            GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsGreenHat = true;
         }
-        else if(ownsGreenHatBool==false || greenHatBought == 0)
+        else if(ownsGreenHatBool == false || greenHatBought == 0)
         {
             ownsGreenHat.enabled = false;
             GreenHat.enabled = true;
             GreenHatPrice.SetActive(true);
-            GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsGreenHat = false;
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned = false;
         }
 
         //checks if you own the white hat and then you cannot buy it anymore
@@ -205,14 +216,28 @@ public class HatPageControl : MonoBehaviour
             ownsWhiteHat.enabled = true;
             WhiteHat.enabled = false;
             WhiteHatPrice.SetActive(false);
-            GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsWhiteHat = true;
         }
-        else if(ownsWhiteHatBool==false || whiteHatBought == 0)
+        else if(ownsWhiteHatBool == false || whiteHatBought == 0)
         {
             ownsWhiteHat.enabled = false;
             WhiteHat.enabled = true;
             WhiteHatPrice.SetActive(true);
-            GameObject.Find("BobButton").GetComponent<BobPageControl>().ownsWhiteHat = false;
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned = false;
+        }
+
+        //checks if you own the blue hat and then you cannot buy it anymore
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueHatOwned == true || blueHatBought == 1)
+        {
+            ownsBlueHat.enabled = true;
+            BlueHat.enabled = false;
+            BlueHatPrice.SetActive(false);           
+        }
+        else if (ownsBlueHatBool == false || blueHatBought == 0)
+        {
+            ownsBlueHat.enabled = false;
+            BlueHat.enabled = true;
+            BlueHatPrice.SetActive(true);
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueHatOwned = false;
         }
         //--------------------------------------------------------------------------------------------------------------------------
     }
@@ -502,7 +527,64 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.GetComponent<Image>().enabled = false;
         }
     }
- //--------------------------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------------------------
+
+    void BuyBlueHat()
+    {   
+        //Removes the listeners that aren't needed
+        yesBuyButton.onClick.RemoveAllListeners();
+        noBuyButton.onClick.RemoveAllListeners();
+
+        //Adds listeners so that you can buy the right hat
+        yesBuyButton.onClick.AddListener(BuyBlueHatTrue);
+        noBuyButton.onClick.AddListener(BuyBlueHatFalse);
+
+        //disables the confirmation text from buying hats
+        ConfirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+
+        //Checks how much dust the player has and then if it has enough dust, the item will become buyable
+        if (dustAmount >= hatprice)
+        {
+            ConfirmText.enabled = true;
+            yesText.enabled = true;
+            noText.enabled = true;
+
+            yesBuyButton.enabled = true;
+            yesBuyButton.GetComponent<Image>().enabled = true;
+
+            background.GetComponent<Image>().enabled = true;
+
+            noBuyButton.enabled = true;
+            noBuyButton.GetComponent<Image>().enabled = true;
+        }
+        else if (dustAmount < hatprice)
+        {
+            Debug.Log("You don't have enough magic dust");
+            GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
+            ConfirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+        }
+    }
+    //--------------------------------------------------------------------------------------------------------------------------
 
     void BuyGreyHatTrue()
     {
@@ -769,7 +851,60 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.enabled = false;
         noBuyButton.GetComponent<Image>().enabled = false;
     }
- //--------------------------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------------------------
+
+    void BuyBlueHatTrue()
+    {
+        //Makes blue hat owned in the GlobalGameManager script true
+        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveBlueHatOwned(true);
+        //Checks if you want to buy the item
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueHatOwned == true && blueHatCounter == 0)
+        {
+            blueHatCounter++;
+
+            ConfirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            BlueHat.enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+
+            Debug.Log("You have bought a blue hat");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(hatprice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+
+            if (dustAmount < 1)
+            {
+                dustAmount = 0;
+                GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+            }
+        }
+    }
+
+    void BuyBlueHatFalse()
+    {
+        Debug.Log("Your blue hat purchase has failed");
+        buyBlueHat = false;
+        ConfirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+    }
+    //--------------------------------------------------------------------------------------------------------------------------
 }
 
 

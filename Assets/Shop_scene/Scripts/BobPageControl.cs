@@ -4,63 +4,70 @@ using UnityEngine.UI;
 
 public class BobPageControl : MonoBehaviour {
 
-    public bool ownsGreyHat;
+   /* public bool ownsGreyHat;
     public bool ownsOrangeHat;
     public bool ownsRedHat;
     public bool ownsGreenHat;
     public bool ownsWhiteHat;
+    public bool ownsBlueHat;
 
     public Image greyHat;
     public Image orangeHat;
     public Image redHat;
     public Image greenHat;
     public Image whiteHat;
+    public Image blueHat;
 
     int greyHatBought;
     int orangeHatBought;
     int redHatBought;
     int greenHatBought;
     int whiteHatBought;
+    int blueHatBought;*/
 
     void Awake()
     {
-        greyHat.enabled = false;
+        /*greyHat.enabled = false;
         orangeHat.enabled = false;
         redHat.enabled = false;
         greenHat.enabled = false;
         whiteHat.enabled = false;
+        blueHat.enabled = false;*/
 
         //Checks the values of GlobalGameManager script GreyHatOwned, OrangeHatOwned, RedHatOwned, GreenHatOwned, WhiteHatOwned and saves them to these booleans
-        ownsGreyHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned;
+       /* ownsGreyHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned;
         ownsOrangeHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned;
         ownsRedHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned;
         ownsGreenHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned;
         ownsWhiteHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned;
+        ownsBlueHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueHatOwned;*/
     }
 	// Use this for initialization
 	void Start ()
     {
         //Gets the value of the hat bought from the hard drive
-        greyHatBought = PlayerPrefs.GetInt("greyHatOwned");
+        /*greyHatBought = PlayerPrefs.GetInt("greyHatOwned");
         orangeHatBought = PlayerPrefs.GetInt("orangeHatOwned");
         redHatBought = PlayerPrefs.GetInt("redHatOwned");
         greenHatBought = PlayerPrefs.GetInt("greenHatOwned");
         whiteHatBought = PlayerPrefs.GetInt("whiteHatOwned");
+        blueHatBought = PlayerPrefs.GetInt("blueHatOwned");*/
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         //Checks the values of GlobalGameManager script GreyHatOwned, OrangeHatOwned, RedHatOwned, GreenHatOwned, WhiteHatOwned and saves them to these booleans
-        ownsGreyHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned;
+       /* ownsGreyHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned;
         ownsOrangeHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeHatOwned;
         ownsRedHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedHatOwned;
         ownsGreenHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenHatOwned;
         ownsWhiteHat = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned;
+        ownsBlueHat = GameObject.Find("Gobal_Gamemanager").GetComponent<GlobalGameManager>().BlueHatOwned;*/
 
 
         //Checks if the Grey hat is owned
-        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == true || greyHatBought == 1)
+       /* if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == true || greyHatBought == 1)
         {
             greyHat.enabled = true;
         }
@@ -108,5 +115,15 @@ public class BobPageControl : MonoBehaviour {
         {
             whiteHat.enabled = false;
         }
+
+        //Checks if the blue hat is owned
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueHatOwned == true || blueHatBought == 1)
+        {
+            blueHat.enabled = true;
+        }
+        else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueHatOwned == false || blueHatBought == 0)
+        {
+            blueHat.enabled = false;
+        }*/
     }
 }

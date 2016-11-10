@@ -80,19 +80,19 @@ public class HappinessController : MonoBehaviour {
         }
 
         //checks the current mood and compares it to a specific sprite then changes the mood if the other conditions are also met
-        if (currentSprite == sprites[3] && fedTime.AddMinutes(5) <= datevalue2)
+        if (currentSprite == sprites[3] && fedTime.AddHours(2) <= datevalue2)
         {
             ChangeMood(2);
             LastFed(datevalue2);
             print("it has been " + hungry.ToString() + " since you last fed the cat, cat is happy " + System.DateTime.Now);
         }
-        else if (currentSprite == sprites[2] && fedTime.AddMinutes(5.5) <= datevalue2 && startTime.AddMinutes(1) < datevalue2)
+        else if (currentSprite == sprites[2] && fedTime.AddHours(6) <= datevalue2)
         {
             ChangeMood(1);
             LastFed(datevalue2);
             print("it has been " + hungry.ToString() + " since you last fed the cat, cat is ok " + System.DateTime.Now);         
         }
-       else if(currentSprite == sprites[1] && fedTime.AddMinutes(6) <= datevalue2 && startTime.AddMinutes(1) < datevalue2)
+       else if(currentSprite == sprites[1] && fedTime.AddHours(7) <= datevalue2)
         {
             ChangeMood(0);
             LastFed(datevalue2);

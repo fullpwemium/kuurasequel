@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class BootsPageControl : MonoBehaviour {
-    int greyBootsCounter, orangeBootsCounter, redBootsCounter, greenBootsCounter, whiteBootsCounter;
-    int greyBootsBought, orangeBootsBought, redBootsBought, greenBootsBought, whiteBootsBought;
+    int greyBootsCounter, orangeBootsCounter, redBootsCounter, greenBootsCounter, whiteBootsCounter, blueBootsCounter;
+    int greyBootsBought, orangeBootsBought, redBootsBought, greenBootsBought, whiteBootsBought, blueBootsBought;
 
-    public Button GreyBoots, OrangeBoots, RedBoots, GreenBoots, WhiteBoots;
+    public Button GreyBoots, OrangeBoots, RedBoots, GreenBoots, WhiteBoots, BlueBoots;
 
     public Button BootsControlButton;
 
@@ -17,11 +17,11 @@ public class BootsPageControl : MonoBehaviour {
     public Image buyConfirm;
     public Image background;
 
-    public Image ownsGreyBoots, ownsOrangeBoots, ownsRedBoots, ownsGreenBoots, ownsWhiteBoots;
-    public GameObject GreyBootsPrice, OrangeBootsPrice, RedBootsPrice, GreenBootsPrice, WhiteBootsPrice;
+    public Image ownsGreyBoots, ownsOrangeBoots, ownsRedBoots, ownsGreenBoots, ownsWhiteBoots, ownsBlueBoots;
+    public GameObject GreyBootsPrice, OrangeBootsPrice, RedBootsPrice, GreenBootsPrice, WhiteBootsPrice, BlueBootsPrice;
 
-    public bool ownsGreyBootsBool, ownsOrangeBootsBool, ownsRedBootsBool, ownsGreenBootsBool, ownsWhiteBootsBool;
-    public bool buyGreyBoots, buyOrangeBoots, buyRedBoots, buyGreenBoots, buyWhiteBoots;
+    public bool ownsGreyBootsBool, ownsOrangeBootsBool, ownsRedBootsBool, ownsGreenBootsBool, ownsWhiteBootsBool, ownsBlueBootsBool;
+    public bool buyGreyBoots, buyOrangeBoots, buyRedBoots, buyGreenBoots, buyWhiteBoots, buyBlueBoots;
     public int dustAmount;
 
     int bootsPrice;
@@ -41,6 +41,7 @@ public class BootsPageControl : MonoBehaviour {
         RedBoots.onClick.AddListener(BuyRedBoots);
         GreenBoots.onClick.AddListener(BuyGreenBoots);
         WhiteBoots.onClick.AddListener(BuyWhiteBoots);
+        BlueBoots.onClick.AddListener(BuyBlueBoots);
 
         //Makes the confirmation text for the buttons to be false
         confirmText.enabled = false;
@@ -75,17 +76,22 @@ public class BootsPageControl : MonoBehaviour {
         WhiteBoots.enabled = true;
         WhiteBoots.GetComponent<Image>().enabled = true;
 
+        BlueBoots.enabled = true;
+        BlueBoots.GetComponent<Image>().enabled = true;
+
         buyGreyBoots = false;
         buyOrangeBoots = false;
         buyRedBoots = false;
         buyGreenBoots = false;
         buyWhiteBoots = false;
+        buyBlueBoots = false;
 
         ownsGreyBootsBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyBootsOwned;
         ownsOrangeBootsBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeBootsOwned;
         ownsRedBootsBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().RedBootsOwned;
         ownsGreenBootsBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenBootsOwned;
         ownsWhiteBootsBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteBootsOwned;
+        ownsBlueBootsBool = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueBootsOwned;
 
         //Gets the value of the boots bought from the hard drive
         greyBootsBought = PlayerPrefs.GetInt("greyBootsOwned");
@@ -93,6 +99,7 @@ public class BootsPageControl : MonoBehaviour {
         redBootsBought = PlayerPrefs.GetInt("redBootsOwned");
         greenBootsBought = PlayerPrefs.GetInt("greenBootsOwned");
         whiteBootsBought = PlayerPrefs.GetInt("whiteBootsOwned");
+        blueBootsBought = PlayerPrefs.GetInt("blueBootsOwned");
     }
 	
 	// Update is called once per frame
@@ -183,6 +190,22 @@ public class BootsPageControl : MonoBehaviour {
             WhiteBoots.enabled = true;
             WhiteBootsPrice.SetActive(true);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteBootsOwned = false;
+        }
+
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueBootsOwned == true || blueBootsBought == 1)
+        {
+            //disables the buttons and the price of the boots
+            ownsBlueBoots.enabled = true;
+            BlueBoots.enabled = false;
+            BlueBootsPrice.SetActive(false);
+        }
+        else if (ownsBlueBootsBool == false || blueBootsBought == 0)
+        {
+            //activates the button and the price of the boots
+            ownsBlueBoots.enabled = false;
+            BlueBoots.enabled = true;
+            BlueBootsPrice.SetActive(true);
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueBootsOwned = false;
         }
     }
     //--------------------------------------------------------------------------------------------------------------------------
@@ -493,6 +516,67 @@ public class BootsPageControl : MonoBehaviour {
     }
     //--------------------------------------------------------------------------------------------------------------------------
 
+    void BuyBlueBoots()
+    {
+        //Removes the listeners that aren't needed
+        yesBuyButton.onClick.RemoveAllListeners();
+        noBuyButton.onClick.RemoveAllListeners();
+
+        //adding the right listeners for yes and no buttons
+        yesBuyButton.onClick.AddListener(BuyBlueBootsTrue);
+        noBuyButton.onClick.AddListener(BuyBlueBootsFalse);
+
+        //disables the confirmation text from buying boots
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+
+        //Checks how much dust the player has and then if it has enough dust, the item will become buyable
+        if (dustAmount >= bootsPrice)
+        {
+            confirmText.enabled = true;
+            yesText.enabled = true;
+            noText.enabled = true;
+
+            yesBuyButton.enabled = true;
+            yesBuyButton.GetComponent<Image>().enabled = true;
+
+            background.GetComponent<Image>().enabled = true;
+
+            noBuyButton.enabled = true;
+            noBuyButton.GetComponent<Image>().enabled = true;
+        }
+        else if (dustAmount < bootsPrice)
+        {
+            //tells to you if you dont have enough dust
+            Debug.Log("You don't have enough magic dust");
+
+            GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
+
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+        }
+        Debug.Log("BlueBoots");
+    }
+    //--------------------------------------------------------------------------------------------------------------------------
+
     void BuyGreyBootsTrue()
     {
         Debug.Log("BuyGreyBootsTrue");
@@ -753,6 +837,61 @@ public class BootsPageControl : MonoBehaviour {
         Debug.Log("BuyWhiteBootsFalse");
         ownsWhiteBootsBool = false;
         buyWhiteBoots = false;
+
+        confirmText.enabled = false;
+        yesText.enabled = false;
+        noText.enabled = false;
+
+        yesBuyButton.enabled = false;
+        yesBuyButton.GetComponent<Image>().enabled = false;
+
+        background.GetComponent<Image>().enabled = false;
+
+        noBuyButton.enabled = false;
+        noBuyButton.GetComponent<Image>().enabled = false;
+    }
+    //--------------------------------------------------------------------------------------------------------------------------
+
+    void BuyBlueBootsTrue()
+    {
+        Debug.Log("BuyBlueBootsTrue");
+        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveBlueBootsOwned(true);
+
+        if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().BlueBootsOwned == true && blueBootsCounter == 0)
+        {
+            blueBootsCounter++;
+
+            confirmText.enabled = false;
+            yesText.enabled = false;
+            noText.enabled = false;
+
+            yesBuyButton.enabled = false;
+            yesBuyButton.GetComponent<Image>().enabled = false;
+
+            background.GetComponent<Image>().enabled = false;
+
+            noBuyButton.enabled = false;
+            noBuyButton.GetComponent<Image>().enabled = false;
+
+            BlueBoots.enabled = false;
+            Debug.Log("You have bought a Blueboots");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(bootsPrice);
+
+            GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+
+            if (dustAmount < 1)
+            {
+                dustAmount = 0;
+                GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
+            }
+        }
+    }
+
+    void BuyBlueBootsFalse()
+    {
+        Debug.Log("BuyBlueBootsFalse");
+        ownsBlueBootsBool = false;
+        buyBlueBoots = false;
 
         confirmText.enabled = false;
         yesText.enabled = false;
