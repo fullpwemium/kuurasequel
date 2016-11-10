@@ -89,8 +89,8 @@ public class RunnerManager : MonoBehaviour
     {
         if (currentState == GameState.Begin)
         {
-            
-            
+            Time.timeScale = 1f;
+
 
             GetLength();
             UseCoin();
@@ -240,6 +240,7 @@ public class RunnerManager : MonoBehaviour
             RunnerTimer.PauseGame();    //Keskeytetään ajastin paussin ajaksi.
             Debug.Log("Paussi");
 
+            Time.timeScale = 0f;
         }
         else if (pausePressed && currentState != GameState.Died)
         {
@@ -250,6 +251,8 @@ public class RunnerManager : MonoBehaviour
 
             RunnerTimer.Continue();     //Jatketaan ajastusta kun paussi suljetaan.
             Debug.Log("Jatkuu");
+
+            Time.timeScale = 1f;
         }
 
     }
@@ -299,31 +302,31 @@ public class RunnerManager : MonoBehaviour
             GlobalGameManager.GGM.RunnerSave();
         }
 
-        if (level == 6 || level == 7 || level == 8 || /*level == 33 ||*/ level == 36 || level == 37 || level == 38)     //Ladataan InitialPanel kun siirrytään kenttään, jossa Panelin objektit ovat.
+        if (level == 4 || level == 5 || level == 6 || level == 33 || level == 34 || level == 35)     //Ladataan InitialPanel kun siirrytään kenttään, jossa Panelin objektit ovat.
         {
             InitialPanel();
         }
-        if (level == 6)
+        if (level == 4)
         {
             currentLevel = 0;
         }
-        if (level == 7)
+        if (level == 5)
         {
             currentLevel = 1;
         }
-        if (level == 8)
+        if (level == 6)
         {
             currentLevel = 2;
         }
-        if (level == 36)
+        if (level == 33)
         {
             currentLevel = 3;
         }
-        if (level == 37)
+        if (level == 34)
         {
             currentLevel = 4;
         }
-        if (level == 38)
+        if (level == 35)
         {
             currentLevel = 0;
         }
