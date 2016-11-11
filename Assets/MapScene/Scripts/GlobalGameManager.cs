@@ -112,6 +112,7 @@ public class GlobalGameManager : MonoBehaviour
 
         startGameCounter = PlayerPrefs.GetInt("startGameCounter");
 
+        //Makes the player to start with 1000 dust, when he/she starts playing the game for the first time
         if (startGameCounter == 0)
         {
             MagicDust = 1000;

@@ -146,7 +146,7 @@ public class HappinessController : MonoBehaviour {
         currentSprite = sprites[2];
         PlayerPrefs.SetInt("LastMood", 2);
         counter = 0;
-        PlayerPrefs.SetInt("counter", counter);        
+        PlayerPrefs.SetInt("counter", counter);  
     }
    
     public void OnApplicationQuit()
