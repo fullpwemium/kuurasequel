@@ -13,26 +13,27 @@ public class HappinessController : MonoBehaviour {
     public Sprite hap2;
     public Sprite hap3;
     public static int counter;
-   static TimeSpan hungry;
-   static System.DateTime startTime;     
+    static TimeSpan hungry;
+    static System.DateTime startTime;     
     static Sprite lastsprite;   
     public static int happinessMultiplier;
     public Sprite[] sprites = new Sprite[4];
-   static System.DateTime datevalue2;
-   static System.DateTime fedTime;
-   static Sprite currentSprite;
-    Scene activeScene;
-    Scene currentScene;
+    static System.DateTime datevalue2;
+    static System.DateTime fedTime;
+    static Sprite currentSprite;
+    public Scene bobApartmentScene;
+    public Scene currentScene;
     // Use this for initialization
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         //makes currentsprite equal to the last sprite of the cat
         currentSprite = sprites[PlayerPrefs.GetInt("LastMood")];       
         startTime = HungerControl.currenttime;
         hc1 = GetComponent<HungerControl>();
-        activeScene = SceneManager.GetActiveScene();
-
+        bobApartmentScene = SceneManager.GetActiveScene();
+        Debug.Log(bobApartmentScene);
         //adding sprites which swap whenever the cats mood changes
         sprites[0] = hap0;
         sprites[1] = hap1;
@@ -48,8 +49,10 @@ public class HappinessController : MonoBehaviour {
             counter++;
             PlayerPrefs.SetInt("counter", counter);
             GetComponent<SpriteRenderer>().sprite = currentSprite;
+            PlayerPrefs.SetInt("LastMood", 2);
         }
         fedTime.AddSeconds(PlayerPrefs.GetInt("WhenFed"));
+        currentSprite = sprites[PlayerPrefs.GetInt("LastMood")];
     }
 
     // Update is called once per frame
@@ -58,11 +61,11 @@ public class HappinessController : MonoBehaviour {
         currentScene = SceneManager.GetActiveScene();
 
         //checks if active scene is bobsapartment scene.
-        if (activeScene == currentScene)
+        if (bobApartmentScene == currentScene)
         {
             gameObject.SetActive(true);
         }
-        else if (activeScene != currentScene)
+        else if (bobApartmentScene != currentScene)
         {
             gameObject.SetActive(false);
         }
@@ -74,9 +77,11 @@ public class HappinessController : MonoBehaviour {
         //checks if there is no sprite loaded, then uses the last sprite
         if (GetComponent<SpriteRenderer>().sprite == null)
         {
+            Debug.Log("No sprite");
             GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];
             currentSprite = sprites[PlayerPrefs.GetInt("LastMood")];
             GetComponent<SpriteRenderer>().sprite = currentSprite;
+            Debug.Log("current sprite " + currentSprite);
         }
 
         //checks the current mood and compares it to a specific sprite then changes the mood if the other conditions are also met
@@ -128,7 +133,7 @@ public class HappinessController : MonoBehaviour {
     void LastFed(System.DateTime _hours)
     {
         System.DateTime currentTime = System.DateTime.Now; 
-        print("it has been " + hungry.ToString() + " since you last fed the cat " +System.DateTime.Now);       
+        print("it has been " + hungry.ToString() + " since you last fed the cat " + System.DateTime.Now);       
     }
 
     public void CatFed()
@@ -139,8 +144,9 @@ public class HappinessController : MonoBehaviour {
         int whenfed = fedTime.Second;
         PlayerPrefs.SetInt("WhenFed", whenfed);
         currentSprite = sprites[2];
+        PlayerPrefs.SetInt("LastMood", 2);
         counter = 0;
-        PlayerPrefs.SetInt("counter", counter);
+        PlayerPrefs.SetInt("counter", counter);        
     }
    
     public void OnApplicationQuit()
@@ -191,8 +197,6 @@ public class HappinessController : MonoBehaviour {
             int whenfed = fedTime.Second;
             PlayerPrefs.SetInt("WhenFed", whenfed);
             PlayerPrefs.SetInt("LastMood", 3);
-            counter = 0;
-            PlayerPrefs.SetInt("counter", counter);
         }
     }
 }

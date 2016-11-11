@@ -10,6 +10,7 @@ public class GlobalGameManager : MonoBehaviour
     public static GlobalGameManager GGM;
     public int gameSelectScene;
     public int[] gameScenes;
+    public int startGameCounter;
 
     public bool GreyHatOwned;
     public bool OrangeHatOwned;
@@ -103,11 +104,23 @@ public class GlobalGameManager : MonoBehaviour
         //Debug.Log("Kaikki tuhottu");
 
         //InsertScore(5,bwhStars, "banana", 10);
-        haeData();            
+        haeData();
 
         //MemoryGameLoad();
         //RunnerLoad();
         //bubbleWarehouseLoad();
+
+        startGameCounter = PlayerPrefs.GetInt("startGameCounter");
+
+        if (startGameCounter == 0)
+        {
+            MagicDust = 1000;
+            PlayerPrefs.SetInt("Magic Dust ", MagicDust);
+            MagicDust = PlayerPrefs.GetInt("Magic Dust "); //Ladataan kerätyt dustit
+            startGameCounter++;
+            PlayerPrefs.SetInt("startGameCounter", startGameCounter);
+            Debug.Log(startGameCounter);
+        }
     }
 
     private static string url = "http://www.bellegames.net/tietokantakokeilu/db.php";
