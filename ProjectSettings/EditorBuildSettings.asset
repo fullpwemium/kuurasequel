@@ -87,3 +87,5 @@ EditorBuildSettings:
     path: Assets/2DRunner/Scenes/LevelBottom.unity
   - enabled: 1
     path: Assets/Bob_apartment/ARCat.unity
+  - enabled: 1
+    path: Assets/2DRunner/Scenes/Level6.1.unity
