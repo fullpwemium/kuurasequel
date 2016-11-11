@@ -4,8 +4,10 @@ using System.Collections;
 public class BackgroundSwitcher : MonoBehaviour {
     public Sprite[] mineBackgrounds;
     public Sprite[] runnerBackgrounds;
-    public int currentScene = 0;
-    public int scenePosition = 0;
+    private int currentScene = EventHandler.currentScene;
+    private int scenePosition = EventHandler.scenePosition;
+
+
     /*
     private SceneObject currentCutscene;
 
@@ -40,25 +42,38 @@ public class BackgroundSwitcher : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        currentScene = EventHandler.currentScene;
+        scenePosition = EventHandler.scenePosition;
         switch (currentScene)
         {
-            case 0:
+            case 1:
                 GetComponent<SpriteRenderer>().sprite = mineBackgrounds[scenePosition];
+                /*
                 if (scenePosition == 0) { 
                     Debug.Log("Mine scene");
                 }
                 if (scenePosition == 1) { 
                     Debug.Log("Mine scene 2");
                 }
+                if (scenePosition == 2)
+                {
+                    Debug.Log("Mine scene 3");
+                }
+                */
                 break;
+                /*
             case 1:
                 GetComponent<SpriteRenderer>().sprite = runnerBackgrounds[scenePosition];
                 Debug.Log("Mine scene2");
                 break;
+                */
             default:
                 Debug.Log("default scene");
                 break;
 
         }
     }
+
+
+
 }

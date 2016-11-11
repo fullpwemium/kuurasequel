@@ -136,7 +136,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 31778843f1c94c94485c7b8504923345, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 24927400835d1aa41895452e75d01497, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -165,12 +165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mineBackgrounds:
-  - {fileID: 21300000, guid: 31778843f1c94c94485c7b8504923345, type: 3}
-  - {fileID: 21300000, guid: d83ccab806e5b2348a2bd0bcabda0323, type: 3}
-  - {fileID: 21300000, guid: 55fa480c772c591468f18dbaba4233fb, type: 3}
+  - {fileID: 21300000, guid: 24927400835d1aa41895452e75d01497, type: 3}
+  - {fileID: 21300000, guid: 350a822c2d33c1e4d9a6f587bd8b31fd, type: 3}
+  - {fileID: 21300000, guid: 78387cc875fa5074e9bd1660172ea6ea, type: 3}
   runnerBackgrounds: []
-  currentScene: 0
-  scenePosition: 0
 --- !u!1 &580228244
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,8 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 271191841}
-  currentScene: 0
-  scenePosition: 1
+  cam: {fileID: 883502927}
 --- !u!1 &883502927
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +305,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 883502927}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d19539a718b82749847c57d59c64fe2, type: 3}
   m_Name: 
