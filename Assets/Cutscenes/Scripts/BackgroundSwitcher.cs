@@ -14,12 +14,14 @@ public class BackgroundSwitcher : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        currentScene = EventHandler.currentScene;
+        currentScene = EventHandler.currentScene; 
         scenePosition = EventHandler.scenePosition;
-        switch (currentScene)
+        switch (currentScene) 
         {
+            //cases are based on which scene's background are used
+            //should consider using string for the names instead, but integers have some benefits here
             case 1:
-                GetComponent<SpriteRenderer>().sprite = mineBackgrounds[scenePosition];
+                GetComponent<SpriteRenderer>().sprite = mineBackgrounds[scenePosition]; //change background for the cutscene intro transitions
                 break;
             default:
                 Debug.Log("default scene");

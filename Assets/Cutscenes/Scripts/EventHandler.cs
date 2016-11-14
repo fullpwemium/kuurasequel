@@ -4,7 +4,7 @@ using System.Collections;
 public class EventHandler : MonoBehaviour {
     public GameObject background;
     public static int currentScene = 1; //Which world's scene? Mine scene is 1. 
-    public static string sceneProgression = "IntroScene"; //IntroScene/MidScene/EndScene TODO: name more logically
+    public static string sceneProgression = "MidScene"; //IntroScene/MidScene/EndScene TODO: name more logically
     public static int scenePosition = 2; //default 0, can be set to higher values for testing
     private float waitTime = 6;
     public GameObject cam;
@@ -48,7 +48,7 @@ public class EventHandler : MonoBehaviour {
         {
             if (scenePosition == 0)
             {
-                yield return new WaitForSeconds(waitTime);
+                yield return new WaitForSeconds(waitTime); //just an extra wait time for the first screen, because of the camera pan
             }
             yield return new WaitForSeconds(waitTime);
             Debug.Log("Waited " + waitTime + " seconds. Current scene is " + scenePosition);
@@ -57,7 +57,9 @@ public class EventHandler : MonoBehaviour {
         //StopCoroutine(CutSceneTimer(waitTime));
         if (scenePosition == 2)
         {
+            //enable the NPC and dialogue at the third screen
             NPC.SetActive(true);
+            yield return new WaitForSeconds(2.0f);
             dialogueBox.SetActive(true);
         }
     }
