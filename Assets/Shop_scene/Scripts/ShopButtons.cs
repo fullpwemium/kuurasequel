@@ -393,7 +393,7 @@ public class ShopButtons : MonoBehaviour {
             BlueBootsImage.enabled = true;
 
             //changes the positions of the boots on the bootspage 
-            GreyBootsImage.transform.position = new Vector2(-90f, 325f);
+            GreyBootsImage.transform.position = new Vector2(-70f, 340f);
             OrangeBootsImage.transform.position = new Vector2(-80f, 240f);
             RedBootsImage.transform.position = new Vector2(-75f, 145f);
             GreenBootsImage.transform.position = new Vector2(-65f, 35f);
