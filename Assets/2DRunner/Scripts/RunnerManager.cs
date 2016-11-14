@@ -377,6 +377,7 @@ public class RunnerManager : MonoBehaviour
         //  currentState = GameState.Begin;
        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         LoadLevel(currentLevel);
+        Debug.Log("Current level = " + currentLevel);
         currentState = GameState.Died;
         RunnerTimer.StartGame();    //Nollataan ajastin ja muut funktiot kun aloitetaan kenttä alusta.
         //Application.LoadLevel (Application.loadedLevelName);
