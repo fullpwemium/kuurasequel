@@ -7,17 +7,19 @@ public class TextBoxManager : MonoBehaviour {
 
     public Text dialogue;
 
-    public TextAsset textFile;
     public string[] dialogueLines;
-
+    private int currentScene = EventHandler.currentScene;
+    private string sceneProgression = EventHandler.sceneProgression;
     public int currentLine;
     public int endAtLine;
+    public string language="Eng";
 
     //public PlayerInput player;
 
     // Use this for initialization
     void Start () {
         //player = FindObjectOfType<PlayerInput>();
+        TextAsset textFile = Resources.Load("Text/" + language + "/Cutscenes/" + currentScene + "/" + sceneProgression) as TextAsset;
         if (textFile != null)
         {
             dialogueLines = (textFile.text.Split('\n'));
@@ -33,7 +35,8 @@ public class TextBoxManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         dialogue.text = dialogueLines[currentLine];
-
+        currentScene = EventHandler.currentScene;
+        string sceneProgression = EventHandler.sceneProgression;
         if (Input.GetMouseButtonDown(0))
         {
             currentLine++;

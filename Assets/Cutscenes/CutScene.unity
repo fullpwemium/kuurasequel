@@ -406,10 +406,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 1990054380}
   dialogue: {fileID: 1967737301}
-  textFile: {fileID: 4900000, guid: a0cd796c0b0a83b489ed9eac6faccf14, type: 3}
   dialogueLines: []
   currentLine: 0
   endAtLine: 0
+  language: eng
 --- !u!4 &950724963
 Transform:
   m_ObjectHideFlags: 0
@@ -656,10 +656,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9bfb1eeb6bef5475088f443cdd6c495f, type: 3}
-    m_FontSize: 14
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -667,7 +667,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is the dialogue.
+  m_Text: "Baron of the Mine: \"Oi, mate! Some kitty cats ran into the mine just now,
+    and I really don\u2019t have time to deal with it.\"\r\n"
 --- !u!222 &1967737302
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -707,7 +708,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -88.7, y: 38.7}
+  m_AnchoredPosition: {x: -45.2, y: 12.5}
   m_SizeDelta: {x: 240, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1990054382

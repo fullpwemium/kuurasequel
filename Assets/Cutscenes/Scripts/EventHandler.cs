@@ -3,8 +3,9 @@ using System.Collections;
 
 public class EventHandler : MonoBehaviour {
     public GameObject background;
-    public static int currentScene = 1; //mine scene is 1
-    public static int scenePosition = 0; //default 0, can be set to higher values for testing
+    public static int currentScene = 1; //Which world's scene? Mine scene is 1. 
+    public static string sceneProgression = "IntroScene"; //IntroScene/MidScene/EndScene TODO: name more logically
+    public static int scenePosition = 2; //default 0, can be set to higher values for testing
     private float waitTime = 6;
     public GameObject cam;
     public GameObject dialogueBox;
