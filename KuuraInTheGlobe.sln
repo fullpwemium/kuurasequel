@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KuuraInTheGlobe.CSharp.Plug
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KuuraInTheGlobe.CSharp", "KuuraInTheGlobe.CSharp.csproj", "{7574F201-65D2-D70A-2CEF-2FD8CDE71B39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KuuraInTheGlobe.CSharp.Editor.Plugins", "KuuraInTheGlobe.CSharp.Editor.Plugins.csproj", "{9C34D2A8-710D-677B-C921-D36D687FF232}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KuuraInTheGlobe.CSharp.Editor", "KuuraInTheGlobe.CSharp.Editor.csproj", "{7DBE683B-627F-F317-3AA7-01CAFC2E0F7F}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{7574F201-65D2-D70A-2CEF-2FD8CDE71B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7574F201-65D2-D70A-2CEF-2FD8CDE71B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7574F201-65D2-D70A-2CEF-2FD8CDE71B39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C34D2A8-710D-677B-C921-D36D687FF232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C34D2A8-710D-677B-C921-D36D687FF232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C34D2A8-710D-677B-C921-D36D687FF232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C34D2A8-710D-677B-C921-D36D687FF232}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7DBE683B-627F-F317-3AA7-01CAFC2E0F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7DBE683B-627F-F317-3AA7-01CAFC2E0F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DBE683B-627F-F317-3AA7-01CAFC2E0F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
