@@ -6437,6 +6437,7 @@ GameObject:
   - 222: {fileID: 856436948}
   - 114: {fileID: 856436947}
   - 114: {fileID: 856436946}
+  - 114: {fileID: 856436949}
   m_Layer: 5
   m_Name: DustButton
   m_TagString: Untagged
@@ -6536,6 +6537,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 856436944}
+--- !u!114 &856436949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 856436944}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c13ed4b538ad445a834cc8f77cc0eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &866174651
 GameObject:
   m_ObjectHideFlags: 0
