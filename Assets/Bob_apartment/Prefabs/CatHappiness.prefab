@@ -23,6 +23,7 @@ GameObject:
   - 114: {fileID: 114000011238303932}
   - 61: {fileID: 61000010477657968}
   - 50: {fileID: 50000010833116630}
+  - 114: {fileID: 114000013131097124}
   m_Layer: 0
   m_Name: CatHappiness
   m_TagString: HappinessMeter
@@ -85,15 +86,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bcc6d6ff29dfe241a65cdf0d7d5c908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hap0: {fileID: 21300000, guid: 6e554d7062faa684ebbdd03a2b7693e9, type: 3}
-  hap1: {fileID: 21300000, guid: 523d9d712e283604d807f9a2ceb2e042, type: 3}
-  hap2: {fileID: 21300000, guid: b326ca6ec4334e849ba2f9c33453aa15, type: 3}
-  hap3: {fileID: 21300000, guid: 99796c1e393d0734797f50588de9c2fc, type: 3}
   sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 6e554d7062faa684ebbdd03a2b7693e9, type: 3}
+  - {fileID: 21300000, guid: 523d9d712e283604d807f9a2ceb2e042, type: 3}
+  - {fileID: 21300000, guid: ccb207d73954e414eb6f5d19f013ec6f, type: 3}
+  - {fileID: 21300000, guid: 99796c1e393d0734797f50588de9c2fc, type: 3}
+--- !u!114 &114000013131097124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011294978126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ddc146654af9c4da016cb201628a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 6e554d7062faa684ebbdd03a2b7693e9, type: 3}
+  - {fileID: 21300000, guid: 523d9d712e283604d807f9a2ceb2e042, type: 3}
+  - {fileID: 21300000, guid: ccb207d73954e414eb6f5d19f013ec6f, type: 3}
+  - {fileID: 21300000, guid: 99796c1e393d0734797f50588de9c2fc, type: 3}
 --- !u!212 &212000013741976418
 SpriteRenderer:
   m_ObjectHideFlags: 1

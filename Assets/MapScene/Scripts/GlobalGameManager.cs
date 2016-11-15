@@ -10,7 +10,6 @@ public class GlobalGameManager : MonoBehaviour
     public static GlobalGameManager GGM;
     public int gameSelectScene;
     public int[] gameScenes;
-    public int startGameCounter;
 
     public bool GreyHatOwned;
     public bool OrangeHatOwned;
@@ -110,18 +109,6 @@ public class GlobalGameManager : MonoBehaviour
         //RunnerLoad();
         //bubbleWarehouseLoad();
 
-        startGameCounter = PlayerPrefs.GetInt("startGameCounter");
-
-        //Makes the player to start with 1000 dust, when he/she starts playing the game for the first time
-        if (startGameCounter == 0)
-        {
-            MagicDust = 1000;
-            PlayerPrefs.SetInt("Magic Dust ", MagicDust);
-            MagicDust = PlayerPrefs.GetInt("Magic Dust "); //Ladataan kerätyt dustit
-            startGameCounter++;
-            PlayerPrefs.SetInt("startGameCounter", startGameCounter);
-            Debug.Log(startGameCounter);
-        }
     }
 
     private static string url = "http://www.bellegames.net/tietokantakokeilu/db.php";

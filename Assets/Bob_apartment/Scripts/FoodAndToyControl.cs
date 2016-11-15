@@ -19,13 +19,14 @@ public class FoodAndToyControl : MonoBehaviour {
     GameObject AmountofFood;
     GameObject thefood;
 
-   public int foodamount = ItemControl.amountofFood;
+    public int foodamount = ItemControl.amountofFood;
     int happiness;
-    Sprite Feedable2;
+    //Sprite Feedable2;
+    private bool feedable = HappinessController.feedable;
     // Use this for initialization
     void Start()
     {
-        Feedable2 = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap3;
+        //Feedable2 = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap3;
         food = gameObject;
         AmountofFood = GameObject.Find("AmountofFood");
         startPos = new Vector2(-3, 3.15f);
@@ -35,18 +36,19 @@ public class FoodAndToyControl : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Feedable2 = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap3;
+        feedable = HappinessController.feedable;
+    //Feedable2 = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap3;
         x = Input.mousePosition.x;
         y = Input.mousePosition.y;
 
         //Checks if the player has more than 0 food and then also checks if the cat is hungry
-        if (ItemControl.amountofFood > 0 && GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
+        if (ItemControl.amountofFood > 0 && HappinessController.feedable == true)
         {
             reset = false;
             GetComponent<SpriteRenderer>().enabled = true;
             AmountofFood.GetComponent<Text>().enabled = true;
         }
-        else if (ItemControl.amountofFood < 1 || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite == Feedable2)
+        else if (ItemControl.amountofFood < 1 || HappinessController.feedable == true)
         {
             //the cats food sprite disappears if the amount of food is 0 or the cat isn't hungry
             GetComponent<SpriteRenderer>().enabled = false;
@@ -54,7 +56,7 @@ public class FoodAndToyControl : MonoBehaviour {
             AmountofFood.GetComponent<Text>().enabled = false;
         }
 
-        if(ItemControl.amountofFood > 0 && GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
+        if(ItemControl.amountofFood > 0 && HappinessController.feedable == true)
         {
             GetComponent<SpriteRenderer>().enabled = true;
             AmountofFood.GetComponent<Text>().enabled = true;
