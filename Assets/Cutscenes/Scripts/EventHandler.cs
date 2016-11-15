@@ -5,7 +5,7 @@ public class EventHandler : MonoBehaviour {
     public GameObject background;
     public static int currentScene = 1; //Which world's scene? Mine scene is 1. 
     public static string sceneProgression = "MidScene"; //IntroScene/MidScene/EndScene TODO: name more logically
-    public static int scenePosition = 2; //default 0, can be set to higher values for testing
+    public static int scenePosition = 0; //default 0, can be set to higher values for testing
     private float waitTime = 6;
     public GameObject cam;
     public GameObject dialogueBox;
@@ -37,7 +37,11 @@ public class EventHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
+		if (Input.GetMouseButtonDown (0) && scenePosition <2) {
+			scenePosition = 2;
+			NPC.SetActive(true);
+			dialogueBox.SetActive(true);
+		}
 	}
 
     private IEnumerator CutSceneTimer(float waitTime)
