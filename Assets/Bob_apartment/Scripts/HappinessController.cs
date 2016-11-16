@@ -14,8 +14,9 @@ public class HappinessController : MonoBehaviour {
     //static Sprite lastsprite;   
     public static int happinessMultiplier = 0;
     public Sprite[] sprites = new Sprite[4];
-    static System.DateTime datevalue2;
+    static System.DateTime currentTime;
     static System.DateTime fedTime;
+    long whenfed;
    // static Sprite currentSprite;
     
     public Scene currentScene;
@@ -48,9 +49,10 @@ public class HappinessController : MonoBehaviour {
             //GetComponent<SpriteRenderer>().sprite = currentSprite;
             PlayerPrefs.SetInt("LastMood", 2);
         }
-          fedTime.AddHours(PlayerPrefs.GetInt("WhenFed"));
+
         //currentSprite = sprites[PlayerPrefs.GetInt("LastMood")];
-        
+        whenfed = Convert.ToInt64(PlayerPrefs.GetString("WhenFed"));
+        fedTime = DateTime.FromBinary(whenfed);
     }
 
     // Update is called once per frame
@@ -79,9 +81,9 @@ public class HappinessController : MonoBehaviour {
         }*/
 
         //GetComponent<SpriteRenderer>().sprite = currentSprite;
-        datevalue2 = HungerControl.newtime;
-        hungry = datevalue2 - fedTime;
-        TimeSpan escalate = startTime - datevalue2;
+        currentTime = HungerControl.newtime;
+        hungry = currentTime - fedTime;
+        TimeSpan escalate = startTime - currentTime;
 
         //checks if there is no sprite loaded, then uses the last sprite
         /*
@@ -96,29 +98,29 @@ public class HappinessController : MonoBehaviour {
         */
 
         //checks the current mood and compares it to a specific sprite then changes the mood if the other conditions are also met
-        if (happinessMultiplier == 3 && fedTime.AddHours(2) <= datevalue2)
+        if (happinessMultiplier == 3 && fedTime.AddHours(2) <= currentTime)
         {
-            Debug.Log("datevalue2" + datevalue2);
+            Debug.Log("current time is " + currentTime);
             Debug.Log("fedtime" + fedTime.AddHours(2));
             ChangeMood(2);
-            LastFed(datevalue2);
+            LastFed(currentTime);
             print("it has been " + hungry.ToString() + " since you last fed the cat, cat is happy " + System.DateTime.Now);
         }
-        else if (happinessMultiplier == 2 && fedTime.AddHours(6) <= datevalue2)
+        else if (happinessMultiplier == 2 && fedTime.AddHours(6) <= currentTime)
         {
-            Debug.Log("datevalue2" + datevalue2);
+            Debug.Log("current time is " + currentTime);
             Debug.Log("fedtime" + fedTime.AddHours(6));
             
             ChangeMood(1);
-            LastFed(datevalue2);
+            LastFed(currentTime);
             print("it has been " + hungry.ToString() + " since you last fed the cat, cat is ok " + System.DateTime.Now);
         }
-        else if(happinessMultiplier == 1 && fedTime.AddHours(7) <= datevalue2)
+        else if(happinessMultiplier == 1 && fedTime.AddHours(7) <= currentTime)
         {
-            Debug.Log("datevalue2" + datevalue2);
+            Debug.Log("current time is " + currentTime);
             Debug.Log("fedtime" + fedTime.AddHours(7));
             ChangeMood(0);
-            LastFed(datevalue2);
+            LastFed(currentTime);
             print("it has been " + hungry.ToString() + " since you last fed the cat, cat is sad " + System.DateTime.Now);
         }
 
@@ -160,8 +162,7 @@ public class HappinessController : MonoBehaviour {
         //feeds the cat
         Debug.Log("cat has been fed "+ System.DateTime.Now);
         fedTime = System.DateTime.Now;
-        int whenfed = fedTime.Hour;
-        PlayerPrefs.SetInt("WhenFed", whenfed);
+        PlayerPrefs.SetString("WhenFed", System.DateTime.Now.ToBinary().ToString());
         happinessMultiplier = 2;
         //PlayerPrefs.SetInt("LastMood", happinessMultiplier);
         /*counter = 0;
@@ -190,6 +191,7 @@ public class HappinessController : MonoBehaviour {
         Debug.Log("Whenfed is " + PlayerPrefs.GetInt("WhenFed"));
         fedTime.AddHours(PlayerPrefs.GetInt("WhenFed"));
         Debug.Log("Whenfed is " + PlayerPrefs.GetInt("WhenFed"));
+
         //When the cats mood face is enabled, the last mood will be loaded from the hard drive
         //GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];
         //int number = PlayerPrefs.GetInt("LastMood");
@@ -202,8 +204,7 @@ public class HappinessController : MonoBehaviour {
         Debug.Log("Cats mood has been changed "+ number + " " + System.DateTime.Now);
         fedTime = System.DateTime.Now;
         happinessMultiplier = number;
-        int whenfed = fedTime.Hour;
-        PlayerPrefs.SetInt("WhenFed", whenfed);
+        PlayerPrefs.SetString("WhenFed", System.DateTime.Now.ToBinary().ToString());
         PlayerPrefs.SetInt("LastMood", happinessMultiplier);
         Debug.Log(PlayerPrefs.GetInt("LastMood"));
     }
@@ -214,9 +215,8 @@ public class HappinessController : MonoBehaviour {
         fedTime = System.DateTime.Now;
         happinessMultiplier = 3;
         feedable = false;
-        int whenfed = fedTime.Hour;
-        PlayerPrefs.SetInt("WhenFed", whenfed);
-        //PlayerPrefs.SetInt("LastMood", happinessMultiplier);
+        PlayerPrefs.SetString("WhenFed", System.DateTime.Now.ToBinary().ToString());
+        PlayerPrefs.SetInt("LastMood", happinessMultiplier);
         Debug.Log(PlayerPrefs.GetInt("LastMood"));
     }
 }
