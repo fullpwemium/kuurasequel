@@ -5971,7 +5971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49aa61ba778dfa4abbc7fd41d06673a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 0400000005000000060000002100000022000000250000002600000023000000
+  levelIndex: 040000000500000006000000210000002200000025000000260000002700000023000000
   completedLevels: 
   currentLevel: 0
   levelSelectScene: 30
@@ -6348,7 +6348,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 117, y: 31}
+  m_AnchoredPosition: {x: 369, y: -180}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2059599093
@@ -6371,7 +6371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2059599094
 MonoBehaviour:
   m_ObjectHideFlags: 0
