@@ -16,18 +16,20 @@ public class ToyControl : MonoBehaviour {
     GameObject thetoy;
     GameObject cattoy;
     bool reset=true;
-    Sprite Feedable;
-    Sprite Feedable2;
+    private int happinessMultiplier = HappinessController.happinessMultiplier;
+    //Sprite Feedable;
+    //Sprite Feedable2;
+    //private bool feedable = HappinessController.feedable;
     // Use this for initialization
     void Start ()
     {
-        Feedable = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap2;
-        Feedable2 = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap3;
+        //Feedable = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap2;
+        //Feedable2 = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap3;
         cattoy = gameObject;
         startPos = new Vector2(-1.4f, 3.15f);
         AmountofToys = GameObject.Find("AmountofToys");
         AmountofToys.GetComponent<Text>().text = ItemControl.amountofToys.ToString();
-        if (GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
+        if (happinessMultiplier != 2 )
         {
             GetComponent<SpriteRenderer>().enabled = false;
             AmountofToys.GetComponent<Text>().enabled = false;
@@ -37,27 +39,29 @@ public class ToyControl : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        happinessMultiplier = HappinessController.happinessMultiplier;
+        //feedable = HappinessController.feedable;
         //Shows when the cat is feedable
-        if (GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite == Feedable || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite == Feedable2)
+        if (happinessMultiplier == 2)
         {
             GetComponent<SpriteRenderer>().enabled = true;
             AmountofToys.GetComponent<Text>().enabled = true;
         }
         //Shows when the cat is not feedable
-        else if (GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
+        else if (happinessMultiplier != 2)
         {
             GetComponent<SpriteRenderer>().enabled = false;
             AmountofToys.GetComponent<Text>().enabled = false;
         }
         x = Input.mousePosition.x;
         y = Input.mousePosition.y;
-        if (ItemControl.amountofToys > 0 && GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite == Feedable || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite == Feedable2)
+        if (happinessMultiplier == 2)
         {
             reset = false;
             GetComponent<SpriteRenderer>().enabled = true;
             AmountofToys.GetComponent<Text>().enabled = true;
         }
-        else if (ItemControl.amountofToys < 1 && GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable || GameObject.Find("CatHappiness").GetComponent<SpriteRenderer>().sprite != Feedable2)
+        else if (happinessMultiplier != 2)
         {
             GetComponent<SpriteRenderer>().enabled = false;
             reset = true;

@@ -31,16 +31,16 @@ public class EmitterController : MonoBehaviour {
         {
             timer = HappinessController.happinessMultiplier;
             sc1.GetDust(timer);
-            ParticleSystem em = GetComponent<ParticleSystem>();
-            em.Stop();
-            em.Play();
+           // ParticleSystem em = GetComponent<ParticleSystem>();
+            //em.Stop();
+            //em.Play();
             DustAmount = PlayerPrefs.GetInt("Magic Dust ");
             sc1.UpdateDust();          
         }
         else
         {
             CancelInvoke();
-           // scratchCounter = 0;
+           //scratchCounter = 0;
         }
     }
 }

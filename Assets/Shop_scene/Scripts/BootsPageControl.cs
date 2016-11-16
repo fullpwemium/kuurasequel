@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class BootsPageControl : MonoBehaviour {
+
     int greyBootsCounter, orangeBootsCounter, redBootsCounter, greenBootsCounter, whiteBootsCounter, blueBootsCounter;
     int greyBootsBought, orangeBootsBought, redBootsBought, greenBootsBought, whiteBootsBought, blueBootsBought;
 
@@ -24,12 +25,22 @@ public class BootsPageControl : MonoBehaviour {
     public bool buyGreyBoots, buyOrangeBoots, buyRedBoots, buyGreenBoots, buyWhiteBoots, buyBlueBoots;
     public int dustAmount;
 
-    int bootsPrice;
+    int greyBootsPrice;
+    int whiteBootsPrice;
+    int orangeBootsPrice;
+    int redBootsPrice;
+    int greenBootsPrice;
+    int blueBootsPrice;
 
     void Awake()
     {
-        //setting boots price
-        bootsPrice = 300;
+        //setting boots prices
+        greyBootsPrice = 300;
+        whiteBootsPrice = 300;
+        orangeBootsPrice = 500;
+        redBootsPrice = 500;
+        greenBootsPrice = 800;
+        blueBootsPrice = 800;
     }
 
     // Use this for initialization
@@ -234,7 +245,7 @@ public class BootsPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= bootsPrice)
+        if (dustAmount >= greyBootsPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -248,7 +259,7 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }      
-        else if (dustAmount < bootsPrice)
+        else if (dustAmount < greyBootsPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -295,7 +306,7 @@ public class BootsPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= bootsPrice)
+        if (dustAmount >= orangeBootsPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -309,7 +320,7 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }      
-        else if (dustAmount < bootsPrice)
+        else if (dustAmount < orangeBootsPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -357,7 +368,7 @@ public class BootsPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= bootsPrice)
+        if (dustAmount >= redBootsPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -371,7 +382,7 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }     
-        else if (dustAmount < bootsPrice)
+        else if (dustAmount < redBootsPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -418,7 +429,7 @@ public class BootsPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= bootsPrice)
+        if (dustAmount >= greenBootsPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -432,7 +443,7 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < bootsPrice)
+        else if (dustAmount < greenBootsPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -479,7 +490,7 @@ public class BootsPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= bootsPrice)
+        if (dustAmount >= whiteBootsPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -493,7 +504,7 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }      
-        else if (dustAmount < bootsPrice)
+        else if (dustAmount < whiteBootsPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -540,7 +551,7 @@ public class BootsPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= bootsPrice)
+        if (dustAmount >= blueBootsPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -554,7 +565,7 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < bootsPrice)
+        else if (dustAmount < blueBootsPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -600,7 +611,7 @@ public class BootsPageControl : MonoBehaviour {
 
             GreyBoots.enabled = false;
             Debug.Log("You have bought Greyboots");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(bootsPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(greyBootsPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -654,8 +665,8 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.GetComponent<Image>().enabled = false;
 
             OrangeBoots.enabled = false;
-            Debug.Log("You have bought a Orangeboots");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(bootsPrice);
+            Debug.Log("You have bought Orangeboots");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(orangeBootsPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -709,8 +720,8 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.GetComponent<Image>().enabled = false;
 
             RedBoots.enabled = false;
-            Debug.Log("You have bought a Redboots");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(bootsPrice);
+            Debug.Log("You have bought Redboots");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(redBootsPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -764,8 +775,8 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.GetComponent<Image>().enabled = false;
 
             GreenBoots.enabled = false;
-            Debug.Log("You have bought a Greenboots");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(bootsPrice);
+            Debug.Log("You have bought Greenboots");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(greenBootsPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -819,8 +830,8 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.GetComponent<Image>().enabled = false;
 
             WhiteBoots.enabled = false;
-            Debug.Log("You have bought a Greyboots");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(bootsPrice);
+            Debug.Log("You have bought Whiteboots");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(whiteBootsPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -874,8 +885,8 @@ public class BootsPageControl : MonoBehaviour {
             noBuyButton.GetComponent<Image>().enabled = false;
 
             BlueBoots.enabled = false;
-            Debug.Log("You have bought a Blueboots");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(bootsPrice);
+            Debug.Log("You have bought Blueboots");
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(blueBootsPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
