@@ -26,12 +26,22 @@ public class GlassesPageControl : MonoBehaviour {
 
     public int dustAmount;
 
-    int glassesPrice;
+    int greyGlassesPrice;
+    int whiteGlassesPrice;
+    int orangeGlassesPrice;
+    int redGlassesPrice;
+    int greenGlassesPrice;
+    int blueGlassesPrice;
 
     void Awake()
     {
-        //Setting the glasses price
-        glassesPrice = 300;
+        //Setting the glasses prices
+        greyGlassesPrice = 300;
+        whiteGlassesPrice = 300;
+        orangeGlassesPrice = 400;
+        redGlassesPrice = 400;
+        greenGlassesPrice = 600;
+        blueGlassesPrice = 600;
     }
 
     // Use this for initialization
@@ -236,7 +246,7 @@ public class GlassesPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= glassesPrice)
+        if (dustAmount >= greyGlassesPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -250,7 +260,7 @@ public class GlassesPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < glassesPrice)
+        else if (dustAmount < greyGlassesPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -297,7 +307,7 @@ public class GlassesPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= glassesPrice)
+        if (dustAmount >= orangeGlassesPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -311,7 +321,7 @@ public class GlassesPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < glassesPrice)
+        else if (dustAmount < orangeGlassesPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -358,7 +368,7 @@ public class GlassesPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= glassesPrice)
+        if (dustAmount >= redGlassesPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -372,7 +382,7 @@ public class GlassesPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < glassesPrice)
+        else if (dustAmount < redGlassesPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -419,7 +429,7 @@ public class GlassesPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= glassesPrice)
+        if (dustAmount >= greenGlassesPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -433,7 +443,7 @@ public class GlassesPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < glassesPrice)
+        else if (dustAmount < greenGlassesPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -480,7 +490,7 @@ public class GlassesPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= glassesPrice)
+        if (dustAmount >= whiteGlassesPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -494,7 +504,7 @@ public class GlassesPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < glassesPrice)
+        else if (dustAmount < whiteGlassesPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -541,7 +551,7 @@ public class GlassesPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= glassesPrice)
+        if (dustAmount >= blueGlassesPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -555,7 +565,7 @@ public class GlassesPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < glassesPrice)
+        else if (dustAmount < blueGlassesPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -603,7 +613,7 @@ public class GlassesPageControl : MonoBehaviour {
             GreyGlasses.enabled = false;
             Debug.Log("You have bought grey glasses");
 
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(glassesPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(greyGlassesPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -658,7 +668,7 @@ public class GlassesPageControl : MonoBehaviour {
 
             OrangeGlasses.enabled = false;
             Debug.Log("You have bought orange glasses");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(glassesPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(orangeGlassesPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -713,7 +723,7 @@ public class GlassesPageControl : MonoBehaviour {
 
             RedGlasses.enabled = false;
             Debug.Log("You have bought red glasses");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(glassesPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(redGlassesPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -769,7 +779,7 @@ public class GlassesPageControl : MonoBehaviour {
             GreenGlasses.enabled = false;
             Debug.Log("You have bought green glasses");
 
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(glassesPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(greenGlassesPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -824,7 +834,7 @@ public class GlassesPageControl : MonoBehaviour {
 
             WhiteGlasses.enabled = false;
             Debug.Log("You have bought white glasses");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(glassesPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(whiteGlassesPrice);
 
             if (dustAmount < 1)
             {
@@ -878,7 +888,7 @@ public class GlassesPageControl : MonoBehaviour {
 
             BlueGlasses.enabled = false;
             Debug.Log("You have bought blue glasses");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(glassesPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(blueGlassesPrice);
 
             if (dustAmount < 1)
             {

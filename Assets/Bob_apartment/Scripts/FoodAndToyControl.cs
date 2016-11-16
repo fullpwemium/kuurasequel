@@ -48,7 +48,7 @@ public class FoodAndToyControl : MonoBehaviour {
             GetComponent<SpriteRenderer>().enabled = true;
             AmountofFood.GetComponent<Text>().enabled = true;
         }
-        else if (ItemControl.amountofFood < 1 || HappinessController.feedable == true)
+        else if (ItemControl.amountofFood < 1 || HappinessController.feedable == false)
         {
             //the cats food sprite disappears if the amount of food is 0 or the cat isn't hungry
             GetComponent<SpriteRenderer>().enabled = false;

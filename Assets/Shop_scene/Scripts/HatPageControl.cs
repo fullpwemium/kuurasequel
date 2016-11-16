@@ -57,14 +57,25 @@ public class HatPageControl : MonoBehaviour
     public bool buyWhiteHat;
     public bool buyBlueHat;
 
-    int hatprice;
+    int greyHatPrice;
+    int whiteHatPrice;
+    int orangeHatPrice;
+    int redHatPrice;
+    int greenHatPrice;
+    int blueHatPrice;
+
     public int dustAmount;
 
     // Use this for initialization
     void Awake()
     {
-        //Setting the hat price
-        hatprice = 500;
+        //Setting the hat prices
+        greyHatPrice = 500;
+        whiteHatPrice = 500;
+        redHatPrice = 575;
+        orangeHatPrice = 575;
+        greenHatPrice = 675;
+        blueHatPrice = 675;
     }
 
     void Start()
@@ -267,7 +278,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= hatprice)
+        if (dustAmount >= greyHatPrice)
         {
             ConfirmText.enabled = true;
             yesText.enabled = true;
@@ -281,7 +292,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }      
-        else if (dustAmount < hatprice)
+        else if (dustAmount < greyHatPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -325,7 +336,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= hatprice)
+        if (dustAmount >= orangeHatPrice)
         {
             ConfirmText.enabled = true;
             yesText.enabled = true;
@@ -339,7 +350,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < hatprice)
+        else if (dustAmount < orangeHatPrice)
         {
             Debug.Log("You don't have enough magic dust");
             GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
@@ -382,7 +393,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= hatprice)
+        if (dustAmount >= redHatPrice)
         {
             ConfirmText.enabled = true;
             yesText.enabled = true;
@@ -396,7 +407,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < hatprice)
+        else if (dustAmount < redHatPrice)
         {
             Debug.Log("You don't have enough magic dust");
             GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
@@ -439,7 +450,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= hatprice)
+        if (dustAmount >= greenHatPrice)
         {
             ConfirmText.enabled = true;
             yesText.enabled = true;
@@ -453,7 +464,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < hatprice)
+        else if (dustAmount < greenHatPrice)
         {
             Debug.Log("You don't have enough magic dust");
             GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
@@ -496,7 +507,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= hatprice)
+        if (dustAmount >= whiteHatPrice)
         {
             ConfirmText.enabled = true;
             yesText.enabled = true;
@@ -510,7 +521,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < hatprice)
+        else if (dustAmount < whiteHatPrice)
         {
             Debug.Log("You don't have enough magic dust");
             GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
@@ -553,7 +564,7 @@ public class HatPageControl : MonoBehaviour
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= hatprice)
+        if (dustAmount >= blueHatPrice)
         {
             ConfirmText.enabled = true;
             yesText.enabled = true;
@@ -567,7 +578,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < hatprice)
+        else if (dustAmount < blueHatPrice)
         {
             Debug.Log("You don't have enough magic dust");
             GameObject.Find("NotEnoughDust").GetComponent<NotEnoughDust>().Background.enabled = true;
@@ -609,7 +620,7 @@ public class HatPageControl : MonoBehaviour
             GreyHat.enabled = false;
 
             Debug.Log("You have bought a grey hat");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(hatprice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(greyHatPrice);
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
             if (dustAmount < 1)
@@ -665,7 +676,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.GetComponent<Image>().enabled = false;
 
             Debug.Log("You have bought an orange hat");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(hatprice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(orangeHatPrice);
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
             if (dustAmount < 1)
@@ -718,7 +729,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.GetComponent<Image>().enabled = false;
 
             Debug.Log("You have bought a red hat");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(hatprice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(redHatPrice);
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
             if (dustAmount < 1)
@@ -771,7 +782,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.GetComponent<Image>().enabled = false;
 
             Debug.Log("You have bought a green hat");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(hatprice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(greenHatPrice);
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
             if (dustAmount < 1)
@@ -824,7 +835,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.GetComponent<Image>().enabled = false;
 
             Debug.Log("You have bought a white hat");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(hatprice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(whiteHatPrice);
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
             if (dustAmount < 1)
@@ -877,7 +888,7 @@ public class HatPageControl : MonoBehaviour
             noBuyButton.GetComponent<Image>().enabled = false;
 
             Debug.Log("You have bought a blue hat");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(hatprice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(blueHatPrice);
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
             if (dustAmount < 1)

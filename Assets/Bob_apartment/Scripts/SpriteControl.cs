@@ -13,14 +13,17 @@ public class SpriteControl : MonoBehaviour {
     void Start ()
     {
         GetComponent<SpriteRenderer>().sprite = sprites[PlayerPrefs.GetInt("LastMood")];
-        bobApartmentScene = SceneManager.GetActiveScene();
+        bobApartmentScene = SceneManager.GetSceneByName("Bob_apartment");
     }
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
     {
         happinessMultiplier = HappinessController.happinessMultiplier;
+
+        //changes the sprite of the cats face in bobs apartment
         GetComponent<SpriteRenderer>().sprite = sprites[happinessMultiplier];
+
         currentScene = SceneManager.GetActiveScene();
 
         if (bobApartmentScene == currentScene)

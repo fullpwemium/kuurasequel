@@ -23,12 +23,22 @@ public class JacketPageControl : MonoBehaviour {
     public bool buyGreyJacket, buyOrangeJacket, buyRedJacket, buyGreenJacket, buyWhiteJacket, buyBlueJacket;
     public int dustAmount;
 
-    int jacketPrice;
+    int greyJacketPrice;
+    int whiteJacketPrice;
+    int orangeJacketPrice;
+    int redJacketPrice;
+    int greenJacketPrice;
+    int blueJacketPrice;
 
     void Awake()
     {
-        //setting the jacket price
-        jacketPrice = 800;
+        //setting the jacket prices
+        greyJacketPrice = 800;
+        whiteJacketPrice = 800;
+        orangeJacketPrice = 900;
+        redJacketPrice = 900;
+        greenJacketPrice = 1100;
+        blueJacketPrice = 1100;
     }
 
     void Start()
@@ -248,7 +258,7 @@ public class JacketPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= jacketPrice)
+        if (dustAmount >= greyJacketPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -262,7 +272,7 @@ public class JacketPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < jacketPrice)
+        else if (dustAmount < greyJacketPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -307,7 +317,7 @@ public class JacketPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= jacketPrice)
+        if (dustAmount >= orangeJacketPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -321,7 +331,7 @@ public class JacketPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < jacketPrice)
+        else if (dustAmount < orangeJacketPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -366,7 +376,7 @@ public class JacketPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= jacketPrice)
+        if (dustAmount >= redJacketPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -380,7 +390,7 @@ public class JacketPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < jacketPrice)
+        else if (dustAmount < redJacketPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -425,7 +435,7 @@ public class JacketPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= jacketPrice)
+        if (dustAmount >= greenJacketPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -439,7 +449,7 @@ public class JacketPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < jacketPrice)
+        else if (dustAmount < greenJacketPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -484,7 +494,7 @@ public class JacketPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= jacketPrice)
+        if (dustAmount >= whiteJacketPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -498,7 +508,7 @@ public class JacketPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < jacketPrice)
+        else if (dustAmount < whiteJacketPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -543,7 +553,7 @@ public class JacketPageControl : MonoBehaviour {
         noBuyButton.GetComponent<Image>().enabled = false;
 
         //Checks how much dust the player has and then if it has enough dust, the item will become buyable
-        if (dustAmount >= jacketPrice)
+        if (dustAmount >= blueJacketPrice)
         {
             confirmText.enabled = true;
             yesText.enabled = true;
@@ -557,7 +567,7 @@ public class JacketPageControl : MonoBehaviour {
             noBuyButton.enabled = true;
             noBuyButton.GetComponent<Image>().enabled = true;
         }
-        else if (dustAmount < jacketPrice)
+        else if (dustAmount < blueJacketPrice)
         {
             //tells to you if you dont have enough dust
             Debug.Log("You don't have enough magic dust");
@@ -601,7 +611,7 @@ public class JacketPageControl : MonoBehaviour {
 
             GreyJacket.enabled = false;
             Debug.Log("You have bought a Greyjacket");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(greyJacketPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -656,7 +666,7 @@ public class JacketPageControl : MonoBehaviour {
 
             OrangeJacket.enabled = false;
             Debug.Log("You have bought a Orangejacket");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(orangeJacketPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -711,7 +721,7 @@ public class JacketPageControl : MonoBehaviour {
 
             RedJacket.enabled = false;
             Debug.Log("You have bought a Redjacket");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(redJacketPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -766,7 +776,7 @@ public class JacketPageControl : MonoBehaviour {
 
             GreenJacket.enabled = false;
             Debug.Log("You have bought a Greenjacket");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(greenJacketPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -821,7 +831,7 @@ public class JacketPageControl : MonoBehaviour {
 
             WhiteJacket.enabled = false;
             Debug.Log("You have bought a Whitejacket");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(whiteJacketPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 
@@ -876,7 +886,7 @@ public class JacketPageControl : MonoBehaviour {
 
             BlueJacket.enabled = false;
             Debug.Log("You have bought a bluejacket");
-            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(jacketPrice);
+            GameObject.Find("ShopBook").GetComponent<DustController>().LoseDust(blueJacketPrice);
 
             GameObject.Find("ShopBook").GetComponent<DustController>().UpdateDust();
 

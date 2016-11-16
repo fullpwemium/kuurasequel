@@ -249,10 +249,10 @@ public class ShopButtons : MonoBehaviour {
 
             //changes the positions of the glasses on the glassespage 
             GreyGlassesImage.transform.position = new Vector2(-90f, 325f);
-            OrangeGlassesImage.transform.position = new Vector2(-80f, 240f);
+            WhiteGlassesImage.transform.position = new Vector2(-80f, 240f);
             RedGlassesImage.transform.position = new Vector2(-75f, 145f);
-            GreenGlassesImage.transform.position = new Vector2(-65f, 35f);
-            WhiteGlassesImage.transform.position = new Vector2(410f, 365f);
+            OrangeGlassesImage.transform.position = new Vector2(-65f, 35f);
+            GreenGlassesImage.transform.position = new Vector2(410f, 365f);
             BlueGlassesImage.transform.position = new Vector2(420f, 280f);
 
             GreyGlassesPriceImage.enabled = true;
@@ -321,10 +321,12 @@ public class ShopButtons : MonoBehaviour {
 
             //changes the positions of the jackets on the jacketpage 
             GreyJacketImage.transform.position = new Vector2(-90f, 325f);
-            OrangeJacketImage.transform.position = new Vector2(-80f, 240f);
+            WhiteJacketImage.transform.position = new Vector2(-80f, 240f);
+
             RedJacketImage.transform.position = new Vector2(-75f, 145f);
-            GreenJacketImage.transform.position = new Vector2(-65f, 35f);
-            WhiteJacketImage.transform.position = new Vector2(400f, 365f);
+            OrangeJacketImage.transform.position = new Vector2(-65f, 35f);
+            
+            GreenJacketImage.transform.position = new Vector2(400f, 365f);
             BlueJacketImage.transform.position = new Vector2(400f, 265f);
 
             GreyJacketPriceImage.enabled = true;
@@ -394,10 +396,10 @@ public class ShopButtons : MonoBehaviour {
 
             //changes the positions of the boots on the bootspage 
             GreyBootsImage.transform.position = new Vector2(-70f, 340f);
-            OrangeBootsImage.transform.position = new Vector2(-80f, 240f);
+            WhiteBootsImage.transform.position = new Vector2(-80f, 240f);
             RedBootsImage.transform.position = new Vector2(-75f, 145f);
-            GreenBootsImage.transform.position = new Vector2(-65f, 35f);
-            WhiteBootsImage.transform.position = new Vector2(400f, 365f);
+            OrangeBootsImage.transform.position = new Vector2(-65f, 35f);
+            GreenBootsImage.transform.position = new Vector2(420f, 365f);
             BlueBootsImage.transform.position = new Vector2(420f, 265f);
 
             GreyBootsPriceImage.enabled = true;
@@ -616,7 +618,7 @@ public class ShopButtons : MonoBehaviour {
                 OrangeGlassesSlot.enabled = false;
 
                 //changes the positions of the orange glasses on bobspage
-                OrangeGlassesImage.transform.position = new Vector2(20f, 245f);
+                OrangeGlassesImage.transform.position = new Vector2(20f, 50f);
             }
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeGlassesOwned == false || orangeGlassesBought == 0)
             {
@@ -648,7 +650,7 @@ public class ShopButtons : MonoBehaviour {
                 GreenGlassesSlot.enabled = false;
 
                 //changes the positions of the green glasses on bobspage
-                GreenGlassesImage.transform.position = new Vector2(20f, 50f);
+                GreenGlassesImage.transform.position = new Vector2(490f, 390f);
             }
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenGlassesOwned == false || greenGlassesBought == 0)
             {
@@ -664,7 +666,7 @@ public class ShopButtons : MonoBehaviour {
                 WhiteGlassesSlot.enabled = false;
 
                 //changes the positions of the white glasses on bobspage
-                WhiteGlassesImage.transform.position = new Vector2(490f, 390f);
+                WhiteGlassesImage.transform.position = new Vector2(20f, 245f);
             }
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteGlassesOwned == false || whiteGlassesBought == 0)
             {
@@ -726,7 +728,7 @@ public class ShopButtons : MonoBehaviour {
                 OrangeJacketSlot.enabled = false;
 
                 //changes the positions of the orange jacket on bobspage
-                OrangeJacketImage.transform.position = new Vector2(110f, 245f);
+                OrangeJacketImage.transform.position = new Vector2(110f, 50f);
             }
 
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeJacketOwned == false || orangeJacketBought == 0)
@@ -760,7 +762,7 @@ public class ShopButtons : MonoBehaviour {
                 GreenJacketSlot.enabled = false;
                 
                 //changes the positions of the green jacket on bobspage
-                GreenJacketImage.transform.position = new Vector2(110f, 50f);
+                GreenJacketImage.transform.position = new Vector2(575f, 375f);
             }
 
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenJacketOwned == false || greenJacketBought == 0)
@@ -777,7 +779,7 @@ public class ShopButtons : MonoBehaviour {
                 WhiteJacketSlot.enabled = false;
 
                 //changes the positions of the white jacket on bobspage
-                WhiteJacketImage.transform.position = new Vector2(575f, 375f);
+                WhiteJacketImage.transform.position = new Vector2(110f, 245f);
             }
 
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned == false || whiteJacketBought == 0)
@@ -842,7 +844,7 @@ public class ShopButtons : MonoBehaviour {
                 OrangeBootsSlot.enabled = false;
 
                 //changes the positions of the orange boots on bobspage
-                OrangeBootsImage.transform.position = new Vector2(200f, 250f);
+                OrangeBootsImage.transform.position = new Vector2(200f, 50f);
             }
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().OrangeBootsOwned == false || orangeBootsBought == 0)
             {
@@ -874,7 +876,7 @@ public class ShopButtons : MonoBehaviour {
                 GreenBootsSlot.enabled = false;
 
                 //changes the positions of the green boots on bobspage
-                GreenBootsImage.transform.position = new Vector2(200f, 50f);
+                GreenBootsImage.transform.position = new Vector2(665f, 375f);
             }
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreenBootsOwned == false || greenBootsBought == 0)
             {
@@ -890,7 +892,7 @@ public class ShopButtons : MonoBehaviour {
                 WhiteBootsSlot.enabled = false;
 
                 //changes the positions of the white boots on bobspage
-                WhiteBootsImage.transform.position = new Vector2(660f, 375f);
+                WhiteBootsImage.transform.position = new Vector2(200f, 250f);
             }
             else if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteBootsOwned == false || whiteBootsBought == 0)
             {
