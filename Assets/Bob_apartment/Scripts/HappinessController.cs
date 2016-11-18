@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class HappinessController : MonoBehaviour {
 
@@ -17,15 +18,21 @@ public class HappinessController : MonoBehaviour {
     static System.DateTime currentTime;
     static System.DateTime fedTime;
     long whenfed;
-   // static Sprite currentSprite;
-    
+    // static Sprite currentSprite;
+    Scene bobApartmentScene;
     public Scene currentScene;
     public static bool feedable;
     // Use this for initialization
     int changeface;
 
+    public Button OkButton;
+    public GameObject dontCheat;
+
     void Start()
     {
+        bobApartmentScene = SceneManager.GetSceneByName("Bob_apartment");
+        OkButton.onClick.AddListener(DontCheatOk);
+
         Debug.Log(PlayerPrefs.GetInt("LastMood"));
         feedable = true;
         DontDestroyOnLoad(gameObject);
@@ -54,11 +61,24 @@ public class HappinessController : MonoBehaviour {
         whenfed = Convert.ToInt64(PlayerPrefs.GetString("WhenFed"));
         fedTime = DateTime.FromBinary(whenfed);
 
+        if (currentScene == bobApartmentScene)
+        {
+            if (fedTime > System.DateTime.Now.AddSeconds(5))
+            {
+                happinessMultiplier = 0;
+                dontCheat.SetActive(true);
+            }
+            else if (fedTime < System.DateTime.Now.AddSeconds(5))
+            {
+                dontCheat.SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        currentScene = SceneManager.GetActiveScene();
         //Debug.Log(happinessMultiplier);
 
         if (happinessMultiplier == 3)
@@ -97,6 +117,18 @@ public class HappinessController : MonoBehaviour {
             Debug.Log("current sprite " + currentSprite);
         }
         */
+
+        if (currentScene == bobApartmentScene)
+        {
+            if (fedTime > System.DateTime.Now.AddSeconds(5))
+            {
+                happinessMultiplier = 0;
+            }
+            else if (fedTime < System.DateTime.Now.AddSeconds(5))
+            {
+                dontCheat.SetActive(false);
+            }
+        }
 
         //checks the current mood and compares it to a specific sprite then changes the mood if the other conditions are also met
         if (happinessMultiplier == 3 && fedTime.AddMinutes(2) <= currentTime)
@@ -217,5 +249,10 @@ public class HappinessController : MonoBehaviour {
         PlayerPrefs.SetString("WhenFed", System.DateTime.Now.ToBinary().ToString());
         PlayerPrefs.SetInt("LastMood", happinessMultiplier);
         Debug.Log(PlayerPrefs.GetInt("LastMood"));
+    }
+
+    void DontCheatOk()
+    {
+        dontCheat.SetActive(false);
     }
 }

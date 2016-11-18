@@ -91,6 +91,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 523d9d712e283604d807f9a2ceb2e042, type: 3}
   - {fileID: 21300000, guid: ccb207d73954e414eb6f5d19f013ec6f, type: 3}
   - {fileID: 21300000, guid: 99796c1e393d0734797f50588de9c2fc, type: 3}
+  OkButton: {fileID: 0}
+  dontCheat: {fileID: 0}
 --- !u!114 &114000013131097124
 MonoBehaviour:
   m_ObjectHideFlags: 1
