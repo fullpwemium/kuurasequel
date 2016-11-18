@@ -25,6 +25,7 @@ public class HappinessController : MonoBehaviour {
     // Use this for initialization
     int changeface;
 
+    int dontCheatCounter;
     public Button OkButton;
     public GameObject dontCheat;
 
@@ -32,6 +33,8 @@ public class HappinessController : MonoBehaviour {
     {
         bobApartmentScene = SceneManager.GetSceneByName("Bob_apartment");
         OkButton.onClick.AddListener(DontCheatOk);
+
+        dontCheat.SetActive(false);
 
         Debug.Log(PlayerPrefs.GetInt("LastMood"));
         feedable = true;
@@ -61,14 +64,17 @@ public class HappinessController : MonoBehaviour {
         whenfed = Convert.ToInt64(PlayerPrefs.GetString("WhenFed"));
         fedTime = DateTime.FromBinary(whenfed);
 
+        //Checks if the player cheats the cats happiness system by changing the time of the device backwards
         if (currentScene == bobApartmentScene)
         {
-            if (fedTime > System.DateTime.Now.AddSeconds(5))
+            //if the player cheats like that the cats mood goes to the saddest one
+            if (fedTime > System.DateTime.Now.AddSeconds(5) && dontCheatCounter == 0)
             {
-                happinessMultiplier = 0;
+                dontCheatCounter++;
+                ChangeMood(0);
                 dontCheat.SetActive(true);
             }
-            else if (fedTime < System.DateTime.Now.AddSeconds(5))
+            else if (fedTime < System.DateTime.Now.AddSeconds(5) && dontCheatCounter > 0)
             {
                 dontCheat.SetActive(false);
             }
@@ -118,40 +124,45 @@ public class HappinessController : MonoBehaviour {
         }
         */
 
+
         if (currentScene == bobApartmentScene)
         {
-            if (fedTime > System.DateTime.Now.AddSeconds(5))
+            //Checks if the player cheats the cats happiness system by changing the time of the device backwards
+            if (fedTime > System.DateTime.Now.AddSeconds(5) && dontCheatCounter == 0)
             {
-                happinessMultiplier = 0;
+                //if the player cheats like that the cats mood goes to the saddest one
+                dontCheatCounter++;
+                ChangeMood(0);
+                dontCheat.SetActive(true);
             }
-            else if (fedTime < System.DateTime.Now.AddSeconds(5))
+            else if (fedTime < System.DateTime.Now.AddSeconds(5) && dontCheatCounter > 0)
             {
                 dontCheat.SetActive(false);
             }
         }
 
         //checks the current mood and compares it to a specific sprite then changes the mood if the other conditions are also met
-        if (happinessMultiplier == 3 && fedTime.AddMinutes(2) <= currentTime)
+        if (happinessMultiplier == 3 && fedTime.AddHours(1) <= currentTime)
         {
             Debug.Log("current time is " + currentTime);
-            Debug.Log("fedtime" + fedTime.AddMinutes(2));
+            Debug.Log("fedtime" + fedTime.AddHours(1));
             ChangeMood(2);
             LastFed(currentTime);
             print("it has been " + hungry.ToString() + " since you last fed the cat, cat is happy " + System.DateTime.Now);
         }
-        else if (happinessMultiplier == 2 && fedTime.AddMinutes(3) <= currentTime)
+        else if (happinessMultiplier == 2 && fedTime.AddHours(6) <= currentTime)
         {
             Debug.Log("current time is " + currentTime);
-            Debug.Log("fedtime" + fedTime.AddMinutes(3));
+            Debug.Log("fedtime" + fedTime.AddHours(6));
             
             ChangeMood(1);
             LastFed(currentTime);
             print("it has been " + hungry.ToString() + " since you last fed the cat, cat is ok " + System.DateTime.Now);
         }
-        else if(happinessMultiplier == 1 && fedTime.AddMinutes(4) <= currentTime)
+        else if(happinessMultiplier == 1 && fedTime.AddHours(7) <= currentTime)
         {
             Debug.Log("current time is " + currentTime);
-            Debug.Log("fedtime" + fedTime.AddMinutes(4));
+            Debug.Log("fedtime" + fedTime.AddHours(7));
             ChangeMood(0);
             LastFed(currentTime);
             print("it has been " + hungry.ToString() + " since you last fed the cat, cat is sad " + System.DateTime.Now);
