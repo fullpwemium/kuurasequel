@@ -230,7 +230,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 24927400835d1aa41895452e75d01497, type: 3}
   - {fileID: 21300000, guid: 350a822c2d33c1e4d9a6f587bd8b31fd, type: 3}
   - {fileID: 21300000, guid: 78387cc875fa5074e9bd1660172ea6ea, type: 3}
-  runnerBackgrounds: []
+  warehouseBackgrounds: []
+  memoryBackgrounds: []
+  forestBackgrounds: []
 --- !u!1 &580228244
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +276,7 @@ MonoBehaviour:
   background: {fileID: 271191841}
   cam: {fileID: 883502927}
   dialogueBox: {fileID: 1990054380}
+  textBoxManager: {fileID: 950724961}
   NPC: {fileID: 235095988}
 --- !u!1 &883502927
 GameObject:
@@ -392,7 +395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &950724962
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class TextBoxManager : MonoBehaviour {
     public Text dialogue;
 
     public string[] dialogueLines;
-    private int currentScene = EventHandler.currentScene;
+    private string currentScene = EventHandler.currentScene;
     private string sceneProgression = EventHandler.sceneProgression;
     public int currentLine;
     public int endAtLine;
