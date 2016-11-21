@@ -3,36 +3,20 @@ using System.Collections;
 
 public class EventHandler : MonoBehaviour {
     public GameObject background;
-    public static int currentScene = 1; //Which world's scene? Mine scene is 1. 
-    public static string sceneProgression = "MidScene"; //IntroScene/MidScene/EndScene TODO: name more logically
-    public static int scenePosition = 0; //default 0, can be set to higher values for testing
+    public static string currentScene = "Memory"; // Mine/Warehouse/Memory/Forest
+    public static string sceneProgression = "MidScene"; // IntroScene/MidScene/EndScene (which of the three scenes is played)
+    public static int scenePosition = 0; // default 0, can be set to higher values for testing
     private float waitTime = 6;
     public GameObject cam;
     public GameObject dialogueBox;
+    public GameObject textBoxManager;
     public GameObject NPC;
+    public IEnumerator timer;
+
     // Use this for initialization
     void Start () {
-        StartCoroutine(CutSceneTimer(waitTime));
-        /*
-        switch (currentScene)
-        {
-            case 1:
-                
-
-                scenePosition = 1;
-                Debug.Log("Current position is " + scenePosition);
-                StartCoroutine(CutSceneTimer(waitTime));
-                scenePosition = 2;
-                Debug.Log("Current position is " + scenePosition);
-                break;
-            case 2:
-                break;
-            default:
-                break;
-
-        }
-    */
-
+        timer = CutSceneTimer(waitTime);
+        StartCoroutine(timer);
     }
 	
 	// Update is called once per frame
@@ -41,12 +25,14 @@ public class EventHandler : MonoBehaviour {
 			scenePosition = 2;
 			NPC.SetActive(true);
 			dialogueBox.SetActive(true);
-		}
+            textBoxManager.SetActive(true);
+            StopCoroutine(timer);
+        }
 	}
 
     private IEnumerator CutSceneTimer(float waitTime)
     {
-        //yield return new WaitForSeconds(2);
+        //yield return new WaitForSeconds(2); //slight wait before camera pan
         cam.GetComponent<CameraPan>().enabled = true;
         while (scenePosition < 2)
         {
@@ -65,6 +51,7 @@ public class EventHandler : MonoBehaviour {
             NPC.SetActive(true);
             yield return new WaitForSeconds(2.0f);
             dialogueBox.SetActive(true);
+            textBoxManager.SetActive(true);
         }
     }
 

@@ -47,6 +47,8 @@ TagManager:
   - Floor
   - ResetAR
   - ARButton
+  - True
+  - False
   layers:
   - Default
   - TransparentFX
