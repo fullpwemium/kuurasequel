@@ -23,6 +23,9 @@ public class GlassesPageControl : MonoBehaviour {
     public Button buyConfirmButton;
     public Image buyConfirm;
     public Image background;
+    public AudioClip yes;
+    public AudioClip no;
+    AudioSource audio;
 
     public int dustAmount;
 
@@ -591,6 +594,8 @@ public class GlassesPageControl : MonoBehaviour {
 
     void BuyGreyGlassesTrue()
     {
+        audio.PlayOneShot(yes);
+
         Debug.Log("BuyGreyGlassesTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreyGlassesOwned(true);
 
@@ -627,6 +632,8 @@ public class GlassesPageControl : MonoBehaviour {
 
     void BuyGreyGlassesFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("BuyGreyGlassesFalse");
         ownsGreyGlassesBool = false;
         buyGreyGlasses = false;
@@ -647,6 +654,8 @@ public class GlassesPageControl : MonoBehaviour {
 
     void BuyOrangeGlassesTrue()
     {
+        audio.PlayOneShot(yes);
+
         Debug.Log("BuyOrangeGlassesTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveOrangeGlassesOwned(true);
 
@@ -682,6 +691,8 @@ public class GlassesPageControl : MonoBehaviour {
 
     void BuyOrangeGlassesFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("BuyOrangeGlassesFalse");
         ownsOrangeGlassesBool = false;
         buyGreyGlasses = false;
@@ -702,6 +713,8 @@ public class GlassesPageControl : MonoBehaviour {
 
     void BuyRedGlassesTrue()
     {
+        audio.PlayOneShot(yes);
+
         Debug.Log("BuyRedGlassesTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveRedGlassesOwned(true);
 
@@ -737,6 +750,8 @@ public class GlassesPageControl : MonoBehaviour {
 
     void BuyRedGlassesFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("BuyRedGlassesFalse");
         ownsRedGlassesBool = false;
         buyRedGlasses = false;
@@ -757,6 +772,8 @@ public class GlassesPageControl : MonoBehaviour {
 
     void BuyGreenGlassesTrue()
     {
+        audio.PlayOneShot(yes);
+
         Debug.Log("BuyGreenGlassesTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreenGlassesOwned(true);
 
@@ -793,6 +810,8 @@ public class GlassesPageControl : MonoBehaviour {
 
     void BuyGreenGlassesFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("BuyGreenGlassesFalse");
         ownsGreenGlassesBool = false;
         buyGreenGlasses = false;
@@ -813,6 +832,8 @@ public class GlassesPageControl : MonoBehaviour {
 
     void BuyWhiteGlassesTrue()
     {
+        audio.PlayOneShot(yes);
+
         Debug.Log("BuyWhiteGlassesTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveWhiteGlassesOwned(true);
 
@@ -846,6 +867,8 @@ public class GlassesPageControl : MonoBehaviour {
 
     void BuyWhiteGlassesFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("BuyWhiteGlassesFalse");
         ownsWhiteGlassesBool = false;
         buyWhiteGlasses = false;
