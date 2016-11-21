@@ -28,6 +28,9 @@ public class HatPageControl : MonoBehaviour
     public Button buyconfirmbutton;
     public Image buyconfirm;
     public Image background;
+    public AudioClip yes;
+    public AudioClip no;
+    AudioSource audio;
 
     public Image ownsGreyHat;
     public Image ownsOrangeHat;
@@ -599,8 +602,10 @@ public class HatPageControl : MonoBehaviour
 
     void BuyGreyHatTrue()
     {
+        audio.PlayOneShot(yes);
+
         //Makes grey hat owned in the GlobalGameManager script true
-      GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreyHatOwned(true);
+        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreyHatOwned(true);
         //Checks if you want to buy the item
         if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned == true && greyHatCounter == 0)
         {
@@ -634,6 +639,8 @@ public class HatPageControl : MonoBehaviour
     //makes buying grey hat false if you don't want to buy that hat
     void BuyGreyHatFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("Your grey hat purchase failed");
         ownsGreyHatBool = false;
         buyGreyHat = false;
@@ -653,6 +660,8 @@ public class HatPageControl : MonoBehaviour
 
     void BuyOrangeHatTrue()
     {
+        audio.PlayOneShot(yes);
+
         //Makes orange hat owned in the GlobalGameManager script true
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveOrangeHatOwned(true);
 
@@ -689,6 +698,8 @@ public class HatPageControl : MonoBehaviour
 
     void BuyOrangeHatFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("Your orange hat purchase has failed");
         ownsOrangeHatBool = false;
         ConfirmText.enabled = false;
@@ -707,6 +718,8 @@ public class HatPageControl : MonoBehaviour
 
     void BuyRedHatTrue()
     {
+        audio.PlayOneShot(yes);
+
         //Makes red hat owned in the GlobalGameManager script true
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveRedHatOwned(true);
         //Checks if you want to buy the item
@@ -742,6 +755,8 @@ public class HatPageControl : MonoBehaviour
 
     void BuyRedHatFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("Your red hat purchase failed");
         buyRedHat = false;
         ConfirmText.enabled = false;
@@ -760,6 +775,8 @@ public class HatPageControl : MonoBehaviour
 
     void BuyGreenHatTrue()
     {
+        audio.PlayOneShot(yes);
+
         //Makes green hat owned in the GlobalGameManager script true
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreenHatOwned(true);
         //Checks if you want to buy the item
@@ -795,6 +812,8 @@ public class HatPageControl : MonoBehaviour
 
     void BuyGreenHatFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("Your green hat purchase has failed");
         buyGreenHat = false;
         ConfirmText.enabled = false;
@@ -813,6 +832,8 @@ public class HatPageControl : MonoBehaviour
 
     void BuyWhiteHatTrue()
     {
+        audio.PlayOneShot(yes);
+
         //Makes white hat owned in the GlobalGameManager script true
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveWhiteHatOwned(true);
         //Checks if you want to buy the item
@@ -848,6 +869,8 @@ public class HatPageControl : MonoBehaviour
 
     void BuyWhiteHatFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("Your white hat purchase has failed");
         buyWhiteHat = false;
         ConfirmText.enabled = false;
@@ -866,6 +889,8 @@ public class HatPageControl : MonoBehaviour
 
     void BuyBlueHatTrue()
     {
+        audio.PlayOneShot(yes);
+
         //Makes blue hat owned in the GlobalGameManager script true
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveBlueHatOwned(true);
         //Checks if you want to buy the item
@@ -901,6 +926,8 @@ public class HatPageControl : MonoBehaviour
 
     void BuyBlueHatFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("Your blue hat purchase has failed");
         buyBlueHat = false;
         ConfirmText.enabled = false;

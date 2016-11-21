@@ -17,6 +17,9 @@ public class BootsPageControl : MonoBehaviour {
     public Button buyConfirmButton;
     public Image buyConfirm;
     public Image background;
+    public AudioClip yes;
+    public AudioClip no;
+    AudioSource audio;
 
     public Image ownsGreyBoots, ownsOrangeBoots, ownsRedBoots, ownsGreenBoots, ownsWhiteBoots, ownsBlueBoots;
     public GameObject GreyBootsPrice, OrangeBootsPrice, RedBootsPrice, GreenBootsPrice, WhiteBootsPrice, BlueBootsPrice;
@@ -111,6 +114,9 @@ public class BootsPageControl : MonoBehaviour {
         greenBootsBought = PlayerPrefs.GetInt("greenBootsOwned");
         whiteBootsBought = PlayerPrefs.GetInt("whiteBootsOwned");
         blueBootsBought = PlayerPrefs.GetInt("blueBootsOwned");
+
+        //gets audiosource for yes and no buttons
+        audio = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -595,6 +601,8 @@ public class BootsPageControl : MonoBehaviour {
 
         if (GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyBootsOwned == true && greyBootsCounter == 0)
         {
+            audio.PlayOneShot(yes);
+
             greyBootsCounter++;
 
             confirmText.enabled = false;
@@ -625,6 +633,8 @@ public class BootsPageControl : MonoBehaviour {
 
     void BuyGreyBootsFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("BuyGreyBootsFalse");
         ownsGreyBootsBool = false;
         buyGreyBoots = false;
@@ -645,6 +655,8 @@ public class BootsPageControl : MonoBehaviour {
 
     void BuyOrangeBootsTrue()
     {
+        audio.PlayOneShot(yes);
+
         Debug.Log("BuyOrangeBootsTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveOrangeBootsOwned(true);
 
@@ -680,6 +692,8 @@ public class BootsPageControl : MonoBehaviour {
 
     void BuyOrangeBootsFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("BuyOrangeBootsFalse");
         ownsOrangeBootsBool = false;
         buyOrangeBoots = false;
@@ -700,6 +714,8 @@ public class BootsPageControl : MonoBehaviour {
 
     void BuyRedBootsTrue()
     {
+        audio.PlayOneShot(yes);
+
         Debug.Log("BuyRedBootsTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveRedBootsOwned(true);
 
@@ -735,6 +751,8 @@ public class BootsPageControl : MonoBehaviour {
 
     void BuyRedBootsFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("BuyRedBootsFalse");
         ownsRedBootsBool = false;
         buyRedBoots = false;
@@ -755,6 +773,8 @@ public class BootsPageControl : MonoBehaviour {
 
     void BuyGreenBootsTrue()
     {
+        audio.PlayOneShot(yes);
+
         Debug.Log("BuyGreenBootsTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreenBootsOwned(true);
 
@@ -790,6 +810,8 @@ public class BootsPageControl : MonoBehaviour {
 
     void BuyGreenBootsFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("BuyGreenBootsFalse");
         ownsGreenBootsBool = false;
         buyGreenBoots = false;
@@ -810,6 +832,8 @@ public class BootsPageControl : MonoBehaviour {
 
     void BuyWhiteBootsTrue()
     {
+        audio.PlayOneShot(yes);
+
         Debug.Log("BuyWhiteBootsTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveWhiteBootsOwned(true);
 
@@ -845,6 +869,8 @@ public class BootsPageControl : MonoBehaviour {
 
     void BuyWhiteBootsFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("BuyWhiteBootsFalse");
         ownsWhiteBootsBool = false;
         buyWhiteBoots = false;
@@ -865,6 +891,8 @@ public class BootsPageControl : MonoBehaviour {
 
     void BuyBlueBootsTrue()
     {
+        audio.PlayOneShot(yes);
+
         Debug.Log("BuyBlueBootsTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveBlueBootsOwned(true);
 
@@ -900,6 +928,8 @@ public class BootsPageControl : MonoBehaviour {
 
     void BuyBlueBootsFalse()
     {
+        audio.PlayOneShot(no);
+
         Debug.Log("BuyBlueBootsFalse");
         ownsBlueBootsBool = false;
         buyBlueBoots = false;
