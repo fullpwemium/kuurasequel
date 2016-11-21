@@ -633,7 +633,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -63, y: -203}
+  m_AnchoredPosition: {x: -118.8, y: -222.2}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &282237847
@@ -1380,7 +1380,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -163, y: -196}
+  m_AnchoredPosition: {x: -232.8, y: -222.2}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &465714605
@@ -2040,7 +2040,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 15, y: -149}
+  m_AnchoredPosition: {x: -33, y: -153}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &592191787
@@ -2463,7 +2463,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 356, y: -99}
+  m_AnchoredPosition: {x: 190.1, y: -191.7}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &775140312
@@ -2796,7 +2796,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 260, y: -63}
+  m_AnchoredPosition: {x: 136.3, y: -128.3}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &883423117
@@ -4149,7 +4149,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 133, y: -104}
+  m_AnchoredPosition: {x: 53.6, y: -183}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1308916096
@@ -4926,7 +4926,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 167, y: 92}
+  m_AnchoredPosition: {x: 372.6, y: -112.7}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1490309554
@@ -4949,7 +4949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1490309555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5971,7 +5971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49aa61ba778dfa4abbc7fd41d06673a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 040000000500000006000000210000002200000025000000260000002700000023000000
+  levelIndex: 04000000050000000600000021000000220000002500000026000000270000002800000023000000
   completedLevels: 
   currentLevel: 0
   levelSelectScene: 30
@@ -6240,7 +6240,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -281, y: -194}
+  m_AnchoredPosition: {x: -301.1, y: -149}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2057968590
@@ -6348,7 +6348,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 369, y: -180}
+  m_AnchoredPosition: {x: 285.5, y: -153}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2059599093

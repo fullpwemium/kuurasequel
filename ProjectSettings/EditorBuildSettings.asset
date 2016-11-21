@@ -93,3 +93,5 @@ EditorBuildSettings:
     path: Assets/2DRunner/Scenes/Level7.1.unity
   - enabled: 1
     path: Assets/2DRunner/Scenes/Level8.1.unity
+  - enabled: 1
+    path: Assets/2DRunner/Scenes/Level9.1.unity
