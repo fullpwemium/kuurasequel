@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EventHandler : MonoBehaviour {
     public GameObject background;
-    public static string currentScene = "Memory"; // Mine/Warehouse/Memory/Forest
+    public static string currentScene = "Warehouse"; // Mine/Warehouse/Memory/Forest
     public static string sceneProgression = "MidScene"; // IntroScene/MidScene/EndScene (which of the three scenes is played)
     public static int scenePosition = 0; // default 0, can be set to higher values for testing
     private float waitTime = 6;
