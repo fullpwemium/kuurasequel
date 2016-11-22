@@ -100,26 +100,26 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Security">
-      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Apple">
-      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Apple\Apple.dll</HintPath>
-    </Reference>
     <Reference Include="Common">
       <HintPath>Assets\Plugins\UnityPurchasing\Bin\Common.dll</HintPath>
     </Reference>
+    <Reference Include="Editor">
+      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Security">
+      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Security.dll</HintPath>
+    </Reference>
     <Reference Include="Stores">
       <HintPath>Assets\Plugins\UnityPurchasing\Bin\Stores.dll</HintPath>
+    </Reference>
+    <Reference Include="Apple">
+      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Apple\Apple.dll</HintPath>
     </Reference>
     <Reference Include="Tizen">
       <HintPath>Assets\Plugins\UnityPurchasing\Bin\Tizen\Tizen.dll</HintPath>
     </Reference>
     <Reference Include="winrt">
       <HintPath>Assets\Plugins\UnityPurchasing\winrt\winrt.dll</HintPath>
-    </Reference>
-    <Reference Include="Editor">
-      <HintPath>Assets\Plugins\UnityPurchasing\Bin\Editor.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-UnityScript">
       <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
@@ -146,9 +146,22 @@
   <ItemGroup>
     <None Include="Assets\2DRunner\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Bob_apartment\ProjectSettings\ProjectVersion.txt" />
-    <None Include="Assets\Resources\Text\Eng\Cutscenes\1\EndScene.txt" />
-    <None Include="Assets\Resources\Text\Eng\Cutscenes\1\IntroScene.txt" />
-    <None Include="Assets\Resources\Text\Eng\Cutscenes\1\MidScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Forest\EndScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Forest\IntroScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Forest\MidScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Forest\OneLiners.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Memory\EndScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Memory\IntroScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Memory\MidScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Memory\OneLiners.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Mine\EndScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Mine\IntroScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Mine\MidScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Mine\OneLiners.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Warehouse\EndScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Warehouse\IntroScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Warehouse\MidScene.txt" />
+    <None Include="Assets\Resources\Text\Eng\Cutscenes\Warehouse\OneLiners.txt" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
