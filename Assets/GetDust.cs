@@ -11,6 +11,7 @@ public class GetDust : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        MagicDust = PlayerPrefs.GetInt("Magic Dust ");
         addDust.onClick.AddListener(AddDust);
 	}
 	
@@ -29,6 +30,5 @@ public class GetDust : MonoBehaviour {
             AllMagicDust = GameObject.Find("MagicDust").GetComponent<Text>();
             AllMagicDust.text = MagicDust.ToString("f0");
         }
-
     }
 }

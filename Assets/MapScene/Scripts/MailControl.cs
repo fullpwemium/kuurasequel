@@ -71,6 +71,11 @@ public class MailControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+      
+    }
+
+    void CloseMailBox()
+    {
         greyHatOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned;
         greyGlassesOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyGlassesOwned;
         greyJacketOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned;
@@ -80,10 +85,7 @@ public class MailControl : MonoBehaviour {
         whiteGlassesOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteGlassesOwned;
         whiteJacketOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned;
         whiteBootsOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteBootsOwned;
-    }
 
-    void CloseMailBox()
-    {
         mailBoxExitImage.enabled = false;
         mailBoxExit.enabled = false;
         mailBoxBackground.enabled = false;
@@ -97,6 +99,16 @@ public class MailControl : MonoBehaviour {
 
     void OpenMailBox()
     {
+        greyHatOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyHatOwned;
+        greyGlassesOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyGlassesOwned;
+        greyJacketOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyJacketOwned;
+        greyBootsOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().GreyBootsOwned;
+
+        whiteHatOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteHatOwned;
+        whiteGlassesOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteGlassesOwned;
+        whiteJacketOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteJacketOwned;
+        whiteBootsOwned = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().WhiteBootsOwned;
+
         letter1Counter = PlayerPrefs.GetInt("LetterOneCounter");
         letter2Counter = PlayerPrefs.GetInt("LetterTwoCounter");
 
