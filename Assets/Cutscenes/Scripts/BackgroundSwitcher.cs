@@ -17,7 +17,7 @@ public class BackgroundSwitcher : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        currentScene = EventHandler.currentScene; 
+        currentScene = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene; 
         scenePosition = EventHandler.scenePosition;
         switch (currentScene) 
         {

@@ -7,7 +7,7 @@ public class NPCSwitcher : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        currentScene = EventHandler.currentScene;
+        currentScene = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene;
         switch (currentScene)
         {
             //cases are based on which scene's background are used
