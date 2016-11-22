@@ -15,9 +15,9 @@ public class JacketPageControl : MonoBehaviour {
     public Button buyConfirmButton;
     public Image buyConfirm;
     public Image background;
-    public AudioClip yes;
-    public AudioClip no;
-    AudioSource audio;
+    //public AudioClip yes;
+    //public AudioClip no;
+    //AudioSource audio;
 
     public Image ownsGreyJacket, ownsOrangeJacket, ownsRedJacket, ownsGreenJacket, ownsWhiteJacket, ownsBlueJacket;
     public GameObject GreyJacketPrice, OrangeJacketPrice, RedJacketPrice, GreenJacketPrice, WhiteJacketPrice, BlueJacketPrice;
@@ -593,7 +593,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyGreyJacketTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         Debug.Log("BuyGreyJacketTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreyJacketOwned(true);
@@ -630,7 +630,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyGreyJacketFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("BuyGreyJacketFalse");
         ownsGreyJacketBool = false;
@@ -652,7 +652,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyOrangeJacketTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         Debug.Log("BuyOrangeJacketTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveOrangeJacketOwned(true);
@@ -689,7 +689,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyOrangeJacketFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("BuyOrangeJacketFalse");
         ownsOrangeJacketBool = false;
@@ -711,7 +711,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyRedJacketTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         Debug.Log("BuyRedJacketTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveRedJacketOwned(true);
@@ -748,7 +748,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyRedJacketFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("BuyRedJacketFalse");
         ownsRedJacketBool = false;
@@ -770,7 +770,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyGreenJacketTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         Debug.Log("BuyGreenJacketTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreenJacketOwned(true);
@@ -807,7 +807,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyGreenJacketFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("BuyGreenJacketFalse");
         ownsGreenJacketBool = false;
@@ -829,7 +829,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyWhiteJacketTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         Debug.Log("BuyWhiteJacketTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveWhiteJacketOwned(true);
@@ -866,7 +866,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyWhiteJacketFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("BuyWhiteJacketFalse");
         ownsWhiteJacketBool = false;
@@ -888,7 +888,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyBlueJacketTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         Debug.Log("BuyBlueJacketTrue");
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveBlueJacketOwned(true);
@@ -925,7 +925,7 @@ public class JacketPageControl : MonoBehaviour {
 
     void BuyBlueJacketFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("BuyBlueJacketFalse");
         ownsBlueJacketBool = false;

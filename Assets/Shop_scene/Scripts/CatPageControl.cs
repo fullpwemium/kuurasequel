@@ -14,9 +14,9 @@ public class CatPageControl : MonoBehaviour {
     public Button CatControlButton, yesBuyButton, noBuyButton, buyConfirmButton;
     public Text confirmText, yesText, noText;
     public Image buyConfirmImage, backgroundImage;
-    public AudioClip yes;
-    public AudioClip no;
-    AudioSource audio;
+    //public AudioClip yes;
+    //public AudioClip no;
+    //AudioSource audio;
 
     void Awake()
     {
@@ -170,7 +170,7 @@ public class CatPageControl : MonoBehaviour {
 
     void BuyFoodTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         confirmText.enabled = false;
         yesText.enabled = false;
@@ -199,7 +199,7 @@ public class CatPageControl : MonoBehaviour {
 
     void BuyFoodFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("You didn't buy food");
         confirmText.enabled = false;
@@ -217,7 +217,7 @@ public class CatPageControl : MonoBehaviour {
 
     void BuyBallTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         confirmText.enabled = false;
         yesText.enabled = false;
@@ -246,7 +246,7 @@ public class CatPageControl : MonoBehaviour {
 
     void BuyBallFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("You didn't buy ball");
         confirmText.enabled = false;
