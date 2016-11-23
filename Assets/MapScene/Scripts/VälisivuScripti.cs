@@ -105,6 +105,7 @@ public class VälisivuScripti : MonoBehaviour
             dialogi.text = "- Hope you have a good memory!\n- Try to find images above Bob.";
             peliKuva.sprite = pelikuva1;
             Hahmo.sprite = hahmo1;
+            SceneManager.LoadScene("CutScene");
         }
         else if(BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 2)
         {
@@ -115,6 +116,7 @@ public class VälisivuScripti : MonoBehaviour
             dialogi.text = "-	Don't let Swipper get you!\n- Watch the floor...";
             peliKuva.sprite = pelikuva2;
             Hahmo.sprite = hahmo2;
+            SceneManager.LoadScene("CutScene");
         }
         else if (BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 1)
         {
@@ -125,7 +127,7 @@ public class VälisivuScripti : MonoBehaviour
             dialogi.text = "-	What a nasty snowflake!\n- Get cake to grow your bowl!";
             peliKuva.sprite = pelikuva3;
             Hahmo.sprite = hahmo3;
-
+            SceneManager.LoadScene("CutScene");
         }
         else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 3)
         {
@@ -136,6 +138,7 @@ public class VälisivuScripti : MonoBehaviour
             dialogi.text = "- Make all the coins come to you with magnet!\n- Don't forget you can JUMP again while midair!";
             peliKuva.sprite = pelikuva4;
             Hahmo.sprite = hahmo4;
+            SceneManager.LoadScene("CutScene");
         }
         else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 0)
         {
@@ -146,7 +149,7 @@ public class VälisivuScripti : MonoBehaviour
             peliKuva.sprite = pelikuva5;
             //Hahmo.sprite = hahmo5;
         }
-        SceneManager.LoadScene("CutScene");
+        
 
         kylttiKissaDestination = new Vector3(kylttiKissa.transform.position.x, kylttiKissa.transform.position.y + Screen.height / 30, kylttiKissa.transform.position.z);
 
