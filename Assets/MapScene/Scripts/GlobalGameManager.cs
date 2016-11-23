@@ -39,6 +39,8 @@ public class GlobalGameManager : MonoBehaviour
     public bool WhiteGlassesOwned;
     public bool BlueGlassesOwned;
 
+    public string currentScene;
+
     int currentGame;
     public List<int> completedGames;
 
@@ -81,12 +83,7 @@ public class GlobalGameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //MagicDust = 50000;
-        //PlayerPrefs.SetInt("Magic Dust ", MagicDust);
-
         MagicDust = PlayerPrefs.GetInt("Magic Dust "); //Ladataan kerätyt dustit
-
-        
 
         //GameObject.FindGameObjectWithTag("MagicDust").GetComponent<Text>().text = MagicDust.ToString();
 
@@ -99,8 +96,6 @@ public class GlobalGameManager : MonoBehaviour
 
     void Start()
     {
-        //PlayerPrefs.DeleteAll();
-        //Debug.Log("Kaikki tuhottu");
 
         //InsertScore(5,bwhStars, "banana", 10);
         haeData();

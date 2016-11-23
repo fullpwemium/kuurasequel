@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System;
 
 public class watchAds : MonoBehaviour {
 
@@ -43,12 +44,20 @@ public class watchAds : MonoBehaviour {
 
     public void ButtonYesClick()
     {
-        //Tähän extra dustin saaminen
+        //Dust reward for watching ads
+        if (NotWatchedToday()) {
+            PlayerPrefs.SetInt("Magic Dust ", PlayerPrefs.GetInt("Magic Dust ") + 100);
+        }
         BackButton.SetActive(true);
         BlackScreen.SetActive(false);
         buttonYes.SetActive(false);
         buttonNo.SetActive(false);
         text.SetActive(false);
 		SceneManager.LoadScene ("ARCat"); 
+    }
+
+    private bool NotWatchedToday()
+    {
+        return true;
     }
 }

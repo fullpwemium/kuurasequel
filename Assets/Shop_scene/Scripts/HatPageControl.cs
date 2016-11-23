@@ -28,9 +28,9 @@ public class HatPageControl : MonoBehaviour
     public Button buyconfirmbutton;
     public Image buyconfirm;
     public Image background;
-    public AudioClip yes;
-    public AudioClip no;
-    AudioSource audio;
+    //public AudioClip yes;
+    //public AudioClip no;
+    //AudioSource audio;
 
     public Image ownsGreyHat;
     public Image ownsOrangeHat;
@@ -602,7 +602,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyGreyHatTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         //Makes grey hat owned in the GlobalGameManager script true
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreyHatOwned(true);
@@ -639,7 +639,7 @@ public class HatPageControl : MonoBehaviour
     //makes buying grey hat false if you don't want to buy that hat
     void BuyGreyHatFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("Your grey hat purchase failed");
         ownsGreyHatBool = false;
@@ -660,7 +660,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyOrangeHatTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         //Makes orange hat owned in the GlobalGameManager script true
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveOrangeHatOwned(true);
@@ -698,7 +698,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyOrangeHatFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("Your orange hat purchase has failed");
         ownsOrangeHatBool = false;
@@ -718,7 +718,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyRedHatTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         //Makes red hat owned in the GlobalGameManager script true
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveRedHatOwned(true);
@@ -755,7 +755,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyRedHatFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("Your red hat purchase failed");
         buyRedHat = false;
@@ -775,7 +775,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyGreenHatTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         //Makes green hat owned in the GlobalGameManager script true
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveGreenHatOwned(true);
@@ -812,7 +812,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyGreenHatFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("Your green hat purchase has failed");
         buyGreenHat = false;
@@ -832,7 +832,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyWhiteHatTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         //Makes white hat owned in the GlobalGameManager script true
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveWhiteHatOwned(true);
@@ -869,7 +869,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyWhiteHatFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("Your white hat purchase has failed");
         buyWhiteHat = false;
@@ -889,7 +889,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyBlueHatTrue()
     {
-        audio.PlayOneShot(yes);
+        //audio.PlayOneShot(yes);
 
         //Makes blue hat owned in the GlobalGameManager script true
         GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().ShopSaveBlueHatOwned(true);
@@ -926,7 +926,7 @@ public class HatPageControl : MonoBehaviour
 
     void BuyBlueHatFalse()
     {
-        audio.PlayOneShot(no);
+        //audio.PlayOneShot(no);
 
         Debug.Log("Your blue hat purchase has failed");
         buyBlueHat = false;

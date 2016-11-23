@@ -4203,9 +4203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf059833f4263d4d8b2d6b9089f2006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisButton: {fileID: 483260716}
-  source: {fileID: 0}
-  shootSound: {fileID: 8300000, guid: 7abe2676f1b47164191176648fdace9d, type: 3}
 --- !u!1 &497486243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4995,7 +4992,6 @@ GameObject:
   - 114: {fileID: 581932505}
   - 114: {fileID: 581932504}
   - 114: {fileID: 581932507}
-  - 82: {fileID: 581932508}
   m_Layer: 5
   m_Name: BootsPageControl
   m_TagString: Untagged
@@ -5145,8 +5141,6 @@ MonoBehaviour:
   buyConfirmButton: {fileID: 1738096076}
   buyConfirm: {fileID: 1738096077}
   background: {fileID: 793598955}
-  yes: {fileID: 8300000, guid: 7abe2676f1b47164191176648fdace9d, type: 3}
-  no: {fileID: 8300000, guid: be72d6e2c4f2aaf4f9f9365755286e8b, type: 3}
   ownsGreyBoots: {fileID: 254179051}
   ownsOrangeBoots: {fileID: 1266509076}
   ownsRedBoots: {fileID: 866174653}
@@ -5172,80 +5166,6 @@ MonoBehaviour:
   buyWhiteBoots: 0
   buyBlueBoots: 0
   dustAmount: 0
---- !u!82 &581932508
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 581932502}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!1 &599338857
 GameObject:
   m_ObjectHideFlags: 0
@@ -11076,9 +10996,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf059833f4263d4d8b2d6b9089f2006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisButton: {fileID: 1319914856}
-  source: {fileID: 0}
-  shootSound: {fileID: 8300000, guid: be72d6e2c4f2aaf4f9f9365755286e8b, type: 3}
 --- !u!82 &1319914860
 AudioSource:
   m_ObjectHideFlags: 0
