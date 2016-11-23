@@ -1,4 +1,4 @@
-﻿using UnityEditor;
+﻿/*using UnityEditor;
 using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
@@ -81,5 +81,5 @@ namespace UnityEngine.Purchasing
             serializedObject.ApplyModifiedProperties();
         }
     }
-}
+}*/
 

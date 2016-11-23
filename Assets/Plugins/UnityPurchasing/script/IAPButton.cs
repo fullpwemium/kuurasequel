@@ -1,4 +1,4 @@
-﻿using UnityEngine.Events;
+﻿/*using UnityEngine.Events;
 using UnityEngine.UI;
 using System.IO;
 using System.Collections.Generic;
@@ -67,7 +67,7 @@ namespace UnityEngine.Purchasing
         /**
 		 *  Invoked to process a purchase of the product associated with this button
 		 */
-        public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs e)
+       /* public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs e)
         {
             Debug.Log(string.Format("IAPButton.ProcessPurchase(PurchaseEventArgs {0} - {1})", e, e.purchasedProduct.definition.id));
 
@@ -79,7 +79,7 @@ namespace UnityEngine.Purchasing
         /**
 		 *  Invoked on a failed purchase of the product associated with this button
 		 */
-        public void OnPurchaseFailed(Product product, PurchaseFailureReason reason)
+       /* public void OnPurchaseFailed(Product product, PurchaseFailureReason reason)
         {
             Debug.Log(string.Format("IAPButton.OnPurchaseFailed(Product {0}, PurchaseFailureReason {1})", product, reason));
 
@@ -218,3 +218,4 @@ namespace UnityEngine.Purchasing
         }
     }
 }
+*/
