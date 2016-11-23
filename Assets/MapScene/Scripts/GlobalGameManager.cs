@@ -39,6 +39,8 @@ public class GlobalGameManager : MonoBehaviour
     public bool WhiteGlassesOwned;
     public bool BlueGlassesOwned;
 
+    public string currentScene;
+
     int currentGame;
     public List<int> completedGames;
 

@@ -1,0 +1,5 @@
+"The cats are causing trouble. Are you ready to begin?"
+"The cats are still causing trouble. Are you ready to continue?"
+"There is still a lot of work to do about those cats, if you’re up for it?"
+"Most of the warehouse is clear of cats, but there is still some work left."
+"I think the trouble is over. But if you want to have a look, go right ahead."
