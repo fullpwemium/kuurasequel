@@ -15,7 +15,10 @@ public class SceneGenerate : MonoBehaviour
             GameObject stage = other.gameObject;
             Transform spawnLocation = stage.transform.parent.Find("SpawnLocation");
             //GameObject obj = Instantiate (stageCollection [Random.Range (0, objectpools.Length)], spawnLocation.position, Quaternion.identity) as GameObject;
-            newPlatform = Objectpools[a].GetPooledObject();
+
+            newPlatform = Objectpools[a].GetPooledObject(); //Jostain syystä heittää harvoin erroria että "Array index is out
+                                                            //of range" ensimmäisessä kentässä. Silti PooledObject näyttäisi
+                                                            //ilmestyvän ihan normaalisti, joten en tajua miksi valittaa. -Aleksi
             newPlatform.transform.position = spawnLocation.transform.position;
             newPlatform.transform.rotation = spawnLocation.transform.rotation;
             newPlatform.SetActive(true);
