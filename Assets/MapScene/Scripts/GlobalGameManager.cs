@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GlobalGameManager : MonoBehaviour
 {
     //Do global functions
-    public static GlobalGameManager GGM;
+    public static GlobalGameManager GGM;    //Kun GGM lisätty koodiin, niin voidaan viitata Managerin ei-staattisin funktioihin.
     public int gameSelectScene;
     public int[] gameScenes;
 
@@ -51,13 +51,15 @@ public class GlobalGameManager : MonoBehaviour
 
     int[] RunnerStars;
 
-    int LabyrinthStars;
+    int[] LabyrinthStars;
 
     List<int> memoryGamecompletedLevels;
 
     List<int> MemoryGamecompletedLevels = new List<int>();
 
     List<int> RunnercompletedLevels = new List<int>();
+
+    List<int> LabyrinthcompletedLevels = new List<int>();
 
     //Pelienomat
 
@@ -100,9 +102,10 @@ public class GlobalGameManager : MonoBehaviour
         //InsertScore(5,bwhStars, "banana", 10);
         haeData();
 
-        //MemoryGameLoad();
-        //RunnerLoad();
-        //bubbleWarehouseLoad();
+        MemoryGameLoad();
+        RunnerLoad();
+        //bubbleWarehouseLoad();    //Tulee "NullReferenceException: Object reference not set to an instance of an object"
+        //LabyrinthLoad();          //Tulee "NullReferenceException: Object reference not set to an instance of an object"
 
     }
 
@@ -189,13 +192,14 @@ public class GlobalGameManager : MonoBehaviour
 
             if (bwhcompletedLevels.Contains(i))
             {
-                GameManager.manager.completedLevels.Add(i);
+                GameManager.manager.completedLevels.Add(i); //Tulee "Object reference not set to an instance of an object"
             }
         }
     }
 
     public void bubbleWarehouseSave()
     {
+        Debug.Log("aloitetaan tallennus catch the items");
         bwhStars = GameManager.levelStars;
         bwhcompletedLevels = GameManager.manager.completedLevels;
 
@@ -216,8 +220,8 @@ public class GlobalGameManager : MonoBehaviour
 
     public void MemoryGameSave()
     {
-        Debug.Log("aloitetaan tallennus memorygame"); 
-        //laitetaan tähän vielä memorystars sijoitus.
+        Debug.Log("aloitetaan tallennus memorygame");
+        MemoryGameStars = GlobalManager.memoryGameStars;
         MemoryGamecompletedLevels = MemoryGameLevelSelecterLimitter.completedLevels;
 
         for (int i = 0; i <= 100; i++)
@@ -229,7 +233,6 @@ public class GlobalGameManager : MonoBehaviour
             if (MemoryGameLevelSelecterLimitter.completedLevels.Contains(i))
             {
                 PlayerPrefs.SetInt("memorylevels" + i, i);
-                //Debug.Log(bwhcompletedLevels[i]);
             }
         }
     }
@@ -283,7 +286,10 @@ public class GlobalGameManager : MonoBehaviour
 
     public void RunnerSave()
     {
-        RunnerStars = GameManager.levelStars;
+        Debug.Log("aloitetaan tallennus runner");
+        //RunnerStars = GameManager.levelStars;
+
+        RunnerStars = RunnerWinningPanel.runnerCats;
         RunnercompletedLevels = RunnerManager.manager.completedLevels;
 
         for (int i = 0; i <= 100; i++)
@@ -300,14 +306,46 @@ public class GlobalGameManager : MonoBehaviour
         }
     }
 
-    public void LabyrinthSave()
+    public void LabyrinthSave()     //Jostain syystä kun Runner-kentässä pääsee maaliin, Manager yrittää käsittämättömästi
+                                    //etsiä LabyrinthSaven funktioita vaikkei sitä edes kutsuta RunnerManagerissa.
+                                    //LabyrinthSavea kutsutaan jossain muualla mutten tiedä missä o.O
     {
-        LabyrinthStars = LabManager.cats;
+        Debug.Log("aloitetaan tallennus labyrinth");
+        ////LabyrinthStars = LabManager.cats;
+
+        LabyrinthStars = LabManager.levelCats;
+        LabyrinthcompletedLevels = LabyGameManager.manager.completedLevels;
+
+        for (int i = 0; i <= 100; i++)
+        {
+            PlayerPrefs.SetInt("LabyrinthStars" + i, LabyrinthStars[i]);
+        }
+        for (int i = 0; i <= 20; i++)
+        {
+            if (LabyGameManager.manager.completedLevels.Contains(i))
+            {
+                PlayerPrefs.SetInt("LabyrinthLevels" + i, i);
+                Debug.Log(LabyrinthcompletedLevels[i]);
+            }
+        }
     }
 
     public void LabyrinthLoad()
     {
+        for (int i = 0; i <= 100; i++)
+        {
+            GameManager.levelStars[i] = PlayerPrefs.GetInt("LabyrinthStars" + i);
+        }
+        for (int i = 0; i <= 5; i++)
+        {
 
+            LabyrinthcompletedLevels.Add(PlayerPrefs.GetInt("LabyrinthLevels" + i));
+
+            if (LabyrinthcompletedLevels.Contains(i))
+            {
+                LabyGameManager.manager.completedLevels.Add(i);
+            }
+        }
     }
 //---------------------------------------------------------------------------------------------
 

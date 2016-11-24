@@ -17,7 +17,7 @@ public class MemoryGameStarScript : MonoBehaviour
         ChecKStars();
     }
 
-    void ChecKStars()
+    public void ChecKStars()
     {
         Star = GetComponent<Image>();
 
@@ -37,7 +37,7 @@ public class MemoryGameStarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ChecKStars();
+        ChecKStars();
 
     }
 

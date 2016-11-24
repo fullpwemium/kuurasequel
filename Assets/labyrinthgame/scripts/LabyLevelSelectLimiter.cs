@@ -13,16 +13,16 @@ public class LabyLevelSelectLimiter : MonoBehaviour {
     //Checks levels if OnLevelWasLoaded was not called
     void Start()
     {
-//        CheckLevels();        //Rajoitetaan labyrintissa näkyviä kenttiä.
+        CheckLevels();        //Rajoitetaan labyrintissa näkyviä kenttiä.
 
         if (initialized == false)
         {
-//            CheckLevels();
+            CheckLevels();
         }
     }
     void OnLevelWasLoaded(int level)
     {
-//        CheckLevels();
+        CheckLevels();
     }
     void loadFrigginLevel()
     {

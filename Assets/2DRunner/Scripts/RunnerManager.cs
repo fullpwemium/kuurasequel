@@ -212,6 +212,8 @@ public class RunnerManager : MonoBehaviour
 
         pauseButton.SetActive(false);
 
+        GlobalGameManager.GGM.RunnerSave();
+
 
         //SceneManager.LoadScene("RunnerLevelMap");        //Ladataan kenttävalikko maaliin pääsyn jälkeen
     }

@@ -304,9 +304,9 @@ public class UI : MonoBehaviour
         {
 
         }
-        //GameManager.levelStars[GameManager.manager.currentLevel] = stars;
-        //GlobalGameManager.GGM.bubbleWarehouseSave();
-        //Debug.Log(GameManager.levelStars[GameManager.manager.currentLevel] + "tahtienmaara");
+        GameManager.levelStars[GameManager.manager.currentLevel] = stars;
+        GlobalGameManager.GGM.bubbleWarehouseSave();
+        Debug.Log(GameManager.levelStars[GameManager.manager.currentLevel] + "tahtienmaara");
 
         /*for (int i = 0; i<5; i++ )
         {

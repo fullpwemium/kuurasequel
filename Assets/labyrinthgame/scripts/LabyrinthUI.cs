@@ -315,19 +315,19 @@ public class LabyrinthUI : MonoBehaviour
         //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
 
 
-        //if (stars > LabManager.levelCats[LabyGameManager.manager.currentLevel])
-        //{
-        //    LabManager.levelCats[LabyGameManager.manager.currentLevel] = stars;
-        //    Debug.Log("levelikissat: " + LabManager.levelCats[0]);
-        //}
+        if (stars > LabManager.levelCats[LabyGameManager.manager.currentLevel])
+        {
+            LabManager.levelCats[LabyGameManager.manager.currentLevel] = stars;
+            Debug.Log("levelikissat: " + LabManager.levelCats[0]);
+        }
 
         else
         {
 
         }
-        //GameManager.levelStars[GameManager.manager.currentLevel] = stars;
-        //GlobalGameManager.GGM.bubbleWarehouseSave();
-        //Debug.Log(GameManager.levelStars[GameManager.manager.currentLevel] + "tahtienmaara");
+        GameManager.levelStars[GameManager.manager.currentLevel] = stars;
+        GlobalGameManager.GGM.LabyrinthSave();
+        Debug.Log(GameManager.levelStars[GameManager.manager.currentLevel] + "tahtienmaara");
 
         /*for (int i = 0; i<5; i++ )
         {
