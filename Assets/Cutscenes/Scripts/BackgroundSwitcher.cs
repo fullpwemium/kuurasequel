@@ -27,16 +27,13 @@ public class BackgroundSwitcher : MonoBehaviour {
                 GetComponent<SpriteRenderer>().sprite = mineBackgrounds[scenePosition]; //change background for the cutscene intro transitions
                 break;
             case "Warehouse":
-                GetComponent<SpriteRenderer>().sprite = mineBackgrounds[scenePosition]; //temporary solution until other bg's are made.
-                //GetComponent<SpriteRenderer>().sprite = warehouseBackgrounds[scenePosition];
+                GetComponent<SpriteRenderer>().sprite = warehouseBackgrounds[scenePosition];
                 break;
             case "Memory":
-                GetComponent<SpriteRenderer>().sprite = mineBackgrounds[scenePosition]; //temporary solution until other bg's are made.
-                //GetComponent<SpriteRenderer>().sprite = memoryBackgrounds[scenePosition];
+                GetComponent<SpriteRenderer>().sprite = memoryBackgrounds[scenePosition];
                 break;
             case "Forest":
-                GetComponent<SpriteRenderer>().sprite = mineBackgrounds[scenePosition]; //temporary solution until other bg's are made.
-                //GetComponent<SpriteRenderer>().sprite = forestBackgrounds[scenePosition];
+                GetComponent<SpriteRenderer>().sprite = forestBackgrounds[scenePosition]; 
                 break;
             default:
                 Debug.Log("This scene should not exist.");
