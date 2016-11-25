@@ -12,12 +12,15 @@ public class EventHandler : MonoBehaviour {
     public GameObject textBoxManager;
     public GameObject NPC;
     public IEnumerator timer;
+    public static int levelsCompleted;
 
     // Use this for initialization
     void Start () {
         timer = CutSceneTimer(waitTime);
         StartCoroutine(timer);
         currentScene = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene;
+        levelsCompleted = completedLevels();
+        progressedInStory();
     }
 	
 	// Update is called once per frame
@@ -56,4 +59,68 @@ public class EventHandler : MonoBehaviour {
         }
     }
 
+    int completedLevels()
+    {
+        //Get completed levels from global game manager
+        levelsCompleted = 0;
+        switch (currentScene)
+        {
+            case "Mine":
+                for (int i = 0; i <= 10; i++)
+                {
+                    if (LabyGameManager.manager.completedLevels.Contains(i))
+                    {
+                        levelsCompleted++;
+                    }
+                }
+                break;
+            case "Warehouse":
+                for (int i = 0; i <= 10; i++)
+                {
+                    if (GameManager.manager.completedLevels.Contains(i))
+                    {
+                        levelsCompleted++;
+                    }
+                }
+                break;
+            case "Forest":
+                for (int i = 0; i <= 10; i++)
+                {
+                    if (RunnerLevelSelectLimiter.completedLevels.Contains(i))
+                    {
+                        levelsCompleted++;
+                    }
+                }
+                break;
+            case "Memory":
+                for (int i = 0; i <= 10; i++)
+                {
+                    if (MemoryGameLevelSelecterLimitter.completedLevels.Contains(i))
+                    {
+                        levelsCompleted++;
+                    }
+                }
+                break;
+            default:
+                Debug.Log("Scene doesn't exist");
+                break;
+        }
+        Debug.Log("levels completed is " + levelsCompleted);
+        return levelsCompleted;
+    }
+    void progressedInStory()
+    {
+        if (levelsCompleted < 10)
+        {
+            sceneProgression = "MidScene";
+        }
+        if (levelsCompleted < 5)
+        {
+            sceneProgression = "IntroScene";
+        }
+        if (levelsCompleted > 9)
+        {
+            sceneProgression = "EndScene";
+        }
+    }
 }

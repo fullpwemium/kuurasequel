@@ -12,15 +12,18 @@ public class TextBoxManager : MonoBehaviour {
 
     private string currentScene = EventHandler.currentScene;
     private string sceneProgression = EventHandler.sceneProgression;
+    private int levelsCompleted = EventHandler.levelsCompleted;
 
-    public int currentLine;
-    public int endAtLine;
+    private int currentLine = 0;
+    private int endAtLine;
     public string language="Eng"; //Language (if different settings are made) should probably be set elsewhere
-    public int levelsCompleted = 0;
 
     // Use this for initialization
     void Start () {
         currentScene = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene;
+        Debug.Log("current scene is " + currentScene);
+        sceneProgression = EventHandler.sceneProgression;
+        Debug.Log(sceneProgression);
         TextAsset textFile = Resources.Load("Text/" + language + "/Cutscenes/" + currentScene + "/" + sceneProgression) as TextAsset; //get text from file
         TextAsset oneLinerFile = Resources.Load("Text/" + language + "/Cutscenes/" + currentScene + "/OneLiners") as TextAsset;
         if (textFile != null)
@@ -35,31 +38,9 @@ public class TextBoxManager : MonoBehaviour {
 
         if (endAtLine == 0)
         {
-            endAtLine = dialogueLines.Length - 1; //stop showing lines after the last line
+            endAtLine = dialogueLines.Length; //stop showing lines after the last line
         }
 
-        //Get completed levels from saves
-        /*
-        switch (currentScene)
-        {
-            case "Mine":
-                // levelsCompleted = PlayerPrefs.GetInt("minelevels");
-                // mine save doesn't exist yet
-                break;
-            case "Warehouse":
-                levelsCompleted = PlayerPrefs.GetInt("levels");
-                break;
-            case "Forest":
-                levelsCompleted = PlayerPrefs.GetInt("Runnerlevels");
-                break;
-            case "Memory":
-                levelsCompleted = PlayerPrefs.GetInt("memorylevels");
-                break;
-            default:
-                break;
-        }
-        */
-        
     }
     
 
@@ -96,6 +77,7 @@ public class TextBoxManager : MonoBehaviour {
 
     public void showOneLiner()
     {
+        levelsCompleted = EventHandler.levelsCompleted;
         if (levelsCompleted > 9)
             dialogue.text = oneLiners[4];
         if (levelsCompleted < 10)
@@ -104,7 +86,7 @@ public class TextBoxManager : MonoBehaviour {
             dialogue.text = oneLiners[2];
         if (levelsCompleted < 4)
             dialogue.text = oneLiners[1];
-        if (levelsCompleted < 1)
+        if (levelsCompleted < 2)
             dialogue.text = oneLiners[0];
     }
 
