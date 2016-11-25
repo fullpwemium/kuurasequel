@@ -13,7 +13,9 @@ public class LevelSelectLimiter : MonoBehaviour {
     //Checks levels if OnLevelWasLoaded was not called
     void Start ()
     {
-		CheckLevels ();     //Rajoitetaan Catchissa näkyviä kenttiä
+        GlobalGameManager.GGM.bubbleWarehouseLoad();
+
+        CheckLevels ();     //Rajoitetaan Catchissa näkyviä kenttiä
 
         if (initialized == false)
         {

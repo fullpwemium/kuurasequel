@@ -156,7 +156,7 @@ public class RunnerWinningPanel : MonoBehaviour
     public void YouWon(bool won)
     {
 
-        GlobalGameManager.GGM.LabyrinthSave();
+        GlobalGameManager.GGM.RunnerSave();
         if (won == false)
         {
             Debug.Log("ninjat on täällä");

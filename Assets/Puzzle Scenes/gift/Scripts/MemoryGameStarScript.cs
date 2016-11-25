@@ -27,6 +27,7 @@ public class MemoryGameStarScript : MonoBehaviour
         {
             Star.color = Color.white;
             Debug.Log("MemoryGameStarScript: varjattu");
+            GlobalGameManager.GGM.MemoryGameSave();
         }
         else
         {

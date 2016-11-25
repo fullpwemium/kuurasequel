@@ -17,6 +17,8 @@ public class RunnerLevelSelectLimiter : MonoBehaviour
     //Checks levels if OnLevelWasLoaded was not called
     void Start()
     {
+        GlobalGameManager.GGM.RunnerLoad();
+
         if (initialized == false)
         {
             CheckLevels();

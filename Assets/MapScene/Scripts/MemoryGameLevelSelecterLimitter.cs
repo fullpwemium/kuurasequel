@@ -68,7 +68,7 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
 
         for (int i = 0; i< completedLevels.Count(); i++)
         {
-            Debug.Log(completedLevels[i]);
+            Debug.Log("MemoryGameLevelSelecterLimitter completed levels = " + completedLevels[i]);
         }
     }
 

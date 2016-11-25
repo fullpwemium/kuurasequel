@@ -13,6 +13,8 @@ public class LabyLevelSelectLimiter : MonoBehaviour {
     //Checks levels if OnLevelWasLoaded was not called
     void Start()
     {
+        GlobalGameManager.GGM.LabyrinthLoad();
+
         CheckLevels();        //Rajoitetaan labyrintissa näkyviä kenttiä.
 
         if (initialized == false)

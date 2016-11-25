@@ -301,7 +301,7 @@ public class RunnerManager : MonoBehaviour
         if (level != 0 )
         {
             //InitialPanel();
-            GlobalGameManager.GGM.RunnerSave();
+            //GlobalGameManager.GGM.RunnerSave();
         }
 
         if (level == 4 || level == 5 || level == 6 || level == 33 || level == 34 || level == 35 || level == 36 ||
