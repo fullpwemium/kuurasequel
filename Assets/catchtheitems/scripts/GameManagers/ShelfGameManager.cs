@@ -16,9 +16,12 @@ public class ShelfGameManager : GameManager
 
     protected override void Awake()
     {
+
+        MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouse);
+
         //Debug.Log("listener lisätty");
 
-		GameObject gyro = GameObject.Find("GyroToggle");
+        GameObject gyro = GameObject.Find("GyroToggle");
 		if(gyro == null)
 			return;
 
@@ -70,6 +73,8 @@ public class ShelfGameManager : GameManager
 
 	public override void RestartLevel()
 	{
+
+        
 
         Scene scene = SceneManager.GetActiveScene();
         //Application.LoadLevel (Application.loadedLevel);

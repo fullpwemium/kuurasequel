@@ -7,7 +7,7 @@ public class LayerScript : MonoBehaviour
 {   
 	public GameObject youWon;
 //    public GameObject youLose;
-    string lose = "Aina ei voi voittaa :)"; //Määritellään Textiin printattava sisältö
+    string lose = "You lost..."; //Määritellään Textiin printattava sisältö
     private Text loserText;
 
     private Text countTries;
@@ -1248,6 +1248,9 @@ public class LayerScript : MonoBehaviour
 
     public IEnumerator gameLose()
     {
+
+        MusicPlayer.PlayMusic(MusicTrack.GameOverJingle);
+
         CountUpTimer.EndGame();
         lmbDisabled = true;
 

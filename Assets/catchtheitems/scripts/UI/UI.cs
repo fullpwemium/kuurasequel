@@ -112,9 +112,12 @@ public class UI : MonoBehaviour
             }
             else if (isPaused == false)
             {
+                
                 Time.timeScale = 0f;
                 pausePanel.SetActive(true);
                 isPaused = true;
+
+
             }
         }  
     }
@@ -124,6 +127,8 @@ public class UI : MonoBehaviour
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
         tutorialPanel.SetActive(false);
+
+        MusicPlayer.ResumePausedMusic();
     }
 
     public void Levelselect()
@@ -139,15 +144,17 @@ public class UI : MonoBehaviour
             //TimerScript.Win = false;
             TimerScript.Lose = true;
             //StartCoroutine("slowDown");
+            
             endText.text = "You Lost";
             Debug.Log("Hävisit");
             StartLerping();
             destination = new Vector3(0, 9, 0);
             Debug.Log(destination);
             moving = true;
-
             nextLevel.SetActive(false);
             pauseButton.SetActive(false);
+
+            MusicPlayer.PlayMusic(MusicTrack.GameOverJingle);
         }
         else if (won == true && TimerScript.Lose == false && TimerScript.Win == true)
         {
@@ -163,12 +170,13 @@ public class UI : MonoBehaviour
             StartLerping();
             destination = new Vector3(0, 9, 0);
             Debug.Log(destination);
-            moving = true;
-
+            moving = true;   
             StartCoroutine("hiutalerotatedelay");
             endText.text = "You WON!";
             nextLevel.SetActive(true);
             pauseButton.SetActive(false);
+
+            MusicPlayer.PlayMusic(MusicTrack.VictoryJingle);
         }
     }
 

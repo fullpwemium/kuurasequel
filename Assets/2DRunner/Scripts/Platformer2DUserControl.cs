@@ -32,6 +32,7 @@ public class Platformer2DUserControl : MonoBehaviour
         crouchSound = audioSources[0];
         jumpSound = audioSources[1];
 
+        MusicPlayer.PlayMusic(MusicTrack.WinterForestMarathon);
     }
     private void Update()
     {

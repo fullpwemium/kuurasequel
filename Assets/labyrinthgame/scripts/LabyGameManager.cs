@@ -41,12 +41,14 @@ public class LabyGameManager : MonoBehaviour {
     //Return to level select
     public virtual void PlayerLose()
     {
+        MusicPlayer.PlayMusic(MusicTrack.GameOverJingle);
         SceneManager.LoadScene("LevelSelect");
     }
 
     //Loads next level and stores completed level
     public virtual void PlayerWin()
     {
+        MusicPlayer.PlayMusic(MusicTrack.VictoryJingle);
         //Debug.Log (currentLevel);
         //Debug.Log (currentLevel + 1);
         LoadLevel(currentLevel + 1);
