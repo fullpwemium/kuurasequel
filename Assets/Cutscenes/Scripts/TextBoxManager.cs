@@ -16,12 +16,22 @@ public class TextBoxManager : MonoBehaviour {
 
     private int currentLine = 0;
     private int endAtLine;
+
+    private bool isTyping = false;
+    private bool cancelTyping = false;
+
+    public float typeSpeed; //How fast the text shows up, smaller is better. Default is 0.02
+    bool showingOneliner = false;
+
     public string language="Eng"; //Language (if different settings are made) should probably be set elsewhere
 
-    // Use this for initialization
-    void Start () {
+    private void Awake()
+    {
         currentScene = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene;
         Debug.Log("current scene is " + currentScene);
+    }
+    // Use this for initialization
+    void Start () {
         sceneProgression = EventHandler.sceneProgression;
         Debug.Log(sceneProgression);
         TextAsset textFile = Resources.Load("Text/" + language + "/Cutscenes/" + currentScene + "/" + sceneProgression) as TextAsset; //get text from file
@@ -40,31 +50,55 @@ public class TextBoxManager : MonoBehaviour {
         {
             endAtLine = dialogueLines.Length; //stop showing lines after the last line
         }
-
+        StartCoroutine(TextScroll(dialogueLines[currentLine]));
+        currentLine++;
     }
     
 
 	// Update is called once per frame
 	void Update () {
-        if (currentLine < endAtLine)
-        {
-            dialogue.text = dialogueLines[currentLine]; //change dialogue text to show the current line
+        
+            //dialogue.text = dialogueLines[currentLine]; //change dialogue text to show the current line
             currentScene = EventHandler.currentScene;
             string sceneProgression = EventHandler.sceneProgression;
             if (Input.GetMouseButtonDown(0))
             {
-                currentLine++; //move to next line when clicking or tapping anywhere
-            }
-        } else { 
-            //sets currentline back to 0 after showing all text lines, disables textbox
-            //disableTextBox();
-            showOneLiner();
-            buttons.SetActive(true);
-            //currentLine = 0; 
-            //TODO: call menu
-        }
-        
+                if (currentLine < endAtLine)
+                {
+                    if (!isTyping)
+                    {
+                        StartCoroutine(TextScroll(dialogueLines[currentLine]));
+                        currentLine++; //move to next line when clicking or tapping anywhere
+                    }
+                    else if (isTyping && !cancelTyping)
+                    {
+                        cancelTyping = true;
+                    }
+                }
+                else
+                {
+                    showOneLiner();
+                    buttons.SetActive(true);
+                }
+        } 
 	}
+
+    private IEnumerator TextScroll (string lineOfText)
+    {
+        int letter = 0;
+        dialogue.text = "";
+        isTyping = true;
+        cancelTyping = false;
+        while (isTyping && !cancelTyping && (letter < lineOfText.Length -1) && showingOneliner == false)
+        {
+            dialogue.text += lineOfText[letter];
+            letter++;
+            yield return new WaitForSeconds(typeSpeed);
+        }
+        dialogue.text = lineOfText;
+        isTyping = false;
+        cancelTyping = false;
+    }
 
     public void enableTextBox()
     {
@@ -77,6 +111,7 @@ public class TextBoxManager : MonoBehaviour {
 
     public void showOneLiner()
     {
+        showingOneliner = true;
         levelsCompleted = EventHandler.levelsCompleted;
         if (levelsCompleted > 9)
             dialogue.text = oneLiners[4];

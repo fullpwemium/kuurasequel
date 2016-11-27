@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EventHandler : MonoBehaviour {
     public GameObject background;
-    public static string currentScene = "Mine"; // Mine/Warehouse/Memory/Forest
+    public static string currentScene; // Mine/Warehouse/Memory/Forest
     public static string sceneProgression = "IntroScene"; // IntroScene/MidScene/EndScene (which of the three scenes is played)
     public static int scenePosition = 0; // default 0, can be set to higher values for testing
     private float waitTime = 6;
@@ -14,11 +14,16 @@ public class EventHandler : MonoBehaviour {
     public IEnumerator timer;
     public static int levelsCompleted;
 
+    
+    private void Awake()
+    {
+        currentScene = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene;
+    }
+
     // Use this for initialization
     void Start () {
         timer = CutSceneTimer(waitTime);
         StartCoroutine(timer);
-        currentScene = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene;
         levelsCompleted = completedLevels();
         progressedInStory();
         playMusic();

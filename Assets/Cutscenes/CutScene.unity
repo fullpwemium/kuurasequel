@@ -561,10 +561,8 @@ MonoBehaviour:
   dialogue: {fileID: 1967737301}
   dialogueLines: []
   oneLiners: []
-  currentLine: 0
-  endAtLine: 0
+  typeSpeed: 0.02
   language: eng
-  levelsCompleted: 0
 --- !u!4 &950724963
 Transform:
   m_ObjectHideFlags: 0
@@ -1202,8 +1200,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Baron of the Mine: \"Oi, mate! Some kitty cats ran into the mine just now,
-    and I really don\u2019t have time to deal with it.\"\r\n"
+  m_Text: 
 --- !u!222 &1967737302
 CanvasRenderer:
   m_ObjectHideFlags: 0
