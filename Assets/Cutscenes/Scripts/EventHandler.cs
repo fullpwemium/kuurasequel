@@ -22,6 +22,7 @@ public class EventHandler : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        //GameObject.Find("Fader").GetComponent<Fading>().BeginFade(-1);
         timer = CutSceneTimer(waitTime);
         StartCoroutine(timer);
         levelsCompleted = completedLevels();
@@ -52,6 +53,9 @@ public class EventHandler : MonoBehaviour {
             }
             yield return new WaitForSeconds(waitTime);
             Debug.Log("Waited " + waitTime + " seconds. Current scene is " + scenePosition);
+            GameObject.Find("Fader").GetComponent<Fading>().BeginFade(1);
+            yield return new WaitForSeconds(1);
+            GameObject.Find("Fader").GetComponent<Fading>().BeginFade(-1);
             scenePosition++;
         }
         //StopCoroutine(CutSceneTimer(waitTime));

@@ -75,7 +75,7 @@ public class TextBoxManager : MonoBehaviour {
                         cancelTyping = true;
                     }
                 }
-                else
+                else if (!isTyping)
                 {
                     showOneLiner();
                     buttons.SetActive(true);

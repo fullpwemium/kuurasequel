@@ -378,6 +378,48 @@ MonoBehaviour:
   dialogueBox: {fileID: 1990054380}
   textBoxManager: {fileID: 950724961}
   NPC: {fileID: 235095988}
+--- !u!1 &686295247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 686295249}
+  - 114: {fileID: 686295248}
+  m_Layer: 0
+  m_Name: Fader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &686295248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686295247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af60363ec8288b489734bfb95f827dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeoutTexture: {fileID: 2800000, guid: 765773d670011104aa01f8064b79c3b7, type: 3}
+  fadeSpeed: 0.8
+--- !u!4 &686295249
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686295247}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.42260987, y: -1.122122, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &696471554
 GameObject:
   m_ObjectHideFlags: 0
