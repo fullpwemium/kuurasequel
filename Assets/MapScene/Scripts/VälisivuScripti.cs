@@ -92,14 +92,13 @@ public class VälisivuScripti : MonoBehaviour
         button2.interactable = false;
         button3.interactable = false;
         button4.interactable = false;
-
         button5.interactable = false;
 
 
         if (BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 3)
         {
             peliNumero = 1;
-            BobPlayerScript.nearMemoryGame = true;
+            BobPlayerScript.nearMemoryGame = false;
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Memory";
             title.text = "Mister Mysterious Mystic Cards";
             dialogi.text = "- Hope you have a good memory!\n- Try to find the images shown above Bob.";
@@ -110,7 +109,7 @@ public class VälisivuScripti : MonoBehaviour
         else if(BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 2)
         {
             peliNumero = 2;
-            BobPlayerScript.nearLabyrinth = true;
+            BobPlayerScript.nearLabyrinth = false;
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Mine";
             title.text = "Winter Hedge Maze";
             dialogi.text = "-	Don't let Swipper get you!\n- Watch the floor...";
@@ -121,7 +120,7 @@ public class VälisivuScripti : MonoBehaviour
         else if (BobPlayerScript.StandingButtonNumberX == 0 && BobPlayerScript.StandingButtonNumberY == 1)
         {
             peliNumero = 3;
-            BobPlayerScript.nearCatchTheCat = true;
+            BobPlayerScript.nearCatchTheCat = false;
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Warehouse";
             title.text = "Bubble Warehouse";
             dialogi.text = "-	What a nasty snowflake!\n- Get cake to grow your bowl!";
@@ -132,7 +131,7 @@ public class VälisivuScripti : MonoBehaviour
         else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 3)
         {
             peliNumero = 4;
-            BobPlayerScript.Runner = true;
+            BobPlayerScript.Runner = false;
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Forest";
             title.text = "Winter Forest Marathon";
             dialogi.text = "- Attract coins with magnet!\n- Don't forget you can JUMP again while midair!";
@@ -143,7 +142,7 @@ public class VälisivuScripti : MonoBehaviour
         else if (BobPlayerScript.StandingButtonNumberX == 2 && BobPlayerScript.StandingButtonNumberY == 0)
         {
             peliNumero = 5;
-            BobPlayerScript.nearBobApartment = true;
+            BobPlayerScript.nearBobApartment = false;
             SceneManager.LoadScene("Bob_apartment");
             title.text = "Bob's apartment";
             dialogi.text = "- Pet Kuura to get Magic Dust.\n- Watch ads to get even more Magic Dust.";
