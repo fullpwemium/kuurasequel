@@ -21,6 +21,7 @@ public class EventHandler : MonoBehaviour {
         currentScene = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene;
         levelsCompleted = completedLevels();
         progressedInStory();
+        playMusic();
     }
 	
 	// Update is called once per frame
@@ -121,6 +122,32 @@ public class EventHandler : MonoBehaviour {
         if (levelsCompleted > 9)
         {
             sceneProgression = "EndScene";
+        }
+    }
+    
+    private void playMusic()
+    {
+        switch (currentScene)
+        {
+            case "Mine":
+                MusicPlayer.PlayMusic(MusicTrack.HedgeMazeCutscene);
+                break;
+            case "Warehouse":
+                MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouseCutscene);
+                break;
+            case "Forest":
+                MusicPlayer.PlayMusic(MusicTrack.WinterForestMarathonCutscene);
+                break;
+            case "Memory":
+                MusicPlayer.PlayMusic(MusicTrack.MysticCardsCutscene);
+                break;
+            default:
+                Debug.Log("Scene doesn't exist");
+                break;
+        }
+        if (sceneProgression == "EndScene")
+        {
+            MusicPlayer.PlayMusic(MusicTrack.EndingCutscene);
         }
     }
 }
