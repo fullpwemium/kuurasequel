@@ -18,7 +18,7 @@ public class LabManager : GameManager
     //Singleton check
     protected override void Awake()
     {
-        winningUI = GameObject.Find("UI").GetComponent<LabyrinthUI>();
+        //winningUI = GameObject.Find("UI").GetComponent<LabyrinthUI>();
         if (manager == null)
         {
             DontDestroyOnLoad(gameObject);

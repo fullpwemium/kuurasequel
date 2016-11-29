@@ -104,8 +104,8 @@ public class GlobalGameManager : MonoBehaviour
 
         MemoryGameLoad();
         RunnerLoad();
-        //bubbleWarehouseLoad();    //Tulee "NullReferenceException: Object reference not set to an instance of an object"
-        //LabyrinthLoad();          //Tulee "NullReferenceException: Object reference not set to an instance of an object"
+        bubbleWarehouseLoad();    //Tulee "NullReferenceException: Object reference not set to an instance of an object"
+        LabyrinthLoad();          //Tulee "NullReferenceException: Object reference not set to an instance of an object"
 
     }
 

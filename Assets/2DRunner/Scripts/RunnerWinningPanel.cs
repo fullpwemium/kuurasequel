@@ -313,14 +313,17 @@ public class RunnerWinningPanel : MonoBehaviour
         if (RunnerManager.score >= 90 /*&& RunnerTimer.timeCountUp <= 50*/)   //Saadaan pisteitä kerättyjen kolikoiden perusteella.
         {
             stars = 3;
+			Debug.Log ("Stars = " + stars);
         }
         else if (RunnerManager.score >= 60)
         {
             stars = 2;
+			Debug.Log ("Stars = " + stars);
         }
         else
         {
             stars = 1;
+			Debug.Log ("Stars = " + stars);
         }
 
         //LabManagerista kopsattuja
