@@ -11,6 +11,7 @@ public class OnDeathScreen : MonoBehaviour {
 	{
 		if (col.CompareTag("Player"))
 		{
+            MusicPlayer.PlayMusic(MusicTrack.GameOverJingle);
 			tryagain.SetActive (true);
 			BlackScreen.SetActive (true);
 			confuseimg.SetActive(true);
@@ -19,8 +20,9 @@ public class OnDeathScreen : MonoBehaviour {
 		}
 	}
 	public void OnButtonClick ()
-	{   
-		tryagain.SetActive (false);
+	{
+        MusicPlayer.PlayMusic(MusicTrack.HedgeMaze);
+        tryagain.SetActive (false);
 		BlackScreen.SetActive (false);
 		confuseimg.SetActive(false);
 		LabManager.manager.RestartLevel ();

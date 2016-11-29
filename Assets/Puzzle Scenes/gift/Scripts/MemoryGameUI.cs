@@ -33,6 +33,7 @@ public class MemoryGameUI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        MusicPlayer.PlayMusic(MusicTrack.MysticCards);
         gameOverPanel.SetActive(GOPanel);
         pausePanel.SetActive(false);
         hiutale1.SetActive(false);
@@ -81,6 +82,7 @@ public class MemoryGameUI : MonoBehaviour
             //Debug.Log(percentageComplete);
             gameOverPanel.transform.position = Vector3.Lerp(startPosition, destination, percentageComplete);
             //Debug.Log(percentageComplete);
+
             if (percentageComplete >= 1.0f)
             {
                 moving = false;
@@ -134,7 +136,7 @@ public class MemoryGameUI : MonoBehaviour
         GlobalGameManager.GGM.MemoryGameSave();
         if (won == false)
         {
-            Debug.Log("ninjat on täällä");
+            
             //StartCoroutine("slowDown");
             endText.text = "YOU LOSE!";
             StartLerping();
@@ -144,7 +146,9 @@ public class MemoryGameUI : MonoBehaviour
         }
         else if (won == true)
         {
-            Debug.Log("ninjat on täällä");
+
+            MusicPlayer.PlayMusic(MusicTrack.VictoryJingle);
+
             /*lista = FindObjectsOfType<GameObject>();
             for (int i = 0; i > lista.Length; i++)
             {
@@ -160,6 +164,9 @@ public class MemoryGameUI : MonoBehaviour
 
             StartCoroutine("hiutalerotatedelay");
             endText.text = "You WON!";
+
+            
+
         }
     }
 

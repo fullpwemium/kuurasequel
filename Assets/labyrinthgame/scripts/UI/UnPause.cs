@@ -9,7 +9,7 @@ public class UnPause : MonoBehaviour {
     public void OnButtonClick ()
     {
         Time.timeScale = 1;
-        //Redo to UI function
+        MusicPlayer.ResumePausedMusic();
         Pauseimg.SetActive(false);
     }
 }

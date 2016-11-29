@@ -12,15 +12,28 @@ public class TextBoxManager : MonoBehaviour {
 
     private string currentScene = EventHandler.currentScene;
     private string sceneProgression = EventHandler.sceneProgression;
+    private int levelsCompleted = EventHandler.levelsCompleted;
 
-    public int currentLine;
-    public int endAtLine;
+    private int currentLine = 0;
+    private int endAtLine;
+
+    private bool isTyping = false;
+    private bool cancelTyping = false;
+
+    public float typeSpeed; //How fast the text shows up, smaller is better. Default is 0.02
+    bool showingOneliner = false;
+
     public string language="Eng"; //Language (if different settings are made) should probably be set elsewhere
-    public int levelsCompleted = 0;
 
+    private void Awake()
+    {
+        currentScene = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene;
+        Debug.Log("current scene is " + currentScene);
+    }
     // Use this for initialization
     void Start () {
-        currentScene = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene;
+        sceneProgression = EventHandler.sceneProgression;
+        Debug.Log(sceneProgression);
         TextAsset textFile = Resources.Load("Text/" + language + "/Cutscenes/" + currentScene + "/" + sceneProgression) as TextAsset; //get text from file
         TextAsset oneLinerFile = Resources.Load("Text/" + language + "/Cutscenes/" + currentScene + "/OneLiners") as TextAsset;
         if (textFile != null)
@@ -35,55 +48,57 @@ public class TextBoxManager : MonoBehaviour {
 
         if (endAtLine == 0)
         {
-            endAtLine = dialogueLines.Length - 1; //stop showing lines after the last line
+            endAtLine = dialogueLines.Length; //stop showing lines after the last line
         }
-
-        //Get completed levels from saves
-        /*
-        switch (currentScene)
-        {
-            case "Mine":
-                // levelsCompleted = PlayerPrefs.GetInt("minelevels");
-                // mine save doesn't exist yet
-                break;
-            case "Warehouse":
-                levelsCompleted = PlayerPrefs.GetInt("levels");
-                break;
-            case "Forest":
-                levelsCompleted = PlayerPrefs.GetInt("Runnerlevels");
-                break;
-            case "Memory":
-                levelsCompleted = PlayerPrefs.GetInt("memorylevels");
-                break;
-            default:
-                break;
-        }
-        */
-        
+        StartCoroutine(TextScroll(dialogueLines[currentLine]));
+        currentLine++;
     }
     
 
 	// Update is called once per frame
 	void Update () {
-        if (currentLine < endAtLine)
-        {
-            dialogue.text = dialogueLines[currentLine]; //change dialogue text to show the current line
+        
+            //dialogue.text = dialogueLines[currentLine]; //change dialogue text to show the current line
             currentScene = EventHandler.currentScene;
             string sceneProgression = EventHandler.sceneProgression;
             if (Input.GetMouseButtonDown(0))
             {
-                currentLine++; //move to next line when clicking or tapping anywhere
-            }
-        } else { 
-            //sets currentline back to 0 after showing all text lines, disables textbox
-            //disableTextBox();
-            showOneLiner();
-            buttons.SetActive(true);
-            //currentLine = 0; 
-            //TODO: call menu
-        }
-        
+                if (currentLine < endAtLine)
+                {
+                    if (!isTyping)
+                    {
+                        StartCoroutine(TextScroll(dialogueLines[currentLine]));
+                        currentLine++; //move to next line when clicking or tapping anywhere
+                    }
+                    else if (isTyping && !cancelTyping)
+                    {
+                        cancelTyping = true;
+                    }
+                }
+                else if (!isTyping)
+                {
+                    showOneLiner();
+                    buttons.SetActive(true);
+                }
+        } 
 	}
+
+    private IEnumerator TextScroll (string lineOfText)
+    {
+        int letter = 0;
+        dialogue.text = "";
+        isTyping = true;
+        cancelTyping = false;
+        while (isTyping && !cancelTyping && (letter < lineOfText.Length -1) && showingOneliner == false)
+        {
+            dialogue.text += lineOfText[letter];
+            letter++;
+            yield return new WaitForSeconds(typeSpeed);
+        }
+        dialogue.text = lineOfText;
+        isTyping = false;
+        cancelTyping = false;
+    }
 
     public void enableTextBox()
     {
@@ -96,6 +111,8 @@ public class TextBoxManager : MonoBehaviour {
 
     public void showOneLiner()
     {
+        showingOneliner = true;
+        levelsCompleted = EventHandler.levelsCompleted;
         if (levelsCompleted > 9)
             dialogue.text = oneLiners[4];
         if (levelsCompleted < 10)
@@ -104,7 +121,7 @@ public class TextBoxManager : MonoBehaviour {
             dialogue.text = oneLiners[2];
         if (levelsCompleted < 4)
             dialogue.text = oneLiners[1];
-        if (levelsCompleted < 1)
+        if (levelsCompleted < 2)
             dialogue.text = oneLiners[0];
     }
 

@@ -33,6 +33,8 @@ public class LabManager : GameManager
     public override void PlayerWin()
     {
 
+        MusicPlayer.PlayMusic(MusicTrack.VictoryJingle);
+
         if (LabyGameManager.manager.completedLevels.Contains(LabyGameManager.manager.currentLevel) == false)
         {
             
@@ -80,8 +82,6 @@ public class LabManager : GameManager
 	public void Pisteet()
 	{
 //        winningUI.TextSwitcher(true);
-
-        Debug.Log("bananaaa");
         
 		if (Collector.Coins >= 8) 
 		{

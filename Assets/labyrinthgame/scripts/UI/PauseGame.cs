@@ -8,8 +8,20 @@ public class PauseGame : MonoBehaviour {
 
     public void OnButtonClick ()
     {
-        Pauseimg.SetActive(true);
-        Time.timeScale = 0;
-        Debug.Log("Paussi IMG");
+        //Pause the game.
+        if (Time.timeScale != 0)
+        {
+            MusicPlayer.PauseCurrentlyPlayingMusic();
+            Pauseimg.SetActive(true);
+            Time.timeScale = 0;
+            Debug.Log("Paussi");
+        }
+        else {
+            MusicPlayer.ResumePausedMusic();
+            Pauseimg.SetActive(false);
+            Time.timeScale = GameManager.aika;
+            Debug.Log("Jatkuu");
+        }
+        
     }
 }

@@ -57,6 +57,7 @@ public class RunnerManager : MonoBehaviour
     private bool pausePressed = false;
     private bool isInitialPanelLoaded = false;
     public GameObject[] Coins;
+
     
     public void Awake()
     {
@@ -198,6 +199,9 @@ public class RunnerManager : MonoBehaviour
     //Loads next level and stores completed level
     public void PlayerWin()
     {
+
+        MusicPlayer.PlayMusic(MusicTrack.VictoryJingle);
+
         if (completedLevels.Contains(currentLevel) == false)
         {
             completedLevels.Add(currentLevel);        //Lisätään läpäisty kenttä suoritettuihin ja avataan seuraava kenttä
@@ -220,6 +224,8 @@ public class RunnerManager : MonoBehaviour
 
     public void PlayerLose()
     {
+        
+        MusicPlayer.PlayMusic(MusicTrack.GameOverJingle);
         //SceneManager.LoadScene("LevelSelect");
         currentState = GameState.Died;
         gameOverPanel.SetActive(true);
@@ -234,6 +240,7 @@ public class RunnerManager : MonoBehaviour
         if(!pausePressed && currentState != GameState.Died)
         {
             currentState = GameState.Pause;
+            MusicPlayer.PauseCurrentlyPlayingMusic();
             gameOverPanel.SetActive(true);
             pausePressed = true;
             currentScore.text = score.ToString();
@@ -247,6 +254,7 @@ public class RunnerManager : MonoBehaviour
         else if (pausePressed && currentState != GameState.Died)
         {
             currentState = GameState.Begin;
+            MusicPlayer.ResumePausedMusic();
             gameOverPanel.SetActive(false);
             pausePressed = false;
             PlatformerCharacter2D.m_Rigidbody2D.velocity = new Vector2(0,PlatformerCharacter2D.previousVelocity);
@@ -261,6 +269,7 @@ public class RunnerManager : MonoBehaviour
     //Loads the given level
     public void LoadLevel(int levelToLoad)
     {
+        MusicPlayer.PlayMusic(MusicTrack.WinterForestMarathon);
         score = 0;
         RunnerTimer.StartGame();    //Käynnistetään laskuri alusta avattaessa kenttä.
         //Add check to not go over array bounds
