@@ -62,7 +62,7 @@ public class TimerScript : MonoBehaviour {
                 //Lose = false;
 				sceneUi.GameOverPanelToggle ();
 				sceneUi.TextSwitcher (true);
-				ShelfGameManager.manager.PlayerWin ();
+				ShelfGameManager.manager.PlayerWin();
 				GOPOn = true;
 			}
 		}

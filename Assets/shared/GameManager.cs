@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
      * as they can be reordered here.
      */
     public int[] levelIndex;
-    public List<int> completedLevels = new List<int>();
+    public List<int> completedLevels = new List<int>(100);
     //The current index in the 'levelIndex' array.
     public int currentLevel;
     //Level select scene index
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
     }
 
     //Loads next level and stores completed level
-    public virtual void PlayerWin ()
+    public virtual void PlayerWin()
     {
 		//Debug.Log (currentLevel);
 		//Debug.Log (currentLevel + 1);

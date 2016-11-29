@@ -14,7 +14,7 @@ public class WarpLevelShelfGame : MonoBehaviour
     }
     void WarpToNext ()
     {
-		((ShelfGameManager)GameManager.manager).PlayerWin ();
+		((ShelfGameManager)GameManager.manager).PlayerWin();
 		((ShelfGameManager)GameManager.manager).LoadNextLevel ();
     }
 }
