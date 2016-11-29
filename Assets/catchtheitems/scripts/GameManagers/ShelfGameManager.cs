@@ -17,7 +17,7 @@ public class ShelfGameManager : GameManager
     protected override void Awake()
     {
 
-        MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouse);
+        //MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouse);
 
         //Debug.Log("listener lisätty");
 
