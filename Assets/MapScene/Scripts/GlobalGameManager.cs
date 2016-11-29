@@ -226,7 +226,8 @@ public class GlobalGameManager : MonoBehaviour
     public void MemoryGameSave()
     {
         Debug.Log("aloitetaan tallennus memorygame");
-        MemoryGameStars = GlobalManager.memoryGameStars;
+        //MemoryGameStars = GlobalManager.memoryGameStars;
+        MemoryGameStars = Storage.MemoryGameStars;
         MemoryGamecompletedLevels = MemoryGameLevelSelecterLimitter.completedLevels;
 
         for (int i = 0; i <= 100; i++)
@@ -249,7 +250,8 @@ public class GlobalGameManager : MonoBehaviour
         Debug.Log("ladataan MemoryGame");
         for (int i = 0; i <= 100; i++)
         {
-            GameManager.levelStars[i] = PlayerPrefs.GetInt("memorystars" + i);
+            //GameManager.levelStars[i] = PlayerPrefs.GetInt("memorystars" + i);
+            Storage.MemoryGameStars[i] = PlayerPrefs.GetInt("memorystars" + i);
             //GlobalManager.memoryGameStars[i] = PlayerPrefs.GetInt("memorystars" + i);
             //Debug.Log("Memory game loaded stars = " + bwhcompletedLevels[i]);
         }

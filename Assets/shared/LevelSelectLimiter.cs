@@ -4,7 +4,8 @@ using System.Collections;
 using System.Linq;
 using UnityEngine.UI;
 
-public class LevelSelectLimiter : MonoBehaviour {
+public class LevelSelectLimiter : MonoBehaviour
+{
 
     public int buttonLevel;
     Button button;

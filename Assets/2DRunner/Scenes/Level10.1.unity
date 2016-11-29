@@ -10255,7 +10255,7 @@ Prefab:
     - target: {fileID: 61000011324433710, guid: 57105d9b978c6664fb88e9ea34773b61,
         type: 2}
       propertyPath: m_Offset.x
-      value: 0
+      value: 5.04
       objectReference: {fileID: 0}
     - target: {fileID: 4000011438229824, guid: 57105d9b978c6664fb88e9ea34773b61, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
