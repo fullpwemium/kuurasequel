@@ -172,9 +172,9 @@
     <Compile Include="Assets\Cutscenes\Scripts\BackgroundSwitcher.cs" />
     <Compile Include="Assets\Cutscenes\Scripts\CameraPan.cs" />
     <Compile Include="Assets\Cutscenes\Scripts\EventHandler.cs" />
+    <Compile Include="Assets\Cutscenes\Scripts\Fading.cs" />
     <Compile Include="Assets\Cutscenes\Scripts\MenuButtons.cs" />
     <Compile Include="Assets\Cutscenes\Scripts\NPCSwitcher.cs" />
-    <Compile Include="Assets\Cutscenes\Scripts\PlayerInput.cs" />
     <Compile Include="Assets\Cutscenes\Scripts\TextBoxManager.cs" />
     <Compile Include="Assets\GetDust.cs" />
     <Compile Include="Assets\MapScene\Kuura\KuuraController.cs" />
