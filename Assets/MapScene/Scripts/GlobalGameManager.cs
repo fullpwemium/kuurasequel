@@ -354,7 +354,7 @@ public class GlobalGameManager : MonoBehaviour
         Debug.Log("ladataan labyrinth");
         for (int i = 0; i <= 100; i++)
         {
-            GameManager.levelStars[i] = PlayerPrefs.GetInt("LabyrinthStars" + i);
+            LabManager.levelCats[i] = PlayerPrefs.GetInt("LabyrinthStars" + i);
             //Debug.Log("Labyrinth loaded stars = " + LabyrinthcompletedLevels[i]);
         }
         for (int i = 0; i <= 5; i++)
