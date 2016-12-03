@@ -11,11 +11,11 @@ public class Storage : MonoBehaviour
         if (manager == null)
         {
             manager = this;
-            DontDestroyOnLoad(manager);
+            DontDestroyOnLoad(gameObject);
         }
-        else if (manager != this && manager.gameObject.name != "Storage")
+        else if (manager != this)
         {
-            Destroy(manager);
+            Destroy(gameObject);
         }
     }
 	
