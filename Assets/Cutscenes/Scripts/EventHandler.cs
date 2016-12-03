@@ -13,8 +13,8 @@ public class EventHandler : MonoBehaviour {
     public GameObject NPC;
     public IEnumerator timer;
     public static int levelsCompleted;
+    public static int cutScenesWatched;
 
-    
     private void Awake()
     {
         currentScene = GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene;
@@ -27,6 +27,7 @@ public class EventHandler : MonoBehaviour {
         StartCoroutine(timer);
         levelsCompleted = completedLevels();
         progressedInStory();
+        cutScenesWatched = watchedScenes();
         playMusic();
     }
 	
@@ -154,9 +155,32 @@ public class EventHandler : MonoBehaviour {
                 Debug.Log("Scene doesn't exist");
                 break;
         }
-        if (sceneProgression == "EndScene")
+        if (sceneProgression == "EndScene" && cutScenesWatched < 3)
         {
             MusicPlayer.PlayMusic(MusicTrack.EndingCutscene);
         }
+    }
+
+    int watchedScenes()
+    {
+        switch (currentScene)
+        {
+            case "Mine":
+                cutScenesWatched = GlobalGameManager.GGM.labyrinthCutscenesWatched;
+                break;
+            case "Warehouse":
+                cutScenesWatched = GlobalGameManager.GGM.warehouseCutscenesWatched;
+                break;
+            case "Forest":
+                cutScenesWatched = GlobalGameManager.GGM.runnerCutscenesWatched;
+                break;
+            case "Memory":
+                cutScenesWatched = GlobalGameManager.GGM.memoryCutscenesWatched;
+                break;
+            default:
+                Debug.Log("Scene doesn't exist");
+                break;
+        }
+        return cutScenesWatched;
     }
 }

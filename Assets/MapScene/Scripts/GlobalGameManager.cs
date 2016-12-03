@@ -72,6 +72,12 @@ public class GlobalGameManager : MonoBehaviour
     List<int> bwhcompletedLevels = new List<int>();
     List<int> completetlevels;
 
+    //How many cutscenes the player has seen from each world;
+    public int warehouseCutscenesWatched = 0;
+    public int labyrinthCutscenesWatched = 0;
+    public int memoryCutscenesWatched = 0;
+    public int runnerCutscenesWatched = 0;
+
     //Singleton check
     public void Awake()
     {
@@ -106,7 +112,7 @@ public class GlobalGameManager : MonoBehaviour
         RunnerLoad();
         bubbleWarehouseLoad();    //Tulee "NullReferenceException: Object reference not set to an instance of an object"
         LabyrinthLoad();          //Tulee "NullReferenceException: Object reference not set to an instance of an object"
-
+        CutSceneLoad();
     }
 
     private static string url = "http://www.bellegames.net/tietokantakokeilu/db.php";
@@ -380,6 +386,21 @@ public class GlobalGameManager : MonoBehaviour
         {
             Debug.Log("LabyGameManager.manager = null");
         }
+    }
+
+    public void CutSceneSave()
+    {
+        PlayerPrefs.SetInt("warehouseCutscenesWatched", warehouseCutscenesWatched);
+        PlayerPrefs.SetInt("labyrinthCutscenesWatched", labyrinthCutscenesWatched);
+        PlayerPrefs.SetInt("memoryCutscenesWatched", memoryCutscenesWatched);
+        PlayerPrefs.SetInt("runnerCutscenesWatched", runnerCutscenesWatched);
+    }
+    public void CutSceneLoad()
+    {
+        warehouseCutscenesWatched = PlayerPrefs.GetInt("warehouseCutscenesWatched");
+        labyrinthCutscenesWatched = PlayerPrefs.GetInt("labyrinthCutscenesWatched");
+        memoryCutscenesWatched = PlayerPrefs.GetInt("memoryCutscenesWatched");
+        runnerCutscenesWatched = PlayerPrefs.GetInt("runnerCutscenesWatched");
     }
 //---------------------------------------------------------------------------------------------
 
