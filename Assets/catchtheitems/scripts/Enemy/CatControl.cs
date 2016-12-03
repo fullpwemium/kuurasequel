@@ -38,8 +38,8 @@ public class CatControl : MonoBehaviour {
 		sprite = GetComponent<SpriteRenderer> ();
 		catCol = GetComponent<BoxCollider2D> ();
 		items = GameObject.FindGameObjectsWithTag ("Items");
-		xmin = ShelfGameManager.xMinPoint;
-		xmax = ShelfGameManager.xMaxPoint;
+		xmin = ShelfGameManager.manager.xMinPoint;
+		xmax = ShelfGameManager.manager.xMaxPoint;
 		bottomShelf = GameObject.Find ("BottomShelf").transform;
 		middleShelf = GameObject.Find ("MiddleShelf").transform;
 		topShelf = GameObject.Find ("TopShelf").transform;
@@ -49,10 +49,10 @@ public class CatControl : MonoBehaviour {
 		else if (catSpeed < 0) {
 			facingLeft = true;
 		}
-		catSpeed = -FitToCameraWidth.publicWidth * screenWidthMultiplier * (GameManager.catSpeedMultiplier);
+		catSpeed = -FitToCameraWidth.publicWidth * screenWidthMultiplier * (ShelfGameManager.manager.catSpeedMultiplier);
 		anim.SetBool ("Jump", false);
 		anim.SetBool ("Stop", false);
-		actionTimer = actionInterval * GameManager.catSpeedMultiplier;
+		actionTimer = actionInterval * ShelfGameManager.manager.catSpeedMultiplier;
 	}
 
 	// Update is called once per frame
@@ -108,13 +108,13 @@ public class CatControl : MonoBehaviour {
 			}
 			//CatJump ();
 			
-			actionTimer = actionInterval*GameManager.catSpeedMultiplier;
+			actionTimer = actionInterval*ShelfGameManager.manager.catSpeedMultiplier;
 		}
 
 
 
 		//Checks if cat hits the wall and if cat hits flips movement and sprite
-		if (transform.position.x <= ShelfGameManager.xMinPoint && facingLeft == true)
+		if (transform.position.x <= ShelfGameManager.manager.xMinPoint && facingLeft == true)
         {
 			catSpeed *= -1f;
 			SpriteFlipper ();
@@ -123,7 +123,7 @@ public class CatControl : MonoBehaviour {
 				rgb2D.velocity = new Vector2 (catSpeed, rgb2D.velocity.y);
 			}
 		} 
-		else if (transform.position.x >= ShelfGameManager.xMaxPoint && facingLeft == false)
+		else if (transform.position.x >= ShelfGameManager.manager.xMaxPoint && facingLeft == false)
         {
 			catSpeed *= -1f;
 			SpriteFlipper ();
@@ -134,7 +134,7 @@ public class CatControl : MonoBehaviour {
 		}
 
 		//Clamp cats movement to screens sides
-		transform.position = new Vector3 (Mathf.Clamp(transform.position.x,ShelfGameManager.xMinPoint,ShelfGameManager.xMaxPoint), transform.position.y);
+		transform.position = new Vector3 (Mathf.Clamp(transform.position.x,ShelfGameManager.manager.xMinPoint,ShelfGameManager.manager.xMaxPoint), transform.position.y);
 
 	}
 

@@ -32,8 +32,8 @@ public class CatController : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		sprite = GetComponent<SpriteRenderer> ();
 		items = GameObject.FindGameObjectsWithTag ("Items");
-		xmin = ShelfGameManager.xMinPoint;
-		xmax = ShelfGameManager.xMaxPoint;
+		xmin = ShelfGameManager.manager.xMinPoint;
+		xmax = ShelfGameManager.manager.xMaxPoint;
 		if (catSpeed > 0) {
 			facingLeft = false;
 		} 
@@ -108,7 +108,7 @@ public class CatController : MonoBehaviour {
 		}
 
 		//Checks if cat hits the wall and if cat hits flips movement and sprite
-		if (transform.position.x <= ShelfGameManager.xMinPoint && facingLeft == true) {
+		if (transform.position.x <= ShelfGameManager.manager.xMinPoint && facingLeft == true) {
 			catSpeed *= -1f;
 			SpriteFlipper ();
 			facingLeft = false;
@@ -116,7 +116,7 @@ public class CatController : MonoBehaviour {
 				rgb2D.velocity = new Vector2 (catSpeed, rgb2D.velocity.y);
 			}
 		} 
-		else if (transform.position.x >= ShelfGameManager.xMaxPoint && facingLeft == false) {
+		else if (transform.position.x >= ShelfGameManager.manager.xMaxPoint && facingLeft == false) {
 			catSpeed *= -1f;
 			SpriteFlipper ();
 			facingLeft = true;
@@ -126,7 +126,7 @@ public class CatController : MonoBehaviour {
 		}
 
 		//Clamp cats movement to screens sides
-		transform.position = new Vector3 (Mathf.Clamp(transform.position.x,ShelfGameManager.xMinPoint,ShelfGameManager.xMaxPoint), transform.position.y);
+		transform.position = new Vector3 (Mathf.Clamp(transform.position.x,ShelfGameManager.manager.xMinPoint,ShelfGameManager.manager.xMaxPoint), transform.position.y);
 		
 	}
 

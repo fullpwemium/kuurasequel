@@ -29,7 +29,7 @@ public class LevelSelectLimiter : MonoBehaviour
     }
     void loadFrigginLevel ()
     {
-        GameManager.manager.LoadLevel(buttonLevel);
+        ShelfGameManager.manager.LoadLevel(buttonLevel);
     }
 
     //Creates buttons and checks if this level is playable
@@ -44,13 +44,13 @@ public class LevelSelectLimiter : MonoBehaviour
         //Debug.Log(LabManager.manager);
 
         //The first level is always shown regardless of its completetion
-		if (GameManager.manager.completedLevels.Any () == false && buttonLevel == 0) 
+		if (ShelfGameManager.manager.completedLevels.Any () == false && buttonLevel == 0) 
 		{
 			gameObject.SetActive (true);
 		}
         //Checks if this or the previous level is completed, if previous is completed check if next level exists
-		if (GameManager.manager.completedLevels.Contains (buttonLevel) ||
-			GameManager.manager.completedLevels.Contains (buttonLevel - 1) && buttonLevel < 10)//GameManager.manager.levelIndex.Length) 
+		if (ShelfGameManager.manager.completedLevels.Contains (buttonLevel) ||
+			ShelfGameManager.manager.completedLevels.Contains (buttonLevel - 1) && buttonLevel < 10)//GameManager.manager.levelIndex.Length) 
 		{
             Debug.Log(gameObject + " löytyi");
 			gameObject.SetActive (true);

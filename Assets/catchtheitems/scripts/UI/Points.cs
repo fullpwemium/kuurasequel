@@ -15,7 +15,7 @@ public class Points : MonoBehaviour
 	{
 		breakingPoints = 0;
 
-		breakingLimit = 2 + GameManager.brokenItemMultiplier;
+		breakingLimit = 2 + ShelfGameManager.manager.brokenItemMultiplier;
 
 		uiScript = FindObjectOfType<UI> ();
 	}
@@ -39,7 +39,7 @@ public class Points : MonoBehaviour
 	{
         //if (GameObject.Find("GameManager"))   //Kun if-else-rivejä ei ole kommentoitu, niin Catchia voi pelata suoraan scenestä ilman että tarvii kulkea Map2:n kautta.
         //{
-            int leveli = GameManager.manager.currentLevel + 1;
+            int leveli = ShelfGameManager.manager.currentLevel + 1;
             itemText.text = "Level " + leveli + "\nBroken Items: " + breakingPoints + "/" + breakingLimit;
         //}
         //else

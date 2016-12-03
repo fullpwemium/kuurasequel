@@ -14,7 +14,7 @@ public class Snowflake : MonoBehaviour {
 
 		player = FindObjectOfType<PlayerMovement> ();
         Debug.Log("hiutaleeeeeee!!!");
-        rigid2D.velocity = Vector3.down * GameManager.snowFlakeSpeedMultiplier;
+        rigid2D.velocity = Vector3.down * ShelfGameManager.manager.snowFlakeSpeedMultiplier;
         rigid2D.AddTorque(rotationSpeed);
     }
 

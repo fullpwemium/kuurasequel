@@ -4,12 +4,20 @@ using System.Collections;
 public class Storage : MonoBehaviour
 {
     public static int[] MemoryGameStars = new int[200];
-
+    public static Storage manager; 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
     {
-	
-	}
+        if (manager == null)
+        {
+            manager = this;
+            DontDestroyOnLoad(manager);
+        }
+        else if (manager != this && manager.gameObject.name != "Storage")
+        {
+            Destroy(manager);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update ()

@@ -15,7 +15,7 @@ public class LabyGameManager : MonoBehaviour {
      * as they can be reordered here.
      */
     public int[] levelIndex;
-    public List<int> completedLevels = new List<int>();
+    public List<int> completedLevels = new List<int>(20);
 
     //The current index in the 'levelIndex' array.
     public int currentLevel;
@@ -25,8 +25,10 @@ public class LabyGameManager : MonoBehaviour {
     //Singleton check
     protected virtual void Awake()
     {
+
+        //GlobalGameManager.GGM.LabyrinthLoad();
         //completedLevels = new List<int>();
-        if (manager == null)
+        if (manager == null )
         {
             DontDestroyOnLoad(gameObject);
             manager = this;

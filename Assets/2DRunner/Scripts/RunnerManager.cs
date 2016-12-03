@@ -66,20 +66,18 @@ public class RunnerManager : MonoBehaviour
         When done developing level, remove Gamemanager from scene
         */
      
-         if (manager == null)
-         {
-            GlobalGameManager.GGM.RunnerLoad();
-             manager = this;
-             DontDestroyOnLoad(manager);
+        if (manager == null)
+        {
+           //GlobalGameManager.GGM.RunnerLoad();
+            manager = this;
+            DontDestroyOnLoad(manager);
             Physics2D.gravity = new Vector2(0, -30);
 
-             currentState = GameState.Pause;
+            currentState = GameState.Pause;
          }
-         else if(manager != this && manager.gameObject.name != "GameManager")
-         {
-             Destroy(manager);
-
-
+        else if(manager != this && manager.gameObject.name != "GameManager")
+        {
+             Destroy(gameObject);
         }
         /*
    manager = this;

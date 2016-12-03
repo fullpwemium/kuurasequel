@@ -25,12 +25,12 @@ public class Catcher : MonoBehaviour {
 
     public void slowDown()
     {
-        if (GameManager.aikamuutettu == false)
+        if (ShelfGameManager.manager.aikamuutettu == false)
         {
             //GameManager.aika = 0.5f;
             //Time.timeScale = GameManager.aika;
-            GameManager.aikamuutettu = true;
-            Debug.Log("hidastuu" + GameManager.aikamuutettu);
+            ShelfGameManager.manager.aikamuutettu = true;
+            Debug.Log("hidastuu" + ShelfGameManager.manager.aikamuutettu);
             Invoke("speedUp", 1.0f);
         }
     }
@@ -39,7 +39,7 @@ public class Catcher : MonoBehaviour {
     {
         //GameManager.aika = 1f;
         //Time.timeScale = GameManager.aika;
-        GameManager.aikamuutettu = false;
+        ShelfGameManager.manager.aikamuutettu = false;
         Debug.Log("palautuu" + Time.timeScale);
     }
 

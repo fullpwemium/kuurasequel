@@ -188,7 +188,7 @@ public class LevelScript : MonoBehaviour
             else if(gameNumber == 2)
             {
                 
-                GameManager.manager.LoadLevel(levelButtonNumber);
+                ShelfGameManager.manager.LoadLevel(levelButtonNumber);
             }
             else if(gameNumber == 3)
             {

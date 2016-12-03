@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Collections;
 
-public class GameManager : MonoBehaviour
+public abstract class GameManager : MonoBehaviour
 {
     //This variable allows us to access this script from anywhere
     //without making any GetComponent searches, see Awake()
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     protected virtual void Awake ()
     {
 
-        GlobalGameManager.GGM.bubbleWarehouseLoad();
+        //GlobalGameManager.GGM.bubbleWarehouseLoad();
         //completedLevels = new List<int>();
 		if (manager == null) 
 		{

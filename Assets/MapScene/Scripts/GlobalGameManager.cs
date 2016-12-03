@@ -184,28 +184,33 @@ public class GlobalGameManager : MonoBehaviour
         Debug.Log("ladataan bubble ware house");
         for (int i = 0; i <= 100; i++)
         {
-            GameManager.levelStars[i] = PlayerPrefs.GetInt("stars" + i);
+            ShelfGameManager.manager.levelStars[i] = PlayerPrefs.GetInt("stars" + i);
             //Debug.Log("Bubble ware house loaded stars = " + bwhcompletedLevels[i]);
         }
-        for (int i = 0; i <= 20; i++)
-        {
-
-            bwhcompletedLevels.Add(PlayerPrefs.GetInt("levels" + i));
-            //Debug.Log("Bubble ware house loaded levels = " + bwhcompletedLevels[i]);
-
-            if (bwhcompletedLevels.Contains(i))
+        if (ShelfGameManager.manager != null) { 
+            for (int i = 0; i <= 20; i++)
             {
-                GameManager.manager.completedLevels.Add(i); //Tulee "Object reference not set to an instance of an object"
-                Debug.Log("leveli ladattu " + i);
+
+                bwhcompletedLevels.Add(PlayerPrefs.GetInt("levels" + i));
+                //Debug.Log("Bubble ware house loaded levels = " + bwhcompletedLevels[i]);
+
+                if (bwhcompletedLevels.Contains(i))
+                {
+                    ShelfGameManager.manager.completedLevels.Add(i); 
+                    Debug.Log("leveli ladattu " + i);
+                }
             }
+        } else
+        {
+            Debug.Log("GameManager.manager = null");
         }
     }
 
     public void bubbleWarehouseSave()
     {
         Debug.Log("aloitetaan tallennus catch the items");
-        bwhStars = GameManager.levelStars;
-        bwhcompletedLevels = GameManager.manager.completedLevels;
+        bwhStars = ShelfGameManager.manager.levelStars;
+        bwhcompletedLevels = ShelfGameManager.manager.completedLevels;
 
 
         for (int i = 0; i <= 100; i++)
@@ -215,7 +220,7 @@ public class GlobalGameManager : MonoBehaviour
         }
         for (int i = 0; i <= 20; i++)
         {
-            if (GameManager.manager.completedLevels.Contains(i))
+            if (ShelfGameManager.manager.completedLevels.Contains(i))
             {
                 PlayerPrefs.SetInt("levels" + i, i);
                 //Debug.Log("Bubble ware house saved levels = " + bwhcompletedLevels[i]);
@@ -275,17 +280,17 @@ public class GlobalGameManager : MonoBehaviour
     public void RunnerLoad()
     {
         Debug.Log("ladataan runner");
-        for (int i = 0; i <= 100; i++)
+        for (int i = 0; i <= 20; i++)
         {
             //GameManager.levelStars[i] = PlayerPrefs.GetInt("runnerstars" + i);
             RunnerWinningPanel.runnerCats[i] = PlayerPrefs.GetInt("runnerstars" + i);
             //Debug.Log("Runner loaded stars = " + RunnercompletedLevels[i]);
         }
-        for (int i = 0; i <= 100; i++)
+        for (int i = 0; i <= 20; i++)
         {
 
             RunnercompletedLevels.Add(PlayerPrefs.GetInt("runnerlevels" + i));
-            //Debug.Log("Runner loaded levels = " + RunnercompletedLevels[i]);
+            Debug.Log("Runner loaded levels = " + RunnercompletedLevels[i]);
 
             //RunnerManager.manager.completedLevels.Add(i);
             //Debug.Log((MemoryGameLevelSelecterLimitter.completedLevels));
@@ -307,18 +312,18 @@ public class GlobalGameManager : MonoBehaviour
         //RunnerStars = GameManager.levelStars;
 
         RunnerStars = RunnerWinningPanel.runnerCats;
-        //RunnercompletedLevels = RunnerManager.manager.completedLevels;
-        RunnercompletedLevels = RunnerLevelSelectLimiter.completedLevels;
+        RunnercompletedLevels = RunnerManager.manager.completedLevels;
+        //RunnercompletedLevels = RunnerLevelSelectLimiter.completedLevels;
 
-        for (int i = 0; i <= 100; i++)
+        for (int i = 0; i <= 20; i++)
         {
             PlayerPrefs.SetInt("runnerstars" + i, RunnerStars[i]);
             //Debug.Log("Runner saved stars = " + RunnercompletedLevels[i]);
         }
         for (int i = 0; i <= 20; i++)
         {
-            //if (RunnerManager.manager.completedLevels.Contains(i))
-            if (RunnerLevelSelectLimiter.completedLevels.Contains(i))
+            if (RunnerManager.manager.completedLevels.Contains(i))
+            //if (RunnerLevelSelectLimiter.completedLevels.Contains(i))
             {
                 PlayerPrefs.SetInt("runnerlevels" + i, i);
                 //Debug.Log("Runner saved levels = " + RunnercompletedLevels[i]);
@@ -339,7 +344,7 @@ public class GlobalGameManager : MonoBehaviour
             PlayerPrefs.SetInt("LabyrinthStars" + i, LabyrinthStars[i]);
             //Debug.Log("Labyrinth saved stars = " + LabyrinthcompletedLevels[i]);
         }
-        for (int i = 0; i <= 20; i++)
+        for (int i = 0; i <= 100; i++)
         {
             if (LabyGameManager.manager.completedLevels.Contains(i))
             {
@@ -357,17 +362,23 @@ public class GlobalGameManager : MonoBehaviour
             LabManager.levelCats[i] = PlayerPrefs.GetInt("LabyrinthStars" + i);
             //Debug.Log("Labyrinth loaded stars = " + LabyrinthcompletedLevels[i]);
         }
-        for (int i = 0; i <= 5; i++)
+        if (LabyGameManager.manager != null)
         {
-
-            LabyrinthcompletedLevels.Add(PlayerPrefs.GetInt("LabyrinthLevels" + i));
-            //Debug.Log("Labyrinth loaded levels = " + LabyrinthcompletedLevels[i]);
-
-            if (LabyrinthcompletedLevels.Contains(i))
+            for (int i = 0; i <= 100; i++)
             {
-                LabyGameManager.manager.completedLevels.Add(i);
-                Debug.Log("leveli ladattu " + i);
+
+                LabyrinthcompletedLevels.Add(PlayerPrefs.GetInt("LabyrinthLevels" + i));
+                //Debug.Log("Labyrinth loaded levels = " + LabyrinthcompletedLevels[i]);
+
+                if (LabyrinthcompletedLevels.Contains(i))
+                {
+                    LabyGameManager.manager.completedLevels.Add(i);
+                    Debug.Log("leveli ladattu " + i);
+                }
             }
+        } else
+        {
+            Debug.Log("LabyGameManager.manager = null");
         }
     }
 //---------------------------------------------------------------------------------------------

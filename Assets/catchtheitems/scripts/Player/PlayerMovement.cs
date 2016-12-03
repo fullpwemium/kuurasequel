@@ -66,13 +66,14 @@ public class PlayerMovement : MonoBehaviour {
 
 
 
-        gyroToggle = ShelfGameManager.gyroOn;
+        //gyroToggle = ShelfGameManager.gyroOn;
         if (isFrozen && freezeTimer > 0) {
 			freezeTimer -= Time.deltaTime;
 		} 
 		else {
 			Unfreeze ();
 		}
+        /*
 		if (gyroToggle == true) {
 			if (isFrozen == false) {
 				
@@ -98,7 +99,7 @@ public class PlayerMovement : MonoBehaviour {
                         animator.SetTrigger("BobEteen");
                     }
 
-                    transform.position = new Vector2(Mathf.Clamp(transform.position.x, ShelfGameManager.xMinPoint, ShelfGameManager.xMaxPoint), transform.position.y);
+                    transform.position = new Vector2(Mathf.Clamp(transform.position.x, ShelfGameManager.manager.xMinPoint, ShelfGameManager.manager.xMaxPoint), transform.position.y);
                     //Invoke("stopMove", 1f);
 
                 }
@@ -109,6 +110,7 @@ public class PlayerMovement : MonoBehaviour {
 				
 			}
 		}
+        */
 	}
 
 	//Gets mouse/touch position and moves player in clamped values 
@@ -129,7 +131,7 @@ public class PlayerMovement : MonoBehaviour {
                 moving = true;
                 
                 //transform.position = new Vector3 (Mathf.Clamp (transform.position.x + different, xMin, xMax), transform.position.y);
-                rgb2D.MovePosition(new Vector2(Mathf.Clamp(transform.position.x + different, ShelfGameManager.xMinPoint, ShelfGameManager.xMaxPoint), transform.position.y));
+                rgb2D.MovePosition(new Vector2(Mathf.Clamp(transform.position.x + different, ShelfGameManager.manager.xMinPoint, ShelfGameManager.manager.xMaxPoint), transform.position.y));
 
                 
 

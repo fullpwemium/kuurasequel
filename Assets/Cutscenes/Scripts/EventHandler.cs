@@ -87,7 +87,7 @@ public class EventHandler : MonoBehaviour {
             case "Warehouse":
                 for (int i = 0; i <= 10; i++)
                 {
-                    if (GameManager.manager.completedLevels.Contains(i))
+                    if (ShelfGameManager.manager.completedLevels.Contains(i))
                     {
                         levelsCompleted++;
                     }

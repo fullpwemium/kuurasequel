@@ -22,7 +22,7 @@ public class startScript : MonoBehaviour {
         
         //Star.color = Color.white;
 
-        if (GameManager.levelStars[buttonNumber] >= starNumber)
+        if (ShelfGameManager.manager.levelStars[buttonNumber] >= starNumber)
         {
             Star.color = Color.white;
             Debug.Log("varjattu");

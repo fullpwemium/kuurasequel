@@ -23,8 +23,8 @@ public class SpawnpointManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-        Debug.Log(GameManager.spawnSpeedMultiplier);
-        spawnTime = 5f/(GameManager.spawnSpeedMultiplier);
+        Debug.Log(ShelfGameManager.manager.spawnSpeedMultiplier);
+        spawnTime = 5f/(ShelfGameManager.manager.spawnSpeedMultiplier);
 		InvokeRepeating ("Spawn", spawnTime, spawnTime);
 
 		spawnPoints = FindObjectsOfType<SpawnPoint> ();
@@ -41,7 +41,7 @@ public class SpawnpointManager : MonoBehaviour {
 
         }
 
-        for (int i = 0; i <= GameManager.kissaMultiplier; i++)
+        for (int i = 0; i <= ShelfGameManager.manager.kissaMultiplier; i++)
         {
             //cat[i] = GameObject.FindGameObjectWithTag("Cat");
             //spawnPointIndex = Random.Range(0, spawnPoints.Length);

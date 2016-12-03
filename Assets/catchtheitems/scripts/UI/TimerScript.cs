@@ -22,7 +22,7 @@ public class TimerScript : MonoBehaviour {
     {
 		sceneUi = FindObjectOfType<UI> ();
 		//Debug.Log (ShelfGameManager.manager.currentLevel);
-		addTimeValue = GameManager.extraTime;
+		addTimeValue = ShelfGameManager.manager.extraTime;
 		time = time + addTimeValue;
 		timeLeft = time;
         

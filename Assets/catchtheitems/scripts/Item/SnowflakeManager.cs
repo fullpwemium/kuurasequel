@@ -23,7 +23,7 @@ public class SnowflakeManager : MonoBehaviour {
 	//Instantiats snowflakes at random positions
 	void Snowflake()
 	{
-		flakePosition = Random.Range (ShelfGameManager.xMinPoint, ShelfGameManager.xMaxPoint);
+		flakePosition = Random.Range (ShelfGameManager.manager.xMinPoint, ShelfGameManager.manager.xMaxPoint);
 		flakePosition = Mathf.Round (flakePosition);
 		Instantiate (snowflake,new Vector2(flakePosition,transform.position.y),transform.rotation);
 	}

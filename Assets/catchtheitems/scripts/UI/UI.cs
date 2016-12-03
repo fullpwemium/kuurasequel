@@ -64,7 +64,7 @@ public class UI : MonoBehaviour
             
             gameOverPanel.SetActive(false);
 
-            Time.timeScale = GameManager.aika;
+            Time.timeScale = ShelfGameManager.manager.aika;
         }
         else
         {
@@ -104,7 +104,7 @@ public class UI : MonoBehaviour
         {
             if (isPaused)
             {
-                Time.timeScale = GameManager.aika;
+                Time.timeScale = ShelfGameManager.manager.aika;
                 pausePanel.SetActive(false);
                 tutorialPanel.SetActive(false);
                 isPaused = false;
@@ -304,17 +304,17 @@ public class UI : MonoBehaviour
         }
 
         //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
-        if (stars > GameManager.levelStars[GameManager.manager.currentLevel])
+        if (stars > ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel])
         {
-            GameManager.levelStars[GameManager.manager.currentLevel] = stars;
+            ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel] = stars;
         }
         else
         {
 
         }
-        GameManager.levelStars[GameManager.manager.currentLevel] = stars;
+        ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel] = stars;
         GlobalGameManager.GGM.bubbleWarehouseSave();
-        Debug.Log(GameManager.levelStars[GameManager.manager.currentLevel] + "tahtienmaara");
+        Debug.Log(ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel] + "tahtienmaara");
 
         /*for (int i = 0; i<5; i++ )
         {

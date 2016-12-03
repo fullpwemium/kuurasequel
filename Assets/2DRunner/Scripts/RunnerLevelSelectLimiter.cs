@@ -9,7 +9,6 @@ using System.Collections.Generic;
 public class RunnerLevelSelectLimiter : MonoBehaviour
 {
     public static List<int> completedLevels = new List<int>(100);
-
     public int buttonLevel;
     Button button;
     bool initialized;
@@ -17,7 +16,7 @@ public class RunnerLevelSelectLimiter : MonoBehaviour
     //Checks levels if OnLevelWasLoaded was not called
     void Start()
     {
-        GlobalGameManager.GGM.RunnerLoad();
+        //GlobalGameManager.GGM.RunnerLoad();
 
         if (initialized == false)
         {
@@ -37,6 +36,7 @@ public class RunnerLevelSelectLimiter : MonoBehaviour
     //Creates buttons and checks if this level is playable
     void CheckLevels()
     {
+        GlobalGameManager.GGM.RunnerLoad();
         /* If OnClick is assigned through the inspector,
          * the reference is lost upon scene load
          * So it's done through code */
@@ -55,8 +55,8 @@ public class RunnerLevelSelectLimiter : MonoBehaviour
             gameObject.SetActive(true);
         }
         //Checks if this or the previous level is completed, if previous is completed check if next level exists
-        if (RunnerManager.manager.completedLevels.Contains(buttonLevel) ||
-            RunnerManager.manager.completedLevels.Contains(buttonLevel - 1) && buttonLevel < RunnerManager.manager.levelIndex.Length)
+        if (completedLevels.Contains(buttonLevel) ||
+            completedLevels.Contains(buttonLevel - 1) && buttonLevel <= completedLevels.Count())
         {
             gameObject.SetActive(true);
         }

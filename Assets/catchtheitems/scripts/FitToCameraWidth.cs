@@ -25,8 +25,8 @@ public class FitToCameraWidth : MonoBehaviour {
 
 		//Set values to ShelfgameManagers 
 		//This are used in cats movement
-		ShelfGameManager.xMaxPoint = xMax.position.x;
-		ShelfGameManager.xMinPoint = xMin.position.x;
+		ShelfGameManager.manager.xMaxPoint = xMax.position.x;
+		ShelfGameManager.manager.xMinPoint = xMin.position.x;
 
 		//Set value to public variable
 		publicWidth = width;
