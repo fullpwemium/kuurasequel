@@ -15,7 +15,8 @@ public class BackToApartmentArrow : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		Debug.Log("Back arrow clicked");
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
+        Debug.Log("Back arrow clicked");
 		SceneManager.LoadScene("Bob_apartment");
 	}
 }

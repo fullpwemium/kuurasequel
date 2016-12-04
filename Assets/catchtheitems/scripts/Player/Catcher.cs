@@ -10,6 +10,7 @@ public class Catcher : MonoBehaviour {
     
     void Start()
     {
+        MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouse);
         PSS = GameObject.FindObjectOfType<ParticleSystem>().GetComponent<ParticleSystemScript>();
         partikkelit = GameObject.Find("Particle System");
 
@@ -18,6 +19,7 @@ public class Catcher : MonoBehaviour {
     {
         if(col.tag == "Items")
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.itemCatch, 1);
             PSS.emiParticles();
             Destroy(col.gameObject);
         }

@@ -22,6 +22,7 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
     //Checks levels if OnLevelWasLoaded was not called
     void Start()
     {
+        MusicPlayer.PlayMusic(MusicTrack.MysticCards);
 
         //GlobalGameManager.GGM.MemoryGameSave();
 

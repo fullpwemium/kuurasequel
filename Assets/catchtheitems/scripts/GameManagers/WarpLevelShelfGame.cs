@@ -14,7 +14,8 @@ public class WarpLevelShelfGame : MonoBehaviour
     }
     void WarpToNext ()
     {
-		ShelfGameManager.manager.PlayerWin();
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
+        ShelfGameManager.manager.PlayerWin();
 		ShelfGameManager.manager.LoadNextLevel ();
     }
 }

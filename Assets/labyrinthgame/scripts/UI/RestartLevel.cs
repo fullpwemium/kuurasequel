@@ -6,7 +6,7 @@ public class RestartLevel : MonoBehaviour {
 	
 	public void OnButtonClick ()
 	{
-        MusicPlayer.PlayMusic(MusicTrack.HedgeMaze);
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
         Collector.Coins = 0;
         Application.LoadLevel (Application.loadedLevel);
 		Time.timeScale = 1;

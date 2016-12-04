@@ -18,22 +18,16 @@ public class Platformer2DUserControl : MonoBehaviour
     public static bool doubleCancel;
     public static bool magnetCancel;
 
-    AudioSource[] audioSources;
-    AudioSource crouchSound;
-    AudioSource jumpSound;
 
     private void Awake()
     {
         //collector = GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Collector> ();
         collector = gameObject.GetComponentInChildren<RunnerCollector>();
         m_Character = GetComponent<PlatformerCharacter2D>();
-
-        audioSources = GetComponents<AudioSource>();
-        crouchSound = audioSources[0];
-        jumpSound = audioSources[1];
-
         MusicPlayer.PlayMusic(MusicTrack.WinterForestMarathon);
     }
+
+
     private void Update()
     {
         if (!collector.flyMode)
@@ -58,6 +52,8 @@ public class Platformer2DUserControl : MonoBehaviour
         //m_Crouch = CrossPlatformInputManager.GetButtonDown("Fire1");
         
     }
+
+
     private void FixedUpdate()
     {
         if (RunnerManager.manager.currentState == GameState.Begin)
@@ -78,19 +74,27 @@ public class Platformer2DUserControl : MonoBehaviour
             }
         }
     }
+
+
     public void Jump()
     {
         m_Jump = true;
     }
+
+
     public void BeginCrouch()
     {
-        crouchSound.Play();
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.crouch, 1);
         m_Crouch = true;   
     }
+
+
     public void StopCrouch()
     {
         m_Crouch = false;
     }
+
+
     public void Pause()
     {
         RunnerManager.manager.PlayerPause();

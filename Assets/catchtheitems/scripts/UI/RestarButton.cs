@@ -16,6 +16,7 @@ public class RestarButton : MonoBehaviour {
 	
 	void Restart()
 	{
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
         //ShelfGameManager.manager.RestartLevel();
 
         RunnerTimer.StartGame();        //Aloitetaan Runnerin ajastin alusta.

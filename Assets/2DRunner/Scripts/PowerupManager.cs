@@ -18,6 +18,7 @@ public class PowerupManager : MonoBehaviour
     void Update()
     {
     }
+
     void Start()
     {
         //if (GameObject.Find("RunnerManager"))
@@ -27,6 +28,7 @@ public class PowerupManager : MonoBehaviour
         //}
         
     }
+
     //Starts powerup from PowerUp script.
     public void ActivatePowerup(bool points, bool safemode, bool Magnet, float time)
     {
@@ -42,12 +44,17 @@ public class PowerupManager : MonoBehaviour
         if (Magnet)
             StartCoroutine(StartMagnetPowerUp(time));
     }
+
     public bool SafeMode
     {
         get { return safeMode; }
     }
+
     IEnumerator StartPointsPowerUp(float PowerupTime) //Assing double of the normal coins
     {
+
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.catHeadCollected, 1);
+
         while (PowerupTime > 0 )
         {
             GameObject.Find("/Canvas/DoublePoints").GetComponent<Text>().enabled = true;
@@ -66,8 +73,12 @@ public class PowerupManager : MonoBehaviour
         yield return null;
 
     }
+
     IEnumerator StartSafeModePowerUp( float PowerupTime)    //Enable and disable colliders and particle effects for safemode
     {
+
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.catHeadCollected, 1);
+
         while (PowerupTime >0 )
         {
             if (RunnerManager.manager.currentState == GameState.Begin)
@@ -88,8 +99,11 @@ public class PowerupManager : MonoBehaviour
         yield return null;
 
     }
+
     IEnumerator StartMagnetPowerUp( float PowerupTime) // Starts magnet effector
     {
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.keyCollected, 1);
+
         while (PowerupTime > 0)
         {
             if (RunnerManager.manager.currentState == GameState.Begin)
@@ -106,6 +120,7 @@ public class PowerupManager : MonoBehaviour
         yield return null;
 
     }
+
 }
 
 

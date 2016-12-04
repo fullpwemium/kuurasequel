@@ -127,7 +127,7 @@ public class UI : MonoBehaviour
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
         tutorialPanel.SetActive(false);
-
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
         MusicPlayer.ResumePausedMusic();
     }
 

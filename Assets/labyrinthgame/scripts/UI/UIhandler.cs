@@ -77,6 +77,7 @@ public class UIhandler : MonoBehaviour
 
     public void GoToLabyrinthLevelSelect()
     {
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
         Collector.Coins = 0;
         SceneManager.LoadScene("LabyrinthLevelSelect");
         Time.timeScale = 1f;

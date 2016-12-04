@@ -29,6 +29,7 @@ public class LevelSelectButton : MonoBehaviour
 
 	void LevelSelect()
 	{
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
         SceneManager.LoadScene(levelName);
 	}
 }

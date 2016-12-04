@@ -11,6 +11,7 @@ public class OnDeathScreen : MonoBehaviour {
 	{
 		if (col.CompareTag("Player"))
 		{
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.pageTurn, 1);
             MusicPlayer.PlayMusic(MusicTrack.GameOverJingle);
 			tryagain.SetActive (true);
 			BlackScreen.SetActive (true);
