@@ -323,15 +323,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 78387cc875fa5074e9bd1660172ea6ea, type: 3}
   warehouseBackgrounds:
   - {fileID: 21300000, guid: 4089c7e473d036f4b99b3fef4f7b67b4, type: 3}
-  - {fileID: 21300000, guid: 350a822c2d33c1e4d9a6f587bd8b31fd, type: 3}
+  - {fileID: 21300000, guid: 9212aed7784f4174b808efa0a3f8f965, type: 3}
   - {fileID: 21300000, guid: 78387cc875fa5074e9bd1660172ea6ea, type: 3}
   memoryBackgrounds:
   - {fileID: 21300000, guid: 0340dfacb9c936044bf343925c2aa676, type: 3}
-  - {fileID: 21300000, guid: 350a822c2d33c1e4d9a6f587bd8b31fd, type: 3}
+  - {fileID: 21300000, guid: 40d9966a0e3078a4c8a95f1252ecdf3e, type: 3}
   - {fileID: 21300000, guid: 78387cc875fa5074e9bd1660172ea6ea, type: 3}
   forestBackgrounds:
   - {fileID: 21300000, guid: 80253dce336cbbd46936009d59ce15e9, type: 3}
-  - {fileID: 21300000, guid: 350a822c2d33c1e4d9a6f587bd8b31fd, type: 3}
+  - {fileID: 21300000, guid: 5c118e30d5a2a404f83f025352dd0eb8, type: 3}
   - {fileID: 21300000, guid: 78387cc875fa5074e9bd1660172ea6ea, type: 3}
 --- !u!1 &580228244
 GameObject:

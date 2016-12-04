@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class TextBoxManager : MonoBehaviour {
     public GameObject textBox;
@@ -20,10 +21,12 @@ public class TextBoxManager : MonoBehaviour {
     private bool isTyping = false;
     private bool cancelTyping = false;
 
-    public float typeSpeed; //How fast the text shows up, smaller is better. Default is 0.02
+    public float typeSpeed; //How fast the text shows up, smaller is faster. Default is 0.02
     bool showingOneliner = false;
 
     public string language="Eng"; //Language (if different settings are made) should probably be set elsewhere
+
+    private int cutscenesWatched = EventHandler.cutScenesWatched;
 
     private void Awake()
     {
@@ -57,11 +60,16 @@ public class TextBoxManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        
-            //dialogue.text = dialogueLines[currentLine]; //change dialogue text to show the current line
-            currentScene = EventHandler.currentScene;
-            string sceneProgression = EventHandler.sceneProgression;
-            if (Input.GetMouseButtonDown(0))
+        currentScene = EventHandler.currentScene;
+        cutscenesWatched = EventHandler.cutScenesWatched;
+        string sceneProgression = EventHandler.sceneProgression;
+
+        if ((cutscenesWatched > 0 && sceneProgression == "IntroScene") || (cutscenesWatched > 1 && sceneProgression == "MidScene") || cutscenesWatched > 2 && sceneProgression == "EndScene")
+        {
+            showOneLiner();
+            buttons.SetActive(true);
+        }
+        if (Input.GetMouseButtonDown(0) && !buttons.activeSelf)
             {
                 if (currentLine < endAtLine)
                 {
@@ -77,11 +85,35 @@ public class TextBoxManager : MonoBehaviour {
                 }
                 else if (!isTyping)
                 {
+                    addCutsceneWatched();
                     showOneLiner();
                     buttons.SetActive(true);
                 }
         } 
 	}
+
+    private void addCutsceneWatched()
+    {
+        switch (currentScene)
+        {
+            case "Mine":
+                GlobalGameManager.GGM.labyrinthCutscenesWatched++;
+                break;
+            case "Warehouse":
+                GlobalGameManager.GGM.warehouseCutscenesWatched++;
+                break;
+            case "Forest":
+                GlobalGameManager.GGM.runnerCutscenesWatched++;
+                break;
+            case "Memory":
+                GlobalGameManager.GGM.memoryCutscenesWatched++;
+                break;
+            default:
+                Debug.Log("Scene doesn't exist");
+                break;
+        }
+        GlobalGameManager.GGM.CutSceneSave();
+    }
 
     private IEnumerator TextScroll (string lineOfText)
     {
