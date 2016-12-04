@@ -238,6 +238,7 @@ public class RunnerManager : MonoBehaviour
         if(!pausePressed && currentState != GameState.Died)
         {
             currentState = GameState.Pause;
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
             MusicPlayer.PauseCurrentlyPlayingMusic();
             gameOverPanel.SetActive(true);
             pausePressed = true;
@@ -252,6 +253,7 @@ public class RunnerManager : MonoBehaviour
         else if (pausePressed && currentState != GameState.Died)
         {
             currentState = GameState.Begin;
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
             MusicPlayer.ResumePausedMusic();
             gameOverPanel.SetActive(false);
             pausePressed = false;
@@ -401,7 +403,8 @@ public class RunnerManager : MonoBehaviour
     public void Play()      //Replay-toiminto
     {
         //  currentState = GameState.Begin;
-       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
         LoadLevel(currentLevel);
         Debug.Log("Current level = " + currentLevel);
         currentState = GameState.Died;
@@ -415,6 +418,7 @@ public class RunnerManager : MonoBehaviour
     //}
     public void BackToMenu()
     {
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
         SceneManager.LoadScene(levelselect);
         RunnerTimer.StartGame();    //Nollataan ajastin ja muut funktiot kun palataan kenttävalikkoon.
         

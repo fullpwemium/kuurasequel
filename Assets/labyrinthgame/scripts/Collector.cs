@@ -32,8 +32,8 @@ public class Collector : MonoBehaviour
 
     void Start()
     {
-		
-		//torches = FindObjectOfType<Torches> ();
+        MusicPlayer.PlayMusic(MusicTrack.HedgeMaze);
+        //torches = FindObjectOfType<Torches> ();
         rgb2D = GetComponent<Rigidbody2D>();
 		playerColl = GetComponentInChildren<CircleCollider2D>();
 		//plaTorch = GameObject.Find ("TorchLight");
@@ -71,7 +71,8 @@ public class Collector : MonoBehaviour
 */
         if (tag == "Kisse")
         {
-			Destroy(GameObject.FindWithTag("Ending Door"));
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.catHeadCollected, 1);
+            Destroy(GameObject.FindWithTag("Ending Door"));
 			Destroy(col.gameObject);
             hasKisse = true;
             UIhandler.handler.showCat();
@@ -80,7 +81,8 @@ public class Collector : MonoBehaviour
         }
 		if (tag == "DoorKey")
 		{
-			Destroy(GameObject.FindWithTag("Ending Door"));
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.keyCollected, 1);
+            Destroy(GameObject.FindWithTag("Ending Door"));
 			Destroy(col.gameObject);
 			hasDoorKey = true;
 			UIhandler.handler.showDoorKey();
@@ -89,6 +91,7 @@ public class Collector : MonoBehaviour
 		}
         if (tag == "Key")
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.keyCollected, 1);
             Destroy(col.gameObject);
             Keys++;
             UIhandler.handler.UpdateKeys(Keys);
@@ -105,7 +108,8 @@ public class Collector : MonoBehaviour
         }
         if (tag == "Coin")
         {
-			score += 1;
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.coinCollected, 1);
+            score += 1;
             Destroy(col.gameObject);
             Coins++;
             UIhandler.handler.UpdateCoins(Coins);

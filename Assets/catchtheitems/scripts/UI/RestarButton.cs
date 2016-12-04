@@ -16,6 +16,7 @@ public class RestarButton : MonoBehaviour {
 	
 	void Restart()
 	{
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
         //ShelfGameManager.manager.RestartLevel();
         Debug.Log("Cutscenes watched: " + GlobalGameManager.GGM.warehouseCutscenesWatched);
         for (int i = 0; i <= 10; i++)

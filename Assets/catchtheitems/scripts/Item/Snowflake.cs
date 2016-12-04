@@ -38,7 +38,8 @@ public class Snowflake : MonoBehaviour {
 	{
 		if (col.tag == "Bucket")
 		{
-			player.Freeze ();
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookClose, 1);
+            player.Freeze ();
 			Destroy (gameObject);
 		}
 	}

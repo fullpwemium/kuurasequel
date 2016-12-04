@@ -11,32 +11,40 @@ public class RunnerCollector : MonoBehaviour {
     public float gravity;
     public bool reverseGravity;
     //public Platformer2DUserControl control;
+
     void Awake()
     {
         parent = this.gameObject.transform.parent.gameObject;
         thescale = parent.transform.localScale;
         gravity = parent.GetComponent<Rigidbody2D>().gravityScale;
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Coin")
         {
-            gameObject.GetComponent<AudioSource>().Play();
+
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.coinCollected, 1);
             RunnerManager.manager.AddScore();
             other.gameObject.SetActive(false);
 
         }
+
         if (other.gameObject.tag == "Area")
         {
             parent.GetComponent<Rigidbody2D>().gravityScale = 0;
         }
+
         if ((other.gameObject.tag == "Death" || other.gameObject.tag == "Fireball" || other.gameObject.tag == "SnowFlasks"))
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookClose, 1);
             GameObject.Find("Background").GetComponent<ScrollScript>().scroll = false;
             RunnerManager.manager.PlayerLose();
         }
+
         if (other.gameObject.tag == "Finished")
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookClose, 1);
             RunnerManager.manager.PlayerLose();
         }
 
@@ -44,10 +52,13 @@ public class RunnerCollector : MonoBehaviour {
         {
             GameObject.Find("Stone").GetComponent<Rigidbody2D>().gravityScale = 2;
         }
+
         if (other.gameObject.tag == "SpikeTrigger")
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookClose, 1);
             GameObject.Find("Spike").GetComponent<Animator>().SetTrigger("SpikeTrigger");
         }
+
         if (other.gameObject.tag == "FireballTrigger")
         {
             GameObject[] fireball;
@@ -57,6 +68,7 @@ public class RunnerCollector : MonoBehaviour {
                 go.GetComponent<ConstantForce2D>().enabled = true;
             }
         }
+
         if (other.gameObject.name == "Ski")
         {
             flyMode = true;
@@ -64,6 +76,7 @@ public class RunnerCollector : MonoBehaviour {
             other.transform.SetParent(parent.transform);
             other.transform.localPosition = new Vector2(0f, -0.2f);
         }
+
         if (other.gameObject.name == "SkiTrigger")
         {
 
@@ -75,6 +88,7 @@ public class RunnerCollector : MonoBehaviour {
             ski.transform.SetParent(platform.transform);
             flyMode = false;
         }
+
         if (other.gameObject.tag == "SwitchGravity")
         {
             parent.GetComponent<Rigidbody2D>().gravityScale *= -1;
@@ -84,7 +98,9 @@ public class RunnerCollector : MonoBehaviour {
             other.enabled = false;
 
         }
+
     }
+
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Area")
@@ -92,10 +108,12 @@ public class RunnerCollector : MonoBehaviour {
             parent.GetComponent<Rigidbody2D>().gravityScale = gravity;
         }
     }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Stone")
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookClose, 1);
             RunnerManager.manager.PlayerLose();
         }
 

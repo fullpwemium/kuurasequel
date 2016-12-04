@@ -16,7 +16,7 @@ public class WarpLevelShelfGame : MonoBehaviour
     }
     void WarpToNext ()
     {
-		ShelfGameManager.manager.PlayerWin();
+	ShelfGameManager.manager.PlayerWin();
         Debug.Log("Cutscenes watched: " + GlobalGameManager.GGM.warehouseCutscenesWatched);
         for (int i = 0; i <= 10; i++)
         {
@@ -34,6 +34,8 @@ public class WarpLevelShelfGame : MonoBehaviour
         {
             ShelfGameManager.manager.LoadNextLevel();
         }
-        
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
+        ShelfGameManager.manager.PlayerWin();
+	ShelfGameManager.manager.LoadNextLevel ();
     }
 }

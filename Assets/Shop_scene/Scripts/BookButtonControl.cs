@@ -235,8 +235,7 @@ public class BookButtonControl : MonoBehaviour {
             Debug.Log("Book is opened now");
             shopbook.GetComponent<Image>().enabled = true;
             shopbook.GetComponent<Image>().sprite = openbook;
-
-            bookCloseSound.Play();
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookClose, 1);
         }
         else if (currentSprite != bookopen)
         {
@@ -245,8 +244,7 @@ public class BookButtonControl : MonoBehaviour {
             GetComponent<Image>().sprite = bookopen;
             Debug.Log("Book is closed now");
             shopbook.GetComponent<Image>().enabled = false;
-
-            bookOpenSound.Play();
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookOpen, 1);
         }
     }
 
@@ -256,7 +254,7 @@ public class BookButtonControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = hatpage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = hatpage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = hatpage / 2;
-        pageTurnSound.Play();
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.pageTurn, 1);
     }
     void CatItemsPage()
     {
@@ -264,7 +262,7 @@ public class BookButtonControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = catItemsPage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = catItemsPage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = catItemsPage / 2;
-        pageTurnSound.Play();
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.pageTurn, 1);
     }
     void PowerUpsPage()
     {
@@ -272,7 +270,7 @@ public class BookButtonControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = powerUpsPage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = powerUpsPage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = powerUpsPage / 2;
-        pageTurnSound.Play();
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.pageTurn, 1);
     }
     void JacketPage()
     {
@@ -280,7 +278,7 @@ public class BookButtonControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = jacketpage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = jacketpage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = jacketpage / 2;
-        pageTurnSound.Play();
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.pageTurn, 1);
     }
    public void DustPage()
     {
@@ -288,7 +286,7 @@ public class BookButtonControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = dustpage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = dustpage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = dustpage / 2;
-        pageTurnSound.Play();
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.pageTurn, 1);
     }
     void BootsPage()
     {
@@ -296,7 +294,7 @@ public class BookButtonControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = bootspage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = bootspage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = bootspage / 2;
-        pageTurnSound.Play();
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.pageTurn, 1);
     }
     void GlassesPage()
     {
@@ -304,7 +302,7 @@ public class BookButtonControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = glasspage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = glasspage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = glasspage / 2;
-        pageTurnSound.Play();
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.pageTurn, 1);
     }
 
     void LimitedTimePage()
@@ -313,6 +311,6 @@ public class BookButtonControl : MonoBehaviour {
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = limitedpage;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().rightcounter = limitedpage + 1;
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = limitedpage / 2;
-        pageTurnSound.Play();
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.pageTurn, 1);
     }
 }

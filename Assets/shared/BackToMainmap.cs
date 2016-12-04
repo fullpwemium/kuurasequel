@@ -15,6 +15,8 @@ public class BackToMainmap : MonoBehaviour {
 
     public void LoadScene(int scene)
     {
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
         SceneManager.LoadScene("Map2");
     }
+
 }

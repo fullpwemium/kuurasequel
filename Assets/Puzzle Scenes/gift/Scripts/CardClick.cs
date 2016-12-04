@@ -12,6 +12,8 @@ public class CardClick : MonoBehaviour
     int counter = 0;
 
     public float x, y;
+
+
     void OnMouseDown() //save x and y locations of the cards when clicked on and send them to the click function 
     {
         if (this.gameObject.name == "card 0 0(Clone)")
@@ -263,6 +265,7 @@ public class CardClick : MonoBehaviour
 
 void click() // call click action function
 {
+    MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookOpen, 1);
     GameObject clickedCard = this.gameObject;
     layerManager = GameObject.Find("LayerManager");
     layerManager.GetComponent<LayerScript>().ClickAction(clickedCard, (int)x, (int)y); //kun x ja y floatteja, niin edessä oltava sulkeissa int

@@ -117,6 +117,7 @@ public class ShelfGameManager: MonoBehaviour// : GameManager
         //base.LoadNextLevel ();
         if (completedLevels.Contains(currentLevel) == true)
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             LoadLevel(currentLevel + 1);
         }
         else

@@ -32,6 +32,7 @@ GameObject:
   - 82: {fileID: 82000013939047760}
   - 82: {fileID: 82000013518446958}
   - 82: {fileID: 82000013359345548}
+  - 82: {fileID: 82000012444902552}
   m_Layer: 0
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -291,6 +292,80 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   Priority: 125
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &82000012444902552
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011175778312}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -951,3 +1026,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba45cfed54263c74eb129104f1f5b048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bookClose: {fileID: 8300000, guid: ec9badf9d7a823e4fbdcc53565888c19, type: 3}
+  bookOpen: {fileID: 8300000, guid: 571d775a0579f104fafd42b5deedc25b, type: 3}
+  bubbleBurst1: {fileID: 8300000, guid: 352d588f2a637c44a8e893f72882a14b, type: 3}
+  bubbleBurst2: {fileID: 8300000, guid: 0034dc0a6594a734186e83d75ba93cb5, type: 3}
+  bubbleBurst3: {fileID: 8300000, guid: 0e14450b6ec293c4e8d5be289a1cdb93, type: 3}
+  buy: {fileID: 8300000, guid: 7abe2676f1b47164191176648fdace9d, type: 3}
+  catHeadCollected: {fileID: 8300000, guid: 7c0e608f97385634980eda47a40b32a0, type: 3}
+  coinCollected: {fileID: 8300000, guid: 10ea63c778ef7b14fbbbb8cebe84a9c3, type: 3}
+  crouch: {fileID: 8300000, guid: 9023d52491e77094abc889874afcb767, type: 3}
+  dontBuy: {fileID: 8300000, guid: be72d6e2c4f2aaf4f9f9365755286e8b, type: 3}
+  doorUnlocked: {fileID: 8300000, guid: 9211cefb44ca95a40bba8052f74f9f9f, type: 3}
+  itemCatch: {fileID: 8300000, guid: 91a995c9ed4273e4fb5d55bfeb7a8104, type: 3}
+  menuEffect: {fileID: 8300000, guid: acd6c7de42e4f894181f8350057c5e66, type: 3}
+  jump: {fileID: 8300000, guid: 6b44229c7e88a834681b3feaf991f4cd, type: 3}
+  keyCollected: {fileID: 8300000, guid: 83ec85203c35b944e8303b794b704cb8, type: 3}
+  purringCat: {fileID: 8300000, guid: 90a6931c5c4d7cc46991b5cd3959e427, type: 3}
+  menuCancel: {fileID: 8300000, guid: 01f4795ae4fd0e646bc6cd640c77fa4f, type: 3}
+  menuOk: {fileID: 8300000, guid: 2821e80c0a968744791270e9991996ca, type: 3}
+  pageTurn: {fileID: 8300000, guid: 2624cf3085f396449af4096240ec973f, type: 3}
+  purr1: {fileID: 8300000, guid: f739ec6bce80bf840b35baebd38f196b, type: 3}
+  purr2: {fileID: 8300000, guid: 7449bb95d6899ea43a23712853fde014, type: 3}
+  roll: {fileID: 8300000, guid: 181f6d5ac9695d14d90d64f2828da2d9, type: 3}
