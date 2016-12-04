@@ -69,22 +69,26 @@ public class ButtonScript : MonoBehaviour
 
         if (BobPlayerScript.nearMemoryGame)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Memory";
             SceneManager.LoadScene("LevelMap");    //Ladataan Scene
             BobPlayerScript.nearMemoryGame = false;
 
         }
         else if (BobPlayerScript.nearCatchTheCat)
         {
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Warehouse";
             SceneManager.LoadScene("CatchTheCatLevelSelect");
             BobPlayerScript.nearCatchTheCat = false;
         }
         else if (BobPlayerScript.nearLabyrinth)
         {
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Mine";
             SceneManager.LoadScene("LabyrinthLevelSelect");
             BobPlayerScript.nearLabyrinth = false;
         }
         else if (BobPlayerScript.Runner)
         {
+            GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Forest";
             SceneManager.LoadScene("RunnerLevelMap");
             BobPlayerScript.Runner = false;
 

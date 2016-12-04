@@ -65,11 +65,12 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
     public static void MemoryGamelevelilapi(int levelnumber)
     {
         completedLevels.Add(levelnumber-1);
-
+        /*
         for (int i = 0; i< completedLevels.Count(); i++)
         {
             Debug.Log("MemoryGameLevelSelecterLimitter completed levels = " + completedLevels[i]);
         }
+        */
     }
 
     //Creates buttons and checks if this level is playable
@@ -86,7 +87,7 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
         completedLevels.Add(0);
 
         //Debug.Log(LabManager.manager);
-        Debug.Log(completedLevels.Last());
+        //Debug.Log(completedLevels.Last());
         //The first level is always shown regardless of its completetion
         if (completedLevels.Any() == false && buttonLevel == 0)
         {

@@ -113,6 +113,7 @@ public class ShelfGameManager: MonoBehaviour// : GameManager
 	}
 	public void LoadNextLevel()
 	{
+
         //base.LoadNextLevel ();
         if (completedLevels.Contains(currentLevel) == true)
         {

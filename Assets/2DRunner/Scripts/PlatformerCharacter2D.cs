@@ -71,7 +71,7 @@ public class PlatformerCharacter2D : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
-                Debug.Log("Maa kutsuu");
+                //Debug.Log("Maa kutsuu");
             }
         }
         m_Anim.SetBool("Ground", m_Grounded);
