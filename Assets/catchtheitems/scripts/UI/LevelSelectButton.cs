@@ -30,7 +30,7 @@ public class LevelSelectButton : MonoBehaviour
 
 	void LevelSelect()
 	{
-        
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
         switch(GlobalGameManager.GGM.currentScene) {
             case "Warehouse": 
                 Debug.Log("Cutscenes watched: " + GlobalGameManager.GGM.warehouseCutscenesWatched);
@@ -89,9 +89,11 @@ public class LevelSelectButton : MonoBehaviour
                     SceneManager.LoadScene(levelName);
                 }
                 break;
+            default:
+                SceneManager.LoadScene(levelName);
+                break;
         }
-        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
-        SceneManager.LoadScene(levelName);
+        
         //SceneManager.LoadScene(levelName);
     }
         
