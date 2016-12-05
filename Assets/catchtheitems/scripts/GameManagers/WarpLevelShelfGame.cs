@@ -16,7 +16,8 @@ public class WarpLevelShelfGame : MonoBehaviour
     }
     void WarpToNext ()
     {
-	ShelfGameManager.manager.PlayerWin();
+	    ShelfGameManager.manager.PlayerWin();
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
         Debug.Log("Cutscenes watched: " + GlobalGameManager.GGM.warehouseCutscenesWatched);
         for (int i = 0; i <= 10; i++)
         {
@@ -28,14 +29,12 @@ public class WarpLevelShelfGame : MonoBehaviour
         Debug.Log("levelscompleted " + levelsCompleted);
         if ((GlobalGameManager.GGM.warehouseCutscenesWatched < 1 && levelsCompleted < 5) || (GlobalGameManager.GGM.warehouseCutscenesWatched < 2 && levelsCompleted > 4) || (GlobalGameManager.GGM.warehouseCutscenesWatched < 3 && levelsCompleted > 9))
         {
+            Debug.Log("Go to cutscene");
             SceneManager.LoadScene("CutScene");
         }
         else
         {
             ShelfGameManager.manager.LoadNextLevel();
         }
-        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
-        ShelfGameManager.manager.PlayerWin();
-	ShelfGameManager.manager.LoadNextLevel ();
     }
 }
