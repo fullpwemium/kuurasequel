@@ -64,11 +64,13 @@ public class ButtonScript : MonoBehaviour
 
     public void GameLoader()
     {
+
         CheckGame();
         //Debug.Log("nearMemoryGame" + BobPlayerScript.nearMemoryGame);
 
         if (BobPlayerScript.nearMemoryGame)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Memory";
             SceneManager.LoadScene("LevelMap");    //Ladataan Scene
             BobPlayerScript.nearMemoryGame = false;
@@ -76,18 +78,21 @@ public class ButtonScript : MonoBehaviour
         }
         else if (BobPlayerScript.nearCatchTheCat)
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Warehouse";
             SceneManager.LoadScene("CatchTheCatLevelSelect");
             BobPlayerScript.nearCatchTheCat = false;
         }
         else if (BobPlayerScript.nearLabyrinth)
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Mine";
             SceneManager.LoadScene("LabyrinthLevelSelect");
             BobPlayerScript.nearLabyrinth = false;
         }
         else if (BobPlayerScript.Runner)
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Forest";
             SceneManager.LoadScene("RunnerLevelMap");
             BobPlayerScript.Runner = false;
@@ -95,12 +100,14 @@ public class ButtonScript : MonoBehaviour
         }
         else if (BobPlayerScript.nearBobApartment)
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Bob_apartment");
             BobPlayerScript.nearBobApartment = false;
 
         }
         else if (BobPlayerScript.nearShop)
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             //SceneManager.LoadScene(36);
             SceneManager.LoadScene("Shop");
             BobPlayerScript.nearBobApartment = false;

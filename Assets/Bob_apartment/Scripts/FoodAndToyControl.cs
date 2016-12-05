@@ -67,6 +67,7 @@ public class FoodAndToyControl : MonoBehaviour {
 
     void OnMouseDown()
     {
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookOpen, 1);
         screenPoint = Camera.main.ScreenToWorldPoint(gameObject.transform.position);
         LockedYPosition = screenPoint.y;
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
@@ -91,6 +92,7 @@ public class FoodAndToyControl : MonoBehaviour {
     {    
         if (other.gameObject.tag == "HappinessMeter")
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.catHeadCollected, 1);
             thefood = GameObject.Find("CatHappiness");
             hc1 = GetComponent<HappinessController>();
             Debug.Log("Cat is eating now");

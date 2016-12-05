@@ -16,6 +16,7 @@ public class ResetCamera : MonoBehaviour {
 
     void OnMouseDown()
     {
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
         SceneManager.LoadScene("ARCat");
     }
 }

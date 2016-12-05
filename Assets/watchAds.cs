@@ -25,6 +25,7 @@ public class watchAds : MonoBehaviour {
 
     void OnMouseDown()
     {
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
         BlackScreen.SetActive(true);
         buttonYes.SetActive(true);
         buttonNo.SetActive(true);
@@ -34,6 +35,7 @@ public class watchAds : MonoBehaviour {
 
     public void ButtonNoClick()
     {
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
         BlackScreen.SetActive(false);
         buttonYes.SetActive(false);
         buttonNo.SetActive(false);
@@ -44,6 +46,7 @@ public class watchAds : MonoBehaviour {
 
     public void ButtonYesClick()
     {
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
         //Dust reward for watching ads
         if (NotWatchedToday()) {
             PlayerPrefs.SetInt("Magic Dust ", PlayerPrefs.GetInt("Magic Dust ") + 100);

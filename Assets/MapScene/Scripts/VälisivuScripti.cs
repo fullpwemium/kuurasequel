@@ -88,6 +88,9 @@ public class VälisivuScripti : MonoBehaviour
 
     void buttonpressed()
     {
+
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
+
         button1.interactable = false;
         button2.interactable = false;
         button3.interactable = false;

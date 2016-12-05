@@ -64,62 +64,62 @@ public class LevelScript : MonoBehaviour
 
         if (BobLevelScript.MemoryGameLevel1 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Level1");    //Ladataan Scene
-
             Debug.Log("Load Memory Game");
         }
         else if (BobLevelScript.MemoryGameLevel2 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Level2");    //Ladataan Scene
-
             Debug.Log("Load Memory Game");
         }
         else if (BobLevelScript.MemoryGameLevel3 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Level3");    //Ladataan Scene
-
             Debug.Log("Load Memory Game");
         }
         else if (BobLevelScript.MemoryGameLevel4 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Level4");    //Ladataan Scene
-
             Debug.Log("Load Memory Game");
         }
         else if (BobLevelScript.MemoryGameLevel5 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Level5");    //Ladataan Scene
-
             Debug.Log("Load Memory Game");
         }
         else if (BobLevelScript.MemoryGameLevel6 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Level6");    //Ladataan Scene
-
             Debug.Log("Load Memory Game");
         }
         else if (BobLevelScript.MemoryGameLevel7 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Level7");    //Ladataan Scene
-
             Debug.Log("Load Memory Game");
         }
         else if (BobLevelScript.MemoryGameLevel8 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Level8");    //Ladataan Scene
-
             Debug.Log("Load Memory Game");
         }
         else if (BobLevelScript.MemoryGameLevel9 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Level9");    //Ladataan Scene
-
             Debug.Log("Load Memory Game");
         }
         else if (BobLevelScript.MemoryGameLevel10 == true)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Level10");    //Ladataan Scene
-
             Debug.Log("Load Memory Game");
         }
     }
@@ -187,15 +187,17 @@ public class LevelScript : MonoBehaviour
             }
             else if(gameNumber == 2)
             {
-                
+                MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
                 ShelfGameManager.manager.LoadLevel(levelButtonNumber);
             }
             else if(gameNumber == 3)
             {
+                MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
                 RunnerManager.manager.LoadLevel(levelButtonNumber);
             }
             else if(gameNumber == 4)
             {
+                MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
                 LabyGameManager.manager.LoadLevel(levelButtonNumber);
                 Debug.Log("Level Button Number = " + levelButtonNumber);
             }

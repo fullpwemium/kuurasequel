@@ -333,8 +333,10 @@ public class MusicPlayer : MonoBehaviour
     private void Resume()
     {
         
-        if (pausedTrack != GetCurrentlyPlayingMusicTrack()) {
-            try
+        //if (pausedTrack != GetCurrentlyPlayingMusicTrack()) {
+        if (SceneManager.GetActiveScene().name.Equals(currentSceneName))
+            {
+                try
             {
                 pausedTrack.UnPause();
                 Debug.Log("Music track resumed from pause.");
