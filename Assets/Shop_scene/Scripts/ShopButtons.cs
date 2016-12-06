@@ -164,7 +164,7 @@ public class ShopButtons : MonoBehaviour {
         }
         else if (currentpage != hatpage || currentpage != jacketpage || currentpage != catpage || currentpage != bootspage || currentpage != glassespage)
         {
-        //Making if it's possible to buy items false
+            //Making if it's possible to buy items false
             NotEnoughDust.SetActive(false);
             WhiteBackground.SetActive(false);
             WantToBuy.SetActive(false);
@@ -954,6 +954,7 @@ public class ShopButtons : MonoBehaviour {
     void Bobpage()
     {
         //BobButton opens the inventory
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.pageTurn, 1);
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = bobspage;
         Debug.Log("Bob page");
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = bobspage*2;
@@ -962,6 +963,7 @@ public class ShopButtons : MonoBehaviour {
     void Menupage()
     {
         //Opens the menu page, you will also start on this page
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.pageTurn, 1);
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().currentpage = menupage;
         Debug.Log("Menu page");
         GameObject.Find("BookLastPage").GetComponent<LastPageControl>().leftcounter = menupage;

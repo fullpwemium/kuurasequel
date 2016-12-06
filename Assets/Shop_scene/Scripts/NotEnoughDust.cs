@@ -9,10 +9,12 @@ public class NotEnoughDust : MonoBehaviour {
     public Button BuyMacigDustButton;
     public Button BuyMagicDustTextButton;
     public Text BuyMagicDustText;
-    
+    private bool playSound;
+
 	// Use this for initialization
 	void Start ()
     {
+        playSound = true;
         Background.enabled = false;
         OkButton.onClick.AddListener(RemoveBackGround);
         BuyMacigDustButton.onClick.AddListener(BuyMagicDust);
@@ -24,7 +26,8 @@ public class NotEnoughDust : MonoBehaviour {
     {
         //If the background of not enough dust is true then all of the buy more dust elements are shown
         if (Background.enabled == true)
-        {
+        {        
+            PlaySoundEffect();
             notEnoughDustText.enabled = true;
             OkButton.enabled = true;
             BuyMacigDustButton.enabled = true;
@@ -35,6 +38,7 @@ public class NotEnoughDust : MonoBehaviour {
         }
         else  //If the background of not enough dust isn't true then all of the buy more dust elements aren't shown
         {
+            playSound = true;
             notEnoughDustText.enabled = false;
             OkButton.enabled = false;
             BuyMacigDustButton.enabled = false;
@@ -57,4 +61,17 @@ public class NotEnoughDust : MonoBehaviour {
         RemoveBackGround();
         GameObject.Find("BookButton").GetComponent<BookButtonControl>().DustPage();
     }
+
+    private void PlaySoundEffect() {
+
+        if (playSound) {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bubbleBurst1, 1);
+            playSound = false;
+        }
+                
+    }
+        
+
+    
+
 }

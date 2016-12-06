@@ -37,6 +37,7 @@ public class PlayerPushBlock : MonoBehaviour
         }
         if (timer >= timerThreshold && rgb.velocity.magnitude > 0)
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookOpen, 1);
             //Reset variables
             timer = 0;
             relativeVector = Vector2.zero;
@@ -133,7 +134,8 @@ public class PlayerPushBlock : MonoBehaviour
     }
     void PushBlock()
     {
-		rayStartPoint = (Vector2)BlockTransform.transform.position + pushVector;
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookOpen, 1);
+        rayStartPoint = (Vector2)BlockTransform.transform.position + pushVector;
 		rayHit = Physics2D.Raycast (rayStartPoint, pushVector,rayLength);
 		Debug.Log ("RaycastHit = " + rayHit.collider);
 		//Check that there is no other block or collectable pushed direction

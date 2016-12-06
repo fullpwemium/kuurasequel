@@ -15,6 +15,7 @@ public class WMleffateatterinappi : MonoBehaviour {
 
     void leffateatteriin()
     {
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
         SceneManager.LoadScene("Theater");
     }
 	
