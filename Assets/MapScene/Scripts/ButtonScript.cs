@@ -72,7 +72,8 @@ public class ButtonScript : MonoBehaviour
         {
             MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Memory";
-            SceneManager.LoadScene("LevelMap");    //Ladataan Scene
+            SceneManager.LoadScene("CutScene");
+            //SceneManager.LoadScene("LevelMap");    //Ladataan Scene
             BobPlayerScript.nearMemoryGame = false;
 
         }
@@ -80,21 +81,24 @@ public class ButtonScript : MonoBehaviour
         {
             MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Warehouse";
-            SceneManager.LoadScene("CatchTheCatLevelSelect");
+            SceneManager.LoadScene("CutScene");
+            //SceneManager.LoadScene("CatchTheCatLevelSelect");
             BobPlayerScript.nearCatchTheCat = false;
         }
         else if (BobPlayerScript.nearLabyrinth)
         {
             MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Mine";
-            SceneManager.LoadScene("LabyrinthLevelSelect");
+            SceneManager.LoadScene("CutScene");
+            //SceneManager.LoadScene("LabyrinthLevelSelect");
             BobPlayerScript.nearLabyrinth = false;
         }
         else if (BobPlayerScript.Runner)
         {
             MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Forest";
-            SceneManager.LoadScene("RunnerLevelMap");
+            SceneManager.LoadScene("CutScene");
+            //SceneManager.LoadScene("RunnerLevelMap");
             BobPlayerScript.Runner = false;
 
         }
