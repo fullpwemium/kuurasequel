@@ -8,6 +8,7 @@ public class ChooseLevel : MonoBehaviour
 
 	public void ChangeToScene(string sceneToChangeTo)
     {
+        if (GlobalGameManager.GGM.currentScene == "Memory") { 
         Debug.Log("Cutscenes watched: " + GlobalGameManager.GGM.memoryCutscenesWatched);
         for (int i = 0; i <= 10; i++)
         {
@@ -23,6 +24,10 @@ public class ChooseLevel : MonoBehaviour
         }
         else
         { 
+            Application.LoadLevel(sceneToChangeTo);
+        }
+        } else
+        {
             Application.LoadLevel(sceneToChangeTo);
         }
         //SceneManager.LoadScene("Map2");

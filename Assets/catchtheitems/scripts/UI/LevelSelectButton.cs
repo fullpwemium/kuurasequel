@@ -71,10 +71,10 @@ public class LevelSelectButton : MonoBehaviour
                 }
                 break;
             case "Forest":
-                Debug.Log("Cutscenes watched: " + GlobalGameManager.GGM.labyrinthCutscenesWatched);
+                Debug.Log("Cutscenes watched: " + GlobalGameManager.GGM.runnerCutscenesWatched);
                 for (int i = 0; i <= 10; i++)
                 {
-                    if (LabyGameManager.manager.completedLevels.Contains(i))
+                    if (RunnerManager.manager.completedLevels.Contains(i))
                     {
                         levelsCompleted++;
                     }
@@ -89,9 +89,11 @@ public class LevelSelectButton : MonoBehaviour
                     SceneManager.LoadScene(levelName);
                 }
                 break;
+                /*
             default:
                 SceneManager.LoadScene(levelName);
                 break;
+                */
         }
         
         //SceneManager.LoadScene(levelName);
