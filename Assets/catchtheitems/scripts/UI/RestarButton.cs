@@ -72,6 +72,32 @@ public class RestarButton : MonoBehaviour {
                     SceneManager.LoadScene(scene.name);
                 }
                 break;
+            case "Forest":
+                Debug.Log("Cutscenes watched: " + GlobalGameManager.GGM.runnerCutscenesWatched);
+                for (int i = 0; i <= 10; i++)
+                {
+                    if (RunnerManager.manager.completedLevels.Contains(i))
+                    {
+                        levelsCompleted++;
+                    }
+                }
+                Debug.Log("levelscompleted " + levelsCompleted);
+                if ((GlobalGameManager.GGM.runnerCutscenesWatched < 1 && levelsCompleted < 5) || (GlobalGameManager.GGM.runnerCutscenesWatched < 2 && levelsCompleted > 4) || (GlobalGameManager.GGM.runnerCutscenesWatched < 3 && levelsCompleted > 9))
+                {
+                    SceneManager.LoadScene("CutScene");
+                }
+                else
+                {
+                    RunnerTimer.StartGame();        //Aloitetaan Runnerin ajastin alusta.
+                    RunnerManager.score = 0;
+
+                    Scene scene = SceneManager.GetActiveScene();
+                    //Application.LoadLevel (Application.loadedLevel);
+                    //base.RestartLevel();
+                    //Time.timeScale = 1f;
+                    SceneManager.LoadScene(scene.name);
+                }
+                break;
             default:
                 break;
         }

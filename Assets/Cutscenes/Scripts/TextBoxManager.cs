@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class TextBoxManager : MonoBehaviour {
     public GameObject textBox;
@@ -86,6 +87,11 @@ public class TextBoxManager : MonoBehaviour {
                 else if (!isTyping)
                 {
                     addCutsceneWatched();
+                    if (GlobalGameManager.GGM.labyrinthCutscenesWatched == 3 && GlobalGameManager.GGM.warehouseCutscenesWatched == 3 && GlobalGameManager.GGM.runnerCutscenesWatched == 3 && GlobalGameManager.GGM.memoryCutscenesWatched == 3) 
+                    {
+                        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Theater";
+                        SceneManager.LoadScene("Theater");
+                    }
                     showOneLiner();
                     buttons.SetActive(true);
                 }
