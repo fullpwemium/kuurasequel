@@ -17,15 +17,11 @@ public class MeltableWall : MonoBehaviour {
     {
         if (InRange)
         {
-         //   if (playerscript.GetTorches()>0)
-         //   {
-         //       playerscript.DevourTorches();
-                BoxCollider2D col = gameObject.GetComponent<BoxCollider2D>();
-                col.enabled = false;
-			    anim.Play("MeltAnim");
-				Destroy(gameObject, 1);
-				
-         //   }
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bubbleBurst3, 1);
+            BoxCollider2D col = gameObject.GetComponent<BoxCollider2D>();
+            col.enabled = false;
+			anim.Play("MeltAnim");
+	        Destroy(gameObject, 1);
         }
     }
     void OnTriggerEnter2D(Collider2D col)

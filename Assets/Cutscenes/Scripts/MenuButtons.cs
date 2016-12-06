@@ -19,6 +19,7 @@ public class MenuButtons : MonoBehaviour {
     public void Play()
     {
         Debug.Log(currentScene);
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
         switch (currentScene) {
             case "Mine":
                 SceneManager.LoadScene("LabyrinthLevelSelect");
@@ -42,6 +43,7 @@ public class MenuButtons : MonoBehaviour {
     public void BackToMap()
     {
         Debug.Log("Back to map");
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
         backgroundSwitcher.GetComponent<BackgroundSwitcher>().enabled = false;
         SceneManager.LoadScene("Map2");
         EventHandler.scenePosition = 0;

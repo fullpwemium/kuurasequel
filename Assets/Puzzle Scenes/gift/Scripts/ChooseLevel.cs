@@ -20,10 +20,20 @@ public class ChooseLevel : MonoBehaviour
         Debug.Log("levelscompleted " + levelsCompleted);
         if ((GlobalGameManager.GGM.memoryCutscenesWatched < 1 && levelsCompleted < 5) || (GlobalGameManager.GGM.memoryCutscenesWatched < 2 && levelsCompleted > 4) || (GlobalGameManager.GGM.memoryCutscenesWatched < 3 && levelsCompleted > 9))
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("CutScene");
         }
         else
-        { 
+        {
+
+            if (sceneToChangeTo.Equals("MapScene/LevelMap")) {
+                MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
+            }
+            else if(sceneToChangeTo.Contains("Puzzle Scenes/"))
+            {
+                MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
+            }
+
             Application.LoadLevel(sceneToChangeTo);
         }
         } else

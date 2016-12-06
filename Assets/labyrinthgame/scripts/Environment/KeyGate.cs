@@ -17,10 +17,10 @@ public class KeyGate : MonoBehaviour
 	{
 		if (InRange&&hasKey)
 		{
-			//   if (playerscript.GetTorches()>0)
-			//   {
-			//       playerscript.DevourTorches();
-			BoxCollider2D col = gameObject.GetComponent<BoxCollider2D>();
+            //   if (playerscript.GetTorches()>0)
+            //   {
+            //       playerscript.DevourTorches();
+            BoxCollider2D col = gameObject.GetComponent<BoxCollider2D>();
 			col.enabled = false;
 			anim.SetBool ("Unlock", true);
 			Invoke("DestroyDoor", anim.GetNextAnimatorStateInfo(0).length +0.5f);
@@ -34,7 +34,8 @@ public class KeyGate : MonoBehaviour
     {
         if(hasKey)
 		{
-			anim.SetBool ("Unlock", true);
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.doorUnlocked, 1);
+            anim.SetBool ("Unlock", true);
 			Invoke("DestroyDoor", anim.GetNextAnimatorStateInfo(0).length +0.5f);
         }
         else

@@ -12,6 +12,7 @@ public class StepOnSwitch : SwitchActivate
     {
         if (col.CompareTag("PlayerPush"))
         {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.doorUnlocked, 1);
             Activate();
         }
     }

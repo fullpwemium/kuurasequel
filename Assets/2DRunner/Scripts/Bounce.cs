@@ -16,7 +16,10 @@ public class Bounce : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D c)
     {
-        if(c.gameObject.tag == "Player")
-        anim.SetTrigger("Bounce");
+        if (c.gameObject.tag == "Player")
+        {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bubbleBurst3, 1);
+            anim.SetTrigger("Bounce");
+        }
     }
 }
