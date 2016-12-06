@@ -34,6 +34,7 @@ public class WarpLevelShelfGame : MonoBehaviour
         }
         else
         {
+            Debug.Log("Moving to next level");
             ShelfGameManager.manager.LoadNextLevel();
         }
     }

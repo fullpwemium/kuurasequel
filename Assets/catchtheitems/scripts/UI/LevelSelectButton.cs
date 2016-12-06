@@ -53,6 +53,7 @@ public class LevelSelectButton : MonoBehaviour
                 break;
             case "Mine":
                 Debug.Log("Cutscenes watched: " + GlobalGameManager.GGM.labyrinthCutscenesWatched);
+                LabyGameManager.manager.currentLevel++;
                 for (int i = 0; i <= 10; i++)
                 {
                     if (LabyGameManager.manager.completedLevels.Contains(i))
@@ -89,11 +90,9 @@ public class LevelSelectButton : MonoBehaviour
                     SceneManager.LoadScene(levelName);
                 }
                 break;
-                /*
+                
             default:
-                SceneManager.LoadScene(levelName);
                 break;
-                */
         }
         
         //SceneManager.LoadScene(levelName);

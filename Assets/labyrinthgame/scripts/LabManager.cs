@@ -35,10 +35,8 @@ public class LabManager : GameManager
     {
 
         MusicPlayer.PlayMusic(MusicTrack.VictoryJingle);
-
         if (LabyGameManager.manager.completedLevels.Contains(LabyGameManager.manager.currentLevel) == false)
         {
-            
             LabyGameManager.manager.completedLevels.Add(LabyGameManager.manager.currentLevel);
         }
 

@@ -283,11 +283,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\n\n\nGame and Software design\r\n\r\nToni Holappa\r\nJan Julin\nPetri
-    K\xF6rkk\xF6\nJanne Laakkonen\r\nJonne Niemel\xE4\nMikko Peltola\nMatti Rantaniemi\r\nValtteri
-    Ruotsalainen\r\nHenri Vesterinen\r\nTuomas V\xE4\xE4r\xE4niemi\r\nAleksi Yrttiaho\r\nJuhani
-    \xC5lander\n\r\nGame and Graphics design\r\n\r\nJasmin H\xE4rk\xF6nen\r\nJuha
-    Karjalainen\nKristian Kouva\r\nJenna Viinikka\r\n\nMusic and Audio\n\nPyry Nevala\nJanne
+  m_Text: "\n\n\nGame design\r and development\n\r\nToni Holappa\r\nJan Julin\nPetri
+    K\xF6rkk\xF6\nJanne Laakkonen\r\nJanne Niemel\xE4\nJonne Niemel\xE4\nMikko Peltola\nMatti
+    Rantaniemi\r\nValtteri Ruotsalainen\r\nHenri Vesterinen\r\nTuomas V\xE4\xE4r\xE4niemi\r\nAleksi
+    Yrttiaho\r\nJuhani \xC5lander\n\r\n\nGame and Graphics design\r\n\r\nJasmin H\xE4rk\xF6nen\r\nJuha
+    Karjalainen\nKristian Kouva\r\nJenna Viinikka\r\n\n\nSound effects\n\nPyry Nevala\n\n\nMusic\n\nJanne
     Niemel\xE4\n\r"
 --- !u!222 &707358824
 CanvasRenderer:
