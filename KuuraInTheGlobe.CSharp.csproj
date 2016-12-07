@@ -216,6 +216,7 @@
     <Compile Include="Assets\Shop_scene\Scripts\BootsPageControl.cs" />
     <Compile Include="Assets\Shop_scene\Scripts\CartPageControl.cs" />
     <Compile Include="Assets\Shop_scene\Scripts\CatPageControl.cs" />
+    <Compile Include="Assets\Shop_scene\Scripts\ConfirmPurchaseButtons.cs" />
     <Compile Include="Assets\Shop_scene\Scripts\DustController.cs" />
     <Compile Include="Assets\Shop_scene\Scripts\GlassesPageControl.cs" />
     <Compile Include="Assets\Shop_scene\Scripts\HatPageControl.cs" />
