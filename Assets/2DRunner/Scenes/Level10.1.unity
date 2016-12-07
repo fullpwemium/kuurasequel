@@ -9904,6 +9904,11 @@ Prefab:
       propertyPath: levelName
       value: RunnerLevelMap
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013218539440, guid: 6e939c7b500c19a45968ccc96a98040b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e939c7b500c19a45968ccc96a98040b, type: 2}
   m_IsPrefabParent: 0
@@ -17694,7 +17699,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1461227794}
-  serializedVersion: 4
+  serializedVersion: 2
   lengthInSec: 5
   startDelay:
     scalar: 0
@@ -17732,13 +17737,12 @@ ParticleSystem:
       m_RotationOrder: 4
     minMaxState: 0
   speed: 1
+  randomSeed: 710401098
   looping: 1
   prewarm: 0
   playOnAwake: 1
   moveWithTransform: 1
-  autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 710401098
   InitialModule:
     serializedVersion: 2
     enabled: 1
