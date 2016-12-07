@@ -97,7 +97,7 @@ public class EventHandler : MonoBehaviour {
             case "Forest":
                 for (int i = 0; i <= 10; i++)
                 {
-                    if (RunnerLevelSelectLimiter.completedLevels.Contains(i))
+                    if (RunnerManager.manager.completedLevels.Contains(i))
                     {
                         levelsCompleted++;
                     }
