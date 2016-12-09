@@ -1,3 +1,5 @@
-Baron of the Mine: "Oi, mate! Some kitty cats ran into the mine just now, and I really don't have time to deal with it."
+Baron of the Mine: "Oi, mate!"
+Baron of the Mine: "Some kitty cats ran into the mine just now, and I really don't have time to deal with it."
 Baron of the Mine: "Be a good lad and go clean up that mess, will ya?"
-Baron of the Mine: "Just avoid the bugs while you're down there. Good luck!"
+Baron of the Mine: "Just avoid the bugs while you're down there."
+Baron of the Mine: "Good luck!"
