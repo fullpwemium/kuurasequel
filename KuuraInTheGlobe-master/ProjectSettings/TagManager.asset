@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Rakennus1
+  - Cat
+  - Bucket
+  - Toggle
+  - DestroyPoint
+  - Wall
+  - Spawnpoint
+  - Snowflake
+  - Items
+  - Bubble
+  - Dropped
+  - Magnet
+  - SpawnLocation
+  - SpawnTrigger
+  - Coin
+  - Death
+  - SnowFlaks
+  - SwitchGravity
+  - Area
+  - SkiPlatform
+  - FireballTrigger
+  - Fireball
+  - CatSpawn
+  - Gate
+  - SnowFlakes
+  - Kisse
+  - SpikeTrigger
+  - Key
+  - KeyDoor
+  - PlayerPush
+  - StoneTrigger
+  - Stone
+  - PushBlock
+  - Melt
+  - TorchCol
+  - OneWayPass
+  - DustAmount
+  - HappinessMeter
+  - Food
+  - BackArrow
+  - Floor
+  - ResetAR
+  - ARButton
+  - True
+  - False
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Snowflake
+  - Items
+  - Bucket
+  - Cat
+  - Spawnpoints
+  - Floor
+  - Wall
+  - ItemHolders
+  - Kuura3D
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 4152898969
+    locked: 0
+  - name: Decoration1
+    uniqueID: 2779953917
+    locked: 0
+  - name: Character
+    uniqueID: 2399856909
+    locked: 0
+  - name: Decoration2
+    uniqueID: 939363267
+    locked: 0
