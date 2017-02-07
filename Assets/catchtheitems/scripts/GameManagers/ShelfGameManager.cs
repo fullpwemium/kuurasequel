@@ -75,10 +75,14 @@ public class ShelfGameManager: MonoBehaviour// : GameManager
 			completedLevels.Add(currentLevel);
             GlobalGameManager.GGM.bubbleWarehouseSave();
         }
-        if (stars > levelStars[currentLevel])
+
+        //Fix following IndexOutOfRangeException releated to levelStars[currentLevel]
+
+        /*if (stars > levelStars[currentLevel])
         {
             levelStars[currentLevel] = stars;
         }
+        */
     }
 
     public virtual void PlayerLose()

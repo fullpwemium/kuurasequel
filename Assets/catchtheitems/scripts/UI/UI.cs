@@ -303,8 +303,10 @@ public class UI : MonoBehaviour
 
         }
 
+        //Fix following IndexOutOfRangeException releated to ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel]
+
         //Debug.Log(GameManager.manager.currentLevel + "currentlevel");
-        if (stars > ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel])
+        /*if (stars > ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel])
         {
             ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel] = stars;
         }
@@ -312,9 +314,9 @@ public class UI : MonoBehaviour
         {
 
         }
-        ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel] = stars;
+        ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel] = stars;*/
         GlobalGameManager.GGM.bubbleWarehouseSave();
-        Debug.Log(ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel] + "tahtienmaara");
+        //Debug.Log(ShelfGameManager.manager.levelStars[ShelfGameManager.manager.currentLevel] + "tahtienmaara");
 
         /*for (int i = 0; i<5; i++ )
         {

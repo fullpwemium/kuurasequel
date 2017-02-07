@@ -221,7 +221,10 @@ public class GlobalGameManager : MonoBehaviour
 
         for (int i = 0; i <= 100; i++)
         {
-            PlayerPrefs.SetInt("stars" + i, bwhStars[i]);
+
+            //Fix following IndexOutOfRangeException
+
+            //PlayerPrefs.SetInt("stars" + i, bwhStars[i]);
             //Debug.Log("Bubble ware house saved stars = " + bwhcompletedLevels[i]);
         }
         for (int i = 0; i <= 20; i++)
