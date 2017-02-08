@@ -29,3 +29,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+#OS generated
+.DS_Store
+.DS_Store?
+._*
