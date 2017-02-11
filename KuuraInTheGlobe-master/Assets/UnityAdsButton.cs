@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Advertisements;
+//using UnityEngine.Advertisements;
 
 public class UnityAdsButton : MonoBehaviour
 {
@@ -23,15 +23,15 @@ public class UnityAdsButton : MonoBehaviour
     void Update()
     {
         if (_button == null) return;
-
+		/*
         _button.interactable = (
-            Advertisement.isInitialized &&
+            /Advertisement.isInitialized &&
             Advertisement.IsReady(placementId)
-        );
+        );*/
     }
 
     public void ShowAd()
     {
-        Advertisement.Show(placementId);
+        //Advertisement.Show(placementId);
     }
 }

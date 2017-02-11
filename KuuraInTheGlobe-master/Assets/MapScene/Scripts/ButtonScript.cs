@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,7 @@ public class ButtonScript : MonoBehaviour
 
     public int gameNumber;
 
+	private Node nodeScript;
     BobPlayerScript Bob;
 
     static GameObject BobPlayer;
@@ -23,6 +25,7 @@ public class ButtonScript : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+		nodeScript = GetComponent<Node>();
         Bob = GameObject.Find("BobPlayer").GetComponent<BobPlayerScript>();
         Button = gameObject.GetComponent<Button>();
 
@@ -54,9 +57,14 @@ public class ButtonScript : MonoBehaviour
         if (BobPlayerScript.Moving == false)
         {       
             GameLoader();
-            BobPlayerScript.DestinationButtonNumberX = ButtonNumber;
-            BobPlayerScript.DestinationButtonNumberY = ButtonNumber2;
-            StartCoroutine(Bob.CountRoute());
+			Bob.startMoving ( 
+				nodeScript.findPath (
+					nodeScript,
+					true,
+					0, 
+					Bob.getCurrentNode()
+				) 
+			);
         }
          //Verrataan kohdeobjektin arvoa lähtöobjektin arvoon
         //BobPlayerScript.destination = gameObject.transform.position;    //Liikutetaan pelaajaobjekti klikattuun objektiin
@@ -75,14 +83,15 @@ public class ButtonScript : MonoBehaviour
             SceneManager.LoadScene("CutScene");
             //SceneManager.LoadScene("LevelMap");    //Ladataan Scene
             BobPlayerScript.nearMemoryGame = false;
-
         }
         else if (BobPlayerScript.nearCatchTheCat)
         {
+			/*
             MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Warehouse";
             SceneManager.LoadScene("CutScene");
             //SceneManager.LoadScene("CatchTheCatLevelSelect");
+            */
             BobPlayerScript.nearCatchTheCat = false;
         }
         else if (BobPlayerScript.nearLabyrinth)

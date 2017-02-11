@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.Advertisements;
+//using UnityEngine.Advertisements;
 
 public class UnityAdsInitializer : MonoBehaviour
 {
@@ -20,10 +20,10 @@ public class UnityAdsInitializer : MonoBehaviour
 #elif UNITY_IOS
         gameId = iosGameId;
 #endif
-
+		/*
         if (Advertisement.isSupported && !Advertisement.isInitialized)
         {
             Advertisement.Initialize(gameId, testMode);
-        }
+        }*/
     }
 }

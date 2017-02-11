@@ -1,24 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using System.IO;
 
 public class BobPlayerScript : MonoBehaviour
 {
     private Animator BobPlayerAnimator;
-    int BobDirection = 20;
-    int OldBobDirection = 15;
+    //int BobDirection = 20;
+    //int OldBobDirection = 15;
 
     bool bobstill;
 
     int startDestinationX, startDestinationY;
 
-    public static bool nearMemoryGame = false;
-    public static bool nearCatchTheCat = false;
-    public static bool nearLabyrinth = false;
-    public static bool Runner = false;
+	private PathFollower pathfinder;
+
+    public static bool nearMemoryGame 	= false;
+    public static bool nearCatchTheCat 	= false;
+    public static bool nearLabyrinth 	= false;
+    public static bool Runner 			= false;
     public static bool nearBobApartment = false;
-    public static bool nearShop = false;
+    public static bool nearShop 		= false;
 
     public static float aboveButton;
 
@@ -61,6 +64,7 @@ public class BobPlayerScript : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+
         nearShop = false;
         ReadFile("tiedosto");
         puhekupla1.interactable = false;
@@ -90,22 +94,21 @@ public class BobPlayerScript : MonoBehaviour
             Debug.Log("Ei löytynyt");
         }
 
-        aboveButtonScale();
-        gameObject.transform.position = destination;
+        //aboveButtonScale();
+        //gameObject.transform.position = destination;
 
         Vector2 kierto;
 
         kierto.x = startButton.transform.position.x;
         kierto.y = startButton.transform.position.y;
 
-        gameObject.transform.position = kierto;
+        //gameObject.transform.position = kierto;
 
 
         memoryGame = GameObject.Find("memoryGame");     //Kohde johon kävellään
 
-//        map = GameObject.Find("tilemap_parent").GetComponent<map_manager>();
-
-        BobPlayer = GameObject.Find("BobPlayer");
+		/*
+		BobPlayer = this.gameObject.transform.parent;
 
         BobPlayer.transform.position = new Vector3(BobPlayer.transform.position.x, 
             BobPlayer.transform.position.y + (aboveButton * 3.5F), 
@@ -116,22 +119,14 @@ public class BobPlayerScript : MonoBehaviour
         destination = gameObject.transform.position;
         //aboveButtonScale();
         BobOnButton();
-
+		*/
         Rakennus1 = GameObject.Find("memoryGame").GetComponent<Collider2D>();   //Viitataan luotuun tagiin
 
-        //StandingButtonNumber = 0;
-        
+		pathfinder = this.GetComponent<PathFollower> ();
+		pathfinder.setParent (this.transform.parent.gameObject);
+		Debug.Log ("Bobin alotusnode: " + pathfinder.getCurrentNode());
 
-
-        //Button1 = GameObject.Find("Tile").GetComponent<Button>();
-        //Button2 = GameObject.Find("Tile (1)").GetComponent<Button>();
-        //Button1 = GameObject.Find("Tile (2)").GetComponent<Button>();
-        //Button1 = GameObject.Find("Tile (3)").GetComponent<Button>();
-
-        //        Invoke("Movement", 2);
-
-
-        // Instanciate the PathMap object:
+		BobScale();
     }
 
     int ReadFile(string file)
@@ -163,6 +158,12 @@ public class BobPlayerScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate ()
     {
+		if (Moving) { 
+			//movePath ();
+			Moving = pathfinder.run();
+			Animate ();
+			BobScale();
+		}
 
         if (StandingButtonNumberX == 2 && StandingButtonNumberY == 3)
         {
@@ -216,9 +217,9 @@ public class BobPlayerScript : MonoBehaviour
         }
 
         //Movement();
-        BobScale();
         if (Moving)
         {
+			/*
             bobstill = false;
             float timeSinceStarted = Time.time - lerpStartTime;
 
@@ -236,6 +237,7 @@ public class BobPlayerScript : MonoBehaviour
                 Debug.Log("StandingButtonNumber2 = " + StandingButtonNumberY);
                 
             }
+			*/
         }
         else if (Moving == false)
         {
@@ -247,12 +249,10 @@ public class BobPlayerScript : MonoBehaviour
             }
             else
             {
-
+				// ... ???
             }
             
         }
-
-       
 
     }
 
@@ -299,7 +299,7 @@ public class BobPlayerScript : MonoBehaviour
             }
 
 
-            runRoute(reittiX, reittiY);
+            //runRoute(reittiX, reittiY);
             aboveButtonScale();
             BobOnButton();
 
@@ -309,91 +309,78 @@ public class BobPlayerScript : MonoBehaviour
 
     }
 
-    void runRoute(int routeX, int routeY)
-    {
-        Moving = true;
-        Debug.Log("routeX = " + routeX);
-        Debug.Log("routeY = " + routeY);
-        midWayDestinationX = StandingButtonNumberX;
-        //Debug.Log(midWayDestinationX);
-        midWayDestinationY = StandingButtonNumberY;
-        //Debug.Log(midWayDestinationY);
-
-        
-
-        if(routeX > 0)
-        {
-            midWayDestinationX++;
-            BobPlayerAnimator.SetTrigger("BobDown");
-        }
-        else if(routeX < 0)
-        {
-            midWayDestinationX--;
-            BobPlayerAnimator.SetTrigger("BobUp");
-        }
-        else if (routeX == 0)
-        {
-            if (routeY > 0)
-            {
-                midWayDestinationY++;
-                BobPlayerAnimator.SetTrigger("BobRight");
-            }
-            else if (routeY < 0)
-            {
-                midWayDestinationY--;
-                BobPlayerAnimator.SetTrigger("BobLeft");
-            }
-        }
-
-
-        string tileName = "Tile" + midWayDestinationX + midWayDestinationY;
-        Debug.Log(tileName);
-        GameObject midWayButton = GameObject.Find("Tile" + midWayDestinationX + midWayDestinationY);
-		if(midWayButton == null)
+	public void startMoving ( List<Node> path )
+	{
+		if (path.Count == 0) {
 			return;
-		destination.x = midWayButton.transform.position.x;
-        
-        destination.y = midWayButton.transform.position.y;
-        
-        Debug.Log("lähdetään liikkeelle");
-
-        //BobPlayer.transform.position = destination;
-
-        
-        StartLerping();
-        //BobPlayer.transform.position = Vector3.Lerp(startPosition, destination, 1.5f);
-        StandingButtonNumberX = midWayDestinationX;
-        StandingButtonNumberY = midWayDestinationY;
-
-        PlayerPrefs.SetInt("Bobin paikka X", StandingButtonNumberX);
-        PlayerPrefs.SetInt("Bobin paikka Y", StandingButtonNumberY);
-
-        //yield return new WaitForSeconds(1);
-
-    }
-
-    ///IEnumerator waitForSeconds()
-    //{
-    //    yield return new WaitForSeconds(1);
-    //}
-
-    //public static void CheckNeighbour()     //Liikutaan vain yhtä suurempiin tai pienempiin arvoihin
-    //{
-
-    //    if ((StandingButtonNumber + 1 == DestinationButtonNumber || StandingButtonNumber - 1 == DestinationButtonNumber || StandingButtonNumber == DestinationButtonNumber) && ( StandingButtonNumber2 + 1 == DestinationButtonNumber2 || StandingButtonNumber2 - 1 == DestinationButtonNumber2 || StandingButtonNumber2 == DestinationButtonNumber2))
-    //    {
-    //        StartLerping();
-    //    }
-    //    else
-    //    {
-
-    //    }
-    //}
+		}
+		Moving = true;
+		pathfinder.init ( path );
+	}
+		
+	public Node getCurrentNode ( )
+	{
+		return pathfinder.getCurrentNode ();
+	}
 
     void BobScale()     //Skaalataan Bobia perspektiivin mukaan
     {
-        gameObject.transform.localScale = new Vector2(Mathf.Abs(gameObject.transform.position.y * 0.05F), Mathf.Abs(gameObject.transform.position.y * 0.05F));
+		transform.parent.gameObject.transform.localScale = new Vector2(
+			Mathf.Abs(transform.parent.gameObject.transform.position.y * 0.05F), 
+			Mathf.Abs(transform.parent.gameObject.transform.position.y * 0.05F)
+		);
     }
+
+	int animationState = -1;
+
+	void Animate()
+	{
+		//Escape
+		if (!Moving) {
+			BobPlayerAnimator.SetTrigger("BobStanding");
+			animationState = -1;
+			return;
+		}
+
+		Vector2 dir = pathfinder.getLastDirection ();
+		double constant = 0.5;
+		if (dir.y < 0) {
+			if (dir.x > constant) {
+				if (animationState != 0) {
+					BobPlayerAnimator.SetTrigger ("BobUp");
+					animationState = 0;
+				}
+			} else if (dir.x < -constant) {
+				if (animationState != 1) {
+					BobPlayerAnimator.SetTrigger ("BobDown");
+					animationState = 1;
+				}
+			} else {
+				if (animationState != 2) {
+					BobPlayerAnimator.SetTrigger ("BobLeft");
+					animationState = 2;
+				}
+			}
+		} else {
+			
+			if (dir.x > constant) {
+				if (animationState != 0) {
+					BobPlayerAnimator.SetTrigger ("BobUp");
+					animationState = 0;
+				}
+			} else if (dir.x < -constant) {
+				if (animationState != 1) {
+					BobPlayerAnimator.SetTrigger ("BobDown");
+					animationState = 1;
+				}
+			} else {
+				if (animationState != 3) {
+					BobPlayerAnimator.SetTrigger ("BobRight");
+					animationState = 3;
+				}
+			}
+		}
+	}
 
     void BobOnButton()
     {
@@ -409,12 +396,5 @@ public class BobPlayerScript : MonoBehaviour
 
         Debug.Log("Above Button = " + aboveButton);
     }
-
-    //void OnTriggerEnter2D(Collider2D Col)
-    //{
-    //    if (Col.tag == "Rakennus1")     //Toiminto kun hitboxit törmäävät
-    //    {
-    //        Application.LoadLevel("GameScene");     //Mennään muistipeliin
-    //    }
-    //}
+		
 }

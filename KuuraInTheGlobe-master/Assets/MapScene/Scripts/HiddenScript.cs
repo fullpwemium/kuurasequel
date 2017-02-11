@@ -12,7 +12,7 @@ public class HiddenScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        piiloNappi = GameObject.Find("Tile-11");
+        piiloNappi = GameObject.Find("PuskaTile");
         puska = GameObject.Find("Puska");
 
         Button = GameObject.Find("Puska").GetComponent<Button>();
