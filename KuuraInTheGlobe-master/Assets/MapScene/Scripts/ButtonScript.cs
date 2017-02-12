@@ -63,11 +63,11 @@ public class ButtonScript : MonoBehaviour
 					true,
 					0, 
 					Bob.getCurrentNode()
-				) 
+				),
+				ButtonNumber,
+				ButtonNumber2
 			);
         }
-         //Verrataan kohdeobjektin arvoa lähtöobjektin arvoon
-        //BobPlayerScript.destination = gameObject.transform.position;    //Liikutetaan pelaajaobjekti klikattuun objektiin
     }
 
     public void GameLoader()

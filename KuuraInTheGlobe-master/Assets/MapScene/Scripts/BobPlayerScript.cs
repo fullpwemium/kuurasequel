@@ -102,31 +102,13 @@ public class BobPlayerScript : MonoBehaviour
         kierto.x = startButton.transform.position.x;
         kierto.y = startButton.transform.position.y;
 
-        //gameObject.transform.position = kierto;
-
-
-        memoryGame = GameObject.Find("memoryGame");     //Kohde johon kävellään
-
-		/*
-		BobPlayer = this.gameObject.transform.parent;
-
-        BobPlayer.transform.position = new Vector3(BobPlayer.transform.position.x, 
-            BobPlayer.transform.position.y + (aboveButton * 3.5F), 
-                BobPlayer.transform.position.z); //Nostetaan Bob seisomaan buttonin päällä
-
-        Debug.Log("Above button on start = " + BobPlayer.transform.position.y + (aboveButton * 3.5F));
-
-        destination = gameObject.transform.position;
-        //aboveButtonScale();
-        BobOnButton();
-		*/
-        Rakennus1 = GameObject.Find("memoryGame").GetComponent<Collider2D>();   //Viitataan luotuun tagiin
 
 		pathfinder = this.GetComponent<PathFollower> ();
 		pathfinder.setParent (this.transform.parent.gameObject);
 		Debug.Log ("Bobin alotusnode: " + pathfinder.getCurrentNode());
 
 		BobScale();
+		speechBubbleCheck ();
     }
 
     int ReadFile(string file)
@@ -157,102 +139,25 @@ public class BobPlayerScript : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate ()
-    {
+	{
 		if (Moving) { 
 			//movePath ();
-			Moving = pathfinder.run();
+			Moving = pathfinder.run ();
 			Animate ();
-			BobScale();
+			BobScale ();
+
+			if (!Moving) {
+				speechBubbleCheck ();
+			}
+		} else {
+
+			if(bobstill == false)
+			{
+				BobPlayerAnimator.SetTrigger("BobStanding");
+				bobstill = true;
+			}
+			
 		}
-
-        if (StandingButtonNumberX == 2 && StandingButtonNumberY == 3)
-        {
-            puhekupla1.interactable = true;
-            puhekupla2.interactable = false;
-            puhekupla3.interactable = false;
-            puhekupla4.interactable = false;
-            puhekupla5.interactable = false;
-
-        }
-        else if (StandingButtonNumberX == 0 && StandingButtonNumberY == 1)
-        {
-            puhekupla1.interactable = false;
-            puhekupla2.interactable = false;
-            puhekupla3.interactable = true;
-            puhekupla4.interactable = false;
-            puhekupla5.interactable = false;
-        }
-        else if (StandingButtonNumberX == 2 && StandingButtonNumberY == 0)
-        {
-            puhekupla1.interactable = false;
-            puhekupla2.interactable = false;
-            puhekupla3.interactable = false;
-            puhekupla4.interactable = false;
-            puhekupla5.interactable = true;
-        }
-        else if (StandingButtonNumberX == 0 && StandingButtonNumberY == 2)
-        {
-            puhekupla1.interactable = false;
-            puhekupla2.interactable = true;
-            puhekupla3.interactable = false;
-            puhekupla4.interactable = false;
-            puhekupla5.interactable = false;
-        }
-        else if (StandingButtonNumberX == 0 && StandingButtonNumberY == 3)
-        {
-            puhekupla1.interactable = false;
-            puhekupla2.interactable = false;
-            puhekupla3.interactable = false;
-            puhekupla4.interactable = true;
-            puhekupla5.interactable = false;
-        }
-        else
-        {
-            puhekupla1.interactable = false;
-            puhekupla2.interactable = false;
-            puhekupla3.interactable = false;
-            puhekupla4.interactable = false;
-            puhekupla5.interactable = false;
-
-        }
-
-        //Movement();
-        if (Moving)
-        {
-			/*
-            bobstill = false;
-            float timeSinceStarted = Time.time - lerpStartTime;
-
-            float percentageComplete = timeSinceStarted / 0.5F;   //Kävelynopeus
-
-            BobPlayer.transform.position = Vector3.Lerp(startPosition, destination, percentageComplete);    //Muutetaan Bobin sijaintia kartan Lerp-vektoreilla.
-
-//            Debug.Log("percentageComplete = " + percentageComplete);
-            if (percentageComplete >= 1.0F)
-            {
-                Moving = false;
-                StandingButtonNumberX = midWayDestinationX;
-                StandingButtonNumberY = midWayDestinationY;//Muutetaan seisomisobjektin arvo kohdeobjektin arvoksi
-                Debug.Log("StandingButtonNumber = " + StandingButtonNumberX);
-                Debug.Log("StandingButtonNumber2 = " + StandingButtonNumberY);
-                
-            }
-			*/
-        }
-        else if (Moving == false)
-        {
-
-            if(bobstill == false)
-            {
-                BobPlayerAnimator.SetTrigger("BobStanding");
-                bobstill = true;
-            }
-            else
-            {
-				// ... ???
-            }
-            
-        }
 
     }
 
@@ -309,13 +214,60 @@ public class BobPlayerScript : MonoBehaviour
 
     }
 
-	public void startMoving ( List<Node> path )
+	public void startMoving ( List<Node> path, int destinationButtonX, int destinationButtonY )
 	{
 		if (path.Count == 0) {
 			return;
 		}
 		Moving = true;
 		pathfinder.init ( path );
+		StandingButtonNumberX = destinationButtonX;
+		StandingButtonNumberY = destinationButtonY;
+		speechBubbleCheck ();
+	}
+
+	public void speechBubbleCheck () {
+		if (Moving) {
+			puhekupla1.interactable = false;
+			puhekupla2.interactable = false;
+			puhekupla3.interactable = false;
+			puhekupla4.interactable = false;
+			puhekupla5.interactable = false;
+			return;
+		}
+
+		if (StandingButtonNumberX == 2 && StandingButtonNumberY == 3) {
+			puhekupla1.interactable = true;
+			puhekupla2.interactable = false;
+			puhekupla3.interactable = false;
+			puhekupla4.interactable = false;
+			puhekupla5.interactable = false;
+
+		} else if (StandingButtonNumberX == 0 && StandingButtonNumberY == 1) {
+			puhekupla1.interactable = false;
+			puhekupla2.interactable = false;
+			puhekupla3.interactable = true;
+			puhekupla4.interactable = false;
+			puhekupla5.interactable = false;
+		} else if (StandingButtonNumberX == 2 && StandingButtonNumberY == 0) {
+			puhekupla1.interactable = false;
+			puhekupla2.interactable = false;
+			puhekupla3.interactable = false;
+			puhekupla4.interactable = false;
+			puhekupla5.interactable = true;
+		} else if (StandingButtonNumberX == 0 && StandingButtonNumberY == 2) {
+			puhekupla1.interactable = false;
+			puhekupla2.interactable = true;
+			puhekupla3.interactable = false;
+			puhekupla4.interactable = false;
+			puhekupla5.interactable = false;
+		} else if (StandingButtonNumberX == 0 && StandingButtonNumberY == 3) {
+			puhekupla1.interactable = false;
+			puhekupla2.interactable = false;
+			puhekupla3.interactable = false;
+			puhekupla4.interactable = true;
+			puhekupla5.interactable = false;
+		}
 	}
 		
 	public Node getCurrentNode ( )
@@ -343,7 +295,7 @@ public class BobPlayerScript : MonoBehaviour
 		}
 
 		Vector2 dir = pathfinder.getLastDirection ();
-		double constant = 0.5;
+		double constant = 0.35; //Adjust the angles at which Bob picks between "up" or "down" animations instead of "left" or "right"
 		if (dir.y < 0) {
 			if (dir.x > constant) {
 				if (animationState != 0) {

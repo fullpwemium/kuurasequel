@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PathFollower : MonoBehaviour {
 
-	public float speed = 1f;
+	public float speed = 0.8f;
 	private List<Node> currentPath;
 	public Node currentNode;
 	private Transform targetNode;

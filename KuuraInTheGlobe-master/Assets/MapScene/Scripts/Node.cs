@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*Node script for the improved pathfinding algorithm*/
+/*Node script for the improved pathfinding algorithm, implements Dijkstra's algorithm*/
 
 public class Node : MonoBehaviour {
 
@@ -10,19 +10,7 @@ public class Node : MonoBehaviour {
 	public 	List<Node> nodes;
 	private bool visited = false;
 	private int	currentDepth = -1;
-
-	// Reference to Bob
-	private BobPlayerScript Bob;
-
-	// Use this for initialization
-	void Start () {
-		Bob = GameObject.Find("BobPlayer").GetComponent<BobPlayerScript>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public  int weight = 0;
 
 	private void reset ()
 	{
@@ -65,7 +53,7 @@ public class Node : MonoBehaviour {
 			if ( lastVisitedNode != node && node.checkDepth(depth+1) ) {
 				// Lähetä kysely naapurinodeihin Bobin olemassaolosta
 				List<Node> temp = new List<Node>();
-				temp.AddRange ( node.findPath ( this, false, depth+1, targetNode ) );
+				temp.AddRange ( node.findPath ( this, false, depth+1+weight, targetNode ) );
 
 				// Tarkista onko naapurinoden vastauksessa Bobin nodea,
 				// ja ylitsekirjoita entinen reitti jos se on lyhyempi
