@@ -17,7 +17,7 @@ public class KissaPetClick : MonoBehaviour {
 	void Start ()
     {
         //food = GameObject.Find("Food");
-        DustController sc1 = dustAmount.GetComponent<DustController>();
+        //DustController sc1 = dustAmount.GetComponent<DustController>();
         //food.SetActive(false);
         //happiness.SetActive(false);
         //text.enabled = false;

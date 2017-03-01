@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class UnityAdsButton : MonoBehaviour
 {
     [SerializeField]
-    private string placementId = null;
+    //private string placementId = null;
 
     private Button _button;
 

@@ -74,8 +74,10 @@ public class EventHandler : MonoBehaviour {
     {
         //Get completed levels from global game manager
         levelsCompleted = 0;
+
         switch (currentScene)
         {
+			/*
             case "Mine":
                 for (int i = 0; i <= 10; i++)
                 {
@@ -112,6 +114,7 @@ public class EventHandler : MonoBehaviour {
                     }
                 }
                 break;
+            */
             default:
                 Debug.Log("Scene doesn't exist");
                 break;

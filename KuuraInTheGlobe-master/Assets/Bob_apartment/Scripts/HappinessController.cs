@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public class HappinessController : MonoBehaviour {
 
    // FoodAndToyControl fatc1;
-    HungerControl hc1;    
+    //HungerControl hc1;    
     public static int counter;
     static TimeSpan hungry;
-    static System.DateTime startTime;     
+    //static System.DateTime startTime;     
     //static Sprite lastsprite;   
     public static int happinessMultiplier = 0;
     public Sprite[] sprites = new Sprite[4];
@@ -42,8 +42,8 @@ public class HappinessController : MonoBehaviour {
         //makes currentsprite equal to the last sprite of the cat
         //currentSprite = sprites[PlayerPrefs.GetInt("LastMood")];
         happinessMultiplier = PlayerPrefs.GetInt("LastMood");
-        startTime = HungerControl.currenttime;
-        hc1 = GetComponent<HungerControl>();
+        //startTime = HungerControl.currenttime;
+        //hc1 = GetComponent<HungerControl>();
         
        
         //adding sprites which swap whenever the cats mood changes
@@ -110,7 +110,9 @@ public class HappinessController : MonoBehaviour {
         //GetComponent<SpriteRenderer>().sprite = currentSprite;
         currentTime = HungerControl.newtime;
         hungry = currentTime - fedTime;
-        TimeSpan escalate = startTime - currentTime;
+
+		//never used
+        //TimeSpan escalate = startTime - currentTime;
 
         //checks if there is no sprite loaded, then uses the last sprite
         /*

@@ -15,7 +15,7 @@ public class LevelScript : MonoBehaviour
 
     BobLevelScript Bob;
 
-    static GameObject BobLevelPlayer;
+    //static GameObject BobLevelPlayer;
 
     // Use this for initialization
     void Start ()
@@ -23,9 +23,9 @@ public class LevelScript : MonoBehaviour
         Bob = GameObject.Find("BobPlayer").GetComponent<BobLevelScript>();
         levelButton = gameObject.GetComponent<Button>();
 
-        levelButton.onClick.AddListener(() => MoveHere());
+		levelButton.onClick.AddListener(() => MoveHere());;
 
-        BobLevelPlayer = GameObject.Find("BobPlayer");
+        //BobLevelPlayer = GameObject.Find("BobPlayer");
     }
 	
 	// Update is called once per frame
@@ -126,6 +126,7 @@ public class LevelScript : MonoBehaviour
 
     void CheckGame()
     {
+		/*
         if(BobLevelScript.StandingLevelNumberX == levelButtonNumber && BobLevelScript.StandingLevelNumberY == levelButtonNumber2)
         {
             if (gameNumber == 1)
@@ -207,5 +208,6 @@ public class LevelScript : MonoBehaviour
         {
             
         }
+        */
     }
 }

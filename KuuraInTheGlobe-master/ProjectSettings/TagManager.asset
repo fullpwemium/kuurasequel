@@ -49,6 +49,9 @@ TagManager:
   - ARButton
   - True
   - False
+  - cloud
+  - fuel
+  - Bob
   layers:
   - Default
   - TransparentFX

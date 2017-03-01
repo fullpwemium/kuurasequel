@@ -4,16 +4,16 @@ using UnityEngine.UI;
 
 public class ToyControl : MonoBehaviour {
 
-    HappinessController hc1;
+    //HappinessController hc1;
     GameObject toy;
     float x;
     float y;
-    float LockedYPosition;
-    Vector3 screenPoint;
+    //float LockedYPosition;
+    //Vector3 screenPoint;
     Vector3 offset;
     Vector2 startPos;
     GameObject AmountofToys;
-    GameObject thetoy;
+    //GameObject thetoy;
     GameObject cattoy;
     bool reset=true;
     private int happinessMultiplier = HappinessController.happinessMultiplier;
@@ -80,8 +80,8 @@ public class ToyControl : MonoBehaviour {
     void OnMouseDown()
     {
         MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookOpen, 1);
-        screenPoint = Camera.main.ScreenToWorldPoint(gameObject.transform.position);
-        LockedYPosition = screenPoint.y;
+        //screenPoint = Camera.main.ScreenToWorldPoint(gameObject.transform.position);
+        //LockedYPosition = screenPoint.y;
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         transform.position = Camera.main.ScreenToViewportPoint(new Vector2(x, y));
         AmountofToys.GetComponent<Text>().enabled = true;        
@@ -104,8 +104,8 @@ public class ToyControl : MonoBehaviour {
         if (other.gameObject.tag == "HappinessMeter")
         {
             MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.catHeadCollected, 1);
-            thetoy = GameObject.Find("CatHappiness");
-            hc1 = GetComponent<HappinessController>();
+            //thetoy = GameObject.Find("CatHappiness");
+            //hc1 = GetComponent<HappinessController>();
             Debug.Log("Cat is eating now");
             reset = true;
             transform.position = startPos;

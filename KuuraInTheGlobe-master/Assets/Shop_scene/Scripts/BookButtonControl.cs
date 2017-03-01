@@ -48,12 +48,12 @@ public class BookButtonControl : MonoBehaviour {
     public Text glasstext;
     public Text limitedText;
 
-    private AudioSource[] audioSources;
-    private AudioSource bookCloseSound;
-    private AudioSource bookOpenSound;
-    private AudioSource cancelSound;
-    private AudioSource okSound;
-    private AudioSource pageTurnSound;
+    //private AudioSource[] audioSources;
+    //private AudioSource bookCloseSound;
+    //private AudioSource bookOpenSound;
+    //private AudioSource cancelSound;
+    //private AudioSource okSound;
+    //private AudioSource pageTurnSound;
 
     void Awake()
     {
@@ -67,12 +67,12 @@ public class BookButtonControl : MonoBehaviour {
         limitedpage = 14;
         dustpage = 16;
 
-        audioSources = GetComponents<AudioSource>();
-        bookCloseSound = audioSources[0];
-        bookOpenSound = audioSources[1];
-        cancelSound = audioSources[2];
-        okSound = audioSources[3];
-        pageTurnSound = audioSources[4];
+        //audioSources = GetComponents<AudioSource>();
+        //bookCloseSound = audioSources[0];
+        //bookOpenSound = audioSources[1];
+        //cancelSound = audioSources[2];
+        //okSound = audioSources[3];
+        //pageTurnSound = audioSources[4];
 
     }
 

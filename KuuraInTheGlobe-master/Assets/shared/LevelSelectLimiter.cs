@@ -23,21 +23,24 @@ public class LevelSelectLimiter : MonoBehaviour
             CheckLevels();
         }
     }
+	/*
     void OnLevelWasLoaded(int level)
     {
         CheckLevels();
-    }
+    }*/
+	
     void loadFrigginLevel ()
     {
-        ShelfGameManager.manager.LoadLevel(buttonLevel);
+        //ShelfGameManager.manager.LoadLevel(buttonLevel);
     }
 
     //Creates buttons and checks if this level is playable
     void CheckLevels ()
     {
-        /* If OnClick is assigned through the inspector,
-         * the reference is lost upon scene load
-         * So it's done through code */
+		/*
+        // If OnClick is assigned through the inspector,
+        // the reference is lost upon scene load
+        // So it's done through code 
         button = GetComponent<Button>();        
         //button.onClick.AddListener(loadFrigginLevel); //Adds OnClick to button
         gameObject.SetActive(false);
@@ -56,5 +59,6 @@ public class LevelSelectLimiter : MonoBehaviour
 			gameObject.SetActive (true);
 		}
         initialized = true;
+		*/
     }
 }

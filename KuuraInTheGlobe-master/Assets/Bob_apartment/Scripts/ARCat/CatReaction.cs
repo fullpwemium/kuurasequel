@@ -3,13 +3,13 @@ using System.Collections;
 
 public class CatReaction : MonoBehaviour {
 	public GameObject dustAmount;
-	private int dustAddition=1; //amount of dust added per tick
+	//private int dustAddition=1; //amount of dust added per tick
     public AudioClip purring;
-    DustController sc1;
+    //DustController sc1;
     public GameObject emittercontroller;
     void Start()
     {
-        sc1 = dustAmount.GetComponent<DustController>();
+        //sc1 = dustAmount.GetComponent<DustController>();
     }
 
 	void OnMouseOver()

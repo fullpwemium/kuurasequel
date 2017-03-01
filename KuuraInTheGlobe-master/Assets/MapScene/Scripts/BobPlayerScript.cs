@@ -28,7 +28,7 @@ public class BobPlayerScript : MonoBehaviour
 
     static public int Frame = 0;
 
-    static int reittiX, reittiY, reitinpituus, midWayDestinationX, midWayDestinationY;
+    //static int reittiX, reittiY, reitinpituus, midWayDestinationX, midWayDestinationY;
 
     public static int DestinationButtonNumberX;
     public static int DestinationButtonNumberY;
@@ -50,7 +50,7 @@ public class BobPlayerScript : MonoBehaviour
 
     public static bool Moving;
 
-    static GameObject BobPlayer;
+    //static GameObject BobPlayer;
 
     GameObject memoryGame;
 
@@ -83,12 +83,13 @@ public class BobPlayerScript : MonoBehaviour
         StandingButtonNumberX = PlayerPrefs.GetInt("Bobin paikka X");
         StandingButtonNumberY = PlayerPrefs.GetInt("Bobin paikka Y");
 
-        Debug.Log("StandingButtonNumberX = " + StandingButtonNumberX);
-        Debug.Log("StandingButtonNumberY = " + StandingButtonNumberY);
+        //Debug.Log("StandingButtonNumberX = " + StandingButtonNumberX);
+        //Debug.Log("StandingButtonNumberY = " + StandingButtonNumberY);
 
         GameObject startButton = GameObject.Find("Tile" + startDestinationX + startDestinationY);
-        Debug.Log("Start button = " + startButton);
-        if (startButton == null)
+        //Debug.Log("Start button = " + startButton);
+        
+		if (startButton == null)
         {
             startButton = GameObject.Find("Tile" + 0 + 1);
             Debug.Log("Ei löytynyt");
@@ -130,13 +131,6 @@ public class BobPlayerScript : MonoBehaviour
     }
     }
 
-    public static void StartLerping()
-    {
-        
-        lerpStartTime = Time.time;
-        startPosition = BobPlayer.transform.position;
-    }
-
     // Update is called once per frame
     void FixedUpdate ()
 	{
@@ -158,59 +152,6 @@ public class BobPlayerScript : MonoBehaviour
 			}
 			
 		}
-
-    }
-
-    public IEnumerator CountRoute() //Lasketaan etäisyys kohteesta buttonNumbereiden pohjalta
-    {
-        
-        int routeX = DestinationButtonNumberX-StandingButtonNumberX;
-        Debug.Log(DestinationButtonNumberX + "-" + StandingButtonNumberX + "=" + routeX);
-        int routeY = DestinationButtonNumberY- StandingButtonNumberY;
-        Debug.Log(DestinationButtonNumberY + "-" + StandingButtonNumberY + "=" + routeY);
-        Debug.Log(routeX);
-        Debug.Log(routeY);
-
-        reitinpituus = Mathf.Abs(routeX) + Mathf.Abs(routeY);
-
-        for( int i = 0; i < reitinpituus;i++)
-        {
-            reittiY = 0;
-            reittiX = 0;
-
-            if (routeX > 0)
-            {
-                reittiX = 1;
-                routeX--;
-            }
-            else if(routeX < 0)
-            {
-                reittiX = -1;
-                routeX++;
-            }
-            else if(routeX == 0)
-            {
-               
-                if (routeY > 0)
-                {
-                    reittiY = 1;
-                    routeY--;
-                }
-                else if (routeY < 0)
-                {
-                    reittiY = -1;
-                    routeY++;
-                }
-            }
-
-
-            //runRoute(reittiX, reittiY);
-            aboveButtonScale();
-            BobOnButton();
-
-            yield return new WaitForSeconds(0.5f);
-        }
-        //BobPlayerAnimator.SetTrigger("BobDown");
 
     }
 

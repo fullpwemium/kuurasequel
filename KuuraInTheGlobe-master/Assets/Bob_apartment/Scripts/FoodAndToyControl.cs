@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class FoodAndToyControl : MonoBehaviour {
 
-    HappinessController hc1;
+    //HappinessController hc1;
     GameObject food;
 
-    float LockedYPosition;
-    Vector3 screenPoint;
+    //float LockedYPosition;
+    //Vector3 screenPoint;
     Vector3 offset;
 
     float x;
@@ -17,12 +17,12 @@ public class FoodAndToyControl : MonoBehaviour {
     Vector2 startPos;
 
     GameObject AmountofFood;
-    GameObject thefood;
+    //GameObject thefood;
 
     public int foodamount = ItemControl.amountofFood;
     int happiness;
     //Sprite Feedable2;
-    private bool feedable = HappinessController.feedable;
+    //private bool feedable = HappinessController.feedable;
     // Use this for initialization
     void Start()
     {
@@ -36,7 +36,7 @@ public class FoodAndToyControl : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        feedable = HappinessController.feedable;
+        //feedable = HappinessController.feedable;
     //Feedable2 = GameObject.Find("CatHappiness").GetComponent<HappinessController>().hap3;
         x = Input.mousePosition.x;
         y = Input.mousePosition.y;
@@ -68,8 +68,8 @@ public class FoodAndToyControl : MonoBehaviour {
     void OnMouseDown()
     {
         MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.bookOpen, 1);
-        screenPoint = Camera.main.ScreenToWorldPoint(gameObject.transform.position);
-        LockedYPosition = screenPoint.y;
+        //screenPoint = Camera.main.ScreenToWorldPoint(gameObject.transform.position);
+        //LockedYPosition = screenPoint.y;
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
         transform.position = Camera.main.ScreenToViewportPoint(new Vector2(x,y));
         AmountofFood.GetComponent<Text>().enabled = true;
@@ -93,8 +93,8 @@ public class FoodAndToyControl : MonoBehaviour {
         if (other.gameObject.tag == "HappinessMeter")
         {
             MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.catHeadCollected, 1);
-            thefood = GameObject.Find("CatHappiness");
-            hc1 = GetComponent<HappinessController>();
+            //thefood = GameObject.Find("CatHappiness");
+            //hc1 = GetComponent<HappinessController>();
             Debug.Log("Cat is eating now");
             reset = true;
             transform.position = startPos;

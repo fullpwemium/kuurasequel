@@ -15,6 +15,6 @@ public class ReturnToWorldSelect : MonoBehaviour {
 
     void ReturnToWorld()
     {
-        LabyGameManager.manager.ReturnToWorldSelect();
+        //LabyGameManager.manager.ReturnToWorldSelect();
     }
 }

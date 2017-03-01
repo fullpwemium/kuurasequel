@@ -3,17 +3,17 @@
 
 public class UnityAdsInitializer : MonoBehaviour
 {
-    [SerializeField]
-    private string
-        androidGameId = "1295958",
-        iosGameId = "1295959";
+    //[SerializeField]
+    //private string
+        //androidGameId = "1295958",
+        //iosGameId = "1295959";
 
     [SerializeField]
     private bool testMode;
 
     void Start()
     {
-        string gameId = null;
+        //string gameId = null;
 
 #if UNITY_ANDROID
         gameId = androidGameId;

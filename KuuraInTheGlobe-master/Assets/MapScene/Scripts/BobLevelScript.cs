@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class BobLevelScript : MonoBehaviour
 {
     private Animator BobPlayerAnimator;
-    int BobDirection = 20;
-    int OldBobDirection = 15;
+    //int BobDirection = 20;
+    //int OldBobDirection = 15;
 
     int startDestinationX, startDestinationY;
 
@@ -51,7 +51,7 @@ public class BobLevelScript : MonoBehaviour
 
     static GameObject BobPlayer;
 
-    GameObject memoryGame;
+    //GameObject memoryGame;
 
     Collider2D Kenttä; //Objektiin luotu tag
 
@@ -117,7 +117,7 @@ public class BobLevelScript : MonoBehaviour
 
         //Debug.Log("gameObject" + gameObject.transform.position + "startButton" + startButton.transform.position);
 
-        memoryGame = GameObject.Find("memoryGame");     //Kohde johon kävellään
+        //memoryGame = GameObject.Find("memoryGame");     //Kohde johon kävellään
 
         //        map = GameObject.Find("tilemap_parent").GetComponent<map_manager>();
 

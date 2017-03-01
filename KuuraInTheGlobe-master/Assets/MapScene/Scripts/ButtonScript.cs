@@ -20,7 +20,7 @@ public class ButtonScript : MonoBehaviour
 	private Node nodeScript;
     BobPlayerScript Bob;
 
-    static GameObject BobPlayer;
+    //static GameObject BobPlayer;
 
     // Use this for initialization
     void Start ()
@@ -31,7 +31,7 @@ public class ButtonScript : MonoBehaviour
 
         Button.onClick.AddListener(() => MoveHere());
 
-        BobPlayer = GameObject.Find("BobPlayer");
+        //BobPlayer = GameObject.Find("BobPlayer");
     }
 
     // Update is called once per frame
@@ -78,7 +78,7 @@ public class ButtonScript : MonoBehaviour
 
         if (BobPlayerScript.nearMemoryGame)     //Ladataan Scene kun klikataan buttonia jonka päällä Bob seisoo
         {
-            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
+            //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Memory";
             SceneManager.LoadScene("CutScene");
             //SceneManager.LoadScene("LevelMap");    //Ladataan Scene
@@ -96,7 +96,7 @@ public class ButtonScript : MonoBehaviour
         }
         else if (BobPlayerScript.nearLabyrinth)
         {
-            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
+            //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Mine";
             SceneManager.LoadScene("CutScene");
             //SceneManager.LoadScene("LabyrinthLevelSelect");
@@ -104,7 +104,7 @@ public class ButtonScript : MonoBehaviour
         }
         else if (BobPlayerScript.Runner)
         {
-            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
+            //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Forest";
             SceneManager.LoadScene("CutScene");
             //SceneManager.LoadScene("RunnerLevelMap");
@@ -113,14 +113,14 @@ public class ButtonScript : MonoBehaviour
         }
         else if (BobPlayerScript.nearBobApartment)
         {
-            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
+            //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             SceneManager.LoadScene("Bob_apartment");
             BobPlayerScript.nearBobApartment = false;
 
         }
         else if (BobPlayerScript.nearShop)
         {
-            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
+            //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
             //SceneManager.LoadScene(36);
             SceneManager.LoadScene("Shop");
             BobPlayerScript.nearBobApartment = false;

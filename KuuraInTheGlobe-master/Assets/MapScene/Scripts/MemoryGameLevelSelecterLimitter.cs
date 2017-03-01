@@ -11,8 +11,8 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
     public static List<int> completedLevels = new List<int>(100);
 
     public int buttonLevel;
-    Button button;
-    bool initialized = false;
+    //Button button;
+    //bool initialized = false;
     private Canvas canvas;
     private Toggle toggle;
     Image[] stars;
@@ -31,7 +31,7 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
         //canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
         //canvas.enabled = true;
-        button = GetComponent<Button>();
+        //button = GetComponent<Button>();
 
 
         //button.onClick.AddListener(loadFrigginLevel);
@@ -57,11 +57,11 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
             CheckLevels();
         }*/
     }
-
+	/*
     void OnLevelWasLoaded(int level)
     {
         CheckLevels();
-    }
+    }*/
 
     public static void MemoryGamelevelilapi(int levelnumber)
     {
@@ -101,7 +101,7 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
         {
             gameObject.SetActive(true);
         }
-        initialized = true;
+        //initialized = true;
     }
 }
 

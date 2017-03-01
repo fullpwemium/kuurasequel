@@ -9,7 +9,6 @@ public class VälisivuScripti : MonoBehaviour
 {
     //Button button;
     GameObject muutNapit;
-    GameObject BobPlayer;
     Image peliKuva;
     static public int page;
     public int suunta;
@@ -27,9 +26,9 @@ public class VälisivuScripti : MonoBehaviour
 
     Vector3 kylttiKissaDestination, kylttiKissaStartPosition, kyltti1Destination, kyltti1StartPosition, kyltti2Destination, kyltti2StartPosition;
 
-    int peliNumero;
-    Text dialogi;
-    Text title;
+    //int peliNumero;
+    //Text dialogi;
+    //Text title;
 
     public Sprite pelikuva1, pelikuva2, pelikuva3, pelikuva4, pelikuva5;
     public Sprite hahmo1, hahmo2, hahmo3, hahmo4, hahmo5;
@@ -44,7 +43,7 @@ public class VälisivuScripti : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        BobPlayer = GameObject.Find("BobPlayer");
+        //BobPlayer = GameObject.Find("BobPlayer");
 
         //button = GetComponent<Button>();
         button1.onClick.AddListener(buttonpressed);
@@ -55,14 +54,14 @@ public class VälisivuScripti : MonoBehaviour
 
         //tausta = GameObject.Find("Image");
 
-        Debug.Log("Screen width: "+Screen.width);
-        Debug.Log("Image position: " + tausta.transform.localPosition);
+        //Debug.Log("Screen width: "+Screen.width);
+        //Debug.Log("Image position: " + tausta.transform.localPosition);
 
 
         //tausta.transform.localPosition = new Vector3(tausta.transform.position.x + 2300, tausta.transform.localPosition.y, tausta.transform.position.z);
 
 
-        Debug.Log("Image position: " + tausta.transform.localPosition);
+        //Debug.Log("Image position: " + tausta.transform.localPosition);
 
 
 
@@ -79,15 +78,16 @@ public class VälisivuScripti : MonoBehaviour
 
         //button = GetComponent<Button>();
         //button.onClick.AddListener(buttonpressed);
-        peliKuva = GameObject.Find("PeliKuva").GetComponent<Image>();
-        title = GameObject.Find("Title").GetComponent<Text>();
-        dialogi = GameObject.Find("Dialogia").GetComponent<Text>();
-        Hahmo = GameObject.Find("Kissa").GetComponent<Image>();
+        //peliKuva = GameObject.Find("PeliKuva").GetComponent<Image>();
+        //title = GameObject.Find("Title").GetComponent<Text>();
+        //dialogi = GameObject.Find("Dialogia").GetComponent<Text>();
+        //Hahmo = GameObject.Find("Kissa").GetComponent<Image>();
 
     }
 
     void buttonpressed()
     {
+		/*
 
         MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
 
@@ -187,6 +187,7 @@ public class VälisivuScripti : MonoBehaviour
             //tausta.transform.position = Vector3.Lerp(tausta.transform.position, destination, 0.5f * Time.deltaTime);
             //tausta.transform.position = new Vector3(tausta.transform.position.x * 1 * Time.deltaTime, tausta.transform.position.y, tausta.transform.position.z);
             Debug.Log(suunta);
+        */
     }
 
     void StartLerping()

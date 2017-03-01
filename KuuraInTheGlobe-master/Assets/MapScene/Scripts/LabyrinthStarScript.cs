@@ -18,6 +18,7 @@ public class LabyrinthStarScript : MonoBehaviour {
 
     void ChecKStars()
     {
+		/*
         Star = GetComponent<Image>();
 
         //Star.color = Color.white;
@@ -32,6 +33,7 @@ public class LabyrinthStarScript : MonoBehaviour {
         {
 
         }
+        */
     }
 
     // Update is called once per frame

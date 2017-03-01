@@ -45,7 +45,7 @@ public class Kissa : MonoBehaviour {
     SpriteRenderer oviKissaSR;
     SpriteRenderer tuoliKissaSR;
     SpriteRenderer piippuKissaSR;
-    SpriteRenderer takkaKissaSR;
+    //SpriteRenderer takkaKissaSR;
     SpriteRenderer kasa1SR;
     SpriteRenderer kasa2SR;
     SpriteRenderer kasa3SR;
@@ -82,7 +82,7 @@ public class Kissa : MonoBehaviour {
         oviKissaSR = oviKissaGO.GetComponent<SpriteRenderer>();
         tuoliKissaSR = tuoliKissaGO.GetComponent<SpriteRenderer>();
         piippuKissaSR = piippuKissaGO.GetComponent<SpriteRenderer>();
-        takkaKissaSR = takkaKissaGO.GetComponent<SpriteRenderer>();
+        //takkaKissaSR = takkaKissaGO.GetComponent<SpriteRenderer>();
         kasa1SR = kasa1GO.GetComponent<SpriteRenderer>();
         kasa2SR = kasa2GO.GetComponent<SpriteRenderer>();
         kasa3SR = kasa3GO.GetComponent<SpriteRenderer>();

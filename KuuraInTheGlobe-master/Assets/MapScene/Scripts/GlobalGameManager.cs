@@ -44,7 +44,7 @@ public class GlobalGameManager : MonoBehaviour
     int currentGame;
     public List<int> completedGames;
 
-    int[] MemoryGameStars = new int[200];
+    //int[] MemoryGameStars = new int[200];
 
     public static int MagicDust;
     public static Text AllMagicDust;
@@ -55,11 +55,11 @@ public class GlobalGameManager : MonoBehaviour
 
     List<int> memoryGamecompletedLevels;
 
-    List<int> MemoryGamecompletedLevels = new List<int>();
+    //List<int> MemoryGamecompletedLevels = new List<int>();
 
-    List<int> RunnercompletedLevels = new List<int>();
+    //List<int> RunnercompletedLevels = new List<int>();
 
-    List<int> LabyrinthcompletedLevels = new List<int>();
+    //List<int> LabyrinthcompletedLevels = new List<int>();
 
     //Pelienomat
 
@@ -68,9 +68,9 @@ public class GlobalGameManager : MonoBehaviour
     float ukkoY = 0.0f;
 
     //BWH:n omat muuttujat
-    List<int> bwhStars = new List<int>();
-    List<int> bwhcompletedLevels = new List<int>();
-    List<int> completetlevels;
+    //List<int> bwhStars = new List<int>();
+    //List<int> bwhcompletedLevels = new List<int>();
+    //List<int> completetlevels;
 
     //How many cutscenes the player has seen from each world;
     public int warehouseCutscenesWatched = 0;
@@ -117,7 +117,7 @@ public class GlobalGameManager : MonoBehaviour
 
     private static string url = "http://www.bellegames.net/tietokantakokeilu/db.php";
 
-    private static string insertScript = "http://bellegames.net/tietokantakokeilu/kuurainsert.php";
+    //private static string insertScript = "http://bellegames.net/tietokantakokeilu/kuurainsert.php";
 
     void haeData()
     {
@@ -147,7 +147,7 @@ public class GlobalGameManager : MonoBehaviour
         form.AddField("Hiscore", HiScore);
 
         //form.AddField("Name", PlayerPrefs.GetString("Name"));​
-        WWW www = new WWW(insertScript, form);
+        //WWW www = new WWW(insertScript, form);
         Debug.Log("sent!");
     }
 
@@ -187,6 +187,7 @@ public class GlobalGameManager : MonoBehaviour
 
     public void bubbleWarehouseLoad()
     {
+		/*
         Debug.Log("ladataan bubble ware house");
         for (int i = 0; i <= 100; i++)
         {
@@ -211,10 +212,12 @@ public class GlobalGameManager : MonoBehaviour
         {
             Debug.Log("GameManager.manager = null");
         }
+        */
     }
 
     public void bubbleWarehouseSave()
     {
+		/*
         Debug.Log("aloitetaan tallennus catch the items");
         bwhStars = ShelfGameManager.manager.levelStars;
         bwhcompletedLevels = ShelfGameManager.manager.completedLevels;
@@ -236,10 +239,12 @@ public class GlobalGameManager : MonoBehaviour
                 //Debug.Log("Bubble ware house saved levels = " + bwhcompletedLevels[i]);
             }
         }
+        */
     }
 
     public void MemoryGameSave()
     {
+		/*
         Debug.Log("aloitetaan tallennus memorygame");
         //MemoryGameStars = GlobalManager.memoryGameStars;
         MemoryGameStars = Storage.MemoryGameStars;
@@ -257,11 +262,12 @@ public class GlobalGameManager : MonoBehaviour
                 PlayerPrefs.SetInt("memorylevels" + i, i);
                 //Debug.Log("Memory game saved levels = " + MemoryGamecompletedLevels[i]);
             }
-        }
+        }*/
     }
 
     public void MemoryGameLoad()
     {
+		/*
         Debug.Log("ladataan MemoryGame");
         for (int i = 0; i <= 100; i++)
         {
@@ -285,10 +291,12 @@ public class GlobalGameManager : MonoBehaviour
                 Debug.Log("leveli ladattu " + i);
             }
         }
+        */
     }
 
     public void RunnerLoad()
     {
+		/*
         Debug.Log("ladataan runner");
         for (int i = 0; i <= 20; i++)
         {
@@ -314,10 +322,12 @@ public class GlobalGameManager : MonoBehaviour
                 //                RunnerLevelSelectLimitter.completedLevels.Add(i);
             }
         }
+        */
     }
 
     public void RunnerSave()
     {
+		/*
         Debug.Log("aloitetaan tallennus runner");
         //RunnerStars = GameManager.levelStars;
 
@@ -339,10 +349,12 @@ public class GlobalGameManager : MonoBehaviour
                 //Debug.Log("Runner saved levels = " + RunnercompletedLevels[i]);
             }
         }
+        */
     }
 
     public void LabyrinthSave()
     {
+		/*
         Debug.Log("aloitetaan tallennus labyrinth");
         ////LabyrinthStars = LabManager.cats;
 
@@ -362,10 +374,12 @@ public class GlobalGameManager : MonoBehaviour
                 //Debug.Log("Labyrinth saved levels = " + LabyrinthcompletedLevels[i]);
             }
         }
+        */
     }
 
     public void LabyrinthLoad()
     {
+		/*
         Debug.Log("ladataan labyrinth");
         for (int i = 0; i <= 100; i++)
         {
@@ -389,7 +403,7 @@ public class GlobalGameManager : MonoBehaviour
         } else
         {
             Debug.Log("LabyGameManager.manager = null");
-        }
+        }*/
     }
 
     public void CutSceneSave()
