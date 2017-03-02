@@ -7,6 +7,7 @@ public class RocketGameSystemScript : MonoBehaviour {
 
 	public GameObject playerPrefab;
 	public Button retryButton;
+	public GameObject gameOverScreen;
 
 	Transform fuelMeter;
 	Transform damagedFuelMeter;
@@ -22,6 +23,7 @@ public class RocketGameSystemScript : MonoBehaviour {
 	float timer;
 
 	//Spawnable and spawned objects list
+	List<int> spawnProbabilities;
 	List<ObjectScript> spawnedObjects;
 	public List<GameObject> spawnableObjects;
 
@@ -31,18 +33,22 @@ public class RocketGameSystemScript : MonoBehaviour {
 	// Is player playing the game?
 	bool playing;
 
-	//Current level
-	float target = 100f;
+	// Current level
+	int currentLevel = 1;
+	int startingLevel = 1;
+
 	float damagedFuelDecrement = 2f;
 
 	//Is the game over?
 	bool isGameOver;
 
+	// Level data
+	RocketGameLevelScript level;
+	public List<TextAsset> levels;
+
 	// Use this for initialization
 	void Start () {
 		//...
-		timer = Random.Range (2.0f, 5.0f);
-
 		fuelMeter = GameObject.Find ("fuelMeter/currentFuel").GetComponent<Transform> ();
 		damagedFuelMeter = GameObject.Find ("fuelMeter/damagedFuel").GetComponent<Transform> ();
 		altitudeMeter = GameObject.Find ("altitudeMeter/currentAltitude").GetComponent<Transform> ();
@@ -52,11 +58,61 @@ public class RocketGameSystemScript : MonoBehaviour {
 		MainCanvas = GameObject.Find ("MainCanvas").GetComponent<Transform> ();
 		spawnedObjects = new List<ObjectScript> ();
 
+
+
 		//Debug.Log ("Screen size: " + Screen.width + ":" + Screen.height);
 		gameStart ();
+
+	}
+
+	//float to int, or more accurately take a decimal percentage and turn it into integer percentage
+	int fti ( float fl ) {
+		return (int)Mathf.Floor (fl * 100);
+	}
+
+	void populateSpawnList ( int amount, int objIndex ) {
+		if (amount == 0) {
+			return;
+		}
+		for (int i = 0; i < amount; i++) {
+			spawnProbabilities.Add (objIndex);
+		}
+	}
+
+	void loadLevel (int levelToBeLoaded) {
+
+		float start = 0f;
+		if (levelToBeLoaded > 1) {
+			RocketGameLevelScript plevel = JsonUtility.FromJson<RocketGameLevelScript> (levels [levelToBeLoaded - 2].text);
+			start = plevel.targetAltitude;
+		}
+
+		// Load level's json data
+		//if (levels [levelToBeLoaded - 1] == null) { return; } 
+		level = JsonUtility.FromJson<RocketGameLevelScript> (levels [levelToBeLoaded - 1].text);
+		level.startAltitude = start;
+
+		// Set spawn rate
+		timer  = Random.Range (level.spawnMin, level.spawnMax);
+
+		// Little hack-ish way to set what objects are spawned and how often
+		spawnProbabilities = new List<int> ();
+		populateSpawnList (fti (level.spawnBadCloud), 0);
+		populateSpawnList (fti (level.spawnFuel), 1);
+	}
+
+	void gotoNextLevel () {
+		currentLevel += 1;
+		if (currentLevel < 11) {
+			loadLevel (currentLevel);
+		} else {
+			Debug.Log ("You are winrar");
+		}
 	}
 
 	void gameStart() {
+		destroyObjects ();
+		loadLevel (startingLevel);
 		player = Instantiate (playerPrefab, new Vector3 (0, -6, 0), Quaternion.identity).GetComponent<RocketPlayerScript> ();
 		player.togglePlayable ();
 		isGameOver = false;
@@ -65,6 +121,7 @@ public class RocketGameSystemScript : MonoBehaviour {
 
 	public void gameOver() {
 		Debug.Log ("You is death");
+		Instantiate (gameOverScreen);
 		Button newButton = (Button)Instantiate (retryButton);
 		newButton.transform.SetParent (MainCanvas, false);
 		isGameOver = true;
@@ -74,9 +131,11 @@ public class RocketGameSystemScript : MonoBehaviour {
 	}
 
 	public void retryButtonClicked (Button but ) {
-		// Remove retry button
+		// Remove retry button and game over screen
 		Destroy (but.gameObject);
-		// Restart
+		Destroy (GameObject.Find (gameOverScreen.name + "(Clone)"));
+
+		// Restart the level from last checkpoint
 		gameStart ();
 	}
 	
@@ -95,14 +154,16 @@ public class RocketGameSystemScript : MonoBehaviour {
 
 		if (timer <= 0) {
 
+			int objID = Random.Range (0, spawnProbabilities.Count-1);
+			objID = spawnProbabilities [objID];
+
 			ObjectScript obj = Instantiate (
-				                   spawnableObjects [Random.Range (0, spawnableObjects.Count)],
+				                   spawnableObjects [objID],
 				                   new Vector3 (Random.Range (-7.5f, 7.5f), 7, 30),
 				                   Quaternion.identity
 			                   ).GetComponent<ObjectScript> ();
 			spawnedObjects.Add (obj);
-			obj.setSystem (this, spawnedObjects.Count);
-			timer = Random.Range (2.0f, 5.0f);
+			timer = Random.Range (level.spawnMin, level.spawnMax);
 		}
 	}
 
@@ -116,21 +177,33 @@ public class RocketGameSystemScript : MonoBehaviour {
 		}
 	}
 
+	void destroyObjects () {
+		while (spawnedObjects.Count > 0) {
+			Destroy (spawnedObjects [0].gameObject);
+			spawnedObjects.RemoveAt (0);
+		}
+	}
+
 	public void removeSpawnedObject (int ID) {
 		Destroy (spawnedObjects [ID - 1].gameObject);
 		spawnedObjects.RemoveAt(ID-1);
 	}
 
 	public float getStartingAltitude() {
-		return .0f;
-	}
-
-	public float getTargetAltitude() {
-		return target;
+		return level.startAltitude;
 	}
 
 	public void updateAltitude ( float current, float speed ) {
-		altitudeMeter.localScale = new Vector3 (1, Mathf.Clamp (current / target, 0, 1), 1);
+		if (current >= level.targetAltitude) {
+			//Debug.Log (current + " : " + level.targetAltitude);
+			gotoNextLevel ();
+			Debug.Log (level.startAltitude);
+			return;
+		}
+		float scl = (current-level.startAltitude) / (level.targetAltitude-level.startAltitude);
+
+
+		altitudeMeter.localScale = new Vector3 (1, Mathf.Clamp (scl, 0, 1), 1);
 		altitudeMeterText.text = Mathf.Floor (current) + "m";
 		speedoMeterText.text = Mathf.Clamp ( speed, 0, 10 ) + "m/s";
 	}

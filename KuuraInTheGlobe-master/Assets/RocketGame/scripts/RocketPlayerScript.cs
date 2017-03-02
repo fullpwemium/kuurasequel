@@ -8,15 +8,14 @@ public class RocketPlayerScript : MonoBehaviour {
 
 	// Player's graphic 
 	Transform spriteTransform;
+	SpriteRenderer spriteRenderer;
 
 	RocketGameSystemScript system;
+	ParticleSystem emitter;
 
 	// Touch position
 	bool touching;
 	Vector2 lastMousePosition;
-
-	// Null vector for utility when calculating horizontal movement delta
-	Vector3 nullVector;
 
 	// Invulnerability timer for player object
 	float invulTimer;
@@ -47,14 +46,16 @@ public class RocketPlayerScript : MonoBehaviour {
 
 	bool playable = false;
 	float timer = 0;
+	float blinkingTimer = 0;
 
 	// Use this for initialization
 	void Start () {
 
 		// Get child graphic object; we'll be doing some transform changes onto it
 		spriteTransform = this.transform.FindChild ("playerGraphic");
+		spriteRenderer = this.transform.FindChild ("playerGraphic").GetComponent<SpriteRenderer> ();
 
-		nullVector = Camera.main.ScreenToWorldPoint (new Vector3 (0, 0, 0));
+		emitter = this.transform.FindChild ("emitter").GetComponent<ParticleSystem> ();
 
 		damaged = false;
 		currentFallSpeed = .0f;
@@ -66,6 +67,8 @@ public class RocketPlayerScript : MonoBehaviour {
 
 		fuel = 1.0f;;
 		altitude = system.getStartingAltitude ();
+
+
 
 	}
 	
@@ -99,21 +102,28 @@ public class RocketPlayerScript : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButtonDown (1)) {
-			collectFuel ();
+			collectFuel (1f);
 		}
+			
 
 		float deltaX = .0f;
 		if (Input.GetMouseButton (0) && touching) {
 
-			// There probably is an easier way to find the mouse delta, but I don't know
-			float currentMousePosition = Camera.main.ScreenToWorldPoint((Vector2)Input.mousePosition - lastMousePosition).x;
-			deltaX = currentMousePosition - nullVector.x;
+			Vector2 currentMousePosition = Input.mousePosition;
+			float xMovement = lastMousePosition.x - currentMousePosition.x;
 
-			lastMousePosition = (Vector2)Input.mousePosition;
+			Vector3 objScrPoint = Camera.main.WorldToScreenPoint (transform.position);
+			objScrPoint.x += xMovement;
+
+			objScrPoint = Camera.main.ScreenToWorldPoint (objScrPoint);
+			deltaX = transform.position.x - objScrPoint.x;
+
+
+			lastMousePosition = (Vector2) Input.mousePosition;
 		} else {
 			if (Input.GetMouseButtonDown (0)) {
 				touching = true;
-				lastMousePosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+				lastMousePosition = (Vector2) Input.mousePosition;
 			} else {
 				touching = false;
 			}
@@ -127,7 +137,7 @@ public class RocketPlayerScript : MonoBehaviour {
 		}
 
 		this.transform.position = new Vector3 (
-			Mathf.Clamp ( this.transform.position.x + deltaX, nullVector.x, -nullVector.x),
+			Mathf.Clamp ( this.transform.position.x + deltaX, -6f, 6f),
 			Mathf.Clamp ( this.transform.position.y - currentFallSpeed + recoverySpeed, playerDeathBarrier -2f, playerFlyingPosition),
 			this.transform.position.z
 		);
@@ -135,7 +145,7 @@ public class RocketPlayerScript : MonoBehaviour {
 		if (this.transform.position.y < playerDeathBarrier ) {
 			//that's death
 			system.gameOver();
-			Destroy (gameObject);
+			Destroy (gameObject);;
 		}
 
 		return deltaX;
@@ -171,10 +181,6 @@ public class RocketPlayerScript : MonoBehaviour {
 		spriteTransform.localPosition = new Vector3 (0, Mathf.Sin (timer)/8, 0);
 	}
 
-	void collectFuel () {
-		fuelAddition = 0.075f; //magic number, don't tell anyone :)
-	}
-
 	void checkFuel () {
 		if (fuelAddition > 0.001f) {
 			fuel += fuelAddition;
@@ -189,9 +195,15 @@ public class RocketPlayerScript : MonoBehaviour {
 		system.updateFuel (fuel);
 
 		if (fuel <= .0f) {
-			falling = true;
+			if (!falling) {
+				falling = true;
+				emitter.Play ();
+			}
 		} else {
-			falling = false;
+			if (falling) {
+				falling = false;
+				emitter.Stop ();
+			}
 		}
 	}
 
@@ -221,7 +233,13 @@ public class RocketPlayerScript : MonoBehaviour {
 
 	void checkInvul() {
 		if (invulTimer > .0f) {
+			blinkingTimer += 0.125f;
+			float blink = (Mathf.Sin ((2 * blinkingTimer + 3) * Mathf.PI / 2) + 1) / 4;
+			spriteRenderer.color = new Color (1.0f, 0.5f+blink, 0.5f+blink, 1f);
 			invulTimer -= Time.deltaTime;
+			if (invulTimer <= .0f) {
+				spriteRenderer.color = new Color (1.0f, 1.0f, 1.0f, 1f);
+			}
 		};
 			
 		if (damaged) {
@@ -232,6 +250,8 @@ public class RocketPlayerScript : MonoBehaviour {
 					spriteTransform.localPosition.y + Random.Range (-0.125f, 0.125f) * (damagedTimer / 0.25f),
 					0
 				);
+
+
 			} else {
 				spriteTransform.localPosition = new Vector3 (0, spriteTransform.localPosition.y, 0);
 				damaged = false;
@@ -239,16 +259,20 @@ public class RocketPlayerScript : MonoBehaviour {
 		}
 	}
 
-	void registerHit ( ) {
+	void registerHit ( int penaltyLevel ) {
 		if (invulTimer > .0f) {
 			return;
 		}
-
-		fuelPenalty = 0.025f;
-		invulTimer = 2f;
+		blinkingTimer = 0f;
+		fuelPenalty = 0.025f * penaltyLevel;
+		invulTimer = 1.5f;
 		damagedTimer = 0.4f;
 		damaged = true;
 		system.setDamagedFuelPosition (fuel);
+	}
+
+	void collectFuel ( float refillMultiplier ) {
+		fuelAddition = 0.075f * refillMultiplier; //magic number, don't tell anyone :)
 	}
 
 	void OnTriggerEnter2D ( Collider2D col ) {
@@ -256,15 +280,16 @@ public class RocketPlayerScript : MonoBehaviour {
 		switch (col.gameObject.tag) 
 		{
 		case "cloud": 
-			registerHit();
+			registerHit(1);
 			break;
 		case "fuel":
-			collectFuel ();
+			collectFuel (0.5f);
 			col.gameObject.GetComponent<ObjectScript> ().collect ();
 			//col.gameObject.GetComponent<fuelObject>().collect();
 			break;
 		default:
 			Debug.Log ("Unknown object type collided!");
+			col.gameObject.GetComponent<ObjectScript> ().kill ();
 			break;
 		}
 

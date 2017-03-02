@@ -1,0 +1,10 @@
+{
+  "level": 2,
+  "spawnMin": 0.1,
+  "spawnMax": 1.8,
+  "targetAltitude": 300.0,
+  
+  "spawnFuel": 0.25,
+  "spawnBadCloud": 0.75
+
+}
