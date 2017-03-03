@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class RocketGameLevelScript 
+public class RocketGameLevelScript
 {
 	public int level;
 	public float spawnMin;
@@ -14,4 +14,5 @@ public class RocketGameLevelScript
 
 	public float spawnFuel; // object 1
 	public float spawnBadCloud; // object 2
+
 }

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RocketGameSystemScript : MonoBehaviour {
 
 	public GameObject playerPrefab;
 	public Button retryButton;
 	public GameObject gameOverScreen;
+
 
 	Transform fuelMeter;
 	Transform damagedFuelMeter;
@@ -33,10 +35,6 @@ public class RocketGameSystemScript : MonoBehaviour {
 	// Is player playing the game?
 	bool playing;
 
-	// Current level
-	int currentLevel = 1;
-	int startingLevel = 1;
-
 	float damagedFuelDecrement = 2f;
 
 	//Is the game over?
@@ -45,10 +43,17 @@ public class RocketGameSystemScript : MonoBehaviour {
 	// Level data
 	RocketGameLevelScript level;
 	public List<TextAsset> levels;
+	RocketGameLevelSelect levelSelectObject;
+	int currentLevel = 1;
 
 	// Use this for initialization
 	void Start () {
-		//...
+
+		// Get starting level
+		levelSelectObject = GameObject.Find ("levelSelectSystem").GetComponent<RocketGameLevelSelect> ();
+		currentLevel = levelSelectObject.getSelectedLevel ();
+
+		// Get HUD objects
 		fuelMeter = GameObject.Find ("fuelMeter/currentFuel").GetComponent<Transform> ();
 		damagedFuelMeter = GameObject.Find ("fuelMeter/damagedFuel").GetComponent<Transform> ();
 		altitudeMeter = GameObject.Find ("altitudeMeter/currentAltitude").GetComponent<Transform> ();
@@ -56,11 +61,11 @@ public class RocketGameSystemScript : MonoBehaviour {
 		speedoMeterText = GameObject.Find ("altitudeMeter/altitudeCanvas/speedText").GetComponent<Text> ();
 
 		MainCanvas = GameObject.Find ("MainCanvas").GetComponent<Transform> ();
+
+		//Init spawnable list
 		spawnedObjects = new List<ObjectScript> ();
 
-
-
-		//Debug.Log ("Screen size: " + Screen.width + ":" + Screen.height);
+		// START
 		gameStart ();
 
 	}
@@ -88,7 +93,6 @@ public class RocketGameSystemScript : MonoBehaviour {
 		}
 
 		// Load level's json data
-		//if (levels [levelToBeLoaded - 1] == null) { return; } 
 		level = JsonUtility.FromJson<RocketGameLevelScript> (levels [levelToBeLoaded - 1].text);
 		level.startAltitude = start;
 
@@ -102,7 +106,10 @@ public class RocketGameSystemScript : MonoBehaviour {
 	}
 
 	void gotoNextLevel () {
-		currentLevel += 1;
+		if (currentLevel <= 10) {
+			currentLevel += 1;
+		}
+		levelSelectObject.clearLevel (currentLevel);
 		if (currentLevel < 11) {
 			loadLevel (currentLevel);
 		} else {
@@ -112,31 +119,54 @@ public class RocketGameSystemScript : MonoBehaviour {
 
 	void gameStart() {
 		destroyObjects ();
-		loadLevel (startingLevel);
 		player = Instantiate (playerPrefab, new Vector3 (0, -6, 0), Quaternion.identity).GetComponent<RocketPlayerScript> ();
 		player.togglePlayable ();
 		isGameOver = false;
+		loadLevel (currentLevel);
 		Debug.Log ("Letse goo");
 	}
 
 	public void gameOver() {
 		Debug.Log ("You is death");
-		Instantiate (gameOverScreen);
-		Button newButton = (Button)Instantiate (retryButton);
-		newButton.transform.SetParent (MainCanvas, false);
 		isGameOver = true;
+		List<Button> butList = new List<Button> ();
+
+
+		Instantiate (gameOverScreen);
+		Button rButton = (Button)Instantiate (retryButton);
+		rButton.transform.SetParent (MainCanvas, false);
+		butList.Add (rButton);
+
+
+
+		Button lButton = (Button)Instantiate (retryButton, MainCanvas.transform);
+		lButton.transform.SetParent (MainCanvas, false);
+		butList.Add (lButton);
 
 		// Create retry button through a delegate function
-		newButton.onClick.AddListener ( delegate { this.retryButtonClicked (newButton); } );
+		rButton.onClick.AddListener ( delegate { this.retryButtonClicked (butList); } );
+		// Same for level select
+		lButton.onClick.AddListener ( delegate { this.levelSelectButtonClicked (butList); } );
 	}
 
-	public void retryButtonClicked (Button but ) {
+	public void retryButtonClicked (List<Button> list ) {
 		// Remove retry button and game over screen
-		Destroy (but.gameObject);
+		foreach (Button but in list) {
+			Destroy (but.gameObject);
+		}
+
 		Destroy (GameObject.Find (gameOverScreen.name + "(Clone)"));
 
 		// Restart the level from last checkpoint
 		gameStart ();
+	}
+
+	public void levelSelectButtonClicked (List<Button> list ) {
+		int c =  levelSelectObject.getClearedLevels();
+		Destroy (GameObject.Find ("levelSelectSystem"));
+		SceneManager.LoadScene ("_rocketGameLevelSelect", LoadSceneMode.Single);
+		levelSelectObject = GameObject.Find ("levelSelectSystem").GetComponent<RocketGameLevelSelect> ();
+		levelSelectObject.clearLevel (c);
 	}
 	
 	// Update is called once per frame

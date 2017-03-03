@@ -48,6 +48,7 @@ public class RocketPlayerScript : MonoBehaviour {
 	float timer = 0;
 	float blinkingTimer = 0;
 
+	bool initialized = false;
 	// Use this for initialization
 	void Start () {
 
@@ -69,11 +70,12 @@ public class RocketPlayerScript : MonoBehaviour {
 		altitude = system.getStartingAltitude ();
 
 
-
+		initialized = true;
 	}
 	
 	// Called by RocketGameSystemScript.cs once every frame
 	public void updatePlayer () {
+		if (!initialized) { return; }
 		if (playable) {
 			float difference = applyMovement ();
 			applyRotation (difference);
@@ -172,6 +174,7 @@ public class RocketPlayerScript : MonoBehaviour {
 				rot = rot / 1000;
 				spriteTransform.rotation = Quaternion.Euler (0, 0, spriteTransform.rotation.z + rot);
 			}
+
 		}
 		                 
 	}
@@ -197,12 +200,12 @@ public class RocketPlayerScript : MonoBehaviour {
 		if (fuel <= .0f) {
 			if (!falling) {
 				falling = true;
-				emitter.Play ();
+				//emitter.Play ();
 			}
 		} else {
 			if (falling) {
 				falling = false;
-				emitter.Stop ();
+				//emitter.Stop ();
 			}
 		}
 	}
