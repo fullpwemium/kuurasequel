@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RocketGameSystem : MonoBehaviour {
 
-	int clearedLevels = 1;
+	int clearedLevels = 10;
 	int startingLevel = 1;
 
 	// Use this for initialization
