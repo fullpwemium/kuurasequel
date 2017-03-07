@@ -10,7 +10,7 @@ public class RocketPlayerScript : MonoBehaviour {
 	Transform spriteTransform;
 	SpriteRenderer spriteRenderer;
 
-	RocketGameSystemScript system;
+	RocketGameGameplaySystem game;
 	ParticleSystem emitter;
 
 	// Touch position
@@ -23,7 +23,7 @@ public class RocketPlayerScript : MonoBehaviour {
 	bool  damaged;
 
 	bool falling;
-	public float fallSpeed = .00125f;
+	public float fallSpeed = 10.25f;
 	float currentFallSpeed;
 
 	// fuel and fuel consumption
@@ -41,8 +41,8 @@ public class RocketPlayerScript : MonoBehaviour {
 	float speedMax = 0.125f;
 
 	// Positional variables for handling Bob's position on screen and when to trigger game over
-	float playerFlyingPosition = -2.0f;
-	float playerDeathBarrier = -10f;
+	float playerFlyingPosition = -110.0f;
+	float playerDeathBarrier = -560f;
 
 	bool playable = false;
 	float timer = 0;
@@ -61,19 +61,15 @@ public class RocketPlayerScript : MonoBehaviour {
 		damaged = false;
 		currentFallSpeed = .0f;
 
-		system = GameObject.Find ("system").GetComponent<RocketGameSystemScript> ();
-
-		//transform.position = new Vector3 (0, playerFlyingPosition, 0);
-		playerFlyingPosition = -2.0f;
+		game = GameObject.Find ("gameplaySystem").GetComponent<RocketGameGameplaySystem> ();
 
 		fuel = 1.0f;;
-		altitude = system.getStartingAltitude ();
-
+		altitude = game.getStartingAltitude ();
 
 		initialized = true;
 	}
 	
-	// Called by RocketGameSystemScript.cs once every frame
+	// Called by RocketGameGameplaySystem.cs once every frame
 	public void updatePlayer () {
 		if (!initialized) { return; }
 		if (playable) {
@@ -112,14 +108,7 @@ public class RocketPlayerScript : MonoBehaviour {
 		if (Input.GetMouseButton (0) && touching) {
 
 			Vector2 currentMousePosition = Input.mousePosition;
-			float xMovement = lastMousePosition.x - currentMousePosition.x;
-
-			Vector3 objScrPoint = Camera.main.WorldToScreenPoint (transform.position);
-			objScrPoint.x += xMovement;
-
-			objScrPoint = Camera.main.ScreenToWorldPoint (objScrPoint);
-			deltaX = transform.position.x - objScrPoint.x;
-
+			deltaX = -(lastMousePosition.x - currentMousePosition.x);
 
 			lastMousePosition = (Vector2) Input.mousePosition;
 		} else {
@@ -133,20 +122,20 @@ public class RocketPlayerScript : MonoBehaviour {
 
 		float recoverySpeed = 0f;
 		if (!falling) {
-			if (transform.position.y < playerFlyingPosition) {
-				recoverySpeed = (Mathf.Abs (transform.position.y)) / 30;
+			if (transform.localPosition.y < playerFlyingPosition) {
+				recoverySpeed = (Mathf.Abs (transform.localPosition.y)) / 30;
 			}
 		}
 
-		this.transform.position = new Vector3 (
-			Mathf.Clamp ( this.transform.position.x + deltaX, -6f, 6f),
-			Mathf.Clamp ( this.transform.position.y - currentFallSpeed + recoverySpeed, playerDeathBarrier -2f, playerFlyingPosition),
+		this.transform.localPosition = new Vector3 (
+			Mathf.Clamp ( this.transform.localPosition.x + deltaX, -290f, 305f),
+			Mathf.Clamp ( this.transform.localPosition.y - currentFallSpeed + recoverySpeed, playerDeathBarrier -2f, playerFlyingPosition),
 			this.transform.position.z
 		);
 
-		if (this.transform.position.y < playerDeathBarrier ) {
+		if (this.transform.localPosition.y < playerDeathBarrier ) {
 			//that's death
-			system.gameOver();
+			game.gameOver();
 			Destroy (gameObject);;
 		}
 
@@ -155,9 +144,9 @@ public class RocketPlayerScript : MonoBehaviour {
 
 	void applyRotation ( float change ) {
 
-		if (Mathf.Abs (change) > .0f) {
+		if (Mathf.Abs (change) > 0f) {
 			// Replace current rotation if necessary
-			change = Mathf.Clamp (change * -75, -42, 42);
+			change = Mathf.Clamp ((change/80) * -75, -42, 45);
 			if (Mathf.Abs (change) > Mathf.Abs (spriteTransform.rotation.z)) {
 				spriteTransform.rotation = Quaternion.Euler (
 					spriteTransform.rotation.x,
@@ -195,19 +184,25 @@ public class RocketPlayerScript : MonoBehaviour {
 		fuelPenalty = fuelPenalty / 2;
 		fuel = Mathf.Clamp( fuel, 0f, 1f );
 
-		system.updateFuel (fuel);
+		game.updateFuel (fuel);
 
 		if (fuel <= .0f) {
 			if (!falling) {
 				falling = true;
+				emitter.Stop ();
 				//emitter.Play ();
 			}
 		} else {
 			if (falling) {
 				falling = false;
+				emitter.Play ();
 				//emitter.Stop ();
 			}
 		}
+	}
+
+	public void initAltitude(float alt) {
+		altitude = alt;
 	}
 
 	void updateAltitude () {
@@ -231,7 +226,7 @@ public class RocketPlayerScript : MonoBehaviour {
 		speed = Mathf.Clamp (speed + accel, 0, speedMax);
 
 		altitude += speed;
-		system.updateAltitude ( altitude, speed );
+		game.updateAltitude ( altitude, speed );
 	}
 
 	void checkInvul() {
@@ -271,15 +266,21 @@ public class RocketPlayerScript : MonoBehaviour {
 		invulTimer = 1.5f;
 		damagedTimer = 0.4f;
 		damaged = true;
-		system.setDamagedFuelPosition (fuel);
+		game.setDamagedFuelPosition (fuel);
 	}
 
 	void collectFuel ( float refillMultiplier ) {
 		fuelAddition = 0.075f * refillMultiplier; //magic number, don't tell anyone :)
 	}
 
+	void collectCat ( ) {
+		game.markClearedLevel ();
+	}
+
 	void OnTriggerEnter2D ( Collider2D col ) {
-		
+
+		ObjectScript obj = col.gameObject.GetComponent<ObjectScript> ();
+
 		switch (col.gameObject.tag) 
 		{
 		case "cloud": 
@@ -287,12 +288,16 @@ public class RocketPlayerScript : MonoBehaviour {
 			break;
 		case "fuel":
 			collectFuel (0.5f);
-			col.gameObject.GetComponent<ObjectScript> ().collect ();
+			obj.collect ();
 			//col.gameObject.GetComponent<fuelObject>().collect();
+			break;
+		case "Cat":
+			collectCat ();
+			obj.collect ();
 			break;
 		default:
 			Debug.Log ("Unknown object type collided!");
-			col.gameObject.GetComponent<ObjectScript> ().kill ();
+			obj.kill ();
 			break;
 		}
 
