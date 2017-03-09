@@ -9,6 +9,9 @@ public class RocketGameGameOverScript : MonoBehaviour {
 	public Button retryButton;
 	public Button levelSelectButton;
 	public Button exitButton;
+
+	public GameObject gameOverText;
+	GameObject gameOverTextObj;
 	public GameObject gameOverScreen;
 	GameObject gameOverScreenObj;
 
@@ -32,6 +35,9 @@ public class RocketGameGameOverScript : MonoBehaviour {
 	bool buttonsSpawned = false;
 	bool finished = false;
 
+	// timer
+	float timer = 0f;
+
 	// Use this for initialization
 	void Start () {
 		game = gameObject.GetComponent<RocketGameGameplaySystem> ();
@@ -39,6 +45,16 @@ public class RocketGameGameOverScript : MonoBehaviour {
 	}
 
 	void Update () {
+		timer += 0.075f;
+
+		if (gameOverTextObj != null) {
+			gameOverTextObj.transform.eulerAngles = new Vector3 (
+				0,
+				0,
+				Mathf.Sin (timer) * 4
+			);
+		}
+
 		if (finished) {
 			return;
 		}
@@ -70,10 +86,23 @@ public class RocketGameGameOverScript : MonoBehaviour {
 			lbTransform.localPosition = new Vector3 (lbPosition + fade, lbTransform.localPosition.y, lbTransform.localPosition.z);
 			ebTransform.localPosition = new Vector3 (ebPosition - fade, ebTransform.localPosition.y, ebTransform.localPosition.z);
 
+			gameOverTextObj.transform.localPosition = new Vector3 (
+				rbPosition + fade - 15f,
+				gameOverTextObj.transform.localPosition.y,
+				gameOverTextObj.transform.localPosition.z
+			);
+
 			if (fade < 0.2f) {
 				rbTransform.localPosition = new Vector3 (rbPosition, rbTransform.localPosition.y, rbTransform.localPosition.z);
 				lbTransform.localPosition = new Vector3 (lbPosition, lbTransform.localPosition.y, lbTransform.localPosition.z);
 				ebTransform.localPosition = new Vector3 (ebPosition, ebTransform.localPosition.y, ebTransform.localPosition.z);
+
+				gameOverTextObj.transform.localPosition = new Vector3 ( 
+					rbPosition - 15f,
+					gameOverTextObj.transform.localPosition.y,
+					gameOverTextObj.transform.localPosition.z
+				);
+
 				finished = true;
 			}
 		}
@@ -89,11 +118,15 @@ public class RocketGameGameOverScript : MonoBehaviour {
 		fade = 1f;
 		buttonsSpawned = false;
 		finished = false;
+		timer = 0f;
 
 	}
 
 	void spawnButtons () {
-		
+
+		gameOverTextObj = Instantiate (gameOverText);
+		gameOverTextObj.transform.SetParent (UICanvas, false);
+
 		List<Button> butList = new List<Button> ();
 
 		Button rButton = (Button)Instantiate (retryButton);
@@ -117,7 +150,7 @@ public class RocketGameGameOverScript : MonoBehaviour {
 		// Create retry button through a delegate function
 		rButton.onClick.AddListener ( delegate { this.retryButtonClicked (butList); } );
 		// Same for level select
-		lButton.onClick.AddListener ( delegate { this.levelSelectButtonClicked (butList); } );
+		lButton.onClick.AddListener ( delegate { this.levelSelectButtonClicked (); } );
 		// Same for exit button
 		eButton.onClick.AddListener ( delegate { this.exit (); } );
 		buttonsSpawned = true;
@@ -129,13 +162,14 @@ public class RocketGameGameOverScript : MonoBehaviour {
 			Destroy (but.gameObject);
 		}
 
-		Destroy (GameObject.Find (gameOverScreen.name + "(Clone)"));
+		Destroy (gameOverTextObj);
+		Destroy (gameOverScreenObj);
 
 		// Restart the level from last checkpoint
 		game.retry ();
 	}
 
-	public void levelSelectButtonClicked (List<Button> list ) {
+	public void levelSelectButtonClicked ( ) {
 		game.gotoLevelSelect ();
 	}
 

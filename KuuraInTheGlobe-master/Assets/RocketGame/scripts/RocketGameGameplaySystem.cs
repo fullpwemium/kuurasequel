@@ -49,6 +49,9 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	// Game Over
 	RocketGameGameOverScript GO;
 
+	int guaranteedFuelDrop = 0;
+	float fuelWarnTimer = 0f;
+	SpriteRenderer fuelMeterFG;
 
 	// Use this for initialization
 	void Start () {
@@ -72,6 +75,8 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		altitudeMeter = GameObject.Find ("MainCanvas/altitudeMeter/currentAltitude").GetComponent<Transform> ();
 		altitudeMeterText = GameObject.Find ("MainCanvas/altitudeMeter/text/altitude").GetComponent<Text> ();
 		speedoMeterText = GameObject.Find ("MainCanvas/altitudeMeter/text/speed").GetComponent<Text> ();
+
+		fuelMeterFG = GameObject.Find ("MainCanvas/fuelMeter/fg_graphic").GetComponent<SpriteRenderer> ();
 
 		//Init spawnable list
 		spawnedObjects = new List<ObjectScript> ();
@@ -153,6 +158,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		playing = false;
 		loadLevel (system.getStartingLevel());
 		countdown.init();
+		guaranteedFuelDrop = 0;
 	}
 
 	public void gameOver() {
@@ -197,24 +203,38 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 			int objID = Random.Range (0, spawnProbabilities.Count-1);
 			objID = spawnProbabilities [objID];
 
-			ObjectScript obj = Instantiate (
-				spawnableObjects [objID],
-				new Vector3 (Random.Range (-240f, 240f), 300, 30),
-				Quaternion.identity
-			).GetComponent<ObjectScript> ();
-			spawnedObjects.Add (obj);
-			obj.gameObject.transform.SetParent (MainCanvas, false);
-			timer = Random.Range (level.spawnMin, level.spawnMax);
+			if(objID != 1) {// fuel
+				if (guaranteedFuelDrop >= 3) {
+					spawnObject (1);	
+					guaranteedFuelDrop = 0;
+				} else {
+					guaranteedFuelDrop++;
+				}
+			} 
+
+			spawnObject (objID);
 		}
+	}
+
+	void spawnObject(int objID ) {
+		ObjectScript obj = Instantiate (
+			spawnableObjects [objID],
+			new Vector3 (Random.Range (-240f, 240f), 500, 30),
+			Quaternion.identity
+		).GetComponent<ObjectScript> ();
+		spawnedObjects.Add (obj);
+		obj.gameObject.transform.SetParent (MainCanvas, false);
+		timer = Random.Range (level.spawnMin, level.spawnMax);
 	}
 
 	void spawnCat () {
 		ObjectScript cat = Instantiate (
 			                   catObject,
-			                   new Vector3 (Random.Range (-6f, 6f), 7, 30),
+			                   new Vector3 (Random.Range (-240f, 240f), 500, 30),
 			                   Quaternion.identity
 		                   ).GetComponent<ObjectScript> ();
 		spawnedObjects.Add (cat);
+		cat.gameObject.transform.SetParent (MainCanvas, false);
 	}
 
 	void updateSpawnedObjects() {
@@ -259,6 +279,13 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	}
 
 	public void updateFuel ( float current ) {
+
+		if (current < 0.11f) {
+			fuelWarning ();
+		} else {
+			fuelWarnTimer = 0f;
+		}
+
 		fuelMeter.localScale = new Vector3 (1, current, 1);
 
 		if (damagedFuelMeter.localScale.y > 0f) {
@@ -274,6 +301,12 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 				damagedFuelDecrement -= 0.05f;
 			}
 		}
+	}
+
+	void fuelWarning () {
+		fuelWarnTimer += 0.2f;
+		float blink = (Mathf.Sin ((fuelWarnTimer) * Mathf.PI / 2) + 1) / 4;
+		fuelMeterFG.color = new Color (1.0f, 0.5f+blink, 0.5f+blink, 1f);
 	}
 
 	public void setDamagedFuelPosition ( float current ) {

@@ -7,7 +7,7 @@ public class RocketGameLevelSelectPlayerObject : MonoBehaviour {
 	float timer;
 	Transform spriteTransform;
 
-	float playerFlyingPosition = -224.5f;
+	float playerFlyingPosition = -50f;
 
 	// Use this for initialization
 	void Start () {
@@ -20,12 +20,12 @@ public class RocketGameLevelSelectPlayerObject : MonoBehaviour {
 
 		float recoverySpeed = 0f;
 		if (transform.localPosition.y < playerFlyingPosition) {
-			recoverySpeed = (Mathf.Abs (transform.localPosition.y)) / 900;
+			recoverySpeed = (Mathf.Abs (transform.localPosition.y)) / 10;
 		}
 
 		this.transform.localPosition = new Vector3 (
 			this.transform.localPosition.x,
-			Mathf.Clamp ( this.transform.localPosition.y + recoverySpeed, -240f, playerFlyingPosition),
+			Mathf.Clamp ( this.transform.localPosition.y + recoverySpeed, -600f, playerFlyingPosition),
 			this.transform.localPosition.z
 		);
 
