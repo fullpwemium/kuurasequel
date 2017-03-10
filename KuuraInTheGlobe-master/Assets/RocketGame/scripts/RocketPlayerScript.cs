@@ -84,7 +84,14 @@ public class RocketPlayerScript : MonoBehaviour {
 	public void togglePlayable () {
 		playable = !playable;
 	}
-		
+
+	public void pause(bool toggle) {
+		if (toggle) {
+			emitter.Pause ();
+		} else {
+			emitter.Play ();
+		}
+	}
 
 	float applyMovement () {
 

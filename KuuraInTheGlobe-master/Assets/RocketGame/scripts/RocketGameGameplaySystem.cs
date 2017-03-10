@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class RocketGameGameplaySystem : MonoBehaviour {
 
 	public GameObject playerPrefab;
+	public GameObject PauseScreen;
+	public GameObject PauseButton;
 
 	Transform fuelMeter;
 	Transform damagedFuelMeter;
 	Transform altitudeMeter;
 
 	Text altitudeMeterText;
-	Text speedoMeterText;
+	Transform speedoMeter;
 
 	Transform MainCanvas;
+
 
 	// Timer for spawning obstacles
 	float timer;
@@ -53,6 +57,9 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	float fuelWarnTimer = 0f;
 	SpriteRenderer fuelMeterFG;
 
+	bool canPause = false;
+	public bool paused = false;
+
 	// Use this for initialization
 	void Start () {
 
@@ -70,22 +77,48 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		currentLevel = system.getStartingLevel ();
 
 		// Get HUD objects
-		fuelMeter = GameObject.Find ("MainCanvas/fuelMeter/currentFuel").GetComponent<Transform> ();
-		damagedFuelMeter = GameObject.Find ("MainCanvas/fuelMeter/damagedFuel").GetComponent<Transform> ();
-		altitudeMeter = GameObject.Find ("MainCanvas/altitudeMeter/currentAltitude").GetComponent<Transform> ();
-		altitudeMeterText = GameObject.Find ("MainCanvas/altitudeMeter/text/altitude").GetComponent<Text> ();
-		speedoMeterText = GameObject.Find ("MainCanvas/altitudeMeter/text/speed").GetComponent<Text> ();
+		fuelMeter = GameObject.Find ("UICanvas/fuelMeter/currentFuel").GetComponent<Transform> ();
+		damagedFuelMeter = GameObject.Find ("UICanvas/fuelMeter/damagedFuel").GetComponent<Transform> ();
+		altitudeMeter = GameObject.Find ("UICanvas/altitudeMeter/currentAltitude").GetComponent<Transform> ();
+		altitudeMeterText = GameObject.Find ("UICanvas/altitudeMeter/textObjects/text/altitude").GetComponent<Text> ();
+		speedoMeter = GameObject.Find ("UICanvas/altitudeMeter/textObjects/arrow").GetComponent<Transform> ();
 
-		fuelMeterFG = GameObject.Find ("MainCanvas/fuelMeter/fg_graphic").GetComponent<SpriteRenderer> ();
+		fuelMeterFG = GameObject.Find ("UICanvas/fuelMeter/fg_graphic").GetComponent<SpriteRenderer> ();
+
+		unpause ();
 
 		//Init spawnable list
 		spawnedObjects = new List<ObjectScript> ();
 
 		MainCanvas = GameObject.Find ("MainCanvas").GetComponent<Transform> ();
-
 		// START
 		gameStart ();
 
+	}
+
+	void pauseGame() {
+		if (canPause && !paused) {
+			paused = !paused; //flip the boolean
+			player.pause (paused);
+			Destroy (GameObject.Find ("UICanvas/fuelMeter/rg_pause(Clone)"));
+			GameObject obj = Instantiate (PauseScreen);
+			obj.transform.SetParent (GameObject.Find("GameOverCanvas").GetComponent<Transform>(), false);
+		}
+
+		// Release the button so it does not appear "held"
+		EventSystem.current.SetSelectedGameObject (null);
+	}
+
+	public void unpause() {
+		EventSystem.current.SetSelectedGameObject (null);
+		Transform pauseButCanvas = GameObject.Find ("UICanvas/fuelMeter").GetComponent<Transform> ();
+		GameObject obj = Instantiate (PauseButton);
+		obj.GetComponent<Button> ().onClick.AddListener ( delegate { this.pauseGame(); } );
+		obj.transform.SetParent ( pauseButCanvas, false );
+		if (player != null) {
+			player.pause (false);
+		}
+		paused = false;
 	}
 
 	//float to int, or more accurately take a decimal percentage and turn it into integer percentage
@@ -159,6 +192,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		loadLevel (system.getStartingLevel());
 		countdown.init();
 		guaranteedFuelDrop = 0;
+		updateFuel (1f);
 	}
 
 	public void gameOver() {
@@ -183,13 +217,20 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (paused) {
+			return;
+		}
+
 		if (!playing) {
 			playing = countdown.checkIfFinished ();
 		} else {
 			if (!isGameOver) {
+				canPause = true;
 				player.updatePlayer ();
 				checkSpawn ();
 				updateSpawnedObjects ();
+			} else {
+				canPause = false;
 			}
 		}
 	}
@@ -272,10 +313,9 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		}
 		float scl = (current-level.startAltitude) / (level.targetAltitude-level.startAltitude);
 
-
 		altitudeMeter.localScale = new Vector3 (1, Mathf.Clamp (scl, 0, 1), 1);
 		altitudeMeterText.text = Mathf.Floor (current) + "m";
-		speedoMeterText.text = Mathf.Clamp ( speed, 0, 10 ) + "m/s";
+		speedoMeter.eulerAngles = new Vector3 ( 0, 0, speed/0.125f * 90 );
 	}
 
 	public void updateFuel ( float current ) {
@@ -283,6 +323,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		if (current < 0.11f) {
 			fuelWarning ();
 		} else {
+			fuelMeterFG.color = new Color (1.0f, 1.0f, 1.0f, 1f);
 			fuelWarnTimer = 0f;
 		}
 

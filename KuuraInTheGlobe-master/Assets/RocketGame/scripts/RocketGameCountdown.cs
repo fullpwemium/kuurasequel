@@ -39,6 +39,11 @@ public class RocketGameCountdown : MonoBehaviour {
 	}
 
 	void Update ()  {
+
+		if (game.paused) {
+			return;
+		}
+
 		if (!playing) {
 			return;
 		}
