@@ -9,8 +9,12 @@ public class RocketGameLevelSelect : MonoBehaviour {
 	public GameObject systemPrefab;
 	RocketGameSystem system;
 	Transform levelSelectText;
+	RocketGameLevelSelectPlayerObject player;
 
 	float timer;
+	float startTimer = 1f;
+	bool clicked = false;
+	bool countdown = false;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +25,8 @@ public class RocketGameLevelSelect : MonoBehaviour {
 		} else {
 			system = GameObject.Find ("rocketGameSystem").GetComponent<RocketGameSystem> ();
 		}
+
+		player = GameObject.Find ("MainCanvas/playerObject_levelSelect").GetComponent<RocketGameLevelSelectPlayerObject> ();
 
 		levelSelectText = GameObject.Find ("MainCanvas/level_select_text").transform;
 			
@@ -51,13 +57,30 @@ public class RocketGameLevelSelect : MonoBehaviour {
 	void Update () {
 		timer += 0.075f;
 		levelSelectText.eulerAngles = new Vector3 (0, 0, Mathf.Sin (timer)*4);
+
+		if (!clicked) { return; }
+		if (!countdown) {
+			if (player.transform.localPosition.y > 400f) {
+				countdown = true;
+			}
+		} else {
+			startTimer -= Time.fixedDeltaTime;
+			if (startTimer < 0f) {
+				SceneManager.LoadScene ("_rocketGame-Gameplay", LoadSceneMode.Single);
+			}
+		}
 	}
 
 	void levelButtonClicked ( int level ) {
-		Debug.Log (level);
+		if (clicked) {
+			return;
+		}
 		system.setStartingLevel (level);
-		SceneManager.LoadScene ("_rocketGame-Gameplay", LoadSceneMode.Single);
+		//SceneManager.LoadScene ("_rocketGame-Gameplay", LoadSceneMode.Single);
+		player.playerFlyingPosition = 5000f;
+		clicked = true;
 	}
+
 
 	void exitMinigame ( ) {
 		system.exit ();

@@ -23,11 +23,14 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 	// Timer for spawning obstacles
 	float timer;
+	float backgroundObjectTimer = 0f;
 
 	//Spawnable and spawned objects list
 	List<int> spawnProbabilities;
 	List<ObjectScript> spawnedObjects;
+	List<ObjectScript> spawnedBackgroundObjects;
 	public List<GameObject> spawnableObjects;
+	public List<GameObject> backgroundObjects;
 	public GameObject catObject;
 
 	// Player game object we instantiate at startup
@@ -53,12 +56,18 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	// Game Over
 	RocketGameGameOverScript GO;
 
+	// Fuel related variables
 	int guaranteedFuelDrop = 0;
-	float fuelWarnTimer = 0f;
-	SpriteRenderer fuelMeterFG;
+	float fuelWarnTimer = 0f; // Timer that handles the red flashing of the fuel bar when it gets too low
+	SpriteRenderer fuelMeterFG; 
 
+	// Pausing variables for the pause screen implementation
 	bool canPause = false;
 	public bool paused = false;
+
+	// Background object's renderer
+	Image bg;
+	Transform bgCanvas;
 
 	// Use this for initialization
 	void Start () {
@@ -82,15 +91,18 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		altitudeMeter = GameObject.Find ("UICanvas/altitudeMeter/currentAltitude").GetComponent<Transform> ();
 		altitudeMeterText = GameObject.Find ("UICanvas/altitudeMeter/textObjects/text/altitude").GetComponent<Text> ();
 		speedoMeter = GameObject.Find ("UICanvas/altitudeMeter/textObjects/arrow").GetComponent<Transform> ();
-
 		fuelMeterFG = GameObject.Find ("UICanvas/fuelMeter/fg_graphic").GetComponent<SpriteRenderer> ();
+
+		bg = GameObject.Find ("BG_Canvas/BG").GetComponent<Image> ();
 
 		unpause ();
 
 		//Init spawnable list
 		spawnedObjects = new List<ObjectScript> ();
+		spawnedBackgroundObjects = new List<ObjectScript> ();
 
 		MainCanvas = GameObject.Find ("MainCanvas").GetComponent<Transform> ();
+		bgCanvas = GameObject.Find ("BG_Canvas").GetComponent<Transform> ();
 		// START
 		gameStart ();
 
@@ -222,6 +234,8 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		}
 
 		if (!playing) {
+			updateAltitude (level.startAltitude, 0f);
+			//updateBackgroundColor (0f);
 			playing = countdown.checkIfFinished ();
 		} else {
 			if (!isGameOver) {
@@ -255,6 +269,13 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 			spawnObject (objID);
 		}
+
+		// Check random bg object spawn
+		backgroundObjectTimer -= Time.fixedDeltaTime;
+		if (backgroundObjectTimer  <= 0f) {
+			backgroundObjectTimer =  Random.Range (0.4f, 2.0f);
+			spawnBackgroundObject ();
+		}
 	}
 
 	void spawnObject(int objID ) {
@@ -268,6 +289,22 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		timer = Random.Range (level.spawnMin, level.spawnMax);
 	}
 
+	int RandomSign()  {
+		return Random.value < .5 ? 1 : -1;
+	}
+
+	void spawnBackgroundObject () {
+		ObjectScript obj = Instantiate (
+			backgroundObjects [Random.Range(0, backgroundObjects.Count-1)],
+			new Vector3 (Random.Range (-240f, 240f), 500, 30),
+			Quaternion.identity
+		).GetComponent<ObjectScript> ();
+		spawnedBackgroundObjects.Add (obj);
+		obj.gameObject.transform.SetParent (bgCanvas, false);
+		float randSize = Random.Range (obj.gameObject.transform.localScale.x, obj.gameObject.transform.localScale.x * 2.4f);
+		obj.gameObject.transform.localScale = new Vector3 (randSize * RandomSign(), randSize, 1f); 
+	}
+
 	void spawnCat () {
 		ObjectScript cat = Instantiate (
 			                   catObject,
@@ -279,11 +316,20 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	}
 
 	void updateSpawnedObjects() {
+		// Game items
 		for (int i = spawnedObjects.Count -1; i >= 0; i--) {
 			spawnedObjects[i].move ();
 			if (spawnedObjects[i].setToDestroy) {
 				Destroy (spawnedObjects [i].gameObject);
 				spawnedObjects.RemoveAt (i);
+			}
+		}
+		// BG objs
+		for (int i = spawnedBackgroundObjects.Count - 1; i >= 0; i--) {
+			spawnedBackgroundObjects[i].move ();
+			if (spawnedBackgroundObjects[i].setToDestroy) {
+				Destroy (spawnedBackgroundObjects [i].gameObject);
+				spawnedBackgroundObjects.RemoveAt (i);
 			}
 		}
 	}
@@ -292,6 +338,11 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		while (spawnedObjects.Count > 0) {
 			Destroy (spawnedObjects [0].gameObject);
 			spawnedObjects.RemoveAt (0);
+		}
+
+		while (spawnedBackgroundObjects.Count > 0) {
+			Destroy (spawnedBackgroundObjects [0].gameObject);
+			spawnedBackgroundObjects.RemoveAt (0);
 		}
 	}
 
@@ -303,7 +354,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	public float getStartingAltitude() {
 		return level.startAltitude;
 	}
-
+		
 	public void updateAltitude ( float current, float speed ) {
 		if (current >= level.targetAltitude) {
 			//Debug.Log (current + " : " + level.targetAltitude);
@@ -312,10 +363,77 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 			return;
 		}
 		float scl = (current-level.startAltitude) / (level.targetAltitude-level.startAltitude);
-
 		altitudeMeter.localScale = new Vector3 (1, Mathf.Clamp (scl, 0, 1), 1);
-		altitudeMeterText.text = Mathf.Floor (current) + "m";
-		speedoMeter.eulerAngles = new Vector3 ( 0, 0, speed/0.125f * 90 );
+		updateBackgroundColor ( scl );
+		updateAltitudeText (current);
+		updateSpeedoMeter (speed);
+	}
+
+	float currentAltitudeValue = -1f;
+	float altText_spd = 11.125f;
+	void updateAltitudeText ( float current ) {
+		if (!playing) {
+			if (currentAltitudeValue != current) {
+				altText_spd += current / 60;
+				Vector2 v = Vector2.MoveTowards (new Vector2 (currentAltitudeValue, 0), new Vector2 (current, 0), altText_spd);
+				altitudeMeterText.text = Mathf.Floor (Mathf.Floor (v.x)) + "m";
+				if (v.x == current) {
+					altText_spd = 0f;
+					currentAltitudeValue = current;
+				}
+			} else {
+				if (altText_spd < Mathf.PI) {
+					altText_spd += Time.fixedDeltaTime * 10;
+					altitudeMeterText.transform.localPosition = new Vector3 (-6.27f, 2.25f + Mathf.Sin (altText_spd)/18f, 1.8f);
+				} else {
+					altitudeMeterText.transform.localPosition = new Vector3 (-6.27f, 2.25f, 1.8f);
+				}
+			}
+		} else {
+			altitudeMeterText.text = Mathf.Floor (current) + "m";
+		}
+	}
+
+	const float H_Const = 255f / 359f;
+	const float S_Const = 119f / 255f;
+	const float V_Const = 174f / 255f;
+	void updateBackgroundColor ( float levelProgress ) {
+		levelProgress = ((float)currentLevel / 10f) -0.1f + (levelProgress/100f); //levelProgress;
+
+		// Apparently RGBToHSV uses pass-by-reference to get around multiple return values
+		// and/or not having to make a HSV construct or class. Sneaky sneak, Unity team.
+		float aH, aS, aV;
+		Color col = bg.color;
+		Color.RGBToHSV (col, out aH, out aS, out aV);
+
+		Vector2 v = new Vector2 ( aS, aV );
+		Vector2 t = new Vector2 ( S_Const * levelProgress, 1f - V_Const * levelProgress);
+		// x == S => S_Const * levelProgress;
+		// y == V => 1f - V_Const * levelProgress;
+
+		// Seek darker skies over time
+		v = Vector2.MoveTowards (v, t, Time.fixedDeltaTime);
+
+		Color finalCol = Color.HSVToRGB (H_Const, v.x, v.y );;
+		bg.color = finalCol;
+
+		for ( int i = spawnedBackgroundObjects.Count -1; i >= 0; i--) {
+			SpriteRenderer r = spawnedBackgroundObjects[i].transform.FindChild("graphic").GetComponent<SpriteRenderer>();
+			r.color = finalCol;
+		}
+	}
+
+	float speedoMeterBouncer;
+	float speedoMeterVariance;
+	void updateSpeedoMeter ( float speed ) {
+		speed = speed / 0.125f;
+		if (Mathf.Floor (speed) == 1) {
+			speedoMeterBouncer += 0.075f;
+			speedoMeter.eulerAngles = new Vector3 ( 0, 0, speed * 90 - Mathf.Sin(speedoMeterBouncer)*2  );
+		} else {
+			speedoMeterBouncer = 0f;
+			speedoMeter.eulerAngles = new Vector3 ( 0, 0, speed * 90  );
+		}
 	}
 
 	public void updateFuel ( float current ) {
