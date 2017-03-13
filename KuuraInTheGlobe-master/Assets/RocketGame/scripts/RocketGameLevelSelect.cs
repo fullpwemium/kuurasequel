@@ -22,6 +22,7 @@ public class RocketGameLevelSelect : MonoBehaviour {
 		// Fetch system object
 		if (!GameObject.Find ("rocketGameSystem")) {
 			system = GameObject.Instantiate (systemPrefab).GetComponent<RocketGameSystem> ();
+			system.init ();
 		} else {
 			system = GameObject.Find ("rocketGameSystem").GetComponent<RocketGameSystem> ();
 		}
@@ -34,12 +35,13 @@ public class RocketGameLevelSelect : MonoBehaviour {
 	}
 
 	void setButtonEventListeners() {
-		// First level button is always visible by default!
-		GameObject.Find("MainCanvas/level1").GetComponent<Button>().onClick.AddListener ( delegate { this.levelButtonClicked (1); } );
 
-		for (int i = 2; i < 11; i++) {
-			addDelegateOrRemove (i); // Must escape for loop scope, otherwise every button will act like it's the 10th level button
+		// Add event listeners to buttons
+		for (int i = 1; i < 11; i++) {
+			addDelegateOrRemove (i); // Must escape for loop scope, otherwise every button will act like it's the 10th level button!
+									 // This is because variables are passed by value by default in C#, and not by reference.
 		}
+
 		// Exit button
 		GameObject.Find("MainCanvas/exit").GetComponent<Button>().onClick.AddListener ( delegate { this.exitMinigame(); } );
 	}
@@ -49,6 +51,9 @@ public class RocketGameLevelSelect : MonoBehaviour {
 			GameObject.Find ("MainCanvas/level"+(i)).GetComponent<Button> ().onClick.AddListener (delegate {
 				this.levelButtonClicked (i);
 			});
+			if (!system.isCatCollected(i)) {
+				Destroy (GameObject.Find ("MainCanvas/level" + (i) + "/cat_l" + (i)));
+			}
 		} else {
 			Destroy (GameObject.Find ("MainCanvas/level" +(i)));
 		}

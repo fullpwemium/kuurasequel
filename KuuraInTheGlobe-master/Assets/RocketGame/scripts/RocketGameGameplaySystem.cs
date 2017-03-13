@@ -75,6 +75,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		// Fetch system object
 		if (!GameObject.Find ("rocketGameSystem")) {
 			system = GameObject.Instantiate (systemPrefab).GetComponent<RocketGameSystem> ();
+			system.init ();
 		} else {
 			system = GameObject.Find ("rocketGameSystem").GetComponent<RocketGameSystem> ();
 		}
@@ -103,6 +104,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 		MainCanvas = GameObject.Find ("MainCanvas").GetComponent<Transform> ();
 		bgCanvas = GameObject.Find ("BG_Canvas").GetComponent<Transform> ();
+
 		// START
 		gameStart ();
 
@@ -173,29 +175,33 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	}
 
 	void gotoNextLevel () {
+		if (!system.isCatCollected (currentLevel)) {
+			spawnCat (currentLevel);
+		}
+
 		if (currentLevel <= 10) {
 			currentLevel += 1;
 		}
-		//system.clearLevel (currentLevel);
+
+		system.clearLevel (currentLevel);
 		if (currentLevel < 11) {
 			loadLevel (currentLevel);
 		} else {
 			Debug.Log ("You are winrar");
 		}
-		spawnCat ();
 	}
 
 	public int getStartingLevel () {
 		return system.getStartingLevel ();
 	}
 
-	public void markClearedLevel () {
-		system.clearLevel (currentLevel);
-		Debug.Log ("Marked check point: " + currentLevel);
+	public void markCatCollected ( ObjectScript cat ) {
+		system.collectCat ( cat.getCatLevel() );
 	}
 
 	public void gameStart() {
 		destroyObjects ();
+		randomizeBackgroundObjects ();
 		player = Instantiate (playerPrefab, new Vector3 (0, -340, 0), Quaternion.identity).GetComponent<RocketPlayerScript> ();
 		player.transform.SetParent (MainCanvas, false);
 		player.togglePlayable ();
@@ -274,45 +280,62 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		backgroundObjectTimer -= Time.fixedDeltaTime;
 		if (backgroundObjectTimer  <= 0f) {
 			backgroundObjectTimer =  Random.Range (0.4f, 2.0f);
-			spawnBackgroundObject ();
+			spawnBackgroundObject (500f);
 		}
-	}
-
-	void spawnObject(int objID ) {
-		ObjectScript obj = Instantiate (
-			spawnableObjects [objID],
-			new Vector3 (Random.Range (-240f, 240f), 500, 30),
-			Quaternion.identity
-		).GetComponent<ObjectScript> ();
-		spawnedObjects.Add (obj);
-		obj.gameObject.transform.SetParent (MainCanvas, false);
-		timer = Random.Range (level.spawnMin, level.spawnMax);
 	}
 
 	int RandomSign()  {
 		return Random.value < .5 ? 1 : -1;
 	}
 
-	void spawnBackgroundObject () {
+	void spawnObject(int objID ) {
+		ObjectScript obj = Instantiate (
+			spawnableObjects [objID],
+			new Vector3 (Random.Range (-240f, 240f), 500, Random.Range(33, 99)),
+			Quaternion.identity
+		).GetComponent<ObjectScript> ();
+		spawnedObjects.Add (obj);
+		obj.gameObject.transform.SetParent (MainCanvas, false);
+		timer = Random.Range (level.spawnMin, level.spawnMax);
+
+		// Randomize object's size
+		float randSize = Random.Range (obj.gameObject.transform.localScale.x * 0.8f, obj.gameObject.transform.localScale.x * 1.2f);
+		obj.gameObject.transform.localScale = new Vector3 (randSize * RandomSign(), randSize, 1f); 
+	}
+
+	void randomizeBackgroundObjects() {
+		for (int i = -280; i < 400; i += 10) {
+			// Magic schmagick numbers
+			if (Random.Range (0, 1001) >= 900) {
+				spawnBackgroundObject ((float)i);
+			}
+		}
+	}
+
+	void spawnBackgroundObject (float yPos) {
 		ObjectScript obj = Instantiate (
 			backgroundObjects [Random.Range(0, backgroundObjects.Count-1)],
-			new Vector3 (Random.Range (-240f, 240f), 500, 30),
+			new Vector3 (Random.Range (-240f, 240f), yPos, Random.Range(33,99)),
 			Quaternion.identity
 		).GetComponent<ObjectScript> ();
 		spawnedBackgroundObjects.Add (obj);
 		obj.gameObject.transform.SetParent (bgCanvas, false);
+
+		// Randomize background object's size
 		float randSize = Random.Range (obj.gameObject.transform.localScale.x, obj.gameObject.transform.localScale.x * 2.4f);
 		obj.gameObject.transform.localScale = new Vector3 (randSize * RandomSign(), randSize, 1f); 
 	}
 
-	void spawnCat () {
+	void spawnCat ( int level ) {
 		ObjectScript cat = Instantiate (
 			                   catObject,
-			                   new Vector3 (Random.Range (-240f, 240f), 500, 30),
+			                   new Vector3 (Random.Range (-240f, 240f), 500, 100),
 			                   Quaternion.identity
 		                   ).GetComponent<ObjectScript> ();
 		spawnedObjects.Add (cat);
 		cat.gameObject.transform.SetParent (MainCanvas, false);
+
+		cat.markCat (level);
 	}
 
 	void updateSpawnedObjects() {
@@ -359,7 +382,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		if (current >= level.targetAltitude) {
 			//Debug.Log (current + " : " + level.targetAltitude);
 			gotoNextLevel ();
-			Debug.Log (level.startAltitude);
+			//Debug.Log (level.startAltitude);
 			return;
 		}
 		float scl = (current-level.startAltitude) / (level.targetAltitude-level.startAltitude);
@@ -382,11 +405,13 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 					currentAltitudeValue = current;
 				}
 			} else {
-				if (altText_spd < Mathf.PI) {
-					altText_spd += Time.fixedDeltaTime * 10;
-					altitudeMeterText.transform.localPosition = new Vector3 (-6.27f, 2.25f + Mathf.Sin (altText_spd)/18f, 1.8f);
-				} else {
-					altitudeMeterText.transform.localPosition = new Vector3 (-6.27f, 2.25f, 1.8f);
+				if (currentAltitudeValue != 0f) {
+					if (altText_spd < Mathf.PI) {
+						altText_spd += Time.fixedDeltaTime * 10;
+						altitudeMeterText.transform.localPosition = new Vector3 (-6.27f, 2.25f + Mathf.Sin (altText_spd) / 18f, 1.8f);
+					} else {
+						altitudeMeterText.transform.localPosition = new Vector3 (-6.27f, 2.25f, 1.8f);
+					}
 				}
 			}
 		} else {

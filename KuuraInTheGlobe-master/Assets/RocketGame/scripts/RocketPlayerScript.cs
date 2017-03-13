@@ -95,7 +95,7 @@ public class RocketPlayerScript : MonoBehaviour {
 
 	float applyMovement () {
 
-		if (falling) {
+		if (falling || damaged ) {
 			currentFallSpeed += fallSpeed * 0.25f;
 		} else {
 			if (currentFallSpeed > 0) {
@@ -128,9 +128,9 @@ public class RocketPlayerScript : MonoBehaviour {
 		}
 
 		float recoverySpeed = 0f;
-		if (!falling) {
+		if (!falling && !damaged) {
 			if (transform.localPosition.y < playerFlyingPosition) {
-				recoverySpeed = (Mathf.Abs (transform.localPosition.y)) / 30;
+				recoverySpeed = (Mathf.Abs (transform.localPosition.y)) / 60;
 			}
 		}
 
@@ -288,8 +288,8 @@ public class RocketPlayerScript : MonoBehaviour {
 		fuelAddition = 0.075f * refillMultiplier; //magic number, don't tell anyone :)
 	}
 
-	void collectCat ( ) {
-		game.markClearedLevel ();
+	void collectCat ( ObjectScript cat ) {
+		game.markCatCollected ( cat );
 	}
 
 	void OnTriggerEnter2D ( Collider2D col ) {
@@ -307,8 +307,8 @@ public class RocketPlayerScript : MonoBehaviour {
 			//col.gameObject.GetComponent<fuelObject>().collect();
 			break;
 		case "Cat":
-			collectCat ();
-			obj.collect ();
+			collectCat ( obj  );
+			obj.collect ( );
 			break;
 		default:
 			Debug.Log ("Unknown object type collided!");
