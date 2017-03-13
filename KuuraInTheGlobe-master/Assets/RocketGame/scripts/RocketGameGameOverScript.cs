@@ -41,7 +41,7 @@ public class RocketGameGameOverScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		game = gameObject.GetComponent<RocketGameGameplaySystem> ();
-		UICanvas = GameObject.Find ("UICanvas").GetComponent<Transform> ();
+		UICanvas = GameObject.Find ("GameOverCanvas").GetComponent<Transform> ();
 	}
 
 	void Update () {

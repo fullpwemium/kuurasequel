@@ -45,7 +45,7 @@ public class RocketPlayerScript : MonoBehaviour {
 	float playerDeathBarrier = -560f;
 
 	bool playable = false;
-	float timer = 0;
+	float timer = 0f;
 	float blinkingTimer = 0;
 
 	bool initialized = false;
@@ -84,7 +84,14 @@ public class RocketPlayerScript : MonoBehaviour {
 	public void togglePlayable () {
 		playable = !playable;
 	}
-		
+
+	public void pause(bool toggle) {
+		if (toggle) {
+			emitter.Pause ();
+		} else {
+			emitter.Play ();
+		}
+	}
 
 	float applyMovement () {
 
@@ -148,20 +155,21 @@ public class RocketPlayerScript : MonoBehaviour {
 			// Replace current rotation if necessary
 			change = Mathf.Clamp ((change/80) * -75, -42, 45);
 			if (Mathf.Abs (change) > Mathf.Abs (spriteTransform.rotation.z)) {
-				spriteTransform.rotation = Quaternion.Euler (
-					spriteTransform.rotation.x,
-					spriteTransform.rotation.y,
+				spriteTransform.eulerAngles = new Vector3 (
+					0,
+					0,
 					change
 				);
 			}
 			return;
 		} else {
 			// Seek upright position over time
+			//  Mathf.Sin (timer+(Mathf.PI/2)) * 2)
 			if (Mathf.Abs (spriteTransform.rotation.z) > .0f) {
 				float rot = spriteTransform.rotation.z;
 				rot = spriteTransform.rotation.z + spriteTransform.rotation.z / (-spriteTransform.rotation.z) * 0.1f;
 				rot = rot / 1000;
-				spriteTransform.rotation = Quaternion.Euler (0, 0, spriteTransform.rotation.z + rot);
+				spriteTransform.eulerAngles = new Vector3 (0, 0, spriteTransform.rotation.z + rot);
 			}
 
 		}
@@ -205,25 +213,32 @@ public class RocketPlayerScript : MonoBehaviour {
 		altitude = alt;
 	}
 
+	float accel = 0f;
 	void updateAltitude () {
 
-		float accel = 0f;
+		//float accel = 0f;
 		if (!damaged) {
 			if (!falling) {
-				accel = speedAcceleration;
+				accel += speedAcceleration / 2;
 			} else {
-				accel = -speedAcceleration;
+				if (accel > 0) {
+					accel = 0f;
+				}
+				accel += -speedAcceleration / 4;
 			}
 		} else {
-			accel = -speedAcceleration * 2;
+			if (accel > 0) {
+				accel = 0f;
+			}
+			accel += -speedAcceleration / 5;
 		}
 
 		if (!falling) {
 			sineWaveGraphic (); // do this before doing the invul check so that player shakes real good
 		}
 
-
-		speed = Mathf.Clamp (speed + accel, 0, speedMax);
+		speed += accel;
+		speed = Mathf.Clamp (speed, 0, speedMax);
 
 		altitude += speed;
 		game.updateAltitude ( altitude, speed );

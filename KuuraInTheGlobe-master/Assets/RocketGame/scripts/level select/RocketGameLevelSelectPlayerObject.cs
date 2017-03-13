@@ -7,20 +7,26 @@ public class RocketGameLevelSelectPlayerObject : MonoBehaviour {
 	float timer;
 	Transform spriteTransform;
 
-	float playerFlyingPosition = -50f;
+	public float playerFlyingPosition = -50f;
 
 	// Use this for initialization
 	void Start () {
 		timer = 0f;
 		spriteTransform = this.transform.FindChild ("playerGraphic");
 	}
-	
+
+	float buildingSpeed = 4f;
 	// Update is called once per frame
 	void Update () {
 
 		float recoverySpeed = 0f;
-		if (transform.localPosition.y < playerFlyingPosition) {
-			recoverySpeed = (Mathf.Abs (transform.localPosition.y)) / 10;
+		if (playerFlyingPosition < 0f) {
+			if (transform.localPosition.y < playerFlyingPosition) {
+				recoverySpeed = (Mathf.Abs (transform.localPosition.y)) / 10;
+			}
+		} else {
+			buildingSpeed += 1 + buildingSpeed / 10;
+			recoverySpeed = buildingSpeed;
 		}
 
 		this.transform.localPosition = new Vector3 (
@@ -35,5 +41,6 @@ public class RocketGameLevelSelectPlayerObject : MonoBehaviour {
 	void sineWaveGraphic () {
 		timer += 0.125f;
 		spriteTransform.localPosition = new Vector3 (0, Mathf.Sin (timer)/8, 0);
+		spriteTransform.eulerAngles = new Vector3 (0, 0, (Mathf.Sin (timer+(Mathf.PI/2))-0.5f) * 2);
 	}
 }

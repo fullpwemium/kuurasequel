@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 73087cf93cff025438e84332a11a7290
-timeCreated: 1488907904
+timeCreated: 1489159907
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,7 @@ TextureImporter:
     21300002: buttontextures_1
     21300004: buttontextures_2
     21300006: buttontextures_3
+    21300008: buttontextures_4
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -86,7 +87,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 384
         width: 256
         height: 128
       alignment: 0
@@ -99,7 +100,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 128
+        y: 384
         width: 256
         height: 128
       alignment: 0
@@ -112,7 +113,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 256
         width: 256
         height: 128
       alignment: 0
@@ -125,7 +126,20 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 0
+        y: 256
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: buttontextures_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
         width: 256
         height: 128
       alignment: 0

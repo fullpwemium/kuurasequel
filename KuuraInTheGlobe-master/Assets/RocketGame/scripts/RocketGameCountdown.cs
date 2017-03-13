@@ -39,6 +39,11 @@ public class RocketGameCountdown : MonoBehaviour {
 	}
 
 	void Update ()  {
+
+		if (game.paused) {
+			return;
+		}
+
 		if (!playing) {
 			return;
 		}
@@ -92,10 +97,9 @@ public class RocketGameCountdown : MonoBehaviour {
 	public void init () {
 		frameIndex = 0;
 		game = gameObject.GetComponent<RocketGameGameplaySystem> (); 
-		Debug.Log ("countdown started");
 		int l = game.getStartingLevel ();
-		if (l == 0) {
-			Debug.Log ("first level; needs special stuff!");
+		if (l == 1) {
+			// if first level needs some special stuff before count down, put it here
 		}
 		endTime = Time.time + 3f;
 		started = true;
