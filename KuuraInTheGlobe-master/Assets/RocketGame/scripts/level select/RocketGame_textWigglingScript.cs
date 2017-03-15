@@ -6,6 +6,7 @@ public class RocketGame_textWigglingScript : MonoBehaviour {
 
 	float timer = 0f;
 	public float force = 2;
+	public float speed = 0.075f;
 
 	void Start () {
 		timer = Random.Range (0f, Mathf.PI);
@@ -13,7 +14,7 @@ public class RocketGame_textWigglingScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		timer += 0.075f;
+		timer += speed;
 		transform.eulerAngles = new Vector3 (0, 0, Mathf.Cos (timer+(Mathf.PI/2)) * force);
 	}
 }

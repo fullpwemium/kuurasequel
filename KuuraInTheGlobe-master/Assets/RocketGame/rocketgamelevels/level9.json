@@ -2,7 +2,7 @@
   "level": 2,
   "spawnMin": 0.1,
   "spawnMax": 1.8,
-  "targetAltitude": 16000.0,
+  "targetAltitude": 15000.0,
   
   "spawnFuel": 0.25,
   "spawnBadCloud": 0.75

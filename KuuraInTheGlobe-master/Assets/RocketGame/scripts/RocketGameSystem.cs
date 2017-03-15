@@ -8,6 +8,7 @@ public class RocketGameSystem : MonoBehaviour {
 	int startingLevel = 1;
 	bool[] cats = new bool[10];
 	bool initialized = false;
+	bool endless = false;
 
 	public void init () {
 		if (initialized) {
@@ -31,13 +32,20 @@ public class RocketGameSystem : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		gameObject.name = "rocketGameSystem";
 		DontDestroyOnLoad (gameObject);
 	}
 
 	public void setStartingLevel ( int l ) {
 		startingLevel = l;
+	}
+
+	public void setEndless(bool b) {
+		endless = b;
+	}
+
+	public bool isEndless() {
+		return endless;
 	}
 
 	public int getStartingLevel () {

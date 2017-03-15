@@ -295,6 +295,7 @@ Transform:
   m_LocalPosition: {x: 85, y: 28, z: 0}
   m_LocalScale: {x: 73.96588, y: 73.96588, z: 1}
   m_Children:
+  - {fileID: 426044685}
   - {fileID: 976440695}
   - {fileID: 769970055}
   - {fileID: 1938115581}
@@ -302,6 +303,70 @@ Transform:
   m_Father: {fileID: 257697033}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &426044684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 426044685}
+  - component: {fileID: 426044686}
+  m_Layer: 0
+  m_Name: fullAltitude
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &426044685
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 426044684}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.129999, y: 0.18999952, z: 2}
+  m_LocalScale: {x: 1, y: 0.7908828, z: 1.0001873}
+  m_Children: []
+  m_Father: {fileID: 367011586}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &426044686
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 426044684}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b4d891f106f75f845aef8897f0da3478, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1 &443568442
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +551,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 367011586}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &769970056
 SpriteRenderer:
@@ -822,11 +887,11 @@ Transform:
   m_GameObject: {fileID: 976440694}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.91, y: -1.91, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0, z: 1}
   m_Children:
   - {fileID: 722457706}
   m_Father: {fileID: 367011586}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &977478623
 GameObject:
@@ -1503,7 +1568,7 @@ Transform:
   - {fileID: 1327585721}
   - {fileID: 600010473}
   m_Father: {fileID: 367011586}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1239308337
 GameObject:
@@ -2042,7 +2107,7 @@ Transform:
   m_LocalScale: {x: 0.9999997, y: 0.9999997, z: 1.0001872}
   m_Children: []
   m_Father: {fileID: 367011586}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1938115582
 SpriteRenderer:
@@ -2195,6 +2260,10 @@ MonoBehaviour:
     type: 2}
   PauseButton: {fileID: 1023878933989336, guid: 36982678567cb834a92800a9e47e4bd0,
     type: 2}
+  catCollectedMarker: {fileID: 1058077384344244, guid: 13b2f263efbbe0241a951c41071dbce3,
+    type: 2}
+  levelIndicator: {fileID: 1542931576373966, guid: b7b45a6a91659e145ac8d5f354d07102,
+    type: 2}
   spawnableObjects:
   - {fileID: 1459910626530208, guid: bea60027f28a215458bb996a92125a24, type: 2}
   - {fileID: 1917276525322342, guid: 3eeed6adb59717c42850cd529439b00e, type: 2}
@@ -2215,6 +2284,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: ddc372fb9acaded4a9ff00ff270b391b, type: 3}
   - {fileID: 4900000, guid: 821bc8c661425494eb985f6063e62ce9, type: 3}
   - {fileID: 4900000, guid: 83de2269eb80b97429c8ba5af2e3ff21, type: 3}
+  - {fileID: 4900000, guid: cbd384b4fdb2bba4c8bc68420119e577, type: 3}
   systemPrefab: {fileID: 1127573662127134, guid: 78b580be0cf4b6049aea3465275fdace,
     type: 2}
   paused: 0

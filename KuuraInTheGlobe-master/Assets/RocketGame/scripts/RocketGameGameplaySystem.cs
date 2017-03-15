@@ -10,6 +10,8 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	public GameObject playerPrefab;
 	public GameObject PauseScreen;
 	public GameObject PauseButton;
+	public GameObject catCollectedMarker;
+	public GameObject levelIndicator;
 
 	Transform fuelMeter;
 	Transform damagedFuelMeter;
@@ -17,9 +19,9 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 	Text altitudeMeterText;
 	Transform speedoMeter;
+	SpriteRenderer fullAltitudeMeter;
 
 	Transform MainCanvas;
-
 
 	// Timer for spawning obstacles
 	float timer;
@@ -69,6 +71,9 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	Image bg;
 	Transform bgCanvas;
 
+	//Foreground object's renderer
+	Transform UICanvas;
+
 	// Use this for initialization
 	void Start () {
 
@@ -94,14 +99,21 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		speedoMeter = GameObject.Find ("UICanvas/altitudeMeter/textObjects/arrow").GetComponent<Transform> ();
 		fuelMeterFG = GameObject.Find ("UICanvas/fuelMeter/fg_graphic").GetComponent<SpriteRenderer> ();
 
+		fullAltitudeMeter = GameObject.Find ("UICanvas/altitudeMeter/fullAltitude").GetComponent<SpriteRenderer> ();
+
 		bg = GameObject.Find ("BG_Canvas/BG").GetComponent<Image> ();
 
 		unpause ();
+
+		if (system.isEndless ()) {
+			enableEndlessMode ();
+		}
 
 		//Init spawnable list
 		spawnedObjects = new List<ObjectScript> ();
 		spawnedBackgroundObjects = new List<ObjectScript> ();
 
+		UICanvas = GameObject.Find ("UICanvas").GetComponent<Transform> ();
 		MainCanvas = GameObject.Find ("MainCanvas").GetComponent<Transform> ();
 		bgCanvas = GameObject.Find ("BG_Canvas").GetComponent<Transform> ();
 
@@ -152,7 +164,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	void loadLevel (int levelToBeLoaded) {
 
 		float start = 0f;
-		if (levelToBeLoaded > 1) {
+		if (levelToBeLoaded > 1 && levelToBeLoaded < 11) {
 			RocketGameLevelData plevel = JsonUtility.FromJson<RocketGameLevelData> (levels [levelToBeLoaded - 2].text);
 			start = plevel.targetAltitude;
 		}
@@ -174,6 +186,10 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 	}
 
+	public int getCurrentLevel () {
+		return currentLevel;
+	}
+
 	void gotoNextLevel () {
 		if (!system.isCatCollected (currentLevel)) {
 			spawnCat (currentLevel);
@@ -182,6 +198,9 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		if (currentLevel <= 10) {
 			currentLevel += 1;
 		}
+
+		GameObject obj = Instantiate (levelIndicator);
+		obj.transform.SetParent (UICanvas, false);
 
 		system.clearLevel (currentLevel);
 		if (currentLevel < 11) {
@@ -196,7 +215,19 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	}
 
 	public void markCatCollected ( ObjectScript cat ) {
+		Transform t = Instantiate (catCollectedMarker).GetComponent<Transform>();
+		t.SetParent (UICanvas, false);
+		t.localPosition = new Vector3 (cat.transform.localPosition.x + 5f, -22.0f , cat.transform.localPosition.z);
 		system.collectCat ( cat.getCatLevel() );
+	}
+
+	void enableEndlessMode() {
+		Destroy (GameObject.Find ("UICanvas/altitudeMeter/fullAltitude"));
+		Destroy (GameObject.Find ("UICanvas/altitudeMeter/currentAltitude"));
+		Destroy (GameObject.Find ("UICanvas/altitudeMeter/fg_Graphic"));
+		Destroy (GameObject.Find ("UICanvas/altitudeMeter/bg_Graphic"));
+		GameObject.Find ("UICanvas/altitudeMeter/textObjects").transform.localPosition = new Vector3 (-0.6f, 0f, 0f);
+
 	}
 
 	public void gameStart() {
@@ -221,6 +252,13 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	public void retry ( ) {
 		// Restart the level from last checkpoint
 		gameStart ();
+		if (getStartingAltitude () != 0f) {
+			currentAltitudeValue = -1f;
+		} else {
+			currentAltitudeValue = 0f;
+		}
+		updateAltitudeText ( getStartingAltitude() );
+
 	}
 
 	public void gotoLevelSelect () {
@@ -329,7 +367,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	void spawnCat ( int level ) {
 		ObjectScript cat = Instantiate (
 			                   catObject,
-			                   new Vector3 (Random.Range (-240f, 240f), 500, 100),
+			                   new Vector3 (Random.Range (-240f, 240f), 500, 20),
 			                   Quaternion.identity
 		                   ).GetComponent<ObjectScript> ();
 		spawnedObjects.Add (cat);
@@ -379,15 +417,24 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	}
 		
 	public void updateAltitude ( float current, float speed ) {
-		if (current >= level.targetAltitude) {
-			//Debug.Log (current + " : " + level.targetAltitude);
+		if (current >= level.targetAltitude && currentLevel <= 10) {
+			fullAltitudeMeter.color = new Color (1, 1, 1, 1);
 			gotoNextLevel ();
-			//Debug.Log (level.startAltitude);
 			return;
 		}
-		float scl = (current-level.startAltitude) / (level.targetAltitude-level.startAltitude);
-		altitudeMeter.localScale = new Vector3 (1, Mathf.Clamp (scl, 0, 1), 1);
-		updateBackgroundColor ( scl );
+
+		if (currentLevel <= 10) {
+			Color col = fullAltitudeMeter.color;
+			if (col.a > 0f) {
+				fullAltitudeMeter.color = new Color (1, 1, 1, col.a - Time.fixedDeltaTime);
+			}
+		}
+
+		if (!system.isEndless()) {
+			float scl = (current - level.startAltitude) / (level.targetAltitude - level.startAltitude);
+			altitudeMeter.localScale = new Vector3 (1, Mathf.Clamp (scl, 0, 1), 1);
+			updateBackgroundColor (scl);
+		}
 		updateAltitudeText (current);
 		updateSpeedoMeter (speed);
 	}
@@ -405,6 +452,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 					currentAltitudeValue = current;
 				}
 			} else {
+				altitudeMeterText.text = Mathf.Floor (current) + "m";
 				if (currentAltitudeValue != 0f) {
 					if (altText_spd < Mathf.PI) {
 						altText_spd += Time.fixedDeltaTime * 10;

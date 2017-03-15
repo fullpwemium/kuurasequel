@@ -42,6 +42,9 @@ public class RocketGameLevelSelect : MonoBehaviour {
 									 // This is because variables are passed by value by default in C#, and not by reference.
 		}
 
+		// Endless mode button
+		GameObject.Find("MainCanvas/endless").GetComponent<Button>().onClick.AddListener ( delegate { this.endlessMode(); } );
+
 		// Exit button
 		GameObject.Find("MainCanvas/exit").GetComponent<Button>().onClick.AddListener ( delegate { this.exitMinigame(); } );
 	}
@@ -80,12 +83,19 @@ public class RocketGameLevelSelect : MonoBehaviour {
 		if (clicked) {
 			return;
 		}
+		system.setEndless (false);
 		system.setStartingLevel (level);
 		//SceneManager.LoadScene ("_rocketGame-Gameplay", LoadSceneMode.Single);
 		player.playerFlyingPosition = 5000f;
 		clicked = true;
 	}
 
+	void endlessMode() {
+		system.setEndless (true);
+		system.setStartingLevel (11);
+		player.playerFlyingPosition = 5000f;
+		clicked = true;
+	}
 
 	void exitMinigame ( ) {
 		system.exit ();

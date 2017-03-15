@@ -1,0 +1,9 @@
+{
+  "level": 11,
+  "spawnMin": 0.1,
+  "spawnMax": 1.4,
+  
+  "spawnFuel": 0.20,
+  "spawnBadCloud": 0.75
+
+}
