@@ -6,30 +6,22 @@ using UnityEngine.UI;
 public class WordButtonScript : MonoBehaviour {
 
     public string buttonName;
-    public Button yourButton;
-    WordGamePlayerScript player;
+    public Button button;
     WordGameScript game;
 
     // Use this for initialization
     void Start () {
 
-        Button btn = yourButton.GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
-        //player = GameObject.Find("Player").GetComponent<WordGamePlayerScript>();
-        //game = GameObject.Find("WordGameSystem").GetComponent<WordGameScript>();
+        Button btn = button.GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClick);       //debugging purposes
 
     }
 	
     void TaskOnClick()
     {
+        /*
         Debug.Log("Clicked " + buttonName);
-        //game.buttonClick(buttonName);
-    }
-
-    // Update is called once per frame
-
-    private void Update()
-    {
-
+        game.buttonClick(buttonName);
+        */
     }
 }

@@ -96,20 +96,20 @@ public class WordGameScript : MonoBehaviour {
 
     public void onButtonClick(string buttonName)
     {
-        Debug.Log("Button " + buttonName + " clicked");
+        //Debug.Log("Button " + buttonName + " clicked");
         //if button is correct
         if (isCorrectAnswer(buttonName))
         {
             addCorrect();
-            //Update game state, load new question and assets
         }
         else
         {
             addFail();
         }
 
-
-        //if button is incorrect
+        if(playable)
+            loadNewQuestion();
+     
     }
 
     private bool isCorrectAnswer(string button)
@@ -158,7 +158,7 @@ public class WordGameScript : MonoBehaviour {
     {
         questionIndexes = new List<int>();
         System.Random rnd = new System.Random();
-        while(questionIndexes.Capacity < 5)
+        while(questionIndexes.Count < 5)
         {
             int nextIndex = rnd.Next(5);                //nextIndex = 0 <= x < 5
             if (!questionIndexes.Contains(nextIndex))
@@ -170,10 +170,18 @@ public class WordGameScript : MonoBehaviour {
 
     private int getNextQIndex()
     {
-        return 0;
+        if (questionIndexes.Count > 0)
+        {
+            int nextIndex = questionIndexes[0];
+            questionIndexes.Remove(nextIndex);
+            return nextIndex;
+        }
+        else Debug.LogError("No more questions available!");
+        return -1;
+    }
 
-        int nextIndex = questionIndexes[0];
-        questionIndexes.Remove(nextIndex);
-        return nextIndex;
+    private void loadNewQuestion()
+    {
+        updateCurrentQuestion();
     }
 }

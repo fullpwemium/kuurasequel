@@ -1,17 +1,38 @@
 {
 "questionData":
 	[{
-	"question": "Tap the blue cat",
+	"question": "Pick the blue cat",
 	"answer": "B",
 	"optionA": "whitecat",
 	"optionB": "bluecat",
 	"optionC": "pinkcat"
 	},
 	{
-	"question": "Tap the pink cat",
+	"question": "How many barons are in the snowglobe?",
 	"answer": "C",
-	"optionA": "bluecat",
-	"optionB": "whitecat",
-	"optionC": "pinkcat"
+	"optionA": "two",
+	"optionB": "three",
+	"optionC": "four"
+	},
+	{
+	"question": "Which item keeps you warm on winter?",
+	"answer": "A",
+	"optionA": "Bluejacket",
+	"optionB": "canfood",
+	"optionC": "GreenGlasses"
+	},
+	{
+	"question": "Which one is cat toy?",
+	"answer": "A",
+	"optionA": "balloyarn",
+	"optionB": "Bomb",
+	"optionC": "coin"
+	},
+	{
+	"question": "Pick the fruit",
+	"answer": "B",
+	"optionA": "mansikka",
+	"optionB": "paaryna",
+	"optionC": "kirsikka"
 	}]
 }
