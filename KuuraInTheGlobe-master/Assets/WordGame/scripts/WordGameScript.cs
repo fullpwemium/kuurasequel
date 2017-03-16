@@ -12,11 +12,15 @@ public class WordGameScript : MonoBehaviour {
 
     private int fails;
     private int corrects;
+    private int tries;
     private List<int> questionIndexes;
 
     private Button buttonA;
     private Button buttonB;
     private Button buttonC;
+    private Image star1;
+    private Image star2;
+    private Image star3;
     private Text questionText;
 
     public List<TextAsset> questionList;
@@ -26,6 +30,8 @@ public class WordGameScript : MonoBehaviour {
     // Use this for initialization
     void Start() {
         fails = 0;
+        corrects = 0;
+        tries = 0;
         isLose = false;
         isWin = false;
         playable = true;
@@ -53,6 +59,7 @@ public class WordGameScript : MonoBehaviour {
     private void initGame()
     {
         initButtons();
+        initStars();
         initQuestionList();
         initQuestionIndexes();
         updateCurrentQuestion();
@@ -63,7 +70,7 @@ public class WordGameScript : MonoBehaviour {
     {
         fails++;
         Debug.Log("Incorrect answer");
-        if(fails >= 3)
+        if(fails >= 1)
         {
             isLose = true;
         }
@@ -96,19 +103,22 @@ public class WordGameScript : MonoBehaviour {
 
     public void onButtonClick(string buttonName)
     {
-        //Debug.Log("Button " + buttonName + " clicked");
-        //if button is correct
-        if (isCorrectAnswer(buttonName))
+        if (playable)
         {
-            addCorrect();
+            tries++;
+            if (isCorrectAnswer(buttonName))
+            {
+                addCorrect();
+                updateStarImages(true);
+            }
+            else
+            {
+                addFail();
+                updateStarImages(false);
+            }
+            if(!isLose && !isWin)
+                loadNewQuestion();
         }
-        else
-        {
-            addFail();
-        }
-
-        if(playable)
-            loadNewQuestion();
      
     }
 
@@ -134,6 +144,54 @@ public class WordGameScript : MonoBehaviour {
         //buttonA.image.sprite = Resources.Load<Sprite>("bluecat");
     }
 
+    private void updateStarImages(bool wasCorrect)
+    {
+        int cor;
+
+        if (wasCorrect)
+            cor = 1;
+        else cor = 0;
+
+        if (tries == 1)
+        {
+            switch (cor)
+            {
+                case 0:
+                    star1.sprite = Resources.Load<Sprite>("failstar");
+                    break;
+                case 1:
+                    star1.sprite = Resources.Load<Sprite>("ylwstar");
+                    break;
+            }
+                
+        }
+
+        if (tries == 2)
+        {
+            switch (cor)
+            {
+                case 0:
+                    star2.sprite = Resources.Load<Sprite>("failstar");
+                    break;
+                case 1:
+                    star2.sprite = Resources.Load<Sprite>("ylwstar");
+                    break;
+            }
+        }
+        if (tries == 3)
+        {
+            switch (cor)
+            {
+                case 0:
+                    star3.sprite = Resources.Load<Sprite>("failstar");
+                    break;
+                case 1:
+                    star3.sprite = Resources.Load<Sprite>("ylwstar");
+                    break;
+            }
+        }
+    } 
+
     private void initQuestionList()
     {
         for (int i = 0; i < questionList.Capacity; i++)
@@ -145,6 +203,13 @@ public class WordGameScript : MonoBehaviour {
         buttonA = GameObject.Find("ButtonA").GetComponent<Button>();
         buttonB = GameObject.Find("ButtonB").GetComponent<Button>();
         buttonC = GameObject.Find("ButtonC").GetComponent<Button>();
+    }
+
+    private void initStars()
+    {
+        star1 = GameObject.Find("star1").GetComponent<Image>();
+        star2 = GameObject.Find("star2").GetComponent<Image>();
+        star3 = GameObject.Find("star3").GetComponent<Image>();
     }
 
     private void updateCurrentQuestion()
