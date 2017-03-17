@@ -53,6 +53,10 @@ public class WordGameScript : MonoBehaviour {
         {
             gameWin();
         }
+        if (Input.GetKeyDown("r"))
+        {
+            resetLevel();
+        }
 		
 	}
 
@@ -88,7 +92,7 @@ public class WordGameScript : MonoBehaviour {
 
     void gameOver()
     {
-        Debug.Log("Shiaaat");
+        Debug.Log("Game over");
         playable = false;
         //TODO
         //Show gameover screen & retry buttton
@@ -96,7 +100,7 @@ public class WordGameScript : MonoBehaviour {
 
     void gameWin()
     {
-        Debug.Log("Winnnn");
+        Debug.Log("You win!");
         playable = false;
         //show game win screen & next stage / quit buttons
     }
@@ -212,6 +216,13 @@ public class WordGameScript : MonoBehaviour {
         star3 = GameObject.Find("star3").GetComponent<Image>();
     }
 
+    private void resetStars()
+    {
+        star1.sprite = Resources.Load<Sprite>("blkstar");
+        star2.sprite = Resources.Load<Sprite>("blkstar");
+        star3.sprite = Resources.Load<Sprite>("blkstar");
+    }
+
     private void updateCurrentQuestion()
     {
         currentQ = questions.questionData[getNextQIndex()];
@@ -248,5 +259,20 @@ public class WordGameScript : MonoBehaviour {
     private void loadNewQuestion()
     {
         updateCurrentQuestion();
+    }
+
+    private void resetLevel()
+    {
+        tries = 0;
+        fails = 0;
+        corrects = 0;
+        isWin = false;
+        isLose = false;
+        playable = true;
+        initQuestionIndexes();
+        updateCurrentQuestion();
+        updateButtonImages();
+        resetStars();
+        Debug.Log("Level restarted");
     }
 }
