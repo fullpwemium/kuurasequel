@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class RocketGameSystem : MonoBehaviour {
 
-	int clearedLevels = 10;
+	int clearedLevels = 1;
 	int startingLevel = 1;
 	bool[] cats = new bool[10];
 	bool initialized = false;
 	bool endless = false;
+	float highscore = 0;
 
 	public void init () {
 		if (initialized) {
@@ -28,6 +29,14 @@ public class RocketGameSystem : MonoBehaviour {
 	public void collectCat ( int level ) {
 		Debug.Log ("Cat was collected from level [" + level + "]");
 		cats [level - 1] = true;
+	}
+
+	public float getHighscore () {
+		return highscore;
+	}
+
+	public void setHighscore ( float f ) {
+		highscore = Mathf.Clamp ( Mathf.Floor (f), 0f, 99999f);
 	}
 
 	// Use this for initialization

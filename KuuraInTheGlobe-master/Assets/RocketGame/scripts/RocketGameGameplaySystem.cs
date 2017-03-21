@@ -417,6 +417,12 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	}
 		
 	public void updateAltitude ( float current, float speed ) {
+		if (system.isEndless()) {
+			if (current > system.getHighscore()) {
+				system.setHighscore (current);
+			}
+		}
+
 		if (current >= level.targetAltitude && currentLevel <= 10) {
 			fullAltitudeMeter.color = new Color (1, 1, 1, 1);
 			gotoNextLevel ();

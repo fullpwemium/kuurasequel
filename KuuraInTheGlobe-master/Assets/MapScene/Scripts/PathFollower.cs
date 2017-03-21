@@ -33,6 +33,11 @@ public class PathFollower : MonoBehaviour {
 		}
 	}
 
+	public void setCurrentNode ( Node node )
+	{
+		currentNode = node;
+	}
+
 	public Node getCurrentNode ( )
 	{
 		return currentNode;
@@ -44,7 +49,6 @@ public class PathFollower : MonoBehaviour {
 		bool result = true;
 		if (start) {
 			targetNode = currentPath[0].GetComponent<Transform> ();
-			currentPath.RemoveAt (0);
 			start = false;
 		}
 

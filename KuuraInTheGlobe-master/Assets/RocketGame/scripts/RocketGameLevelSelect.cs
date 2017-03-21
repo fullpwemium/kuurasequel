@@ -27,6 +27,9 @@ public class RocketGameLevelSelect : MonoBehaviour {
 			system = GameObject.Find ("rocketGameSystem").GetComponent<RocketGameSystem> ();
 		}
 
+		Text t = GameObject.Find ("MainCanvas/highscorebox/text/highscore").GetComponent<Text> ();
+		t.text = system.getHighscore () + "m";
+
 		player = GameObject.Find ("MainCanvas/playerObject_levelSelect").GetComponent<RocketGameLevelSelectPlayerObject> ();
 
 		levelSelectText = GameObject.Find ("MainCanvas/level_select_text").transform;
@@ -54,11 +57,18 @@ public class RocketGameLevelSelect : MonoBehaviour {
 			GameObject.Find ("MainCanvas/level"+(i)).GetComponent<Button> ().onClick.AddListener (delegate {
 				this.levelButtonClicked (i);
 			});
-			if (!system.isCatCollected(i)) {
-				Destroy (GameObject.Find ("MainCanvas/level" + (i) + "/cat_l" + (i)));
-			}
 		} else {
-			Destroy (GameObject.Find ("MainCanvas/level" +(i)));
+			//Destroy (GameObject.Find ("MainCanvas/level" +(i)));
+			Button but = GameObject.Find ("MainCanvas/level" +(i)).GetComponent<Button>();
+			ColorBlock cb = but.colors;
+			cb.normalColor = new Color (1.0f, 1.0f, 1.0f, 0.4f);
+			cb.pressedColor = new Color (1.0f, 1.0f, 1.0f, 0.4f);
+			cb.highlightedColor = new Color (1.0f, 1.0f, 1.0f, 0.4f);
+			but.colors = cb;
+		}
+
+		if (!system.isCatCollected(i)) {
+			Destroy (GameObject.Find ("MainCanvas/level" + (i) + "/cat_l" + (i)));
 		}
 	}
 
@@ -99,7 +109,7 @@ public class RocketGameLevelSelect : MonoBehaviour {
 
 	void exitMinigame ( ) {
 		system.exit ();
-		SceneManager.LoadScene ("Map2", LoadSceneMode.Single);;
+		SceneManager.LoadScene ("Overworld", LoadSceneMode.Single);;
 	}
 
 }
