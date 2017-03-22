@@ -15,13 +15,15 @@ public class WordGameScript : MonoBehaviour {
     private int tries;
     private List<int> questionIndexes;
 
-    private Button buttonA;
-    private Button buttonB;
-    private Button buttonC;
+    private Image buttonA;
+    private Image buttonB;
+    private Image buttonC;
     private Image star1;
     private Image star2;
     private Image star3;
     private Text questionText;
+    public GameObject GameOverPanel;
+    public GameObject NextLevelPanel;
 
     public List<TextAsset> questionList;
     private WordGameQuestionData questions;
@@ -37,6 +39,8 @@ public class WordGameScript : MonoBehaviour {
         playable = true;
 
         questionText = GameObject.Find("QuestionText").GetComponent<Text>();
+        GameOverPanel.SetActive(false);
+        NextLevelPanel.SetActive(false);
 
         initGame();
 
@@ -94,15 +98,14 @@ public class WordGameScript : MonoBehaviour {
     {
         Debug.Log("Game over");
         playable = false;
-        //TODO
-        //Show gameover screen & retry buttton
+        GameOverPanel.SetActive(true);
     }
 
     void gameWin()
     {
         Debug.Log("You win!");
         playable = false;
-        //show game win screen & next stage / quit buttons
+        NextLevelPanel.SetActive(true);
     }
 
     public void onButtonClick(string buttonName)
@@ -126,6 +129,19 @@ public class WordGameScript : MonoBehaviour {
      
     }
 
+    public void onGameOverClick(string buttonName)
+    {
+        if(buttonName == "r")
+        {
+            resetLevel();
+        }
+        else if(buttonName == "e")
+        {
+            Debug.Log("Exit button clicked, load the world map!");
+            //TODO Load the world map
+        }
+    }
+
     private bool isCorrectAnswer(string button)
     {
         if (currentQ.answer == button)
@@ -142,19 +158,19 @@ public class WordGameScript : MonoBehaviour {
 
     private void updateButtonImages()
     {
-        buttonA.image.sprite = Resources.Load<Sprite>(currentQ.optionA);
-        buttonB.image.sprite = Resources.Load<Sprite>(currentQ.optionB);
-        buttonC.image.sprite = Resources.Load<Sprite>(currentQ.optionC);
-        //buttonA.image.sprite = Resources.Load<Sprite>("bluecat");
+        buttonA.sprite = Resources.Load<Sprite>(currentQ.optionA);
+        buttonB.sprite = Resources.Load<Sprite>(currentQ.optionB);
+        buttonC.sprite = Resources.Load<Sprite>(currentQ.optionC);
     }
 
     private void updateStarImages(bool wasCorrect)
     {
-        int cor;
+        int cor = (wasCorrect) ? 1 : 0;
 
-        if (wasCorrect)
-            cor = 1;
-        else cor = 0;
+        /** Glorious switch-case to determine which star should be updated
+         *  If cor = 1, the updated star will be yellow
+         *  If cor = 0, the updated star will be crossed over
+         */
 
         if (tries == 1)
         {
@@ -204,9 +220,9 @@ public class WordGameScript : MonoBehaviour {
 
     private void initButtons()
     {
-        buttonA = GameObject.Find("ButtonA").GetComponent<Button>();
-        buttonB = GameObject.Find("ButtonB").GetComponent<Button>();
-        buttonC = GameObject.Find("ButtonC").GetComponent<Button>();
+        buttonA = GameObject.Find("ButtonA/ButtonImageA").GetComponent<Image>();
+        buttonB = GameObject.Find("ButtonB/ButtonImageB").GetComponent<Image>();
+        buttonC = GameObject.Find("ButtonC/ButtonImageC").GetComponent<Image>();
     }
 
     private void initStars()
@@ -273,6 +289,13 @@ public class WordGameScript : MonoBehaviour {
         updateCurrentQuestion();
         updateButtonImages();
         resetStars();
+        GameOverPanel.SetActive(false);
+        NextLevelPanel.SetActive(false);
         Debug.Log("Level restarted");
+    }
+
+    public void exitMinigame()
+    {
+        //TODO exit game & load world map
     }
 }
