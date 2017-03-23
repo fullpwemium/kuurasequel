@@ -15,6 +15,11 @@ public class RocketGameGameOverScript : MonoBehaviour {
 	public GameObject gameOverScreen;
 	GameObject gameOverScreenObj;
 
+	public GameObject highScore;
+	GameObject highScoreObj;
+
+	float hsPosition;
+
 	// retry button
 	Transform rbTransform;
 	float rbPosition;
@@ -34,12 +39,14 @@ public class RocketGameGameOverScript : MonoBehaviour {
 	bool activated = false;
 	bool buttonsSpawned = false;
 	bool finished = false;
+	bool waitForButtons = false;
 
 	// timer
 	float timer = 0f;
 
 	// Use this for initialization
 	void Start () {
+
 		game = gameObject.GetComponent<RocketGameGameplaySystem> ();
 		UICanvas = GameObject.Find ("GameOverCanvas").GetComponent<Transform> ();
 	}
@@ -53,6 +60,16 @@ public class RocketGameGameOverScript : MonoBehaviour {
 				0,
 				Mathf.Sin (timer) * 4
 			);
+		}
+
+		if (waitForButtons) {
+			if (timer < 4f) {
+				return;
+			} else {
+				spawnButtons ();
+				waitForButtons = false;
+				timer = 0f;
+			}
 		}
 
 		if (finished) {
@@ -77,14 +94,22 @@ public class RocketGameGameOverScript : MonoBehaviour {
 			t.position = new Vector3 (ogPosition.x, ogPosition.y + fade * 20, ogPosition.z);
 
 			if (!activated) {
-				spawnButtons ();
+				waitForButtons = true;
 				fade = 400f;
+				timer = 0f;
+				//fade = 400f;
 			}
 		} else {
 			fade = fade / 1.5f;
+
+			Color col = gameOverScreenObj.GetComponent<SpriteRenderer>().color;
+			float val = Mathf.Clamp (col.r - 0.075f, 0.5f, 1.0f);
+			gameOverScreenObj.GetComponent<SpriteRenderer>().color = new Color ( val, val,	val, 1f);
+ 
 			rbTransform.localPosition = new Vector3 (rbPosition + fade, rbTransform.localPosition.y, rbTransform.localPosition.z);
 			lbTransform.localPosition = new Vector3 (lbPosition + fade, lbTransform.localPosition.y, lbTransform.localPosition.z);
 			ebTransform.localPosition = new Vector3 (ebPosition - fade, ebTransform.localPosition.y, ebTransform.localPosition.z);
+			highScoreObj.transform.localPosition = new Vector3 (hsPosition - fade, highScoreObj.transform.localPosition.y, highScoreObj.transform.localPosition.z);
 
 			gameOverTextObj.transform.localPosition = new Vector3 (
 				rbPosition + fade - 15f,
@@ -108,11 +133,19 @@ public class RocketGameGameOverScript : MonoBehaviour {
 		}
 	}
 
-	public void init () {
+	float scoreResult = 0f;
+	bool highscoreAchieved = false;
+	public void init (float result, bool isHighscore ) {
 
 		gameOverScreenObj = Instantiate (gameOverScreen);
 		gameOverScreenObj.transform.SetParent (UICanvas, false);
 		gameOverScreenObj.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, 0f);
+		//gameOverScreenImg = gameOverScreenObj.transform.FindChild ("img").GetComponent<Image> ();
+
+		scoreResult = result;
+		highscoreAchieved = isHighscore;
+
+
 		ogPosition = gameOverScreenObj.transform.position;
 		activated = true;
 		fade = 1f;
@@ -146,6 +179,16 @@ public class RocketGameGameOverScript : MonoBehaviour {
 		ebTransform = eButton.transform;
 		ebPosition = -335f;
 		butList.Add (eButton);
+
+		highScoreObj = Instantiate (highScore);
+		highScoreObj.transform.SetParent (UICanvas, false);
+		hsPosition = -120f;
+
+		if (!highscoreAchieved) {
+			Destroy(highScoreObj.transform.FindChild ("text/highscoreAcquired").GetComponent<Text> ());
+		}
+
+		highScoreObj.transform.FindChild ("text/highscore").GetComponent<Text> ().text = Mathf.Floor (scoreResult) + "m";
 
 		// Create retry button through a delegate function
 		rButton.onClick.AddListener ( delegate { this.retryButtonClicked (butList); } );

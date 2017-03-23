@@ -2322,6 +2322,7 @@ MonoBehaviour:
     type: 2}
   gameOverScreen: {fileID: 1952224289483496, guid: 960f1e8633f05ff4d84eb87afc17ef24,
     type: 2}
+  highScore: {fileID: 1418757370167398, guid: ab3c15726f837384d9d1e42789b5def1, type: 2}
 --- !u!1 &2132509205
 GameObject:
   m_ObjectHideFlags: 0

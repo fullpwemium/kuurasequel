@@ -244,9 +244,18 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		updateFuel (1f);
 	}
 
-	public void gameOver() {
+	public void gameOver( float result ) {
 		isGameOver = true;
-		GO.init ();
+
+		bool newEndlessHighScore = false;
+		if (system.isEndless()) {
+			if (result > system.getHighscore()) {
+				system.setHighscore (result);
+				newEndlessHighScore = true;
+			}
+		}
+
+		GO.init ( result, newEndlessHighScore );
 	}
 
 	public void retry ( ) {
@@ -417,11 +426,6 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	}
 		
 	public void updateAltitude ( float current, float speed ) {
-		if (system.isEndless()) {
-			if (current > system.getHighscore()) {
-				system.setHighscore (current);
-			}
-		}
 
 		if (current >= level.targetAltitude && currentLevel <= 10) {
 			fullAltitudeMeter.color = new Color (1, 1, 1, 1);

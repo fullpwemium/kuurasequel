@@ -142,7 +142,7 @@ public class RocketPlayerScript : MonoBehaviour {
 
 		if (this.transform.localPosition.y < playerDeathBarrier ) {
 			//that's death
-			game.gameOver();
+			game.gameOver( altitude );
 			Destroy (gameObject);;
 		}
 
