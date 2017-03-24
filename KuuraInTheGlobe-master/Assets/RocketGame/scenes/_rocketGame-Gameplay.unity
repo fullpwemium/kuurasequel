@@ -2267,6 +2267,9 @@ MonoBehaviour:
   spawnableObjects:
   - {fileID: 1459910626530208, guid: bea60027f28a215458bb996a92125a24, type: 2}
   - {fileID: 1917276525322342, guid: 3eeed6adb59717c42850cd529439b00e, type: 2}
+  - {fileID: 1502490290322154, guid: 1185419b09ff17b47a585d5c2a0a345e, type: 2}
+  - {fileID: 1342800312484946, guid: 4e440cd1ab6142e4ba0c649655e13085, type: 2}
+  - {fileID: 1049474316540224, guid: a25b8b165ff94ae48a78872a3284d7c3, type: 2}
   backgroundObjects:
   - {fileID: 1285107547178904, guid: 3eab345da7cd48c4bbb57027da2a69ac, type: 2}
   - {fileID: 1773660172645990, guid: df0f17369e3634b4eaaaa1cb82ec200c, type: 2}

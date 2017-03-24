@@ -180,6 +180,9 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		spawnProbabilities = new List<int> ();
 		populateSpawnList (fti (level.spawnBadCloud), 0);
 		populateSpawnList (fti (level.spawnFuel), 1);
+		populateSpawnList (fti (level.spawnEvil), 4);
+		populateSpawnList (fti (level.spawnPoison), 2);
+		populateSpawnList (fti (level.spawnVenom), 3);
 
 		player.initAltitude (start);
 		updateAltitude (start, 0f);

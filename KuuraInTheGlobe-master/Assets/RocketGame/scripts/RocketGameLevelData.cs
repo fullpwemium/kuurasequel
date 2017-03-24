@@ -14,5 +14,8 @@ public class RocketGameLevelData
 
 	public float spawnFuel; // object 1
 	public float spawnBadCloud; // object 2
+	public float spawnEvil; // object 5
+	public float spawnPoison; // object 3
+	public float spawnVenom; // object 4
 
 }

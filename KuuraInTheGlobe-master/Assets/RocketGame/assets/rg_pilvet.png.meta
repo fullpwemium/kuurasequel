@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 6d9d918952f0bc94f9114cf859812b32
+timeCreated: 1490375780
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rg_pilvet_0
+    21300002: rg_pilvet_1
+    21300004: rg_pilvet_2
+    21300006: rg_pilvet_3
+    21300008: rg_pilvet_4
+    21300010: rg_pilvet_5
+    21300012: rg_pilvet_6
+    21300014: rg_pilvet_7
+    21300016: rg_pilvet_8
+    21300018: rg_pilvet_9
+    21300020: rg_pilvet_10
+    21300022: rg_pilvet_11
+    21300024: rg_pilvet_12
+    21300026: rg_pilvet_13
+    21300028: rg_pilvet_14
+    21300030: rg_pilvet_15
+    21300032: rg_pilvet_16
+    21300034: rg_pilvet_17
+    21300036: rg_pilvet_18
+    21300038: rg_pilvet_19
+    21300040: rg_pilvet_20
+    21300042: rg_pilvet_21
+    21300044: rg_pilvet_22
+    21300046: rg_pilvet_23
+    21300048: rg_pilvet_24
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rg_pilvet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 883
+        width: 204
+        height: 138
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rg_pilvet_1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 735
+        width: 229
+        height: 144
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rg_pilvet_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 579
+        width: 230
+        height: 152
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rg_pilvet_7
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 383
+        width: 238
+        height: 189
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 3, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rg_pilvet_19
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 169
+        width: 254
+        height: 215
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
