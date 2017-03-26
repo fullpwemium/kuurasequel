@@ -1,10 +1,17 @@
 {
-  "level": 2,
-  "spawnMin": 0.1,
-  "spawnMax": 1.8,
-  "targetAltitude": 15000.0,
-  
-  "spawnFuel": 0.25,
-  "spawnBadCloud": 0.75
+  "level": 9,
+  "spawnMin": 0.20,
+  "spawnMax": 1.55,
+  "targetAltitude": 3800.0,
+  "spawnFuelEvery":4,
+
+  "bgObjectMin":0,
+  "bgObjectMax":2,
+
+  "spawnFuel": 0.10,
+  "spawnBadCloud": 0.05,
+  "spawnEvil": 0.55,
+  "spawnPoison":0.15,
+  "spawnVenom":0.15
 
 }

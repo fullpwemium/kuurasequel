@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 114381514809856046}
   m_Layer: 0
   m_Name: bg_star1
-  m_TagString: cloud
+  m_TagString: star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

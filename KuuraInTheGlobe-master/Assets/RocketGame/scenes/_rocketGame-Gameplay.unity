@@ -2274,6 +2274,8 @@ MonoBehaviour:
   - {fileID: 1285107547178904, guid: 3eab345da7cd48c4bbb57027da2a69ac, type: 2}
   - {fileID: 1773660172645990, guid: df0f17369e3634b4eaaaa1cb82ec200c, type: 2}
   - {fileID: 1551637707432674, guid: 654813e86d5993c4899c912f16797e41, type: 2}
+  - {fileID: 1770474054994330, guid: a39fad0d07f57b64f99b416106d67c8b, type: 2}
+  - {fileID: 1077711740424950, guid: 344b570a0b5dbb94aae69ad94e829f12, type: 2}
   - {fileID: 1102375953465050, guid: d2dbb6b17856be04db93991cabc762a6, type: 2}
   catObject: {fileID: 1385635062543522, guid: 8243624a12f01cc4f8ea2bcf5074b73c, type: 2}
   levels:

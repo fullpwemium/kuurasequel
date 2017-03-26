@@ -235,13 +235,13 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 	public void gameStart() {
 		destroyObjects ();
-		randomizeBackgroundObjects ();
 		player = Instantiate (playerPrefab, new Vector3 (0, -340, 0), Quaternion.identity).GetComponent<RocketPlayerScript> ();
 		player.transform.SetParent (MainCanvas, false);
 		player.togglePlayable ();
 		isGameOver = false;
 		playing = false;
 		loadLevel (system.getStartingLevel());
+		randomizeBackgroundObjects ();
 		countdown.init();
 		guaranteedFuelDrop = 0;
 		updateFuel (1f);
@@ -315,7 +315,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 			objID = spawnProbabilities [objID];
 
 			if(objID != 1) {// fuel
-				if (guaranteedFuelDrop >= 3) {
+				if (guaranteedFuelDrop >= level.spawnFuelEvery) {
 					spawnObject (1);	
 					guaranteedFuelDrop = 0;
 				} else {
@@ -329,7 +329,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		// Check random bg object spawn
 		backgroundObjectTimer -= Time.fixedDeltaTime;
 		if (backgroundObjectTimer  <= 0f) {
-			backgroundObjectTimer =  Random.Range (0.4f, 2.0f);
+			backgroundObjectTimer =  Random.Range (level.bgSpawnMin, level.bgSpawnMax);
 			spawnBackgroundObject (500f);
 		}
 	}
@@ -338,10 +338,47 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		return Random.value < .5 ? 1 : -1;
 	}
 
+	float lastSpawnPosition;
+	float lastFuelSpawnPosition;
 	void spawnObject(int objID ) {
+		float spawnPosition = Random.Range (-240f, 240f);
+
+		// Try to relocate a spawned fuel cloud so that it hopefully doesn't overlap with
+		// an obstacle. However, no rechecks are made if an obstacle spawns on top of a fuel
+		// AFTER the fuel has been spawned.
+		if (lastSpawnPosition != null) {
+			if (objID == 1) {
+				if (spawnPosition > lastSpawnPosition - 50f &&
+				    spawnPosition < lastSpawnPosition + 50f) {
+					spawnPosition = spawnPosition - Random.Range (100f, 300f);
+					if (spawnPosition < -240f) {
+						spawnPosition = 240f - (Mathf.Abs (spawnPosition) - 240f);
+					}
+				}
+				lastFuelSpawnPosition = spawnPosition;
+			}
+		}
+
+		// Modify object spawn location so that it ideally wouldn't spawn on top of a 
+		// fuel collectable if it spawns after one.
+		if (lastFuelSpawnPosition != null) {
+			if (objID != 1) {
+				if (spawnPosition > lastFuelSpawnPosition  - 50f &&
+					spawnPosition < lastFuelSpawnPosition  + 50f) {
+					spawnPosition = spawnPosition - Random.Range (100f, 300f);
+					if (spawnPosition < -240f) {
+						spawnPosition = 240f - (Mathf.Abs (spawnPosition) - 240f);
+					}
+					lastFuelSpawnPosition = -1000f; //Allow next obstacle to spawn in the fuel's last position
+				}
+			}
+		}
+
+		lastSpawnPosition = spawnPosition;
+
 		ObjectScript obj = Instantiate (
 			spawnableObjects [objID],
-			new Vector3 (Random.Range (-240f, 240f), 500, Random.Range(33, 99)),
+			new Vector3 (spawnPosition, 500, Random.Range(33, 99)),
 			Quaternion.identity
 		).GetComponent<ObjectScript> ();
 		spawnedObjects.Add (obj);
@@ -363,8 +400,9 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	}
 
 	void spawnBackgroundObject (float yPos) {
+		int objID = Random.Range (level.bgObjectMin, level.bgObjectMax + 1);
 		ObjectScript obj = Instantiate (
-			backgroundObjects [Random.Range(0, backgroundObjects.Count-1)],
+			backgroundObjects [objID],
 			new Vector3 (Random.Range (-240f, 240f), yPos, Random.Range(33,99)),
 			Quaternion.identity
 		).GetComponent<ObjectScript> ();
@@ -504,8 +542,10 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		bg.color = finalCol;
 
 		for ( int i = spawnedBackgroundObjects.Count -1; i >= 0; i--) {
-			SpriteRenderer r = spawnedBackgroundObjects[i].transform.FindChild("graphic").GetComponent<SpriteRenderer>();
-			r.color = finalCol;
+			if (spawnedBackgroundObjects [i].gameObject.tag != "star") {
+				SpriteRenderer r = spawnedBackgroundObjects [i].transform.FindChild ("graphic").GetComponent<SpriteRenderer> ();
+				r.color = finalCol;
+			}
 		}
 	}
 

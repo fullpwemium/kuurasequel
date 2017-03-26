@@ -1,9 +1,13 @@
 {
   "level": 11,
-  "spawnMin": 0.1,
-  "spawnMax": 1.4,
-  
-  "spawnFuel": 0.20,
-  "spawnBadCloud": 0.75
+  "spawnMin": 0.15,
+  "spawnMax": 1.5,
+  "spawnFuelEvery":4,
+
+  "spawnFuel": 0.2,
+  "spawnBadCloud": 0.50,
+  "spawnEvil": 0.3,
+  "spawnPoison":0.3,
+  "spawnVenom":0.3
 
 }

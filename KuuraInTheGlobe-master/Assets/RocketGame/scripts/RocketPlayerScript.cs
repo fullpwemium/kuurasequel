@@ -302,9 +302,8 @@ public class RocketPlayerScript : MonoBehaviour {
 			registerHit(1);
 			break;
 		case "fuel":
-			collectFuel (0.5f);
+			collectFuel (0.65f);
 			obj.collect ();
-			//col.gameObject.GetComponent<fuelObject>().collect();
 			break;
 		case "Cat":
 			collectCat ( obj  );

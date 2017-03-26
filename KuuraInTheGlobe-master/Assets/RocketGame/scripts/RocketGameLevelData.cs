@@ -12,6 +12,13 @@ public class RocketGameLevelData
 	public float startAltitude;
 	public float targetAltitude;
 
+	public int bgObjectMin;
+	public int bgObjectMax;
+	public int bgSpawnMin;
+	public int bgSpawnMax;
+
+	public int spawnFuelEvery; // If Nth object to be spawned is not fuel, force a guaranteed fuel drop to spawn as well
+
 	public float spawnFuel; // object 1
 	public float spawnBadCloud; // object 2
 	public float spawnEvil; // object 5
