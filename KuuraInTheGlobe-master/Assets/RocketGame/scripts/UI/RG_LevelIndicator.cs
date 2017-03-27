@@ -37,7 +37,6 @@ public class RG_LevelIndicator : MonoBehaviour {
 		level_num = level;
 
 		// Set the first digit
-		int actualNum;
 		if (level == 10) {
 			r_num1.sprite = numbers [1];
 		} else {

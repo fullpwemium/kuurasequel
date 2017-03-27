@@ -9,12 +9,12 @@ public class RG_CatObjectAnimationScript : MonoBehaviour {
 	float timer = 0f;
 	int index = 0;
 
-	SpriteRenderer renderer;
+	SpriteRenderer r;
 
 	// Use this for initialization
 	void Start () {
 		timer = animationSpeed;
-		renderer = gameObject.GetComponent<SpriteRenderer> ();
+		r = gameObject.GetComponent<SpriteRenderer> ();
 	}
 	
 	// Update is called once per frame
@@ -27,7 +27,7 @@ public class RG_CatObjectAnimationScript : MonoBehaviour {
 				index = 0;
 			}
 
-			renderer.sprite = sprites [index];
+			r.sprite = sprites [index];
 		}
 	}
 }

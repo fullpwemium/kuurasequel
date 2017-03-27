@@ -33,3 +33,5 @@ EditorBuildSettings:
     path: Assets/RocketGame/scenes/_rocketGame-Gameplay.unity
   - enabled: 1
     path: Assets/WordGame/scenes/WordGameScene.unity
+  - enabled: 1
+    path: Assets/Overworld/scenes/Overworld.unity

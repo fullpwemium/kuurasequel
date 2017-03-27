@@ -5,13 +5,27 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
+// RocketGameGameplaySystem, a script that handles the general behavior of the game
+// by spawning player, obstacles and background items, as well as activating the game
+// over and pause screens if necessary.
+
 public class RocketGameGameplaySystem : MonoBehaviour {
 
+	// Public prefabs
 	public GameObject playerPrefab;
 	public GameObject PauseScreen;
 	public GameObject PauseButton;
 	public GameObject catCollectedMarker;
 	public GameObject levelIndicator;
+	public List<GameObject> spawnableObjects;
+	public List<GameObject> backgroundObjects;
+	public GameObject catObject;
+	public List<TextAsset> levels;
+	public GameObject systemPrefab;
+
+	// Is the game paused?
+	public bool paused = false;
+
 
 	Transform fuelMeter;
 	Transform damagedFuelMeter;
@@ -31,9 +45,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	List<int> spawnProbabilities;
 	List<ObjectScript> spawnedObjects;
 	List<ObjectScript> spawnedBackgroundObjects;
-	public List<GameObject> spawnableObjects;
-	public List<GameObject> backgroundObjects;
-	public GameObject catObject;
+
 
 	// Player game object we instantiate at startup
 	RocketPlayerScript player;
@@ -48,11 +60,9 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 	// Level data
 	RocketGameLevelData level;
-	public List<TextAsset> levels;
 	int currentLevel = 1;
 
 	//System object
-	public GameObject systemPrefab;
 	RocketGameSystem system;
 
 	// Game Over
@@ -65,7 +75,6 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 	// Pausing variables for the pause screen implementation
 	bool canPause = false;
-	public bool paused = false;
 
 	// Background object's renderer
 	Image bg;
@@ -117,7 +126,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		MainCanvas = GameObject.Find ("MainCanvas").GetComponent<Transform> ();
 		bgCanvas = GameObject.Find ("BG_Canvas").GetComponent<Transform> ();
 
-		// START
+		// START THE GAME
 		gameStart ();
 
 	}
@@ -147,11 +156,17 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		paused = false;
 	}
 
-	//float to int, or more accurately take a decimal percentage and turn it into integer percentage
+	// float to int, or more accurately take a decimal percentage and turn it into integer percentage
+	// a helper function for using populateSpawnList(), which is used during loadLevel()
 	int fti ( float fl ) {
 		return (int)Mathf.Floor (fl * 100);
 	}
 
+	// Function to add a given object N amount of times to the spawnProbabilities list.
+	// This gives things a pseudo-percentage based method to see what object to spawn,
+	// as we randomize between [0,spawnProbablities.Count], and pick the object that
+	// index refers to. There is no hard limit on the size of the list, and it's not
+	// all that necessary.
 	void populateSpawnList ( int amount, int objIndex ) {
 		if (amount == 0) {
 			return;
@@ -163,6 +178,9 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 	void loadLevel (int levelToBeLoaded) {
 
+		// If we're starting from a level that is not [1] or we're not playing endless mode,
+		// get the target altitude from previous level, which will work as the current level's
+		// starting altitude.
 		float start = 0f;
 		if (levelToBeLoaded > 1 && levelToBeLoaded < 11) {
 			RocketGameLevelData plevel = JsonUtility.FromJson<RocketGameLevelData> (levels [levelToBeLoaded - 2].text);
@@ -176,7 +194,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		// Set spawn rate
 		timer = 2.35f;
 
-		// Little hack-ish way to set what objects are spawned and how often
+		// Little pseudo percentage based way to set what objects are spawned and how often
 		spawnProbabilities = new List<int> ();
 		populateSpawnList (fti (level.spawnBadCloud), 0);
 		populateSpawnList (fti (level.spawnFuel), 1);
@@ -184,7 +202,10 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		populateSpawnList (fti (level.spawnPoison), 2);
 		populateSpawnList (fti (level.spawnVenom), 3);
 
+		// Update player's altitude
 		player.initAltitude (start);
+
+		// Update the altitude counter
 		updateAltitude (start, 0f);
 
 	}
@@ -234,6 +255,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	}
 
 	public void gameStart() {
+		MusicPlayer.PlayMusic (MusicTrack.WinterForestMarathon);
 		destroyObjects ();
 		player = Instantiate (playerPrefab, new Vector3 (0, -340, 0), Quaternion.identity).GetComponent<RocketPlayerScript> ();
 		player.transform.SetParent (MainCanvas, false);
@@ -271,6 +293,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		}
 		updateAltitudeText ( getStartingAltitude() );
 
+
 	}
 
 	public void gotoLevelSelect () {
@@ -279,7 +302,6 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 	public void exit () {
 		system.exit ();
-		SceneManager.LoadScene ("Map2", LoadSceneMode.Single);;
 	}
 
 	// Update is called once per frame
@@ -338,15 +360,15 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		return Random.value < .5 ? 1 : -1;
 	}
 
-	float lastSpawnPosition;
-	float lastFuelSpawnPosition;
+	float lastSpawnPosition = -1000f;
+	float lastFuelSpawnPosition = -1000f;
 	void spawnObject(int objID ) {
 		float spawnPosition = Random.Range (-240f, 240f);
 
 		// Try to relocate a spawned fuel cloud so that it hopefully doesn't overlap with
 		// an obstacle. However, no rechecks are made if an obstacle spawns on top of a fuel
 		// AFTER the fuel has been spawned.
-		if (lastSpawnPosition != null) {
+		if (lastSpawnPosition != -1000f) {
 			if (objID == 1) {
 				if (spawnPosition > lastSpawnPosition - 50f &&
 				    spawnPosition < lastSpawnPosition + 50f) {
@@ -361,7 +383,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 		// Modify object spawn location so that it ideally wouldn't spawn on top of a 
 		// fuel collectable if it spawns after one.
-		if (lastFuelSpawnPosition != null) {
+		if (lastFuelSpawnPosition != -1000f) {
 			if (objID != 1) {
 				if (spawnPosition > lastFuelSpawnPosition  - 50f &&
 					spawnPosition < lastFuelSpawnPosition  + 50f) {
@@ -403,7 +425,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		int objID = Random.Range (level.bgObjectMin, level.bgObjectMax + 1);
 		ObjectScript obj = Instantiate (
 			backgroundObjects [objID],
-			new Vector3 (Random.Range (-240f, 240f), yPos, Random.Range(33,99)),
+			new Vector3 (Random.Range (-300f, 300f), yPos, Random.Range(33,99)),
 			Quaternion.identity
 		).GetComponent<ObjectScript> ();
 		spawnedBackgroundObjects.Add (obj);

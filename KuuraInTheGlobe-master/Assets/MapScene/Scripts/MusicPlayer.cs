@@ -78,7 +78,7 @@ public class MusicPlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        audioSources[0].Play();
+        //audioSources[0].Play();
     }
 
     // Update is called once per frame
@@ -147,6 +147,7 @@ public class MusicPlayer : MonoBehaviour
 
             //The World map.
             case "Map2":
+			case "Overworld":
 
                 //The World map track is already playing, so no need to restart it.
                 if (audioSources[0].isPlaying) { break; }
@@ -184,12 +185,15 @@ public class MusicPlayer : MonoBehaviour
 
             //Winter forest marathon.
             case "RunnerLevelMap":
+			case "_rocketGame-Gameplay": 
+			case "_rocketGameLevelSelect": 
 
                 if (audioSources[10].isPlaying) { break; }
 
                 Play(MusicTrack.WinterForestMarathon);
                 Debug.Log("Runner theme playing based on scene change.");
                 break;
+
 
             default:
                 break;

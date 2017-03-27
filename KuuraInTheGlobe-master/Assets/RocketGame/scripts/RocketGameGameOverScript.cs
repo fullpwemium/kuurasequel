@@ -3,21 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// RocketGameGameOverScript, a script that handles the screen after player
+// dies during gameplay, triggering a game over.
+
 public class RocketGameGameOverScript : MonoBehaviour {
 
+	// Variable to store the existing gameplay system script into
 	RocketGameGameplaySystem game;
+
+	// Public prefabs for various graphics and buttons
 	public Button retryButton;
 	public Button levelSelectButton;
 	public Button exitButton;
-
 	public GameObject gameOverText;
-	GameObject gameOverTextObj;
 	public GameObject gameOverScreen;
-	GameObject gameOverScreenObj;
-
 	public GameObject highScore;
-	GameObject highScoreObj;
 
+	// Objects with which to store the instantiated prefabs
+	GameObject highScoreObj;
+	GameObject gameOverScreenObj;
+	GameObject gameOverTextObj;
+
+	// highscore position
 	float hsPosition;
 
 	// retry button
@@ -36,24 +43,33 @@ public class RocketGameGameOverScript : MonoBehaviour {
 	float fade;
 	Vector3 ogPosition;
 
+	// Is game over scrip activated?
 	bool activated = false;
+
+	// Have the buttons been spawned?
 	bool buttonsSpawned = false;
+
+	// Is the game over script finished (ie. doesn't update graphic positions and other details anymore)?
 	bool finished = false;
+
+	// Is the script waiting before moving the buttons onto the screen?
 	bool waitForButtons = false;
 
-	// timer
+	// timer variable for various uses
 	float timer = 0f;
 
 	// Use this for initialization
 	void Start () {
-
+		// Find the gameplay system object and canvas onto which graphics are added
 		game = gameObject.GetComponent<RocketGameGameplaySystem> ();
 		UICanvas = GameObject.Find ("GameOverCanvas").GetComponent<Transform> ();
 	}
 
 	void Update () {
+		// Increment timer
 		timer += 0.075f;
 
+		// Update the game over text object's rotation in a sine-wave pattern
 		if (gameOverTextObj != null) {
 			gameOverTextObj.transform.eulerAngles = new Vector3 (
 				0,
@@ -62,6 +78,12 @@ public class RocketGameGameOverScript : MonoBehaviour {
 			);
 		}
 
+		// If game over script has finished, stop
+		if (finished) {
+			return;
+		}
+
+		// Wait before spawning the buttons
 		if (waitForButtons) {
 			if (timer < 4f) {
 				return;
@@ -72,9 +94,7 @@ public class RocketGameGameOverScript : MonoBehaviour {
 			}
 		}
 
-		if (finished) {
-			return;
-		}
+		// Handle spawning the buttons and/or moving the buttons onto the screen
 		if (!buttonsSpawned) {
 			if (!activated) {
 				return;
@@ -133,18 +153,18 @@ public class RocketGameGameOverScript : MonoBehaviour {
 		}
 	}
 
+	// Initialize the game over screen
 	float scoreResult = 0f;
 	bool highscoreAchieved = false;
 	public void init (float result, bool isHighscore ) {
+		MusicPlayer.PlayMusic (MusicTrack.GameOverJingle);
 
 		gameOverScreenObj = Instantiate (gameOverScreen);
 		gameOverScreenObj.transform.SetParent (UICanvas, false);
 		gameOverScreenObj.GetComponent<SpriteRenderer> ().color = new Color (1f, 1f, 1f, 0f);
-		//gameOverScreenImg = gameOverScreenObj.transform.FindChild ("img").GetComponent<Image> ();
 
 		scoreResult = result;
 		highscoreAchieved = isHighscore;
-
 
 		ogPosition = gameOverScreenObj.transform.position;
 		activated = true;
@@ -155,6 +175,7 @@ public class RocketGameGameOverScript : MonoBehaviour {
 
 	}
 
+	// Spawn buttons, set the highscore counter and add everything onto the game over canvas
 	void spawnButtons () {
 
 		gameOverTextObj = Instantiate (gameOverText);
@@ -199,6 +220,7 @@ public class RocketGameGameOverScript : MonoBehaviour {
 		buttonsSpawned = true;
 	}
 
+	// Function that is called if player chooses the retry button on the game over screen
 	public void retryButtonClicked (List<Button> list ) {
 		// Remove retry button and game over screen
 		foreach (Button but in list) {
@@ -207,6 +229,7 @@ public class RocketGameGameOverScript : MonoBehaviour {
 
 		Destroy (gameOverTextObj);
 		Destroy (gameOverScreenObj);
+		Destroy (highScoreObj);
 
 		// Restart the level from last checkpoint
 		game.retry ();

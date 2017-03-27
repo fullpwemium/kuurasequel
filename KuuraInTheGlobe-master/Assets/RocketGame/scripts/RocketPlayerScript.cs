@@ -137,7 +137,7 @@ public class RocketPlayerScript : MonoBehaviour {
 		this.transform.localPosition = new Vector3 (
 			Mathf.Clamp ( this.transform.localPosition.x + deltaX, -290f, 305f),
 			Mathf.Clamp ( this.transform.localPosition.y - currentFallSpeed + recoverySpeed, playerDeathBarrier -2f, playerFlyingPosition),
-			this.transform.position.z
+			0f
 		);
 
 		if (this.transform.localPosition.y < playerDeathBarrier ) {
