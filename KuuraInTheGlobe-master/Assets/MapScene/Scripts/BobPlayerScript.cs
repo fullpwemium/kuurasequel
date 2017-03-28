@@ -10,7 +10,7 @@ public class BobPlayerScript : MonoBehaviour
     //int BobDirection = 20;
     //int OldBobDirection = 15;
 
-    bool bobstill;
+	bool bobstill;
 
     int startDestinationX, startDestinationY;
 

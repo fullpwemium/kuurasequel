@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   setToDestroy: 0
+  penaltyLevel: 4
 --- !u!212 &212512391498761272
 SpriteRenderer:
   m_ObjectHideFlags: 1

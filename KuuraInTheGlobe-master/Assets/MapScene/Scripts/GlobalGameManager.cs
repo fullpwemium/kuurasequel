@@ -78,6 +78,9 @@ public class GlobalGameManager : MonoBehaviour
     public int memoryCutscenesWatched = 0;
     public int runnerCutscenesWatched = 0;
 
+	public int rocketGameCutscenesWatched = 0;
+	public int wordQuizCutscenesWatched = 0;
+
     //Singleton check
     public void Awake()
     {

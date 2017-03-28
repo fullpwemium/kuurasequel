@@ -74,10 +74,11 @@ public class EventHandler : MonoBehaviour {
     {
         //Get completed levels from global game manager
         levelsCompleted = 0;
-
+		return levelsCompleted;
+		/*
         switch (currentScene)
         {
-			/*
+			
             case "Mine":
                 for (int i = 0; i <= 10; i++)
                 {
@@ -114,13 +115,12 @@ public class EventHandler : MonoBehaviour {
                     }
                 }
                 break;
-            */
+            
             default:
                 Debug.Log("Scene doesn't exist");
                 break;
-        }
-        Debug.Log("levels completed is " + levelsCompleted);
-        return levelsCompleted;
+        }*/
+        //Debug.Log("levels completed is " + levelsCompleted);
     }
     void progressedInStory()
     {
@@ -142,16 +142,19 @@ public class EventHandler : MonoBehaviour {
     {
         switch (currentScene)
         {
+			/*
             case "Mine":
                 MusicPlayer.PlayMusic(MusicTrack.HedgeMazeCutscene);
                 break;
             case "Warehouse":
                 MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouseCutscene);
                 break;
-            case "Forest":
-                MusicPlayer.PlayMusic(MusicTrack.WinterForestMarathonCutscene);
+            case "Forest":*/
+			case "RocketGame":
+				MusicPlayer.PlayMusic(MusicTrack.WinterForestMarathonCutscene);
                 break;
-            case "Memory":
+            //case "Memory":
+			case "WordQuiz":
                 MusicPlayer.PlayMusic(MusicTrack.MysticCardsCutscene);
                 break;
             default:
@@ -168,6 +171,7 @@ public class EventHandler : MonoBehaviour {
     {
         switch (currentScene)
         {
+			/*
             case "Mine":
                 cutScenesWatched = GlobalGameManager.GGM.labyrinthCutscenesWatched;
                 break;
@@ -180,6 +184,13 @@ public class EventHandler : MonoBehaviour {
             case "Memory":
                 cutScenesWatched = GlobalGameManager.GGM.memoryCutscenesWatched;
                 break;
+            */
+			case "RocketGame":
+				cutScenesWatched = GlobalGameManager.GGM.rocketGameCutscenesWatched;
+				break;
+			case "WordQuiz":
+				cutScenesWatched = GlobalGameManager.GGM.wordQuizCutscenesWatched;
+				break;
             default:
                 Debug.Log("Scene doesn't exist");
                 break;

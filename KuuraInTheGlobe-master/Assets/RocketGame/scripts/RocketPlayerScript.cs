@@ -276,6 +276,7 @@ public class RocketPlayerScript : MonoBehaviour {
 		if (invulTimer > .0f) {
 			return;
 		}
+		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.itemCatchBad, 1);
 		blinkingTimer = 0f;
 		fuelPenalty = 0.025f * penaltyLevel;
 		invulTimer = 1.5f;
@@ -285,10 +286,12 @@ public class RocketPlayerScript : MonoBehaviour {
 	}
 
 	void collectFuel ( float refillMultiplier ) {
+		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.itemCatchGood, 1);
 		fuelAddition = 0.075f * refillMultiplier; //magic number, don't tell anyone :)
 	}
 
 	void collectCat ( ObjectScript cat ) {
+		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.keyCollected, 1);
 		game.markCatCollected ( cat );
 	}
 
@@ -299,7 +302,7 @@ public class RocketPlayerScript : MonoBehaviour {
 		switch (col.gameObject.tag) 
 		{
 		case "cloud": 
-			registerHit(1);
+			registerHit(obj.penaltyLevel);
 			break;
 		case "fuel":
 			collectFuel (0.65f);

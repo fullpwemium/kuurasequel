@@ -102,6 +102,7 @@ public class TextBoxManager : MonoBehaviour {
     {
         switch (currentScene)
         {
+			/*
             case "Mine":
                 GlobalGameManager.GGM.labyrinthCutscenesWatched++;
                 break;
@@ -113,7 +114,13 @@ public class TextBoxManager : MonoBehaviour {
                 break;
             case "Memory":
                 GlobalGameManager.GGM.memoryCutscenesWatched++;
-                break;
+                break;*/
+			case "RocketGame":
+				GlobalGameManager.GGM.rocketGameCutscenesWatched++;
+				break;
+			case "WordQuiz":
+				GlobalGameManager.GGM.wordQuizCutscenesWatched++;
+				break;
             default:
                 Debug.Log("Scene doesn't exist");
                 break;

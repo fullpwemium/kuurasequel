@@ -77,7 +77,6 @@ public class RocketGameCountdown : MonoBehaviour {
 		float left = endTime - Time.time;
 
 		if (Mathf.Floor (left) < currentCount) {
-			
 			frameIndex++;
 			currentCount--;
 			gfx.sprite = frames [frameIndex];
@@ -86,6 +85,11 @@ public class RocketGameCountdown : MonoBehaviour {
 			rotationDir = rotationDir * -1;
 			scaleSpeed = scaleSpeedMax;
 			gfxT.transform.eulerAngles = new Vector3 (0, 0, 34 * rotationDir *-1 );
+			if (frameIndex < 3) {
+				MusicPlayer.instance.PlaySoundEffect (MusicPlayer.instance.roll, 2);
+			} else {
+				MusicPlayer.instance.PlaySoundEffect (MusicPlayer.instance.jump, 2);
+			}
 		}
 
 		if (left < 0) {
@@ -114,6 +118,8 @@ public class RocketGameCountdown : MonoBehaviour {
 		rotationSpeed = rotationSpeedMax;
 		scrollSpeed = scrollSpeedStart;
 		scaleSpeed = scaleSpeedMax;
+
+		MusicPlayer.instance.PlaySoundEffect (MusicPlayer.instance.roll, 2);
 
 		playing = true;
 	}

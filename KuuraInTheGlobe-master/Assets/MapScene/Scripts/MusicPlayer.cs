@@ -34,8 +34,9 @@ public class MusicPlayer : MonoBehaviour
     public AudioClip crouch;
     public AudioClip dontBuy;
     public AudioClip doorUnlocked;
-    public AudioClip itemCatch;
-    public AudioClip menuEffect;
+    public AudioClip itemCatchGood;
+	public AudioClip itemCatchBad;
+	public AudioClip menuEffect;
     public AudioClip jump;
     public AudioClip keyCollected;
     public AudioClip purringCat;

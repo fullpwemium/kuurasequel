@@ -28,7 +28,18 @@ public class OverworldButtonScript : MonoBehaviour
 		
 		if (Bob.getCurrentNode() == nodeScript) {
 			Bob.storePosition ();
-			SceneManager.LoadScene (sceneToLoad, LoadSceneMode.Single);
+			MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
+
+			switch (sceneToLoad) {
+				case "Shop":
+				case "Theater":
+					SceneManager.LoadScene (sceneToLoad, LoadSceneMode.Single);
+					break;
+				default:
+					GlobalGameManager.GGM.currentScene = sceneToLoad;
+					SceneManager.LoadScene ("Cutscene", LoadSceneMode.Single);
+					break;
+			}
 			return;
 		}
 

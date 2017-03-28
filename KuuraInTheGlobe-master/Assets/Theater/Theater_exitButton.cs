@@ -16,6 +16,7 @@ public class Theater_exitButton : MonoBehaviour {
 	}
 	
 	void exit () {
+		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
 		SceneManager.LoadScene (OverworldSceneName, LoadSceneMode.Single);
 	}
 }

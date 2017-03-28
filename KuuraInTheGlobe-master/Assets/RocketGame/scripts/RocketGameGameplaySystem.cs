@@ -133,6 +133,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 	void pauseGame() {
 		if (canPause && !paused) {
+			MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
 			paused = !paused; //flip the boolean
 			player.pause (paused);
 			Destroy (GameObject.Find ("UICanvas/fuelMeter/rg_pause(Clone)"));
@@ -215,6 +216,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	}
 
 	void gotoNextLevel () {
+		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.keyCollected, 1);
 		if (!system.isCatCollected (currentLevel)) {
 			spawnCat (currentLevel);
 		}

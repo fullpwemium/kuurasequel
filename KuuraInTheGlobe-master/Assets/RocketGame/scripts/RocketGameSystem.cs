@@ -110,6 +110,7 @@ public class RocketGameSystem : MonoBehaviour {
 	// Function to call when player wants to exit the minigame
 	public void exit () {
 		// Saving cleared levels, collected cats, and other details would go here
+		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
 		Destroy(gameObject);
 		SceneManager.LoadScene ("Overworld", LoadSceneMode.Single);
 	}

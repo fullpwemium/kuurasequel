@@ -17,15 +17,6 @@ public class BobOverworldScript : MonoBehaviour
 	private PathFollower pathfinder;
 	public static float aboveButton;
 
-	//static int reittiX, reittiY, reitinpituus, midWayDestinationX, midWayDestinationY;
-
-	public static int DestinationButtonNumberX;
-	public static int DestinationButtonNumberY;
-	public static int StandingButtonNumberX = 0;
-	public static int StandingButtonNumberY = 1;
-
-	//    private map_manager map;
-
 	public static Vector3 destination;
 
 

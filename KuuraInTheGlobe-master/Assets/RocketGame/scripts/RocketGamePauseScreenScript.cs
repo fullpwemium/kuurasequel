@@ -32,11 +32,13 @@ public class RocketGamePauseScreenScript : MonoBehaviour {
 	}
 
 	void unpause() {
+		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
 		game.unpause ();
 		Destroy (gameObject);
 	}
 
 	void gotoLevelSelect() {
+		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
 		game.gotoLevelSelect ();
 	}
 }

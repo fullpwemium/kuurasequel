@@ -90,6 +90,7 @@ public class RocketGameLevelSelect : MonoBehaviour {
 	}
 
 	void levelButtonClicked ( int level ) {
+		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
 		if (clicked) {
 			return;
 		}
@@ -100,6 +101,7 @@ public class RocketGameLevelSelect : MonoBehaviour {
 	}
 
 	void endlessMode() {
+		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
 		system.setEndless (true);
 		system.setStartingLevel (11);
 		player.playerFlyingPosition = 5000f;

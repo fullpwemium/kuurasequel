@@ -12,6 +12,7 @@ public class NPCSwitcher : MonoBehaviour {
         {
             //cases are based on which scene's background are used
             //should consider using string for the names instead, but integers have some benefits here
+			/*
             case "Mine":
                 GetComponent<SpriteRenderer>().sprite = NPCSprite[0];
                 break;
@@ -23,7 +24,13 @@ public class NPCSwitcher : MonoBehaviour {
                 break;
             case "Forest":
                 GetComponent<SpriteRenderer>().sprite = NPCSprite[3];
-                break;
+                break;*/
+			case "RocketGame":
+				GetComponent<SpriteRenderer>().sprite = NPCSprite[0];
+				break;
+			case "WordQuiz":
+				GetComponent<SpriteRenderer>().sprite = NPCSprite[1];
+				break;
             default:
                 Debug.Log("This scene should not exist.");
                 break;

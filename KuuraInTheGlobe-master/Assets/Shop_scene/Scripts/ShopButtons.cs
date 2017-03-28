@@ -947,7 +947,7 @@ public class ShopButtons : MonoBehaviour {
     public void LoadScene(int scene)
     {
         //BackButton loads the worldmap
-        //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
 		SceneManager.LoadScene("Overworld", LoadSceneMode.Single);
     }
 

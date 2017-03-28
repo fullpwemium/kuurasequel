@@ -18,21 +18,14 @@ public class MenuButtons : MonoBehaviour {
 
     public void Play()
     {
-        Debug.Log(currentScene);
         MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuOk, 1);
         switch (currentScene) {
-            case "Mine":
-                SceneManager.LoadScene("LabyrinthLevelSelect");
+            case "RocketGame":
+                SceneManager.LoadScene("_rocketGameLevelSelect");
                 break;
-            case "Memory":
-                SceneManager.LoadScene("LevelMap");
-                break;
-            case "Forest":
-                SceneManager.LoadScene("RunnerLevelMap");
-                break;
-            case "Warehouse":
-                SceneManager.LoadScene("CatchTheCatLevelSelect");
-                break;
+            case "WordQuiz":
+				SceneManager.LoadScene("WordGameScene");
+				break;
             default:
                 break;
         }
@@ -45,7 +38,7 @@ public class MenuButtons : MonoBehaviour {
         Debug.Log("Back to map");
         MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
         backgroundSwitcher.GetComponent<BackgroundSwitcher>().enabled = false;
-        SceneManager.LoadScene("Map2");
+        SceneManager.LoadScene("Overworld");
         EventHandler.scenePosition = 0;
     }
 }
