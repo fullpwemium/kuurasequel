@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WordGameScript : MonoBehaviour {
+
+    public GameObject systemPrefab;
 
     private bool isWin;
     private bool isLose;
@@ -138,7 +141,7 @@ public class WordGameScript : MonoBehaviour {
         else if(buttonName == "e")
         {
             Debug.Log("Exit button clicked, load the world map!");
-            //TODO Load the world map
+            exitMinigame();
         }
     }
 
@@ -296,6 +299,7 @@ public class WordGameScript : MonoBehaviour {
 
     public void exitMinigame()
     {
-        //TODO exit game & load world map
+        Debug.Log("Exiting quiz minigame");
+        SceneManager.LoadScene("Overworld", LoadSceneMode.Single);
     }
 }
