@@ -188,6 +188,7 @@ public class MusicPlayer : MonoBehaviour
             case "RunnerLevelMap":
 			case "_rocketGame-Gameplay": 
 			case "_rocketGameLevelSelect": 
+			case "WordGameScene":
 
                 if (audioSources[10].isPlaying) { break; }
 

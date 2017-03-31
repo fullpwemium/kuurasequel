@@ -27,7 +27,7 @@ public class RocketGameLevelSelect : MonoBehaviour {
 			system = GameObject.Find ("rocketGameSystem").GetComponent<RocketGameSystem> ();
 		}
 
-		Text t = GameObject.Find ("MainCanvas/highscorebox/text/highscore").GetComponent<Text> ();
+		Text t = GameObject.Find ("MainCanvas/endless/highscorebox/text/highscore").GetComponent<Text> ();
 		t.text = system.getHighscore () + "m";
 
 		player = GameObject.Find ("MainCanvas/playerObject_levelSelect").GetComponent<RocketGameLevelSelectPlayerObject> ();
