@@ -7,12 +7,14 @@
 
   "bgObjectMin":0,
   "bgObjectMax":2,
-  "bgSpawnMin":0.4,
-  "bgSpawnMax":2.0,
+  "bgSpawnMin":1.8,
+  "bgSpawnMax":3.0,
 
   "spawnFuel": 0.21,
-  "spawnBadCloud": 0.5,
-  "spawnEvil": 0.0,
-  "spawnPoison":0.15,
-  "spawnVenom":0.05
+  "spawnBadCloud": 0.50,
+  "spawnSnow":0.3,
+  "spawnLava":0.0,
+  "spawnPoison":0.0,
+  "spawnVenom":0.0,
+  "spawnEvil": 0.0
 }

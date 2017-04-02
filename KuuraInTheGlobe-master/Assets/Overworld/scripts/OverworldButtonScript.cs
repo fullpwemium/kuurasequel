@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class OverworldButtonScript : MonoBehaviour
 {
 	public string sceneToLoad;
-	public int gameNumber;
 
 	private Node nodeScript;
 	BobOverworldScript Bob;
@@ -33,6 +32,7 @@ public class OverworldButtonScript : MonoBehaviour
 			switch (sceneToLoad) {
 				case "Shop":
 				case "Theater":
+				case "Bob_apartment":
 					SceneManager.LoadScene (sceneToLoad, LoadSceneMode.Single);
 					break;
 				default:

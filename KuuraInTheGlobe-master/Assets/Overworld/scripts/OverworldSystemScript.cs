@@ -19,8 +19,8 @@ public class OverworldSystemScript : MonoBehaviour {
 	}
 
 	public void init() {
-		bobPosition = GameObject.Find ("Canvas/Background/Tiles/RocketGame").GetComponent<Transform> ().position;
-		bobNode = "Canvas/Background/Tiles/RocketGame";
+		bobPosition = GameObject.Find ("Canvas/Foreground/Tiles/RocketGame").GetComponent<Transform> ().position;
+		bobNode = "Canvas/Foreground/Tiles/RocketGame";
 	}
 
 	public Vector3 getBobStartingPosition() {

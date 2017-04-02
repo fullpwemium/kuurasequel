@@ -7,8 +7,8 @@
 
   "bgObjectMin":0,
   "bgObjectMax":2,
-  "bgSpawnMin":0.8,
-  "bgSpawnMax":2.0,
+  "bgSpawnMin":1.8,
+  "bgSpawnMax":3.0,
 
   "spawnFuel": 0.25,
   "spawnBadCloud": 0.75

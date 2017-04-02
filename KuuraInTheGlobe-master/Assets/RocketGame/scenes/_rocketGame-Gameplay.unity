@@ -2311,8 +2311,10 @@ MonoBehaviour:
   levelIndicator: {fileID: 1542931576373966, guid: b7b45a6a91659e145ac8d5f354d07102,
     type: 2}
   spawnableObjects:
-  - {fileID: 1459910626530208, guid: bea60027f28a215458bb996a92125a24, type: 2}
   - {fileID: 1917276525322342, guid: 3eeed6adb59717c42850cd529439b00e, type: 2}
+  - {fileID: 1459910626530208, guid: bea60027f28a215458bb996a92125a24, type: 2}
+  - {fileID: 1529456246732498, guid: 30516f09ae089fd47b35c85fd9bbd772, type: 2}
+  - {fileID: 1644951499150124, guid: ebbc2a5a047d6564890112f20ddfe96a, type: 2}
   - {fileID: 1502490290322154, guid: 1185419b09ff17b47a585d5c2a0a345e, type: 2}
   - {fileID: 1342800312484946, guid: 4e440cd1ab6142e4ba0c649655e13085, type: 2}
   - {fileID: 1049474316540224, guid: a25b8b165ff94ae48a78872a3284d7c3, type: 2}
