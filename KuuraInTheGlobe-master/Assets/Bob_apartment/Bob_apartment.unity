@@ -1044,6 +1044,52 @@ MonoBehaviour:
   buttonNo: {fileID: 705038542}
   text: {fileID: 616791280}
   BackButton: {fileID: 1195925537}
+--- !u!1001 &320839248
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000011860261078, guid: 6be94df2d2a8c354abf3690c8e445f5d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011860261078, guid: 6be94df2d2a8c354abf3690c8e445f5d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011860261078, guid: 6be94df2d2a8c354abf3690c8e445f5d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011860261078, guid: 6be94df2d2a8c354abf3690c8e445f5d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011860261078, guid: 6be94df2d2a8c354abf3690c8e445f5d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011860261078, guid: 6be94df2d2a8c354abf3690c8e445f5d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011860261078, guid: 6be94df2d2a8c354abf3690c8e445f5d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011860261078, guid: 6be94df2d2a8c354abf3690c8e445f5d, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011175778312, guid: 6be94df2d2a8c354abf3690c8e445f5d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6be94df2d2a8c354abf3690c8e445f5d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &325798777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,8 +2474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff4d6612187a9a44bfed1847b45eb4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  androidGameId: 1094862
-  iosGameId: 1094871
   testMode: 1
 --- !u!4 &864894183
 Transform:
@@ -3862,7 +3906,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BackButton: {fileID: 1524845966}
-  sceneToLoad: 0
 --- !u!114 &1524845966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4261,7 +4304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d9d18f1e96fcc54995b2b73c9b3fbc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementId: 
+  _button: {fileID: 0}
 --- !u!114 &1739823278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4865,7 +4908,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1825655664}
   serializedVersion: 5
   lengthInSec: 1
-  speed: 1
+  simulationSpeed: 1
   looping: 0
   prewarm: 0
   playOnAwake: 0

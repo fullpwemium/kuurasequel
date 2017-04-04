@@ -1,19 +1,21 @@
 {
   "level": 10,
-  "spawnMin": 0.15,
-  "spawnMax": 1.4,
+  "spawnMin": 0.18,
+  "spawnMax": 1.45,
   "targetAltitude": 5000.0,
-  "spawnFuelEvery":4,
+  "spawnFuelEvery":5,
 
   "bgObjectMin":3,
   "bgObjectMax":5,
-  "bgSpawnMin":0.35,
-  "bgSpawnMax":2.0,
+  "bgSpawnMin":2.4,
+  "bgSpawnMax":3.4,
 
-  "spawnFuel": 0.05,
-  "spawnBadCloud": 0.00,
-  "spawnEvil": 0.7,
-  "spawnPoison":0.1,
-  "spawnVenom":0.1
+  "spawnFuel": 0.07,
+  "spawnBadCloud": 0.01,
+  "spawnSnow":0.03,
+  "spawnLava":0.03,
+  "spawnPoison":0.2,
+  "spawnVenom":0.2,
+  "spawnEvil": 0.4
 
 }

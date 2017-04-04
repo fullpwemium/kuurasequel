@@ -5,18 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class BackToMainmap : MonoBehaviour {
     public Button BackButton;
-    public int sceneToLoad;
 
 	// Use this for initialization
 	void Start ()
     {
-        BackButton.onClick.AddListener(() => LoadScene(sceneToLoad));
+		BackButton.onClick.AddListener(() => LoadScene());
     }
 
-    public void LoadScene(int scene)
+	public void LoadScene()
     {
         MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
-        SceneManager.LoadScene("Map2");
+        SceneManager.LoadScene("Overworld");
     }
 
 }

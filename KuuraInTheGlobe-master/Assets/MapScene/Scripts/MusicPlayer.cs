@@ -338,20 +338,20 @@ public class MusicPlayer : MonoBehaviour
     */
     private void Resume()
     {
-        
+        /*
         //if (pausedTrack != GetCurrentlyPlayingMusicTrack()) {
         if (SceneManager.GetActiveScene().name.Equals(currentSceneName))
             {
-                try
-            {
-                pausedTrack.UnPause();
-                Debug.Log("Music track resumed from pause.");
-            }
-            catch (System.Exception) {
-                Debug.Log("There was an exception related to resuming a music track.");
-            } 
+	            try
+	            {
+	                pausedTrack.UnPause();
+	                Debug.Log("Music track resumed from pause.");
+	            }
+	            catch (System.Exception) {
+	                Debug.Log("There was an exception related to resuming a music track.");
+	            } 
         }
-        
+        */
     }
 
 

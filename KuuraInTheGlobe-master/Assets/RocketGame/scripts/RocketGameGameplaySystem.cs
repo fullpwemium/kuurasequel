@@ -197,11 +197,14 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 		// Little pseudo percentage based way to set what objects are spawned and how often
 		spawnProbabilities = new List<int> ();
-		populateSpawnList (fti (level.spawnBadCloud), 0);
-		populateSpawnList (fti (level.spawnFuel), 1);
-		populateSpawnList (fti (level.spawnEvil), 4);
-		populateSpawnList (fti (level.spawnPoison), 2);
-		populateSpawnList (fti (level.spawnVenom), 3);
+		populateSpawnList (fti (level.spawnFuel), 0);
+		populateSpawnList (fti (level.spawnBadCloud), 1);
+		populateSpawnList (fti (level.spawnSnow), 2);
+		populateSpawnList (fti (level.spawnLava), 3);
+		populateSpawnList (fti (level.spawnPoison), 4);
+		populateSpawnList (fti (level.spawnVenom), 5);
+		populateSpawnList (fti (level.spawnEvil), 6);
+
 
 		// Update player's altitude
 		player.initAltitude (start);
@@ -340,7 +343,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 			if(objID != 1) {// fuel
 				if (guaranteedFuelDrop >= level.spawnFuelEvery) {
-					spawnObject (1);	
+					spawnObject (0);	
 					guaranteedFuelDrop = 0;
 				} else {
 					guaranteedFuelDrop++;

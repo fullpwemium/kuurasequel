@@ -157,6 +157,7 @@ public class RocketGameGameOverScript : MonoBehaviour {
 	float scoreResult = 0f;
 	bool highscoreAchieved = false;
 	public void init (float result, bool isHighscore ) {
+		//MusicPlayer.StopMusic ();
 		MusicPlayer.PlayMusic (MusicTrack.GameOverJingle);
 
 		gameOverScreenObj = Instantiate (gameOverScreen);

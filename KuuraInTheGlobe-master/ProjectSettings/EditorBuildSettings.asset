@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Intro/IntroVideo.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/MapScene/Map2.unity
   - enabled: 1
     path: Assets/Bob_apartment/Bob_apartment.unity

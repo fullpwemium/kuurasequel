@@ -287,7 +287,7 @@ public class RocketPlayerScript : MonoBehaviour {
 
 	void collectFuel ( float refillMultiplier ) {
 		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.itemCatchGood, 1);
-		fuelAddition = 0.075f * refillMultiplier; //magic number, don't tell anyone :)
+		fuelAddition += 0.075f * refillMultiplier; //magic number, don't tell anyone :)
 	}
 
 	void collectCat ( ObjectScript cat ) {
