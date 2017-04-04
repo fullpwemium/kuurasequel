@@ -24,7 +24,7 @@ public class MenuButtons : MonoBehaviour {
                 SceneManager.LoadScene("_rocketGameLevelSelect");
                 break;
             case "WordQuiz":
-				SceneManager.LoadScene("WordGameScene");
+				SceneManager.LoadScene("WordGameLevelSelect");
 				break;
             default:
                 break;

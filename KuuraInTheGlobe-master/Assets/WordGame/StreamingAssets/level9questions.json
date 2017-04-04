@@ -1,0 +1,38 @@
+{
+"questionData":
+	[{
+	"question": "Pick the bonfire",
+	"answer": "C",
+	"optionA": "lightning",
+	"optionB": "sun",
+	"optionC": "bonfire"
+	},
+	{
+	"question": "Odd one out",
+	"answer": "C",
+	"optionA": "thunder",
+	"optionB": "hurricane",
+	"optionC": "sun"
+	},
+	{
+	"question": "Pick the orange item",
+	"answer": "A",
+	"optionA": "orange",
+	"optionB": "kuura",
+	"optionC": "snowflake"
+	},
+	{
+	"question": "What do you need for sailing?",
+	"answer": "B",
+	"optionA": "flippers",
+	"optionB": "boat",
+	"optionC": "lake"
+	},
+	{
+	"question": "What goes with a cat?",
+	"answer": "B",
+	"optionA": "dog",
+	"optionB": "yarnball",
+	"optionC": "bob"
+	}]
+}

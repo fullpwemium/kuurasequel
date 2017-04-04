@@ -1,0 +1,38 @@
+{
+"questionData":
+	[{
+	"question": "Pick the christmas tree",
+	"answer": "B",
+	"optionA": "sun",
+	"optionB": "christmas",
+	"optionC": "balloon"
+	},
+	{
+	"question": "Odd one out",
+	"answer": "C",
+	"optionA": "lantern",
+	"optionB": "chair",
+	"optionC": "kuura"
+	},
+	{
+	"question": "Which item is brown?",
+	"answer": "C",
+	"optionA": "mouse",
+	"optionB": "icicle",
+	"optionC": "chocolate"
+	},
+	{
+	"question": "What do you use to surf?",
+	"answer": "A",
+	"optionA": "surfboard",
+	"optionB": "computer",
+	"optionC": "pot"
+	},
+	{
+	"question": "What goes with tennis racket?",
+	"answer": "B",
+	"optionA": "hockey",
+	"optionB": "tennisball",
+	"optionC": "balloon"
+	}]
+}

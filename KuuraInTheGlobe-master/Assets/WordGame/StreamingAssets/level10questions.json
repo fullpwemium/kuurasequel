@@ -1,0 +1,38 @@
+{
+"questionData":
+	[{
+	"question": "Pick the teddybear",
+	"answer": "C",
+	"optionA": "bunny",
+	"optionB": "kuura",
+	"optionC": "teddy"
+	},
+	{
+	"question": "Odd one out",
+	"answer": "B",
+	"optionA": "dragon",
+	"optionB": "butterfly",
+	"optionC": "unicorn"
+	},
+	{
+	"question": "Pick the pink item",
+	"answer": "A",
+	"optionA": "unicorn",
+	"optionB": "starberry",
+	"optionC": "bunny"
+	},
+	{
+	"question": "What do you need for driving?",
+	"answer": "B",
+	"optionA": "bike",
+	"optionB": "car",
+	"optionC": "skateboard"
+	},
+	{
+	"question": "What's in the snow globe?",
+	"answer": "B",
+	"optionA": "woollycap",
+	"optionB": "kuura",
+	"optionC": "christmas"
+	}]
+}

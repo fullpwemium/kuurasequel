@@ -1,0 +1,38 @@
+{
+"questionData":
+	[{
+	"question": "Pick the fork",
+	"answer": "C",
+	"optionA": "pot",
+	"optionB": "mug",
+	"optionC": "fork"
+	},
+	{
+	"question": "Odd one out",
+	"answer": "C",
+	"optionA": "birch",
+	"optionB": "christmas",
+	"optionC": "balloon"
+	},
+	{
+	"question": "Pick the red item",
+	"answer": "B",
+	"optionA": "coin",
+	"optionB": "yarnball",
+	"optionC": "bomb"
+	},
+	{
+	"question": "What do you play tennis with?",
+	"answer": "A",
+	"optionA": "tennisracket",
+	"optionB": "hockey",
+	"optionC": "parachute"
+	},
+	{
+	"question": "What goes together with a stove",
+	"answer": "C",
+	"optionA": "fork",
+	"optionB": "strawberry",
+	"optionC": "pot"
+	}]
+}

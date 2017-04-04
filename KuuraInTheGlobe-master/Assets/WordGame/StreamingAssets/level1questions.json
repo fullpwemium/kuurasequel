@@ -1,38 +1,38 @@
 {
 "questionData":
 	[{
-	"question": "Pick the blue cat",
+	"question": "Pick the cloud",
 	"answer": "B",
-	"optionA": "whitecat",
-	"optionB": "bluecat",
-	"optionC": "pinkcat"
+	"optionA": "lightning",
+	"optionB": "cloud",
+	"optionC": "christmas"
 	},
 	{
-	"question": "How many barons are in the snowglobe?",
+	"question": "Odd one out",
 	"answer": "C",
-	"optionA": "two",
-	"optionB": "three",
-	"optionC": "four"
+	"optionA": "spoon",
+	"optionB": "fork",
+	"optionC": "sun"
 	},
 	{
-	"question": "Which item keeps you warm during winter?",
+	"question": "Pick the purple item",
 	"answer": "A",
-	"optionA": "Bluejacket",
-	"optionB": "canfood",
-	"optionC": "GreenGlasses"
+	"optionA": "lantern",
+	"optionB": "bunny",
+	"optionC": "balloon"
 	},
 	{
-	"question": "Which one is cat toy?",
+	"question": "Which item can you fly with?",
 	"answer": "A",
-	"optionA": "balloyarn",
-	"optionB": "Bomb",
-	"optionC": "coin"
+	"optionA": "glider",
+	"optionB": "balloon",
+	"optionC": "parachute"
 	},
 	{
-	"question": "Pick the fruit",
+	"question": "What lives in trees",
 	"answer": "B",
-	"optionA": "mansikka",
-	"optionB": "paaryna",
-	"optionC": "kirsikka"
+	"optionA": "dog",
+	"optionB": "bird",
+	"optionC": "kuura"
 	}]
 }

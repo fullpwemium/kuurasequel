@@ -1,0 +1,38 @@
+{
+"questionData":
+	[{
+	"question": "Pick the snowflake",
+	"answer": "A",
+	"optionA": "snowflake",
+	"optionB": "cloud",
+	"optionC": "bonfire"
+	},
+	{
+	"question": "Odd one out",
+	"answer": "C",
+	"optionA": "bunny",
+	"optionB": "kuura",
+	"optionC": "fork"
+	},
+	{
+	"question": "Which of these is yellow?",
+	"answer": "A",
+	"optionA": "sun",
+	"optionB": "icehockey",
+	"optionC": "pine"
+	},
+	{
+	"question": "Which item do you need for hiking?",
+	"answer": "C",
+	"optionA": "skis",
+	"optionB": "glider",
+	"optionC": "shoes"
+	},
+	{
+	"question": "What goes together with flowers?",
+	"answer": "B",
+	"optionA": "skis",
+	"optionB": "watering",
+	"optionC": "bonfire"
+	}]
+}

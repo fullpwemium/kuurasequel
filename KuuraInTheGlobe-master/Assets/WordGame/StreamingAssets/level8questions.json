@@ -1,0 +1,38 @@
+{
+"questionData":
+	[{
+	"question": "Pick the mug",
+	"answer": "B",
+	"optionA": "jug",
+	"optionB": "mug",
+	"optionC": "balloon"
+	},
+	{
+	"question": "Odd one out",
+	"answer": "C",
+	"optionA": "bunny",
+	"optionB": "birch",
+	"optionC": "glasses"
+	},
+	{
+	"question": "What item is blue?",
+	"answer": "C",
+	"optionA": "christmas",
+	"optionB": "fork",
+	"optionC": "jacket"
+	},
+	{
+	"question": "What do you need for cooking?",
+	"answer": "A",
+	"optionA": "pot",
+	"optionB": "sun",
+	"optionC": "bomb"
+	},
+	{
+	"question": "What goes wíth a plane?",
+	"answer": "C",
+	"optionA": "bird",
+	"optionB": "balloon",
+	"optionC": "parachute"
+	}]
+}

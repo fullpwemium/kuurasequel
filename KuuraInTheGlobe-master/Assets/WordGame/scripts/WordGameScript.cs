@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -7,17 +8,23 @@ using UnityEngine.UI;
 
 public class WordGameScript : MonoBehaviour {
 
+    //Variables used to initialize the game system
     public GameObject systemPrefab;
+    private WordGameSystemScript system;
 
+    //Three main states of the game
     private bool isWin;
     private bool isLose;
     private bool playable;
 
+    //Variables that control the game states
     private int fails;
     private int corrects;
     private int tries;
+    private int currentLevel;
     private List<int> questionIndexes;
 
+    //UI objects
     private Image buttonA;
     private Image buttonB;
     private Image buttonC;
@@ -28,23 +35,26 @@ public class WordGameScript : MonoBehaviour {
     public GameObject GameOverPanel;
     public GameObject NextLevelPanel;
 
+    //Variables that contain level data and JSON stuff
     public List<TextAsset> questionList;
+    private List<WordGameQuestionData> levels;
     private WordGameQuestionData questions;
     private WordGameQuestion currentQ;
 
     // Use this for initialization
     void Start() {
-        fails = 0;
-        corrects = 0;
-        tries = 0;
-        isLose = false;
-        isWin = false;
-        playable = true;
+        //Initialize or fetch the game system that contains level data
+        initSystem();
 
+        //Initialize game state
+        resetGameState();
+
+        //Initialize containers and the questionText object
+        questionIndexes = new List<int>();
+        levels = new List<WordGameQuestionData>();
         questionText = GameObject.Find("QuestionText").GetComponent<Text>();
-        GameOverPanel.SetActive(false);
-        NextLevelPanel.SetActive(false);
 
+        //Initialize the game itself
         initGame();
 
     }
@@ -60,12 +70,39 @@ public class WordGameScript : MonoBehaviour {
         {
             gameWin();
         }
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("r"))      //For debugging purposes, has no functionality in mobile platform
         {
             resetLevel();
         }
 		
 	}
+
+    private void initSystem()
+    {
+        if (!GameObject.Find("wordGameSystem"))
+        {
+            Debug.Log("System not found, creating one!");
+            system = GameObject.Instantiate(systemPrefab).GetComponent<WordGameSystemScript>();
+            system.init();
+            Debug.Log("System initialized");
+        }
+        else
+        {
+            Debug.Log("System found!");
+            system = GameObject.Find("wordGameSystem").GetComponent<WordGameSystemScript>();
+        }
+    }
+
+    private void resetGameState()
+    {
+        currentLevel = system.getStartingLevel() - 1;
+        fails = 0;
+        corrects = 0;
+        tries = 0;
+        isLose = false;
+        isWin = false;
+        playable = true;
+    }
 
     private void initGame()
     {
@@ -74,6 +111,7 @@ public class WordGameScript : MonoBehaviour {
         initQuestionList();
         initQuestionIndexes();
         updateCurrentQuestion();
+        resetUI();
         updateButtonImages();
     }
 
@@ -127,7 +165,7 @@ public class WordGameScript : MonoBehaviour {
                 updateStarImages(false);
             }
             if(!isLose && !isWin)
-                loadNewQuestion();
+                updateCurrentQuestion();
         }
      
     }
@@ -155,10 +193,11 @@ public class WordGameScript : MonoBehaviour {
 
     public void loadQuestionData(string level)
     {
-        questions = JsonUtility.FromJson<WordGameQuestionData>(questionList[0].text);
+        questions = JsonUtility.FromJson<WordGameQuestionData>(questionList[Int32.Parse(level)-1].text);
+        levels.Add(questions);
         Debug.Log("Level " + level + " questionData loaded!");
     }
-
+    
     private void updateButtonImages()
     {
         buttonA.sprite = Resources.Load<Sprite>(currentQ.optionA);
@@ -218,7 +257,7 @@ public class WordGameScript : MonoBehaviour {
     private void initQuestionList()
     {
         for (int i = 0; i < questionList.Capacity; i++)
-            loadQuestionData(i+1.ToString());
+            loadQuestionData((i+1).ToString());
     }
 
     private void initButtons()
@@ -244,14 +283,14 @@ public class WordGameScript : MonoBehaviour {
 
     private void updateCurrentQuestion()
     {
-        currentQ = questions.questionData[getNextQIndex()];
+        currentQ = levels[currentLevel].questionData[getNextQIndex()];
         questionText.text = currentQ.question;
         updateButtonImages();
     }
 
     private void initQuestionIndexes()
     {
-        questionIndexes = new List<int>();
+        questionIndexes.Clear();
         System.Random rnd = new System.Random();
         while(questionIndexes.Count < 5)
         {
@@ -275,31 +314,36 @@ public class WordGameScript : MonoBehaviour {
         return -1;
     }
 
-    private void loadNewQuestion()
-    {
-        updateCurrentQuestion();
-    }
-
     private void resetLevel()
     {
-        tries = 0;
-        fails = 0;
-        corrects = 0;
-        isWin = false;
-        isLose = false;
-        playable = true;
+        resetGameState();
         initQuestionIndexes();
         updateCurrentQuestion();
         updateButtonImages();
-        resetStars();
-        GameOverPanel.SetActive(false);
-        NextLevelPanel.SetActive(false);
+        resetUI();
         Debug.Log("Level restarted");
     }
 
     public void exitMinigame()
     {
         Debug.Log("Exiting quiz minigame");
-        SceneManager.LoadScene("Overworld", LoadSceneMode.Single);
+        SceneManager.LoadScene("WordGameLevelSelect", LoadSceneMode.Single);
+    }
+
+    private void loadNextLevel()
+    {
+        if (currentLevel < levels.Capacity)
+        {
+            currentLevel++;
+            resetLevel();
+        }
+        else Debug.Log("No next level exists");
+    }
+
+    private void resetUI()
+    {
+        resetStars();
+        GameOverPanel.SetActive(false);
+        NextLevelPanel.SetActive(false);
     }
 }
