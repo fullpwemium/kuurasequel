@@ -22,7 +22,7 @@ public class RocketGameLevelSelect : MonoBehaviour {
 		// Fetch system object
 		if (!GameObject.Find ("rocketGameSystem")) {
 			system = GameObject.Instantiate (systemPrefab).GetComponent<RocketGameSystem> ();
-			system.init ();
+			//system.init ();
 		} else {
 			system = GameObject.Find ("rocketGameSystem").GetComponent<RocketGameSystem> ();
 		}

@@ -22,46 +22,8 @@ public class MemoryGameLevelSelecterLimitter : MonoBehaviour
     //Checks levels if OnLevelWasLoaded was not called
     void Start()
     {
-        MusicPlayer.PlayMusic(MusicTrack.MysticCards);
-
-        //GlobalGameManager.GGM.MemoryGameSave();
-
-        GlobalGameManager.GGM.MemoryGameLoad();
-
-        //canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-
-        //canvas.enabled = true;
-        //button = GetComponent<Button>();
-
-
-        //button.onClick.AddListener(loadFrigginLevel);
-
-
-
-        //toggle = GameObject.Find("GyroToggle").GetComponent<Toggle>();
-        //toggle.onValueChanged.AddListener((delegate { ShelfGameManager.GyroToggle(); }));
-
-        CheckLevels();      //Rajoitetaan muistipelissä näkyviä kenttiä
-
-        /*if (ShelfGameManager.gyroOn == true)
-        {
-            toggle.isOn = true;
-        }
-        else
-        {
-            toggle.isOn = false;
-        }
-
-        if (initialized == false)
-        {
-            CheckLevels();
-        }*/
+		//...
     }
-	/*
-    void OnLevelWasLoaded(int level)
-    {
-        CheckLevels();
-    }*/
 
     public static void MemoryGamelevelilapi(int levelnumber)
     {

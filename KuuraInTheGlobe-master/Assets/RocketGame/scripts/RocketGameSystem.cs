@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class RocketGameSystem : MonoBehaviour {
 
 	// How many levels has the player cleared?
-	int clearedLevels = 10;
+	int clearedLevels = 0;
 
 	// Chosen level or the point at which player starts from after picking "retry" on game over screen
 	int startingLevel = 1;
@@ -18,26 +18,34 @@ public class RocketGameSystem : MonoBehaviour {
 	bool[] cats = new bool[10];
 
 	// Has this script's init() function been called?
-	bool initialized = false;
+	//bool initialized = false;
 
 	// Is the player playing endless mode or not?
 	bool endless = false;
 
 	// Highscore, ie. the highest altitude player has reached
 	// This is updated only in the endless mode
-	float highscore = 0;
+	float highscore = 0f;
 
 	// Function to initialize the game system state; mostly relevant
 	// for checking what cats have been acquired and what haven't
-	public void init () {
-		if (initialized) {
+	void Awake () {
+		/*if (initialized) {
 			return;
-		}
-		for (int i = 0; i < cats.Length; i++) {
-			cats [i] = false;
+		}*/
+
+		clearedLevels = GlobalGameManager.GGM.getNumberOfBeatenLevels ("rocketGame");
+		if (clearedLevels == 0) {
+			clearedLevels++;
 		}
 
-		initialized = true;
+		for (int i = 0; i < cats.Length; i++) {
+			cats [i] = GlobalGameManager.GGM.hasCatBeenAcquiredForGivenLevel ("rocketGame", i + 1);
+		}
+
+		highscore = GlobalGameManager.GGM.getHighscore ("rocketGame");
+
+		//initialized = true;
 	}
 
 	// Return if cat is collected for a given level
@@ -51,6 +59,7 @@ public class RocketGameSystem : MonoBehaviour {
 	public void collectCat ( int level ) {
 		Debug.Log ("Cat was collected from level [" + level + "]");
 		cats [level - 1] = true;
+		GlobalGameManager.GGM.setCatAcquisitionForGivenLevel ("rocketGame", level, 1);
 	}
 
 	// Returns the highest altitude player has achieved
@@ -61,6 +70,7 @@ public class RocketGameSystem : MonoBehaviour {
 	// Update highscore
 	public void setHighscore ( float f ) {
 		highscore = Mathf.Clamp ( Mathf.Floor (f), 0f, 99999f);
+		GlobalGameManager.GGM.setHighscore ("rocketGame", highscore);
 	}
 
 	// Initialization for when the object is created
@@ -96,6 +106,7 @@ public class RocketGameSystem : MonoBehaviour {
 		// If cleared level is higher than previous maximum, update the value
 		if (clearedLevels < cleared) {
 			clearedLevels = cleared;
+			GlobalGameManager.GGM.setNumberOfBeatenLevels ("rocketGame", clearedLevels );
 		}
 
 		// Set checkpoint if player dies during non-endless mode gameplay

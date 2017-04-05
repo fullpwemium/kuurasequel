@@ -12,36 +12,32 @@ public class BobOverworldScript : MonoBehaviour
 
 	bool bobstill;
 
-	int startDestinationX, startDestinationY;
-
 	private PathFollower pathfinder;
-	public static float aboveButton;
-
-	public static Vector3 destination;
-
 
 	public static bool Moving;
 
-	OverworldSystemScript system;
-	public GameObject systemPrefab;
+	public float scaleFactor = 0.05F;
+
 	// Use this for initialization
 	void Start ()
 	{
-		if (!GameObject.Find ("OverworldGameSystem")) {
-			system = GameObject.Instantiate (systemPrefab).GetComponent<OverworldSystemScript> ();
-			system.init ();
-		} else {
-			system = GameObject.Find ("OverworldGameSystem").GetComponent<OverworldSystemScript> ();
-		}
 
 		BobPlayerAnimator = transform.FindChild("BobPlayer").GetComponent<Animator>();
 
 		pathfinder = this.GetComponent<PathFollower> ();
 		pathfinder.setParent (this.transform.gameObject);
 
-		Vector3 vec = GameObject.Find(system.getBobNodeName ()).GetComponent<Transform>().position;
+		// Set player's position
+		GameObject startingNode = GameObject.Find (
+			                          GlobalGameManager.GGM.getPlayerPositionOnMap ()
+		                          );
+
+		Vector3 vec = startingNode.GetComponent<Transform>().position;
 		this.transform.position = new Vector3 (vec.x, vec.y, this.transform.position.z);
-		pathfinder.setCurrentNode (GameObject.Find (system.getBobNodeName ()).GetComponent<Node> ());
+
+		pathfinder.setCurrentNode (
+			startingNode.GetComponent<Node> ()
+		);
 
 		Debug.Log ("Bobin alotusnode: " + pathfinder.getCurrentNode());
 
@@ -77,7 +73,9 @@ public class BobOverworldScript : MonoBehaviour
 			Moving = pathfinder.run ();
 			Animate ();
 			BobScale ();
-
+			if (!Moving) {
+				storePosition ();
+			}
 		} else {
 			
 
@@ -93,6 +91,7 @@ public class BobOverworldScript : MonoBehaviour
 			
 		Moving = true;
 		pathfinder.init ( path );
+
 	}
 
 	public Node getCurrentNode ( )
@@ -103,8 +102,8 @@ public class BobOverworldScript : MonoBehaviour
 	void BobScale()     //Skaalataan Bobia perspektiivin mukaan
 	{
 		transform.transform.localScale = new Vector2(
-			Mathf.Abs(transform.transform.position.y * 0.05F), 
-			Mathf.Abs(transform.transform.position.y * 0.05F)
+			Mathf.Abs(transform.transform.position.y * scaleFactor), 
+			Mathf.Abs(transform.transform.position.y * scaleFactor)
 		);
 	}
 
@@ -160,7 +159,7 @@ public class BobOverworldScript : MonoBehaviour
 	}
 
 	public void storePosition () {
-		system.setBobNodeName (pathfinder.getCurrentNode().gameObject.name);
+		GlobalGameManager.GGM.setPlayerPositionOnMap (pathfinder.getCurrentNode().gameObject.name);
 	}
 
 }

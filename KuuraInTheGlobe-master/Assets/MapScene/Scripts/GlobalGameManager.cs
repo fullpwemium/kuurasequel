@@ -44,7 +44,6 @@ public class GlobalGameManager : MonoBehaviour
     int currentGame;
     public List<int> completedGames;
 
-    //int[] MemoryGameStars = new int[200];
 
     public static int MagicDust;
     public static Text AllMagicDust;
@@ -55,29 +54,7 @@ public class GlobalGameManager : MonoBehaviour
 
     List<int> memoryGamecompletedLevels;
 
-    //List<int> MemoryGamecompletedLevels = new List<int>();
-
-    //List<int> RunnercompletedLevels = new List<int>();
-
-    //List<int> LabyrinthcompletedLevels = new List<int>();
-
-    //Pelienomat
-
-    //Mappi muuttujat
-    float ukkoX = 0.0f;
-    float ukkoY = 0.0f;
-
-    //BWH:n omat muuttujat
-    //List<int> bwhStars = new List<int>();
-    //List<int> bwhcompletedLevels = new List<int>();
-    //List<int> completetlevels;
-
     //How many cutscenes the player has seen from each world;
-    public int warehouseCutscenesWatched = 0;
-    public int labyrinthCutscenesWatched = 0;
-    public int memoryCutscenesWatched = 0;
-    public int runnerCutscenesWatched = 0;
-
 	public int rocketGameCutscenesWatched = 0;
 	public int wordQuizCutscenesWatched = 0;
 
@@ -107,36 +84,8 @@ public class GlobalGameManager : MonoBehaviour
 
     void Start()
     {
-
-        //InsertScore(5,bwhStars, "banana", 10);
-        haeData();
-
-        MemoryGameLoad();
-        RunnerLoad();
-        bubbleWarehouseLoad();    //Tulee "NullReferenceException: Object reference not set to an instance of an object"
-        LabyrinthLoad();          //Tulee "NullReferenceException: Object reference not set to an instance of an object"
         CutSceneLoad();
     }
-
-    private static string url = "http://www.bellegames.net/tietokantakokeilu/db.php";
-
-    //private static string insertScript = "http://bellegames.net/tietokantakokeilu/kuurainsert.php";
-
-    void haeData()
-    {
-        StartCoroutine("Result");
-
-    }
-    IEnumerator Result()
-    {
-        // WWW www = new WWW(url + "?p=" + Time.realtimeSinceStartup.ToString());​
-
-        WWW www = new WWW(url);
-        yield return www;
-
-        //Debug.Log(www.text);
-    }
-
 
     public static void InsertScore(int GoogleID, int[] StarCount, string Name, int HiScore)
     {
@@ -175,255 +124,94 @@ public class GlobalGameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Map2");
     }
+	//---------------------------------------------------------------------------------------------
+	// Functions to store bob's position on the world map
+	//---------------------------------------------------------------------------------------------
 
-    public void mappiLoad()
+    public string getPlayerPositionOnMap()
     {
-        ukkoX = PlayerPrefs.GetFloat("ukkoX");
-        ukkoY = PlayerPrefs.GetFloat("ukkoY");
+		if (PlayerPrefs.HasKey ("BobPosition")) {
+        	return PlayerPrefs.GetString("BobPosition");
+		} else {
+			return "BobApartment";
+		}
     }
 
-    public void mappiSave()
+	public void setPlayerPositionOnMap ( string nodeName )
     {
-        PlayerPrefs.SetFloat("ukkoX", ukkoX);
-        PlayerPrefs.SetFloat("ukkoY", ukkoY);
+		PlayerPrefs.SetString("BobPosition", nodeName );
     }
 
-    public void bubbleWarehouseLoad()
-    {
-		/*
-        Debug.Log("ladataan bubble ware house");
-        for (int i = 0; i <= 100; i++)
-        {
-			
-			ShelfGameManager.manager.levelStars.Add(PlayerPrefs.GetInt("stars" + i));
-			//Debug.Log("Bubble ware house loaded stars = " + bwhcompletedLevels[i]);
-        }
-        if (ShelfGameManager.manager != null) { 
-            for (int i = 0; i <= 20; i++)
-            {
+	//---------------------------------------------------------------------------------------------
+	// Functions to store what levels have been cleared and what haven't
+	//---------------------------------------------------------------------------------------------
 
-                bwhcompletedLevels.Add(PlayerPrefs.GetInt("levels" + i));
-                //Debug.Log("Bubble ware house loaded levels = " + bwhcompletedLevels[i]);
+	public int getNumberOfBeatenLevels ( string minigame ) {
+		string key = minigame + "-levelsBeaten";
+		if (PlayerPrefs.HasKey ( key )) {
+			return PlayerPrefs.GetInt (key);
+		} else {
+			return 0;
+		}
+	}
 
-                if (bwhcompletedLevels.Contains(i))
-                {
-                    ShelfGameManager.manager.completedLevels.Add(i); 
-                    Debug.Log("leveli ladattu " + i);
-                }
-            }
-        } else
-        {
-            Debug.Log("GameManager.manager = null");
-        }
-        */
-    }
+	public void setNumberOfBeatenLevels ( string minigame, int levels ) {
+		Debug.Log ("Set cleared levels to " + levels + " in " + minigame);
+		PlayerPrefs.SetInt (minigame + "-levelsBeaten", levels);
+	}
 
-    public void bubbleWarehouseSave()
-    {
-		/*
-        Debug.Log("aloitetaan tallennus catch the items");
-        bwhStars = ShelfGameManager.manager.levelStars;
-        bwhcompletedLevels = ShelfGameManager.manager.completedLevels;
+	//---------------------------------------------------------------------------------------------
+	// Functions to store cat acquisition or other special flags for given levels in minigames
+	//---------------------------------------------------------------------------------------------
 
 
-        for (int i = 0; i <= 100; i++)
-        {
+	public bool hasCatBeenAcquiredForGivenLevel ( string minigame, int level ) {
+		string key = minigame + "-catAcquiredFromLevel" + level;
+		if (PlayerPrefs.HasKey ( key ) ) {
+			// the comparison turns the returned value into a bool
+			return PlayerPrefs.GetInt (key) == 1;
+		} else {
+			return false;
+		}
+	}
 
-            //Fix following IndexOutOfRangeException
+	public void setCatAcquisitionForGivenLevel ( string minigame, int level, int status ) {
+		string key = minigame + "-catAcquiredFromLevel" + level;
+		PlayerPrefs.SetInt (key, status);
+	}
 
-            //PlayerPrefs.SetInt("stars" + i, bwhStars[i]);
-            //Debug.Log("Bubble ware house saved stars = " + bwhcompletedLevels[i]);
-        }
-        for (int i = 0; i <= 20; i++)
-        {
-            if (ShelfGameManager.manager.completedLevels.Contains(i))
-            {
-                PlayerPrefs.SetInt("levels" + i, i);
-                //Debug.Log("Bubble ware house saved levels = " + bwhcompletedLevels[i]);
-            }
-        }
-        */
-    }
+	//---------------------------------------------------------------------------------------------
+	// Functions to store high score values for a given minigame
+	//---------------------------------------------------------------------------------------------
 
-    public void MemoryGameSave()
-    {
-		/*
-        Debug.Log("aloitetaan tallennus memorygame");
-        //MemoryGameStars = GlobalManager.memoryGameStars;
-        MemoryGameStars = Storage.MemoryGameStars;
-        MemoryGamecompletedLevels = MemoryGameLevelSelecterLimitter.completedLevels;
+	public float getHighscore ( string minigame ) {
+		string key = minigame + "-highscore";
+		if (PlayerPrefs.HasKey (key)) {
+			return PlayerPrefs.GetFloat (key);
+		} else {
+			return 0f;
+		}
+	}
 
-        for (int i = 0; i <= 100; i++)
-        {
-            PlayerPrefs.SetInt("memorystars" + i, MemoryGameStars[i]);
-            //Debug.Log("Memory game saved stars = " + bwhcompletedLevels[i]);
-        }
-        for (int i = 0; i <= 20; i++)
-        {
-            if (MemoryGameLevelSelecterLimitter.completedLevels.Contains(i))
-            {
-                PlayerPrefs.SetInt("memorylevels" + i, i);
-                //Debug.Log("Memory game saved levels = " + MemoryGamecompletedLevels[i]);
-            }
-        }*/
-    }
+	public void setHighscore ( string minigame, float value ) {
+		string key = minigame + "-highscore";
+		PlayerPrefs.SetFloat ( key, value );
+	}
 
-    public void MemoryGameLoad()
-    {
-		/*
-        Debug.Log("ladataan MemoryGame");
-        for (int i = 0; i <= 100; i++)
-        {
-            //GameManager.levelStars[i] = PlayerPrefs.GetInt("memorystars" + i);
-            Storage.MemoryGameStars[i] = PlayerPrefs.GetInt("memorystars" + i);
-            //GlobalManager.memoryGameStars[i] = PlayerPrefs.GetInt("memorystars" + i);
-            //Debug.Log("Memory game loaded stars = " + bwhcompletedLevels[i]);
-        }
-        for (int i = 0; i <= 100; i++)
-        {
-
-            MemoryGamecompletedLevels.Add(PlayerPrefs.GetInt("memorylevels" + i));
-            //Debug.Log("Memory game loaded levels = " + MemoryGamecompletedLevels[i]);
-
-            //MemoryGameLevelSelecterLimitter.completedLevels.Add(i);
-            //Debug.Log((MemoryGameLevelSelecterLimitter.completedLevels));
-
-            if (MemoryGamecompletedLevels.Contains(i))
-            {
-                MemoryGameLevelSelecterLimitter.completedLevels.Add(i);
-                Debug.Log("leveli ladattu " + i);
-            }
-        }
-        */
-    }
-
-    public void RunnerLoad()
-    {
-		/*
-        Debug.Log("ladataan runner");
-        for (int i = 0; i <= 20; i++)
-        {
-            //GameManager.levelStars[i] = PlayerPrefs.GetInt("runnerstars" + i);
-            RunnerWinningPanel.runnerCats[i] = PlayerPrefs.GetInt("runnerstars" + i);
-            //Debug.Log("Runner loaded stars = " + RunnercompletedLevels[i]);
-        }
-        for (int i = 0; i <= 20; i++)
-        {
-
-            RunnercompletedLevels.Add(PlayerPrefs.GetInt("runnerlevels" + i));
-            Debug.Log("Runner loaded levels = " + RunnercompletedLevels[i]);
-
-            //RunnerManager.manager.completedLevels.Add(i);
-            //Debug.Log((MemoryGameLevelSelecterLimitter.completedLevels));
-
-            //if (MemoryGamecompletedLevels.Contains(i))
-            if (RunnercompletedLevels.Contains(i))
-            {
-//                RunnerManager.manager.completedLevels.Add(i);
-                RunnerLevelSelectLimiter.completedLevels.Add(i);
-                Debug.Log("leveli ladattu " + i);
-                //                RunnerLevelSelectLimitter.completedLevels.Add(i);
-            }
-        }
-        */
-    }
-
-    public void RunnerSave()
-    {
-		/*
-        Debug.Log("aloitetaan tallennus runner");
-        //RunnerStars = GameManager.levelStars;
-
-        RunnerStars = RunnerWinningPanel.runnerCats;
-        RunnercompletedLevels = RunnerManager.manager.completedLevels;
-        //RunnercompletedLevels = RunnerLevelSelectLimiter.completedLevels;
-
-        for (int i = 0; i <= 20; i++)
-        {
-            PlayerPrefs.SetInt("runnerstars" + i, RunnerStars[i]);
-            //Debug.Log("Runner saved stars = " + RunnercompletedLevels[i]);
-        }
-        for (int i = 0; i <= 20; i++)
-        {
-            if (RunnerManager.manager.completedLevels.Contains(i))
-            //if (RunnerLevelSelectLimiter.completedLevels.Contains(i))
-            {
-                PlayerPrefs.SetInt("runnerlevels" + i, i);
-                //Debug.Log("Runner saved levels = " + RunnercompletedLevels[i]);
-            }
-        }
-        */
-    }
-
-    public void LabyrinthSave()
-    {
-		/*
-        Debug.Log("aloitetaan tallennus labyrinth");
-        ////LabyrinthStars = LabManager.cats;
-
-        LabyrinthStars = LabManager.levelCats;
-        LabyrinthcompletedLevels = LabyGameManager.manager.completedLevels;
-
-        for (int i = 0; i <= 100; i++)
-        {
-            PlayerPrefs.SetInt("LabyrinthStars" + i, LabyrinthStars[i]);
-            //Debug.Log("Labyrinth saved stars = " + LabyrinthcompletedLevels[i]);
-        }
-        for (int i = 0; i <= 100; i++)
-        {
-            if (LabyGameManager.manager.completedLevels.Contains(i))
-            {
-                PlayerPrefs.SetInt("LabyrinthLevels" + i, i);
-                //Debug.Log("Labyrinth saved levels = " + LabyrinthcompletedLevels[i]);
-            }
-        }
-        */
-    }
-
-    public void LabyrinthLoad()
-    {
-		/*
-        Debug.Log("ladataan labyrinth");
-        for (int i = 0; i <= 100; i++)
-        {
-            LabManager.levelCats[i] = PlayerPrefs.GetInt("LabyrinthStars" + i);
-            //Debug.Log("Labyrinth loaded stars = " + LabyrinthcompletedLevels[i]);
-        }
-        if (LabyGameManager.manager != null)
-        {
-            for (int i = 0; i <= 100; i++)
-            {
-
-                LabyrinthcompletedLevels.Add(PlayerPrefs.GetInt("LabyrinthLevels" + i));
-                //Debug.Log("Labyrinth loaded levels = " + LabyrinthcompletedLevels[i]);
-
-                if (LabyrinthcompletedLevels.Contains(i))
-                {
-                    LabyGameManager.manager.completedLevels.Add(i);
-                    Debug.Log("leveli ladattu " + i);
-                }
-            }
-        } else
-        {
-            Debug.Log("LabyGameManager.manager = null");
-        }*/
-    }
+	//---------------------------------------------------------------------------------------------
 
     public void CutSceneSave()
     {
-        PlayerPrefs.SetInt("warehouseCutscenesWatched", warehouseCutscenesWatched);
-        PlayerPrefs.SetInt("labyrinthCutscenesWatched", labyrinthCutscenesWatched);
-        PlayerPrefs.SetInt("memoryCutscenesWatched", memoryCutscenesWatched);
-        PlayerPrefs.SetInt("runnerCutscenesWatched", runnerCutscenesWatched);
+
+		PlayerPrefs.SetInt("rocketGameCutscenesWatched", rocketGameCutscenesWatched);
+		PlayerPrefs.SetInt("wordQuizCutscenesWatched", wordQuizCutscenesWatched );
     }
     public void CutSceneLoad()
     {
-        warehouseCutscenesWatched = PlayerPrefs.GetInt("warehouseCutscenesWatched");
-        labyrinthCutscenesWatched = PlayerPrefs.GetInt("labyrinthCutscenesWatched");
-        memoryCutscenesWatched = PlayerPrefs.GetInt("memoryCutscenesWatched");
-        runnerCutscenesWatched = PlayerPrefs.GetInt("runnerCutscenesWatched");
+		rocketGameCutscenesWatched = PlayerPrefs.GetInt("rocketGameCutscenesWatched");
+		wordQuizCutscenesWatched = PlayerPrefs.GetInt("wordQuizCutscenesWatched");
     }
-//---------------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------------
 
     //Makes owning a specific hat true or false
     public void ShopSaveGreyHatOwned(bool value)
