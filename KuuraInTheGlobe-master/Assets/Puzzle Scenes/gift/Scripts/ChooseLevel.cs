@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class ChooseLevel : MonoBehaviour
 {
+    /*
     private int levelsCompleted = 0;
 
 	public void ChangeToScene(string sceneToChangeTo)
@@ -51,4 +52,5 @@ public class ChooseLevel : MonoBehaviour
     //    yield return async;
     //    Debug.Log("Loading complete");
     //}
+    */
 }

@@ -133,7 +133,7 @@ public class MemoryGameUI : MonoBehaviour
     public void TextSwitcher(bool won)
     {
 
-        GlobalGameManager.GGM.MemoryGameSave();
+        //GlobalGameManager.GGM.MemoryGameSave();
         if (won == false)
         {
             
@@ -240,7 +240,7 @@ public class MemoryGameUI : MonoBehaviour
                 hiutaleY = hiutale4;
                 //BlingBling(bling1);
                 //StartCoroutine("blingLerp");
-                BlingScript.moving = true;
+                //BlingScript.moving = true;
                 StartCoroutine("hiutaleRotate");
             }
             else if (stars >= 2 && i == 90)
