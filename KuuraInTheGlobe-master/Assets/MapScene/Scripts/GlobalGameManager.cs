@@ -89,6 +89,7 @@ public class GlobalGameManager : MonoBehaviour
 
     public static void InsertScore(int GoogleID, int[] StarCount, string Name, int HiScore)
     {
+		/*
         WWWForm form = new WWWForm();
         form.AddField("GoogleID", GoogleID);
         for (int i = 0; i <= 15; i++)
@@ -101,6 +102,7 @@ public class GlobalGameManager : MonoBehaviour
         //form.AddField("Name", PlayerPrefs.GetString("Name"));​
         //WWW www = new WWW(insertScript, form);
         Debug.Log("sent!");
+        */
     }
 
 
@@ -153,12 +155,12 @@ public class GlobalGameManager : MonoBehaviour
 		} else {
 			return 0;
 		}
-	}
+	} 
 
 	public void setNumberOfBeatenLevels ( string minigame, int levels ) {
 		Debug.Log ("Set cleared levels to " + levels + " in " + minigame);
 		PlayerPrefs.SetInt (minigame + "-levelsBeaten", levels);
-	}
+	} 
 
 	//---------------------------------------------------------------------------------------------
 	// Functions to store cat acquisition or other special flags for given levels in minigames
