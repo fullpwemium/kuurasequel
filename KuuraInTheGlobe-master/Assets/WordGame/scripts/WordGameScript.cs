@@ -21,8 +21,9 @@ public class WordGameScript : MonoBehaviour {
     private int fails;
     private int corrects;
     private int tries;
-    private int currentLevel;
+    private int currentLevel = 0;
     private List<int> questionIndexes;
+    private int lastIndex;              //Stores the last attempt's first question index here, so when if the level is restarted, the player wont be given the same question twice in a row
 
     //UI objects
     private Image buttonA;
@@ -34,6 +35,7 @@ public class WordGameScript : MonoBehaviour {
     private Text questionText;
     public GameObject GameOverPanel;
     public GameObject NextLevelPanel;
+    public GameObject CatPanel;
 
     //Variables that contain level data and JSON stuff
     public List<TextAsset> questionList;
@@ -81,27 +83,28 @@ public class WordGameScript : MonoBehaviour {
     {
         if (!GameObject.Find("wordGameSystem"))
         {
-            Debug.Log("System not found, creating one!");
             system = GameObject.Instantiate(systemPrefab).GetComponent<WordGameSystemScript>();
-            system.init();
-            Debug.Log("System initialized");
+            //system.init();
         }
         else
         {
-            Debug.Log("System found!");
             system = GameObject.Find("wordGameSystem").GetComponent<WordGameSystemScript>();
         }
     }
 
     private void resetGameState()
     {
-        currentLevel = system.getStartingLevel() - 1;
+        if(currentLevel == 0)
+        {
+            currentLevel = system.getStartingLevel() - 1;
+        }
         fails = 0;
         corrects = 0;
         tries = 0;
         isLose = false;
         isWin = false;
         playable = true;
+        MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouse);
     }
 
     private void initGame()
@@ -133,11 +136,16 @@ public class WordGameScript : MonoBehaviour {
         {
             isWin = true;
         }
+        else
+        {
+            MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
+        }
     }
 
     void gameOver()
     {
         Debug.Log("Game over");
+        MusicPlayer.PlayMusic(MusicTrack.GameOverJingle);
         playable = false;
         GameOverPanel.SetActive(true);
     }
@@ -146,7 +154,31 @@ public class WordGameScript : MonoBehaviour {
     {
         Debug.Log("You win!");
         playable = false;
+        if (!system.isCatCollected(currentLevel))       //if first time clear
+        {
+            system.collectCat(currentLevel);
+            system.clearlevel(currentLevel);
+            activateCatPrompt();
+        }
+        else
+        {
+            activateWinPrompt();
+        }
+    }
+
+    public void activateCatPrompt()
+    {
+        GameOverPanel.SetActive(false);
         NextLevelPanel.SetActive(true);
+        CatPanel.SetActive(true);
+    }
+
+    public void activateWinPrompt()
+    {
+        CatPanel.SetActive(false);
+        GameOverPanel.SetActive(false);
+        NextLevelPanel.SetActive(true);
+        MusicPlayer.PlayMusic(MusicTrack.VictoryJingle);
     }
 
     public void onButtonClick(string buttonName)
@@ -178,7 +210,6 @@ public class WordGameScript : MonoBehaviour {
         }
         else if(buttonName == "e")
         {
-            Debug.Log("Exit button clicked, load the world map!");
             exitMinigame();
         }
     }
@@ -219,10 +250,10 @@ public class WordGameScript : MonoBehaviour {
             switch (cor)
             {
                 case 0:
-                    star1.sprite = Resources.Load<Sprite>("failstar");
+                    star1.sprite = Resources.Load<Sprite>("UI/failstar");
                     break;
                 case 1:
-                    star1.sprite = Resources.Load<Sprite>("ylwstar");
+                    star1.sprite = Resources.Load<Sprite>("UI/ylwstar");
                     break;
             }
                 
@@ -233,10 +264,10 @@ public class WordGameScript : MonoBehaviour {
             switch (cor)
             {
                 case 0:
-                    star2.sprite = Resources.Load<Sprite>("failstar");
+                    star2.sprite = Resources.Load<Sprite>("UI/failstar");
                     break;
                 case 1:
-                    star2.sprite = Resources.Load<Sprite>("ylwstar");
+                    star2.sprite = Resources.Load<Sprite>("UI/ylwstar");
                     break;
             }
         }
@@ -245,10 +276,10 @@ public class WordGameScript : MonoBehaviour {
             switch (cor)
             {
                 case 0:
-                    star3.sprite = Resources.Load<Sprite>("failstar");
+                    star3.sprite = Resources.Load<Sprite>("UI/failstar");
                     break;
                 case 1:
-                    star3.sprite = Resources.Load<Sprite>("ylwstar");
+                    star3.sprite = Resources.Load<Sprite>("UI/ylwstar");
                     break;
             }
         }
@@ -276,14 +307,15 @@ public class WordGameScript : MonoBehaviour {
 
     private void resetStars()
     {
-        star1.sprite = Resources.Load<Sprite>("blkstar");
-        star2.sprite = Resources.Load<Sprite>("blkstar");
-        star3.sprite = Resources.Load<Sprite>("blkstar");
+        star1.sprite = Resources.Load<Sprite>("UI/blkstar");
+        star2.sprite = Resources.Load<Sprite>("UI/blkstar");
+        star3.sprite = Resources.Load<Sprite>("UI/blkstar");
     }
 
     private void updateCurrentQuestion()
     {
         currentQ = levels[currentLevel].questionData[getNextQIndex()];
+        Debug.Log("Question data loaded for level " + (currentLevel + 1));
         questionText.text = currentQ.question;
         updateButtonImages();
     }
@@ -297,7 +329,11 @@ public class WordGameScript : MonoBehaviour {
             int nextIndex = rnd.Next(5);                //nextIndex = 0 <= x < 5
             if (!questionIndexes.Contains(nextIndex))
             {
-                questionIndexes.Add(nextIndex);
+                if(questionIndexes.Count == 0 && nextIndex == lastIndex)
+                {
+                    Debug.Log("Rerolling index");
+                }
+                else questionIndexes.Add(nextIndex);
             }
         }
     }
@@ -307,6 +343,7 @@ public class WordGameScript : MonoBehaviour {
         if (questionIndexes.Count > 0)
         {
             int nextIndex = questionIndexes[0];
+            lastIndex = nextIndex;
             questionIndexes.Remove(nextIndex);
             return nextIndex;
         }
@@ -326,15 +363,17 @@ public class WordGameScript : MonoBehaviour {
 
     public void exitMinigame()
     {
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.dontBuy, 1);
         Debug.Log("Exiting quiz minigame");
         SceneManager.LoadScene("WordGameLevelSelect", LoadSceneMode.Single);
     }
 
     private void loadNextLevel()
     {
-        if (currentLevel < levels.Capacity)
+        if (currentLevel < levels.Capacity - 1)
         {
             currentLevel++;
+            Debug.Log("Current level: " + currentLevel);
             resetLevel();
         }
         else Debug.Log("No next level exists");
@@ -345,5 +384,6 @@ public class WordGameScript : MonoBehaviour {
         resetStars();
         GameOverPanel.SetActive(false);
         NextLevelPanel.SetActive(false);
+        CatPanel.SetActive(false);
     }
 }

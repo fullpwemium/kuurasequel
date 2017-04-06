@@ -7,47 +7,47 @@ public class WordGameSystemScript : MonoBehaviour {
 
     private bool initialized = false;
     private bool[] cats = new bool[10];
-    private int clearedlevels;
+    private int clearedlevels = 0;
     private int startinglevel = 1;
 
-	// Use this for initialization
-	public void init ()
+    public void Awake()
     {
-        if (!initialized)
+        clearedlevels = GlobalGameManager.GGM.getNumberOfBeatenLevels("quizGame");
+
+        for (int i = 0; i < cats.Length; i++)
         {
-            Debug.Log("Initializing WordGameSystem");
-            for(int i = 0; i < 10; i++)
-            {
-                cats[i] = false;
-            }
-            initialized = true;
+            cats[i] = GlobalGameManager.GGM.hasCatBeenAcquiredForGivenLevel("quizGame", i + 1);
         }
-        else return;
-	}
+    }
 
     public bool isCatCollected(int level)
     {
-        return cats[level-1];
+        return cats[level];
     }
 
     public void collectCat(int level)
     {
-        if (!cats[level-1])
+        if (!cats[level])
         {
+            Debug.Log("Cat collected from level " + (level + 1));
+            GlobalGameManager.GGM.setCatAcquisitionForGivenLevel("quizGame", (level + 1), 1);
             cats[level] = true;
         }
     }
 
     public void clearlevel(int level)
     {
-        if(clearedlevels < level)
+        if (clearedlevels < level)
         {
+            Debug.Log("Level " + (level + 1) + " cleared");
             clearedlevels = level;
+            GlobalGameManager.GGM.setNumberOfBeatenLevels("quizGame", clearedlevels);
         }
     }
 
     public int getClearedLevels()
     {
+        Debug.Log("Cleared levels = " + clearedlevels);
         return clearedlevels;
     }
 
