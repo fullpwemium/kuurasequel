@@ -246,7 +246,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	public void markCatCollected ( ObjectScript cat ) {
 		Transform t = Instantiate (catCollectedMarker).GetComponent<Transform>();
 		t.SetParent (UICanvas, false);
-		t.localPosition = new Vector3 (cat.transform.localPosition.x + 5f, -22.0f , cat.transform.localPosition.z);
+		t.localPosition = new Vector3 (cat.transform.localPosition.x -55f, -22.0f , cat.transform.localPosition.z);
 		system.collectCat ( cat.getCatLevel() );
 	}
 
@@ -444,7 +444,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	void spawnCat ( int level ) {
 		ObjectScript cat = Instantiate (
 			                   catObject,
-			                   new Vector3 (Random.Range (-240f, 240f), 500, 20),
+			                   new Vector3 (Random.Range (-190f, 200f), 500, 20),
 			                   Quaternion.identity
 		                   ).GetComponent<ObjectScript> ();
 		spawnedObjects.Add (cat);
