@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * RocketGamePauseScreenScript
+ * Script that handles the pause screen for the rocket game.
+*/
+
 public class RocketGamePauseScreenScript : MonoBehaviour {
 
 	RocketGameGameplaySystem game;
 	Transform t;
-
 
 	float timer = 0f;
 

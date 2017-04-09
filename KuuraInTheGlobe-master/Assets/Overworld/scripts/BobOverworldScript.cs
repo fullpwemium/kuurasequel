@@ -4,28 +4,22 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System.IO;
 
+/*
+ * BobOverWorldScript
+ * Script that oversees Bob's animation and movement on the overworld. 
+*/
+
 public class BobOverworldScript : MonoBehaviour
 {
 	private Animator BobPlayerAnimator;
-	//int BobDirection = 20;
-	//int OldBobDirection = 15;
-
-	bool bobstill;
-
 	private PathFollower pathfinder;
 
 	public static bool Moving;
 
-	public float scaleFactor = 0.05F;
-
-	// Use this for initialization
 	void Start ()
 	{
 
 		BobPlayerAnimator = transform.FindChild("BobPlayer").GetComponent<Animator>();
-
-		pathfinder = this.GetComponent<PathFollower> ();
-		pathfinder.setParent (this.transform.gameObject);
 
 		// Set player's position
 		GameObject startingNode = GameObject.Find (
@@ -35,54 +29,41 @@ public class BobOverworldScript : MonoBehaviour
 		Vector3 vec = startingNode.GetComponent<Transform>().position;
 		this.transform.position = new Vector3 (vec.x, vec.y, this.transform.position.z);
 
+		// Set current node to the pathfinder
+		pathfinder = this.GetComponent<PathFollower> ();
+		pathfinder.setParent (this.transform.gameObject);
 		pathfinder.setCurrentNode (
 			startingNode.GetComponent<Node> ()
 		);
 
+		// Print current position to console
 		Debug.Log ("Bobin alotusnode: " + pathfinder.getCurrentNode());
 
+		// Scale bob based on current position
 		BobScale();
 	
-		//BobPlayerAnimator.SetTrigger("BobStanding");
-	}
-
-	int ReadFile(string file)
-	{ 
-		if(File.Exists(file))
-		{
-			var sr = File.OpenText(file);
-			var line = sr.ReadLine();
-			while(line != null)
-			{
-				Debug.Log(line); // prints each line of the file
-				line = sr.ReadLine();
-			}
-			return 5;
-		}
-		else
-		{
-			return 5;
-		}
 	}
 
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
 		if (Moving) { 
-			//movePath ();
 			Moving = pathfinder.run ();
 			Animate ();
 			BobScale ();
 			if (!Moving) {
 				storePosition ();
 			}
-		} else {
-			
-
-		}
+		} 
 
 	}
 
+	/*
+	 * startMoving()
+	 * Params: 
+	 *  - List<Node> path : List of nodes that map player's path
+	 * Desc: Assign the path to pathfinder script and start moving.
+	*/
 	public void startMoving ( List<Node> path )
 	{
 		if (path.Count == 0) {
@@ -94,12 +75,26 @@ public class BobOverworldScript : MonoBehaviour
 
 	}
 
+	/*
+	 * getCurrentNode() 
+	 * Params: -
+	 * Desc: Return the current node player is currently standing on
+	*/
 	public Node getCurrentNode ( )
 	{
+		Debug.Log ("asd");
 		return pathfinder.getCurrentNode ();
 	}
 
-	void BobScale()     //Skaalataan Bobia perspektiivin mukaan
+	/*
+	 * BobScale()
+	 * Params: -
+	 * Desc: handles scaling Bob on the overworld based on his y-position on the screen
+	 * Change the scaleFactor inside the Unity editor to change by how much his sprite is affected.
+	 * The bigger scaleFactor is, the bigger Bob becomes.
+	*/
+	public float scaleFactor = 0.05F;
+	void BobScale() 
 	{
 		transform.transform.localScale = new Vector2(
 			Mathf.Abs(transform.transform.position.y * scaleFactor), 
@@ -107,19 +102,28 @@ public class BobOverworldScript : MonoBehaviour
 		);
 	}
 
+	/*
+	 * Animate()
+	 * Params: -
+	 * Desc: animates bob based on if he's moving or not. If Bob is moving, check's the last direction
+	 * moved towards in the pathfinder script (pathfinder.getLastDirection). animationState is also used
+	 * to control the current animation, namely the idle stance if animationState == -1.
+	*/
 	int animationState = -1;
-
 	void Animate()
 	{
-		//Escape
+		// Check if Bob is standing still
 		if (!Moving && animationState > -1) {
 			BobPlayerAnimator.SetTrigger("BobDown");
 			animationState = -1;
 			return;
 		}
 
+		// Get last direction
 		Vector2 dir = pathfinder.getLastDirection ();
-		double constant = 0.35; //Adjust the angles at which Bob picks between "up" or "down" animations instead of "left" or "right"
+
+		// Adjust the angles at which Bob picks between "up" or "down" animations instead of "left" or "right"
+		double constant = 0.35; 
 		if (dir.y < 0) {
 			if (dir.x > constant) {
 				if (animationState != 0) {
@@ -158,6 +162,13 @@ public class BobOverworldScript : MonoBehaviour
 		}
 	}
 
+	/*
+	 * storePosition() 
+	 * Params: -
+	 * Desc: Store's bob's current node position inside GlobalGameManager. This is used in order
+	 * to recover and later move Bob to the correct position after the overworld scene is loaded
+	 * or exited.
+	*/
 	public void storePosition () {
 		GlobalGameManager.GGM.setPlayerPositionOnMap (pathfinder.getCurrentNode().gameObject.name);
 	}

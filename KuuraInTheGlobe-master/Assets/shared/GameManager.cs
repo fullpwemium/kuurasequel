@@ -306,8 +306,10 @@ public abstract class GameManager : MonoBehaviour
 
     public void ReturnToWorldSelect()
     {
+		/*
         aikamuutettu = false;
         GlobalGameManager.GGM.GoToGameSelect();
-        Destroy(gameObject);
+        */
+		Destroy(gameObject);
     }
 }

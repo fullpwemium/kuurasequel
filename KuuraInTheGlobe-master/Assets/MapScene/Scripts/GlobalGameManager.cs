@@ -4,6 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
+/*
+ * GlobalGameManager
+ * Manager class that holds and handles relevant game data such as dust, collected cats, among other things
+*/
+
 public class GlobalGameManager : MonoBehaviour
 {
     //Do global functions
@@ -87,44 +92,9 @@ public class GlobalGameManager : MonoBehaviour
         CutSceneLoad();
     }
 
-    public static void InsertScore(int GoogleID, int[] StarCount, string Name, int HiScore)
-    {
-		/*
-        WWWForm form = new WWWForm();
-        form.AddField("GoogleID", GoogleID);
-        for (int i = 0; i <= 15; i++)
-        {
-            form.AddField("StarCount" + i, StarCount[i]);
-        }
-        form.AddField("Name", Name);
-        form.AddField("Hiscore", HiScore);
-
-        //form.AddField("Name", PlayerPrefs.GetString("Name"));​
-        //WWW www = new WWW(insertScript, form);
-        Debug.Log("sent!");
-        */
-    }
-
-
-    public void GoToGameSelect()
-    {
-        SceneManager.LoadScene(gameSelectScene);
-    }
-
-    public void StartGame(int gameIndex)
-    {
-        currentGame = gameIndex;
-        SceneManager.LoadScene(gameScenes[gameIndex]);
-    }
-
-    public void CompleteCurrentGame()
-    {
-        completedGames.Add(currentGame);
-    }
-
     public void StartMapScene()
     {
-        SceneManager.LoadScene("Map2");
+        SceneManager.LoadScene("Overworld");
     }
 	//---------------------------------------------------------------------------------------------
 	// Functions to store bob's position on the world map
