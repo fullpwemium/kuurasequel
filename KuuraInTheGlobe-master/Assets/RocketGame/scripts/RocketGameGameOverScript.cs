@@ -153,7 +153,13 @@ public class RocketGameGameOverScript : MonoBehaviour {
 		}
 	}
 
-	// Initialize the game over screen
+	/*
+	 * init()
+	 * Params: 
+	 *  - float result : the score (as in altitude) that player reached
+	 *  - bool isHighScore : is this result a highscore?
+	 * Desc: Initializes the internal values of the game over screen.
+	*/
 	float scoreResult = 0f;
 	bool highscoreAchieved = false;
 	public void init (float result, bool isHighscore ) {
@@ -222,6 +228,7 @@ public class RocketGameGameOverScript : MonoBehaviour {
 	}
 
 	// Function that is called if player chooses the retry button on the game over screen
+	// Parameter is the list of other buttons on screen, which are deleted when one is pressed.
 	public void retryButtonClicked (List<Button> list ) {
 		// Remove retry button and game over screen
 		foreach (Button but in list) {
@@ -236,10 +243,12 @@ public class RocketGameGameOverScript : MonoBehaviour {
 		game.retry ();
 	}
 
+	// Return to the level select scene
 	public void levelSelectButtonClicked ( ) {
 		game.gotoLevelSelect ();
 	}
 
+	// Return to overworld
 	public void exit () {
 		game.exit ();
 	}

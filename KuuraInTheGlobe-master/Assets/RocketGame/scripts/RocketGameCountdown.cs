@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * RocketGameCountdown
+ * Script that manages the 3-2-1-GO! count down for the rocket game.
+*/
+
 public class RocketGameCountdown : MonoBehaviour {
 
 	Transform MainCanvas;
@@ -34,10 +39,10 @@ public class RocketGameCountdown : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//...
 		MainCanvas = GameObject.Find ("MainCanvas").GetComponent<Transform> ();
 	}
 
+	// Tick the countdown automatically
 	void Update ()  {
 
 		if (game.paused) {
@@ -97,7 +102,12 @@ public class RocketGameCountdown : MonoBehaviour {
 		}
 
 	}
-	
+
+	/*
+	 * init()
+	 * Params: -
+	 * Desc: Call this to initiate the the countdown.
+	*/
 	public void init () {
 		frameIndex = 0;
 		game = gameObject.GetComponent<RocketGameGameplaySystem> (); 
@@ -125,7 +135,11 @@ public class RocketGameCountdown : MonoBehaviour {
 	}
 
 
-
+	/*
+	 * checkIfFinished()
+	 * Params: -
+	 * Desc: Returns the current status of the countdown.
+	*/
 	public bool checkIfFinished () {
 		return !started;
 	}

@@ -695,6 +695,48 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &468106827
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.3339407
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.13836975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 58.132812
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011785913226, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 238abda85522b8f4e9bd0fd608224bf1, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &484281468
 GameObject:
   m_ObjectHideFlags: 0
@@ -3725,6 +3767,7 @@ GameObject:
   - component: {fileID: 1547533084}
   - component: {fileID: 1547533086}
   - component: {fileID: 1547533085}
+  - component: {fileID: 1547533087}
   m_Layer: 5
   m_Name: level_select_text
   m_TagString: Untagged
@@ -3786,6 +3829,19 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1547533083}
+--- !u!114 &1547533087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1547533083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac8028da40365f4b9d569e245103789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 2
+  speed: 0.075
 --- !u!1 &1561921652
 GameObject:
   m_ObjectHideFlags: 0

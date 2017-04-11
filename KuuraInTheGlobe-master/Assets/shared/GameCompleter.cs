@@ -15,6 +15,6 @@ public class GameCompleter : MonoBehaviour {
 
     void CompleteGame()
     {
-        GlobalGameManager.GGM.CompleteCurrentGame();
+        //GlobalGameManager.GGM.CompleteCurrentGame();
     }
 }

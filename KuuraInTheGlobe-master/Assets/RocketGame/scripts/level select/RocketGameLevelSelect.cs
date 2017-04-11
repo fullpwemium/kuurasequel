@@ -4,11 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/*
+ * RocketGameLevelSelect
+ * Script that handles the level select screen of the rocket minigame.
+*/
+
+
 public class RocketGameLevelSelect : MonoBehaviour {
 
 	public GameObject systemPrefab;
 	RocketGameSystem system;
-	Transform levelSelectText;
 	RocketGameLevelSelectPlayerObject player;
 
 	float timer;
@@ -32,7 +37,6 @@ public class RocketGameLevelSelect : MonoBehaviour {
 
 		player = GameObject.Find ("MainCanvas/playerObject_levelSelect").GetComponent<RocketGameLevelSelectPlayerObject> ();
 
-		levelSelectText = GameObject.Find ("MainCanvas/level_select_text").transform;
 			
 		setButtonEventListeners ();
 	}
@@ -73,8 +77,6 @@ public class RocketGameLevelSelect : MonoBehaviour {
 	}
 
 	void Update () {
-		timer += 0.075f;
-		levelSelectText.eulerAngles = new Vector3 (0, 0, Mathf.Sin (timer)*4);
 
 		if (!clicked) { return; }
 		if (!countdown) {

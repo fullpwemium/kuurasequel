@@ -145,6 +145,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		EventSystem.current.SetSelectedGameObject (null);
 	}
 
+	// Unpause the gameplay and resume
 	public void unpause() {
 		EventSystem.current.SetSelectedGameObject (null);
 		Transform pauseButCanvas = GameObject.Find ("UICanvas/fuelMeter").GetComponent<Transform> ();
@@ -214,10 +215,12 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 	}
 
+	// Get the current level
 	public int getCurrentLevel () {
 		return currentLevel;
 	}
 
+	// Advance to the next level
 	void gotoNextLevel () {
 		MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.keyCollected, 1);
 		if (!system.isCatCollected (currentLevel)) {
@@ -243,6 +246,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		return system.getStartingLevel ();
 	}
 
+	// Collect cat and mark that it has been collected
 	public void markCatCollected ( ObjectScript cat ) {
 		Transform t = Instantiate (catCollectedMarker).GetComponent<Transform>();
 		t.SetParent (UICanvas, false);
@@ -250,6 +254,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		system.collectCat ( cat.getCatLevel() );
 	}
 
+	// Remove UI elements to change the screen to look appropriate for the endless mode
 	void enableEndlessMode() {
 		Destroy (GameObject.Find ("UICanvas/altitudeMeter/fullAltitude"));
 		Destroy (GameObject.Find ("UICanvas/altitudeMeter/currentAltitude"));
@@ -259,6 +264,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 
 	}
 
+	// Initialize everything and start the game
 	public void gameStart() {
 		MusicPlayer.PlayMusic (MusicTrack.WinterForestMarathon);
 		destroyObjects ();
@@ -274,6 +280,8 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		updateFuel (1f);
 	}
 
+	// Begin the gameOver sequence.
+	// result is the altitude that was reached in this session.
 	public void gameOver( float result ) {
 		isGameOver = true;
 
@@ -288,6 +296,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		GO.init ( result, newEndlessHighScore );
 	}
 
+	// Restart the game
 	public void retry ( ) {
 		// Restart the level from last checkpoint
 		gameStart ();
@@ -361,6 +370,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		}
 	}
 
+	// Return -1 or 1 randomly
 	int RandomSign()  {
 		return Random.value < .5 ? 1 : -1;
 	}
@@ -417,6 +427,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		obj.gameObject.transform.localScale = new Vector3 (randSize * RandomSign(), randSize, 1f); 
 	}
 
+	// Spawn random background objects, used when game is initialized
 	void randomizeBackgroundObjects() {
 		for (int i = -280; i < 400; i += 10) {
 			// Magic schmagick numbers
@@ -545,9 +556,12 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		}
 	}
 
+	// Constants that hold the correct HSV values we need for tinting the background color
+	// as player reaches higher altitudes
 	const float H_Const = 255f / 359f;
 	const float S_Const = 119f / 255f;
 	const float V_Const = 174f / 255f;
+
 	void updateBackgroundColor ( float levelProgress ) {
 		levelProgress = ((float)currentLevel / 10f) -0.1f + (levelProgress/100f); //levelProgress;
 
@@ -615,12 +629,14 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		}
 	}
 
+	// Blink fuel meter when reserves are low
 	void fuelWarning () {
 		fuelWarnTimer += 0.2f;
 		float blink = (Mathf.Sin ((fuelWarnTimer) * Mathf.PI / 2) + 1) / 4;
 		fuelMeterFG.color = new Color (1.0f, 0.5f+blink, 0.5f+blink, 1f);
 	}
 
+	// Update the red portion of the fuel meter after taking damage
 	public void setDamagedFuelPosition ( float current ) {
 		damagedFuelMeter.localScale = new Vector3 (0.98f, current, 1);
 		damagedFuelDecrement = 2f;

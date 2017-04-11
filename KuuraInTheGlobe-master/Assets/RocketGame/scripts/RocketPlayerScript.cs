@@ -4,6 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+/*
+ * RocketGamePlayerScript
+ * Script that handles the player's controls and status.
+*/
+
+
 public class RocketPlayerScript : MonoBehaviour {
 
 	// Player's graphic 

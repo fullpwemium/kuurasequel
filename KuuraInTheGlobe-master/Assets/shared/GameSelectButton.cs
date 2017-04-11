@@ -18,14 +18,10 @@ public class GameSelectButton : MonoBehaviour {
             CheckLevels();
         }
     }
-	/*
-    void OnLevelWasLoaded(int level)
-    {
-        CheckLevels();
-    }*/
+
     void loadFrigginLevel ()
     {
-        GlobalGameManager.GGM.StartGame(buttonLevel);
+        //GlobalGameManager.GGM.StartGame(buttonLevel);
         //Debug.Log("kek");
     }
 
