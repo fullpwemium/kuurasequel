@@ -37,3 +37,7 @@ EditorBuildSettings:
     path: Assets/Overworld/scenes/Overworld.unity
   - enabled: 1
     path: Assets/WordGame/scenes/WordGameLevelSelect.unity
+  - enabled: 1
+    path: Assets/FindDifferences/Scenes/DifLevelSelect.unity
+  - enabled: 1
+    path: Assets/FindDifferences/Scenes/DifLevel1.unity
