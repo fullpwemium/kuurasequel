@@ -101,32 +101,17 @@ public class TextBoxManager : MonoBehaviour {
 
     private void addCutsceneWatched()
     {
+		
         switch (currentScene)
         {
-			/*
-            case "Mine":
-                GlobalGameManager.GGM.labyrinthCutscenesWatched++;
-                break;
-            case "Warehouse":
-                GlobalGameManager.GGM.warehouseCutscenesWatched++;
-                break;
-            case "Forest":
-                GlobalGameManager.GGM.runnerCutscenesWatched++;
-                break;
-            case "Memory":
-                GlobalGameManager.GGM.memoryCutscenesWatched++;
-                break;*/
 			case "RocketGame":
-				GlobalGameManager.GGM.rocketGameCutscenesWatched++;
-				break;
 			case "WordQuiz":
-				GlobalGameManager.GGM.wordQuizCutscenesWatched++;
+				GlobalGameManager.GGM.incrementCutsceneProgress (currentScene);
 				break;
             default:
                 Debug.Log("Scene doesn't exist");
                 break;
         }
-        GlobalGameManager.GGM.CutSceneSave();
     }
 
     private IEnumerator TextScroll (string lineOfText)

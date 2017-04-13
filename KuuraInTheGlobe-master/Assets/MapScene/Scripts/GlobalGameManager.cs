@@ -60,8 +60,8 @@ public class GlobalGameManager : MonoBehaviour
     List<int> memoryGamecompletedLevels;
 
     //How many cutscenes the player has seen from each world;
-	public int rocketGameCutscenesWatched = 0;
-	public int wordQuizCutscenesWatched = 0;
+	//public int rocketGameCutscenesWatched = 0;
+	//public int wordQuizCutscenesWatched = 0;
 
     //Singleton check
     public void Awake()
@@ -89,7 +89,7 @@ public class GlobalGameManager : MonoBehaviour
 
     void Start()
     {
-        CutSceneLoad();
+        //CutSceneLoad();
     }
 
     public void StartMapScene()
@@ -172,17 +172,27 @@ public class GlobalGameManager : MonoBehaviour
 
 	//---------------------------------------------------------------------------------------------
 
-    public void CutSceneSave()
-    {
+	// Use these two functions to load and save the current progress of cutscenes
+	public int checkCutsceneProgress ( string key )
+	{
+		key = key + "-CutsceneWatched";
+		if (PlayerPrefs.HasKey ( key ) ) {
+			return PlayerPrefs.GetInt (key);
+		} else {
+			return 0;
+		}
+	}
 
-		PlayerPrefs.SetInt("rocketGameCutscenesWatched", rocketGameCutscenesWatched);
-		PlayerPrefs.SetInt("wordQuizCutscenesWatched", wordQuizCutscenesWatched );
-    }
-    public void CutSceneLoad()
-    {
-		rocketGameCutscenesWatched = PlayerPrefs.GetInt("rocketGameCutscenesWatched");
-		wordQuizCutscenesWatched = PlayerPrefs.GetInt("wordQuizCutscenesWatched");
-    }
+	public void saveCutsceneProgress ( string key, int val )
+	{
+		key = key + "-CutsceneWatched";
+		PlayerPrefs.SetInt (key, val);
+	}
+
+	public void incrementCutsceneProgress ( string key )
+	{
+		saveCutsceneProgress (key, GlobalGameManager.GGM.checkCutsceneProgress (key) + 1); 
+	}
 	//---------------------------------------------------------------------------------------------
 
     //Makes owning a specific hat true or false
