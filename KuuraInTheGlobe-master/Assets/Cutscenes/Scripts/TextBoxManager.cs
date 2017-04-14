@@ -28,6 +28,7 @@ public class TextBoxManager : MonoBehaviour {
     public string language="Eng"; //Language (if different settings are made) should probably be set elsewhere
 
     private int cutscenesWatched = EventHandler.cutScenesWatched;
+	private bool coroutineStarted = false;
 
     private void Awake()
     {
@@ -54,23 +55,36 @@ public class TextBoxManager : MonoBehaviour {
         {
             endAtLine = dialogueLines.Length; //stop showing lines after the last line
         }
-        StartCoroutine(TextScroll(dialogueLines[currentLine]));
-        currentLine++;
+		// Disable this line to prevent "popoff" text effect
+        //StartCoroutine(TextScroll(dialogueLines[currentLine]));
     }
     
-
+	private bool finished = false;
 	// Update is called once per frame
 	void Update () {
+
+		if (finished) {
+			return;
+		}
+
         currentScene = EventHandler.currentScene;
         cutscenesWatched = EventHandler.cutScenesWatched;
         string sceneProgression = EventHandler.sceneProgression;
 
-        if ((cutscenesWatched > 0 && sceneProgression == "IntroScene") || (cutscenesWatched > 1 && sceneProgression == "MidScene") || cutscenesWatched > 2 && sceneProgression == "EndScene")
-        {
-            showOneLiner();
-            buttons.SetActive(true);
-        }
-        if (Input.GetMouseButtonDown(0) && !buttons.activeSelf)
+		if ((cutscenesWatched > 0 && sceneProgression == "IntroScene") || (cutscenesWatched > 1 && sceneProgression == "MidScene") || cutscenesWatched > 2 && sceneProgression == "EndScene") {
+			showOneLiner ();
+			buttons.SetActive (true);
+			finished = true;
+			return;
+		} else {
+			if (!coroutineStarted) {
+				StartCoroutine (TextScroll (dialogueLines [currentLine]));
+				currentLine++;
+				coroutineStarted = true;
+				return;
+			}
+		}
+		if (Input.GetMouseButtonDown(0) && !buttons.activeSelf )
             {
                 if (currentLine < endAtLine)
                 {
@@ -95,6 +109,7 @@ public class TextBoxManager : MonoBehaviour {
                     }*/
                     showOneLiner();
                     buttons.SetActive(true);
+					finished = true;
                 }
         } 
 	}

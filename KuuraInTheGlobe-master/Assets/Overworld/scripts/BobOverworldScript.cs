@@ -82,7 +82,6 @@ public class BobOverworldScript : MonoBehaviour
 	*/
 	public Node getCurrentNode ( )
 	{
-		Debug.Log ("asd");
 		return pathfinder.getCurrentNode ();
 	}
 
@@ -107,7 +106,7 @@ public class BobOverworldScript : MonoBehaviour
 	 * Params: -
 	 * Desc: animates bob based on if he's moving or not. If Bob is moving, check's the last direction
 	 * moved towards in the pathfinder script (pathfinder.getLastDirection). animationState is also used
-	 * to control the current animation, namely the idle stance if animationState == -1.
+	 * to control the current animation, namely by activating the idle stance if animationState == -1.
 	*/
 	int animationState = -1;
 	void Animate()

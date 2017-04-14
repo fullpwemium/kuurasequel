@@ -1,4 +1,4 @@
-Eagle: "End scene 1"
-Eagle: "End scene 2"
-Eagle: "End scene 3"
-Eagle: "End scene 4"
+Eagle: "Now that's how you do it. Thanks Bob!" 
+Eagle: "I guess you are half almost as good in the air as me." 
+Eagle: "Quite impressive, I guess I underestimated you." 
+Eagle: "Well well, you did it. Didn't think you'd be able to."
