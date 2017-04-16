@@ -177,7 +177,7 @@ public class GlobalGameManager : MonoBehaviour
 	{
 		key = key + "-CutsceneWatched";
 		if (PlayerPrefs.HasKey ( key ) ) {
-			return 0;//PlayerPrefs.GetInt (key);
+			return PlayerPrefs.GetInt (key);
 		} else {
 			return 0;
 		}

@@ -55,8 +55,6 @@ public class TextBoxManager : MonoBehaviour {
         {
             endAtLine = dialogueLines.Length; //stop showing lines after the last line
         }
-		// Disable this line to prevent "popoff" text effect
-        //StartCoroutine(TextScroll(dialogueLines[currentLine]));
     }
     
 	private bool finished = false;
@@ -84,39 +82,37 @@ public class TextBoxManager : MonoBehaviour {
 				return;
 			}
 		}
-		if (Input.GetMouseButtonDown(0) && !buttons.activeSelf )
-            {
-                if (currentLine < endAtLine)
-                {
-                    if (!isTyping)
-                    {
-                        StartCoroutine(TextScroll(dialogueLines[currentLine]));
-                        currentLine++; //move to next line when clicking or tapping anywhere
-                    }
-                    else if (isTyping && !cancelTyping)
-                    {
-                        cancelTyping = true;
-                    }
-                }
-                else if (!isTyping)
-                {
-                    addCutsceneWatched();
+		if (!clicked) {
+			if (Input.GetMouseButtonDown (0) && !buttons.activeSelf) {
+				if (currentLine < endAtLine) {
+					clicked = true;
+					if (!isTyping) {
+						StartCoroutine (TextScroll (dialogueLines [currentLine]));
+						currentLine++; //move to next line when clicking or tapping anywhere
+					} else if (isTyping && !cancelTyping) {
+						cancelTyping = true;
+					}
+					clicked = false;
+				} else if (!isTyping) {
+					addCutsceneWatched ();
 					/*
-                    if (GlobalGameManager.GGM.labyrinthCutscenesWatched == 3 && GlobalGameManager.GGM.warehouseCutscenesWatched == 3 && GlobalGameManager.GGM.runnerCutscenesWatched == 3 && GlobalGameManager.GGM.memoryCutscenesWatched == 3) 
-                    {
-                        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Theater";
-                        SceneManager.LoadScene("Theater");
-                    }*/
-                    showOneLiner();
-                    buttons.SetActive(true);
+	                    if (GlobalGameManager.GGM.labyrinthCutscenesWatched == 3 && GlobalGameManager.GGM.warehouseCutscenesWatched == 3 && GlobalGameManager.GGM.runnerCutscenesWatched == 3 && GlobalGameManager.GGM.memoryCutscenesWatched == 3) 
+	                    {
+	                        GameObject.Find("Global_Gamemanager").GetComponent<GlobalGameManager>().currentScene = "Theater";
+	                        SceneManager.LoadScene("Theater");
+	                    }*/
+					showOneLiner ();
+					buttons.SetActive (true);
 					finished = true;
-                }
-        } 
+				}
+			} 
+		} else {
+			clicked = false;
+		}
 	}
 
     private void addCutsceneWatched()
     {
-		
         switch (currentScene)
         {
 			case "RocketGame":
@@ -129,6 +125,7 @@ public class TextBoxManager : MonoBehaviour {
         }
     }
 
+	private bool clicked = false;
     private IEnumerator TextScroll (string lineOfText)
     {
         int letter = 0;
@@ -137,6 +134,10 @@ public class TextBoxManager : MonoBehaviour {
         cancelTyping = false;
         while (isTyping && !cancelTyping && (letter < lineOfText.Length -1) && showingOneliner == false)
         {
+			if (Input.GetMouseButtonDown (0) && !clicked) {
+				clicked = true;
+				break;
+			}
             dialogue.text += lineOfText[letter];
             letter++;
             yield return new WaitForSeconds(typeSpeed);
@@ -158,7 +159,6 @@ public class TextBoxManager : MonoBehaviour {
     public void showOneLiner()
     {
         showingOneliner = true;
-        levelsCompleted = EventHandler.levelsCompleted;
         if (levelsCompleted > 9)
             dialogue.text = oneLiners[4];
         if (levelsCompleted < 10)

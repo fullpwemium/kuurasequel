@@ -43,6 +43,7 @@ public class BobOverworldScript : MonoBehaviour
 		BobScale();
 	
 	}
+		
 
 	// Update is called once per frame
 	void FixedUpdate ()
@@ -55,7 +56,7 @@ public class BobOverworldScript : MonoBehaviour
 				storePosition ();
 			}
 		} 
-
+			
 	}
 
 	/*
@@ -170,6 +171,27 @@ public class BobOverworldScript : MonoBehaviour
 	*/
 	public void storePosition () {
 		GlobalGameManager.GGM.setPlayerPositionOnMap (pathfinder.getCurrentNode().gameObject.name);
+	}
+
+	// Guard release builds from any troublemakers!
+	#if UNITY_EDITOR
+	void Update() {
+		DELETE_PLAYERPREFS ();
+	}
+	#endif
+
+	/*
+	 * DELETE_PLAYERPREFS()
+	 * Params: -
+	 * Desc: Delete all progress player has gained from the playerprefs. 
+	 * Intended for debug purposes only!
+	 */
+	public void DELETE_PLAYERPREFS() {
+		//Combination: Z + X + C
+		if ((Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.C)) && Input.GetKeyDown(KeyCode.Z))
+		{
+			PlayerPrefs.DeleteAll ();
+		}
 	}
 
 }

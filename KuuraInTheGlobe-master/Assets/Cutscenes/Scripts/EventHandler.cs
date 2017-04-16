@@ -77,7 +77,7 @@ public class EventHandler : MonoBehaviour {
         switch (currentScene)
         {
 			case "RocketGame": 
-				ret = GlobalGameManager.GGM.getNumberOfBeatenLevels ("rocketGame");
+				ret = GlobalGameManager.GGM.getNumberOfBeatenLevels ("rocketGame"); //Note the lower r!
 				break;
 			case "WordQuiz":
 				ret = GlobalGameManager.GGM.getNumberOfBeatenLevels ("quizGame"); //Note that WordQuiz != quizGame!
