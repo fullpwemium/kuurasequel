@@ -43,6 +43,7 @@ public class BobOverworldScript : MonoBehaviour
 		BobScale();
 	
 	}
+		
 
 	// Update is called once per frame
 	void FixedUpdate ()
@@ -55,7 +56,7 @@ public class BobOverworldScript : MonoBehaviour
 				storePosition ();
 			}
 		} 
-
+			
 	}
 
 	/*
@@ -82,7 +83,6 @@ public class BobOverworldScript : MonoBehaviour
 	*/
 	public Node getCurrentNode ( )
 	{
-		Debug.Log ("asd");
 		return pathfinder.getCurrentNode ();
 	}
 
@@ -107,7 +107,7 @@ public class BobOverworldScript : MonoBehaviour
 	 * Params: -
 	 * Desc: animates bob based on if he's moving or not. If Bob is moving, check's the last direction
 	 * moved towards in the pathfinder script (pathfinder.getLastDirection). animationState is also used
-	 * to control the current animation, namely the idle stance if animationState == -1.
+	 * to control the current animation, namely by activating the idle stance if animationState == -1.
 	*/
 	int animationState = -1;
 	void Animate()
@@ -171,6 +171,27 @@ public class BobOverworldScript : MonoBehaviour
 	*/
 	public void storePosition () {
 		GlobalGameManager.GGM.setPlayerPositionOnMap (pathfinder.getCurrentNode().gameObject.name);
+	}
+
+	// Guard release builds from any troublemakers!
+	#if UNITY_EDITOR
+	void Update() {
+		DELETE_PLAYERPREFS ();
+	}
+	#endif
+
+	/*
+	 * DELETE_PLAYERPREFS()
+	 * Params: -
+	 * Desc: Delete all progress player has gained from the playerprefs. 
+	 * Intended for debug purposes only!
+	 */
+	public void DELETE_PLAYERPREFS() {
+		//Combination: Z + X + C
+		if ((Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.C)) && Input.GetKeyDown(KeyCode.Z))
+		{
+			PlayerPrefs.DeleteAll ();
+		}
 	}
 
 }

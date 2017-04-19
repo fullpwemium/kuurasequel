@@ -73,54 +73,20 @@ public class EventHandler : MonoBehaviour {
     int completedLevels()
     {
         //Get completed levels from global game manager
-        levelsCompleted = 0;
-		return levelsCompleted;
-		/*
+		int ret = 0;
         switch (currentScene)
         {
-			
-            case "Mine":
-                for (int i = 0; i <= 10; i++)
-                {
-                    if (LabyGameManager.manager.completedLevels.Contains(i))
-                    {
-                        levelsCompleted++;
-                    }
-                }
-                break;
-            case "Warehouse":
-                for (int i = 0; i <= 10; i++)
-                {
-                    if (ShelfGameManager.manager.completedLevels.Contains(i))
-                    {
-                        levelsCompleted++;
-                    }
-                }
-                break;
-            case "Forest":
-                for (int i = 0; i <= 10; i++)
-                {
-                    if (RunnerManager.manager.completedLevels.Contains(i))
-                    {
-                        levelsCompleted++;
-                    }
-                }
-                break;
-            case "Memory":
-                for (int i = 0; i <= 10; i++)
-                {
-                    if (MemoryGameLevelSelecterLimitter.completedLevels.Contains(i))
-                    {
-                        levelsCompleted++;
-                    }
-                }
-                break;
-            
+			case "RocketGame": 
+				ret = GlobalGameManager.GGM.getNumberOfBeatenLevels ("rocketGame"); //Note the lower r!
+				break;
+			case "WordQuiz":
+				ret = GlobalGameManager.GGM.getNumberOfBeatenLevels ("quizGame"); //Note that WordQuiz != quizGame!
+				break;
             default:
                 Debug.Log("Scene doesn't exist");
                 break;
-        }*/
-        //Debug.Log("levels completed is " + levelsCompleted);
+        }
+		return ret;
     }
     void progressedInStory()
     {
@@ -142,18 +108,9 @@ public class EventHandler : MonoBehaviour {
     {
         switch (currentScene)
         {
-			/*
-            case "Mine":
-                MusicPlayer.PlayMusic(MusicTrack.HedgeMazeCutscene);
-                break;
-            case "Warehouse":
-                MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouseCutscene);
-                break;
-            case "Forest":*/
 			case "RocketGame":
 				MusicPlayer.PlayMusic(MusicTrack.WinterForestMarathonCutscene);
                 break;
-            //case "Memory":
 			case "WordQuiz":
                 MusicPlayer.PlayMusic(MusicTrack.MysticCardsCutscene);
                 break;
@@ -174,25 +131,9 @@ public class EventHandler : MonoBehaviour {
     {
         switch (currentScene)
         {
-			/*
-            case "Mine":
-                cutScenesWatched = GlobalGameManager.GGM.labyrinthCutscenesWatched;
-                break;
-            case "Warehouse":
-                cutScenesWatched = GlobalGameManager.GGM.warehouseCutscenesWatched;
-                break;
-            case "Forest":
-                cutScenesWatched = GlobalGameManager.GGM.runnerCutscenesWatched;
-                break;
-            case "Memory":
-                cutScenesWatched = GlobalGameManager.GGM.memoryCutscenesWatched;
-                break;
-            */
 			case "RocketGame":
-				cutScenesWatched = GlobalGameManager.GGM.rocketGameCutscenesWatched;
-				break;
 			case "WordQuiz":
-				cutScenesWatched = GlobalGameManager.GGM.wordQuizCutscenesWatched;
+				cutScenesWatched = GlobalGameManager.GGM.checkCutsceneProgress (currentScene);
 				break;
             case "DifferenceGame":
                 cutScenesWatched = GlobalGameManager.GGM.differenceCutscenesWatched;

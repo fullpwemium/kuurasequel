@@ -32,7 +32,7 @@ public class SwitchDialogScene : MonoBehaviour {
 	
 	public void GotoDialog()
 	{
-		SceneManager.LoadScene("Phone_dialog");
+		SceneManager.LoadScene("Overworld");
 	}
 	
 	public void GotoMap()

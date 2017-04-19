@@ -60,9 +60,14 @@ public class GlobalGameManager : MonoBehaviour
     List<int> memoryGamecompletedLevels;
 
     //How many cutscenes the player has seen from each world;
+<<<<<<< HEAD
 	public int rocketGameCutscenesWatched = 0;
 	public int wordQuizCutscenesWatched = 0;
     public int differenceCutscenesWatched = 0;
+=======
+	//public int rocketGameCutscenesWatched = 0;
+	//public int wordQuizCutscenesWatched = 0;
+>>>>>>> 5c9309d12ef1a7a33fece5d29619e553d9d12805
 
     //Singleton check
     public void Awake()
@@ -90,7 +95,7 @@ public class GlobalGameManager : MonoBehaviour
 
     void Start()
     {
-        CutSceneLoad();
+        //CutSceneLoad();
     }
 
     public void StartMapScene()
@@ -173,9 +178,18 @@ public class GlobalGameManager : MonoBehaviour
 
 	//---------------------------------------------------------------------------------------------
 
-    public void CutSceneSave()
-    {
+	// Use these two functions to load and save the current progress of cutscenes
+	public int checkCutsceneProgress ( string key )
+	{
+		key = key + "-CutsceneWatched";
+		if (PlayerPrefs.HasKey ( key ) ) {
+			return PlayerPrefs.GetInt (key);
+		} else {
+			return 0;
+		}
+	}
 
+<<<<<<< HEAD
 		PlayerPrefs.SetInt("rocketGameCutscenesWatched", rocketGameCutscenesWatched);
 		PlayerPrefs.SetInt("wordQuizCutscenesWatched", wordQuizCutscenesWatched );
         PlayerPrefs.SetInt("differenceCutscenesWatched", differenceCutscenesWatched);
@@ -186,6 +200,18 @@ public class GlobalGameManager : MonoBehaviour
 		wordQuizCutscenesWatched = PlayerPrefs.GetInt("wordQuizCutscenesWatched");
         differenceCutscenesWatched = PlayerPrefs.GetInt("differenceCutscenesWatched");
     }
+=======
+	public void saveCutsceneProgress ( string key, int val )
+	{
+		key = key + "-CutsceneWatched";
+		PlayerPrefs.SetInt (key, val);
+	}
+
+	public void incrementCutsceneProgress ( string key )
+	{
+		saveCutsceneProgress (key, GlobalGameManager.GGM.checkCutsceneProgress (key) + 1); 
+	}
+>>>>>>> 5c9309d12ef1a7a33fece5d29619e553d9d12805
 	//---------------------------------------------------------------------------------------------
 
     //Makes owning a specific hat true or false
