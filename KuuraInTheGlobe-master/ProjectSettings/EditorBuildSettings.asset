@@ -41,3 +41,7 @@ EditorBuildSettings:
     path: Assets/FindDifferences/Scenes/DifLevelSelect.unity
   - enabled: 1
     path: Assets/FindDifferences/Scenes/DifLevel1.unity
+  - enabled: 1
+    path: Assets/FindDifferences/Scenes/DifLevelSelect2.unity
+  - enabled: 1
+    path: Assets/FindDifferences/Scenes/DifLevel1(2).unity

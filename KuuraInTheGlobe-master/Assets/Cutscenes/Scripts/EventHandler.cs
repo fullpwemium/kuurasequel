@@ -157,6 +157,9 @@ public class EventHandler : MonoBehaviour {
 			case "WordQuiz":
                 MusicPlayer.PlayMusic(MusicTrack.MysticCardsCutscene);
                 break;
+            case "DifferenceGame":
+                MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouseCutscene);
+                break;
             default:
                 Debug.Log("Scene doesn't exist");
                 break;
@@ -191,6 +194,9 @@ public class EventHandler : MonoBehaviour {
 			case "WordQuiz":
 				cutScenesWatched = GlobalGameManager.GGM.wordQuizCutscenesWatched;
 				break;
+            case "DifferenceGame":
+                cutScenesWatched = GlobalGameManager.GGM.differenceCutscenesWatched;
+                break;
             default:
                 Debug.Log("Scene doesn't exist");
                 break;

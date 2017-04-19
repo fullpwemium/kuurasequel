@@ -8,7 +8,8 @@ public class BackgroundSwitcher : MonoBehaviour {
     public Sprite[] forestBackgrounds;
 	public Sprite[] rocketGameBackgrounds;
 	public Sprite[] wordGameBackgrounds;
-    
+    public Sprite[] difGameBackgrounds;
+
     private string currentScene = EventHandler.currentScene;
     private int scenePosition = EventHandler.scenePosition;
 
@@ -44,6 +45,9 @@ public class BackgroundSwitcher : MonoBehaviour {
 			case "WordQuiz":
 				GetComponent<SpriteRenderer> ().sprite = wordGameBackgrounds [scenePosition];
 				break;
+            case "DifferenceGame":
+                GetComponent<SpriteRenderer>().sprite = difGameBackgrounds[scenePosition];
+                break;
             default:
                 Debug.Log("This scene should not exist.");
                 break;

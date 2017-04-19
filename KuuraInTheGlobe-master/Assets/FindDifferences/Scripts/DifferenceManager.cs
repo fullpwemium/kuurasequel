@@ -7,10 +7,13 @@ using UnityEngine.SceneManagement;
 public class DifferenceManager : MonoBehaviour
 {
     public static DifferenceManager manager;
+    DifGameSystem system;
 
     public int[] levelIndex;
     //public int levelDifficulty;
     public List<int> completedLevels = new List<int>(20);
+    public int CompletedLevels;
+    //public int wonLevels = 0;
     public int currentLevel;
     public int levelSelectScene;
 
@@ -31,9 +34,9 @@ public class DifferenceManager : MonoBehaviour
     {
         //PlayerPrefs.DeleteAll();
 
-        DifferenceLoad();
+        //DifferenceLoad();
 
-        //Let's define required clics/removable objects number (when not opening level from LevelSelect scene).
+        //Defines required clics/removable objects number (when not opening level from LevelSelect scene).
         if (currentLevel == 0)
         {
             Spots = 2;
@@ -78,7 +81,13 @@ public class DifferenceManager : MonoBehaviour
             completedLevels.Add(currentLevel);        //Adds won level to completed levels.
             Debug.Log("Uusi kenttä");
 
-            DifferenceSave();
+            CompletedLevels++;
+
+            //completeLevel(currentLevel);
+
+            //DifferenceSave();
+
+            //system.clearLevel(currentLevel);
         }
         //base.PlayerWin();
     }
@@ -163,6 +172,21 @@ public class DifferenceManager : MonoBehaviour
     {
         Debug.Log("DifferenceInitialPanel");
     }
+
+    //public void completeLevel(int level)
+    //{
+    //    if (wonLevels < level)
+    //    {
+    //        wonLevels = level;
+    //        Debug.Log("Difference level " + (level + 1) + " cleared");
+    //    }
+    //}
+
+    //public int getWonLevels()
+    //{
+    //    Debug.Log("Won levels = " + wonLevels);
+    //    return wonLevels;
+    //}
 
 //___________________________________________________________________________________________________________________
 

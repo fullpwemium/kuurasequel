@@ -12,7 +12,7 @@ public class ClickMistake : MonoBehaviour
 
     public int Trash;
 
-    public GameObject layerManager;
+    //public GameObject layerManager;
 
     public GameObject Active;
 
@@ -45,22 +45,28 @@ public class ClickMistake : MonoBehaviour
     void OnMouseDown()
     {
         //When clicking trash object.
-        if (/*this.gameObject.name == "Roska"*/ Trash == 1 && FindingTimer.timeLeft > 0)
+        //if (/*this.gameObject.name == "Roska"*/ Trash == 1 && FindingTimer.timeLeft > 0)
+        if (Trash == 1 && DifGameScript.playable)
         {
             //x = 0;
             //y = 2;
             click();
 
-            if (ClickRights == DifferenceManager.Spots /*DifferenceManager.RightClicks == 0*/)
-            //if (/*RightClicks == DifferenceManager.Spots*/ DifferenceManager.RightClicks == 0)
+            //if (ClickRights == DifferenceManager.Spots /*DifferenceManager.RightClicks == 0*/)
+            if (ClickRights == DifGameScript.spots)
             {
+                Debug.Log("Last click");
                 FindingTimer.EndGame();     //Stop timer.
-                DifferenceManager.manager.PlayerWin();
+                //DifferenceManager.manager.PlayerWin();
+                //DifGameScript.gamescript.winningGame();
+                DifGameScript.isWin = true;
+                //DifGameScript.playable = false;
                 Debug.Log("Virheet = " + Mistakes);
             }
         }
         //When clicking background.
-        else if (/*this.gameObject.name == "Background"*/ Trash == 0 && FindingTimer.timeLeft > 0)
+        //else if (/*this.gameObject.name == "Background"*/ Trash == 0 && FindingTimer.timeLeft > 0)
+        else if(Trash == 0 && DifGameScript.playable)
         {
             FindingTimer.timeLeft -= 3;
             Mistakes++;

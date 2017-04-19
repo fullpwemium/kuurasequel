@@ -10,7 +10,7 @@ public class DifLevelSelect : MonoBehaviour
 
     public int levelButtonNumber;
 
-    public List<Button> buttons;
+    //public List<Button> buttons;
     DifferenceManager manager;
 
     // Use this for initialization
@@ -42,7 +42,7 @@ public class DifLevelSelect : MonoBehaviour
     //{
     //    for (int i = 0; i < buttons.Capacity; i++)
     //    {
-    //        int completedLevels = manager.getClearedLevels();
+    //        int completedLevels = manager.getWonLevels();
     //        if (completedLevels >= i)
     //        {
     //            buttons[i].interactable = true;

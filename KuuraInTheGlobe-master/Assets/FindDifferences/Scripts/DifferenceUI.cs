@@ -215,7 +215,7 @@ public class DifferenceUI : MonoBehaviour
             DifferenceManager.levelCats[DifferenceManager.manager.currentLevel] = stars;
             Debug.Log("levelikissat: " + DifferenceManager.levelCats[0]);
 
-            DifferenceManager.manager.DifferenceSave();
+            //DifferenceManager.manager.DifferenceSave();
         }
     }
 }

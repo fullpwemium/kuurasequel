@@ -122,6 +122,9 @@ public class TextBoxManager : MonoBehaviour {
 			case "WordQuiz":
 				GlobalGameManager.GGM.wordQuizCutscenesWatched++;
 				break;
+            case "DifferenceGame":
+                GlobalGameManager.GGM.differenceCutscenesWatched++;
+                break;
             default:
                 Debug.Log("Scene doesn't exist");
                 break;

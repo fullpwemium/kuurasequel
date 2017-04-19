@@ -62,7 +62,8 @@ public class FindingTimer : MonoBehaviour
 
             else if (timeLeft <= 0)
             {
-                DifferenceManager.manager.PlayerLose();     //Activates losing panel.
+                //DifferenceManager.manager.PlayerLose();     //Activates losing panel.
+                DifGameScript.isLose = true;
             }
 
             //print(timeLeft); //Tulostetaan Consoleen

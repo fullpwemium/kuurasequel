@@ -62,6 +62,7 @@ public class GlobalGameManager : MonoBehaviour
     //How many cutscenes the player has seen from each world;
 	public int rocketGameCutscenesWatched = 0;
 	public int wordQuizCutscenesWatched = 0;
+    public int differenceCutscenesWatched = 0;
 
     //Singleton check
     public void Awake()
@@ -177,11 +178,13 @@ public class GlobalGameManager : MonoBehaviour
 
 		PlayerPrefs.SetInt("rocketGameCutscenesWatched", rocketGameCutscenesWatched);
 		PlayerPrefs.SetInt("wordQuizCutscenesWatched", wordQuizCutscenesWatched );
+        PlayerPrefs.SetInt("differenceCutscenesWatched", differenceCutscenesWatched);
     }
     public void CutSceneLoad()
     {
 		rocketGameCutscenesWatched = PlayerPrefs.GetInt("rocketGameCutscenesWatched");
 		wordQuizCutscenesWatched = PlayerPrefs.GetInt("wordQuizCutscenesWatched");
+        differenceCutscenesWatched = PlayerPrefs.GetInt("differenceCutscenesWatched");
     }
 	//---------------------------------------------------------------------------------------------
 
