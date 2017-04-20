@@ -18,10 +18,12 @@ public class DifLevelSelectScript : MonoBehaviour
         {
             system = GameObject.Instantiate(systemPrefab).GetComponent<DifGameSystem>();
             //system.init ();
+            Debug.Log("system added");
         }
         else
         {
             system = GameObject.Find("difGameSystem").GetComponent<DifGameSystem>();
+            Debug.Log("system found");
         }
 
         checkButtons();
@@ -57,6 +59,7 @@ public class DifLevelSelectScript : MonoBehaviour
             if (clearedlevels >= i)
             {
                 buttons[i].interactable = true;
+                Debug.Log("Open buttons = " + i);
             }
             else if (clearedlevels < i)
             {

@@ -37,6 +37,8 @@ public class DifGameScript : MonoBehaviour
         isWin = false;
         playable = true;
 
+        initSystem();
+
         //Defines required clics/removable objects number (when not opening level from LevelSelect scene).
         if (thisLevel == 0)
         {
@@ -72,6 +74,11 @@ public class DifGameScript : MonoBehaviour
         {
             winningGame();
         }
+
+        if (ClickMistake.Mistakes >= 3)
+        {
+            //DifGameScript.isLose = true;
+        }
     }
 
     private void initSystem()
@@ -80,10 +87,12 @@ public class DifGameScript : MonoBehaviour
         {
             system = GameObject.Instantiate(systemPrefab).GetComponent<DifGameSystem>();
             //system.init();
+            Debug.Log("System added");
         }
         else
         {
             system = GameObject.Find("difGameSystem").GetComponent<DifGameSystem>();
+            Debug.Log("System found");
         }
     }
 
@@ -116,7 +125,7 @@ public class DifGameScript : MonoBehaviour
     {
         Debug.Log("You win!");
         playable = false;
-        winningPanel.SetActive(true);
+        //winningPanel.SetActive(true);
 
         if (!system.isCatCollected(currentLevel))       //if first time clear
         {

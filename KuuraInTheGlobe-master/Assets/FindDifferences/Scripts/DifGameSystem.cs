@@ -67,7 +67,7 @@ public class DifGameSystem : MonoBehaviour
         if (!cats[level])
         {
             Debug.Log("Cat was collected from level [" + level + "]");
-            cats[level - 1] = true;
+            cats[level] = true;
             GlobalGameManager.GGM.setCatAcquisitionForGivenLevel("difGame", level, 1);
         }
     }

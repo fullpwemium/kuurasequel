@@ -51,23 +51,22 @@ public class FindingTimer : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-
         if (Cleared == false)
         {
             if (timeLeft > 0)
             {
                 timeLeft -= Time.deltaTime;
-                //Debug.Log(timeLeft);
+                timeRunning.text = timeLeft.ToString("f1"); //Print time with one decimal.
             }
 
             else if (timeLeft <= 0)
             {
                 //DifferenceManager.manager.PlayerLose();     //Activates losing panel.
                 DifGameScript.isLose = true;
+                timeRunning.text = "";
             }
 
             //print(timeLeft); //Tulostetaan Consoleen
-            timeRunning.text = timeLeft.ToString("f1"); //Print time with one decimal.
         }
     }
 }

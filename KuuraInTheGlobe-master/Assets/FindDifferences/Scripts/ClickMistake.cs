@@ -57,8 +57,10 @@ public class ClickMistake : MonoBehaviour
             {
                 Debug.Log("Last click");
                 FindingTimer.EndGame();     //Stop timer.
+
                 //DifferenceManager.manager.PlayerWin();
                 //DifGameScript.gamescript.winningGame();
+
                 DifGameScript.isWin = true;
                 //DifGameScript.playable = false;
                 Debug.Log("Virheet = " + Mistakes);
@@ -70,7 +72,8 @@ public class ClickMistake : MonoBehaviour
         {
             FindingTimer.timeLeft -= 3;
             Mistakes++;
-            Debug.Log("Virhe!");
+            //Debug.Log("Virhe!");
+            Debug.Log("Virheet = " + Mistakes);
         }
     }
     //Actions when clicking trash object.
