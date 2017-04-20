@@ -1,0 +1,8 @@
+﻿NPC: "How's it going?"
+NPC: "You have made a good job."
+NPC: "But there's still more messed paintings!"
+NPC: "Clean them!"
+NPC: "Artist is soon here!"
+NPC: "S/He can not see this mess!"
+NPC: "Or else S/He lose his/her mind!"
+NPC: "Clean the rest paintings!"

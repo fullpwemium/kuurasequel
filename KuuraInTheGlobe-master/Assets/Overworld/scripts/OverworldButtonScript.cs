@@ -54,7 +54,8 @@ public class OverworldButtonScript : MonoBehaviour
 			// actually loaded.
 			default:
 				GlobalGameManager.GGM.currentScene = sceneToLoad;
-				SceneManager.LoadScene ("Cutscene", LoadSceneMode.Single);
+				//SceneManager.LoadScene ("Cutscene", LoadSceneMode.Single);
+                SceneManager.LoadScene ("CutScene (2)", LoadSceneMode.Single);
 				break;
 			}
 			return;

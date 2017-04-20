@@ -38,7 +38,7 @@ public class DifGameSystem : MonoBehaviour
 			return;
 		}*/
 
-        clearedLevels = GlobalGameManager.GGM.getNumberOfBeatenLevels("differenceGame");
+        clearedLevels = GlobalGameManager.GGM.getNumberOfBeatenLevels("difGame");
         Debug.Log("Cleared levels = " + clearedLevels);
         if (clearedLevels == 0)
         {
@@ -47,7 +47,7 @@ public class DifGameSystem : MonoBehaviour
 
         for (int i = 0; i < cats.Length; i++)
         {
-            cats[i] = GlobalGameManager.GGM.hasCatBeenAcquiredForGivenLevel("differenceGame", i + 1);
+            cats[i] = GlobalGameManager.GGM.hasCatBeenAcquiredForGivenLevel("difGame", i + 1);
         }
         //initialized = true;
     }
@@ -68,7 +68,7 @@ public class DifGameSystem : MonoBehaviour
         {
             Debug.Log("Cat was collected from level [" + level + "]");
             cats[level - 1] = true;
-            GlobalGameManager.GGM.setCatAcquisitionForGivenLevel("differenceGame", level, 1);
+            GlobalGameManager.GGM.setCatAcquisitionForGivenLevel("difGame", level, 1);
         }
     }
 
@@ -80,7 +80,7 @@ public class DifGameSystem : MonoBehaviour
         {
             Debug.Log("Level " + (cleared + 1) + " cleared");
             clearedLevels = cleared;
-            GlobalGameManager.GGM.setNumberOfBeatenLevels("differenceGame", clearedLevels);
+            GlobalGameManager.GGM.setNumberOfBeatenLevels("difGame", clearedLevels);
         }
     }
 

@@ -31,6 +31,9 @@ public class NPCSwitcher : MonoBehaviour {
 			case "WordQuiz":
 				GetComponent<SpriteRenderer>().sprite = NPCSprite[1];
 				break;
+            case "DifferenceGame":
+                GetComponent<SpriteRenderer>().sprite = NPCSprite[2];
+                break;
             default:
                 Debug.Log("This scene should not exist.");
                 break;

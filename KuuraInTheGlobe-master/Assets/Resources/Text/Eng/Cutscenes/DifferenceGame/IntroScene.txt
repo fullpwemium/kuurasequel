@@ -1,0 +1,6 @@
+NPC: "Hey Bob! Come here immediately!"
+NPC: "Your cats has spoiled all paintings!"
+NPC: "If artist sees the mess, I lose my job!"
+NPC: "You caused this so you will fix this!"
+NPC: "Or else I throw you in fishing hole!"
+NPC: "What are you waiting for? Hurry!"

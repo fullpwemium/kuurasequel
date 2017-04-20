@@ -82,6 +82,9 @@ public class EventHandler : MonoBehaviour {
 			case "WordQuiz":
 				ret = GlobalGameManager.GGM.getNumberOfBeatenLevels ("quizGame"); //Note that WordQuiz != quizGame!
 				break;
+            case "DifferenceGame":
+                ret = GlobalGameManager.GGM.getNumberOfBeatenLevels("difGame"); //
+                break;
             default:
                 Debug.Log("Scene doesn't exist");
                 break;

@@ -26,6 +26,9 @@ public class MenuButtons : MonoBehaviour {
             case "WordQuiz":
 				SceneManager.LoadScene("WordGameLevelSelect");
 				break;
+            case "DifferenceGame":
+                SceneManager.LoadScene("DifLevelSelect2");
+                break;
             default:
                 break;
         }

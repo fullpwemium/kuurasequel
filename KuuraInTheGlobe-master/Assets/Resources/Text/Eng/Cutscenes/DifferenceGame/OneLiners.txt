@@ -1,0 +1,5 @@
+﻿NPC: “The paintings has better be clean when artist comes back!"
+NPC: "Don't mess the paintings any more!"
+NPC: "Those stupid cats are making me crazy!"
+NPC: "This painting is so messed!"
+NPC: "Owch! I got thinner in my hand!"

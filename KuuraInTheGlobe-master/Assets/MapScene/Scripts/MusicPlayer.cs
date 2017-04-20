@@ -196,6 +196,8 @@ public class MusicPlayer : MonoBehaviour
                 Debug.Log("Runner theme playing based on scene change.");
                 break;
 
+            case "DifGameLevel":
+
 
             default:
                 break;
