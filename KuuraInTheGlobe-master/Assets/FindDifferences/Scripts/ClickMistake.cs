@@ -91,6 +91,7 @@ public class ClickMistake : MonoBehaviour
         Active.SetActive(false);
 
         GameObject clickedCard = this.gameObject;
+
         //layerManager = GameObject.Find("LayerManager");
         //layerManager.GetComponent<LayerScript>().ClickAction(clickedCard, (int)x, (int)y); //kun x ja y floatteja, niin edessä oltava sulkeissa int
     }

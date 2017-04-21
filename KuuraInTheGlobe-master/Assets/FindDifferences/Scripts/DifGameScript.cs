@@ -33,6 +33,9 @@ public class DifGameScript : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        //PlayerPrefs.DeleteAll();
+        //Debug.Log("All deleted");
+
         isLose = false;
         isWin = false;
         playable = true;
@@ -52,9 +55,39 @@ public class DifGameScript : MonoBehaviour
         {
             currentLevel = 1;
 
-            spots = 3;
+            spots = 5;
             FindingTimer.timeLeft = 30;
             Debug.Log("Spots = " + spots);
+        }
+        if (thisLevel == 2)
+        {
+            currentLevel = 2;
+
+
+        }
+        if (thisLevel == 3)
+        {
+            currentLevel = 3;
+
+
+        }
+        if (thisLevel == 4)
+        {
+            currentLevel = 4;
+
+
+        }
+        if (thisLevel == 5)
+        {
+            currentLevel = 5;
+
+
+        }
+        if (thisLevel == 6)
+        {
+            currentLevel = 6;
+
+
         }
 
         winningPanel.SetActive(false);
@@ -131,6 +164,7 @@ public class DifGameScript : MonoBehaviour
         {
             system.collectCat(currentLevel);
             system.clearLevel(currentLevel);
+            //system.addClearedLevels();
             activateWinningCat();
         }
         else

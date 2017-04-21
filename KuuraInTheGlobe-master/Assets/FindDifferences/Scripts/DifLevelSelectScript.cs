@@ -26,7 +26,7 @@ public class DifLevelSelectScript : MonoBehaviour
             Debug.Log("system found");
         }
 
-        checkButtons();
+        //checkButtons();
 
         //MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouseCutscene);
     }
@@ -46,6 +46,22 @@ public class DifLevelSelectScript : MonoBehaviour
             SceneManager.LoadScene("DifLevel1(2)", LoadSceneMode.Single);
         }
         else if (level == 2)
+        {
+            SceneManager.LoadScene("DifLevel2", LoadSceneMode.Single);
+        }
+        else if (level == 3)
+        {
+
+        }
+        else if (level == 4)
+        {
+
+        }
+        else if (level == 5)
+        {
+
+        }
+        else if (level == 6)
         {
 
         }

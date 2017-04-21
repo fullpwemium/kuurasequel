@@ -120,7 +120,8 @@ public class TextBoxManager : MonoBehaviour {
 				GlobalGameManager.GGM.incrementCutsceneProgress (currentScene);
 				break;
             case "DifferenceGame":
-                GlobalGameManager.GGM.differenceCutscenesWatched++;
+                //GlobalGameManager.GGM.differenceCutscenesWatched++;
+                GlobalGameManager.GGM.incrementCutsceneProgress(currentScene);
                 break;
             default:
                 Debug.Log("Scene doesn't exist");

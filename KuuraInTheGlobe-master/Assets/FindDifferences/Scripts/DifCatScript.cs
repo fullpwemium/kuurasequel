@@ -28,7 +28,9 @@ public class DifCatScript : MonoBehaviour
         Cat = GetComponent<Image>();
 
         Debug.Log("Won cats: " + buttonNumber + DifferenceManager.levelCats[buttonNumber]);
-        if (DifferenceManager.levelCats[buttonNumber] >= catNumber)    //Check how many points/cat heads won in completed levels.
+
+        //Check how many points/cat heads won in completed levels.
+        if (DifferenceManager.levelCats[buttonNumber] >= catNumber)
         {
             Cat.color = Color.white;       //Visualize won points/cat heads.
             Debug.Log("Värjatty");

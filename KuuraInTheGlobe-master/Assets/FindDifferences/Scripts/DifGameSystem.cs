@@ -48,6 +48,7 @@ public class DifGameSystem : MonoBehaviour
         for (int i = 0; i < cats.Length; i++)
         {
             cats[i] = GlobalGameManager.GGM.hasCatBeenAcquiredForGivenLevel("difGame", i + 1);
+            Debug.Log("cats[i] = " + cats[i]);
         }
         //initialized = true;
     }
@@ -57,6 +58,7 @@ public class DifGameSystem : MonoBehaviour
     public bool isCatCollected(int level)
     {
         //return cats[level - 1];
+        Debug.Log("Cat level = " + level);
         return cats[level];
     }
 
@@ -94,6 +96,7 @@ public class DifGameSystem : MonoBehaviour
     public void addClearedLevels()
     {
         clearedLevels++;
+        GlobalGameManager.GGM.setNumberOfBeatenLevels("difGame", clearedLevels);
         Debug.Log("Added cleared levels = " + clearedLevels);
     }
 

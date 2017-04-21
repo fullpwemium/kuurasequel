@@ -38,12 +38,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/WordGame/scenes/WordGameLevelSelect.unity
   - enabled: 1
-    path: Assets/FindDifferences/Scenes/DifLevelSelect.unity
+    path: Assets/FindDifferences/Scenes/Wanha/DifLevelSelect.unity
   - enabled: 1
-    path: Assets/FindDifferences/Scenes/DifLevel1.unity
+    path: Assets/FindDifferences/Scenes/Wanha/DifLevel1.unity
   - enabled: 1
     path: Assets/FindDifferences/Scenes/DifLevelSelect2.unity
   - enabled: 1
     path: Assets/FindDifferences/Scenes/DifLevel1(2).unity
   - enabled: 1
     path: Assets/Cutscenes/CutScene (2).unity
+  - enabled: 1
+    path: Assets/FindDifferences/Scenes/DifLevel2.unity
