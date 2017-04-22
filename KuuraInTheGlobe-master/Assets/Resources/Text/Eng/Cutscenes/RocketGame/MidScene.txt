@@ -1,8 +1,5 @@
-Eagle: "Hopefully that bum's making some progress."
-Eagle: "I don't have such high hopes for him."
-Eagle: "He just might be the first person to fall off the rocket."
-Eagle: "Got to get those cats out off the sky, that's my domain."
-Eagle: "I could've done it in five minutes, this guy though..."
-Eagle: "Well, I guess you're doing an okay job.."
-Eagle: "Eagle trusting a yeti to clean up the sky, gimme a break."
-Eagle: "You better give him a talking to!"
+Eagle: ”You're pretty good, considering you don't have wings. I'm impressed.”
+Eagle: ”Have you taken any flying lessons or something?”
+Eagle: ”This is still only the halfway, so we have a lot of work to do.”
+Eagle: ”Now, go Bob! Let's collect those cats.”
+Eagle: ”Seriously, don't look down.”

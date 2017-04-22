@@ -1,8 +1,5 @@
-Fox girl: "Have to go!"
-Fox girl: "Thought so."
-Fox girl: "I like the challenge."
-Fox girl: "That's not good enough, you need to improve."
-Fox girl: "Didn't think you'd be this smart."
-Fox girl: "You are verbally quite gifted."
-Fox girl: "That was so great!"
-Fox girl: "Hope this time it’ll be more of a challenge."
+Fox girl: ”Great! Didn't think you'd be this good.”
+Fox girl: ”However, we're still only halfway there.”
+Fox girl: ”I can only hope, that you can get these next ones. They are more difficult, so no playing around.”
+Fox girl: ”When you're ready let's continue.”
+Fox girl: ”Good to go? Wonderful.”
