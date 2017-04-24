@@ -1,5 +1,5 @@
-Eagle: "Hey boy, would be a lad and collect them cats? All you have to do is get into that rocket and collect them. Try to avoid hitting them clouds and if your low on fuel, collect a tank to keep you going."
-Eagle: "Hey, not sure if you can help me but would collect all the cats? All you have to do is get into that rocket and collect them. Try to avoid hitting them clouds and if your low on fuel, collect a tank to keep you going."
-Eagle: "Hi, you're not scared of heights are you? All you have to do is get into that rocket and collect them. Try to avoid hitting them clouds and if your low on fuel, collect a tank to keep you going."
-Eagle: "Hi Bob, I have a small favour to ask. All you have to do is get into that rocket and collect them. Try to avoid hitting them clouds and if your low on fuel, collect a tank to keep you going."
-Eagle: "Hey, there is this teeny-tiny thing I need help with. All you have to do is get into that rocket and collect them. Try to avoid hitting them clouds and if your low on fuel, collect a tank to keep you going."
+Eagle: ”Hey, not sure if you can help me but could you collect all the cats?”
+Eagle: ”All you have to do is get into that rocket and collect them."
+Eagle: ”Try to avoid hitting them nasty clouds and if you’re low on fuel, collect a yellow one to keep you going."
+Eagle: ”I guess that's all. This will be a test for you, but I'm confident you can do this.”
+Eagle: ”Just don't look down, okay?”
