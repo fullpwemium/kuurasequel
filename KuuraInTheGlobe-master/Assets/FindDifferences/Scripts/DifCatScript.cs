@@ -27,7 +27,7 @@ public class DifCatScript : MonoBehaviour
     {
         Cat = GetComponent<Image>();
 
-        Debug.Log("Won cats: " + buttonNumber + DifferenceManager.levelCats[buttonNumber]);
+        //Debug.Log("Won cats: " + buttonNumber + DifferenceManager.levelCats[buttonNumber]);
 
         //Check how many points/cat heads won in completed levels.
         if (DifferenceManager.levelCats[buttonNumber] >= catNumber)

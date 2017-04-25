@@ -26,7 +26,7 @@ public class DifLevelSelectScript : MonoBehaviour
             Debug.Log("system found");
         }
 
-        //checkButtons();
+        checkButtons();
 
         //MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouseCutscene);
     }

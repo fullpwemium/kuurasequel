@@ -38,6 +38,9 @@ public class DifGameSystem : MonoBehaviour
 			return;
 		}*/
 
+        //PlayerPrefs.DeleteAll();
+        //Debug.Log("All deleted");
+
         clearedLevels = GlobalGameManager.GGM.getNumberOfBeatenLevels("difGame");
         Debug.Log("Cleared levels = " + clearedLevels);
         if (clearedLevels == 0)
@@ -70,7 +73,7 @@ public class DifGameSystem : MonoBehaviour
         {
             Debug.Log("Cat was collected from level [" + level + "]");
             cats[level] = true;
-            GlobalGameManager.GGM.setCatAcquisitionForGivenLevel("difGame", level, 1);
+            GlobalGameManager.GGM.setCatAcquisitionForGivenLevel("difGame", level + 1, 1);
         }
     }
 

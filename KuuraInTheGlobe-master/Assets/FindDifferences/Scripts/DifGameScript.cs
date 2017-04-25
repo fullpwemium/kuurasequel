@@ -26,6 +26,8 @@ public class DifGameScript : MonoBehaviour
     public int thisLevel = 0;
     public static int[] levelCats = new int[10];
 
+    bool[] cats = new bool[10];
+
     //UI objects
     public GameObject winningPanel;
     public GameObject losingPanel;
@@ -164,7 +166,7 @@ public class DifGameScript : MonoBehaviour
         {
             system.collectCat(currentLevel);
             system.clearLevel(currentLevel);
-            //system.addClearedLevels();
+            system.addClearedLevels();
             activateWinningCat();
         }
         else
@@ -184,7 +186,7 @@ public class DifGameScript : MonoBehaviour
     {
         losingPanel.SetActive(false);
         winningPanel.SetActive(true);
-        Debug.Log("You won");
+        Debug.Log("Cat already won");
     }
 
     public void onButtonClick()

@@ -72,8 +72,7 @@ public class ClickMistake : MonoBehaviour
         {
             FindingTimer.timeLeft -= 3;
             Mistakes++;
-            //Debug.Log("Virhe!");
-            Debug.Log("Virheet = " + Mistakes);
+            Debug.Log("Virhe!");
         }
     }
     //Actions when clicking trash object.
