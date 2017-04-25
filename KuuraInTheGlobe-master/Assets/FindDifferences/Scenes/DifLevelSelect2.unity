@@ -157,7 +157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &70857396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30031106e27c834fba9766105f2e966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catNumber: 1
+  catNumber: 3
   buttonNumber: 3
 --- !u!114 &70857398
 MonoBehaviour:
@@ -239,7 +239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &179539587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30031106e27c834fba9766105f2e966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catNumber: 1
+  catNumber: 0
   buttonNumber: 0
 --- !u!114 &179539589
 MonoBehaviour:
@@ -363,7 +363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &464899407
 RectTransform:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30031106e27c834fba9766105f2e966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catNumber: 1
+  catNumber: 4
   buttonNumber: 4
 --- !u!114 &464899409
 MonoBehaviour:
@@ -539,7 +539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &800292288
 RectTransform:
   m_ObjectHideFlags: 0
@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30031106e27c834fba9766105f2e966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catNumber: 1
+  catNumber: 2
   buttonNumber: 2
 --- !u!114 &800292290
 MonoBehaviour:
@@ -991,7 +991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1071250315
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1073,7 +1073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1196591566
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30031106e27c834fba9766105f2e966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catNumber: 1
+  catNumber: 5
   buttonNumber: 5
 --- !u!114 &1196591568
 MonoBehaviour:

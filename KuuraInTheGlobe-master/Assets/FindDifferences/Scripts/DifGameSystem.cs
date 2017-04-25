@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class DifGameSystem : MonoBehaviour
 {
+    public static DifGameSystem DGS;
+
     // How many levels has the player cleared?
-    int clearedLevels = 0;
+    public int clearedLevels = 0;
 
     // Chosen level or the point at which player starts from after picking "retry" on game over screen
     int startingLevel = 1;

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class DifLevelSelectScript : MonoBehaviour
 {
+    public static int wonCats;
+
     public GameObject systemPrefab;
     public List<Button> buttons;
     DifGameSystem system;
@@ -76,6 +78,9 @@ public class DifLevelSelectScript : MonoBehaviour
             {
                 buttons[i].interactable = true;
                 Debug.Log("Open buttons = " + i);
+
+                wonCats = i - 1;
+                Debug.Log("Won cats = " + i);
             }
             else if (clearedlevels < i)
             {
