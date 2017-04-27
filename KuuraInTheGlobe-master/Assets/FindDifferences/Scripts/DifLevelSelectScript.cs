@@ -42,29 +42,37 @@ public class DifLevelSelectScript : MonoBehaviour
     public void levelButtonClick(int level)
     {
         //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
-        system.setStartingLevel(level);
+
+        //system.setStartingLevel(level);
+
         if (level == 1)
         {
+            Debug.Log("Kenttä 1");
             SceneManager.LoadScene("DifLevel1(2)", LoadSceneMode.Single);
         }
         else if (level == 2)
         {
+            Debug.Log("Kenttä 2");
             SceneManager.LoadScene("DifLevel2", LoadSceneMode.Single);
         }
         else if (level == 3)
         {
-
+            Debug.Log("Kenttä 3");
+            //SceneManager.LoadScene("DifLevel3", LoadSceneMode.Single);
         }
         else if (level == 4)
         {
+            Debug.Log("Kenttä 4");
 
         }
         else if (level == 5)
         {
+            Debug.Log("Kenttä 5");
 
         }
         else if (level == 6)
         {
+            Debug.Log("Kenttä 6");
 
         }
     }

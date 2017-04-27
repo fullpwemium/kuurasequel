@@ -65,6 +65,10 @@ public class DifGameScript : MonoBehaviour
         {
             currentLevel = 2;
 
+            spots = 5;
+            FindingTimer.timeLeft = 25;
+            Debug.Log("Spots = " + spots);
+
 
         }
         if (thisLevel == 3)
