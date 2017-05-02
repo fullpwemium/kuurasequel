@@ -43,7 +43,7 @@ public class RocketGameCountdown : MonoBehaviour {
 	}
 
 	// Tick the countdown automatically
-	void Update ()  {
+	void FixedUpdate ()  {
 
 		if (game.paused) {
 			return;

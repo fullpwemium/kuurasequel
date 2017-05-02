@@ -17,7 +17,7 @@ public class RG_CatCollectedScript : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (speed < initialSpeed * -1) {
 			timer += Time.fixedDeltaTime;
 			r.color = new Color (1, 1, 1, 1 - timer);

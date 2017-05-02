@@ -25,7 +25,7 @@ public class RocketGamePauseScreenScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		timer +=  0.075f;
 		t.eulerAngles = new Vector3 (
 			0,

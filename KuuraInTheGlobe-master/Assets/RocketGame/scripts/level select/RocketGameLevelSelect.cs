@@ -76,7 +76,7 @@ public class RocketGameLevelSelect : MonoBehaviour {
 		}
 	}
 
-	void Update () {
+	void FixedUpdate () {
 
 		if (!clicked) { return; }
 		if (!countdown) {

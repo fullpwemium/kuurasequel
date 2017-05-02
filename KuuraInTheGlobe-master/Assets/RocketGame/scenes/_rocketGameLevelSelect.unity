@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
-  speed: 0.075
+  speed: 0.035
 --- !u!212 &68189365
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
-  speed: 0.075
+  speed: 0.035
 --- !u!212 &148459263
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
-  speed: 0.075
+  speed: 0.035
 --- !u!212 &314429593
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
-  speed: 0.075
+  speed: 0.035
 --- !u!212 &642300133
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2636,7 +2636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
-  speed: 0.075
+  speed: 0.035
 --- !u!212 &1168986104
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3319,7 +3319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
-  speed: 0.075
+  speed: 0.035
 --- !u!212 &1382954488
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3580,7 +3580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
-  speed: 0.075
+  speed: 0.035
 --- !u!212 &1444649376
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3840,8 +3840,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac8028da40365f4b9d569e245103789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 2
-  speed: 0.075
+  force: 4
+  speed: 0.045
 --- !u!1 &1561921652
 GameObject:
   m_ObjectHideFlags: 0
@@ -4402,7 +4402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
-  speed: 0.075
+  speed: 0.035
 --- !u!212 &1790239150
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4634,7 +4634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
-  speed: 0.075
+  speed: 0.035
 --- !u!212 &1798661331
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4712,7 +4712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 10
-  speed: 0.075
+  speed: 0.035
 --- !u!212 &1825009689
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -61,7 +61,7 @@ public class RG_LevelIndicator : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (speed < initialSpeed * -1) {
 			timer += Time.fixedDeltaTime;
 			r_text.color = new Color (1, 1, 1, 4 - timer);

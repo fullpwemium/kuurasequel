@@ -318,8 +318,18 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 		system.exit ();
 	}
 
-	// Update is called once per frame
 	void Update () {
+		if (paused || !playing) {
+			return;
+		}
+
+		//player.applyMovement ();
+		float difference = player.applyMovement ();
+		player.applyRotation (difference);
+	}
+
+	// Update is called once per frame
+	void FixedUpdate () {
 
 		if (paused) {
 			return;

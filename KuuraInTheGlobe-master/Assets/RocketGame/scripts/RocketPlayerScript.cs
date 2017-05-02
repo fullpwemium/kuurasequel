@@ -79,8 +79,8 @@ public class RocketPlayerScript : MonoBehaviour {
 	public void updatePlayer () {
 		if (!initialized) { return; }
 		if (playable) {
-			float difference = applyMovement ();
-			applyRotation (difference);
+			//float difference = applyMovement ();
+			//applyRotation (difference);
 			checkFuel ();
 			updateAltitude ();
 			checkInvul ();
@@ -99,7 +99,7 @@ public class RocketPlayerScript : MonoBehaviour {
 		}
 	}
 
-	float applyMovement () {
+	public float applyMovement () {
 
 		if (falling || damaged ) {
 			currentFallSpeed += fallSpeed * 0.25f;
@@ -155,7 +155,7 @@ public class RocketPlayerScript : MonoBehaviour {
 		return deltaX;
 	}
 
-	void applyRotation ( float change ) {
+	public void applyRotation ( float change ) {
 
 		if (Mathf.Abs (change) > 0f) {
 			// Replace current rotation if necessary

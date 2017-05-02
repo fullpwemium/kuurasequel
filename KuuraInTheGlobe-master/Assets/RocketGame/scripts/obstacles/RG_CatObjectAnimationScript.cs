@@ -18,7 +18,7 @@ public class RG_CatObjectAnimationScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		timer -= Time.fixedDeltaTime;
 		if (timer <= 0) {
 			timer = animationSpeed;
