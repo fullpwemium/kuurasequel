@@ -319,7 +319,7 @@ public class RocketGameGameplaySystem : MonoBehaviour {
 	}
 
 	void Update () {
-		if (paused || !playing) {
+		if (paused || !playing || isGameOver) {
 			return;
 		}
 

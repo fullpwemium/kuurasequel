@@ -34,7 +34,7 @@ public class RocketPlayerScript : MonoBehaviour {
 
 	// fuel and fuel consumption
 	float fuel;
-	float fuelConsumption = 0.00125f;
+	float fuelConsumption = 0.000975f;
 	float fuelPenalty = .0f;
 	float fuelAddition = .0f;
 
@@ -81,6 +81,7 @@ public class RocketPlayerScript : MonoBehaviour {
 		if (playable) {
 			//float difference = applyMovement ();
 			//applyRotation (difference);
+			verticalUpdate();
 			checkFuel ();
 			updateAltitude ();
 			checkInvul ();
@@ -132,7 +133,30 @@ public class RocketPlayerScript : MonoBehaviour {
 				touching = false;
 			}
 		}
+		/*
+		float recoverySpeed = 0f;
+		if (!falling && !damaged) {
+			if (transform.localPosition.y < playerFlyingPosition) {
+				recoverySpeed = (Mathf.Abs (transform.localPosition.y)) / 60;
+			}
+		}*/
 
+		this.transform.localPosition = new Vector3 (
+			Mathf.Clamp ( this.transform.localPosition.x + deltaX, -290f, 305f),
+			this.transform.localPosition.y, //Mathf.Clamp ( this.transform.localPosition.y - currentFallSpeed + recoverySpeed, playerDeathBarrier -2f, playerFlyingPosition),
+			0f
+		);
+		/*
+		if (this.transform.localPosition.y < playerDeathBarrier ) {
+			//that's death
+			game.gameOver( altitude );
+			Destroy (gameObject);
+		}*/
+
+		return deltaX;
+	}
+
+	void verticalUpdate() {
 		float recoverySpeed = 0f;
 		if (!falling && !damaged) {
 			if (transform.localPosition.y < playerFlyingPosition) {
@@ -141,18 +165,16 @@ public class RocketPlayerScript : MonoBehaviour {
 		}
 
 		this.transform.localPosition = new Vector3 (
-			Mathf.Clamp ( this.transform.localPosition.x + deltaX, -290f, 305f),
+			this.transform.localPosition.x,
 			Mathf.Clamp ( this.transform.localPosition.y - currentFallSpeed + recoverySpeed, playerDeathBarrier -2f, playerFlyingPosition),
-			0f
+			this.transform.localPosition.y
 		);
 
 		if (this.transform.localPosition.y < playerDeathBarrier ) {
 			//that's death
 			game.gameOver( altitude );
-			Destroy (gameObject);;
+			Destroy (gameObject);
 		}
-
-		return deltaX;
 	}
 
 	public void applyRotation ( float change ) {
@@ -286,7 +308,7 @@ public class RocketPlayerScript : MonoBehaviour {
 		blinkingTimer = 0f;
 		fuelPenalty = 0.025f * penaltyLevel;
 		invulTimer = 1.5f;
-		damagedTimer = 0.4f;
+		damagedTimer = 0.25f;
 		damaged = true;
 		game.setDamagedFuelPosition (fuel);
 	}
