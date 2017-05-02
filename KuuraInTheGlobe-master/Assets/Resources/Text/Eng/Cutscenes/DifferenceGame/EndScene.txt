@@ -1,4 +1,4 @@
-NPC: "Not bad."
-NPC: "I'm impressed."
-NPC: "Everything is now in control."
-NPC: "Nuff said"
+NPC: "Excellent!"
+NPC: "All of paintings are clean now!"
+NPC: "Thanks for your help, bob."
+NPC: "Sorry if I was rude earlier."

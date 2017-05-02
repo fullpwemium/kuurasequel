@@ -49,3 +49,5 @@ EditorBuildSettings:
     path: Assets/Cutscenes/CutScene (2).unity
   - enabled: 1
     path: Assets/FindDifferences/Scenes/DifLevel2.unity
+  - enabled: 1
+    path: Assets/FindDifferences/Scenes/DifLevel3.unity

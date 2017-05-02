@@ -139,7 +139,8 @@ public class EventHandler : MonoBehaviour {
 				cutScenesWatched = GlobalGameManager.GGM.checkCutsceneProgress (currentScene);
 				break;
             case "DifferenceGame":
-                cutScenesWatched = GlobalGameManager.GGM.differenceCutscenesWatched;
+                //cutScenesWatched = GlobalGameManager.GGM.differenceCutscenesWatched;
+                cutScenesWatched = GlobalGameManager.GGM.checkCutsceneProgress(currentScene);
                 break;
             default:
                 Debug.Log("Scene doesn't exist");

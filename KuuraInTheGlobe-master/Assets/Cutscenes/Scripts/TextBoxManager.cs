@@ -73,12 +73,14 @@ public class TextBoxManager : MonoBehaviour {
 			showOneLiner ();
 			buttons.SetActive (true);
 			finished = true;
+            Debug.Log("Cutscenes watched = " + cutscenesWatched);
 			return;
 		} else {
 			if (!coroutineStarted) {
 				StartCoroutine (TextScroll (dialogueLines [currentLine]));
 				currentLine++;
 				coroutineStarted = true;
+                Debug.Log("Cutscenes NOT watched");
 				return;
 			}
 		}
