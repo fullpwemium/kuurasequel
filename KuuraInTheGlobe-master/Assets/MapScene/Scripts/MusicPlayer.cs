@@ -149,6 +149,7 @@ public class MusicPlayer : MonoBehaviour
             //The World map.
             case "Map2":
 			case "Overworld":
+			case "IntroVideo":
 
                 //The World map track is already playing, so no need to restart it.
                 if (audioSources[0].isPlaying) { break; }

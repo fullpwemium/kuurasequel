@@ -59,15 +59,9 @@ public class GlobalGameManager : MonoBehaviour
 
     List<int> memoryGamecompletedLevels;
 
-    //How many cutscenes the player has seen from each world;
-//<<<<<<< HEAD
 	public int rocketGameCutscenesWatched = 0;
 	public int wordQuizCutscenesWatched = 0;
     public int differenceCutscenesWatched = 0;
-//=======
-	//public int rocketGameCutscenesWatched = 0;
-	//public int wordQuizCutscenesWatched = 0;
-//>>>>>>> 5c9309d12ef1a7a33fece5d29619e553d9d12805
 
     //Singleton check
     public void Awake()
@@ -189,7 +183,7 @@ public class GlobalGameManager : MonoBehaviour
 		}
 	}
 
-//<<<<<<< HEAD
+	//---------------------------------------------------------------------------------------------
     public void CutSceneSave()
     {
         PlayerPrefs.SetInt("rocketGameCutscenesWatched", rocketGameCutscenesWatched);
@@ -202,7 +196,7 @@ public class GlobalGameManager : MonoBehaviour
 		wordQuizCutscenesWatched = PlayerPrefs.GetInt("wordQuizCutscenesWatched");
         differenceCutscenesWatched = PlayerPrefs.GetInt("differenceCutscenesWatched");
     }
-//=======
+	//---------------------------------------------------------------------------------------------
 	public void saveCutsceneProgress ( string key, int val )
 	{
 		key = key + "-CutsceneWatched";
@@ -213,7 +207,21 @@ public class GlobalGameManager : MonoBehaviour
 	{
 		saveCutsceneProgress (key, GlobalGameManager.GGM.checkCutsceneProgress (key) + 1); 
 	}
-//>>>>>>> 5c9309d12ef1a7a33fece5d29619e553d9d12805
+
+	//---------------------------------------------------------------------------------------------
+	public bool hasIntroBeenWatched() 
+	{
+		if (PlayerPrefs.HasKey ("introWatched")) {
+			return PlayerPrefs.GetInt ("introWatched") == 1;
+		} 
+		return false;
+	}
+
+	public void setIntroWatched()
+	{
+		PlayerPrefs.SetInt ("introWatched", 1);
+	}
+
 	//---------------------------------------------------------------------------------------------
 
     //Makes owning a specific hat true or false

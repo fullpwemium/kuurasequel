@@ -7,15 +7,16 @@ public class SwitchDialogScene : MonoBehaviour {
 	
 	public Animator animator;
 	public Animation anim;
-	public int introWatched;
+	public bool introWatched;
 	
 	void Start()
 	{
 		//We set this to true at the end of the phone dialog
-		introWatched = PlayerPrefs.GetInt("introWatched");
+		introWatched = GlobalGameManager.GGM.hasIntroBeenWatched();
 		
 		anim = GetComponent<Animation>();
-		anim.Play();
+		//anim.Play();
+
 	}
 	
 	// Update is called once per frame
@@ -23,20 +24,26 @@ public class SwitchDialogScene : MonoBehaviour {
 	{
 		if(Input.GetMouseButtonDown(0))
 		{
-			if(introWatched > 0)
+			if(introWatched)
 			{
-				GotoMap();
+				GotoDialog ();
 			}
 		}
+
+		if (!hasAnimationFinished ()) {
+			GotoDialog ();
+		}
 	}
+
+	bool hasAnimationFinished() {
+		return animator.GetCurrentAnimatorStateInfo (0).normalizedTime < 1;
+	}
+
 	
 	public void GotoDialog()
 	{
+		GlobalGameManager.GGM.setIntroWatched ();
 		SceneManager.LoadScene("Overworld");
 	}
-	
-	public void GotoMap()
-	{
-		SceneManager.LoadScene("Map2");
-	}
+
 }
