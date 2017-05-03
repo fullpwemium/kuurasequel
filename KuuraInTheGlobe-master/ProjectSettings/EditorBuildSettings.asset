@@ -23,7 +23,7 @@ EditorBuildSettings:
     path: Assets/Shop_scene/Shop.unity
   - enabled: 1
     path: Assets/Bob_apartment/ARCat.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Cutscenes/CutScene.unity
   - enabled: 1
     path: Assets/Theater/Theater.unity

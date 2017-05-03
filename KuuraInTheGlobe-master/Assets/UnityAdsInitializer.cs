@@ -5,7 +5,7 @@ public class UnityAdsInitializer : MonoBehaviour
 {
     //[SerializeField]
     //private string
-        //androidGameId = "1295958",
+      //  androidGameId = "1295958";
         //iosGameId = "1295959";
 
     [SerializeField]
@@ -16,9 +16,9 @@ public class UnityAdsInitializer : MonoBehaviour
         //string gameId = null;
 
 #if UNITY_ANDROID
-        gameId = androidGameId;
+        //gameId = androidGameId;
 #elif UNITY_IOS
-        gameId = iosGameId;
+        //gameId = iosGameId;
 #endif
 		/*
         if (Advertisement.isSupported && !Advertisement.isInitialized)

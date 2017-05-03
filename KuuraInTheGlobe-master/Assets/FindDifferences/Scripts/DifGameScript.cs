@@ -46,6 +46,7 @@ public class DifGameScript : MonoBehaviour
 
         initSystem();
 
+        //-----------------------------------------------------------------------
         //Defines required clics/removable objects number (when not opening level from LevelSelect scene).
         //if (thisLevel == 0)       //When opening all levels in own scenes.
         if (DifLevelObjects.levelNumber == 0)       //When opening all levels in common DifGameplay scene.
@@ -65,11 +66,11 @@ public class DifGameScript : MonoBehaviour
             FindingTimer.timeLeft = 30;
             Debug.Log("Spots = " + spots);
         }
-        if (thisLevel == 2)
+        if (DifLevelObjects.levelNumber == 2)
         {
             currentLevel = 2;
 
-            spots = 5;
+            spots = 4;
             FindingTimer.timeLeft = 25;
             Debug.Log("Spots = " + spots);
 
@@ -99,6 +100,7 @@ public class DifGameScript : MonoBehaviour
 
 
         }
+        //-----------------------------------------------------------------------
 
         winningPanel.SetActive(false);
         losingPanel.SetActive(false);
@@ -255,6 +257,7 @@ public class DifGameScript : MonoBehaviour
         //if first time clear
         if (!system.isCatCollected(currentLevel))
         {
+            Debug.Log("oidulgi");
             system.collectCat(currentLevel);
             system.clearLevel(currentLevel);
             system.addClearedLevels();
@@ -264,6 +267,7 @@ public class DifGameScript : MonoBehaviour
         //if already cleared
         else
         {
+            Debug.Log("jgolfyuk");
             activateWonLevel();
         }
     }

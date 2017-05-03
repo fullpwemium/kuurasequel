@@ -197,8 +197,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/EasyUser/Desktop/Original/KuuraInTheGlobe-master/kuura.keystore
-  AndroidKeyaliasName: kuurasnow
+  AndroidKeystoreName: "C:/Users/xxx/Documents/AMK/Opinn\xE4ytety\xF6/SourceTree-Kuura2/KuuraInTheGlobe-master/kuura2.keystore"
+  AndroidKeyaliasName: 
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
@@ -212,7 +212,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: adc9848ba68e4c34d83b0c3ce9a772c8, type: 3}
+      m_Icon: {fileID: 2800000, guid: 9c7895a2f6989c9468b4d2adb059107e, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching:

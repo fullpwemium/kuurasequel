@@ -47,13 +47,13 @@ public class DifLevelSelectScript : MonoBehaviour
 
         //system.setStartingLevel(level);
 
-        SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);        //When opening all levels in common DifGameplay scene.
-
+        //Open level by level number (1-->) written in Button's On Click()
         if (level == 1)
         {
             Debug.Log("Kenttä 1");
 
             //SceneManager.LoadScene("DifLevel1(2)", LoadSceneMode.Single);         //When opening all levels in own scenes.
+            SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);        //When opening all levels in common DifGameplay scene.
 
             DifLevelObjects.levelNumber = 0;
             Debug.Log("Level number = " + DifLevelObjects.levelNumber);
@@ -63,6 +63,7 @@ public class DifLevelSelectScript : MonoBehaviour
             Debug.Log("Kenttä 2");
 
             //SceneManager.LoadScene("DifLevel2", LoadSceneMode.Single);
+            SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
 
             DifLevelObjects.levelNumber = 1;
             Debug.Log("Level number = " + DifLevelObjects.levelNumber);
@@ -70,7 +71,10 @@ public class DifLevelSelectScript : MonoBehaviour
         else if (level == 3)
         {
             Debug.Log("Kenttä 3");
+
             //SceneManager.LoadScene("DifLevel3", LoadSceneMode.Single);
+            SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
+
             DifLevelObjects.levelNumber = 2;
             Debug.Log("Level number = " + DifLevelObjects.levelNumber);
         }
@@ -78,15 +82,27 @@ public class DifLevelSelectScript : MonoBehaviour
         {
             Debug.Log("Kenttä 4");
 
+            //SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
+
+            DifLevelObjects.levelNumber = 3;
+            Debug.Log("Level number = " + DifLevelObjects.levelNumber);
+
         }
         else if (level == 5)
         {
             Debug.Log("Kenttä 5");
 
+            //SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
+
+            DifLevelObjects.levelNumber = 4;
+            Debug.Log("Level number = " + DifLevelObjects.levelNumber);
+
         }
         else if (level == 6)
         {
             Debug.Log("Kenttä 6");
+            DifLevelObjects.levelNumber = 5;
+            Debug.Log("Level number = " + DifLevelObjects.levelNumber);
 
         }
     }

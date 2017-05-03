@@ -123,6 +123,7 @@ public class DifferenceManager : MonoBehaviour
 
     void OnLevelWasLoaded(int level)
     {
+        //------------------------------------------------------------------------
         //Defines required clics/removable objects number (when opening level from LevelSelect scene).
         if (level == 12 || level == 13)
         {
@@ -160,6 +161,7 @@ public class DifferenceManager : MonoBehaviour
         {
 
         }
+        //------------------------------------------------------------------------
 
         //TimeAndClicks.StartGame();       //Restart timer and zero clicks.
         FindingTimer.StartGame();       //Restart timer.
