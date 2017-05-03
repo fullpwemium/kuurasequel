@@ -3,8 +3,8 @@
 	[{
 	"question": "Pick the teddybear",
 	"answer": "C",
-	"optionA": "bunny",
-	"optionB": "kuura",
+	"optionA": "kuura",
+	"optionB": "bunny",
 	"optionC": "teddy"
 	},
 	{
@@ -18,7 +18,7 @@
 	"question": "Pick the pink item",
 	"answer": "A",
 	"optionA": "unicorn",
-	"optionB": "starberry",
+	"optionB": "strawberry",
 	"optionC": "bunny"
 	},
 	{

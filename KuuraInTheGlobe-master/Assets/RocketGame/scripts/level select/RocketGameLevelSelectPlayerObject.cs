@@ -17,7 +17,7 @@ public class RocketGameLevelSelectPlayerObject : MonoBehaviour {
 
 	float buildingSpeed = 4f;
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 		float recoverySpeed = 0f;
 		if (playerFlyingPosition < 0f) {

@@ -65,7 +65,7 @@ public class RocketGameGameOverScript : MonoBehaviour {
 		UICanvas = GameObject.Find ("GameOverCanvas").GetComponent<Transform> ();
 	}
 
-	void Update () {
+	void FixedUpdate () {
 		// Increment timer
 		timer += 0.075f;
 
