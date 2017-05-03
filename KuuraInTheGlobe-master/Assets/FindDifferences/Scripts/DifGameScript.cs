@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class DifGameScript : MonoBehaviour
 {
+    public static DifGameScript DGS;
+
     //Variables used to initialize the game system
     public GameObject systemPrefab;
     private DifGameSystem system;
@@ -45,7 +47,8 @@ public class DifGameScript : MonoBehaviour
         initSystem();
 
         //Defines required clics/removable objects number (when not opening level from LevelSelect scene).
-        if (thisLevel == 0)
+        //if (thisLevel == 0)       //When opening all levels in own scenes.
+        if (DifLevelObjects.levelNumber == 0)       //When opening all levels in common DifGameplay scene.
         {
             currentLevel = 0;
 
@@ -53,7 +56,8 @@ public class DifGameScript : MonoBehaviour
             FindingTimer.timeLeft = 40;
             Debug.Log("Spots = " + spots);
         }
-        if (thisLevel == 1)
+        //if (thisLevel == 1)
+        if (DifLevelObjects.levelNumber == 1)
         {
             currentLevel = 1;
 
@@ -152,6 +156,7 @@ public class DifGameScript : MonoBehaviour
         ClickMistake.StartClicks();     ////Zero mistake clicks.
     }
 
+    //Actions when losing level
     public void losingGame()
     {
         Debug.Log("Game over");
@@ -160,23 +165,30 @@ public class DifGameScript : MonoBehaviour
         losingPanel.SetActive(true);
     }
 
+    //Actions when winning level
     public void winningGame()
     {
-        Debug.Log("You win!");
-        playable = false;
-        //winningPanel.SetActive(true);
+        //Wait for time before making winning functions.
+        StartCoroutine(Wait());
 
-        if (!system.isCatCollected(currentLevel))       //if first time clear
-        {
-            system.collectCat(currentLevel);
-            system.clearLevel(currentLevel);
-            system.addClearedLevels();
-            activateWinningCat();
-        }
-        else
-        {
-            activateWonLevel();
-        }
+        //Debug.Log("You win!");
+        //playable = false;
+        ////winningPanel.SetActive(true);
+
+        ////if first time clear
+        //if (!system.isCatCollected(currentLevel))
+        //{
+        //    system.collectCat(currentLevel);
+        //    system.clearLevel(currentLevel);
+        //    system.addClearedLevels();
+        //    activateWinningCat();
+        //}
+
+        ////if already cleared
+        //else
+        //{
+        //    activateWonLevel();
+        //}
     }
 
     public void activateWinningCat()
@@ -228,5 +240,31 @@ public class DifGameScript : MonoBehaviour
     public void replayLevel()
     {
         Application.LoadLevel(Application.loadedLevel);     //Reload opened scene.
+    }
+
+    IEnumerator Wait()
+    {
+        Debug.Log("Odottaa...");
+        yield return new WaitForSeconds(0.8F);
+
+        //Functions after second
+        Debug.Log("You win!");
+        playable = false;
+        //winningPanel.SetActive(true);
+
+        //if first time clear
+        if (!system.isCatCollected(currentLevel))
+        {
+            system.collectCat(currentLevel);
+            system.clearLevel(currentLevel);
+            system.addClearedLevels();
+            activateWinningCat();
+        }
+
+        //if already cleared
+        else
+        {
+            activateWonLevel();
+        }
     }
 }

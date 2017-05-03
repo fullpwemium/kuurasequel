@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class DifLevelSelectScript : MonoBehaviour
 {
+    public static DifLevelSelectScript DLSS;
+
     public static int wonCats;
 
     public GameObject systemPrefab;
@@ -45,20 +47,32 @@ public class DifLevelSelectScript : MonoBehaviour
 
         //system.setStartingLevel(level);
 
+        SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);        //When opening all levels in common DifGameplay scene.
+
         if (level == 1)
         {
             Debug.Log("Kenttä 1");
-            SceneManager.LoadScene("DifLevel1(2)", LoadSceneMode.Single);
+
+            //SceneManager.LoadScene("DifLevel1(2)", LoadSceneMode.Single);         //When opening all levels in own scenes.
+
+            DifLevelObjects.levelNumber = 0;
+            Debug.Log("Level number = " + DifLevelObjects.levelNumber);
         }
         else if (level == 2)
         {
             Debug.Log("Kenttä 2");
-            SceneManager.LoadScene("DifLevel2", LoadSceneMode.Single);
+
+            //SceneManager.LoadScene("DifLevel2", LoadSceneMode.Single);
+
+            DifLevelObjects.levelNumber = 1;
+            Debug.Log("Level number = " + DifLevelObjects.levelNumber);
         }
         else if (level == 3)
         {
             Debug.Log("Kenttä 3");
             //SceneManager.LoadScene("DifLevel3", LoadSceneMode.Single);
+            DifLevelObjects.levelNumber = 2;
+            Debug.Log("Level number = " + DifLevelObjects.levelNumber);
         }
         else if (level == 4)
         {
