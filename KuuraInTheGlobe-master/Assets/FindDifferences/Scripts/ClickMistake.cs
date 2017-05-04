@@ -82,7 +82,9 @@ public class ClickMistake : MonoBehaviour
 
         //DifferenceManager.RightClicks--;
         ClickRights++;
+        DifClicksLeft.clicksLeft--;
         Debug.Log("Click rights = " + ClickRights);
+        Debug.Log("Clicks left = " + DifClicksLeft.clicksLeft);
 
         Right = true;
 

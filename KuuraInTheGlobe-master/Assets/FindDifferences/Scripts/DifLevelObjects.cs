@@ -9,7 +9,7 @@ public class DifLevelObjects : MonoBehaviour
     public static DifLevelObjects DLO;
 
     //-----------------------------------------------
-    //Objects and object list in each level
+    //Objects and object lists in each level
     public GameObject original, bottom;
     //public GameObject roska01, roska02, roska03, roska04, roska05, roska11, roska12, roska13, roska14, roska15;
     public List<GameObject> roskat1, roskat2, roskat3, roskat4, roskat5;
@@ -94,8 +94,15 @@ public class DifLevelObjects : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        //------------------------------------------------------------------------
-        //If needs to replace wrong object to right object, for example in third level.
+        if (levelNumber == 2)
+        {
+            Replace();
+        }
+    }
+
+    //If needs to replace wrong object to right object, for example in third level.
+    public void Replace()
+    {
         if (levelNumber == 2)
         {
             if (roskat3[0].activeInHierarchy == false)      //Check if GameObject is unactive.
@@ -114,6 +121,5 @@ public class DifLevelObjects : MonoBehaviour
                 Debug.Log("roskat3[2] --> oikeat3[2]");
             }
         }
-        //------------------------------------------------------------------------
     }
 }

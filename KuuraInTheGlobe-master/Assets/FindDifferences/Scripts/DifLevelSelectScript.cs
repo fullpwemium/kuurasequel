@@ -11,8 +11,11 @@ public class DifLevelSelectScript : MonoBehaviour
     public static int wonCats;
 
     public GameObject systemPrefab;
-    public List<Button> buttons;
+    public List<Button> levelButtons;
+    public Button introButton;
     DifGameSystem system;
+
+    public GameObject introPanel;
 
     // Use this for initialization
     void Start ()
@@ -109,12 +112,12 @@ public class DifLevelSelectScript : MonoBehaviour
 
     private void checkButtons()
     {
-        for (int i = 0; i < buttons.Capacity; i++)
+        for (int i = 0; i < levelButtons.Capacity; i++)
         {
             int clearedlevels = system.getClearedLevels();
             if (clearedlevels >= i)
             {
-                buttons[i].interactable = true;
+                levelButtons[i].interactable = true;
                 Debug.Log("Open buttons = " + i);
 
                 wonCats = i - 1;
@@ -122,7 +125,7 @@ public class DifLevelSelectScript : MonoBehaviour
             }
             else if (clearedlevels < i)
             {
-                buttons[i].interactable = false;
+                levelButtons[i].interactable = false;
             }
         }
     }
@@ -130,5 +133,15 @@ public class DifLevelSelectScript : MonoBehaviour
     public void exitMinigame()
     {
         system.exit();
+    }
+
+    public void openIntroPanel()
+    {
+        introPanel.SetActive(true);
+    }
+
+    public void closeIntroPanel()
+    {
+        introPanel.SetActive(false);
     }
 }

@@ -25,7 +25,7 @@ public class DifGameScript : MonoBehaviour
     private int mistakes;
     private int rightClicks;
     private int currentLevel = 0;
-    public int thisLevel = 0;
+    //public int thisLevel = 0;
     public static int[] levelCats = new int[10];
 
     bool[] cats = new bool[10];
@@ -71,30 +71,30 @@ public class DifGameScript : MonoBehaviour
             currentLevel = 2;
 
             spots = 4;
-            FindingTimer.timeLeft = 25;
+            FindingTimer.timeLeft = 15;
             Debug.Log("Spots = " + spots);
 
 
         }
-        if (thisLevel == 3)
+        if (DifLevelObjects.levelNumber == 3)
         {
             currentLevel = 3;
 
 
         }
-        if (thisLevel == 4)
+        if (DifLevelObjects.levelNumber == 4)
         {
             currentLevel = 4;
 
 
         }
-        if (thisLevel == 5)
+        if (DifLevelObjects.levelNumber == 5)
         {
             currentLevel = 5;
 
 
         }
-        if (thisLevel == 6)
+        if (DifLevelObjects.levelNumber == 6)
         {
             currentLevel = 6;
 
