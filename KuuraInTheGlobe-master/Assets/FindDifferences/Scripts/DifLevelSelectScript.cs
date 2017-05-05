@@ -15,11 +15,23 @@ public class DifLevelSelectScript : MonoBehaviour
     public Button introButton;
     DifGameSystem system;
 
+    //---------------------------------------------------
+    //Intro panel objects.
     public GameObject introPanel;
+    public GameObject introPicture1, introPicture2;
+    public List<Sprite> introImages;
+    public Text introText;
+    public Text pageNumber;
+    public Button introNextButton;
+    public Button introPrevButton;
+    public int introPage;
+    //---------------------------------------------------
 
     // Use this for initialization
     void Start ()
     {
+        introPanel.SetActive(false);
+
         // Fetch system object
         if (!GameObject.Find("difGameSystem"))
         {
@@ -37,12 +49,6 @@ public class DifLevelSelectScript : MonoBehaviour
 
         //MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouseCutscene);
     }
-
-    // Update is called once per frame
-    void Update ()
-    {
-		
-	}
 
     public void levelButtonClick(int level)
     {
@@ -138,10 +144,103 @@ public class DifLevelSelectScript : MonoBehaviour
     public void openIntroPanel()
     {
         introPanel.SetActive(true);
+        introPage = 1;
+        introText.text = "Sivu 1";
+        introPrevButton.interactable = false;
     }
 
     public void closeIntroPanel()
     {
         introPanel.SetActive(false);
+    }
+
+    public void introPanelNextPage()
+    {
+        //Check if introPage is inside wanted numbers.
+        if (introPage >= 1 && introPage <= 3)
+        {
+            introPage++;
+            Debug.Log("Intro page = " + introPage);
+        }
+
+        //if (introPage == 1)
+        //{
+        //    introText.text = "Sivu 1";
+        //    introNextButton.interactable = true;
+        //}
+        //if (introPage == 2)
+        //{
+        //    introText.text = "Sivu 2";
+        //    introNextButton.interactable = true;
+        //}
+        //if (introPage == 3)
+        //{
+        //    introText.text = "Sivu 3";
+        //    introNextButton.interactable = false;
+        //}
+    }
+
+    public void introPanelPrevPage()
+    {
+        //Check if introPage is inside wanted numbers.
+        if (introPage >= 1 && introPage <= 3)
+        {
+            introPage--;
+            Debug.Log("Intro page = " + introPage);
+        }
+
+        //if (introPage == 1)
+        //{
+        //    introText.text = "Sivu 1";
+        //    introPrevButton.interactable = false;
+        //}
+        //if (introPage == 2)
+        //{
+        //    introText.text = "Sivu 2";
+        //    introPrevButton.interactable = true;
+        //}
+        //if (introPage == 3)
+        //{
+        //    introText.text = "Sivu 3";
+        //    introPrevButton.interactable = true;
+        //}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //When introPanel is active.
+        if (introPanel.activeInHierarchy == true)
+        {
+            if (introPage == 1)
+            {
+                introPicture1.SetActive(false);
+                introPicture2.SetActive(false);
+                introText.text = "Sivu 1";
+                pageNumber.text = introPage + " / 3";
+                introPrevButton.interactable = false;
+                introNextButton.interactable = true;
+            }
+            if (introPage == 2)
+            {
+                introPicture1.SetActive(true);
+                introPicture2.SetActive(true);
+                introPicture1.GetComponent<SpriteRenderer>().sprite = introImages[1];
+                introPicture2.GetComponent<SpriteRenderer>().sprite = introImages[0];
+                introText.text = "Sivu 2";
+                pageNumber.text = introPage + " / 3";
+                introPrevButton.interactable = true;
+                introNextButton.interactable = true;
+            }
+            if (introPage == 3)
+            {
+                introPicture1.GetComponent<SpriteRenderer>().sprite = introImages[0];
+                introPicture2.GetComponent<SpriteRenderer>().sprite = introImages[0];
+                introText.text = "Sivu 3";
+                pageNumber.text = introPage + " / 3";
+                introPrevButton.interactable = true;
+                introNextButton.interactable = false;
+            }
+        }
     }
 }
