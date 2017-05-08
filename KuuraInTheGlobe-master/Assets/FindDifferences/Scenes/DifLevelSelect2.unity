@@ -100,6 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68569154}
   - component: {fileID: 68569153}
+  - component: {fileID: 68569155}
   m_Layer: 0
   m_Name: LevelSelectSystem
   m_TagString: Untagged
@@ -127,18 +128,6 @@ MonoBehaviour:
   - {fileID: 1234024741}
   - {fileID: 1975375753}
   - {fileID: 1920906425}
-  introButton: {fileID: 1300495656}
-  introPanel: {fileID: 2118631039}
-  introPicture1: {fileID: 453567420}
-  introPicture2: {fileID: 2064109645}
-  introImages:
-  - {fileID: 21300000, guid: 840aba81946972344b8f618601eba70e, type: 3}
-  - {fileID: 21300000, guid: 3b38e96fddfa6924facccc36c206b54a, type: 3}
-  introText: {fileID: 2064767571}
-  pageNumber: {fileID: 1030213415}
-  introNextButton: {fileID: 301301195}
-  introPrevButton: {fileID: 771395837}
-  introPage: 0
 --- !u!4 &68569154
 Transform:
   m_ObjectHideFlags: 0
@@ -152,6 +141,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &68569155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 68569152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bd196c0f3e503c4780599859ab9ad38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infoButton: {fileID: 1300495656}
+  infoPanel: {fileID: 2118631039}
+  infoPicture1: {fileID: 453567420}
+  infoPicture2: {fileID: 2064109645}
+  infoImages:
+  - {fileID: 21300000, guid: 840aba81946972344b8f618601eba70e, type: 3}
+  - {fileID: 21300000, guid: 3b38e96fddfa6924facccc36c206b54a, type: 3}
+  infoText: {fileID: 2064767571}
+  pageNumber: {fileID: 1030213415}
+  infoNextButton: {fileID: 301301195}
+  infoPrevButton: {fileID: 771395837}
+  infoPage: 0
 --- !u!1 &70857395
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,8 +446,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 68569153}
-        m_MethodName: introPanelNextPage
+      - m_Target: {fileID: 68569155}
+        m_MethodName: infoPanelNextPage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -490,7 +502,7 @@ GameObject:
   - component: {fileID: 453567421}
   - component: {fileID: 453567422}
   m_Layer: 5
-  m_Name: IntroPicture1
+  m_Name: InfoPicture1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -781,8 +793,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 68569153}
-        m_MethodName: introPanelPrevPage
+      - m_Target: {fileID: 68569155}
+        m_MethodName: infoPanelPrevPage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1318,7 +1330,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Intro
+  m_Text: Info
 --- !u!222 &949265451
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1901,7 +1913,7 @@ GameObject:
   - component: {fileID: 1300495657}
   - component: {fileID: 1300495656}
   m_Layer: 5
-  m_Name: IntroButton
+  m_Name: InfoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1965,8 +1977,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 68569153}
-        m_MethodName: openIntroPanel
+      - m_Target: {fileID: 68569155}
+        m_MethodName: openInfoPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2480,7 +2492,7 @@ GameObject:
   - component: {fileID: 1897323266}
   - component: {fileID: 1897323265}
   m_Layer: 5
-  m_Name: CloseIntro
+  m_Name: CloseInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2543,8 +2555,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 68569153}
-        m_MethodName: closeIntroPanel
+      - m_Target: {fileID: 68569155}
+        m_MethodName: closeInfoPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2937,7 +2949,7 @@ GameObject:
   - component: {fileID: 2064109646}
   - component: {fileID: 2064109647}
   m_Layer: 5
-  m_Name: IntroPicture2
+  m_Name: InfoPicture2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3007,7 +3019,7 @@ GameObject:
   - component: {fileID: 2064767572}
   - component: {fileID: 2064767571}
   m_Layer: 5
-  m_Name: IntroText
+  m_Name: InfoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3084,7 +3096,7 @@ GameObject:
   - component: {fileID: 2118631042}
   - component: {fileID: 2118631041}
   m_Layer: 5
-  m_Name: IntroPanel
+  m_Name: InfoPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
