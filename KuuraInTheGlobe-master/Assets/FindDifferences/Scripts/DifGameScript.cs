@@ -48,7 +48,7 @@ public class DifGameScript : MonoBehaviour
 
         //-----------------------------------------------------------------------
         //Defines required clics/removable objects number (when not opening level from LevelSelect scene).
-        //if (thisLevel == 0)       //When opening all levels in own scenes.
+        //if (thisLevel == 0)       //When opening all levels in own scenes (Not using)
         if (DifLevelObjects.levelNumber == 0)       //When opening all levels in common DifGameplay scene.
         {
             currentLevel = 0;
@@ -80,7 +80,9 @@ public class DifGameScript : MonoBehaviour
         {
             currentLevel = 3;
 
-
+            spots = 5;
+            FindingTimer.timeLeft = 30;
+            Debug.Log("Spots = " + spots);
         }
         if (DifLevelObjects.levelNumber == 4)
         {
@@ -128,7 +130,7 @@ public class DifGameScript : MonoBehaviour
 
     private void initSystem()
     {
-        if (!GameObject.Find("difGameSystem"))
+        if (!GameObject.Find("difGameSystem"))      //Create system prefab if it's missing.
         {
             system = GameObject.Instantiate(systemPrefab).GetComponent<DifGameSystem>();
             //system.init();
@@ -141,24 +143,24 @@ public class DifGameScript : MonoBehaviour
         }
     }
 
-    private void replaySystem()
-    {
-        if (currentLevel == 0)
-        {
-            spots = 5;
-            FindingTimer.timeLeft = 40;
-            Debug.Log("Spots = " + spots);
-        }
+    //private void replaySystem()     //Not using
+    //{
+    //    if (currentLevel == 0)
+    //    {
+    //        spots = 5;
+    //        FindingTimer.timeLeft = 40;
+    //        Debug.Log("Spots = " + spots);
+    //    }
 
-        isLose = false;
-        isWin = false;
-        playable = true;
+    //    isLose = false;
+    //    isWin = false;
+    //    playable = true;
 
-        FindingTimer.StartGame();       //Restart timer.
-        ClickMistake.StartClicks();     ////Zero mistake clicks.
-    }
+    //    FindingTimer.StartGame();       //Restart timer.
+    //    ClickMistake.StartClicks();     ////Zero mistake clicks.
+    //}
 
-    //Actions when losing level
+    //Actions when losing level, called in Update()
     public void losingGame()
     {
         Debug.Log("Game over");
@@ -167,10 +169,9 @@ public class DifGameScript : MonoBehaviour
         losingPanel.SetActive(true);
     }
 
-    //Actions when winning level
+    //Actions when winning level, called in Update()
     public void winningGame()
     {
-        //Wait for time before making winning functions.
         StartCoroutine(Wait());
 
         //Debug.Log("You win!");
@@ -193,6 +194,7 @@ public class DifGameScript : MonoBehaviour
         //}
     }
 
+    //Set winning panels active     --> Wait()
     public void activateWinningCat()
     {
         losingPanel.SetActive(false);
@@ -222,6 +224,7 @@ public class DifGameScript : MonoBehaviour
         }
     }
 
+    //Actions when loading level.
     private void OnLevelWasLoaded(int level)
     {
 
@@ -232,7 +235,7 @@ public class DifGameScript : MonoBehaviour
         Debug.Log("Load");
     }
 
-    public void exitMinigame()
+    public void exitMinigame()      //Return to level select.
     {
         //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.dontBuy, 1);
         Debug.Log("Exiting difference minigame");
@@ -244,6 +247,7 @@ public class DifGameScript : MonoBehaviour
         Application.LoadLevel(Application.loadedLevel);     //Reload opened scene.
     }
 
+    //Wait for time before making winning functions.        -->winningGame()
     IEnumerator Wait()
     {
         Debug.Log("Odottaa...");

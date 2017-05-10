@@ -27,7 +27,7 @@ public class ClickMistake : MonoBehaviour
         Debug.Log("ClickRights = " + ClickRights);
     }
 
-    //Zero mistake clicks.    --> DifferenceManager.OnLevelWasLoaded.
+    //Zero mistake clicks.    --> DifGameScript.OnLevelWasLoaded
     public static void StartClicks()
     {
         Mistakes = 0;
@@ -52,6 +52,7 @@ public class ClickMistake : MonoBehaviour
             //y = 2;
             click();
 
+            //Actions when clicked all mistake objects.
             //if (ClickRights == DifferenceManager.Spots /*DifferenceManager.RightClicks == 0*/)
             if (ClickRights == DifGameScript.spots)
             {
@@ -61,7 +62,7 @@ public class ClickMistake : MonoBehaviour
                 //DifferenceManager.manager.PlayerWin();
                 //DifGameScript.gamescript.winningGame();
 
-                DifGameScript.isWin = true;
+                DifGameScript.isWin = true;     //This makes level won.
                 //DifGameScript.playable = false;
                 Debug.Log("Virheet = " + Mistakes);
             }
@@ -75,7 +76,7 @@ public class ClickMistake : MonoBehaviour
             Debug.Log("Virhe!");
         }
     }
-    //Actions when clicking trash object.
+    //Actions when clicking trash object.       --> OnMouseDown()
     void click()
     {
         Debug.Log("Roska löydetty");

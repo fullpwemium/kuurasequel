@@ -13,10 +13,10 @@ public class DifLevelObjects : MonoBehaviour
     public GameObject original, bottom;
     //public GameObject roska01, roska02, roska03, roska04, roska05, roska11, roska12, roska13, roska14, roska15;
     public List<GameObject> roskat1, roskat2, roskat3, roskat4, roskat5;
-    public List<GameObject> oikeat3;
+    public List<GameObject> oikeat3, oikeat4;
 
     public Sprite painting1, painting2, painting3, painting4, painting5;
-    public Sprite editablePaintingSprite3;
+    public Sprite editablePaintingSprite3, editablePaintingSprite4;
     //-----------------------------------------------
 
     public static int levelNumber;
@@ -88,19 +88,32 @@ public class DifLevelObjects : MonoBehaviour
             roskat3[3].SetActive(true);
             //roskat3[4].SetActive(true);
         }
+        else if (levelNumber == 3)
+        {
+            Debug.Log("Ladataan objektit 3");
+
+            original.GetComponent<SpriteRenderer>().sprite = painting4;
+            bottom.GetComponent<SpriteRenderer>().sprite = editablePaintingSprite4;
+
+            roskat4[0].SetActive(true);
+            roskat4[1].SetActive(true);
+            roskat4[2].SetActive(true);
+            roskat4[3].SetActive(true);
+            roskat4[4].SetActive(true);
+        }
         //------------------------------------------------------------------------
     }
 
     // Update is called once per frame
     void Update ()
     {
-        if (levelNumber == 2)
+        if (levelNumber == 2 || levelNumber == 3)
         {
             Replace();
         }
     }
 
-    //If needs to replace wrong object to right object, for example in third level.
+    //If needs to replace wrong object to right object, for example in third level.     --> Update()
     public void Replace()
     {
         if (levelNumber == 2)
@@ -119,6 +132,19 @@ public class DifLevelObjects : MonoBehaviour
             {
                 oikeat3[2].SetActive(true);
                 Debug.Log("roskat3[2] --> oikeat3[2]");
+            }
+        }
+        if (levelNumber == 3)
+        {
+            if (roskat4[1].activeInHierarchy == false)      //Check if GameObject is unactive.
+            {
+                oikeat4[0].SetActive(true);
+                Debug.Log("roskat4[2] --> oikeat4[0]");
+            }
+            if (roskat4[2].activeInHierarchy == false)
+            {
+                oikeat4[1].SetActive(true);
+                Debug.Log("roskat4[3] --> oikeat4[1]");
             }
         }
     }

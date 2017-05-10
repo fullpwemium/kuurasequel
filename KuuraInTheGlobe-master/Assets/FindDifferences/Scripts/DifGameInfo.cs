@@ -21,6 +21,7 @@ public class DifGameInfo : MonoBehaviour
         infoPanel.SetActive(false);
     }
 
+    //When clicking info button
     public void openInfoPanel()
     {
         infoPanel.SetActive(true);
@@ -28,11 +29,13 @@ public class DifGameInfo : MonoBehaviour
         infoText.text = "Sivu 1";
     }
 
+    //When clicking closing info button
     public void closeInfoPanel()
     {
         infoPanel.SetActive(false);
     }
 
+    //When clicking next page button
     public void infoPanelNextPage()
     {
         //Check if infoPage is inside wanted numbers.
@@ -43,6 +46,7 @@ public class DifGameInfo : MonoBehaviour
         }
     }
 
+    //When clicking previous page button
     public void infoPanelPrevPage()
     {
         //Check if infoPage is inside wanted numbers.

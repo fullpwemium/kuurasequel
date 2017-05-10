@@ -33,7 +33,7 @@ public class DifLevelSelectScript : MonoBehaviour
         //introPanel.SetActive(false);
 
         // Fetch system object
-        if (!GameObject.Find("difGameSystem"))
+        if (!GameObject.Find("difGameSystem"))      //Create system prefab if it's missing.
         {
             system = GameObject.Instantiate(systemPrefab).GetComponent<DifGameSystem>();
             //system.init ();
@@ -50,6 +50,7 @@ public class DifLevelSelectScript : MonoBehaviour
         //MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouseCutscene);
     }
 
+    //Open levels by clicking level buttons, set in level buttons' On Click()
     public void levelButtonClick(int level)
     {
         //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
@@ -64,7 +65,7 @@ public class DifLevelSelectScript : MonoBehaviour
             //SceneManager.LoadScene("DifLevel1(2)", LoadSceneMode.Single);         //When opening all levels in own scenes.
             SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);        //When opening all levels in common DifGameplay scene.
 
-            DifLevelObjects.levelNumber = 0;
+            DifLevelObjects.levelNumber = 0;        //Set value which set active objects defined to each level.
             Debug.Log("Level number = " + DifLevelObjects.levelNumber);
         }
         else if (level == 2)
@@ -91,7 +92,7 @@ public class DifLevelSelectScript : MonoBehaviour
         {
             Debug.Log("Kenttä 4");
 
-            //SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
+            SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
 
             DifLevelObjects.levelNumber = 3;
             Debug.Log("Level number = " + DifLevelObjects.levelNumber);
@@ -116,12 +117,13 @@ public class DifLevelSelectScript : MonoBehaviour
         }
     }
 
+    //Open level buttons by cleared levels number.      --> Start()
     private void checkButtons()
     {
         for (int i = 0; i < levelButtons.Capacity; i++)
         {
-            int clearedlevels = system.getClearedLevels();
-            if (clearedlevels >= i)
+            int clearedlevels = system.getClearedLevels();      //Get cleared levels number from system.
+            if (clearedlevels >= i)     //Compare cleared levels number to button's int number.
             {
                 levelButtons[i].interactable = true;
                 Debug.Log("Open buttons = " + i);
@@ -136,7 +138,7 @@ public class DifLevelSelectScript : MonoBehaviour
         }
     }
 
-    public void exitMinigame()
+    public void exitMinigame()      //Return to Overworld, set in Exit button's On Click()
     {
         system.exit();
     }

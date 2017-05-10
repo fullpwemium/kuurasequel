@@ -13,7 +13,7 @@ public class DifClicksLeft : MonoBehaviour
     void Start ()
     {
         //Show how many clicks is left.
-        if (DifLevelObjects.levelNumber == 0 || DifLevelObjects.levelNumber == 1)
+        if (DifLevelObjects.levelNumber == 0 || DifLevelObjects.levelNumber == 1 || DifLevelObjects.levelNumber == 3)
         {
             clicksLeft = 5;
         }
@@ -22,12 +22,12 @@ public class DifClicksLeft : MonoBehaviour
             clicksLeft = 4;
         }
 
-        clickCounter = GameObject.Find("ClicksLeft").GetComponent<Text>(); //Print timer in text object.
+        clickCounter = GameObject.Find("ClicksLeft").GetComponent<Text>(); //Find text component.
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        clickCounter.text = clicksLeft.ToString();
-	}
+        clickCounter.text = clicksLeft.ToString(); //Print clicks left in text object.
+    }
 }
