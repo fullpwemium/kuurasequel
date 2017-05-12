@@ -47,13 +47,13 @@ public class DifLevelSelectScript : MonoBehaviour
 
         checkButtons();
 
-        //MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouseCutscene);
+        MusicPlayer.PlayMusic(MusicTrack.BubbleWarehouseCutscene);
     }
 
     //Open levels by clicking level buttons, set in level buttons' On Click()
     public void levelButtonClick(int level)
     {
-        //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
 
         //system.setStartingLevel(level);
 
@@ -62,7 +62,7 @@ public class DifLevelSelectScript : MonoBehaviour
         {
             Debug.Log("Kenttä 1");
 
-            //SceneManager.LoadScene("DifLevel1(2)", LoadSceneMode.Single);         //When opening all levels in own scenes.
+            //SceneManager.LoadScene("DifLevel1(2)", LoadSceneMode.Single);         //When opening all levels in own scenes (Not using)
             SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);        //When opening all levels in common DifGameplay scene.
 
             DifLevelObjects.levelNumber = 0;        //Set value which set active objects defined to each level.
@@ -72,7 +72,7 @@ public class DifLevelSelectScript : MonoBehaviour
         {
             Debug.Log("Kenttä 2");
 
-            //SceneManager.LoadScene("DifLevel2", LoadSceneMode.Single);
+            //SceneManager.LoadScene("DifLevel2", LoadSceneMode.Single);    //Not using
             SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
 
             DifLevelObjects.levelNumber = 1;
@@ -82,7 +82,7 @@ public class DifLevelSelectScript : MonoBehaviour
         {
             Debug.Log("Kenttä 3");
 
-            //SceneManager.LoadScene("DifLevel3", LoadSceneMode.Single);
+            //SceneManager.LoadScene("DifLevel3", LoadSceneMode.Single);    //Not using
             SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
 
             DifLevelObjects.levelNumber = 2;

@@ -33,14 +33,14 @@ public class DifCatScript : MonoBehaviour
         //if (DifferenceManager.levelCats[buttonNumber] >= catNumber)
         if (DifLevelSelectScript.wonCats >= catNumber)
         {
-            gameObject.SetActive(true);
+            gameObject.SetActive(true);     //Set won cat heads visible.
             Cat.color = Color.white;       //Visualize won points/cat heads.
             Debug.Log("Värjatty");
             Debug.Log("Button number in Star Script = " + buttonNumber);
         }
         else
         {
-            gameObject.SetActive(false);
+            gameObject.SetActive(false);    //Set not won cat heads unvisible.
         }
     }
 }

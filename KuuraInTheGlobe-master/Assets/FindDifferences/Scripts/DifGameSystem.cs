@@ -123,7 +123,7 @@ public class DifGameSystem : MonoBehaviour
     {
         // Saving cleared levels, collected cats, and other details would go here
 
-        //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
         Destroy(gameObject);
         SceneManager.LoadScene("Overworld", LoadSceneMode.Single);
     }

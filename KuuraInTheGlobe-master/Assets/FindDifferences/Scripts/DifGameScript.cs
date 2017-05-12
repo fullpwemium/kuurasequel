@@ -164,7 +164,7 @@ public class DifGameScript : MonoBehaviour
     public void losingGame()
     {
         Debug.Log("Game over");
-        //MusicPlayer.PlayMusic(MusicTrack.GameOverJingle);
+        MusicPlayer.PlayMusic(MusicTrack.GameOverJingle);
         playable = false;
         losingPanel.SetActive(true);
     }
@@ -237,7 +237,7 @@ public class DifGameScript : MonoBehaviour
 
     public void exitMinigame()      //Return to level select.
     {
-        //MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.dontBuy, 1);
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.dontBuy, 1);
         Debug.Log("Exiting difference minigame");
         SceneManager.LoadScene("DifLevelSelect2", LoadSceneMode.Single);
     }
