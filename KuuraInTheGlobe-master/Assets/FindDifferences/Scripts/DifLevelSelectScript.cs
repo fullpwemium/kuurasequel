@@ -55,6 +55,8 @@ public class DifLevelSelectScript : MonoBehaviour
     {
         MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuEffect, 1);
 
+        //SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
+
         //system.setStartingLevel(level);
 
         //Open level by level number (1-->) written in Button's On Click()
@@ -96,7 +98,6 @@ public class DifLevelSelectScript : MonoBehaviour
 
             DifLevelObjects.levelNumber = 3;
             Debug.Log("Level number = " + DifLevelObjects.levelNumber);
-
         }
         else if (level == 5)
         {
@@ -106,14 +107,51 @@ public class DifLevelSelectScript : MonoBehaviour
 
             DifLevelObjects.levelNumber = 4;
             Debug.Log("Level number = " + DifLevelObjects.levelNumber);
-
         }
         else if (level == 6)
         {
             Debug.Log("Kenttä 6");
+
+            //SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
+
             DifLevelObjects.levelNumber = 5;
             Debug.Log("Level number = " + DifLevelObjects.levelNumber);
+        }
+        else if (level == 7)
+        {
+            Debug.Log("Kenttä 7");
 
+            //SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
+
+            DifLevelObjects.levelNumber = 6;
+            Debug.Log("Level number = " + DifLevelObjects.levelNumber);
+        }
+        else if (level == 8)
+        {
+            Debug.Log("Kenttä 8");
+
+            //SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
+
+            DifLevelObjects.levelNumber = 7;
+            Debug.Log("Level number = " + DifLevelObjects.levelNumber);
+        }
+        else if (level == 9)
+        {
+            Debug.Log("Kenttä 9");
+
+            //SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
+
+            DifLevelObjects.levelNumber = 8;
+            Debug.Log("Level number = " + DifLevelObjects.levelNumber);
+        }
+        else if (level == 10)
+        {
+            Debug.Log("Kenttä 10");
+
+            //SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
+
+            DifLevelObjects.levelNumber = 9;
+            Debug.Log("Level number = " + DifLevelObjects.levelNumber);
         }
     }
 
@@ -123,7 +161,7 @@ public class DifLevelSelectScript : MonoBehaviour
         for (int i = 0; i < levelButtons.Capacity; i++)
         {
             int clearedlevels = system.getClearedLevels();      //Get cleared levels number from system.
-            if (clearedlevels >= i)     //Compare cleared levels number to button's int number.
+            if (clearedlevels >= i)     //Compare cleared levels number to local i variable.
             {
                 levelButtons[i].interactable = true;
                 Debug.Log("Open buttons = " + i);
@@ -140,7 +178,14 @@ public class DifLevelSelectScript : MonoBehaviour
 
     public void exitMinigame()      //Return to Overworld, set in Exit button's On Click()
     {
-        system.exit();
+        //system.exit();
+
+        // Saving cleared levels, collected cats, and other details would go here
+
+        MusicPlayer.instance.PlaySoundEffect(MusicPlayer.instance.menuCancel, 1);
+        Destroy(gameObject);
+        SceneManager.LoadScene("Overworld", LoadSceneMode.Single);
+        Debug.Log("Poistutaan");
     }
 
     public void openIntroPanel()        //(Moved to DifGameIfo script.)

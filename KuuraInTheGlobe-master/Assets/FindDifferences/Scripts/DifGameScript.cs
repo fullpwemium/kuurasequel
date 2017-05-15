@@ -102,6 +102,24 @@ public class DifGameScript : MonoBehaviour
 
 
         }
+        if (DifLevelObjects.levelNumber == 7)
+        {
+            currentLevel = 7;
+
+
+        }
+        if (DifLevelObjects.levelNumber == 8)
+        {
+            currentLevel = 8;
+
+
+        }
+        if (DifLevelObjects.levelNumber == 9)
+        {
+            currentLevel = 9;
+
+
+        }
         //-----------------------------------------------------------------------
 
         winningPanel.SetActive(false);

@@ -3426,7 +3426,6 @@ MonoBehaviour:
     type: 2}
   winningPanel: {fileID: 1197826375}
   losingPanel: {fileID: 1619153499}
-  catHead: {fileID: 1213927887}
 --- !u!4 &1240879485
 Transform:
   m_ObjectHideFlags: 0
@@ -5191,18 +5190,20 @@ Transform:
   m_Father: {fileID: 1113085688}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1988350250
-BoxCollider:
+--- !u!61 &1988350250
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1988350248}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.00000011920929, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.55, y: 0.41, z: 0.20000003}
-  m_Center: {x: -0.00000011920929, y: 0, z: -0.000015258789}
+  m_Size: {x: 1.5, y: 0.5}
 --- !u!114 &1988350251
 MonoBehaviour:
   m_ObjectHideFlags: 0
