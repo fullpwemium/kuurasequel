@@ -80,12 +80,13 @@ public class DifGameSystem : MonoBehaviour
         }
     }
 
-    // Mark a level as cleared by incrementing the value        --> DifGameScript.Wait
+    // Mark a level as cleared by incrementing the value        --> DifGameScript.Wait      (It seems that addClearedLevels has made this action useless.)
     public void clearLevel(int cleared)
     {
         // If cleared level is higher than previous maximum, update the value
         if (clearedLevels < cleared)
         {
+            Debug.Log("hyuguiög");
             Debug.Log("Level " + (cleared + 1) + " cleared");
             clearedLevels = cleared;
             GlobalGameManager.GGM.setNumberOfBeatenLevels("difGame", clearedLevels); //Save completed new levels in save file.

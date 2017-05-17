@@ -88,7 +88,9 @@ public class DifGameScript : MonoBehaviour
         {
             currentLevel = 4;
 
-
+            spots = 5;
+            FindingTimer.timeLeft = 30;
+            Debug.Log("Spots = " + spots);
         }
         if (DifLevelObjects.levelNumber == 5)
         {
@@ -281,7 +283,7 @@ public class DifGameScript : MonoBehaviour
         {
             Debug.Log("oidulgi");
             system.collectCat(currentLevel);
-            system.clearLevel(currentLevel);
+            system.clearLevel(currentLevel);      //It seems that addClearedLevels has made this action useless.
             system.addClearedLevels();
             activateWinningCat();
         }

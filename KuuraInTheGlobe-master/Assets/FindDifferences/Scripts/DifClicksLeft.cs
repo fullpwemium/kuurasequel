@@ -13,7 +13,8 @@ public class DifClicksLeft : MonoBehaviour
     void Start ()
     {
         //Show how many clicks is left.
-        if (DifLevelObjects.levelNumber == 0 || DifLevelObjects.levelNumber == 1 || DifLevelObjects.levelNumber == 3)
+        if (DifLevelObjects.levelNumber == 0 || DifLevelObjects.levelNumber == 1 || DifLevelObjects.levelNumber == 3
+            || DifLevelObjects.levelNumber == 4)
         {
             clicksLeft = 5;
         }
