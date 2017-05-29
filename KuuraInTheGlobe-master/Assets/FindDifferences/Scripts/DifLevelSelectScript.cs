@@ -112,7 +112,7 @@ public class DifLevelSelectScript : MonoBehaviour
         {
             Debug.Log("Kenttä 6");
 
-            //SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
+            SceneManager.LoadScene("DifGameplay", LoadSceneMode.Single);
 
             DifLevelObjects.levelNumber = 5;
             Debug.Log("Level number = " + DifLevelObjects.levelNumber);

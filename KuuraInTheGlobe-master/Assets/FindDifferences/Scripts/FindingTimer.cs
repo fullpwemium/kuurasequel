@@ -26,7 +26,7 @@ public class FindingTimer : MonoBehaviour
         //}
     }
 
-    //Restart timer.    --> DifferenceManager.OnLevelWasLoaded && RestartDifference.Replay
+    //Restart timer.    --> DifGameScript.OnLevelWasLoaded
     public static void StartGame()
     {
         Cleared = false;

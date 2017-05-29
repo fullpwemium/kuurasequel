@@ -12,11 +12,12 @@ public class DifLevelObjects : MonoBehaviour
     //Objects and object lists in each level
     public GameObject original, bottom;
     //public GameObject roska01, roska02, roska03, roska04, roska05, roska11, roska12, roska13, roska14, roska15;
-    public List<GameObject> roskat1, roskat2, roskat3, roskat4, roskat5, roskat6;
-    public List<GameObject> oikeat3, oikeat4, oikeat5, oikeat6;
+    public List<GameObject> roskat1, roskat2, roskat3, roskat4, roskat5, roskat6, roskat7;
+    public List<GameObject> oikeat3, oikeat4, oikeat5, oikeat6, oikeat7;
 
-    public Sprite painting1, painting2, painting3, painting4, painting5, painting6;
+    public Sprite painting1, painting2, painting3, painting4, painting5, painting6, painting7;
     public Sprite editablePaintingSprite3, editablePaintingSprite4, editablePaintingSprite5, editablePaintingSprite6;
+    public Sprite editablePaintingSprite7;
     //-----------------------------------------------
 
     public static int levelNumber;
@@ -114,13 +115,26 @@ public class DifLevelObjects : MonoBehaviour
             roskat5[3].SetActive(true);
             roskat5[4].SetActive(true);
         }
+        else if (levelNumber == 5)
+        {
+            Debug.Log("Ladataan objektit 3");
+
+            original.GetComponent<SpriteRenderer>().sprite = painting6;
+            bottom.GetComponent<SpriteRenderer>().sprite = editablePaintingSprite6;
+
+            roskat6[0].SetActive(true);
+            roskat6[1].SetActive(true);
+            roskat6[2].SetActive(true);
+            roskat6[3].SetActive(true);
+            roskat6[4].SetActive(true);
+        }
         //------------------------------------------------------------------------
     }
 
     // Update is called once per frame
     void Update ()
     {
-        if (levelNumber == 2 || levelNumber == 3 || levelNumber == 4)
+        if (levelNumber == 2 || levelNumber == 3 || levelNumber == 4 || levelNumber == 5)
         {
             Replace();
         }
@@ -175,6 +189,24 @@ public class DifLevelObjects : MonoBehaviour
             if (roskat5[3].activeInHierarchy == false)
             {
                 oikeat5[3].SetActive(true);
+                Debug.Log("roskat5[3] --> oikeat5[3]");
+            }
+        }
+        if (levelNumber == 5)
+        {
+            if (roskat6[0].activeInHierarchy == false)      //Check if GameObject is unactive.
+            {
+                oikeat6[0].SetActive(true);
+                Debug.Log("roskat5[0] --> oikeat5[0]");
+            }
+            if (roskat6[2].activeInHierarchy == false)
+            {
+                oikeat6[2].SetActive(true);
+                Debug.Log("roskat5[2] --> oikeat5[2]");
+            }
+            if (roskat6[4].activeInHierarchy == false)
+            {
+                oikeat6[4].SetActive(true);
                 Debug.Log("roskat5[3] --> oikeat5[3]");
             }
         }

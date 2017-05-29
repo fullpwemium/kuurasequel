@@ -87,12 +87,12 @@ public class ClickMistake : MonoBehaviour
         Debug.Log("Click rights = " + ClickRights);
         Debug.Log("Clicks left = " + DifClicksLeft.clicksLeft);
 
-        Right = true;
+        //Right = true;
 
         //Destroy(gameObject);
         Active.SetActive(false);
 
-        GameObject clickedCard = this.gameObject;
+        //GameObject clickedCard = this.gameObject;
 
         //layerManager = GameObject.Find("LayerManager");
         //layerManager.GetComponent<LayerScript>().ClickAction(clickedCard, (int)x, (int)y); //kun x ja y floatteja, niin edessä oltava sulkeissa int

@@ -18,6 +18,7 @@ public class DifGameInfo : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        infoPage = 1;
         infoPanel.SetActive(false);
     }
 
@@ -60,7 +61,7 @@ public class DifGameInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //When infoPanel is active.
+        //Define contents and actions in each page numbers when infoPanel is active.
         if (infoPanel.activeInHierarchy == true)
         {
             if (infoPage == 1)
@@ -69,6 +70,7 @@ public class DifGameInfo : MonoBehaviour
                 infoPicture2.SetActive(false);
                 infoText.text = "Sivu 1";
                 pageNumber.text = infoPage + " / 3";
+
                 infoPrevButton.interactable = false;
                 infoNextButton.interactable = true;
             }
@@ -80,6 +82,7 @@ public class DifGameInfo : MonoBehaviour
                 infoPicture2.GetComponent<SpriteRenderer>().sprite = infoImages[0];
                 infoText.text = "Sivu 2";
                 pageNumber.text = infoPage + " / 3";
+
                 infoPrevButton.interactable = true;
                 infoNextButton.interactable = true;
             }
@@ -89,6 +92,7 @@ public class DifGameInfo : MonoBehaviour
                 infoPicture2.GetComponent<SpriteRenderer>().sprite = infoImages[0];
                 infoText.text = "Sivu 3";
                 pageNumber.text = infoPage + " / 3";
+
                 infoPrevButton.interactable = true;
                 infoNextButton.interactable = false;
             }

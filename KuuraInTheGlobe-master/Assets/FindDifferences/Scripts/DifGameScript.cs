@@ -13,7 +13,7 @@ public class DifGameScript : MonoBehaviour
     //Variables used to initialize the game system
     public GameObject systemPrefab;
     private DifGameSystem system;
-    public static DifGameScript gamescript;
+    //public static DifGameScript gamescript;
 
     //Three main states of the game
     public static bool isWin;
@@ -22,13 +22,13 @@ public class DifGameScript : MonoBehaviour
 
     //Variables that control the game states
     public static int spots;
-    private int mistakes;
-    private int rightClicks;
+    //private int mistakes;
+    //private int rightClicks;
     private int currentLevel = 0;
     //public int thisLevel = 0;
-    public static int[] levelCats = new int[10];
+    //public static int[] levelCats = new int[10];
 
-    bool[] cats = new bool[10];
+    //bool[] cats = new bool[10];
 
     //UI objects
     public GameObject winningPanel;
@@ -73,8 +73,6 @@ public class DifGameScript : MonoBehaviour
             spots = 4;
             FindingTimer.timeLeft = 15;
             Debug.Log("Spots = " + spots);
-
-
         }
         if (DifLevelObjects.levelNumber == 3)
         {
@@ -96,7 +94,9 @@ public class DifGameScript : MonoBehaviour
         {
             currentLevel = 5;
 
-
+            spots = 5;
+            FindingTimer.timeLeft = 30;
+            Debug.Log("Spots = " + spots);
         }
         if (DifLevelObjects.levelNumber == 6)
         {
@@ -142,10 +142,10 @@ public class DifGameScript : MonoBehaviour
             winningGame();
         }
 
-        if (ClickMistake.Mistakes >= 3)
-        {
-            //DifGameScript.isLose = true;
-        }
+        //if (ClickMistake.Mistakes >= 3)
+        //{
+        //    //DifGameScript.isLose = true;
+        //}
     }
 
     private void initSystem()
@@ -229,13 +229,13 @@ public class DifGameScript : MonoBehaviour
         Debug.Log("Cat already won");
     }
 
-    public void onButtonClick()
+    public void onButtonClick()       //This seems to be not using anymore.
     {
         if (playable)
         {
             if (spots == ClickMistake.ClickRights)
             {
-                Debug.Log("You found all trashes");
+                Debug.Log("You found all trashes!!!!");
                 FindingTimer.EndGame();     //Stop timer.
                 //DifferenceManager.manager.PlayerWin();
                 //Debug.Log("Virheet = " + Mistakes);
@@ -247,8 +247,6 @@ public class DifGameScript : MonoBehaviour
     //Actions when loading level.
     private void OnLevelWasLoaded(int level)
     {
-
-
         FindingTimer.StartGame();       //Restart timer.
         ClickMistake.StartClicks();     ////Zero mistake clicks.
 
